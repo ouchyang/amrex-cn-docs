@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/InputsPlotFiles.rst:4 6b0bc398ad4c4343a61e31c194d81bcb
+msgid "Plotfiles and Other Output"
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:6 1670d44a0c0546c987957df6858a78c5
+msgid ""
+"The following inputs must be preceded by \"amr\" and control the "
+"frequency and naming of plotfile generation, as well as whether a "
+"plotfile should be written out immediately after restarting a simulation."
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:10 cbbac2e56885403a86269fcb18fe45ce
+msgid "Description"
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:10 94d1aa0b946749bca3886a35903a63cc
+msgid "Type"
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:10 b1754f95300449ba88ce7a0a896565b4
+msgid "Default"
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:12 04be257d1b8249d1b5af7d2e95ab7ca2
+msgid "plot_int"
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:12 ec3e71e6f28c4110af75458e1af38769
+msgid "Frequency of plotfile output; if -1 then no plotfiles will be written"
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:12 7cc4371e86b74258bc1c93434e62f0f2
+msgid "Int"
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:12 408b6240f98147a59095ca92fd8297f6
+msgid "-1"
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:15 6b3031577343488ba1e26693ebf4fe74
+msgid "plotfile_on_restart"
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:15 39813da0d0444040a50bd1816cef7dc1
+msgid "Should we write a plotfile when we restart (only used if plot_int>0)"
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:15 884b01f0aeca4d1fa873bc6a4c5e7c0e
+msgid "Bool"
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:15 1d82ac01518b42b59c1bb08fb900d249
+msgid "0 (false)"
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:17 44bab6eca2d64219b5576dbfe1bc47e9
+msgid "plot_file"
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:17 6933190d28094251b0624835a216f27e
+msgid "Prefix to use for plotfile output"
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:17 2aa7b0ca95b04867a5ba0078b28cce48
+msgid "String"
+msgstr ""
+
+#: ../../source/InputsPlotFiles.rst:17 c36b7cc92f9444d0baffb70b91d79a06
+msgid "plt"
+msgstr ""
+

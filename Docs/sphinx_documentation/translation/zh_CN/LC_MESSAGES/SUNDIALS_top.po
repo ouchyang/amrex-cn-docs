@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/SUNDIALS_top.rst:4 d72a337474fc4e5d9755b82a0658ab5c
+msgid "SUNDIALS"
+msgstr ""
+
+#: ../../source/SUNDIALS_top.rst:6 05a1639de8564a988d02aef7178a046c
+msgid ""
+"SUNDIALS stands for **SU**\\ite of **N**\\onlinear and "
+"**DI**\\fferential/**AL**\\gebraic equation **S**\\olvers. It consists of"
+" the following six solvers:"
+msgstr ""
+
+#: ../../source/SUNDIALS_top.rst:9 b4f41f78acd144efbb4481a2294fb975
+msgid "CVODE, for initial value problems for ODE systems"
+msgstr ""
+
+#: ../../source/SUNDIALS_top.rst:11 81dc2fcfc5e944a59e5a2ebd7cd5a1d8
+msgid "CVODES, solves ODE systems and includes sensitivity analysis"
+msgstr ""
+
+#: ../../source/SUNDIALS_top.rst:13 602dccdf9cb04484bc6d7cf793c17e3a
+msgid "ARKODE, solves initial value ODE problems with Runge-Kutta methods"
+msgstr ""
+
+#: ../../source/SUNDIALS_top.rst:15 a98ec811a81e4667a7ee2d7901332c36
+msgid ""
+"IDA, solves initial value problems for differential-algebraic equation "
+"systems"
+msgstr ""
+
+#: ../../source/SUNDIALS_top.rst:17 136e1f9a13064b6d98b12b15aa1f882a
+msgid ""
+"IDAS, solves differential-algebraic equation systems and includes "
+"sensitivity analysis"
+msgstr ""
+
+#: ../../source/SUNDIALS_top.rst:19 86d1c20c7ea14386a868a284e0fa5e2d
+msgid "KINSOL, solves nonlinear algebraic systems"
+msgstr ""
+
+#: ../../source/SUNDIALS_top.rst:22 7240d7de149341f98ab0cabceb787a15
+msgid ""
+"AMReX provides interfaces to the SUNDIALS suite. For time integration, "
+"users can refer to the section :ref:`sec:time_int:sundials` for more "
+"information. In addition, an example code demonstrating time integration "
+"with SUNDIALS can be found in the tutorials at, `SUNDIALS and Time "
+"Integrators`_"
+msgstr ""
+
+#: ../../source/SUNDIALS_top.rst:30 de1901828cd9422ba660f62349869ecd
+msgid ""
+"For more information on SUNDIALS please see their `readthedocs page "
+"<https://sundials.readthedocs.io/en/latest/>`_."
+msgstr ""
+

@@ -1,0 +1,2269 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/Basics.rst:10 6da7854021b84184a3db529e60416242
+msgid "Dimensionality"
+msgstr ""
+
+#: ../../source/Basics.rst:12 9d6ca061b6144d43969b06e746395b05
+msgid ""
+"As we have mentioned in :ref:`Chap:BuildingAMReX`, the dimensionality of "
+"AMReX must be set at compile time. A macro, ``AMREX_SPACEDIM``, is "
+"defined to be the number of spatial dimensions. C++ codes can also use "
+"the :cpp:`amrex::SpaceDim` variable. Fortran codes can use either the "
+"macro and preprocessing or do"
+msgstr ""
+
+#: ../../source/Basics.rst:24 20a31c161c8d46b19c3e74934e6bf346
+msgid "The coordinate directions are zero based."
+msgstr ""
+
+#: ../../source/Basics.rst:29 626c8d609cf04d59a2e1c7093e6e1329
+msgid "Vector, Array, GpuArray, Array1D, Array2D, and Array3D"
+msgstr ""
+
+#: ../../source/Basics.rst:31 561aadc140ec4e8194cb02a132f25d36
+msgid ""
+":cpp:`Vector` class in ``AMReX_Vector.H`` is derived from "
+":cpp:`std::vector`. The main difference between :cpp:`Vector` and "
+":cpp:`std::vector` is that :cpp:`Vector::operator[]` provides bound "
+"checking when compiled with :cpp:`DEBUG=TRUE`."
+msgstr ""
+
+#: ../../source/Basics.rst:36 4501ae1ea16141eda0a29fe3d5b5b901
+msgid ""
+":cpp:`Array` class in ``AMReX_Array.H`` is simply an alias to "
+":cpp:`std::array`. AMReX also provides :cpp:`GpuArray`, a trivial type "
+"that works on both host and device. (It was added when the minimal "
+"requirement for C++ standard was C++11, for which :cpp:`std::array` does "
+"not work on device.) It also works when compiled just for CPU.  Besides "
+":cpp:`GpuArray`, AMReX also provides GPU safe :cpp:`Array1D`, "
+":cpp:`Array2D` and :cpp:`Array3D` that are 1, 2 and 3-dimensional fixed "
+"size arrays, respectively.  These three class templates can have non-zero"
+" based indexing."
+msgstr ""
+
+#: ../../source/Basics.rst:46 cb8fbc9cac2241b28ead69970d3d27f5
+msgid "Real"
+msgstr ""
+
+#: ../../source/Basics.rst:48 5186ea0d618542ff993b92ab1a57196b
+msgid ""
+"AMReX can be compiled to use either double precision (which is the "
+"default) or single precision. :cpp:`amrex::Real` is typedef'd to either "
+":cpp:`double` or :cpp:`float`. C codes can use :cpp:`amrex_real`. They "
+"are defined in :cpp:`AMReX_REAL.H`. The data type is accessible in "
+"Fortran codes via"
+msgstr ""
+
+#: ../../source/Basics.rst:59 5814cdea24aa445d9db96477df2fe9d8
+msgid ""
+"In C++, AMReX also provides a user literal :cpp:`_rt` so that one can "
+"have a proper type for constants (e.g., :cpp:`2.7_rt`)."
+msgstr ""
+
+#: ../../source/Basics.rst:63 9abe29e59cda4af5a8c72f9baef712bb
+msgid "Long"
+msgstr ""
+
+#: ../../source/Basics.rst:65 8cf08fe600ad4686a9b1c80febb3a0e2
+msgid ""
+"AMReX defines a 64 bit integer type :cpp:`amrex::Long` that is an alias "
+"to :cpp:`long` on Unix-like systems and :cpp:`long long` on Windows.  In "
+"C, the type alias is :cpp:`amrex_long`.  In Fortran, one can use "
+":cpp:`amrex_long` defined in :cpp:`amrex_fort_module`."
+msgstr ""
+
+#: ../../source/Basics.rst:73 33da9e23b2194fae85b2ac67388459d6
+msgid "ParallelDescriptor"
+msgstr ""
+
+#: ../../source/Basics.rst:75 755fc51051404d02b23c004662d7fc8a
+msgid ""
+"AMReX users do not need to use MPI directly. Parallel communication is "
+"often handled by the data abstraction classes (e.g.,MultiFab; section on "
+":ref:`sec:basics:multifab`). In addition, AMReX has provided namespace "
+":cpp:`ParallelDescriptor` in ``AMReX_ParallelDescriptor.H.`` The "
+"frequently used functions are"
+msgstr ""
+
+#: ../../source/Basics.rst:105 5ebe75309c46431db5e141a95627b079
+msgid ""
+"Additionally, ``amrex_paralleldescriptor_module`` in "
+"``Src/Base/AMReX_ParallelDescriptor_F.F90`` provides a number of "
+"functions for Fortran."
+msgstr ""
+
+#: ../../source/Basics.rst:110 2ac2657f49274b73aabb603dc5d56cc9
+msgid "ParallelContext"
+msgstr ""
+
+#: ../../source/Basics.rst:112 dc76263c94fd4993bf2358d1257b232e
+msgid ""
+"Users can also use groups of MPI subcommunicators to perform simultaneous"
+" physics calculations.  These comms are managed by AMReX's "
+":cpp:`ParallelContext` in ``AMReX_ParallelContext.H.``  It maintains a "
+"stack of :cpp:`MPI_Comm` handlers. A global comm is placed in the "
+":cpp:`ParallelContext` stack during AMReX's initialization and additional"
+" subcommunicators can be handled by adding comms with "
+":cpp:`push(MPI_Comm)` and removed using :cpp:`pop()`.  This creates a "
+"hierarchy of :cpp:`MPI_Comm` objects that can be used to split work as "
+"the user sees fit.   Note that ``ParallelDescriptor`` by default uses "
+"AMReX's base comm, independent of the status of the ``ParallelContext`` "
+"stack."
+msgstr ""
+
+#: ../../source/Basics.rst:124 f7426ac6905044229b35e37163c4d19a
+msgid ""
+":cpp:`ParallelContext` also tracks and returns information about the "
+"local (most recently added) and global :cpp:`MPI_Comm`.  The most common "
+"access functions are given below.  See ``AMReX_ParallelContext.H.`` for a"
+" full listing of the available functions."
+msgstr ""
+
+#: ../../source/Basics.rst:170 43573e033f3c4eea8e0595c92fa00d7b
+msgid "Print"
+msgstr ""
+
+#: ../../source/Basics.rst:172 b436a77128f24f418335d953d8cf24e9
+msgid ""
+"AMReX provides classes in ``AMReX_Print.H`` for printing messages to "
+"standard output or any C++ :cpp:`ostream`. The main reason one should use"
+" them instead of :cpp:`std::cout` is that messages from multiple "
+"processes or threads do not get mixed up. Below are some examples."
+msgstr ""
+
+#: ../../source/Basics.rst:199 2a5c1694dc844f57a9166c523db5dbf7
+msgid ""
+"It should be emphasized that :cpp:`Print()` without any argument only "
+"prints on the I/O process.  A common mistake in using it for debug "
+"printing is one forgets that for non-I/O processes to print we should use"
+" :cpp:`AllPrint()` or :cpp:`Print(rank)`."
+msgstr ""
+
+#: ../../source/Basics.rst:207 21a3577c040f4a1f975e1b31499c8d79
+msgid "ParmParse"
+msgstr ""
+
+#: ../../source/Basics.rst:209 11d160c5b2554687a887230d36cdaead
+msgid ""
+":cpp:`ParmParse` in AMReX_ParmParse.H is a class providing a database for"
+" the storage and retrieval of command-line and input-file arguments. When"
+" :cpp:`amrex::Initialize(int& argc, char**& argv)` is called, the first "
+"command-line argument after the executable name (if there is one, and it "
+"does not contain the character '=' or start with '\\-') is taken to be "
+"the inputs file, and the contents of the file are used to initialize the "
+":cpp:`ParmParse` database. The rest of the command-line arguments are "
+"also parsed by :cpp:`ParmParse`, with the exception of those following a "
+"'\\-\\-' which signals command line sharing (see section "
+":ref:`sec:basics:parmparse:sharingCL` )."
+msgstr ""
+
+#: ../../source/Basics.rst:220 3e5be38dcdf249a6ab8b6c5253b164c4
+msgid "Inputs File"
+msgstr ""
+
+#: ../../source/Basics.rst:222 b1e2ef7dabcc4a49978a20052f556807
+msgid ""
+"The format of the inputs file is a series of definitions in the form of "
+"``prefix.name = value value ....`` For each line, text after # are "
+"comments. Here is an example inputs file."
+msgstr ""
+
+#: ../../source/Basics.rst:239 392f0013e5f244beb6756e7b45983b88
+msgid ""
+"The following code shows how to use :cpp:`ParmParse` to get/query the "
+"values."
+msgstr ""
+
+#: ../../source/Basics.rst:272 3031bddd2a4b4e2cbb3184c0cd94f951
+msgid ""
+"Note that when there are multiple definitions for a parameter "
+":cpp:`ParmParse` by default returns the last one. The difference between "
+":cpp:`query` and :cpp:`get` should also be noted. It is a runtime error "
+"if :cpp:`get` fails to get the value, whereas :cpp:`query` returns an "
+"error code without generating a runtime error that will abort the run."
+msgstr ""
+
+#: ../../source/Basics.rst:279 70005ea540674164a8c620147e1b8c91
+msgid "Overriding Parameters with Command-Line Arguments"
+msgstr ""
+
+#: ../../source/Basics.rst:281 8be30b0101d447d7a5cf424aee7638ad
+msgid ""
+"It is sometimes convenient to override parameters with command-line "
+"arguments without modifying the inputs file. The command-line arguments "
+"after the inputs file are added later than the file to the database and "
+"are therefore used by default. For example, to change the value of "
+":cpp:`ncells` and :cpp:`hydro.cfl`, one can run with:"
+msgstr ""
+
+#: ../../source/Basics.rst:296 28109f09ba494e56bd6446dab0926d2c
+msgid "Setting Parameter Values Inside Functions"
+msgstr ""
+
+#: ../../source/Basics.rst:298 eb72a6c7936042a18309525073482f93
+msgid ""
+"An application code may want to set values or defaults that differ from "
+"the those in AMReX in a function. This is accomplished in two steps:"
+msgstr ""
+
+#: ../../source/Basics.rst:301 73a777887fe64aaa912157c959b4fbbd
+msgid "First, define a function that sets the variable(s)."
+msgstr ""
+
+#: ../../source/Basics.rst:303 a06ae6061ffe47548bae33a3da39edc5
+msgid "Second, pass the name of that function to :cpp:`amrex::Initialize`."
+msgstr ""
+
+#: ../../source/Basics.rst:305 842ad903c2154c2fa3c1314b56d66b06
+msgid ""
+"The example function below sets variable values using two different "
+"approaches to highlight subtle differences in implementation:"
+msgstr ""
+
+#: ../../source/Basics.rst:322 97ac77b1af624dd79c5564ae9960413e
+msgid ""
+"First this function, :cpp:`add_par`, declares a ``ParmParse`` object that"
+" will be used to set variables. In the next section of code, we check if "
+"the value for ``variable_one`` has already been set elsewhere before "
+"writing to it. This approach prevents the function from overriding a "
+"value set in the inputs file or at the command line. In the next section,"
+" we write a value to ``variable_two`` without a conditional statement. In"
+" this case, we will ignore values for ``variable_two`` set in the inputs "
+"file or as a command line argument ---effectively overriding them with "
+"the value set here in the function."
+msgstr ""
+
+#: ../../source/Basics.rst:332 785bf07d62134fd983ac5e9f168a5a6b
+msgid ""
+"In the second step, we pass the name of the function we defined to "
+"``amrex::Initialize``. In the example above the function was called "
+"``add_par``, and therefore we write,"
+msgstr ""
+
+#: ../../source/Basics.rst:339 d95984dfe77841d1a94177d3cbdabfb6
+msgid ""
+"Now AMReX will use the user defined function to appropriately set the "
+"desired values."
+msgstr ""
+
+#: ../../source/Basics.rst:344 869b35d050e940a8b3ab43f33dea0432
+msgid "Sharing the Command Line"
+msgstr ""
+
+#: ../../source/Basics.rst:346 6a59f2bd009845d0993c4d722cfc751e
+msgid ""
+"In some cases we want AMReX to only read some of the command line "
+"arguments -- this happens, for example, when we are going to use AMReX in"
+" cooperation with another code package and that code also takes "
+"arguments."
+msgstr ""
+
+#: ../../source/Basics.rst:350 7ab27084f0ff4f739eb4b4ffb7b5520b
+msgid "Consider:"
+msgstr ""
+
+#: ../../source/Basics.rst:358 8149f453f7444dedbe4d47a9d3fb0fb6
+msgid ""
+"In this example, AMReX will parse the inputs file and the optional AMReX "
+"command line arguments, but will ignore arguments after the double "
+"dashes."
+msgstr ""
+
+#: ../../source/Basics.rst:362 954b584418934c329cd0a6243b3d3ee2
+msgid "Command Line Flags"
+msgstr ""
+
+#: ../../source/Basics.rst:364 f67cf31905854fcaa480186f78ccf4b6
+msgid ""
+"AMReX allows application codes to parse flags such as ``-h`` or "
+"``--help`` while still making use of ParmParse for parsing other runtime "
+"parameters but only if it is the first argument after the executable. If "
+"the first argument following the executable name begins with a dash, "
+"AMReX will initialize without reading any parameters and the application "
+"code may then parse the command line and handle those cases. Several "
+"built in functions are available to help do this. They are briefly "
+"introduced in the table below."
+msgstr ""
+
+#: ../../source/Basics.rst:372 f8cce65caed64065b13c8f0c511990f2
+msgid "AMReX functions for parsing the command line."
+msgstr ""
+
+#: ../../source/Basics.rst:375 7d16e8aa986b4426a0ae81bb71f44eac
+msgid "Function"
+msgstr ""
+
+#: ../../source/Basics.rst:375 84ece13d107a4168a40137b77b977330
+msgid "Type"
+msgstr ""
+
+#: ../../source/Basics.rst:375 1e13f6a205084eb6aa18d5a7003a0b6d
+msgid "Purpose"
+msgstr ""
+
+#: ../../source/Basics.rst:377 8adc957ea8544c7e8abd673b36aa465a
+msgid "``amrex::get_command()``"
+msgstr ""
+
+#: ../../source/Basics.rst:377 ../../source/Basics.rst:382
+#: 25f1dcba813d4c7d81c6d7f66c0b9441 d14c58fd80364f059bf6d7990b729cc2
+msgid "String"
+msgstr ""
+
+#: ../../source/Basics.rst:377 b3410c2395fe44ec9681370a70fabebc
+msgid "Get the entire command line."
+msgstr ""
+
+#: ../../source/Basics.rst:379 8af32b4a88984a2dacd0b3a71290ca4c
+msgid "``amrex::get_argument_count()``"
+msgstr ""
+
+#: ../../source/Basics.rst:379 3e5b294d589243718610cdba87be30ec
+msgid "Int"
+msgstr ""
+
+#: ../../source/Basics.rst:379 03271f130c0141b9bffed4358ab42b0c
+msgid "Get the number of command line arguments after the executable."
+msgstr ""
+
+#: ../../source/Basics.rst:382 cd55592fe704444c96a7f9453c0fa1d6
+msgid "``amrex:get_command_argument(int n)``"
+msgstr ""
+
+#: ../../source/Basics.rst:382 58ec24cb13904767933317c1c3ffd259
+msgid "Returns the n-th argument after the executable."
+msgstr ""
+
+#: ../../source/Basics.rst:392 28214fe0218a49689a5c2fbfd8a8eb72
+msgid "Parser"
+msgstr ""
+
+#: ../../source/Basics.rst:394 9eb7141bf87c48fd9f9d0aa464cba77e
+msgid ""
+"AMReX provides a parser in ``AMReX_Parser.H`` that can be used at runtime"
+" to evaluate mathematical expressions given in the form of string.  It "
+"supports ``+``, ``-``, ``*``, ``/``, ``**`` (power), ``^`` (power), "
+"``sqrt``, ``exp``, ``log``, ``log10``, ``sin``, ``cos``, ``tan``, "
+"``asin``, ``acos``, ``atan``, ``atan2``, ``sinh``, ``cosh``, ``tanh``, "
+"``asinh``, ``acosh``, ``atanh``, ``abs``, ``floor``, ``ceil`` and "
+"``fmod``. The minimum and maximum of two numbers can be computed with "
+"``min`` and ``max``, respectively.  It supports the Heaviside step "
+"function, ``heaviside(x1,x2)`` that gives ``0``, ``x2``, ``1``, for ``x1 "
+"< 0``, ``x1 = 0`` and ``x1 > 0``, respectively. It supports the Bessel "
+"function of the first kind of order ``n`` ``jn(n,x)``. Complete elliptic "
+"integrals of the first and second kind, ``comp_ellint_1`` and "
+"``comp_ellint_2``, are supported only for gcc and CPUs. There is "
+"``if(a,b,c)`` that gives ``b`` or ``c`` depending on the value of ``a``."
+"  A number of comparison operators are supported, including ``<``, ``>``,"
+" ``==``, ``!=``, ``<=``, and ``>=``.  The Boolean results from comparison"
+" can be combined by ``and`` and ``or``, and they hold the value ``1`` for"
+" true and ``0`` for false.  The precedence of the operators follows the "
+"convention of the C and C++ programming languages.  Here is an example of"
+" using the parser."
+msgstr ""
+
+#: ../../source/Basics.rst:435 a1ea9ec710a64447ae7a59576b2e32bc
+msgid "Local automatic variables can be defined in the expression.  For example,"
+msgstr ""
+
+#: ../../source/Basics.rst:446 3af822b55f4f48139ac4e267680100f8
+msgid ""
+"Note that an assignment to an automatic variable must be terminated with "
+"``;``, and one should avoid name conflict between the local variables and"
+" the constants set by :cpp:`setConstant` and the variables registered by "
+":cpp:`registerVariables`."
+msgstr ""
+
+#: ../../source/Basics.rst:451 fddb36de664743a5b50c0c81d3cb18ab
+msgid ""
+"Besides :cpp:`amrex::Parser` for floating point numbers, AMReX also "
+"provides :cpp:`amrex::IParser` for integers.  The two parsers have a lot "
+"of similarity, but floating point number specific functions (e.g., "
+"``sqrt``, ``sin``, etc.) are not supported in ``IParser``.  In addition "
+"to ``/`` whose result truncates towards zero, the integer parser also "
+"supports ``//`` whose result truncates towards negative infinity."
+msgstr ""
+
+#: ../../source/Basics.rst:461 b064ce7c98ec4d77931072e3c3eabc1a
+msgid "Initialize and Finalize"
+msgstr ""
+
+#: ../../source/Basics.rst:463 70ea8f59a19b49a4b8fc4e5eb24d0a0c
+msgid ""
+"As we have mentioned, :cpp:`Initialize` must be called to initialize the "
+"execution environment for AMReX and :cpp:`Finalize` must be paired with "
+":cpp:`Initialize` to release the resources used by AMReX.  There are two "
+"versions of :cpp:`Initialize`."
+msgstr ""
+
+#: ../../source/Basics.rst:484 c6915d4b5de14a6598f4e57d12466dda
+msgid ""
+":cpp:`Initialize` tests if MPI has been initialized.  If MPI has been "
+"initialized, AMReX will duplicate the ``MPI_Comm`` argument.  If not, "
+"AMReX will initialize MPI and ignore the ``MPI_Comm`` argument."
+msgstr ""
+
+#: ../../source/Basics.rst:488 0a9f109007d041cfa0d0301c09e4dc3e
+msgid ""
+"Both versions have two optional :cpp:`std::ostream` parameters, one for "
+"standard output in :cpp:`Print` (section :ref:`sec:basics:print`) and the"
+" other for standard error, and they can be accessed with functions "
+":cpp:`OutStream()` and :cpp:`ErrorStream()`.  Both versions can also take"
+" an optional error handler function.  If it is provided by the user, "
+"AMReX will use it to handle errors and signals. Otherwise, AMReX will use"
+" its own function for error and signal handling."
+msgstr ""
+
+#: ../../source/Basics.rst:497 c04ac053c195473ca82081492b777884
+msgid ""
+"The first version of :cpp:`Initialize` does not parse the command line "
+"options, whereas the second version will build ParmParse database "
+"(section :ref:`sec:basics:parmparse`) unless ``build_parm_parse`` "
+"parameter is :cpp:`false`.  In the second version, one can pass a "
+"function that adds ParmParse parameters to the database instead of "
+"reading from command line or input file."
+msgstr ""
+
+#: ../../source/Basics.rst:504 61f92bbb4a044dda8da19f92ae10d048
+msgid ""
+"Because many AMReX classes and functions (including destructors inserted "
+"by the compiler) do not function properly after :cpp:`amrex:Finalize` is "
+"called, it's best to put the codes between :cpp:`amrex::Initialize` and "
+":cpp:`amrex::Finalize` into its scope (e.g., a pair of curly braces or a "
+"separate function) to make sure resources are properly freed."
+msgstr ""
+
+#: ../../source/Basics.rst:515 7091e6e62ff1441aa162cee70c579412
+msgid "Example of AMR Grids"
+msgstr ""
+
+#: ../../source/Basics.rst:517 07d1cdc9221a452c8f9b3899b392ced5
+msgid ""
+"In block-structured AMR, there is a hierarchy of logically rectangular "
+"grids. The computational domain on each AMR level is decomposed into a "
+"union of rectangular domains. :numref:`fig:basics:amrgrids` below shows "
+"an example of AMR with three total levels.  In the AMReX numbering "
+"convention, the coarsest level is level 0. The coarsest grid (*black*) "
+"covers the domain with :math:`16^2` cells. Bold lines represent grid "
+"boundaries. There are two intermediate resolution grids (*blue*) at level"
+" 1 and the cells are a factor of two finer than those at level 0. The two"
+" finest grids (*red*) are at level 2 and the cells are a factor of two "
+"finer than the level 1 cells. There are 1, 2 and 2 Boxes on levels 0, 1, "
+"and 2, respectively. Note that there is no direct parent-child "
+"connection. In this chapter, we will focus on single levels."
+msgstr ""
+
+#: ../../source/Basics.rst:538 78fa48afb77b4492979a26c30666451b
+msgid ""
+"Example of AMR grids. There are three levels in total. There are 1, 2 and"
+" 2 Boxes on levels 0, 1, and 2, respectively."
+msgstr ""
+
+#: ../../source/Basics.rst:549 3d46061863924c4e99081e9e0e13fde5
+msgid "Box, IntVect and IndexType"
+msgstr ""
+
+#: ../../source/Basics.rst:551 c443d859dbda47edbbca03616734428e
+msgid ""
+":cpp:`Box` in AMReX_Box.H is the data structure for representing a "
+"rectangular domain in indexing space.  In :numref:`fig:basics:amrgrids`, "
+"there are 1, 2 and 2 Boxes on levels 0, 1 and 2, respectively.  "
+":cpp:`Box` is a dimension-dependent class. It has lower and upper corners"
+" (represented by :cpp:`IntVect`) and an index type (represented by "
+":cpp:`IndexType`). A :cpp:`Box` contains no floating-point data."
+msgstr ""
+
+#: ../../source/Basics.rst:559 9baaae8f156f481484c6997120179d98
+msgid "IntVect"
+msgstr ""
+
+#: ../../source/Basics.rst:561 915ac27cc3e349b4b349333bcf047a58
+msgid ""
+":cpp:`IntVec` is a dimension-dependent class representing an integer "
+"vector in :cpp:`AMREX_SPACEDIM`-dimensional space. An :cpp:`IntVect` can "
+"be constructed as follows,"
+msgstr ""
+
+#: ../../source/Basics.rst:571 638ad78f0fef4fd1af0a1701bac1dd5c
+msgid ""
+"Here :cpp:`AMREX_D_DECL` is a macro that expands "
+":cpp:`AMREX_D_DECL(19,0,5)` to either :cpp:`19` or :cpp:`19, 0` or "
+":cpp:`19, 0, 5` depending on the number of dimensions. The data can be "
+"accessed via :cpp:`operator[]`, and the internal data pointer can be "
+"returned by function :cpp:`getVect`. For example"
+msgstr ""
+
+#: ../../source/Basics.rst:585 510a19e69c4145a2bcd7399ac23f6788
+msgid ""
+"The class has a static function :cpp:`TheZeroVector()` returning the zero"
+" vector, :cpp:`TheUnitVector()` returning the unit vector, and "
+":cpp:`TheDimensionVector (int dir)` returning a reference to a constant "
+":cpp:`IntVect` that is zero except in the :cpp:`dir`-direction. Note the "
+"direction is zero-based. :cpp:`IntVect` has a number of relational "
+"operators, :cpp:`==`, :cpp:`!=`, :cpp:`<`, :cpp:`<=`, :cpp:`>` , and "
+":cpp:`>=` that can be used for lexicographical comparison (e.g., key of "
+":cpp:`std::map`), and a class :cpp:`IntVect::shift_hasher` that can be "
+"used as a hash function (e.g., for :cpp:`std::unordered_map`). It also "
+"has various arithmetic operators. For example,"
+msgstr ""
+
+#: ../../source/Basics.rst:605 7b6ad6acb0294b30a7013aa2b669621d
+msgid ""
+"In AMR codes, one often needs to do refinement and coarsening on "
+":cpp:`IntVect`. The refinement operation can be done with the "
+"multiplication operation. However, the coarsening requires care because "
+"of the rounding towards zero behavior of integer division in Fortran, C "
+"and C++. For example :cpp:`int i = -1/2` gives :cpp:`i = 0`, and what we "
+"want is usually :cpp:`i = -1`. Thus, one should use the coarsen "
+"functions:"
+msgstr ""
+
+#: ../../source/Basics.rst:623 8bac8f1b220f48c88ae8d9821ae80ff8
+msgid ""
+"Finally, we note that :cpp:`operator<<` is overloaded for :cpp:`IntVect` "
+"and therefore one can call"
+msgstr ""
+
+#: ../../source/Basics.rst:634 1f1e91188e274959af55dc0428d5636e
+msgid "IndexType"
+msgstr ""
+
+#: ../../source/Basics.rst:636 c6ee7c144f524effa29999e31d89bd72
+msgid ""
+"This class defines an index as being cell based or node based in each "
+"dimension. The default constructor defines a cell based type in all "
+"directions. One can also construct an :cpp:`IndexType` with an "
+":cpp:`IntVect` with zero and one representing cell and node, "
+"respectively."
+msgstr ""
+
+#: ../../source/Basics.rst:649 744415096bdd4e5eafa322468c96658d
+msgid "The class provides various functions including"
+msgstr ""
+
+#: ../../source/Basics.rst:667 cd10fd48cc1e420db79be7517430bdee
+msgid ""
+"Index type is a very important concept in AMReX. It is a way of "
+"representing the notion of indices :math:`i` and :math:`i+1/2`."
+msgstr ""
+
+#: ../../source/Basics.rst:671 75eb4f3c5fa44c1887e6b03e104eb01e
+msgid "Box"
+msgstr ""
+
+#: ../../source/Basics.rst:673 0358af315ca048cb92308089c44f6903
+msgid ""
+"A ``Box`` is an abstraction for defining discrete regions of "
+":cpp:`AMREX_SPACEDIM`-dimensional indexing space. Boxes have an "
+":cpp:`IndexType` and two :cpp:`IntVect`\\ s representing the lower and "
+"upper corners. Boxes can exist in positive and negative indexing space. "
+"Typical ways of defining a :cpp:`Box` are"
+msgstr ""
+
+#: ../../source/Basics.rst:691 d7b595e0c9b3444793eaa682cefe3b5c
+msgid "Depending the dimensionality, the output of the code above is"
+msgstr ""
+
+#: ../../source/Basics.rst:698 1885b5b7e8d34d069587330395bba27b
+msgid ""
+"For simplicity, we will assume it is 3D for the rest of this section.  In"
+" the output, three integer tuples for each box are the lower corner "
+"indices, upper corner indices, and the index types. Note that 0 and 1 "
+"denote cell and node, respectively. For each tuple like "
+":cpp:`(64,64,64)`, the 3 numbers are for 3 directions. The two Boxes in "
+"the code above represent different indexing views of the same domain of "
+":math:`64^3` cells. Note that in AMReX convention, the lower side of a "
+"cell has the same integer value as the cell centered index. That is if we"
+" consider a cell based index represent :math:`i`, the nodal index with "
+"the same integer value represents :math:`i-1/2`. "
+":numref:`fig:basics:indextypes` shows some of the different index types "
+"for 2D."
+msgstr ""
+
+#: ../../source/Basics.rst:718 9ca64ba10bb44ed790015ecb09e34b8a
+msgid ""
+"Some of the different index types in two dimensions: (a) cell-centered, "
+"(b) :math:`x`-face-centered (i.e., nodal in :math:`x`-direction only), "
+"and (c) corner/nodal, i.e., nodal in all dimensions."
+msgstr ""
+
+#: ../../source/Basics.rst:726 4d3744687ee345c9b649c06727a3053d
+msgid ""
+"There are a number of ways of converting a :cpp:`Box` from one type to "
+"another."
+msgstr ""
+
+#: ../../source/Basics.rst:752 5105c2323b87432ab3cc71d693094881
+msgid ""
+"The internal data of :cpp:`Box` can be accessed via various member "
+"functions. Examples are"
+msgstr ""
+
+#: ../../source/Basics.rst:764 9da3aa7a43a047d68fb25db650a2c0be
+msgid ""
+"Boxes can be refined and coarsened. Refinement or coarsening does not "
+"change the index type. Some examples are shown below."
+msgstr ""
+
+#: ../../source/Basics.rst:791 939db322835448e4b583240ade5fea13
+msgid ""
+"Note that the behavior of refinement and coarsening depends on the index "
+"type.  A refined :cpp:`Box` covers the same physical domain as the "
+"original :cpp:`Box`, and a coarsened :cpp:`Box` also covers the same "
+"physical domain if the original :cpp:`Box` is coarsenable. :cpp:`Box "
+"uncoarsenable` in the example above is considered uncoarsenable because "
+"its coarsened version does not cover the same physical domain in the AMR "
+"context."
+msgstr ""
+
+#: ../../source/Basics.rst:799 a31548d858cc4937828f6568783487ba
+msgid ""
+"Boxes can grow in one or all directions.  There are a number of grow "
+"functions. Some are member functions of the :cpp:`Box` class and others "
+"are free functions in the :cpp:`amrex` namespace."
+msgstr ""
+
+#: ../../source/Basics.rst:803 4a6202674578413a89bb9baea318a674
+msgid ""
+"The :cpp:`Box` class provides the following member functions testing if a"
+" :cpp:`Box` or :cpp:`IntVect` is contained within this :cpp:`Box`. Note "
+"that it is a runtime error if the two Boxes have different types."
+msgstr ""
+
+#: ../../source/Basics.rst:816 4883a03eedbd4ee09f18e8e96b37e4aa
+msgid ""
+"Another very common operation is the intersection of two Boxes like in "
+"the following examples."
+msgstr ""
+
+#: ../../source/Basics.rst:843 850a4095012c45c29d769f161b59eb0e
+msgid "Dim3 and XDim3"
+msgstr ""
+
+#: ../../source/Basics.rst:845 97a74186ad2242389eaa89f8037fd17f
+msgid ":cpp:`Dim3` and :cpp:`XDim3` are plain structs with three fields,"
+msgstr ""
+
+#: ../../source/Basics.rst:854 926030aed81841669b63a31ffced8061
+msgid "One can convert an :cpp:`IntVect` to :cpp:`Dim3`,"
+msgstr ""
+
+#: ../../source/Basics.rst:863 ce0332f0b7c041248461b8a81d59bcf4
+msgid ""
+":cpp:`Dim3` always has three fields even when AMReX is built for 1D or "
+"2D.  For the example above, the extra fields are set to zero.  Given a "
+":cpp:`Box`, one can get its lower and upper bounds and use them to write "
+"dimension agnostic loops."
+msgstr ""
+
+#: ../../source/Basics.rst:882 af26e90d96f8417997227fbf26778b3c
+msgid ""
+"One can also call function ``Dim3 length(Box const&)`` to return the "
+"length of a Box."
+msgstr ""
+
+#: ../../source/Basics.rst:887 94c9de3ea293468cbfee7feef4d455f1
+msgid "RealBox and Geometry"
+msgstr ""
+
+#: ../../source/Basics.rst:889 51af74456aa04eb0a99b46744176cc51
+msgid ""
+"A :cpp:`RealBox` stores the physical location in floating-point numbers "
+"of the lower and upper corners of a rectangular domain."
+msgstr ""
+
+#: ../../source/Basics.rst:892 bf6bcc40bd4b48439b49e1e1ec7eb4be
+msgid ""
+"The :cpp:`Geometry` class in AMReX_Geometry.H describes problem domain "
+"and coordinate system for rectangular problem domains. A :cpp:`Geometry` "
+"object can be constructed with"
+msgstr ""
+
+#: ../../source/Basics.rst:908 932f740e19614fa781c98e50c5ac3749
+msgid ""
+"Here the constructors take a cell-centered :cpp:`Box` specifying the "
+"indexing space domain, a :cpp:`RealBox` specifying the physical domain, "
+"an :cpp:`int` specifying coordinate system type, and an :cpp:`int` "
+"pointer or array specifying periodicity. If a :cpp:`RealBox` is not given"
+" in the first constructor, AMReX  will construct one based on "
+":cpp:`ParmParse` parameters, ``geometry.prob_lo`` / ``geometry.prob_hi`` "
+"/ ``geometry.prob_extent``, where each of the parameter is an array of "
+"``AMREX_SPACEDIM`` real numbers. See the section on :ref:`sec:inputs:pd` "
+"for more details about how to specify these."
+msgstr ""
+
+#: ../../source/Basics.rst:917 ef8908c9062a405094286e3b2e338ec2
+msgid ""
+"The argument for coordinate system is an integer type with valid values "
+"being 0 (Cartesian), or 1 (cylindrical), or 2 (spherical). If it is "
+"invalid as in the case of the default argument value of the first "
+"constructor, AMReX will query the :cpp:`ParmParse` database for "
+"``geometry.coord_sys`` and use it if one is found. If it cannot find the "
+"parameter, the coordinate system is set to 0 (i.e., Cartesian "
+"coordinates)."
+msgstr ""
+
+#: ../../source/Basics.rst:924 8360da55edfd4100bd31ff49964f4a17
+msgid ""
+"The :cpp:`Geometry` class has the concept of periodicity.  An argument "
+"can be passed specifying periodicity in each dimension. If it is not "
+"given in the first constructor, the domain is assumed to be non-periodic "
+"unless there is the :cpp:`ParmParse` integer array parameter "
+"``geometry.is_periodic`` with 0 denoting non-periodic and 1 denoting "
+"periodic. Below is an example of defining a :cpp:`Geometry` for a "
+"periodic rectangular domain of :math:`[-1.0,1.0]` in each direction "
+"discretized with :math:`64` numerical cells in each direction."
+msgstr ""
+
+#: ../../source/Basics.rst:956 3613e6a6bbfe4d369356c552271a2382
+msgid ""
+"A :cpp:`Geometry` object can return various information of the physical "
+"domain and the indexing space domain. For example,"
+msgstr ""
+
+#: ../../source/Basics.rst:975 b97b8156be0f4b89b504b98e0c5b97f5
+msgid "BoxArray"
+msgstr ""
+
+#: ../../source/Basics.rst:977 c34b8d6e7a194a22841552582175ab53
+msgid ""
+":cpp:`BoxArray` is a class in ``AMReX_BoxArray.H`` for storing a "
+"collection of Boxes on a single AMR level. One can make a :cpp:`BoxArray`"
+" out of a single :cpp:`Box` and then chop it into multiple Boxes."
+msgstr ""
+
+#: ../../source/Basics.rst:991 3796961a5d5e462ca79609224f2e262c
+msgid "The output is like below,"
+msgstr ""
+
+#: ../../source/Basics.rst:1004 16f1256c512a4c19b72350468252ada8
+msgid "It shows that ``ba`` now has 8 Boxes, and it also prints out each Box."
+msgstr ""
+
+#: ../../source/Basics.rst:1006 4559732d8b1644389709a6ca40f3fbc3
+msgid ""
+"In AMReX, :cpp:`BoxArray` is a global data structure. It holds all the "
+"Boxes in a collection, even though a single process in a parallel run "
+"only owns some of the Boxes via domain decomposition. In the example "
+"above, a 4-process run may divide the work and each process owns say 2 "
+"Boxes (see section on :ref:`sec:basics:dm`). Each process can then "
+"allocate memory for the floating point data on the Boxes it owns (see "
+"sections on :ref:`sec:basics:multifab` & :ref:`sec:basics:fab`)."
+msgstr ""
+
+#: ../../source/Basics.rst:1014 7712d49d171c4be2950ae42e41f6f0de
+msgid ""
+":cpp:`BoxArray` has an indexing type, just like :cpp:`Box`. Each Box in a"
+" BoxArray has the same type as the BoxArray itself. In the following "
+"example, we show how one can convert BoxArray to a different type."
+msgstr ""
+
+#: ../../source/Basics.rst:1032 c64f61434c06446c8f2953ba6180f41f
+msgid ""
+"As shown in the example above, :cpp:`BoxArray` has an :cpp:`operator[]` "
+"that returns a :cpp:`Box` given an index. It should be emphasized that "
+"there is a difference between its behavior and the usual behavior of an "
+"subscript operator one might expect. The subscript operator in "
+":cpp:`BoxArray` returns by **value instead of reference**. This means "
+"code like below is meaningless because it modifies a temporary return "
+"value."
+msgstr ""
+
+#: ../../source/Basics.rst:1045 4f8df6818a114df49f7f144b049d6243
+msgid ""
+":cpp:`BoxArray` has a number of member functions that allow the Boxes to "
+"be modified. For example,"
+msgstr ""
+
+#: ../../source/Basics.rst:1057 edf62228b7174ac49e4d3ba83d7940be
+msgid ""
+"We have mentioned at the beginning of this section that :cpp:`BoxArray` "
+"is a global data structure storing Boxes shared by all processes.  The "
+"operation of a deep copy is thus undesirable because it is expensive and "
+"the extra copy wastes memory. The implementation of the :cpp:`BoxArray` "
+"class uses :cpp:`std::shared_ptr` to an internal container holding the "
+"actual Box data. Thus making a copy of :cpp:`BoxArray` is a quite cheap "
+"operation. The conversion of types and coarsening are also cheap because "
+"they can share the internal data with the original :cpp:`BoxArray`. In "
+"our implementation, function :cpp:`refine` does create a new deep copy of"
+" the original data. Also note that a :cpp:`BoxArray` and its variant with"
+" a different type share the same internal data is an implementation "
+"detail.  We discuss this so that the users are aware of the performance "
+"and resource cost. Conceptually we can think of them as completely "
+"independent of each other."
+msgstr ""
+
+#: ../../source/Basics.rst:1080 513e462285874302917d07c30dcb66d2
+msgid ""
+"For advanced users, AMReX provides functions performing the intersection "
+"of a :cpp:`BoxArray` and a :cpp:`Box`. These functions are much faster "
+"than a naive implementation of performing intersection of the Box with "
+"each Box in the BoxArray. If one needs to perform those intersections, "
+"functions :cpp:`amrex::intersect`, :cpp:`BoxArray::intersects` and "
+":cpp:`BoxArray::intersections` should be used."
+msgstr ""
+
+#: ../../source/Basics.rst:1091 61c760180e804f06a8b0e45f0fbbec78
+msgid "DistributionMapping"
+msgstr ""
+
+#: ../../source/Basics.rst:1093 48d04a41ed38407c8a6acf835ecc6e0f
+msgid ""
+":cpp:`DistributionMapping` is a class in ``AMReX_DistributionMapping.H`` "
+"that describes which process owns the data living on the domains "
+"specified by the Boxes in a :cpp:`BoxArray`. Like :cpp:`BoxArray`, there "
+"is an element for each :cpp:`Box` in :cpp:`DistributionMapping`, "
+"including the ones owned by other parallel processes. One can construct a"
+" :cpp:`DistributionMapping` object given a :cpp:`BoxArray`,"
+msgstr ""
+
+#: ../../source/Basics.rst:1106 dd155d2f36944018a6f0b36b4dc9af65
+msgid "or by simply making a copy,"
+msgstr ""
+
+#: ../../source/Basics.rst:1114 7f6f70888b1e451db1506ced7522fb79
+msgid ""
+"Note that this class is built using :cpp:`std::shared_ptr`. Thus making a"
+" copy is relatively cheap in terms of performance and memory resources. "
+"This class has a subscript operator that returns the process ID at a "
+"given index."
+msgstr ""
+
+#: ../../source/Basics.rst:1118 0cc8ccc8795840b4907c8b3fb640ca3c
+msgid ""
+"By default, :cpp:`DistributionMapping` uses an algorithm based on space "
+"filling curve to determine the distribution. One can change the default "
+"via the :cpp:`ParmParse` parameter ``DistributionMapping.strategy``.  "
+"``KNAPSACK`` is a common choice that is optimized for load balance.  One "
+"can also explicitly construct a distribution.  The "
+":cpp:`DistributionMapping` class allows the user to have complete control"
+" by passing an array of integers that represent the mapping of grids to "
+"processes."
+msgstr ""
+
+#: ../../source/Basics.rst:1139 fa42aaf52c0a4f8cb6b323e5fa7eaa14
+msgid "BaseFab, FArrayBox, IArrayBox, and Array4"
+msgstr ""
+
+#: ../../source/Basics.rst:1141 3f807aa61e064d599e68d7c834259a6c
+msgid ""
+"AMReX is a block-structured AMR framework. Although AMR introduces "
+"irregularity to the data and algorithms, there is regularity at the "
+"block/Box level because each is still logically rectangular, and the data"
+" structure at the Box level is conceptually simple. :cpp:`BaseFab` is a "
+"class template for multi-dimensional array-like data structure on a "
+":cpp:`Box`. The template parameter is typically basic types such as "
+":cpp:`Real`, :cpp:`int` or :cpp:`char`. The dimensionality of the array "
+"is ``AMREX_SPACEDIM`` *plus one*. The additional dimension is for the "
+"number of components. The data are internally stored in a contiguous "
+"block of memory in Fortran array order (i.e., column-major order) for "
+":math:`(x,y,z,\\mathrm{component})`, and each component also occupies a "
+"contiguous block of memory because of the ordering. For example, a "
+":cpp:`BaseFab<Real>` with 4 components defined on a three-dimensional "
+":cpp:`Box(IntVect{-4,8,32},IntVect{32,64,48})` is like a Fortran array of"
+" :fortran:`real(amrex_real), dimension(-4:32,8:64,32:48,0:3)`.  Note that"
+" the convention in C++ part of AMReX is the component index is zero "
+"based. The code for constructing such an object is as follows,"
+msgstr ""
+
+#: ../../source/Basics.rst:1166 5a6ddc9819b04da0bfdd2df6290cf863
+msgid ""
+"Most applications do not use :cpp:`BaseFab` directly, but utilize "
+"specialized classes derived from :cpp:`BaseFab`. The most common types "
+"are :cpp:`FArrayBox` in AMReX_FArrayBox.H derived from "
+":cpp:`BaseFab<Real>` and :cpp:`IArrayBox` in AMReX_IArrayBox.H derived "
+"from :cpp:`BaseFab<int>`."
+msgstr ""
+
+#: ../../source/Basics.rst:1171 186641bbc203469a9f6a4180c12d5a9c
+msgid ""
+"These derived classes also obtain many :cpp:`BaseFab` member functions "
+"via inheritance. We now show some common usages of these functions.  To "
+"get the :cpp:`Box` where a :cpp:`BaseFab` or its derived object is "
+"defined, one can call"
+msgstr ""
+
+#: ../../source/Basics.rst:1182 1a2c4ad340604c9c8b5c1f251cd69ea4
+msgid "To the number of component, one can call"
+msgstr ""
+
+#: ../../source/Basics.rst:1190 a3b366b4eedb4c64b0385124c92295d3
+msgid "To get a pointer to the array data, one can call"
+msgstr ""
+
+#: ../../source/Basics.rst:1200 2c96a0bd3d454833b153ef90abd00882
+msgid ""
+"The typical usage of the returned pointer is then to pass it to a Fortran"
+" or C function that works on the array data (see the section on "
+":ref:`sec:basics:fortran`).  :cpp:`BaseFab` has several functions that "
+"set the array data to a constant value. Two examples are as follows."
+msgstr ""
+
+#: ../../source/Basics.rst:1214 01250d40f67f4982878fecbd5f8f15a7
+msgid "One can copy data from one :cpp:`BaseFab` to another."
+msgstr ""
+
+#: ../../source/Basics.rst:1223 eb8dc97301bf4cb79fdaac6176e148cb
+msgid ""
+"Here the function copies the data from the region specified by "
+":cpp:`srcbox` in the source :cpp:`BaseFab src` into the region specified "
+"by :cpp:`destbox` in the destination BaseFab that invokes the function "
+"call. Note that although :cpp:`srcbox` and :cpp:`destbox` may be "
+"different, they must be the same size, shape and index type, otherwise a "
+"runtime error occurs. The user also specifies how many components "
+"(:cpp:`int numcomp`) are copied starting at component srccomp in src and "
+"stored starting at component destcomp. BaseFab has functions returning "
+"the minimum or maximum value."
+msgstr ""
+
+#: ../../source/Basics.rst:1243 494d1c0fe8084d1085724e05c6aa5ba2
+msgid ""
+":cpp:`BaseFab` also has many arithmetic functions. Here are some examples"
+" using FArrayBox."
+msgstr ""
+
+#: ../../source/Basics.rst:1260 89eee4a1bebe402c81021aadc172e796
+msgid ""
+"These floating point operation functions are templated with parameter "
+":cpp:`RunOn` specifying where they run, :cpp:`RunOn::Host` or "
+":cpp:`RunOn::Device`.  When AMReX is built just for CPU, the template "
+"parameter has a default value of :cpp:`RunOn::Host` so that the user does"
+" not need to specify it for backward compatibility, and if "
+":cpp:`RunOn::Device` is provided it will be ignored. However, when AMReX "
+"is built with GPU support, one must specify where to run for these "
+":cpp:`BaseFab` functions.  For example,"
+msgstr ""
+
+#: ../../source/Basics.rst:1278 72da70ae482d4f3ab61d0104245ad4a7
+msgid ""
+"For more complicated expressions that are not supported, one can write "
+"Fortran or C/C++ functions for those (see the section on "
+":ref:`sec:basics:fortran`).  In C++, one can use :cpp:`Array4`, which is "
+"a class template for accessing :cpp:`BaseFab` data in a more array like "
+"manner using :cpp:`operator()`.  Below is an example of using "
+":cpp:`Array4`."
+msgstr ""
+
+#: ../../source/Basics.rst:1311 5b10f67a35464db6bdd49f93183f1d23
+msgid ""
+"Note that :cpp:`operator()` of :cpp:`Array4` takes either three or four "
+"arguments.  The optional fourth argument has a default value of zero.  "
+"The two :cpp:`const`\\ s in :cpp:`Array4<Real const> const&` have "
+"different meaning.  The first :cpp:`const` inside :cpp:`<>` means the "
+"data accessed via :cpp:`Array4` is read-only, whereas the second "
+":cpp:`const` means the :cpp:`Array4` object itself cannot be modified to "
+"point to other data.  In the example above, neither ``m(i,j,k) = 0`` nor "
+"``b(i,j,k) = 0.0`` is allowed.  However one is allowed to do ``m = "
+"ifab2.array()`` to assign :cpp:`m` again, but not to :cpp:`b`. The "
+"behavior is in some sense similar to ``double const * const p``."
+msgstr ""
+
+#: ../../source/Basics.rst:1322 c0abf90f3824418c806a49d13cdbba8e
+msgid ""
+":cpp:`BaseFab` and its derived classes are containers for data on "
+":cpp:`Box`. Recall that :cpp:`Box` has various types (see the section on "
+":ref:`sec:basics:box`). The examples in this section so far use the "
+"default cell based type.  However, some functions will result in a "
+"runtime error if the types mismatch.  For example."
+msgstr ""
+
+#: ../../source/Basics.rst:1339 f763f3f4c80844a3bce1b858173e87e9
+msgid ""
+"Because it typically contains a lot of data, BaseFab's copy constructor "
+"and copy assignment operator are disabled to prevent performance "
+"degradation. However, BaseFab does provide a move constructor. In "
+"addition, it also provides a constructor for making an alias of an "
+"existing object. Here is an example using :cpp:`FArrayBox`."
+msgstr ""
+
+#: ../../source/Basics.rst:1354 93c5f2460b5b45169ff9c1579df1be7e
+msgid ""
+"In this example, the alias :cpp:`FArrayBox` has only two components even "
+"though the original one has four components. The alias has a sliced "
+"component view of the original :cpp:`FArrayBox`. This is possible because"
+" of the array ordering. However, it is not possible to slice in the real "
+"space (i.e., the first ``AMREX_SPACEDIM`` dimensions).  Note that no new "
+"memory is allocated in constructing the alias and the alias contains a "
+"non-owning pointer. It should be emphasized that the alias will contain a"
+" dangling pointer after the original :cpp:`FArrayBox` reaches its end of "
+"life.  One can also construct an alias :cpp:`BaseFab` given an "
+":cpp:`Array4`,"
+msgstr ""
+
+#: ../../source/Basics.rst:1374 d3fb089d48c8400f872cedbc79a59798
+msgid "FabArray, MultiFab and iMultiFab"
+msgstr ""
+
+#: ../../source/Basics.rst:1376 bacb77cdba6a43bd99755651db5729a7
+msgid ""
+":cpp:`FabArray<FAB>` is a class template in AMReX_FabArray.H for a "
+"collection of FABs on the same AMR level associated with a "
+":cpp:`BoxArray` (see the section on :ref:`sec:basics:ba`). The template "
+"parameter :cpp:`FAB` is usually :cpp:`BaseFab<T>` or its derived classes "
+"(e.g., :cpp:`FArrayBox`). However, FabArray can also be used to hold "
+"other data structures. To construct a FabArray, a :cpp:`BoxArray` must be"
+" provided because the FabArray is intended to hold *grid* data defined on"
+" a union of rectangular regions embedded in a uniform index space. For "
+"example, a FabArray object can be used to hold data for one level as in "
+":numref:`fig:basics:amrgrids`."
+msgstr ""
+
+#: ../../source/Basics.rst:1386 7add223c360b42459e8829da128d79fc
+msgid ""
+":cpp:`FabArray` is a parallel data structure in which the data (i.e., "
+"FAB) are distributed among parallel processes. For each process, a "
+"FabArray contains only the FAB objects owned by that process, and the "
+"process operates only on its local data. For operations that require data"
+" owned by other processes, remote communications are involved. Thus, the "
+"construction of a :cpp:`FabArray` requires a :cpp:`DistributionMapping` "
+"(see the section on :ref:`sec:basics:dm`) that specifies which process "
+"owns which Box. For level 2 (*red*) in :numref:`fig:basics:amrgrids`, "
+"there are two Boxes. Suppose there are two parallel processes, and we use"
+" a DistributionMapping that assigns one Box to each process. Then the "
+":cpp:`FabArray` on each process is built on the :cpp:`BoxArray` with both"
+" Boxes, but contains only the FAB associated with its process."
+msgstr ""
+
+#: ../../source/Basics.rst:1398 4bb36d44699c4c01a6b30962a67d8d54
+msgid ""
+"In AMReX, there are some specialized classes derived from "
+":cpp:`FabArray`. The :cpp:`iMultiFab` class in AMReX_iMultiFab.H is "
+"derived from :cpp:`FabArray<IArrayBox>`. The most commonly used "
+":cpp:`FabArray` kind class is :cpp:`MultiFab` in AMReX_MultiFab.H derived"
+" from :cpp:`FabArray<FArrayBox>`. In the rest of this section, we use "
+":cpp:`MultiFab` as example. However, these concepts are equally "
+"applicable to other types of FabArrays. There are many ways to define a "
+"MultiFab. For example,"
+msgstr ""
+
+#: ../../source/Basics.rst:1416 8db7f5b0b3a643bc99eeb75a2301557e
+msgid ""
+"Here we define a :cpp:`MultiFab` with 4 components and 1 ghost cell. A "
+"MultiFab contains a number of :cpp:`FArrayBox`\\ es (see the section on "
+":ref:`sec:basics:fab`) defined on Boxes grown by the number of ghost "
+"cells (1 in this example). That is the :cpp:`Box` in the :cpp:`FArrayBox`"
+" is not exactly the same as in the :cpp:`BoxArray`.  If the "
+":cpp:`BoxArray` has a :cpp:`Box{(7,7,7) (15,15,15)}`, the one used for "
+"constructing :cpp:`FArrayBox` will be :cpp:`Box{(6,6,6) (16,16,16)}` in "
+"this example. For cells in :cpp:`FArrayBox`, we call those in the "
+"original :cpp:`Box` **valid cells** and the grown part **ghost cells**. "
+"Note that :cpp:`FArrayBox` itself does not have the concept of ghost "
+"cells.  Ghost cells are a key concept of :cpp:`MultiFab`, however, that "
+"allows for local operations on ghost cell data originated from remote "
+"processes. We will discuss how to fill ghost cells with data from valid "
+"cells later in this section.  :cpp:`MultiFab` also has a default "
+"constructor. One can define an empty :cpp:`MultiFab` first and then call "
+"the :cpp:`define` function as follows."
+msgstr ""
+
+#: ../../source/Basics.rst:1443 7ce80d776d0e4de3b3a16efebdd695f3
+msgid ""
+"Given an existing :cpp:`MultiFab`, one can also make an alias "
+":cpp:`MultiFab` as follows."
+msgstr ""
+
+#: ../../source/Basics.rst:1455 23d9a89ddcde43fda6d82553a1a14af5
+msgid ""
+"Here the first integer parameter is the starting component in the "
+"original :cpp:`MultiFab` that will become component 0 in the alias "
+":cpp:`MultiFab` and the second integer parameter is the number of "
+"components in the alias. It's a runtime error if the sum of the two "
+"integer parameters is greater than the number of the components in the "
+"original MultiFab. Note that the alias MultiFab has exactly the same "
+"number of ghost cells as the original MultiFab."
+msgstr ""
+
+#: ../../source/Basics.rst:1462 6e836b1058de4d95b08005a91c4c823a
+msgid ""
+"We often need to build new MultiFabs that have the same :cpp:`BoxArray` "
+"and :cpp:`DistributionMapping` as a given MultiFab.  Below is an example "
+"of how to achieve this."
+msgstr ""
+
+#: ../../source/Basics.rst:1480 951f4e8b0366404a93a5bdf8d35c53ac
+msgid ""
+"As we have repeatedly mentioned in this chapter that :cpp:`Box` and "
+":cpp:`BoxArray` have various index types. Thus, :cpp:`MultiFab` also has "
+"an index type that is obtained from the :cpp:`BoxArray` used for defining"
+" the :cpp:`MultiFab`. It should be noted again that index type is a very "
+"important concept in AMReX. Let's consider an example of a finite-volume "
+"code, in which the state is defined as cell averaged variables and the "
+"fluxes are defined as face averaged variables."
+msgstr ""
+
+#: ../../source/Basics.rst:1501 a266c80229f34c5b8630562529b01be4
+msgid ""
+"Here all :cpp:`MultiFab`\\ s  use the same :cpp:`DistributionMapping`, "
+"but their :cpp:`BoxArray`\\ s have different index types. The state is "
+"cell-based, whereas the fluxes are on the faces. Suppose the cell based "
+":cpp:`BoxArray` contains a :cpp:`Box{(8,8,16), (15,15,31)}`. The state on"
+" that :cpp:`Box` is conceptually a Fortran Array with the dimension of "
+":fortran:`(8:15,8:15,16:31,0:2)`. The fluxes are arrays with slightly "
+"different indices. For example, the :math:`x`-direction flux for that "
+":cpp:`Box` has the dimension of :fortran:`(8:16,8:15,16:31,0:2)`. Note "
+"there is an extra element in :math:`x`-direction."
+msgstr ""
+
+#: ../../source/Basics.rst:1511 3531c15646af49429e9c704d4ac9c823
+msgid ""
+"The :cpp:`MultiFab` class provides many functions performing common "
+"arithmetic operations on a :cpp:`MultiFab` or between :cpp:`MultiFab`\\ s"
+"  built with the *same* :cpp:`BoxArray` and :cpp:`DistributionMap`.  For "
+"example,"
+msgstr ""
+
+#: ../../source/Basics.rst:1535 0e95da279ca144d4ba51cf42f430aebf
+msgid ""
+"We refer the reader to ``amrex/Src/Base/AMReX_MultiFab.H`` and "
+"``amrex/Src/Base/AMReX_FabArray.H`` for more details. It should be noted "
+"again it is a runtime error if the two :cpp:`MultiFab`\\ s  passed to "
+"functions like :cpp:`MultiFab::Copy` are not built with the *same* "
+":cpp:`BoxArray` (including index type) and :cpp:`DistributionMapping`."
+msgstr ""
+
+#: ../../source/Basics.rst:1541 b387085394aa4b06ae75db1abfffbabc
+msgid ""
+"It is usually the case that the Boxes in the :cpp:`BoxArray` used for "
+"building a :cpp:`MultiFab` are non-intersecting except that they can be "
+"overlapping due to nodal index type. However, :cpp:`MultiFab` can have "
+"ghost cells, and in that case FArrayBoxes are defined on Boxes larger "
+"than the Boxes in the :cpp:`BoxArray`.  Parallel communication is then "
+"needed to fill the ghost cells with valid cell data from other "
+"FArrayBoxes possibly on other parallel processes. The function for "
+"performing this type of communication is :cpp:`FillBoundary`."
+msgstr ""
+
+#: ../../source/Basics.rst:1563 41afa9f3cf2f4787abfbccbaf6dd612e
+msgid ""
+"Note that :cpp:`FillBoundary` does not modify any valid cells. Also note "
+"that :cpp:`MultiFab` itself does not have the concept of periodic "
+"boundary, but :cpp:`Geometry` has, and we can provide that information so"
+" that periodic boundaries can be filled as well. You might have noticed "
+"that a ghost cell could overlap with multiple valid cells from different "
+"FArrayBoxes in the case of nodal index type. In that case, it is "
+"unspecified that which valid cell's value is used to fill the ghost cell."
+" It ought to be the case the values in those overlapping valid cells are "
+"the same up to roundoff errors.  If a ghost cell does not overlap with "
+"any valid cells, its value will not be modified by :cpp:`FillBoundary`."
+msgstr ""
+
+#: ../../source/Basics.rst:1574 cc2a3be6b9dd487e8afb7aefda767767
+msgid ""
+"Another type of parallel communication is copying data from one "
+":cpp:`MultiFab` to another :cpp:`MultiFab` with a different "
+":cpp:`BoxArray` or the same :cpp:`BoxArray` with a different "
+":cpp:`DistributionMapping`. The data copy is performed on the regions of "
+"intersection. The most generic interface for this is"
+msgstr ""
+
+#: ../../source/Basics.rst:1586 b9dd1dede70d4dbfa3fe6b1bf93f4aa7
+msgid ""
+"Here :cpp:`mfdst` and :cpp:`mfsrc` are destination and source MultiFabs, "
+"respectively. Parameters :cpp:`compsrc`, :cpp:`compdst`, and :cpp:`ncomp`"
+" are integers specifying the range of components. The copy is performed "
+"on :cpp:`ncomp` components starting from component :cpp:`compsrc` of "
+":cpp:`mfsrc` and component :cpp:`compdst` of :cpp:`mfdst`. Parameters "
+":cpp:`ngsrc` and :cpp:`ngdst` specify the number of ghost cells involved "
+"for the source and destination, respectively. Parameter :cpp:`period` is "
+"optional, and by default no periodic copy is performed. Like "
+":cpp:`FillBoundary`, one can use :cpp:`Geometry::periodicity()` to "
+"provide the periodicity information. The last parameter is also optional "
+"and is set to :cpp:`FabArrayBase::COPY` by default. One could also use "
+":cpp:`FabArrayBase::ADD`. This determines whether the function copies or "
+"adds data from the source to the destination. Similar to "
+":cpp:`FillBoundary`, if a destination cell has multiple cells as source, "
+"it is unspecified that which source cell is used in "
+":cpp:`FabArrayBase::COPY`, and, for :cpp:`FabArrayBase::ADD`, the "
+"multiple values are all added to the destination cell.  This function has"
+" two variants, in which the periodicity and operation type are also "
+"optional."
+msgstr ""
+
+#: ../../source/Basics.rst:1612 d96d47f3361f4fd59c23d4364bb3a9e4
+msgid ""
+"Here the number of ghost cells involved is zero, and the copy is "
+"performed on all components if unspecified (assuming the two MultiFabs "
+"have the same number of components)."
+msgstr ""
+
+#: ../../source/Basics.rst:1616 0504569767054e4992e40e15347b3b5b
+msgid ""
+"Both :cpp:`ParallelCopy(...)` and :cpp:`FillBoundary(...)` are blocking "
+"calls. They will only return when the communication is completed and the "
+"destination MultiFab is guaranteed to be properly updated.  AMReX also "
+"provides non-blocking versions of these calls to allow users to overlap "
+"communication with calculation and potentially improve overall "
+"application performance."
+msgstr ""
+
+#: ../../source/Basics.rst:1622 0c38f7c21c2a48319579fd3470fd54bc
+msgid ""
+"The non-blocking calls are used by calling the :cpp:`***_nowait(...)` "
+"function to begin the comm operation, followed by the :cpp:`***_finish()`"
+" function at a later time to complete it. For example:"
+msgstr ""
+
+#: ../../source/Basics.rst:1642 bdccb3e9bddc418fb2cfc4d2725cf891
+msgid ""
+"All function signatures of the blocking calls are also available in the "
+"non-blocking calls and should be used in the `nowait` function.  The "
+"`finish` functions take no parameters, as the required data is stored "
+"during `nowait` and retrieved.  Users that choose to use non-blocking "
+"calls must ensure the calls are properly used to avoid race conditions, "
+"which typically means not interacting with the MultiFab between the "
+":cpp:`_nowait` and :cpp:`_finish` calls."
+msgstr ""
+
+#: ../../source/Basics.rst:1653 a34ea58d46824b66b8e0d5223e5430c4
+msgid "MFIter and Tiling"
+msgstr ""
+
+#: ../../source/Basics.rst:1655 630c8de05b584cb69115e6f8d60d6477
+msgid ""
+"In this section, we will first show how :cpp:`MFIter` works without "
+"tiling. Then we will introduce the concept of logical tiling.  Finally we"
+" will show how logical tiling can be launched via :cpp:`MFIter`."
+msgstr ""
+
+#: ../../source/Basics.rst:1662 3a9b92e4556e4ff4a7e963da37c1afc9
+msgid "MFIter without Tiling"
+msgstr ""
+
+#: ../../source/Basics.rst:1664 d9dbbb457eee4082bcd8571a6f8a07d4
+msgid ""
+"In the section on :ref:`sec:basics:multifab`, we have shown some of the "
+"arithmetic functionalities of :cpp:`MultiFab`, such as adding two "
+"MultiFabs together. In this section, we will show how you can operate on "
+"the :cpp:`MultiFab` data with your own functions. AMReX provides an "
+"iterator, :cpp:`MFIter` for looping over the FArrayBoxes in MultiFabs. "
+"For example,"
+msgstr ""
+
+#: ../../source/Basics.rst:1694 fc73ae35d01842bf83166c971f27d145
+msgid "Here function :cpp:`f1` might be something like below,"
+msgstr ""
+
+#: ../../source/Basics.rst:1713 a72a4aed753e4f608f15fdcdabc030b6
+msgid ""
+":cpp:`MFIter` only loops over grids owned by this process. For example, "
+"suppose there are 5 Boxes in total and processes 0 and 1 own 2 and 3 "
+"Boxes, respectively. That is the MultiFab on process 0 has 2 FArrayBoxes,"
+" whereas there are 3 FArrayBoxes on process 1. Thus the numbers of "
+"iterations of MFIter are 2 and 3 on processes 0 and 1, respectively."
+msgstr ""
+
+#: ../../source/Basics.rst:1719 8739b77de81c4e2c98097d6353be9358
+msgid ""
+"In the example above, :cpp:`MultiFab` is assumed to have a single "
+"component. If it has multiple components, we can call ``int nc = "
+"mf.nComp()`` or ``int nc = a.nComp()`` to get the number of components."
+msgstr ""
+
+#: ../../source/Basics.rst:1723 138e342cbb8840149982c4c18279c490
+msgid ""
+"There is only one :cpp:`MultiFab` in the example above. Below is an "
+"example of working with multiple MultiFabs. Note that these two MultiFabs"
+" are not necessarily built on the same :cpp:`BoxArray`.  But they must "
+"have the same :cpp:`DistributionMapping`, and their BoxArrays are "
+"typically related (e.g., they are different due to index types)."
+msgstr ""
+
+#: ../../source/Basics.rst:1744 91985a7af3a745f0a6c08b089127e27b
+msgid "Here function :cpp:`f2` might be something like below,"
+msgstr ""
+
+#: ../../source/Basics.rst:1770 a8f23d7a73004a42858e8e839c09df55
+msgid "MFIter with Tiling"
+msgstr ""
+
+#: ../../source/Basics.rst:1772 82216a5b45354f56bf863fbabae230f6
+msgid ""
+"Tiling, also known as cache blocking, is a well known loop transformation"
+" technique for improving data locality.  This is often done by "
+"transforming the loops into tiling loops that iterate over tiles and "
+"element loops that iterate over the data elements within a tile. For "
+"example, the original loops might look like this in Fortran"
+msgstr ""
+
+#: ../../source/Basics.rst:1791 840299a30eeb4e2798226b8bbd705bcd
+msgid "And the manually tiled loops might look like"
+msgstr ""
+
+#: ../../source/Basics.rst:1812 ae3444d324c14cd7b18e1846f4eae351
+msgid ""
+"As we can see, to manually tile individual loops is very labor-intensive "
+"and error-prone for large applications. AMReX has incorporated the tiling"
+" construct into :cpp:`MFIter` so that the application codes can get the "
+"benefit of tiling easily. An :cpp:`MFIter` loop with tiling is almost the"
+" same as the non-tiling version. The first example in (see the previous "
+"section on :ref:`sec:basics:mfiter:notiling`) requires only two minor "
+"changes:"
+msgstr ""
+
+#: ../../source/Basics.rst:1819 6f5b368c11064b558f856107972f4514
+msgid "passing :cpp:`true` when defining :cpp:`MFIter` to indicate tiling;"
+msgstr ""
+
+#: ../../source/Basics.rst:1820 fefb8cf130fb46b7ae53329850428664
+msgid ""
+"calling :cpp:`tilebox` instead of :cpp:`validbox` to obtain the work "
+"region for the loop iteration."
+msgstr ""
+
+#: ../../source/Basics.rst:1838 c700ee66cb7e43168703c19ffe9c8ec7
+msgid ""
+"The second example in the previous section on "
+":ref:`sec:basics:mfiter:notiling` also requires only two minor changes."
+msgstr ""
+
+#: ../../source/Basics.rst:1856 a4fe56d5de0d4d4ebfd99debd142c9a3
+msgid ""
+"The kernels functions like :cpp:`f1` and :cpp:`f2` in the two examples "
+"here usually require very little changes."
+msgstr ""
+
+#: ../../source/Basics.rst:1868 c3f9e66fd82140d79cd47c6854183a1e
+msgid "Comparison of :cpp:`MFIter` with (right) and without (left) tiling."
+msgstr ""
+
+#: ../../source/Basics.rst:1872 bf0a0e1f29e6459e9254ea4bc659e91a
+msgid "|a|"
+msgstr ""
+
+#: ../../source/Basics.rst:1859 6eda20f1cc5144908754cba6cc08dc82
+msgid "a"
+msgstr ""
+
+#: ../../source/Basics.rst:1872 0503567bb7a148839d0cdede92bc77e4
+msgid "|b|"
+msgstr ""
+
+#: ../../source/Basics.rst:1863 2b120ae29596458ba865af15839943a3
+msgid "b"
+msgstr ""
+
+#: ../../source/Basics.rst dbacd2bef0134002842e9497d6e76588
+msgid "Example of cell-centered valid boxes."
+msgstr ""
+
+#: ../../source/Basics.rst bc82be3e22f24523bf9007c0646f2c38
+msgid "There are two valid boxes in this example."
+msgstr ""
+
+#: ../../source/Basics.rst af5a687cd8bc402f868c2f518838f033
+msgid "Each has :math:`8^2` cells."
+msgstr ""
+
+#: ../../source/Basics.rst 5e37f7dd4b804b65885b336c9f69aa80
+msgid "Example of cell-centered tile boxes. Each grid"
+msgstr ""
+
+#: ../../source/Basics.rst 887a958036ad45bd86e95836c0cb18b8
+msgid "is *logically* broken into 4 tiles, and each tile"
+msgstr ""
+
+#: ../../source/Basics.rst 076f976b98864d23bc2a609a925c2602
+msgid "as :math:`4^2` cells. There are 8 tiles in total."
+msgstr ""
+
+#: ../../source/Basics.rst:1879 a7fd589016bf435b88fa6de64c7963ca
+msgid ""
+":numref:`fig:basics:cc_comparison` shows an example of the difference "
+"between :cpp:`validbox` and :cpp:`tilebox`. In this example, there are "
+"two grids of cell-centered index type. The function :cpp:`validbox` "
+"always returns a :cpp:`Box` for the valid region of an :cpp:`FArrayBox` "
+"no matter whether or not tiling is enabled, whereas the function "
+":cpp:`tilebox` returns a :cpp:`Box` for a tile. (Note that when tiling is"
+" disabled, :cpp:`tilebox` returns the same :cpp:`Box` as "
+":cpp:`validbox`.) The number of loop iteration is 2 in the non-tiling "
+"version, whereas in the tiling version the kernel function is called 8 "
+"times."
+msgstr ""
+
+#: ../../source/Basics.rst:1889 1cb228f9fd914b379428ccc2591ce71b
+msgid ""
+"It is important to use the correct :cpp:`Box` when implementing tiling, "
+"especially if the box is used to define a work region inside of the loop."
+" For example:"
+msgstr ""
+
+#: ../../source/Basics.rst:1904 b99520b2ad374194b0742c928b4e80c8
+msgid "The tile size can be explicitly set when defining :cpp:`MFIter`."
+msgstr ""
+
+#: ../../source/Basics.rst:1913 73c0dfc5c8d04abb9d7513baab6c3fff
+msgid ""
+"An :cpp:`IntVect` is used to specify the tile size for every dimension.  "
+"A tile size larger than the grid size simply means tiling is disabled in "
+"that direction. AMReX has a default tile size :cpp:`IntVect{1024000,8,8}`"
+" in 3D and no tiling in 2D. This is used when tile size is not explicitly"
+" set but the tiling flag is on. One can change the default size using "
+":cpp:`ParmParse` (section :ref:`sec:basics:parmparse`) parameter "
+"``fabarray.mfiter_tile_size.``"
+msgstr ""
+
+#: ../../source/Basics.rst:1929 1a912e2865c24a7182ce80a2119b1f4f
+msgid ""
+"Comparison of :cpp:`MFIter` with (right) and without (left) tiling, for "
+"face-centered nodal indexing."
+msgstr ""
+
+#: ../../source/Basics.rst:1933 028df9bb1b0b42238dbac1e46e50f7d7
+msgid "|c|"
+msgstr ""
+
+#: ../../source/Basics.rst:1920 f57705373fe1441f8646592383ab736a
+msgid "c"
+msgstr ""
+
+#: ../../source/Basics.rst:1933 103c6346e89544aba4a9dc45a52261ee
+msgid "|d|"
+msgstr ""
+
+#: ../../source/Basics.rst:1924 791b1aa06d634a26bd9463ff1d99fc38
+msgid "d"
+msgstr ""
+
+#: ../../source/Basics.rst e5776b24b87b42f19c011bfbb5ffb017
+msgid "Example of face valid boxes. There are two"
+msgstr ""
+
+#: ../../source/Basics.rst 981f01bdd7ce4d9e9f9dbb3de2036d64
+msgid "valid boxes in this example. Each has"
+msgstr ""
+
+#: ../../source/Basics.rst b20a3ebf0c794d54ac5ddbd07e5e8013
+msgid ":math:`9\\times 8` points. Note that points in one"
+msgstr ""
+
+#: ../../source/Basics.rst c5a6384cc2224ae9a69df20235ebf5ef
+msgid ":cpp:`Box` may overlap with points in the other"
+msgstr ""
+
+#: ../../source/Basics.rst 3028bd4e3d7a431c92d6083c2dcb64f0
+msgid ":cpp:`Box`. However, the memory locations for"
+msgstr ""
+
+#: ../../source/Basics.rst 56ed928eab35458e9f539020b26d2122
+msgid "storing floating point data of those points do"
+msgstr ""
+
+#: ../../source/Basics.rst 4116424d4bc24984baef1edc6701dfeb
+msgid "not overlap, because they belong to separate"
+msgstr ""
+
+#: ../../source/Basics.rst a268a4c275994adbb6e8e148f5181df9
+msgid "FArrayBoxes."
+msgstr ""
+
+#: ../../source/Basics.rst fe8be62028144562a40a1d3c90804a2c
+msgid "Example of face tile boxes. Each grid is"
+msgstr ""
+
+#: ../../source/Basics.rst 90c9fb124fd94d58bd509a33fe85fab8
+msgid "*logically* broken into 4 tiles as indicated by"
+msgstr ""
+
+#: ../../source/Basics.rst cc0a06b40a714b33981fbd86688f73fc
+msgid "the symbols. There are 8 tiles in total. Some"
+msgstr ""
+
+#: ../../source/Basics.rst 2e4c060186344db888fe285752437a68
+msgid "tiles have :math:`5\\times 4` points, whereas"
+msgstr ""
+
+#: ../../source/Basics.rst ab81a012cc934474b4232fb95e32d768
+msgid "others have :math:`4 \\times 4` points. Points from"
+msgstr ""
+
+#: ../../source/Basics.rst a483209835854558a59bc892c27e2228
+msgid "different Boxes may overlap, but points from"
+msgstr ""
+
+#: ../../source/Basics.rst 9051e3e5bf024e17a398f47c86fdc282
+msgid "different tiles of the same Box do not."
+msgstr ""
+
+#: ../../source/Basics.rst:1945 7cb96ee1ca494ea6b91605c125e52719
+msgid ""
+"Dynamic tiling, which runs one box per OpenMP thread, is also available. "
+"This is useful when the underlying work cannot benefit from thread "
+"parallelization.  Dynamic tiling is implemented using the :cpp:`MFItInfo`"
+" object and requires the :cpp:`MFIter` loop to be defined in an OpenMP "
+"parallel region:"
+msgstr ""
+
+#: ../../source/Basics.rst:1967 0516a47164ec40c8b3a3e864f31915cf
+msgid "Dynamic tiling also allows explicit definition of a tile size:"
+msgstr ""
+
+#: ../../source/Basics.rst:1984 08fd2ee570f24977b9b2dd7430cbc333
+msgid ""
+"Usually :cpp:`MFIter` is used for accessing multiple MultiFabs like the "
+"second example, in which two MultiFabs, :cpp:`U` and :cpp:`F`, use "
+":cpp:`MFIter` via :cpp:`operator[]`. These different MultiFabs may have "
+"different BoxArrays. For example, :cpp:`U` might be cell-centered, "
+"whereas :cpp:`F` might be nodal in :math:`x`-direction and cell in other "
+"directions. The :cpp:`MFIter::validbox` and :cpp:`tilebox` functions "
+"return Boxes of the same type as the :cpp:`MultiFab` used in defining the"
+" :cpp:`MFIter` (:cpp:`F` in this example). "
+":numref:`fig:basics:ec_comparison` illustrates an example of non-cell-"
+"centered valid and tile boxes. Besides :cpp:`validbox` and "
+":cpp:`tilebox`, :cpp:`MFIter` has a number of functions returning various"
+" Boxes.  Examples include,"
+msgstr ""
+
+#: ../../source/Basics.rst:2009 78dc6f3d495c44fbab7a36022f7e0ed4
+msgid ""
+"It should be noted that the function :cpp:`growntilebox` does not grow "
+"the tile Box like a normal :cpp:`Box`. Growing a :cpp:`Box` normally "
+"means the Box is extended in every face of every dimension.  However, the"
+" function :cpp:`growntilebox` only extends the tile Box in such a way "
+"that tiles from the same grid do not overlap. This is the basic design "
+"principle of these various tiling functions. Tiling is a way of domain "
+"decomposition for work sharing. Overlapping tiles is undesirable because "
+"work would be wasted and for multi-threaded codes race conditions could "
+"occur."
+msgstr ""
+
+#: ../../source/Basics.rst:2027 f6eb07eae4bd4f238367c54b78475655
+msgid "Comparing growing cell-type and face-type tile boxes."
+msgstr ""
+
+#: ../../source/Basics.rst:2031 631942a5247b409fac48bc0f23cb44dd
+msgid "|e|"
+msgstr ""
+
+#: ../../source/Basics.rst:2018 3a02278b6483403bb96f839c58c65645
+msgid "e"
+msgstr ""
+
+#: ../../source/Basics.rst:2031 c192a6fcb5e54bc4ad065ffd11faa62e
+msgid "|f|"
+msgstr ""
+
+#: ../../source/Basics.rst:2022 93a193f22b594d18a6e7a3f4d2392e98
+msgid "f"
+msgstr ""
+
+#: ../../source/Basics.rst 4ea56372cf15408ab1fa3b8a7b570d4b
+msgid "Example of cell-centered grown tile boxes. As"
+msgstr ""
+
+#: ../../source/Basics.rst 5370fa5996e44f34ac537168388c0b34
+msgid "indicated by symbols and colors, there are 4"
+msgstr ""
+
+#: ../../source/Basics.rst b404d6ccf35141b4997c7c80918ca489
+msgid "tiles per grid in this example. Tiles from the"
+msgstr ""
+
+#: ../../source/Basics.rst bac4d25403bf45e7be950b11c14491cf
+msgid "same grid do not overlap. But tiles from"
+msgstr ""
+
+#: ../../source/Basics.rst de02ab43b23947aebd58d6a14648724a
+msgid "different grids may overlap."
+msgstr ""
+
+#: ../../source/Basics.rst 63aab0cc83a84107b6bd4781878d7eb8
+msgid "Example of face type grown tile boxes. As"
+msgstr ""
+
+#: ../../source/Basics.rst e8bc17ba10bb4144a7337c93c50dd913
+msgid "indicated by symbols and colors, there are 4 tiles"
+msgstr ""
+
+#: ../../source/Basics.rst ca6cd6eeb6b34de8a23cc828b82aedfa
+msgid "per grid in this example. Tiles from the"
+msgstr ""
+
+#: ../../source/Basics.rst 8fe6a15cf5c4450fa5023a6505861e95
+msgid "same grid do not overlap even though they"
+msgstr ""
+
+#: ../../source/Basics.rst fa1fc74ba7564ec38f90a0680d0bbe55
+msgid "have face index type."
+msgstr ""
+
+#: ../../source/Basics.rst:2041 1a15e9c51c8449988daf1fe4ec44145b
+msgid ""
+":numref:`fig:basics:growbox_comparison` illustrates an example of "
+":cpp:`growntilebox`. These functions in :cpp:`MFIter` return :cpp:`Box` "
+"by value. There are three ways of using these functions."
+msgstr ""
+
+#: ../../source/Basics.rst:2060 d5fa842171234601bdffa635b54d68ae
+msgid "But :cpp:`Box& bx = mfi.validbox()` is not legal and will not compile."
+msgstr ""
+
+#: ../../source/Basics.rst:2062 9a6b2b0cafdb4ad498b741c1fdc401e5
+msgid ""
+"Finally it should be emphasized that tiling should not be used when "
+"running on GPUs because of kernel launch overhead."
+msgstr ""
+
+#: ../../source/Basics.rst:2066 eb21932ddc3d42ce82dde94f686d4b11
+msgid "Multiple MFIters"
+msgstr ""
+
+#: ../../source/Basics.rst:2068 aac97dbc74db40c699980a71ff3c0b3d
+msgid ""
+"To avoid some common bugs, it is not allowed to have multiple active "
+":cpp:`MFIter` objects like below by default."
+msgstr ""
+
+#: ../../source/Basics.rst:2087 9ea903e2597a4dfaac9c544b0c058c83
+msgid ""
+"The will results in an assertion failure at runtime.  To disable the "
+"assertion, one could call"
+msgstr ""
+
+#: ../../source/Basics.rst:2106 8c2ba9e9a3664434bfd67c53dd343d76
+msgid "Fortran and C++ Kernels"
+msgstr ""
+
+#: ../../source/Basics.rst:2108 34ccdcaca4c1480d9e173af3240861d5
+msgid ""
+"In the section on :ref:`sec:basics:mfiter`, we have shown that a typical "
+"pattern for working with MultiFabs is to use :cpp:`MFIter` to iterate "
+"over the data. In each iteration, a kernel function is called to work on "
+"the data and the work region is specified by a :cpp:`Box`.  When tiling "
+"is used, the work region is a tile. The tiling is logical in the sense "
+"that there is no data layout transformation. The kernel function still "
+"gets the whole arrays in :cpp:`FArrayBox`\\ es, even though it is "
+"supposed to work on a tile region of the arrays.  We have shown examples "
+"of writing kernels in C++ in the previous section.  Fortran is also often"
+" used for writing these kernels because of its native multi-dimensional "
+"array support.  To C++, these kernel functions are C functions, whose "
+"function signatures are typically declared in a header file named "
+"``*_f.H`` or ``*_F.H``. We recommend the users to follow this convention."
+" Examples of these function declarations are as follows."
+msgstr ""
+
+#: ../../source/Basics.rst:2139 b25d9268a51244f88824c5a9e10c4b56
+msgid ""
+"These Fortran functions take C pointers and view them as multi-"
+"dimensional arrays of the shape specified by the additional integer "
+"arguments.  Note that Fortran takes arguments by reference unless the "
+":fortran:`value` keyword is used. So an integer argument on the Fortran "
+"side matches an integer pointer on the C++ side. Thanks to Fortran 2003, "
+"function name mangling is easily achieved by declaring the Fortran "
+"function as :fortran:`bind(c)`."
+msgstr ""
+
+#: ../../source/Basics.rst:2147 17d04773c5b04f09b8a703c306981ef6
+msgid ""
+"AMReX provides many macros for passing an FArrayBox's data into "
+"Fortran/C. For example"
+msgstr ""
+
+#: ../../source/Basics.rst:2161 ed3d90ab77aa46cbbf45b4f31aa4a336
+msgid ""
+"Here :cpp:`BL_TO_FORTRAN_BOX` takes a :cpp:`Box` and provides two "
+":cpp:`int *` s specifying the lower and upper bounds of the Box.  "
+":cpp:`BL_TO_FORTRAN_ANYD` takes an :cpp:`FArrayBox` returned by "
+":cpp:`mf[mfi]` and the preprocessor turns it into :cpp:`Real *, int *, "
+"int *`, where :cpp:`Real *` is the data pointer that matches real array "
+"argument in Fortran, the first :cpp:`int *` (which matches an integer "
+"argument in Fortran) specifies the lower bounds, and the second :cpp:`int"
+" *` the upper bounds of the spatial dimensions of the array. An example "
+"of the Fortran function is shown below,"
+msgstr ""
+
+#: ../../source/Basics.rst:2180 18c3a418f1344212a31d0c6b4071f6df
+msgid ""
+"Here, the size of the integer arrays is 3, the maximal number of spatial "
+"dimensions. If the actual spatial dimension is less than 3, the values in"
+" the degenerate dimensions are set to zero. So the Fortran function "
+"interface does not have to change according to the spatial "
+"dimensionality, and the bound of the third dimension of the data array "
+"simply becomes :fortran:`0:0`. With the data passed by "
+":cpp:`BL_TO_FORTRAN_BOX` and :cpp:`BL_FORTRAN_ANYD`, this version of "
+"Fortran function interface works for any spatial dimensions. If one wants"
+" to write a special version just for 2D and would like to use 2D arrays, "
+"one can use"
+msgstr ""
+
+#: ../../source/Basics.rst:2200 b462ffbe3e554631af4e48dbbd0eb76e
+msgid ""
+"Note that this does not require any changes in the C++ part, because when"
+" C++ passes an integer pointer pointing to an array of three integers "
+"Fortran can treat it as a 2-element integer array."
+msgstr ""
+
+#: ../../source/Basics.rst:2204 ce5957411c3f4a12a4b13d10cb2fc133
+msgid ""
+"Another commonly used macro is :cpp:`BL_TO_FORTRAN`. This macro takes an "
+":cpp:`FArrayBox` and provides a real pointer for the floating point data "
+"array and a number of integer scalars for the bounds.  However, the "
+"number of the integers depends on the dimensionality.  More specifically,"
+" there are 6 and 4 integers for 2D and 3D, respectively. The first half "
+"of the integers are the lower bounds for each spatial dimension and the "
+"second half the upper bounds. For example,"
+msgstr ""
+
+#: ../../source/Basics.rst:2228 5ddb75bab3854ccaabd34f168814b375
+msgid "Here for simplicity we have omitted passing the tile Box."
+msgstr ""
+
+#: ../../source/Basics.rst:2230 f6eabe59f5a54c299c06c04f1f410519
+msgid ""
+"Usually :cpp:`MultiFab`\\ s  have multiple components. Thus we often also"
+" need to pass the number of component into Fortran functions. We can "
+"obtain the number by calling the :cpp:`MultiFab::nComp()` function, and "
+"pass it to Fortran.  We can also use the :cpp:`BL_TO_FORTRAN_FAB` macro "
+"that is similar to :cpp:`BL_TO_FORTRAN_ANYD` except that it provides an "
+"additional :cpp:`int *` for the number of components. The Fortran "
+"function matching :cpp:`BL_TO_FORTRAN_FAB(fab)` is then like below,"
+msgstr ""
+
+#: ../../source/Basics.rst:2249 358dc2561693494087dbc8df3ae7a6e5
+msgid ""
+"There is a potential type safety issue when calling Fortran functions "
+"from C++.  If there is a mismatch between the function declaration on the"
+" C++ side and the function definition in Fortran, the compiler cannot "
+"catch it.  For example"
+msgstr ""
+
+#: ../../source/Basics.rst:2274 3d7e643f9cc54f9abeb1049b7f1e2064
+msgid ""
+"The code above will compile without errors even though the number of "
+"arguments and types don't match."
+msgstr ""
+
+#: ../../source/Basics.rst:2277 09190c6030124b8bb5128d0f6b7265e1
+msgid ""
+"To help detect this kind of issues, AMReX provides a type check tool. "
+"Note that it only works when GCC is used.  In the directory an AMReX "
+"based code is compiled, type"
+msgstr ""
+
+#: ../../source/Basics.rst:2287 2652ef42def240d686dec21530be391c
+msgid ""
+"Extra arguments used in a usual AMReX build (e.g., USE_MPI=TRUE DIM=2) "
+"can be added.  When it finishes, the output may look like,"
+msgstr ""
+
+#: ../../source/Basics.rst:2299 c8dbb244dee4412aab8ea5993af3ae8d
+msgid ""
+"It should be noted that Fortran by default passes argument by reference."
+"  In the example output above, ``pointer`` in ``Fortran type ('INTEGER "
+"4', 'pointer', 'x')`` means it's a reference to argument (i.e., C "
+"pointer), not a Fortran pointer."
+msgstr ""
+
+#: ../../source/Basics.rst:2304 9aeeeebebaba4ccf93475fa0d2e6fdff
+msgid ""
+"The type check tool has known limitations.  For a function to be checked "
+"by the tool in the GNU make build system, the declaration must be in a "
+"header file named ``*_f.H`` or ``*_F.H``, and the header file must be in "
+"the ``CEXE_headers`` make variable.  The headers are preprocessed first "
+"by cpp as C language, and is then parsed by pycparser "
+"(https://pypi.python.org/pypi/pycparser) that needs to be installed on "
+"your system.  Because pycparser is a C parser, C++ parts of the headers "
+"(e.g., :cpp:`extern \"C\" {`) need to be hidden with macro :cpp:`#ifdef "
+"__cplusplus`.  Headers like ``AMReX_BLFort.H`` can be used as a C header,"
+" but most other AMReX headers cannot and should be hidden by :cpp:`#ifdef"
+" __cplusplus` if they are included.  More details can be found at "
+"``amrex/Docs/Readme.typecheck``.  Despite these limitations, it is "
+"recommended to use the type check tool and report issues to us."
+msgstr ""
+
+#: ../../source/Basics.rst:2321 daf76d55d7b345b58e09b4687db1ae34
+msgid ""
+"Although Fortran has native multi-dimensional array, we recommend writing"
+" kernels in C++ because of performance portability for CPU and GPU.  "
+"AMReX provides a multi-dimensional array type of syntax, similar to "
+"Fortran, that is readable and easy to implement.  We have demonstrated "
+"how to use :cpp:`Array4` in previous sections.  Because of its "
+"importance, we will summarize its basic usage again with the example "
+"below."
+msgstr ""
+
+#: ../../source/Basics.rst:2357 a336b9acfd974e4d81b496313a1aab18
+msgid ""
+"A :cpp:`Box` and two :cpp:`FArrayBox`\\es are passed to a C++ kernel "
+"function.  In the function, :cpp:`amrex::lbound` and :cpp:`amrex::ubound`"
+" are called to get the start and end of the loops from "
+":cpp:`Box::smallEnd()` and :cpp:`Box::bigEnd` of ``bx``.  Both functions "
+"return a :cpp:`amrex::Dim3`, a trivial type containing three integers. "
+"The individual components are accessed by using :cpp:`.x`, :cpp:`.y` and "
+":cpp:`.z`, as shown in the :cpp:`for` loops."
+msgstr ""
+
+#: ../../source/Basics.rst:2365 3878c8d0396445138d8377d4add60b51
+msgid ""
+":cpp:`BaseFab::array()` is called to obtain an :cpp:`Array4` object that "
+"is designed as an independent, :cpp:`operator()` based accessor to the "
+":cpp:`BaseFab` data. :cpp:`Array4` is an AMReX class that contains a "
+"pointer to the :cpp:`FArrayBox` data and two :cpp:`Dim3` structs that "
+"contain the bounds of the :cpp:`FArrayBox`.  The bounds are stored to "
+"properly translate the three dimensional coordinates to the appropriate "
+"location in the one-dimensional array.  :cpp:`Array4`\\'s "
+":cpp:`operator()` can also take a fourth integer to access across states "
+"of the :cpp:`FArrayBox`.  When AMReX is built for 1D or 2D, it can be "
+"used by passing `0` to the missing dimensions."
+msgstr ""
+
+#: ../../source/Basics.rst:2376 eb0eb504e37a406380c3f492be8c287a
+msgid ""
+"The ``AMREX_PRAGMA_SIMD`` macro is placed in the innermost loop to notify"
+" the compiler that loop iterations are independent and it is safe to "
+"vectorize the loop.  This should be done whenever possible to achieve the"
+" best performance. Be aware: the macro generates a compiler dependent "
+"pragma, so their exact effect on the resulting code is also compiler "
+"dependent.  It should be emphasized that using the ``AMREX_PRAGMA_SIMD`` "
+"macro on loops that are not safe for vectorization may lead to errors, so"
+" if unsure about the independence of the iterations of a loop, test and "
+"verify before adding the macro."
+msgstr ""
+
+#: ../../source/Basics.rst:2386 9b2de1d8ae724b909c35e9c7a48ba06b
+msgid ""
+"These loops should usually use :cpp:`i <= hi.x`, not :cpp:`i < hi.x`, "
+"when defining the loop bounds. If not, the highest index cells will be "
+"left out of the calculation."
+msgstr ""
+
+#: ../../source/Basics.rst:2393 90361a4c08ab48f4bd958fb57adeb659
+msgid "ParallelFor"
+msgstr ""
+
+#: ../../source/Basics.rst:2395 9d0e55303c284c938bdcb97294959b3d
+msgid ""
+"In the examples so far, we have explicitly written out the for loops when"
+" we iterate over a :cpp:`Box`.  AMReX also provides function templates "
+"for writing these in a concise and performance portable way like below,"
+msgstr ""
+
+#: ../../source/Basics.rst:2419 443b61315efc4d50ae73abff3214297c
+msgid ""
+"Here, :cpp:`ParallelFor` takes two arguments.  The first argument is a "
+":cpp:`Box` specifying the iteration index space, and the second argument "
+"is a C++ lambda function that works on cell :cpp:`(i,j,k)`. Variables a, "
+"b and c in the lambda function are captured by value from the enclosing "
+"scope.  The code above is performance portable.  It works with and "
+"without GPU support.  When AMReX is built with GPU support, "
+"AMREX_GPU_DEVICE indicates that the lambda function is a device function "
+"and :cpp:`ParallelFor` launches a GPU kernel to do the work. When it is "
+"built without GPU support, AMREX_GPU_DEVICE has no effects whatsoever.  "
+"More details on :cpp:`ParallelFor` will be presented in section "
+":ref:`sec:gpu:for`.  It should be emphasized that :cpp:`ParallelFor` does"
+" not start an OpenMP parallel region.  The OpenMP parallel region will be"
+" started by the pragma above the :cpp:`MFIter` loop if it is built with "
+"OpenMP and without enabling GPU.  Tiling is turned off if GPU is enabled "
+"so that more parallelism is exposed to GPU kernels. Also note that when "
+"tiling is off, :cpp:`tilebox` returns :cpp:`validbox`."
+msgstr ""
+
+#: ../../source/Basics.rst:2437 a79032c8732949a5a064aa4bb4fb88c9
+msgid "There are other versions of :cpp:`ParallelFor`,"
+msgstr ""
+
+#: ../../source/Basics.rst:2451 d84cf70da5a94d0ab1c61fec84cf4eec
+msgid "Ghost Cells"
+msgstr ""
+
+#: ../../source/Basics.rst:2453 e5ab725a6efb4b30b2a63070a0069010
+msgid ""
+"AMReX uses a :cpp:`MultiFab` as a container for floating point data on "
+"multiple Boxes at a single level of refinement. Each rectangular Box has "
+"its own boundaries on the low and high side in each coordinate direction."
+" Each Box within a :cpp:`MultiFab` can have ghost cells for storing data "
+"outside the Box's valid region. This allows us to, e.g., perform stencil-"
+"type operations on regular arrays. There are three basic types of "
+"boundaries:"
+msgstr ""
+
+#: ../../source/Basics.rst:2460 41682438bb1c4889b2a580182831a704
+msgid "interior boundary"
+msgstr ""
+
+#: ../../source/Basics.rst:2461 22c1867f22dd4521a04d9dcd1283b156
+msgid "coarse/fine boundary"
+msgstr ""
+
+#: ../../source/Basics.rst:2462 a994c0b126814a9a820cba6d275f80e2
+msgid "physical boundary"
+msgstr ""
+
+#: ../../source/Basics.rst:2464 f05dcf349226412283517b702f58e1da
+msgid ""
+"Interior boundary is the border among the grid Boxes themselves.  For "
+"example, in :numref:`fig:basics:amrgrids`, the two blue grid Boxes on "
+"level 1 share an interior boundary that is 10 cells long. For a "
+":cpp:`MultiFab` with ghost cells on level 1, we can use the "
+":cpp:`MultiFab::FillBoundary` function introduced in the section on "
+":ref:`sec:basics:multifab` to fill ghost cells at the interior boundary "
+"with valid cell data from other Boxes.  :cpp:`MultiFab::FillBoundary` can"
+" optionally fill periodic boundary ghost cells as well."
+msgstr ""
+
+#: ../../source/Basics.rst:2472 5e968dd70810499c8829c5a33f784139
+msgid ""
+"A coarse/fine boundary is the border between two AMR levels. "
+":cpp:`FillBoundary` does not fill these ghost cells. These ghost cells on"
+" the fine level need to be interpolated from the coarse level data.  This"
+" is a subject that will be discussed in the section on "
+":ref:`sec:amrcore:fillpatch`."
+msgstr ""
+
+#: ../../source/Basics.rst:2477 7966c5de83dc4519be2708f30d01e3a0
+msgid ""
+"Note that periodic boundary is not considered a basic type in the "
+"discussion here because after periodic transformation it becomes either "
+"interior boundary or coarse/fine boundary."
+msgstr ""
+
+#: ../../source/Basics.rst:2481 f2c8758a68e34b5fb05161d1008585bf
+msgid ""
+"The third type of boundary is the physical boundary at the physical "
+"domain. Note that both coarse and fine AMR levels could have grids "
+"touching the physical boundary. It is up to the application codes to "
+"properly fill the ghost cells at the physical boundary. However, AMReX "
+"does provide support for some common operations.  See the section on "
+":ref:`sec:basics:boundary` for a discussion on domain boundary conditions"
+" in general, including how to implement physical (non-periodic) boundary "
+"conditions."
+msgstr ""
+
+#: ../../source/Basics.rst:2492 88e09ba7045643d69d080621c647effd
+msgid "Boundary Conditions"
+msgstr ""
+
+#: ../../source/Basics.rst:2494 61fd4cf0c74b4d57ab1e099fe0c8f5d4
+msgid ""
+"This section describes how to implement domain boundary conditions in "
+"AMReX.  A ghost cell that is outside of the valid region can be thought "
+"of as either \"interior\" (which includes periodic and coarse-fine ghost "
+"cells), or \"physical\". Physical boundary conditions can occur on domain"
+" boundaries and can be characterized as inflow, outflow, slip/no-slip "
+"walls, etc., and are ultimately linked to mathematical Dirichlet or "
+"Neumann conditions."
+msgstr ""
+
+#: ../../source/Basics.rst:2501 8313a507797f45f9809b055449fd1fff
+msgid "The basic idea behind physical boundary conditions is as follows:"
+msgstr ""
+
+#: ../../source/Basics.rst:2503 915511f392ec4c319a0f368ecc209f28
+msgid ""
+"Create a :cpp:`BCRec` object, which is essentially a multidimensional "
+"integer array of :cpp:`2*DIM` components. Each component defines a "
+"boundary condition type for the lo/hi side of the domain, for each "
+"direction.  See ``amrex/Src/Base/AMReX_BC_TYPES.H`` for common physical "
+"and mathematical types.  Below is an example of setting up a "
+":cpp:`Vector<BCRec>` for multiple components before the call to ghost "
+"cell routines."
+msgstr ""
+
+#: ../../source/Basics.rst:2533 45bcb815523f4cf9bb101a1b475a7ee2
+msgid ":cpp:`amrex::BCType` has the following types,"
+msgstr ""
+
+#: ../../source/Basics.rst:2536 e0f84b4c1d3c4f7d9dd5c91782b0b17e
+msgid "int_dir"
+msgstr ""
+
+#: ../../source/Basics.rst:2536 ce6f96082100458daef5f8762f787136
+msgid "Interior, including periodic boundary"
+msgstr ""
+
+#: ../../source/Basics.rst:2542 834285d44c334842b5d8a9c6d9e33219
+msgid "ext_dir"
+msgstr ""
+
+#: ../../source/Basics.rst:2539 b85bc934034a45d6ac5bb09170852a08
+msgid ""
+"\"External Dirichlet\". It is the user's responsibility to write a "
+"routine to fill ghost cells (more details below). The boundary location "
+"is on the domain face even when the data inside the domain are cell-"
+"centered."
+msgstr ""
+
+#: ../../source/Basics.rst:2547 8796ef1e77d24c1799cb5adbff76f645
+msgid "ext_dir_cc"
+msgstr ""
+
+#: ../../source/Basics.rst:2545 dc2b7d26f47f4701a3091f39b013dfa4
+msgid ""
+"\"External Dirichlet\". It is the user's responsibility to write a "
+"routine to fill ghost cells (more details below). The boundary location "
+"is at the cell center of ghost cells outside the domain."
+msgstr ""
+
+#: ../../source/Basics.rst:2551 e379a2125ce14cc98914d5fd8c44e1dd
+msgid "foextrap"
+msgstr ""
+
+#: ../../source/Basics.rst:2550 be009e7ef8484984b071f0ac68fd35be
+msgid ""
+"\"First Order Extrapolation\" First order extrapolation from last cell in"
+" interior."
+msgstr ""
+
+#: ../../source/Basics.rst:2555 d5a35ecf21b4438db563aa98c1fbfa82
+msgid "hoextrap"
+msgstr ""
+
+#: ../../source/Basics.rst:2554 841f00238349405b94071aac03629b06
+msgid ""
+"\"High Order Extrapolation\". The boundary location is on the domain face"
+" even when the data inside the domain are cell-centered."
+msgstr ""
+
+#: ../../source/Basics.rst:2559 cabc1f030167466580b69c7e406dc15a
+msgid "hoextrapcc"
+msgstr ""
+
+#: ../../source/Basics.rst:2558 4ebaf2a5d77848be89fb57546296ec70
+msgid ""
+"\"High Order Extrapolation\" The boundary location is at the cell center "
+"of ghost cells outside the domain."
+msgstr ""
+
+#: ../../source/Basics.rst:2563 55475af6911a449d82a2f62c6ca8429d
+msgid "reflect_even"
+msgstr ""
+
+#: ../../source/Basics.rst:2562 840125bda2674fa098fb298cf4f8d6be
+msgid "Reflection from interior cells with sign unchanged, :math:`q(-i) = q(i)`."
+msgstr ""
+
+#: ../../source/Basics.rst:2567 0aa4c9d2778d45a58ccbcf1786a2fc04
+msgid "reflect_odd"
+msgstr ""
+
+#: ../../source/Basics.rst:2566 a085f61517154806993c6187893d301c
+msgid "Reflection from interior cells with sign changed, :math:`q(-i) = -q(i)`."
+msgstr ""
+
+#: ../../source/Basics.rst:2571 200d18210d574ab09af1ea1cb8d80460
+msgid "user_1, user_2 and user_3"
+msgstr ""
+
+#: ../../source/Basics.rst:2570 6712ed3d91404cb199cf299ebe582513
+msgid ""
+"\"User\".  It is the user's responsibility to write a routine to fill "
+"ghost cells (more details below)."
+msgstr ""
+
+#: ../../source/Basics.rst:2573 37580d30ce9c4c288f296544bc6242d6
+msgid ""
+"For external Dirichlet and user boundaries, the user needs to provide a "
+"callable object like below."
+msgstr ""
+
+#: ../../source/Basics.rst:2592 0b56d36f304441c888839a2322a32adf
+msgid ""
+"Here, for the CPU build, the AMREX_GPU_DEVICE macro has no effect "
+"whatsoever, whereas for the GPU build, this marks the operator as a GPU "
+"device function."
+msgstr ""
+
+#: ../../source/Basics.rst:2596 57aeaa7cc139490e8866539520fce7bd
+msgid ""
+"It is the user's responsibility to have a consistent definition of what "
+"the ghost cells represent. A common option used in AMReX codes is to fill"
+" the domain ghost cells with the value that lies on the boundary (as "
+"opposed to another common option where the value in the ghost cell "
+"represents an extrapolated value based on the boundary condition type). "
+"Then in our stencil based \"work\" codes, we also pass in the "
+":cpp:`BCRec` object and use modified stencils near the domain boundary "
+"that know the value in the first ghost cell represents the value on the "
+"boundary."
+msgstr ""
+
+#: ../../source/Basics.rst:2605 764330da43c840048cb7a0d0ac429063
+msgid ""
+"Depending on the level of complexity of your code, there are various "
+"options for filling domain boundary ghost cells."
+msgstr ""
+
+#: ../../source/Basics.rst:2608 50092724bddc44fe8cbdeda9b127e257
+msgid ""
+"For single-level codes built from ``amrex/Src/Base`` (excluding the "
+"``amrex/Src/AmrCore`` and ``amrex/Src/Amr`` source code directories), you"
+" will have single-level MultiFabs filled with data in the valid region "
+"where you need to fill the ghost cells on each grid."
+msgstr ""
+
+#: ../../source/Basics.rst:2636 9ac4afbdcfda4f3ba4c45915edb0eefd
+msgid "Masks"
+msgstr ""
+
+#: ../../source/Basics.rst:2638 0d9d42945d52498d820a92d28e90b49f
+msgid ""
+"Given an index :cpp:`(i,j,k)`, we often need to know its relationship "
+"with other points and levels (e.g., whether this point on a coarse level "
+"is covered by a fine level, whether this ghost point is outside "
+"coarse/fine boundary, etc.).  AMReX provides various functions for "
+"creating masks for this type of purposes."
+msgstr ""
+
+#: ../../source/Basics.rst:2645 e1ce808a4b3e4012953d7cb8f473b9a0
+msgid "Owner Mask"
+msgstr ""
+
+#: ../../source/Basics.rst:2647 85ee4ac3de1c4543aa87fd5c0e0225de
+msgid ""
+"AMReX supports various index types such as face, edge and node, besides "
+"cell centered type.  For non-cell types, two boxes could overlap.  For "
+"example, a nodal index :cpp:`(i,j,k)` could exist in more than one "
+":cpp:`FArrayBox` of a nodal :cpp:`MultiFab`.  AMReX provides a function "
+"to create an owner mask, where the owner is the grid with the lowest grid"
+" number containing the data. This has a number of use cases.  The nodal "
+"data for the same nodal point on different :cpp:`FArrayBox`\\ es may be "
+"out of sync.  We can use :cpp:`MultiFab::OverrideSync` and an owner mask "
+"to sync up the data with owners overriding non-owners."
+msgstr ""
+
+#: ../../source/Basics.rst:2665 e65432baec7b43e6a1b0b516e85c6d54
+msgid ""
+"To compute the dot product of two nodal :cpp:`MultiFab`\\ s, we can use a"
+" mask to avoid double counting."
+msgstr ""
+
+#: ../../source/Basics.rst:2678 e361fda7499346e8b78453f6fdd44653
+msgid "Overlap Mask"
+msgstr ""
+
+#: ../../source/Basics.rst:2680 f5b548a3ec0345e899d5d03e96d1629a
+msgid ""
+"For the synchronization example mentioned previously, maybe instead of "
+"overriding, we want to do averaging.  This can be achieved with an "
+"overlap mask indicating how many duplicates are in each point.  The code "
+"below shows how the :cpp:`MultiFab::AverageSync` function is implemented "
+"in AMReX."
+msgstr ""
+
+#: ../../source/Basics.rst:2695 6522de88a9994ac2a703b14aa729a53d
+msgid "Point Mask"
+msgstr ""
+
+#: ../../source/Basics.rst:2697 0d65580ed14b4083a751b2eabddbab7e
+msgid ""
+"The :cpp:`FabArray` class has a member function :cpp:`BuildMask` that can"
+" be used to set masks indicating the type of points (e.g., valid, outside"
+" the domain, etc.).  For example,"
+msgstr ""
+
+#: ../../source/Basics.rst:2713 6517357046af4bbfb17ed8e29a79df27
+msgid "Fine Mask"
+msgstr ""
+
+#: ../../source/Basics.rst:2715 2d6708cfdbb848dfb2de0afd6666559d
+msgid ""
+"AMReX provides a number of :cpp:`makeFineMask` functions that can be "
+"useful for multi-level AMR calculations.  For example, we may want to "
+"compute the infinity norm on a coarse AMR level without including data "
+"from cells covered by fine level grids."
+msgstr ""
+
+#: ../../source/Basics.rst:2731 9f601bf4f7fc4d1785ca784cf5510c42
+msgid "Memory Allocation"
+msgstr ""
+
+#: ../../source/Basics.rst:2733 8db72747c3f041d4b20296989f3dbaed
+msgid ""
+"Some constructors of :cpp:`MultiFab`, :cpp:`FArrayBox`, etc. can take an "
+":cpp:`Arena` argument for memory allocation.  This is usually not "
+"important for CPU codes, but very important for GPU codes.  We will "
+"present more details in :ref:`sec:gpu:memory` in Chapter GPU."
+msgstr ""
+
+#: ../../source/Basics.rst:2738 3cd2ab149fbe404eb8ebdd01dc8e7920
+msgid ""
+"AMReX has a Fortran module, :fortran:`amrex_mempool_module` that can be "
+"used to allocate memory for Fortran pointers. The reason that such a "
+"module exists in AMReX is that memory allocation is often very slow in "
+"multi-threaded OpenMP parallel regions. AMReX :cpp:`amrex_mempool_module`"
+" provides a much faster alternative approach, in which each thread has "
+"its own memory pool. Here are examples of using the module."
+msgstr ""
+
+#: ../../source/Basics.rst:2761 622611833bea4e82948d8eacb827085b
+msgid ""
+"The downside of this is we have to use :fortran:`pointer` instead of "
+":fortran:`allocatable`. This means we must explicitly free the memory via"
+" :fortran:`amrex_deallocate` and we need to declare the pointers as "
+":fortran:`contiguous` for performance reason.  Also, we often pass the "
+"Fortran pointer to a procedure with explicit array argument to get rid of"
+" the pointerness completely."
+msgstr ""
+
+#: ../../source/Basics.rst:2769 bc9aa06a8e504c458a44fca034ce7941
+msgid "Abort, Assertion and Backtrace"
+msgstr ""
+
+#: ../../source/Basics.rst:2771 0ec870b119264fd3860a9c98ba35a2c6
+msgid ""
+":cpp:`amrex::Abort(const char * message)` is used to terminate a run "
+"usually when something goes wrong. This function takes a message and "
+"writes it to stderr. Files named like ``Backtrace.1`` (where 1 means "
+"process 1) are produced containing backtrace information of the call "
+"stack. In Fortran, we can call :fortran:`amrex_abort` from the "
+":fortran:`amrex_error_module`, which takes a Fortran character variable "
+"with assumed size (i.e., :fortran:`len=*`) as a message.  A ``ParmParse``"
+" runtime boolean parameter ``amrex.throw_handling`` (which is defaulted "
+"to 0, i.e., :cpp:`false`) can be set to 1 (i.e., :cpp:`true`) so that "
+"AMReX will throw an exception instead of aborting."
+msgstr ""
+
+#: ../../source/Basics.rst:2782 70da781b7dd24519aac829dddd76362d
+msgid ""
+":cpp:`AMREX_ASSERT` is a macro that takes a Boolean expression. For debug"
+" build (e.g., ``DEBUG=TRUE`` using the GNU Make build system), if the "
+"expression at runtime is evaluated to false, :cpp:`amrex::Abort` will be "
+"called and the run is thus terminated. For optimized build (e.g., "
+"``DEBUG=FALSE`` using the GNU Make build system), the :cpp:`AMREX_ASSERT`"
+" statement is removed at compile time and thus has no effect at runtime. "
+"We often use this as a means of putting debug statement in the code "
+"without adding any extra cost for production runs. For example,"
+msgstr ""
+
+#: ../../source/Basics.rst:2797 933b9cfc892340f5a53983cdb830c75d
+msgid ""
+"Here for debug build we like to assert that :cpp:`MultiFab mf` has ghost "
+"cells and it also has the same number of components as :cpp:`MultiFab "
+"mf2`. If we always want the assertion, we can use "
+":cpp:`AMREX_ALWAYS_ASSERT`.  The assertion macros have a "
+"``_WITH_MESSAGE`` variant that will print a message when assertion fails."
+"  For example,"
+msgstr ""
+
+#: ../../source/Basics.rst:2811 8ebbf4f913044395bf5aed9a81abd55d
+msgid ""
+"Backtrace files are produced by AMReX signal handler by default when "
+"segfault occurs or ``Abort`` is called.  If the application does not want"
+" AMReX to handle this, ``ParmParse`` parameter `amrex.signal_handling=0` "
+"can be used to disable it."
+msgstr ""
+
+#: ../../source/Basics.rst:2816 1536ddce40944e13ad568df679e3a294
+msgid ""
+"See :ref:`sec:gpu:assertion` for considerations on using these functions "
+"in GPU-enabled code."
+msgstr ""
+

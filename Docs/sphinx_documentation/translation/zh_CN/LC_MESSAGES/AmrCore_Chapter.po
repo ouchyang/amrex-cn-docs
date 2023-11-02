@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/AmrCore_Chapter.rst:4 2846111ad8704663b6a6b054436b54e2
+msgid "AmrCore Source Code"
+msgstr ""
+
+#: ../../source/AmrCore_Chapter.rst:6 7d6a53f6d2554c34bf193cb0665a6965
+msgid ""
+"In this Chapter we give an overview of functionality contained in the "
+"``amrex/Src/AmrCore`` source code.  This directory contains source code "
+"for the following:"
+msgstr ""
+
+#: ../../source/AmrCore_Chapter.rst:10 9bdc5db53c514ce1af971cb942805e47
+msgid ""
+"Storing information about the grid layout and processor distribution "
+"mapping at each level of refinement."
+msgstr ""
+
+#: ../../source/AmrCore_Chapter.rst:13 6271344af3cb4a19b63c0a8099812d64
+msgid ""
+"Functions to create grids at different levels of refinement, including "
+"tagging operations."
+msgstr ""
+
+#: ../../source/AmrCore_Chapter.rst:16 e8cb66db39ac49d68add2151ce8b7391
+msgid ""
+"Operations on data at different levels of refinement, such as "
+"interpolation and restriction operators."
+msgstr ""
+
+#: ../../source/AmrCore_Chapter.rst:19 c452788fb7f54caaba0b9805b1215efd
+msgid ""
+"Flux registers used to store and manipulate fluxes at coarse-fine "
+"interfaces."
+msgstr ""
+
+#: ../../source/AmrCore_Chapter.rst:22 9334a886147947ee8066b7a37dd87b14
+msgid "Particle support for AMR (see :ref:`Chap:Particles`)."
+msgstr ""
+
+#: ../../source/AmrCore_Chapter.rst:24 3916328a2701420093ea2a6ef4ac2666
+msgid ""
+"There is another source directory, ``amrex/Src/Amr/``, which contains "
+"additional classes used to manage the time-stepping for AMR simulations. "
+"However, it is possible to build a fully adaptive, subcycling-in-time "
+"simulation code without these additional classes."
+msgstr ""
+
+#: ../../source/AmrCore_Chapter.rst:29 39e1697135644c75b9b989cd3bf2615c
+msgid ""
+"In this Chapter, we restrict our use to the ``amrex/Src/AmrCore`` source "
+"code and present a tutorial that performs an adaptive, subcycling-in-time"
+" simulation of the advection equation for a passively advected scalar.  "
+"The accompanying tutorial code is available in ``amrex-"
+"tutorials/ExampleCodes/Amr/Advection_AmrCore`` with build/run directory "
+"``Exec/SingleVortex``. In this example, the velocity field is a specified"
+" function of space and time, such that an initial Gaussian profile is "
+"displaced but returns to its original configuration at the final time.  "
+"The boundary conditions are periodic and we use a refinement ratio of "
+":math:`r=2` between each AMR level. The results of the simulation in two-"
+"dimensions are depicted in the Table showing the :ref:`SingleVortex "
+"Tutorial<fig:Adv>`."
+msgstr ""
+

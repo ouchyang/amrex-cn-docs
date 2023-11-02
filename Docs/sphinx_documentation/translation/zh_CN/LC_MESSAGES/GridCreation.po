@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/GridCreation.rst:10 b3c056f33e314c00a6d1888bcd2f0102
+msgid "Grid Creation"
+msgstr ""
+
+#: ../../source/GridCreation.rst:12 62560f8f22e34d4ca4766d21baeb05fe
+msgid ""
+"To run an AMReX-based application you must specify the domain size by "
+"specifying :cpp:`n_cell` -- this is the number of cells spanning the "
+"domain in each coordinate direction at level 0."
+msgstr ""
+
+#: ../../source/GridCreation.rst:16 a6f86eaebe764015b9cf68052128cc8a
+msgid ""
+"Users often specify :cpp:`max_grid_size` as well. The default load "
+"balancing algorithm then divides the domain in every direction so that "
+"each grid is no longer than :cpp:`max_grid_size` in that direction. If "
+"not specified by the user, :cpp:`max_grid_size` defaults to 128 in 2D and"
+" 32 in 3D (in each coordinate direction)."
+msgstr ""
+
+#: ../../source/GridCreation.rst:20 cd12a9bf8048491d9823a67b999cc06c
+msgid ""
+"Another popular input is :cpp:`blocking_factor`.  The value of "
+":cpp:`blocking_factor` constrains grid creation in that in that each grid"
+" must be divisible by :cpp:`blocking_factor`. Note that both the domain "
+"(at each level) and :cpp:`max_grid_size` must be divisible by "
+":cpp:`blocking_factor`, and that :cpp:`blocking_factor` must be either 1 "
+"or a power of 2 (otherwise the gridding algorithm would not in fact "
+"create grids divisible by  :cpp:`blocking_factor` because of how  "
+":cpp:`blocking_factor` is used in the gridding algorithm)."
+msgstr ""
+
+#: ../../source/GridCreation.rst:27 34f87fee689a48488adb5a3ddced744e
+msgid ""
+"If not specified by the user, :cpp:`blocking_factor` defaults to 8 in "
+"each coordinate direction. The typical purpose of :cpp:`blocking_factor` "
+"is to ensure that the grids will be sufficiently coarsenable for good "
+"multigrid performance."
+msgstr ""
+
+#: ../../source/GridCreation.rst:31 467fa7e9cc8741969af50cf69ff1cb56
+msgid ""
+"There is one more default behavior to be aware of.  There is a boolean "
+":cpp:`refine_grid_layout` that defaults to true but can be over-ridden at"
+" run-time. If :cpp:`refine_grid_layout` is true and the number of grids "
+"created is less than the number of processors (Ngrids < Nprocs), then "
+"grids will be further subdivided until Ngrids >= Nprocs."
+msgstr ""
+
+#: ../../source/GridCreation.rst:36 6cdc171230f54a0e8255efd2f3dd5129
+msgid ""
+"Caveat: if subdividing the grids to achieve Ngrids >= Nprocs would "
+"violate the :cpp:`blocking_factor` criterion then additional grids are "
+"not created and the number of grids will remain less than the number of "
+"processors"
+msgstr ""
+
+#: ../../source/GridCreation.rst:40 a1808405dd9e4230986633d165fa8443
+msgid ""
+"Note that :cpp:`n_cell` must be given as three separate integers, one for"
+" each coordinate direction."
+msgstr ""
+
+#: ../../source/GridCreation.rst:42 d5a376c5af53426d8e8d6a6018e48642
+msgid ""
+"However, :cpp:`max_grid_size` and :cpp:`blocking_factor` can be specified"
+" as a single value applying to all coordinate directions, or as separate "
+"values for each direction."
+msgstr ""
+
+#: ../../source/GridCreation.rst:45 103a46a4a0a448b6a6eb92f172ddf92a
+msgid ""
+"If :cpp:`max_grid_size` (or :cpp:`blocking_factor`) is specified as "
+"multiple integers then the first integer applies to level 0, the second "
+"to level 1, etc.  If you don't specify as many integers as there are "
+"levels, the final value will be used for the remaining levels."
+msgstr ""
+
+#: ../../source/GridCreation.rst:49 9c225873c6a14b69933ed60495c9c8cf
+msgid ""
+"If different values of :cpp:`max_grid_size` (or :cpp:`blocking_factor`) "
+"are wanted for each coordinate direction, then :cpp:`max_grid_size_x`, "
+":cpp:`max_grid_size_y` and :cpp:`max_grid_size_z` (or "
+":cpp:`blocking_factor_x`, :cpp:`blocking_factor_y` and "
+":cpp:`blocking_factor_z`) must be used. If you don't specify as many "
+"integers as there are levels, the final value will be used for the "
+"remaining levels."
+msgstr ""
+
+#: ../../source/GridCreation.rst:54 2d7bb94526154657a9911cd9f4e94291
+msgid "Additional notes:"
+msgstr ""
+
+#: ../../source/GridCreation.rst:56 c29462c3ff874f51ac04daf98464f5bc
+msgid ""
+"To create identical grids of a specific size, e.g. of length *m* in each "
+"direction, then set :cpp:`max_grid_size` = *m* and :cpp:`blocking_factor`"
+" = *m*."
+msgstr ""
+
+#: ../../source/GridCreation.rst:59 c42082810348448fbfe8813bee843e72
+msgid ""
+"Note that :cpp:`max_grid_size` is just an upper bound; with :cpp:`n_cell "
+"= 48` and :cpp:`max_grid_size = 32`, we will typically have one grid of "
+"length 32 and one of length 16."
+msgstr ""
+
+#: ../../source/GridCreation.rst:62 9d19dbac38554bfb9733bf7e82afcc36
+msgid ""
+"The grid creation process at level 0 proceeds as follows (if not using "
+"the KD-tree approach):"
+msgstr ""
+
+#: ../../source/GridCreation.rst:64 d4e692cbe4444d29b459e5893744a933
+msgid "The domain is initially defined by a single grid of size :cpp:`n_cell`."
+msgstr ""
+
+#: ../../source/GridCreation.rst:66 325f6a74a08445fba3436b033ffede30
+msgid ""
+"If :cpp:`n_cell` is greater than :cpp:`max_grid_size` then the grids are "
+"subdivided until each grid is no longer than  :cpp:`max_grid_size` cells "
+"on each side.  The :cpp:`blocking_factor` criterion (ie that the length "
+"of each side of each grid is divisible by :cpp:`blocking_factor` in that "
+"direction) is satisfied during this process."
+msgstr ""
+
+#: ../../source/GridCreation.rst:71 fd129c39c06f4acaa3c9bbfbf3c7048c
+msgid ""
+"Next, if :cpp:`refine_grid_layout = true` and there are more processors "
+"than grids at this level, then the grids at this level are further "
+"divided until Ngrids >= Nprocs (unless doing so would violate the "
+":cpp:`blocking_factor` criterion)."
+msgstr ""
+
+#: ../../source/GridCreation.rst:75 c451209ded384ab9ae4ceb8c5daada5d
+msgid ""
+"The creation of grids at levels > 0 begins by tagging cells at the "
+"coarser level and follows the Berger-Rigoutsos clustering algorithm with "
+"the additional constraints of satisfying the :cpp:`blocking_factor` and "
+":cpp:`max_grid_size` criteria.  An additional parameter becomes relevant "
+"here: the \"grid efficiency\", specified as :cpp:`amr.grid_eff` in the "
+"inputs file. This threshold value, which defaults to 0.7 (or 70%), is "
+"used to ensure that grids do not contain too large a fraction of un-"
+"tagged cells.   We note that the grid creation process attempts to "
+"satisfy the :cpp:`amr.grid_eff` constraint but will not do so if it means"
+" violating the :cpp:`blocking_factor` criterion."
+msgstr ""
+
+#: ../../source/GridCreation.rst:84 fae97b2200434bd99ec09615d4fedf2b
+msgid ""
+"Users often like to ensure that coarse/fine boundaries are not too close "
+"to tagged cells; the way to do this is to set :cpp:`amr.n_error_buf` to a"
+" large integer value (the default is 1). This parameter is used to "
+"increase the number of tagged cells before the grids are defined; if cell"
+" \"*(i,j,k)*\" satisfies the tagging criteria, then, for example, if "
+":cpp:`amr.n_error_buf` is 3, all cells in the 7x7x7 box from lower corner"
+" \"*(i-3,j-3,k-3)*\" to \"*(i+3,j+3,k+3)*\" will be tagged."
+msgstr ""
+

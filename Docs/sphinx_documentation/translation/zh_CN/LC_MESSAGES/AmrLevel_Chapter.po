@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/AmrLevel_Chapter.rst:6 2896098c63364406b53519c5670b19dd
+msgid "Amr Source Code"
+msgstr ""
+
+#: ../../source/AmrLevel_Chapter.rst:8 2986413721d84f41a0653e235b4861e9
+msgid ""
+"The source code in ``amrex/Src/Amr`` contains a number of classes, most "
+"notably :cpp:`Amr`, :cpp:`AmrLevel`, and :cpp:`LevelBld`. These classes "
+"provide a more well developed set of tools for writing AMR codes than the"
+" classes created for the Advection_AmrCore tutorial."
+msgstr ""
+
+#: ../../source/AmrLevel_Chapter.rst:13 35819e52bb3a4500bdddbe21aaea27bd
+msgid ""
+"The :cpp:`Amr` class is derived from :cpp:`AmrCore`, and manages data "
+"across the entire AMR hierarchy of grids."
+msgstr ""
+
+#: ../../source/AmrLevel_Chapter.rst:16 bce3713c58b9460c858387934f103f3c
+msgid ""
+"The :cpp:`AmrLevel` class is a pure virtual class for managing data at a "
+"single level of refinement."
+msgstr ""
+
+#: ../../source/AmrLevel_Chapter.rst:19 27f73e0fdc614a82a82a60d32b97681b
+msgid ""
+"The :cpp:`LevelBld` class is a pure virtual class for defining variable "
+"types and attributes."
+msgstr ""
+
+#: ../../source/AmrLevel_Chapter.rst:22 1e3b81fbe5c441219ecb7a05b11cd53c
+msgid ""
+"Many of our mature, public application codes contain derived classes that"
+" inherit directly from :cpp:`AmrLevel`. These include:"
+msgstr ""
+
+#: ../../source/AmrLevel_Chapter.rst:25 03d057632f4347fdb241754b068dbd7b
+msgid ""
+"The :cpp:`Castro` class in our compressible astrophysics code, CASTRO, "
+"(available in the AMReX-Astro/Castro github repository)"
+msgstr ""
+
+#: ../../source/AmrLevel_Chapter.rst:28 a1126dda996248d0a81d08ff8d86829f
+msgid ""
+"The :cpp:`Nyx` class in our computational cosmology code, Nyx (available "
+"in the AMReX-Astro/Nyx github repository)."
+msgstr ""
+
+#: ../../source/AmrLevel_Chapter.rst:31 b687ba5fab444fd9bea1d404816f360d
+msgid ""
+"Our incompressible Navier-Stokes code, IAMR (available in the AMReX-"
+"codes/IAMR github repository) has a pure virtual class called "
+":cpp:`NavierStokesBase` that inherits from :cpp:`AmrLevel`, and an "
+"additional derived class :cpp:`NavierStokes`."
+msgstr ""
+
+#: ../../source/AmrLevel_Chapter.rst:36 50e33ccddb2f415bb937e2266a55233f
+msgid ""
+"Our low Mach number combustion code PeleLM (available in the AMReX-"
+"Combustion/PeleLM github repository) contains a derived class "
+":cpp:`PeleLM` that also inherits from :cpp:`NavierStokesBase` (but does "
+"not use :cpp:`NavierStokes`)."
+msgstr ""
+
+#: ../../source/AmrLevel_Chapter.rst:41 b01818bef30d48d7a232e96738c6509d
+msgid ""
+"The tutorial code in ``amrex-"
+"tutorials/ExampleCodes/Amr/Advection_AmrLevel`` gives a simple example of"
+" a class derived from :cpp:`AmrLevel` that can be used to solve the "
+"advection equation on a subcycling-in-time AMR hierarchy. Note that "
+"example is essentially the same as the `Advection AmrCore`_ tutorial and "
+"documentation in the chapter on :ref:`Chap:AmrCore`, except now we use "
+"the provided libraries in ``amrex/Src/Amr``."
+msgstr ""
+
+#: ../../source/AmrLevel_Chapter.rst:50 1551c7931bbe41b48d46f3e758346526
+msgid ""
+"The tutorial code also contains a :cpp:`LevelBldAdv` class (derived from "
+":cpp:`LevelBld` in the Source/Amr directory). This class is used to "
+"define variable types (how many, nodality, interlevel interpolation "
+"stencils, etc.)."
+msgstr ""
+

@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/ForkJoin.rst:8 a8eea42938004306938ed033ed6b0732
+msgid "Fork-Join"
+msgstr ""
+
+#: ../../source/ForkJoin.rst:10 1894d544ddf448c5a73284a1413901ac
+msgid ""
+"An AMReX program consists of a set of MPI ranks cooperating together on "
+"distributed data. Typically, all of the ranks in a job compute in a bulk-"
+"synchronous, data-parallel fashion, where every rank does the same "
+"sequence of operations, each on different parts of the distributed data."
+msgstr ""
+
+#: ../../source/ForkJoin.rst:16 48552a8cbc5a463c880141f1008969db
+msgid ""
+"The AMReX Fork-Join functionality described here allows the user to "
+"divide the job's MPI ranks into subgroups (i.e. `fork`) and assign each "
+"subgroup an independent task to compute in parallel with each other. "
+"After all of the forked child tasks complete, they synchronize (i.e. "
+"`join`), and the parent task continues execution as before."
+msgstr ""
+
+#: ../../source/ForkJoin.rst:27 a239c90898de428da7b2d41224b21e7b
+msgid "Fork-Join Tasks"
+msgstr ""
+
+#: ../../source/ForkJoin.rst:27 0f2327ad4fce42a5a08ab9d254f39a0d
+msgid ""
+"Example of a fork-join operation where the parent task's MPI processes "
+"(ranks) are split into two independent child tasks that execute in "
+"parallel and then join to resume execution of the parent task."
+msgstr ""
+
+#: ../../source/ForkJoin.rst:31 a415a9f6e8e948c58d831d32fd0725f7
+msgid ""
+"The Fork-Join operation can also be invoked in a nested fashion, creating"
+" a hierarchy of fork-join operations, where each fork further subdivides "
+"the ranks of a task into child tasks. This approach enables heterogeneous"
+" computation and reduces the strong scaling penalty for operations with "
+"less inherent parallelism or with large communication overheads."
+msgstr ""
+
+#: ../../source/ForkJoin.rst:43 d25a537eec3a432a92dea881114de03f
+msgid "Nested Fork-Join Tasks"
+msgstr ""
+
+#: ../../source/ForkJoin.rst:43 800d77826d6a403ebcae6852d3db1e07
+msgid ""
+"Example of nested fork-join operations where a child task is further "
+"split into more subtasks."
+msgstr ""
+
+#: ../../source/ForkJoin.rst:46 d5ef537771ce4907ab1fa2c2d8ce6251
+msgid "The fork-join operation is accomplished by:"
+msgstr ""
+
+#: ../../source/ForkJoin.rst:48 5c1b3fa504584ce5916967821143808d
+msgid ""
+"redistributing MultiFab data so that **all** of the data in each "
+"registered MultiFab is visible to ranks within a subtask, and"
+msgstr ""
+
+#: ../../source/ForkJoin.rst:51 2dea19c87c034b6d886ea84927cd94d0
+msgid ""
+"dividing the root MPI communicator into sub-communicators so that each "
+"subgroup of ranks in a tasks will only synchronize with each other during"
+" subtask collectives (e.g. for ``MPI_Allreduce``)."
+msgstr ""
+
+#: ../../source/ForkJoin.rst:55 da720d79590e4377ac6fb3e01bddf0c4
+msgid ""
+"When the program starts, all of the ranks in the MPI communicator are in "
+"the root task."
+msgstr ""
+

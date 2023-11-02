@@ -1,0 +1,41 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/Particle_Chapter.rst:4 d52e2f2466944ba0899e399a9c4a0438
+msgid "Particles"
+msgstr ""
+
+#: ../../source/Particle_Chapter.rst:6 2e7869f11c184748b0c0fccbd19f6f37
+msgid ""
+"In addition to the tools for working with mesh data described in previous"
+" chapters, AMReX also provides data structures and iterators for "
+"performing data-parallel particle simulations. Our approach is "
+"particularly suited to particles that interact with data defined on a "
+"(possibly adaptive) block-structured hierarchy of meshes. Example "
+"applications include Particle-in-Cell (PIC) simulations, Lagrangian "
+"tracers, or particles that exert drag forces onto a fluid, such as in "
+"multi-phase flow calculations. The overall goals of AMReX's particle "
+"tools are to allow users flexibility in specifying how the particle data "
+"is laid out in memory and to handle the parallel communication of "
+"particle data. In the following sections, we give an overview of AMReX's "
+"particle classes and how to use them."
+msgstr ""
+

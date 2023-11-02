@@ -1,0 +1,412 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/AMReX_Profiling_Tools.rst:8 2a7c86c9e7f34907a16ac37e939f84f9
+msgid "Types of Profiling"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:10 c90f3940abb649eb9e934496231e304c
+msgid ""
+"AMReX's built-in profiling works through objects that start and stop "
+"timers based on user-placed macros or an object's constructor and "
+"destructor. The results from these timers are stored in a global list "
+"that is consolidated and printed during finalization, or at a user-"
+"defined flush point."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:15 26f30f91436d4ad1af08236a0b0949fd
+msgid ""
+"Currently, AMReX has two options for built-in profiling: "
+":ref:`sec:tiny:profiling` and :ref:`sec:full:profiling`."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:21 c2f4a8f4a3ff4f61b82f675b33d865f5
+msgid "Tiny Profiling"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:23 0e6400eeaac94384b52628c477c6fcc7
+msgid ""
+"To enable \"Tiny Profiling\" with GNU Make edit the options in the file "
+"``GNUMakefile`` to show,"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:31 30e453e395d8443b882489ee6878f908
+msgid "If building with CMake, set the following CMake flags,"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:39 6cf5cf7b922e4fc685bde06edaf49143
+msgid ""
+"If you set ``PROFILE = TRUE`` (or ``AMReX_BASE_PROFILE = ON``) to enable "
+"full profiling then this will override the ``TINY_PROFILE`` flag and tiny"
+" profiling will be disabled."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:44 24c5398c9027424eb2e0e67b7bee9f5a
+msgid "Output"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:46 4ac7d874eff14ecf873f795a9f036241
+msgid ""
+"At the end of a run, a summary of exclusive and inclusive function times "
+"will be written to ``stdout``. This output includes the minimum and "
+"maximum (over processes) time spent in each routine as well as the "
+"average and the maximum percentage of total run time. See the sample "
+"output below."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:74 bc204efb48054064b2692dc2a81ce8c2
+msgid ""
+"The tiny profiler automatically writes the results to ``stdout`` at the "
+"end of your code, when ``amrex::Finalize();`` is reached. However, you "
+"may want to write partial profiling results to ensure your information is"
+" saved when you may fail to converge or if you expect to run out of "
+"allocated time. Partial results can be written at user-defined points in "
+"the code by inserting the line:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:84 bbdf1d00f26e4e9f8993578916bb527e
+msgid ""
+"Any timers that have not reached their ``BL_PROFILE_VAR_STOP`` call or "
+"exited their scope and deconstructed will not be included in these "
+"partial outputs. (e.g., a properly instrumented ``main()`` should show a "
+"time of zero in all partial outputs.) Therefore, it is recommended to "
+"place these flush calls in easily identifiable regions of your code and "
+"outside of as many profiling timers as possible, such as immediately "
+"before or after writing a checkpoint."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:91 e99e42ae4924427ebf333d11b799d692
+msgid ""
+"Also, since flush calls will print multiple, similar looking outputs to "
+"``stdout``, it is also recommended to wrap any "
+"``BL_PROFILE_TINY_FLUSH();`` calls in informative ``amrex::Print()`` "
+"lines to ensure accurate identification of each set of timers."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:99 f2ed872da7ab47e1a9957e0c4b486f11
+msgid "Full Profiling"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:101 cb92e6cf35734ce6b3975b761e625523
+msgid ""
+"If you set ``PROFILE = TRUE`` then a ``bl_prof`` directory will be "
+"written that contains detailed per-task timings for each processor.  This"
+" will be written in ``nfiles`` files (where ``nfiles`` is specified by "
+"the user). The information in the directory can be analyzed by the "
+":ref:`sec:amrprofparse` tool within :ref:`sec:amrvis`. In addition, an "
+"exclusive-only set of function timings will be written to ``stdout``."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:109 b2834fcfd2f54950a920bacee9cbb413
+msgid "Trace Profiling"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:111 959d1eb95dcc49f3b4b289881c511bfb
+msgid ""
+"If you set ``TRACE_PROFILE = TRUE`` in addition to ``PROFILE = TRUE``, "
+"then the profiler keeps track of when each profiled function is called "
+"and the ``bl_prof`` directory will include the function call stack. This "
+"is especially useful when core functions, such as :cpp:`FillBoundary` can"
+" be called from many different regions of the code. Using trace profiling"
+" allows one to specify regions in the code that can be analyzed for "
+"profiling information independently from other regions."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:120 171e6f31c0214763a0f112b2bfe3f8fe
+msgid "Communication Profiling"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:122 63fd1b20920b48c59e4fd702f0fea942
+msgid ""
+"If you set ``COMM_PROFILE = TRUE`` in addition to ``PROFILE = TRUE``, "
+"then the ``bl_prof`` directory will contain additional information about "
+"MPI communication (point-to-point timings, data volume, barrier/reduction"
+" times, etc.). ``TRACE_PROFILE = TRUE`` and ``COMM_PROFILE = TRUE`` can "
+"be set together."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:128 b08bf9ac13854377a18d39ef17027b6f
+msgid ""
+"The AMReX-specific profiling tools are currently under development and "
+"this documentation will reflect the latest status in the development "
+"branch."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:132 181a386331184a5c838bc7a3a4401d7f
+msgid "Instrumenting C++ Code"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:134 25f9db3ca08a4a68b09e072ac11c8087
+msgid ""
+"AMReX profiler objects are created and managed through :cpp:`BL_PROF` "
+"macros."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:138 2118e77f9e7b47869f761802c9754276
+msgid "To start, you must at least instrument main(), i.e.:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:153 2e27c7aa289c43bd9f0b779ef2c97a36
+msgid "Or:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:171 209850a8351945d5b88fa77289a43fc0
+msgid ""
+"You can then instrument any of your functions, or code blocks. There are "
+"four general profiler macro types available:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:175 8ae6e5d075e8444d8bda3e337233d03f
+msgid "1) A scoped timer, :cpp:`BL_PROFILE`:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:177 334db1af50a943d8b74f4453b963c236
+msgid ""
+"These timers generate their own object names, so they can't be controlled"
+" after being defined. However, they are the cleanest and easiest to work "
+"with in many situations. They time from the point where the macro is "
+"called until the end of the enclosing scope. This macro is ideal for "
+"timing an entire function. For example:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:192 518bb93c6e9a4606b42c2c41ba0cfdb1
+msgid ""
+"Note that all AMReX timers are scoped and will call \"stop\" when the "
+"corresponding object is destroyed. This macro is unique because it can "
+"*only* stop when it goes out of scope."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:196 885273c3ac4844d89f9019d6bb99deb9
+msgid "2) A named, scoped timer, :cpp:`BL_PROFILE_VAR`:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:198 632682bb8dcb4c8fb777e07c64935864
+msgid ""
+"In some cases, using scopes to control a timer is not ideal. In such "
+"cases, you can use the ``_VAR_`` macros to create a named timer that can "
+"be controlled through ``_START_`` and ``_STOP_`` macros. ``_VAR_`` "
+"signifies that the macro takes a variable name. For example, to time a "
+"function without scoping:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:208 406c2212b4944dd482d082f7e918ecbc
+msgid ""
+"This can also be used to selectively time with the same scope. For "
+"example, to include :cpp:`Func_0` and :cpp:`Func_2`, but not "
+":cpp:`Func_1`:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:223 d3b3a6b5e6e3490d92bc82b07d969e04
+msgid ""
+"Remember, these are still scoped. So, the scoped timer example can be "
+"reproduced exactly with named timers by just using the :cpp:`_VAR` macro:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:239 7ee1ee57e67840cf96052295f5517825
+msgid ""
+"3) A named, scoped timer that doesn't auto-start, "
+":cpp:`BL_PROFILE_VAR_NS`:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:241 665ff05b75554aa3a11ff1c7fac9d732
+msgid ""
+"Sometimes, a complicated scoping may mean the profiling object needs to "
+"be defined before it's started. To create a named AMReX timer that "
+"doesn't start automatically, use the ``_NS_`` macros. (\"NS\" stands for "
+"\"no start\"). For example, this implementation times :cpp:`MyFunc0` and "
+":cpp:`MyFunc1` but not any of the \"Additional Code\" blocks:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:272 dffc9e0671d644d9a0c4176689cd7dca
+msgid ""
+"The ``_NS_`` macro must, by necessity, also be a ``_VAR_`` macro. "
+"Otherwise, you would never be able to turn the timer on!"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:276 a4a2180ae5494cdb8dd97e22b7462005
+msgid "4) Designate a sub-region to profile, :cpp:`BL_PROFILE_REGION`:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:278 3b813cb34c2848a2b47f671bed7c35b2
+msgid ""
+"Often, it's helpful to look at a subset of timers separately from the "
+"complete profile. For example, you may want to view the timing of a "
+"specific time step or isolate everything inside the \"Chemistry\" part of"
+" the code. This can be accomplished by designating profile regions. All "
+"timers within a named region will be included both in the full analysis, "
+"as well as in a separate sub-analysis."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:283 81928b82432940f48c98c3c0440b8b99
+msgid ""
+"Regions are meant to be large contiguous blocks of code, and should be "
+"used sparingly and purposefully to produce useful profiling reports. As "
+"such, the possible region options are purposefully limited."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:287 a615350f965c408ca76688a236043ff0
+msgid "Scoped Regions"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:289 8e7919aac88a435f97d5c65b99b6134d
+msgid ""
+"When using the Tiny Profiler, the only available region macro is the "
+"scoped macro. To create a region that profiles the `MyFuncs` code block, "
+"including all timers in the \"Additional Code\" regions, add macros in "
+"the following way:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:316 b4ade33a9c5848a591aa28dffc6ae140
+msgid ""
+"The ``MyFuncs`` region appears in the Tiny Profiler output as an "
+"additional table. The following output example, mimics the above code. In"
+" it, the region is indicated by ``REG::MyFuncs``."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:344 3774d72f8abd4a5e88d9512f68f91c8d
+msgid "Named Regions"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:346 b075f39b1fdd48d6bf77439cd80a14d3
+msgid ""
+"If using the Full Profiler, named region objects are also available. "
+"Named regions allow control of start and stop points without relying on "
+"scope. These macros use slightly modified ``_VAR_``, ``_START_`` and "
+"``_STOP_`` formatting. The first argument is the name, followed by the "
+"profile variable. Names for each section can differ, but because the "
+"profiler variable will be used to group the sections into a region, it "
+"must be the same. Consider the following example:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:382 5fafa133df584400b4ffc43184a4d894
+msgid ""
+"Here, :cpp:`<Code Block A>` and :cpp:`<Code Block C>` are grouped into "
+"one region labeled \"RegionAC\" for profiling. :cpp:`<Code Block B>` is "
+"isolated in its own group. Any timers inside :cpp:`MyFunc_0` and "
+":cpp:`MyFunc_1` are not included in the region groupings."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:389 872a447bfab243098524a7589a48966c
+msgid "Instrumenting Fortran90 Code"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:391 3e60cd6a9ab04aa58397b1acbf8b8f2b
+msgid ""
+"When using the full profiler, Fortran90 functions can also be "
+"instrumented with the following calls:"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:402 47e90b0168dd485cad7104e5802c7f19
+msgid ""
+"Note that the start and stop calls must be matched before leaving the "
+"scope of the corresponding start. Moreover, it is necessary to take into "
+"account all possible code paths. Therefore, you may need to add "
+":fortran:`bl_proffortfuncstop` in multiple locations, such as before any "
+"returns, at the end of the function and at the point in the function "
+"where you want to stop profiling. The profiling output will only warn of "
+"any :fortran:`bl_proffortfuncstart` calls that were not stopped with "
+":fortran:`bl_proffortfuncstop` calls when in debug mode."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:410 16dcbde0e59a449b903658c8bfbf3d72
+msgid ""
+"For functions with a high number of calls, there is a lighter-weight "
+"interface,"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:418 5fc1b06b9d42463989ce92fe46d0cb22
+msgid ""
+"where ``n`` is an integer in the range ``[1,mFortProfsIntMaxFuncs]``. "
+"``mFortProfsIntMaxFuncs`` is currently set to 32.  The profiled function "
+"will be named ``FORTFUNC_n`` in the profiler output, unless you rename it"
+" with ``BL_PROFILE_CHANGE_FORT_INT_NAME(fname, int)`` where ``fname`` is "
+"a ``std::string`` and ``int`` is the integer ``n`` in the "
+"``bl_proffortfuncstart_int/bl_proffortfuncstop_int`` calls. "
+"``BL_PROFILE_CHANGE_FORT_INT_NAME`` should be called in ``main()``."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:427 53c0a518604248008f3a0eeb83726faa
+msgid ""
+"Fortran functions cannot be profiled when using the Tiny Profiler. You "
+"will need to turn on the Full Profiler to receive the results from "
+"fortran instrumentation."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:434 62e37f43b3cb46e993714fb6d55cdc8c
+msgid "Profiling Options"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:436 815168f7c26f4a51916e20eb8bb07446
+msgid ""
+"AMReX's communication algorithms are often regions of code that increase "
+"in wall clock time when the application is load imbalanced, due to the "
+"MPI_Wait calls in these functions. To better understand if this is "
+"occurring and by how much, you can turn on an AMReX timed synchronization"
+" with the runtime variable: ``amrex.use_profiler_syncs=1`` This adds "
+"named timers beginning with ``SyncBeforeComms`` immediately prior to the "
+"start of the FillBoundary, ParallelCopy and particle Redistribute "
+"functions, isolating any prior load imbalance to that timer before "
+"beginning the comm operation."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:444 0966df2dd1e54f78977ed2f9de6840a7
+msgid ""
+"This is a diagnostic tool and may slow your code down, so it is not "
+"recommended to turn this on for production runs."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:448 709c2c2a1797412cbc507bfc886c2d11
+msgid ""
+"Note: the ``SyncBeforeComms`` timer is not equal to your load imbalance. "
+"It only captures imbalance between the comm functions and the previous "
+"sync point; there may be other load imbalances captured elsewhere. Also, "
+"the timer reports in terms of MPI rank, so if the most imbalanced rank "
+"changes throughout the simulation, the timer will be an underestimation."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:453 21b068d2884640a3985d33c40677ef20
+msgid ""
+"The effect on the communication timers may be more helpful: they will "
+"show the time to complete communications if there was no load imbalance. "
+"This means the difference between a case with and without this profiler "
+"sync may be a more useful metric for analysis."
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:460 7d3e82addeed4395b3380852099c0b0f
+msgid "AMRProfParser"
+msgstr ""
+
+#: ../../source/AMReX_Profiling_Tools.rst:462 f6dd645600434525a28bb23afb780a98
+msgid ""
+":cpp:`AMRProfParser` is a tool for processing and analyzing the "
+"``bl_prof`` database. It is a command line application that can create "
+"performance summaries, plotfiles showing point-to-point communication and"
+" timelines, HTML call trees, communication call statistics, function "
+"timing graphs, and other data products. The parser's data services "
+"functionality can be called from an interactive environment such as "
+":ref:`sec:amrvis`, from a sidecar for dynamic performance optimization, "
+"and from other utilities such as the command line version of the parser "
+"itself. It has been integrated into Amrvis for visual interpretation of "
+"the data allowing Amrvis to open the ``bl_prof`` database like a plotfile"
+" but with interfaces appropriate to profiling data. AMRProfParser and "
+"Amrvis can be run in parallel both interactively and in batch mode."
+msgstr ""
+

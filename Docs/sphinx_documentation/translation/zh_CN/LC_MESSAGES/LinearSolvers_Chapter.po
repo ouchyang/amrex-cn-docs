@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/LinearSolvers_Chapter.rst:7 c2533884ba424cc4a471bbc066804a7c
+msgid "Linear Solvers"
+msgstr ""
+
+#: ../../source/LinearSolvers_Chapter.rst:9 d88b5843d4af46bbaa843d9d6b7f3156
+msgid ""
+"AMReX supports both single-level solves and composite solves on multiple "
+"AMR levels, with the scalar solution to the linear system defined on "
+"either cell centers or nodes. AMReX also supports solution of linear "
+"systems with embedded boundaries. (See chapter :ref:`Chap:EB` for more "
+"details on the embedded boundary representation of complex geometry.)"
+msgstr ""
+
+#: ../../source/LinearSolvers_Chapter.rst:15 797baf1e6eb94566bdb1feda70bbe864
+msgid ""
+"The default solution technique is geometric multigrid, but AMReX includes"
+" native BiCGStab solvers for a single level as well as interfaces to the "
+"hypre library."
+msgstr ""
+
+#: ../../source/LinearSolvers_Chapter.rst:18 bce919829e7d471592895f0cd2361014
+msgid ""
+"In this Chapter we give an overview of the linear solvers in AMReX that "
+"solve linear systems in the canonical form"
+msgstr ""
+
+#: ../../source/LinearSolvers_Chapter.rst:21 193dc61c76a145a18749b36bb5e9f08c
+msgid ""
+"(A \\alpha - B \\nabla \\cdot \\beta \\nabla ) \\phi = f,\n"
+"\n"
+msgstr ""
+
+#: ../../source/LinearSolvers_Chapter.rst:24 b4a4e6c931394944af30b9a71d47e7b4
+msgid ""
+"where :math:`A` and :math:`B` are scalar constants, :math:`\\alpha` and "
+":math:`\\beta` are scalar fields, :math:`\\phi` is the unknown, and "
+":math:`f` is the right-hand side of the equation.  Note that Poisson's "
+"equation :math:`\\nabla^2 \\phi = f` is a special case of the canonical "
+"form.  The solution :math:`\\phi` is at either cell centers or nodes."
+msgstr ""
+
+#: ../../source/LinearSolvers_Chapter.rst:32 537203cb4c1345ad8992d10d49f5ea78
+msgid ""
+"For the cell-centered solver, :math:`\\alpha`, :math:`\\phi` and "
+":math:`f` are represented by cell-centered MultiFabs, and :math:`\\beta` "
+"is represented by ``AMREX_SPACEDIM`` face type MultiFabs, i.e.  there are"
+" separate MultiFabs for the :math:`\\beta` coefficient in each coordinate"
+" direction."
+msgstr ""
+
+#: ../../source/LinearSolvers_Chapter.rst:38 2c13b5f6dc2f430b8a03de615c745bed
+msgid ""
+"For the nodal solver, :math:`A` and :math:`\\alpha` are assumed to be "
+"zero, :math:`\\phi` and :math:`f` are nodal, and :math:`\\beta` (which we"
+" later refer to as :math:`\\sigma`) is cell-centered."
+msgstr ""
+
+#: ../../source/LinearSolvers_Chapter.rst:42 aa02f74db88a4d538d201b2453da7467
+msgid ""
+"In addition to these solvers, AMReX has support for tensor solves used to"
+" calculate the viscous terms that appear in the compressible Navier-"
+"Stokes equations.  In these solves, all components of the velocity field "
+"are solved for simultaneously.  The tensor solve functionality is only "
+"available for cell-centered velocity."
+msgstr ""
+
+#: ../../source/LinearSolvers_Chapter.rst:48 a058df1204cb4e0b8c676bf8ef9936ed
+msgid ""
+"The tutorials in `Linear Solvers`_ show examples of using the solvers.  "
+"The tutorial ``amrex-tutorials/ExampleCodes/Basic/HeatEquation_EX3_C`` "
+"shows how to solve the heat equation implicitly using the solver.  The "
+"tutorials also show how to add linear solvers into the build system."
+msgstr ""
+

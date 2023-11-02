@@ -1,0 +1,775 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/Particle.rst:11 a102e1efca684fe598797fd65cba8868
+msgid "The Particle"
+msgstr ""
+
+#: ../../source/Particle.rst:13 c1d88a7c6d9a46fdb44915eadda1e956
+msgid ""
+"The particle classes can be used by including the header "
+"AMReX_Particles.H. The most basic particle data structure is the particle"
+" itself:"
+msgstr ""
+
+#: ../../source/Particle.rst:22 18a0baf8095b485e9735bd5e13e498ae
+msgid ""
+"This is a templated data type, designed to allow flexibility in the "
+"number and type of components that the particles carry. The first "
+"template parameter is the number of extra :cpp:`Real` variables this "
+"particle will have (either single or double precision [1]_), while the "
+"second is the number of extra integer variables.  It is important to note"
+" that this is the number of *extra* real and integer variables; a "
+"particle will always have at least :cpp:`BL_SPACEDIM` real components "
+"that store the particle's position and 2 integer components that store "
+"the particle's :cpp:`id` and :cpp:`cpu` numbers. [2]_"
+msgstr ""
+
+#: ../../source/Particle.rst:31 983debd67fbe4c54b4ed5632e7eafd6a
+msgid ""
+"The particle struct is designed to store these variables in a way that "
+"minimizes padding, which in practice means that the :cpp:`Real` "
+"components always come first, and the integer components second. "
+"Additionally, the required particle variables are stored before the "
+"optional ones, for both the real and the integer components. For example,"
+" say we want to define a particle type that stores a mass, three velocity"
+" components, and two extra integer flags. Our particle struct would be "
+"set up like:"
+msgstr ""
+
+#: ../../source/Particle.rst:43 182b1046e5d24cf0810d3903c05d06b3
+msgid ""
+"and the order of the particle components in would be (assuming "
+":cpp:`BL_SPACEDIM` is 3): :cpp:`x y z m vx vy vz id cpu flag1 flag2`.  "
+"[3]_"
+msgstr ""
+
+#: ../../source/Particle.rst:47 9727c1507f824578ad2ce1e61706794a
+msgid "Setting Particle data"
+msgstr ""
+
+#: ../../source/Particle.rst:49 588486773abb4e58962c89b211e63792
+msgid ""
+"The :cpp:`Particle` struct provides a number of methods for getting and "
+"setting a particle's data. For the required particle components, there "
+"are special, named methods. For the \"extra\" real and integer data, you "
+"can use the :cpp:`rdata` and :cpp:`idata` methods, respectively."
+msgstr ""
+
+#: ../../source/Particle.rst:79 820a765de0f148c99422f2d226bc8019
+msgid "The ParticleContainer"
+msgstr ""
+
+#: ../../source/Particle.rst:81 33be67ef675940e29a5d686cdb53075a
+msgid ""
+"One particle by itself is not very useful. To do real calculations, a "
+"collection of particles needs to be defined, and the location of the "
+"particles within the AMR hierarchy (and the corresponding MPI process) "
+"needs to be tracked as the particle positions change. To do this, we "
+"provide the :cpp:`ParticleContainer` class:"
+msgstr ""
+
+#: ../../source/Particle.rst:91 ba86e912f61448778c65569e8b7d3e52
+msgid ""
+"Like the :cpp:`Particle` class itself, the :cpp:`ParticleContainer` class"
+" is templated. The first two template parameters have the same meaning as"
+" before: they define the number of each type of variables that the "
+"particles in this container will store. Particles added to the container "
+"are stored in the Array-of-Structs style. In addition, there are two more"
+" optional template parameters that allow the user to specify additional "
+"particle variables that will be stored in Struct-of-Arrays form."
+msgstr ""
+
+#: ../../source/Particle.rst:100 a32a491ed8e940d2957b188604944505
+msgid "Arrays-of-Structs and Structs-of-Arrays"
+msgstr ""
+
+#: ../../source/Particle.rst:102 311234bea8d54b3993e735a92c946e25
+msgid ""
+"The difference between Array-of-Structs (AoS) and Struct-of-Arrays (SoA) "
+"data is in how the data is laid out in memory. For the AoS data, all the "
+"variables associated with particle 1 are next to each other in memory, "
+"followed by all the variables associated with particle 2, and so on. For "
+"variables stored in SoA style, all the particle data for a given "
+"component is next to each other in memory, and each component is stored "
+"in a separate array. For convenience, we (arbitrarily) refer to the "
+"components in the particle struct as particle *data*, and components "
+"stored in the Struct-of-Arrays as particle *attributes*. See the figure "
+":ref:`below<fig:particles:particle_arrays>` for an illustration."
+msgstr ""
+
+#: ../../source/Particle.rst:120 f24bdea1865242ca88d39733fa6ea94c
+msgid ""
+"An illustration of how the particle data for a single tile is arranged in"
+" memory. This particle container has been defined with ``NStructReal = "
+"1``, ``NStructInt = 2``, ``NArrayReal = 2``, and ``NArrayInt = 2``. In "
+"this case, each tile in the particle container has five arrays: one with "
+"the particle struct data, two additional real arrays, and two additional "
+"integer arrays.  In the tile shown, there are only 2 particles. We have "
+"labelled the extra real data member of the particle struct to be "
+"``mass``, while the extra integer members of the particle struct are "
+"labeled ``p``, and ``s``, for \"phase\" and \"state\". The variables in "
+"the real and integer arrays are labelled ``foo``, ``bar``, ``l``, and "
+"``n``, respectively. We have assumed that the particles are double "
+"precision."
+msgstr ""
+
+#: ../../source/Particle.rst:137 dc94e265b3b943858385f18d51324ad3
+msgid ""
+"To see why the distinction between AoS and SoA data is important, "
+"consider the following extreme case. Say you have particles that carry "
+"100 different components, but that most of the time, you only need to do "
+"calculations involving 3 of them (say, the particle positions) at once. "
+"In this case, storing all 100 particle variables in the particle struct "
+"is clearly inefficient, since most of the time you are reading 97 extra "
+"variables into cache that you will never use. By splitting up the "
+"particle variables into stuff that gets used all the time (stored in the "
+"AoS) and stuff that only gets used infrequently (stored in the SoA), you "
+"can in principle achieve much better cache reuse. Of course, the usage "
+"pattern of your application likely won't be so clear-cut. Flexibility in "
+"how the particle data is stored also makes it easier to interface between"
+" AMReX and already-existing Fortran subroutines."
+msgstr ""
+
+#: ../../source/Particle.rst:150 f40f8fd9e1dd416c86687bb73c734b8b
+msgid ""
+"Note that while \"extra\" particle data can be stored in either the SoA "
+"or AoS style, the particle positions and id numbers are **always** stored"
+" in the particle structs. This is because these particle variables are "
+"special and used internally by AMReX to assign the particles to grids and"
+" to mark particles as valid or invalid, respectively."
+msgstr ""
+
+#: ../../source/Particle.rst:157 01d091f238004c08af300f4a6f07ccee
+msgid "Constructing ParticleContainers"
+msgstr ""
+
+#: ../../source/Particle.rst:159 f7484379b1994989b8f0edaf28901222
+msgid ""
+"A particle container is always associated with a particular set of AMR "
+"grids and a particular set of DistributionMaps that describes which MPI "
+"processes those grids live on.  For example, if you only have one level, "
+"you can define a :cpp:`ParticleContainer` to store particles on that "
+"level using the following constructor:"
+msgstr ""
+
+#: ../../source/Particle.rst:173 725d22bd3b7c478386850626716bd3af
+msgid ""
+"Or, if you have multiple levels, you can use following constructor "
+"instead:"
+msgstr ""
+
+#: ../../source/Particle.rst:184 354dfd172887400998dea14948dd9e61
+msgid ""
+"Note the set of grids used to define the :cpp:`ParticleContainer` doesn't"
+" have to be the same set used to define the simulation's mesh data. "
+"However, it is often desirable to have the two hierarchies track each "
+"other. If you are using an :cpp:`AmrCore` class in your simulation (see "
+"the Chapter on :ref:`Chap:AmrCore`), you can achieve this by using the "
+":cpp:`AmrParticleContainer` class. The constructor for this class takes a"
+" pointer to your AmrCore derived class, instead:"
+msgstr ""
+
+#: ../../source/Particle.rst:198 e91e6ae26b0c496b98ae59ec8006ef72
+msgid ""
+"In this case, the :cpp:`Vector<BoxArray>` and "
+":cpp:`Vector<DistributionMap>` used by your :cpp:`ParticleContainer` will"
+" be updated automatically to match those in your :cpp:`AmrCore`."
+msgstr ""
+
+#: ../../source/Particle.rst:203 b63c1d3cafae4365a8462cafce5eed08
+msgid "The ParticleTile"
+msgstr ""
+
+#: ../../source/Particle.rst:205 391cbe1082504967a8063a4b5d6d1dc8
+msgid ""
+"The :cpp:`ParticleContainer` stores the particle data in a manner "
+"prescribed by the set of AMR grids used to define it. Local particle data"
+" is always stored in a data structure called a :cpp:`ParticleTile`, which"
+" contains a mixture of AoS and SoA components as described above. The "
+"tiling behavior of :cpp:`ParticleTile` is determined by the parameter, "
+"``particle.do_tiling``:"
+msgstr ""
+
+#: ../../source/Particle.rst:211 ee3ce39394b14f8eaf75d0e2a9ccc605
+msgid ""
+"If ``particles.do_tiling=0``, then there is always exactly one "
+":cpp:`ParticleTile` per grid. This is equivalent to setting a very large "
+"``particles.tile_size`` in each direction."
+msgstr ""
+
+#: ../../source/Particle.rst:215 d9be5abb439f49cc84879927a14216da
+msgid ""
+"If ``particles.do_tiling=1``, then each grid can have multiple "
+":cpp:`ParticleTile` objects associated with it based on the "
+"``particles.tile_size`` parameter."
+msgstr ""
+
+#: ../../source/Particle.rst:219 e7a69ee509d64c96b978427d6bb345dd
+msgid ""
+"The AMR grid to which a particle is assigned, is determined by examining "
+"its position and binning it, using the domain left edge as an offset. By "
+"default, a particle is assigned to the finest level that contains its "
+"position, although this behavior can be tweaked if desired."
+msgstr ""
+
+#: ../../source/Particle.rst:228 34a17bf4465244ebb62d3bc591994305
+msgid ""
+":cpp:`ParticleTile` data tiling with :ref:`MFIter<sec:basics:mfiter>` "
+"behaves differently than mesh data. With mesh data, the tiling is "
+"strictly logical --the data is laid out in memory the same way whether "
+"tiling is turned on or off. With particle data, however, the particles "
+"are actually stored in different arrays when tiling is enabled. As with "
+"mesh data, the particle tile size can be tuned so that an entire tile's "
+"worth of particles will fit into a cache line at once."
+msgstr ""
+
+#: ../../source/Particle.rst:238 b8f2c5eb1ceb4df18d6aaeb649f61736
+msgid "Redistribute"
+msgstr ""
+
+#: ../../source/Particle.rst:240 6d664be941024c45b678a457de802ecb
+msgid ""
+"Once the particles move, their data may no longer be in the right place "
+"in the container. They can be reassigned by calling the "
+":cpp:`Redistribute()` method of :cpp:`ParticleContainer`.  After calling "
+"this method, all the particles will be moved to their proper places in "
+"the container, and all invalid particles (particles with id set to "
+":cpp:`-1`) will be removed. All the MPI communication needed to do this "
+"happens automatically."
+msgstr ""
+
+#: ../../source/Particle.rst:247 aacd33c59999455a97ca2bda710badbd
+msgid ""
+"Application codes will likely want to create their own derived "
+"ParticleContainer class that specializes the template parameters and adds"
+" additional functionality, like setting the initial conditions, moving "
+"the particles, etc. See the `particle tutorials`_ for examples of this. "
+".. _`particle tutorials`: https://amrex-"
+"codes.github.io/amrex/tutorials_html/Particles_Tutorial.html"
+msgstr ""
+
+#: ../../source/Particle.rst:256 6027a8a9471c4e83874e877916f9a147
+msgid "Initializing Particle Data"
+msgstr ""
+
+#: ../../source/Particle.rst:258 bab7f6642af847bf9d9f357261e7be31
+msgid ""
+"In the following code snippet, we demonstrate how to set particle initial"
+" conditions for both SoA and AoS data. We loop over all the tiles using "
+":cpp:`MFIter`, and add as many particles as we want to each one."
+msgstr ""
+
+#: ../../source/Particle.rst:304 726b55fa9dc04812bab1b17b7770c61c
+msgid ""
+"Often, it makes sense to have each process only generate particles that "
+"it owns, so that the particles are already in the right place in the "
+"container. In general, however, users may need to call "
+":cpp:`Redistribute()` after adding particles, if the processes generate "
+"particles they don't own (for example, if the particle positions are "
+"perturbed from the cell centers and thus end up outside their parent "
+"grid)."
+msgstr ""
+
+#: ../../source/Particle.rst:314 a74b30b63b444b548728e861e7bfc151
+msgid "Adding particle components at runtime"
+msgstr ""
+
+#: ../../source/Particle.rst:316 17975c035c224433ae26b4368f04ff27
+msgid ""
+"In addition to the components specified as template parameters, you can "
+"also add additional :cpp:`Real` and :cpp:`int` components at runtime. "
+"These components will be stored in Struct-of-Array style. To add a "
+"runtime component, use the :cpp:`AddRealComp` and :cpp:`AddIntComp` "
+"methods of :cpp:`ParticleContainer`, like so:"
+msgstr ""
+
+#: ../../source/Particle.rst:336 f6c36d23df334c0f9c773dac0978ae1d
+msgid ""
+"Runtime-added components can be accessed like regular Struct-of-Array "
+"data. The new components will be added at the end of the compile-time "
+"defined ones."
+msgstr ""
+
+#: ../../source/Particle.rst:339 0077a63f6c294139a008f99896673ccb
+msgid ""
+"When you are using runtime components, it is crucial that when you are "
+"adding particles to the container, you call the "
+":cpp:`DefineAndReturnParticleTile` method for each tile prior to adding "
+"any particles. This will make sure the space for the new components has "
+"been allocated. For example, in the above section on :ref:`initializing "
+"particle data <sec:Particles:Initializing>`, we accessed the particle "
+"tile data using the :cpp:`GetParticles` method. If we runtime components "
+"are used, :cpp:`DefineAndReturnParticleTile` should be used instead:"
+msgstr ""
+
+#: ../../source/Particle.rst:367 b41f862e178d44bbaf23eb6dee7106a5
+msgid "Iterating over Particles"
+msgstr ""
+
+#: ../../source/Particle.rst:369 8c69552b89c241b182c3aae0089f81c5
+msgid ""
+"To iterate over the particles on a given level in your container, you can"
+" use the :cpp:`ParIter` class, which comes in both const and non-const "
+"flavors. For example, to iterate over all the AoS data:"
+msgstr ""
+
+#: ../../source/Particle.rst:386 06cfd0a85b3b445c95dbdbcda6992948
+msgid ""
+"The outer loop will execute once every grid (or tile, if tiling is "
+"enabled) *that contains particles*; grids or tiles that don't have any "
+"particles will be skipped. You can also access the SoA data using the "
+":math:`ParIter` as follows:"
+msgstr ""
+
+#: ../../source/Particle.rst:409 77c48f7dd237471e9b714ec38b7308ce
+msgid "Passing particle data into Fortran routines"
+msgstr ""
+
+#: ../../source/Particle.rst:411 0d9d536e7eef447188a181f98396a0d4
+msgid ""
+"Because the AMReX particle struct is a Plain-Old-Data type, it is "
+"interoperable with Fortran when the :fortran:`bind(C)` attribute is used."
+" It is therefore possible to pass a grid or tile worth of particles into "
+"fortran routines for processing, instead of iterating over them in C++. "
+"You can also define a Fortran derived type that is equivalent to C struct"
+" used for the particles. For example:"
+msgstr ""
+
+#: ../../source/Particle.rst:434 29f60a91081a4ceb976f45d8903ca56c
+msgid ""
+"is equivalent to a particle struct you get with :cpp:`Particle<6, 0>`. "
+"Here, :fortran:`amrex_particle_real` is either single or doubled "
+"precision, depending on whether ``USE_SINGLE_PRECISION_PARTICLES`` is "
+"``TRUE`` or not. We recommend always using this type in Fortran routines "
+"that work on particle data to avoid hard-to-debug incompatibilities "
+"between floating point types."
+msgstr ""
+
+#: ../../source/Particle.rst:444 470978b000014d12a6ab54e4abe2abeb
+msgid "Interacting with Mesh Data"
+msgstr ""
+
+#: ../../source/Particle.rst:446 06291fe337e34464aa2658fa49f378f2
+msgid ""
+"It is common to want to have the mesh communicate information to the "
+"particles and vice versa. For example, in Particle-in-Cell calculations, "
+"the particles deposit their charges onto the mesh, and later, the "
+"electric fields computed on the mesh are interpolated back to the "
+"particles. Below, we show examples of both these sorts of operations."
+msgstr ""
+
+#: ../../source/Particle.rst:476 bf12ecb882a94fe1a58de28a9f0c37b9
+msgid ""
+"Here, :fortran:`interpolate_cic` is a Fortran subroutine that actually "
+"performs the interpolation on a single box. :cpp:`Ex`, :cpp:`Ey`, and "
+":cpp:`Ez` are MultiFabs that contain the electric field data. These "
+"MultiFabs must be defined with the correct number of ghost cells to "
+"perform the desired type of interpolation, and we call "
+":cpp:`FillBoundary` prior to the Fortran call so that those ghost cells "
+"will be up-to-date."
+msgstr ""
+
+#: ../../source/Particle.rst:483 5bffc9df90c14a2a970ee694c61051e4
+msgid ""
+"In this example, we have assumed that the :cpp:`ParticleContainer MyPC` "
+"has been defined on the same grids as the electric field MultiFabs, so "
+"that we use the :cpp:`ParIter` to index into the MultiFabs to get the "
+"data associated with current tile. If this is not the case, then an "
+"additional copy will need to be performed. However, if the particles are "
+"distributed in an extremely uneven fashion, it is possible that the load "
+"balancing improvements associated with the two-grid approach are worth "
+"the cost of the extra copy."
+msgstr ""
+
+#: ../../source/Particle.rst:491 7b4df28e079a4299a8597cc5d5ad97a4
+msgid ""
+"The inverse operation, in which the particles communicate data *to* the "
+"mesh, is quite similar:"
+msgstr ""
+
+#: ../../source/Particle.rst:515 91f561cc9f464f5c89c77a06f245ab08
+msgid ""
+"As before, we loop over all our particles, calling a Fortran routine that"
+" deposits them on to the appropriate :cpp:`FArrayBox rhofab`. The "
+":cpp:`rhofab` must have enough ghost cells to cover the support of all "
+"the particles associated with them. Note that we call :cpp:`SumBoundary` "
+"instead of :cpp:`FillBoundary` after performing the deposition, to add up"
+" the charge in the ghost cells surrounding each Fab into the "
+"corresponding valid cells."
+msgstr ""
+
+#: ../../source/Particle.rst:522 6034382a84d542e88ef30dac933c54fe
+msgid ""
+"For a complete example of an electrostatic PIC calculation that includes "
+"static mesh refinement, please see the `Electrostatic PIC tutorial`."
+msgstr ""
+
+#: ../../source/Particle.rst:530 d1a42da0d6174c368e57c8731d8916db
+msgid "Short Range Forces"
+msgstr ""
+
+#: ../../source/Particle.rst:532 0fc0654340c5470e9f7c8a2932fbb41c
+msgid ""
+"In a PIC calculation, the particles don't interact with each other "
+"directly; they only see each other through the mesh. An alternative use "
+"case is particles that exert short-range forces on each other. In this "
+"case, beyond some cut-off distance, the particles don't interact with "
+"each other and therefore don't need to be included in the force "
+"calculation. Our approach to these kind of particles is to fill "
+"\"neighbor buffers\" on each tile that contain copies of the particles on"
+" neighboring tiles that are within some number of cells :math:`N_g` of "
+"the tile boundaries. See :numref:`fig:particles:neighbor_particles`, "
+"below for an illustration. By choosing the number of ghost cells to match"
+" the interaction radius of the particles, you can capture all of the "
+"neighbors that can possibly influence the particles in the valid region "
+"of the tile. The forces on the particles on different tiles can then be "
+"computed independently of each other using a variety of methods."
+msgstr ""
+
+#: ../../source/Particle.rst:555 7d78766fb8be42b4bb7e84729d02d0cb
+msgid ""
+": An illustration of filling neighbor particles for short-range force "
+"calculations. Here, we have a domain consisting of one :math:`32 \\times "
+"32` grid, broken up into :math:`8 \\times 8` tiles. The number of ghost "
+"cells is taken to be :math:`1`.  For the tile in green, particles on "
+"other tiles in the entire shaded region will copied and packed into the "
+"green tile's neighbor buffer. These particles can then be included in the"
+" force calculation. If the domain is periodic, particles in the grown "
+"region for the blue tile that lie on the other side of the domain will "
+"also be copied, and their positions will modified so that a naive "
+"distance calculation between valid particles and neighbors will be "
+"correct."
+msgstr ""
+
+#: ../../source/Particle.rst:570 cd20441e49c0455a85cb95168d086d52
+msgid ""
+"For a :cpp:`ParticleContainer` that does this neighbor finding, please "
+"see :cpp:`NeighborParticleContainer` in "
+"``amrex/Src/Particles/AMReX_NeighborParticleContainer.H.`` The "
+":cpp:`NeighborParticleContainer` has additional methods called "
+":cpp:`fillNeighbors()` and :cpp:`clearNeighbors()` that fill the "
+":cpp:`neighbors` data structure with copies of the proper particles. A "
+"tutorial that uses these features is available at `NeighborList`_. In "
+"this tutorial the function :cpp:`void "
+"MDParticleContainer:computeForces()` computes the forces on a given tile "
+"via direct summation over the real and neighbor particles, as follows:"
+msgstr ""
+
+#: ../../source/Particle.rst:640 ff75ed7479f1402fb257eb56e0c79214
+msgid ""
+"Doing a direct :math:`N^2` summation over the particles on a tile is "
+"avoided by binning the particles by cell and building a neighbor list.  "
+"The data structure used to represent the neighbor lists is illustrated in"
+" :numref:`fig:particles:neighbor_list`."
+msgstr ""
+
+#: ../../source/Particle.rst:653 07aa4f905a5f4951a7550be75bda2f6f
+msgid ""
+": An illustration of the neighbor list data structure used by AMReX. The "
+"list for each tile is represented by an array of integers. The first "
+"number in the array is the number of real (i.e., not in the neighbor "
+"buffers) collision partners for the first particle on this tile, while "
+"the second is the number of collision partners from nearby tiles in the "
+"neighbor buffer. Based on the number of collision partners, the next "
+"several entries are the indices of the collision partners in the real and"
+" neighbor particle arrays, respectively. This pattern continues for all "
+"the particles on this tile."
+msgstr ""
+
+#: ../../source/Particle.rst:666 4ef58fd5b4cd4d478749d7a3f5791814
+msgid ""
+"This array can then be used to compute the forces on all the particles in"
+" one scan. Users can define their own :cpp:`NeighborParticleContainer` "
+"subclasses that have their own collision criteria by overloading the "
+"virtual :cpp:`check_pair` function."
+msgstr ""
+
+#: ../../source/Particle.rst:676 1ded840d753e4899a118b7a64853ae6f
+msgid "Particle IO"
+msgstr ""
+
+#: ../../source/Particle.rst:678 f17c2b50b15f455a84c8f16ca003af04
+msgid ""
+"AMReX provides routines for writing particle data to disk for analysis, "
+"visualization, and for checkpoint / restart. The most important methods "
+"are the :cpp:`WritePlotFile`, :cpp:`Checkpoint`, and :cpp:`Restart` "
+"methods of :cpp:`ParticleContainer`, which all use a parallel-aware "
+"binary file format for reading and writing particle data on a grid-by-"
+"grid basis. These methods are designed to complement the functions in "
+"AMReX_PlotFileUtil.H for performing mesh data IO. For example:"
+msgstr ""
+
+#: ../../source/Particle.rst:695 c9805292a8264047b5924c2186421f8b
+msgid ""
+"will create a plot file called \"plt00000\" and write the mesh data in "
+":cpp:`output` to it, and then write the particle data in a subdirectory "
+"called \"particle0\". There is also the :cpp:`WriteAsciiFile` method, "
+"which writes the particles in a human-readable text format. This is "
+"mainly useful for testing and debugging."
+msgstr ""
+
+#: ../../source/Particle.rst:697 4b6701aeb4b84d728a04c0e90fef0979
+msgid ""
+"The binary file format is currently readable by :cpp:`yt`. In additional,"
+" there is a Python conversion script in "
+"``amrex/Tools/Py_util/amrex_particles_to_vtp`` that can convert both the "
+"ASCII and the binary particle files to a format readable by Paraview. See"
+" the chapter on :ref:`Chap:Visualization` for more information on "
+"visualizing AMReX datasets, including those with particles."
+msgstr ""
+
+#: ../../source/Particle.rst:702 5930e631c65c4481a333bf7adffa9cb6
+msgid "Inputs parameters"
+msgstr ""
+
+#: ../../source/Particle.rst:706 1902bb0601a74fed867cd6012df35e77
+msgid ""
+"There are several runtime parameters users can set in their :cpp:`inputs`"
+" files that control the behavior of the AMReX particle classes. These are"
+" summarized below. They should be preceded by \"particles\" in your "
+"inputs deck."
+msgstr ""
+
+#: ../../source/Particle.rst:710 be2e3ece8ee94fc580d5e7fbe6806534
+msgid ""
+"The first set of parameters concerns the tiling capability of the "
+"ParticleContainer. If you are seeing poor performance with OpenMP, the "
+"first thing to look at is whether there are enough tiles available for "
+"each thread to work on."
+msgstr ""
+
+#: ../../source/Particle.rst:714 ../../source/Particle.rst:729
+#: ../../source/Particle.rst:750 3f002ecf2ef44506ae9f41cb9e24fe28
+#: 575d5155f6e24af2ace35c6743f08dee d12874cbe4cc4ed6b19c846e2506ab9b
+msgid "Description"
+msgstr ""
+
+#: ../../source/Particle.rst:714 ../../source/Particle.rst:729
+#: ../../source/Particle.rst:750 059405987b584d3f99ff05e595f5f40e
+#: 227279644d9f4d8aad8cc21c0be5bb18 f6400ac0913f4083a3ae491884207501
+msgid "Type"
+msgstr ""
+
+#: ../../source/Particle.rst:714 ../../source/Particle.rst:729
+#: ../../source/Particle.rst:750 47b44a38d7d44be3bef25aa76c342f49
+#: 80179110f65648bca9765b8002b918f8 9076ceccb77b42d1810d8886adf5342b
+msgid "Default"
+msgstr ""
+
+#: ../../source/Particle.rst:716 17bcedddbecc4abf9a480836d3cc393c
+msgid "do_tiling"
+msgstr ""
+
+#: ../../source/Particle.rst:716 0aa29d3f2e9e4e5e84f66efdccbc8f38
+msgid ""
+"Whether to use tiling for particles. Should be on when using OpenMP, and "
+"off when running on GPUs."
+msgstr ""
+
+#: ../../source/Particle.rst:716 ../../source/Particle.rst:742
+#: 0fbe68c44df042738a8b5b523d38907b eec4dc85120f4097a6fd2c81b4be2b2c
+msgid "Bool"
+msgstr ""
+
+#: ../../source/Particle.rst:716 ../../source/Particle.rst:742
+#: a8e3248b1eaa41bab90ce77dbce43547 fd8ea31188be4714b2f36eb3bdb49465
+msgid "false"
+msgstr ""
+
+#: ../../source/Particle.rst:719 5802feeaa8984d5c885c4967609a88a3
+msgid "tile_size"
+msgstr ""
+
+#: ../../source/Particle.rst:719 1f4927f1e9bf4d55b6234e59aed44df0
+msgid "If tiling is on, the maximum tile_size to in each direction"
+msgstr ""
+
+#: ../../source/Particle.rst:719 ../../source/Particle.rst:733
+#: ../../source/Particle.rst:736 868db16ac5ad4e1186622a4ed65bf92e
+#: cf34009d0f7a4955a24385e5fde04dba e26441448ee444e381d5e860cd87c499
+msgid "Ints"
+msgstr ""
+
+#: ../../source/Particle.rst:719 f7021a7034e442ea9f4cbde1aca7b4bf
+msgid "1024000,8,8"
+msgstr ""
+
+#: ../../source/Particle.rst:722 3c8448fe98e24e8894ff410ce397b94d
+msgid ""
+"The next set concerns runtime parameters that control the particle IO. "
+"Parallel file systems tend not to like it when too many MPI tasks touch "
+"the disk at once. Additionally, performance can degrade if all MPI tasks "
+"try writing to the same file, or if too many small files are created. In "
+"general, the \"correct\" values of these parameters will depend on the "
+"size of your problem (i.e., number of boxes, number of MPI tasks), as "
+"well as the system you are using. If you are experiencing problems with "
+"particle IO, you could try varying some / all of these parameters."
+msgstr ""
+
+#: ../../source/Particle.rst:731 935f70ecea16456f8f896b1d0967b038
+msgid "particles_nfiles"
+msgstr ""
+
+#: ../../source/Particle.rst:731 b796e1451e4c481d8e23d0bb7fa8d8fd
+msgid "How many files to use when writing particle data to plt directories"
+msgstr ""
+
+#: ../../source/Particle.rst:731 ../../source/Particle.rst:739
+#: ../../source/Particle.rst:758 184310bd1c4142dc8f4803740f54ae65
+#: 431ecb7d6a8d458c9254cb59babbb356 5be346cdfe9444b094a94fb1cb8f22a7
+msgid "Int"
+msgstr ""
+
+#: ../../source/Particle.rst:731 60911f65389046d6bb99afb07e2a2c2d
+msgid "1024"
+msgstr ""
+
+#: ../../source/Particle.rst:733 ffb0e2f927df43cbbd92c75bb36b4319
+msgid "nreaders"
+msgstr ""
+
+#: ../../source/Particle.rst:733 6fbe2539787d483fbfda0f9b6481a773
+msgid ""
+"How many MPI tasks to use as readers when initializing particles from "
+"binary files."
+msgstr ""
+
+#: ../../source/Particle.rst:733 3daa9155d9ec4b53bd68fedc5dc4865f
+msgid "64"
+msgstr ""
+
+#: ../../source/Particle.rst:736 31e23b1f06fd457eabc0f2b3a20191c9
+msgid "nparts_per_read"
+msgstr ""
+
+#: ../../source/Particle.rst:736 4404187d256f48f9896c3c1ccd75024e
+msgid ""
+"How many particles each task should read from said files before calling "
+"Redistribute"
+msgstr ""
+
+#: ../../source/Particle.rst:736 b75177b565e946c1af6914630064f805
+msgid "100000"
+msgstr ""
+
+#: ../../source/Particle.rst:739 2cf8528de2b345b38f8def32a707b1c1
+msgid "datadigits_read"
+msgstr ""
+
+#: ../../source/Particle.rst:739 5a0eaa3480254fb880d5b29fc66da76f
+msgid ""
+"This for backwards compatibility, don't use unless you need to read and "
+"old (pre mid 2017) AMReX dataset."
+msgstr ""
+
+#: ../../source/Particle.rst:739 d752bd9597c540bf83b6c16bb662a6f7
+msgid "5"
+msgstr ""
+
+#: ../../source/Particle.rst:742 df57faa893af439c9db529e0bdfb6d48
+msgid "use_prepost"
+msgstr ""
+
+#: ../../source/Particle.rst:742 85f74d2efabf48889332a996b8f0daf2
+msgid ""
+"This is an optimization for large particle datasets that groups MPI calls"
+" needed during the IO together. Try it seeing poor IO speeds on large "
+"problems."
+msgstr ""
+
+#: ../../source/Particle.rst:747 5d4f5d585e6141e1af3b25fa3c4c9149
+msgid ""
+"The following runtime parameters affect the behavior of virtual particles"
+" in Nyx."
+msgstr ""
+
+#: ../../source/Particle.rst:752 0e9d453a9b8241f689e9086af9490ac9
+msgid "aggregation_type"
+msgstr ""
+
+#: ../../source/Particle.rst:752 95e79e808ab147e4b2f9403a58835956
+msgid "How to create virtual particles from finer levels. The options are:"
+msgstr ""
+
+#: ../../source/Particle.rst:754 25c11d4342a742a48fdb3518189f8693
+msgid ""
+"\"None\" - don't do any aggregation. \"Cell\" - when creating virtuals, "
+"combine all particles that are in the same cell."
+msgstr ""
+
+#: ../../source/Particle.rst:752 222718780e8b45e0ae56165752eb0874
+msgid "String"
+msgstr ""
+
+#: ../../source/Particle.rst:752 f5b697508a5849348ae297bd2f72a652
+msgid "\"None\""
+msgstr ""
+
+#: ../../source/Particle.rst:758 d6b153ec6f3f47e6a6b0e159eee57659
+msgid "aggregation_buffer"
+msgstr ""
+
+#: ../../source/Particle.rst:758 386614fc1389437cb33e046476a3aa69
+msgid ""
+"If aggregation on, the number of cells around the coarse/fine boundary in"
+" which no aggregation should be performed."
+msgstr ""
+
+#: ../../source/Particle.rst:758 124fbae8fa004ab492de1b3b8b8425bc
+msgid "2"
+msgstr ""
+
+#: ../../source/Particle.rst:762 3ad404a2d0ef46689b3d80606767bb89
+msgid ""
+"Finally, the `amrex.use_gpu_aware_mpi` switch can also affect the "
+"behavior of the particle communication routines when running on GPU "
+"platforms like Summit. We recommend leaving it off."
+msgstr ""
+
+#: ../../source/Particle.rst:766 3b17012c7c434a08aaf500cde992a1f5
+msgid ""
+"Particles default to double precision for their real data. To use single "
+"precision, compile your code with "
+"``USE_SINGLE_PRECISION_PARTICLES=TRUE``."
+msgstr ""
+
+#: ../../source/Particle.rst:769 85e90c6353074b71a9304c0349ed445c
+msgid ""
+"Note that :cpp:`cpu` stores the number of the process the particle was "
+"*generated* on, not the one it's currently assigned to. This number is "
+"set on initialization and never changes, just like the particle "
+":cpp:`id`. In essence, the particles have two integer id numbers, and "
+"only the combination of the two is unique. This was done to facilitate "
+"the creation of particle initial conditions in parallel."
+msgstr ""
+
+#: ../../source/Particle.rst:772 5939c7daa0ac4616a0f508fd8e1eb3da
+msgid ""
+"Note that for the extra particle components, which component refers to "
+"which variable is an application-specific convention - the particles have"
+" 4 extra real comps, but which one is \"mass\" is up to the user. We "
+"suggest using an :cpp:`enum` to keep these indices straight; please see "
+"``amrex-"
+"tutorials/ExampleCodes/Particles/ElectrostaticPIC/ElectrosticParticleContainer.H``"
+" for an example of this."
+msgstr ""
+

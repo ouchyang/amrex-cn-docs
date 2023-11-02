@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/Debugging.rst:5 ab610219f607486ea46126422781ebe2
+msgid "Debugging"
+msgstr ""
+
+#: ../../source/Debugging.rst:7 01987a600869493886860b6f1f16763f
+msgid ""
+"Debugging is an art.  Everyone has their own favorite method.  Here we "
+"offer a few tips we have found to be useful."
+msgstr ""
+
+#: ../../source/Debugging.rst:10 e5886b09978d4c76bb455fc190eab823
+msgid ""
+"To help debugging, AMReX handles various signals in the C standard "
+"library raised in the runs.  This gives us a chance to print out more "
+"information using Linux/Unix backtrace capability.  The signals include "
+"segmentation fault (or \"segfault\"), interruption by the user "
+"(control-c), assertion errors, and floating point exceptions (NaNs, "
+"divided by zero and overflow).  The handling of segfault, assertion "
+"errors and interruption by control-C are enabled by default.  Note that "
+"``AMREX_ASSERT()`` is only on when compiled with ``DEBUG=TRUE`` or "
+"``USE_ASSERTION=TRUE`` in GNU make, or with ``-DCMAKE_BUILD_TYPE=Debug`` "
+"or ``-DAMReX_ASSERTIONS=YES`` in CMake.  The trapping of floating point "
+"exceptions is not enabled by default unless the code is compiled with "
+"``DEBUG=TRUE`` in GNU make, or with ``-DCMAKE_BUILD_TYPE=Debug`` or "
+"``-DAMReX_FPE=YES`` in CMake to turn on compiler flags if supported.  "
+"Alternatively, one can always use runtime parameters to control the "
+"handling of floating point exceptions: ``amrex.fpe_trap_invalid`` for "
+"NaNs, ``amrex.fpe_trap_zero`` for division by zero and "
+"``amrex.fpe_trap_overflow`` for overflow.  To more effectively trap the "
+"use of uninitialized values, AMReX also initializes ``FArrayBox``\\ s in "
+"``MulitFab``\\ s and arrays allocated by ``bl_allocate`` to signaling "
+"NaNs when it is compiled with ``TEST=TRUE`` or ``DEBUG=TRUE`` in GNU "
+"make, or with ``-DCMAKE_BUILD_TYPE=Debug`` in CMake. One can also control"
+" the setting for ``FArrayBox`` using the runtime parameter, "
+"``fab.init_snan``. Note for Macs, M1 and M2 chips using Arm64 "
+"architecture are not able to trap division by zero."
+msgstr ""
+
+#: ../../source/Debugging.rst:32 bdb38ac44e1b47399ad2b907470cfbe5
+msgid ""
+"One can get more information than the backtrace of the call stack by "
+"instrumenting the code.  Here is an example. You know the line ``Real rho"
+" = state(cell,0);`` is causing a segfault.  You could add a print "
+"statement before that.  But it might print out thousands (or even "
+"millions) of line before it hits the segfault.  What you could do is the "
+"following,"
+msgstr ""
+
+#: ../../source/Debugging.rst:55 4f24d8cdc2894cc4bac3584aa057a2c7
+msgid "When it hits the segfault, you will only see the last print out."
+msgstr ""
+
+#: ../../source/Debugging.rst:57 1bfff6e045de4ba9a0c120eb58d81eda
+msgid "Writing a ``MultiFab`` to disk with"
+msgstr ""
+
+#: ../../source/Debugging.rst:65 881ca8d4de9b4f0d8f9f52a28d77a65e
+msgid ""
+"in ``AMReX_VisMF.H`` and examining it with ``Amrvis`` (section "
+":ref:`sec:amrvis`) can be helpful as well.  In ``AMReX_MultiFabUtil.H``, "
+"function"
+msgstr ""
+
+#: ../../source/Debugging.rst:76 c510064ca44c45edaf6172774357ee55
+msgid ""
+"can output the data for a single cell. ``n`` is the component, with the "
+"default being to print all components. ``ng`` is the number of ghost "
+"cells to include."
+msgstr ""
+
+#: ../../source/Debugging.rst:79 0046d6e576a54106be28e525c9c718a7
+msgid ""
+"Valgrind is one of our favorite debugging tools.  For MPI runs, one can "
+"tell Valgrind to output to different files for different processes. For "
+"example,"
+msgstr ""
+
+#: ../../source/Debugging.rst:90 4c901e6548b447d786fe7cad898275a1
+msgid "Breaking into Debuggers"
+msgstr ""
+
+#: ../../source/Debugging.rst:92 16a03bfeef2b408594a1396c6efd8bc6
+msgid ""
+"In order to break into debuggers and use modern IDEs, the backtrace "
+"signal handling described above needs to be disabled."
+msgstr ""
+
+#: ../../source/Debugging.rst:94 bceda662d9fa4d79b8033c139521dc39
+msgid ""
+"The following runtime options need to be set in order to prevent AMReX "
+"from catching the break signals before a debugger can attach to a "
+"crashing process:"
+msgstr ""
+
+#: ../../source/Debugging.rst:101 00682e57d20646a9922d27514c40a448
+msgid ""
+"This default behavior can also be modified by applications, see for "
+"example `this custom application initializer <https://github.com/Exawind"
+"/amr-wind/blob/84f81a990152f4f748c1ab0fa17c8c663e51df86/amr-"
+"wind/main.cpp#L21>`__."
+msgstr ""
+
+#: ../../source/Debugging.rst:107 dea5e2ff5be9458aae14a4b68a30c146
+msgid "Basic Gpu Debugging"
+msgstr ""
+
+#: ../../source/Debugging.rst:110 3accabc255634e90bc167ab4b1d86fef
+msgid ""
+"The asynchronous nature of GPU execution can make tracking down bugs "
+"complex. The relative timing of improperly coded functions can cause "
+"variations in output and the timing of error messages may not linearly "
+"relate to a place in the code. One strategy to isolate specific kernel "
+"failures is to add ``amrex::Gpu::synchronize()`` or "
+"``amrex::Gpu::streamSynchronize()`` after every ``ParallelFor`` or "
+"similar ``amrex::launch`` type call. These synchronization commands will "
+"halt execution of the code until the GPU or GPU stream, respectively, has"
+" finished processing all previously requested tasks, thereby making it "
+"easier to locate and identify sources of error."
+msgstr ""
+
+#: ../../source/Debugging.rst:117 422c0765b8384907892db80fbfefac04
+msgid "Debuggers and Related Tools"
+msgstr ""
+
+#: ../../source/Debugging.rst:119 85a5ec15fab44a0786cfc373d8f5a0bf
+msgid ""
+"Users may also find debuggers useful. Architecture agnostic tools include"
+" ``gdb``, ``hpctoolkit``, and ``Valgrind``. Note that there are "
+"architecture specific implementations of ``gdb`` such as ``cuda-gdb``, "
+"``rocgdb``, ``gdb-amd``, and the Intel ``gdb``. Usage of several of these"
+" variations are described in the following sections."
+msgstr ""
+
+#: ../../source/Debugging.rst:122 08a9a685bb084454aebee8041462c765
+msgid ""
+"For advance debugging topics and tools, refer to system-specific "
+"documentation (e.g. "
+"https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging)."
+msgstr ""
+
+#: ../../source/Debugging.rst:126 8698f530dc7d4d8dbe8a0a8bfc4ad2a9
+msgid "CUDA-Specific Tests"
+msgstr ""
+
+#: ../../source/Debugging.rst:128 ../../source/Debugging.rst:155
+#: ../../source/Debugging.rst:175 2a113df7af1a4aa395f0fd0ef7fc37d1
+#: 99156a9fac014b6bb4846d80956b2e9e d9e498c071de4739994b0dd60d4cc630
+msgid "To test if your kernels have launched, run:"
+msgstr ""
+
+#: ../../source/Debugging.rst:134 cd7c0903987a40c1bd12c544dc816e35
+msgid ""
+"If using NVIDIA Nsight Compute instead, access ``nvprof`` functionality "
+"with:"
+msgstr ""
+
+#: ../../source/Debugging.rst:140 209a9d95ae394140b2ff3ab1b2c78313
+msgid ""
+"Run ``nvprof -o profile%p.nvvp ./main3d.xxxx`` or ``nsys profile -o "
+"nsys_out.%q{SLURM_PROCID}.%q{SLURM_JOBID} ./main3d.xxx`` for a small "
+"problem and examine page faults using ``nvvp`` or ``nsight-sys "
+"$(pwd)/nsys_out.#.######.qdrep``."
+msgstr ""
+
+#: ../../source/Debugging.rst:144 613e23419bf446538f9f24be0c54bc6b
+msgid ""
+"Run under ``cuda-memcheck`` or the newer version ``compute-sanitizer`` to"
+" identify memory errors."
+msgstr ""
+
+#: ../../source/Debugging.rst:146 4a5e3384fb594319aec996f7eca35b00
+msgid "Run under ``cuda-gdb`` to identify kernel errors."
+msgstr ""
+
+#: ../../source/Debugging.rst:148 39d0ae5771564d3fa7c3168ada74b48d
+msgid ""
+"To help identify race conditions, globally disable asynchronicity of "
+"kernel launches for all CUDA applications by setting "
+"``CUDA_LAUNCH_BLOCKING=1`` in your environment variables. This will "
+"ensure that only one CUDA kernel will run at a time."
+msgstr ""
+
+#: ../../source/Debugging.rst:153 2c2bb6ff11074d1da0b3e20e8c43c883
+msgid "AMD ROCm-Specific Tests"
+msgstr ""
+
+#: ../../source/Debugging.rst:161 c7587b9f559a40a9a5e574ce54a86af2
+msgid ""
+"Run ``rocprof  --hsa-trace --stats --timestamp on --roctx-trace "
+"./main3d.xxxx`` for a small problem and examine tracing using "
+"``chrome://tracing``."
+msgstr ""
+
+#: ../../source/Debugging.rst:164 6d280415dea746f8b7eb1ba531163bb4
+msgid "Run under ``rocgdb`` for source-level debugging."
+msgstr ""
+
+#: ../../source/Debugging.rst:166 56dfaef0de3c40ddbc31d252429c9601
+msgid ""
+"To help identify if there are race conditions, globally disable "
+"asynchronicity of kernel launches by setting ``CUDA_LAUNCH_BLOCKING=1`` "
+"or ``HIP_LAUNCH_BLOCKING=1`` in your environment variables. This will "
+"ensure only one kernel will run at a time. See the `AMD ROCm docs' "
+"chicken bits section`_ for more debugging environment variables."
+msgstr ""
+
+#: ../../source/Debugging.rst:173 2270e1d9d24c4a70aacb1b5ef48eb3d2
+msgid "Intel GPU Specific Tests"
+msgstr ""
+
+#: ../../source/Debugging.rst:181 e6168f0db5d64ad180e0d29f052a4faf
+msgid ""
+"Run Intel Advisor, ``advisor --collect=survey ./main3d.xxx`` for a small "
+"problem with 1 MPI process and examine metrics."
+msgstr ""
+
+#: ../../source/Debugging.rst:185 3d7ec61b0317432b91be77d2aae0528d
+msgid "Run under ``gdb`` with the `Intel Distribution for GDB`_."
+msgstr ""
+
+#: ../../source/Debugging.rst:187 c4ccd81572c94d639bf03badfbf33d09
+msgid ""
+"To report back-end information, set ``ZE_DEBUG=1`` in your environment "
+"variables."
+msgstr ""
+

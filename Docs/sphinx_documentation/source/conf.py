@@ -40,10 +40,10 @@ extensions = ['sphinx.ext.mathjax',
               'sphinx.ext.viewcode',
               'sphinx.ext.intersphinx']
 
-intersphinx_mapping = {
-    'amrex_tutorials': ('https://amrex-codes.github.io/amrex/tutorials_html/', None),
-    'amrex_hydro':('https://amrex-codes.github.io/amrex/hydro_html/', None)
-}
+#intersphinx_mapping = {
+#    'amrex_tutorials': ('https://amrex-codes.github.io/amrex/tutorials_html/', None),
+#    'amrex_hydro':('https://amrex-codes.github.io/amrex/hydro_html/', None)
+#}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['ytemplates']
@@ -77,6 +77,9 @@ release = get_amrex_version()
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
 language = 'en'
+locale_dirs = ['../translation/']   # path is example but recommended.
+gettext_compact = False  # optional.
+gettext_uuid = True  # optional.
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

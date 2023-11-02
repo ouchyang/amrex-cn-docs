@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/InputsLoadBalancing.rst:4 9b5917e9d390485ea01de75db7de0310
+msgid "Gridding and Load Balancing"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:6 197562990451435da860804cffe8ad77
+msgid ""
+"The following inputs must be preceded by \"amr\" and determine how we "
+"create the grids and how often we regrid."
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:9
+#: ../../source/InputsLoadBalancing.rst:46 5ece3844bcbd4b5192e40f07804a6604
+#: 7a7e0a33963d4690b14107ab107bd3bb
+msgid "Parameter"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:9
+#: ../../source/InputsLoadBalancing.rst:46 2c00e701c9fb4a94b7876c05573826a4
+#: 67f4bdd05d604a079804605aa8b482a4
+msgid "Description"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:9
+#: ../../source/InputsLoadBalancing.rst:46 261b5cfe208a457fabf36e7d055407ae
+#: ee08bf37d78c463e9bbc2be68ce6f9af
+msgid "Type"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:9
+#: ../../source/InputsLoadBalancing.rst:46 c7bd47219c764e6b9b24988bfbdd05e7
+#: f1dec82dc1a4401e9022c0a205acf14c
+msgid "Default"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:11 d6b1a32435e34734b08422fccd37ceaa
+msgid "regrid_int"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:11 44dde4397c1742f0b4fd7279b8c95bc2
+msgid ""
+"How often to regrid (in number of steps at level 0) if regrid_int = -1 "
+"then no regridding will occur"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:11
+#: ../../source/InputsLoadBalancing.rst:14
+#: ../../source/InputsLoadBalancing.rst:16
+#: ../../source/InputsLoadBalancing.rst:18
+#: ../../source/InputsLoadBalancing.rst:20
+#: ../../source/InputsLoadBalancing.rst:23
+#: ../../source/InputsLoadBalancing.rst:26
+#: ../../source/InputsLoadBalancing.rst:33
+#: ../../source/InputsLoadBalancing.rst:36
+#: ../../source/InputsLoadBalancing.rst:39
+#: ../../source/InputsLoadBalancing.rst:48
+#: ../../source/InputsLoadBalancing.rst:51
+#: ../../source/InputsLoadBalancing.rst:54 01af4767c31f47cdb053d45cf61eb11e
+#: 126ed06e983f4a57bd6007c64b1dadf1 22d2c6e27755451fbe7d05e42529cfe3
+#: 317389dbd1764e8f96a0b4f639dbf5f1 64ed934667414928aa3cefd9692ba734
+#: 76c5c5eba98440d79ad6dfa90769a88a 951141b31f6c460fb40183e3ae45518a
+#: a507a1152e6b4da89e3a16fc924e8ea8 b53cec8d7ed94b08815ab771e1d5ba24
+#: bdc8f1a935984ff0833ad82ee50e989a bed6a75fed51400bbef7f74925047653
+#: d3b35b7c03894d7ca54bcde2acf001fe e5152d813c06491d97c78f901db6d87b
+msgid "Int"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:11 6095ffadec4d478d993fd5e8a6d7bf0d
+msgid "-1"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:14
+#: ../../source/InputsLoadBalancing.rst:48 516e740400b344b68b66ebafd42f723f
+#: b45a828a04534ab1abf7fcc13cc7fd5c
+msgid "max_grid_size_x"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:14 1f12664f2ccd4b07b8ce26b5c22c87ec
+msgid "Maximum number of cells at level 0 in each grid in x-direction"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:14
+#: ../../source/InputsLoadBalancing.rst:16
+#: ../../source/InputsLoadBalancing.rst:18
+#: ../../source/InputsLoadBalancing.rst:48
+#: ../../source/InputsLoadBalancing.rst:51
+#: ../../source/InputsLoadBalancing.rst:54 120553e239dd4a4082e5db15e52f9b48
+#: 6dc4a8b62999469697e803765414ec6c 76ad1eeb07a5456eb71473cc411aeb4f
+#: 89565527591d4b42a368e06c78ed9392 bc91d71fcd9047219386c1223ad40d25
+#: ca9c1077b31249e0a248f6ac2ef89909
+msgid "32"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:16
+#: ../../source/InputsLoadBalancing.rst:51 643c14c44a45429b8fe8960f1d499f8d
+#: 76b6e54c2b7c4ade8a19f11c4588b425
+msgid "max_grid_size_y"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:16 5689b4ce05054d8aa97fb3655ed9c8e3
+msgid "Maximum number of cells at level 0 in each grid in y-direction"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:18
+#: ../../source/InputsLoadBalancing.rst:54 7ee372e47e024b65b31dcb05aa1460f5
+#: f63eede10c7449d096a3e18109f84b83
+msgid "max_grid_size_z"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:18 faa568ac66bb4949b7b5c3b3733d9d22
+msgid "Maximum number of cells at level 0 in each grid in z-direction"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:20 89fc0fe60ad848ed82bfee567d18c497
+msgid "blocking_factor_x"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:20 83fd3bdcbc1448809d56657abd073aaa
+msgid ""
+"Each grid must be divisible by blocking_factor_x in x-direction (must be "
+"1 or power of 2)"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:20
+#: ../../source/InputsLoadBalancing.rst:23
+#: ../../source/InputsLoadBalancing.rst:26 a2497f8c282d4e96bc4969845ad1c1a7
+#: b703de1f4d664af1ad338abbe32ca5b4 f388ecf1046c4fdca1f0bb987fcbe17e
+msgid "8"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:23 c565fda83f18404e9a5e3668f783ec5a
+msgid "blocking_factor_y"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:23 3649eca17a3a473596b6f5f6e268dbf6
+msgid ""
+"Each grid must be divisible by blocking_factor_y in y-direction (must be "
+"1 or power of 2)"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:26 338f1bd0a5234a25b785d067f9bad451
+msgid "blocking_factor_z"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:26 b36971c250664f51ba95cb9667b0bd52
+msgid ""
+"Each grid must be divisible by blocking_factor_z in z-direction (must be "
+"1 or power of 2)"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:29 adf91b4d0e5e47909e663de1dd0c98db
+msgid "refine_grid_layout"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:29 7279ae74eb9544af9b499ef523957655
+msgid ""
+"Split grids in half until the number of grids is no less than the number "
+"of procs. (Will be overridden if refine_grid_layout_[x,y,z] is specified)"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:29 23b3a9a0dc9b4df8b2a87356ef5a5d83
+msgid "Bool"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:29 da58038143874f639ed13bd4e834dc91
+msgid "true"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:33 ce8864ef205c415ba4d5c3978f89eb20
+msgid "refine_grid_layout_x"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:33 b6a26a7b0d8345d6b415f3eca16f668e
+msgid ""
+"Allow grids to be split in the x-dimension when refining the layout. (1 "
+"to allow or 0 to disallow)"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:33
+#: ../../source/InputsLoadBalancing.rst:36
+#: ../../source/InputsLoadBalancing.rst:39 6b87f64d43f84ea5844518bbcd17cd2d
+#: 90577746326c48219431a33b9ad017ac b548ab5dde37434bbe2db8fdf73fae72
+msgid "1"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:36 f5f49691f4f6402d8f8db4e01ce69ec5
+msgid "refine_grid_layout_y"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:36 18e6467d8fbe4036a27fc62f1c74433c
+msgid ""
+"Allow grids to be split in the y-dimension when refining the layout. (1 "
+"to allow or 0 to disallow)"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:39 5fb1740f71ea488ca11cbcec74c93085
+msgid "refine_grid_layout_z"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:39 de54674aac5541bb92c04cbbf79cc58d
+msgid ""
+"Allow grids to be split in the z-dimension when refining the layout. (1 "
+"to allow or 0 to disallow)"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:43 8a82b1f66eda40dbab3cb4060a6661db
+msgid "The following inputs must be preceded by \"particles\"."
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:48 21d9293e7c1442ae9f8f43b83e37c548
+msgid ""
+"Maximum number of cells at level 0 in each grid in x-direction for grids "
+"in the ParticleBoxArray if dual_grid is true"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:51 8d2abc48c6b3446a82143aab7e085727
+msgid ""
+"Maximum number of cells at level 0 in each grid in y-direction for grids "
+"in the ParticleBoxArray if dual_grid is true"
+msgstr ""
+
+#: ../../source/InputsLoadBalancing.rst:54 5422ac999ca04dc282fb5bd29f88283a
+msgid ""
+"Maximum number of cells at level 0 in each grid in z-direction for grids "
+"in the ParticleBoxArray if dual_grid is true."
+msgstr ""
+

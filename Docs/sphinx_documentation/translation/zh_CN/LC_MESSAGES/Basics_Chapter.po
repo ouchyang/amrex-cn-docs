@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/Basics_Chapter.rst:4 babc4927037a4bec9444561457b05184
+msgid "Basics"
+msgstr ""
+
+#: ../../source/Basics_Chapter.rst:6 e9f9e8d666404159a49509cbe0e9b80a
+msgid ""
+"In this chapter, we present the basics of AMReX. The implementation "
+"source codes are in ``amrex/Src/Base/``. Note that AMReX classes and "
+"functions are in namespace ``amrex``. For clarity, we usually drop "
+"``amrex::`` in the example codes here. It is also assumed that headers "
+"have been properly included. We recommend you study the tutorial in "
+"``amrex-tutorials/ExampleCodes/Basic/HeatEquation_EX1_C`` while reading "
+"this chapter.  After reading this chapter, one should be able to develop "
+"single-level parallel codes using AMReX. It should also be noted that "
+"this is not a comprehensive reference manual."
+msgstr ""
+

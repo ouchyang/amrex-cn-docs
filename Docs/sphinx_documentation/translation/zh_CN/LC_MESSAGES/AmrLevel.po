@@ -1,0 +1,226 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/AmrLevel.rst:8 b67fab3dd07440ad90c1ad6b5c349cbf
+msgid "Amr Class"
+msgstr ""
+
+#: ../../source/AmrLevel.rst:10 89dfe4bf66424a2aa66e96ad0c4a4fc9
+msgid ""
+"The :cpp:`Amr` class is designed to manage parts of the computation which"
+" do not belong on a single level, like establishing and updating the "
+"hierarchy of levels, global timestepping, and managing the different "
+":cpp:`AmrLevel`\\ s. Most likely you will not need to derive any classes "
+"from :cpp:`Amr`. Our mature application codes use this base class without"
+" any derived classes."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:16 7d3555ce296543b9abdc958477166569
+msgid ""
+"One of the most important data members is an array of :cpp:`AmrLevel`\\ s"
+" - the :cpp:`Amr` class calls many functions from the :cpp:`AmrLevel` "
+"class to do things like advance the solution on a level, compute a time "
+"step to be used for a level, etc."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:22 5220b88f33b84dd4835c771eff218d4b
+msgid "AmrLevel Class"
+msgstr ""
+
+#: ../../source/AmrLevel.rst:24 e9d2ab511a844ef7a76a76056e73d7f4
+msgid "Pure virtual functions include:"
+msgstr ""
+
+#: ../../source/AmrLevel.rst:26 0ccc5108a7744682bad4dc04e2ccd995
+msgid ""
+":cpp:`computeInitialDt` Compute an array of time steps for each level of "
+"refinement. Called at the beginning of the simulation."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:29 fbba9c5b9a2649d0b2223a940ce89215
+msgid ""
+":cpp:`computeNewDt` Compute an array of time steps for each level of "
+"refinement. Called at the end of a coarse level advance."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:32 79102ed6d5fc404792a9f4220a96a815
+msgid ":cpp:`advance` Advance the grids at a level."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:34 39bf9da3082244d1a61cc18eacba8bcb
+msgid ""
+":cpp:`post_timestep` Work after at time step at a given level. In this "
+"tutorial we do the AMR synchronization here."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:37 94d61a2826f44bb68ee43586b3779223
+msgid ""
+":cpp:`post_regrid` Work after regridding. In this tutorial we "
+"redistribute particles."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:40 e6eb220d507c49ea8b8d7f967c77719f
+msgid ""
+":cpp:`post_init` Work after initialization. In this tutorial we perform "
+"AMR synchronization."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:43 31f222db43fe419c9c45f448c7821da4
+msgid ""
+":cpp:`initData` Initialize the data on a given level at the beginning of "
+"the simulation."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:46 d586cfdcc15e426891084cd342ed1bad
+msgid ""
+":cpp:`init` There are two versions of this function used to initialize "
+"data on a level during regridding. One version is specifically for the "
+"case where the level did not previously exist (a newly created refined "
+"level)."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:51 90151c7ec9c14a65a406297cbdb893bc
+msgid ":cpp:`errorEst` Perform the tagging at a level for refinement."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:54 05c5cd8a41334764bf13915fd654596f
+msgid "StateData"
+msgstr ""
+
+#: ../../source/AmrLevel.rst:56 1615bea815fa48a2ba3fc7c0d0d1024e
+msgid ""
+"The most important data managed by the :cpp:`AmrLevel` is an array of "
+":cpp:`StateData`, which holds the scalar fields, etc., in the boxes that "
+"together make up the level."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:60 4b6519e341d94ccb9b7e20753d8f9585
+msgid ""
+":cpp:`StateData` is a class that essentially holds a pair of MultiFabs: "
+"one at the old time and one at the new time. AMReX knows how to "
+"interpolate in time between these states to get data at any intermediate "
+"point in time. The main data that we care about in our applications codes"
+" (such as the fluid state) will be stored as :cpp:`StateData`.  "
+"Essentially, data is made :cpp:`StateData` if we need it to be stored in "
+"checkpoints/plotfiles, and/or we want it to be automatically interpolated"
+" when we refine.  An :cpp:`AmrLevel` stores an array of :cpp:`StateData` "
+"(in a C++ array called :cpp:`state`). We index this array using integer "
+"keys (defined via an :cpp:`enum` in, e.g., ``AmrLevelAdv.H``):"
+msgstr ""
+
+#: ../../source/AmrLevel.rst:77 9f609933a456402b8731900a1086640a
+msgid ""
+"In our tutorial code, we use the function "
+":cpp:`AmrLevelAdv::variableSetUp` to tell our simulation about the "
+":cpp:`StateData` (e.g., how many variables, ghost cells, nodality, etc.)."
+" Note that if you have more than one :cpp:`StateType`, each of the "
+"different :cpp:`StateData` carried in the state array can have different "
+"numbers of components, ghost cells, boundary conditions, etc. This is the"
+" main reason we separate all this data into separate :cpp:`StateData` "
+"objects collected together in an indexable array."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:86 e7c2f9d6758d4682980d5d020b53e959
+msgid "LevelBld Class"
+msgstr ""
+
+#: ../../source/AmrLevel.rst:88 df4f92ba523a4ec9bdbd6bdac632d328
+msgid ""
+"The :cpp:`LevelBld` class is a pure virtual class for defining variable "
+"types and attributes. To more easily understand its usage, refer to the "
+"derived class, :cpp:`LevelBldAdv` in the tutorial. The "
+":cpp:`variableSetUp` and :cpp:`variableCleanUp` are implemented, and in "
+"this tutorial call routines in the :cpp:`AmrLevelAdv` class, e.g.,"
+msgstr ""
+
+#: ../../source/AmrLevel.rst:125 e330c3c024c24f6bafb7b432558d5603
+msgid ""
+"We see how to define the :cpp:`StateType`, including nodality, whether or"
+" not we want the variable to represent a point in time or an interval "
+"over time (useful for returning the time associated with data), the "
+"number of ghost cells, number of components, and the interlevel "
+"interpolation (See AMReX_Interpolator for various interpolation types). "
+"We also see how to specify physical boundary functions by providing a "
+"function (in this case, :cpp:`nullfill` since we are not using physical "
+"boundary conditions), where :cpp:`nullfill` is defined in "
+"``Src/bc_nullfill.cpp`` in the tutorial source code."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:136 60776181b4f14584ab4159ea58f9e6a1
+msgid "Example: Advection_AmrLevel"
+msgstr ""
+
+#: ../../source/AmrLevel.rst:138 43b8e8922fb943d180f772dd72a71e18
+msgid ""
+"The Advection_AmrLevel example is documented in detail `here <https"
+"://amrex-codes.github.io/amrex/tutorials_html/AMR_Tutorial.html"
+"#advection-amrlevel>`__ in the AMReX tutorial documentation."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:142 93af1e0ce5b2435fabf6131a305792b0
+msgid ""
+"The ``Src`` subdirectory contains source code that is specific to this "
+"example. Most notably is the :cpp:`AmrLevelAdv` class, which is derived "
+"from the base :cpp:`AmrLevel` class, and the :cpp:`LevelBldAdv` class, "
+"derived from the base :cpp:`LevelBld` class as described above. The "
+"subdirectory ``Src/Src_K`` contain GPU kernels."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:146 cfd674f2781046ba8e4458a9fdf263e8
+msgid ""
+"The ``Exec`` subdirectory contains two examples: ``SingleVortex`` and "
+"``UniformVelocity``. Each subdirectory contains problem-specific source "
+"code used for initialization using a Fortran subroutine (``Prob.f90``) "
+"and specifying the velocity fields used in this simulation "
+"(``face_velocity_2d_K.H`` and ``face_velocity_3d_K.H`` for the 2-D and "
+"3-D problem, respectively). Build the code here by editing the "
+"``GNUmakefile`` and running ``make``."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:154 89aa37b582f04a0d9ecc47a538d1ca1e
+msgid "The pseudocode for the main program is given below."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:177 bfa5a70e7ee445e295e7f59c442e41af
+msgid "Particles"
+msgstr ""
+
+#: ../../source/AmrLevel.rst:179 dcfff6c66a3e465db2111e30d0fdacbf
+msgid ""
+"There is an option to turn on passively advected particles. In the "
+"``GNUmakefile``, add the line ``USE_PARTICLES = TRUE`` and build the code"
+" (do a ``make realclean first``). In the inputs file, add the line "
+"``adv.do_tracers = 1``. When you run the code, within each plotfile "
+"directory there will be a subdirectory called \"Tracer\"."
+msgstr ""
+
+#: ../../source/AmrLevel.rst:186 6ab74048d0b149f3b041834ddb7bbc7e
+msgid ""
+"Copy the files from ``amrex/Tools/Py_util/amrex_particles_to_vtp`` into "
+"the run directory and type, e.g.,"
+msgstr ""
+
+#: ../../source/AmrLevel.rst:195 81fd658a0e074da7bd1ce3090702a629
+msgid ""
+"To generate a vtp file you can open with ParaView (Refer to the chapter "
+"on :ref:`Chap:Visualization`)."
+msgstr ""
+

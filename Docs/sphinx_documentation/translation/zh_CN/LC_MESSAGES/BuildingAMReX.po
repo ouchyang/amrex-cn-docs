@@ -1,0 +1,1638 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/BuildingAMReX.rst:8 e04151c30d664cd8a6ac0db0bf5ac27b
+msgid "Building with GNU Make"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:10 8c65e195919f4b33a764d185c809b1eb
+msgid ""
+"In this build approach, you write your own make files defining a number "
+"of variables and rules. Then you invoke  ``make`` to start the building "
+"process. This will result in an executable upon successful completion. "
+"The temporary files generated in the building process are stored in a "
+"temporary directory named  ``tmp_build_dir``."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:17 1da8cf5f745449d3a05d41fd8a51d2d2
+msgid "Dissecting a Simple Make File"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:19 850e172e9abf4e58b3429f2e83c5c943
+msgid ""
+"An example of building with GNU Make can be found in ``amrex-"
+"tutorials/ExampleCodes/Basic/HelloWorld_C``.  :numref:`tab:makevars` "
+"below shows a list of important variables."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:29 702b6c21319f472fb1112bd875566b0b
+msgid "Important make variables"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:32 673ab23560a74c35a03c7e98fb26d473
+msgid "Variable"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:32 8340da0fc92847bdb3da2e98f1ff92c6
+msgid "Value"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:32 ../../source/BuildingAMReX.rst:428
+#: 1f8683bd74ec45389a0ffecd81d28902 77e862b2ef5a42089579c21880e59ed4
+msgid "Default"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:34 7c646046b7af48ac98296dfd4cfc35ef
+msgid "AMREX_HOME"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:34 52b95842d9d34f53a7504ffaf0728337
+msgid "Path to amrex"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:34 c4f3b869ef424de8972859668650ea3b
+msgid "environment"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:36 d095bafb744943c3b35d4675b7cac46d
+msgid "COMP"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:36 5d6a7f9633ef445884db0fb6bec35a27
+msgid "gnu, cray, ibm, intel, intel-llvm, intel-classic, llvm, or pgi"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:37 023ef33cf7724dffbee93a84a99ee75e
+msgid "none"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:39 cab2caced72344c6a5bffccd6c66abbe
+msgid "CXXSTD"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:39 94f1ff09d953455eaf2bad96dea2d7c9
+msgid "C++ standard (``c++17``, ``c++20``)"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:39 88ebdb8fec224960a2aab8b366fe4740
+msgid "compiler default, at least ``c++17``"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:42 be569802a9e94325912e2ccff464b8ca
+msgid "DEBUG"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:42 ../../source/BuildingAMReX.rst:48
+#: ../../source/BuildingAMReX.rst:50 ../../source/BuildingAMReX.rst:52
+#: ../../source/BuildingAMReX.rst:54 ../../source/BuildingAMReX.rst:56
+#: ../../source/BuildingAMReX.rst:58 ../../source/BuildingAMReX.rst:60
+#: ../../source/BuildingAMReX.rst:62 ../../source/BuildingAMReX.rst:64
+#: ../../source/BuildingAMReX.rst:73 49407f28f5b24a389b2ebbad48c7e4f8
+#: 58763dfdb778452e81435230ba8e0acc 7c92706b3a2343beb78672ed39b06fe3
+#: 7ce8f36ac5af4813b2a4fff8632ce1b8 973bc4554ff944a8b693eada903b0129
+#: a6fa2843483c4538b257afeef48956c1 adbea219aa7c4f1e970834fefcc47489
+#: ade5a313c57142ba95cb8e6b7a066ff9 deb69e24c28245518b712db477953234
+#: f6c668ab8b304d9c93fd8e4ed96b531d fe04d85e38c846eaae21a773872b9a49
+msgid "TRUE or FALSE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:42 ../../source/BuildingAMReX.rst:48
+#: ../../source/BuildingAMReX.rst:50 ../../source/BuildingAMReX.rst:52
+#: ../../source/BuildingAMReX.rst:54 ../../source/BuildingAMReX.rst:56
+#: ../../source/BuildingAMReX.rst:58 ../../source/BuildingAMReX.rst:60
+#: ../../source/BuildingAMReX.rst:62 1a1ae8467aff4b71a07b5ea6b237890d
+#: 3f0dc0adbcf0486a82e1abf867c07041 6aec60b7b69540c8a96943e5db0df615
+#: 728d62f48b0a4ab7a2bc7b47e90c7f51 7c99f7e973df4f1cab65b6bf5ddfdd5f
+#: 9d258e551e194c1199ae214e5127fb0e b530443478ae44698001e92ebfcef55c
+#: be45cfd1e8744cc5a13e57defce76a57 fbec7f52086c47c4bb8808d74cede000
+msgid "FALSE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:44 3e7ab7a12413429c8042a933459e019c
+msgid "DIM"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:44 f5bf5b54469944e1b96f6ff07f808e52
+msgid "1 or 2 or 3"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:44 d668a59d7acc4bdca526672e3e49bd48
+msgid "3"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:46 7bb5000834604487853a56d91e60f30c
+msgid "PRECISION"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:46 88c2e9d4d44e4351b9e9907dc49b50ce
+msgid "DOUBLE or FLOAT"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:46 ../../source/BuildingAMReX.rst:448
+#: 3370b2be0c964012b274866643727e23 d8e9cddbd4974349b61a2ace8ea12890
+msgid "DOUBLE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:48 ec4cb34f83d3477db6bb32effa2c102a
+msgid "TEST"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:50 5890281777f24cf184c18aa4b2b624a7
+msgid "USE_ASSERTION"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:52 5e9866a1f2454c78b18c2f3c30842ca8
+msgid "USE_MPI"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:54 6142cb571dc6491d9a8e38fe66b41451
+msgid "USE_OMP"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:56 2d2cf24f444b4ca48c718ac0c9c88092
+msgid "USE_CUDA"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:58 5020a594ab6c4190ac0e62a981236339
+msgid "USE_HIP"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:60 f2f12f7392e645ba84a4a68880f82df7
+msgid "USE_SYCL"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:62 95992ed16cfc4e3889b49bf2c7d88214
+msgid "USE_RPATH"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:64 daf62824a43047848f1a045f9c64f93f
+msgid "WARN_ALL"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:64 43dc64de34da45f7bff991c5c8d06fbe
+msgid "TRUE for DEBUG FALSE otherwise"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:67 831d1686231a4c759db814b34c34d9ee
+msgid "AMREX_CUDA_ARCH"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:68 caec16f085dd4f25a30da1ce774e1969
+msgid "or CUDA_ARCH"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:67 7bbd29f2fa384b38a257be7b761fa7e3
+msgid "CUDA arch such as 70"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:67 0e2ffd61722047239633f726ccbc7f49
+msgid "70 if not set or detected"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:70 9de2f811b69944ea8f85942785f9d291
+msgid "AMREX_AMD_ARCH"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:71 e7e5130550b5418d984e612f687a4c3a
+msgid "or AMD_ARCH"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:70 0f2ec69fbf3640ab8996ce1eba6b2068
+msgid "AMD GPU arch such as gfx908"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:70 54dde320fc894fb9a5641b0f2dbc246c
+msgid "none if the machine is unknown"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:73 728c440dc7a04c96a2bd4d25b9c38ba3
+msgid "USE_GPU_RDC"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:73 55d2204c64ac4717a052bb4ceaff800b
+msgid "TRUE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:81 57cced57ad7a451abc176706671f96d3
+msgid ""
+"At the beginning of ``amrex-"
+"tutorials/ExampleCodes/Basic/HelloWorld_C/GNUmakefile``, ``AMREX_HOME`` "
+"is set to the path to the top directory of AMReX.  Note that in the "
+"example :cpp:`?=` is a conditional variable assignment operator that only"
+" has an effect if ``AMREX_HOME`` has not been defined (including in the "
+"environment). One can also set ``AMREX_HOME`` as an environment variable."
+" For example in bash, one can set"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:94 9b1f61b552d04a17978718c684b71edb
+msgid "alternatively, in tcsh one can set"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:102 f65a6e979b2045d3824980d763bee21f
+msgid ""
+"Note: when setting ``AMREX_HOME`` in the ``GNUmakefile``, be aware that "
+"``~`` does not expand, so ``AMREX_HOME=~/amrex/`` will yield an error."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:105 4fca63e42b3b4366b118bf15246aae4d
+msgid ""
+"One must set the ``COMP`` variable to choose a compiler. Currently the "
+"list of supported compilers includes gnu, cray, ibm, intel, llvm, and "
+"pgi."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:108 230b01fb58c54190921801bc10104ce4
+msgid ""
+"One could set the ``DIM`` variable to either 1, 2, or 3, depending on the"
+" dimensionality of the problem.  The default dimensionality is 3. AMReX "
+"uses double precision by default.  One can change to single precision by "
+"setting ``PRECISION=FLOAT``. (Particles have an equivalent flag "
+"``USE_SINGLE_PRECISION_PARTICLES=TRUE/FALSE``.)"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:114 60f271addfb74c85b7324685cd6e24b0
+msgid ""
+"Variables ``DEBUG``, ``TEST``, ``USE_MPI`` and ``USE_OMP`` are optional "
+"with default set to FALSE.  The meaning of these variables should be "
+"obvious.  When ``DEBUG=TRUE``, aggressive compiler optimization flags are"
+" turned off and assertions in source code are turned on. For production "
+"runs, ``DEBUG`` should be set to FALSE. ``TEST`` and ``USE_ASSERTION`` "
+"are set by default in CI and add slight debugging, e.g., initializing "
+"default values in FABs. An advanced variable, ``MPI_THREAD_MULTIPLE``, "
+"can be set to TRUE to initialize MPI with support for concurrent MPI "
+"calls from multiple threads."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:123 136f3fc8a75a401fab0ac6d6e19843e9
+msgid ""
+"Variables ``USE_CUDA``, ``USE_HIP`` and ``USE_SYCL`` are used for "
+"targeting Nvidia, AMD and Intel GPUs, respectively.  At most one of the "
+"three can be TRUE. For HIP and SYCL builds, we do only test against C++17"
+" builds at the moment."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:128 3da9eb4c45f9447abd1419113e46b1f4
+msgid ""
+"The variable ``USE_RPATH`` controls the link mechanism to dependent "
+"libraries. If enabled, the library path at link time will be saved as a "
+"`rpath hint <https://en.wikipedia.org/wiki/Rpath>`_ in created binaries. "
+"When disabled, dynamic library paths could be provided via ``export "
+"LD_LIBRARY_PATH`` hints at runtime."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:134 761334df38bd4cdaba26e86e25810b9c
+msgid ""
+"For GCC and Clang, the variable ``WARN_ALL`` controls the compiler's "
+"warning options.  There is also a make variable ``WARN_ERROR`` (with "
+"default of ``FALSE``) to turn warnings into errors."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:137 b2ed487b5de34396b82375befe995c51
+msgid ""
+"When ``USE_CUDA`` is ``TRUE``, the make system will try to detect what "
+"CUDA arch should be used by running "
+"``$(CUDA_HOME)/extras/demo_suite/deviceQuery`` if your computer is "
+"unknown. If it fails to detect the CUDA arch, the default value of 70 "
+"will be used. The user could override it by ``make USE_CUDA=TRUE "
+"CUDA_ARCH=80`` or ``make USE_CUDA=TRUE AMREX_CUDA_ARCH=80``."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:144 5f049bf83b8940478f6001babceecd3d
+msgid ""
+"After defining these make variables, a number of files, ``Make.defs, "
+"Make.package`` and ``Make.rules``, are included in the GNUmakefile. "
+"AMReX-based applications do not need to include all directories in AMReX;"
+" an application which does not use particles, for example, does not need "
+"to include files from the Particle directory in its build.  In this "
+"simple example, we only need to include "
+"``$(AMREX_HOME)/Src/Base/Make.package``. An application code also has its"
+" own Make.package file (e.g., ``./Make.package`` in this example) to "
+"append source files to the build system using operator ``+=``. Variables "
+"for various source files are shown below."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:156 497c2a4586a349d6b6b2f29e8bedb22c
+msgid "CEXE_sources"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:155 b8ff1a7228a84f649d2a193d29c1fdc6
+msgid ""
+"C++ source files. Note that C++ source files are assumed to have a .cpp "
+"extension."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:159 e5a2b092d38243298891db298154782e
+msgid "CEXE_headers"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:159 f7dc1ffa628640368362219372d1b55c
+msgid "C++ headers with .h, .hpp, or .H extension."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:162 2df6e9c52b984ac69debe7a2e8b6774e
+msgid "cEXE_sources"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:162 8692e014afe049e0a709f6b189311b77
+msgid "C source files with .c extension."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:165 6bd3ccb6e87343bea1176f058e508a67
+msgid "cEXE_headers"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:165 2e77357e48df432dbee47409ca35c523
+msgid "C headers with .h extension."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:168 712ccbdd22a54855a291407a41017d3d
+msgid "f90EXE_sources"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:168 2e22999b22334b6389a7c928c2d7148c
+msgid "Free format Fortran source with .f90 extension."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:172 9353644988244b119907e8b498ba6a41
+msgid "F90EXE_sources"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:171 2bd34a238f61444496b26a49d0a49f0a
+msgid ""
+"Free format Fortran source with .F90 extension.  Note that these Fortran "
+"files will go through preprocessing."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:174 68800adc8a5f44e194effe1804355f32
+msgid ""
+"In this simple example, the extra source file, ``main.cpp`` is in the "
+"current directory that is already in the build system's search path. If "
+"this example has files in a subdirectory (e.g., ``mysrcdir``), you will "
+"then need to add the following to ``Make.package``."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:184 390e503010834a7992cb9fdfdcd73ec3
+msgid ""
+"Here ``VPATH_LOCATIONS`` and ``INCLUDE_LOCATIONS`` are the search path "
+"for source and header files, respectively."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:188 b2fc536504d443849e2346d3838f9397
+msgid "Tweaking the Make System"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:190 01edb3ffd5a04484b18ba743bb9aaabb
+msgid ""
+"The GNU Make build system is located at ``amrex/Tools/GNUMake``.  You can"
+" read ``README.md`` and the make files there for more information. Here "
+"we will give a brief overview."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:194 1dccfc6725804965b9b2f7de131e81d0
+msgid "Besides building executable, other common make commands include:"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:199 6ee7353225a54ca08e1fb162ff14b977
+msgid "``make cleanconfig``"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:197 c35f084695684fd492c2432e3eb935ff
+msgid ""
+"This removes the executable, .o files, and the temporarily generated "
+"files for the given build. Note that one can add additional targets to "
+"this rule using the double colon (::)"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:202 886a052a040d445a89f924fa98c0fe6d
+msgid "``make clean`` and ``make realclean``"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:202 a3e8366711774a3a97dc240afbe8d0b5
+msgid "These remove all files generated by make for all builds."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:205 5d08acc5d4c4478c9f89d58aa8b86fdb
+msgid "``make help``"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:205 a4d2668534f4407db6cf8e235afe9c42
+msgid "This shows the rules for compilation."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:209 dd3aab0952174b81a7a187b26dba19af
+msgid "``make print-xxx``"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:208 73eb4a35ce534da08f8aae7f277dee41
+msgid ""
+"This shows the value of variable xxx. This is very useful for debugging "
+"and tweaking the make system."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:211 0c7d4fd8fff14c398736c12c4439df75
+msgid ""
+"Compiler flags are set in ``amrex/Tools/GNUMake/comps/``. Note that "
+"variables like ``CXX`` and ``CXXFLAGS`` are reset in that directory and "
+"their values in environment variables are disregarded.  However, one "
+"could override them with make command line arguments (e.g., ``make "
+"CXX=/path/to/my/mpicxx``). Site-specific setups (e.g., the MPI "
+"installation) are in ``amrex/Tools/GNUMake/sites/``, which includes a "
+"generic setup in ``Make.unknown``. You can override the setup by having "
+"your own ``sites/Make.$(host_name)`` file, where variable ``host_name`` "
+"is your host name in the make system and can be found via ``make print-"
+"host_name``.  You can also have an ``amrex/Tools/GNUMake/Make.local`` "
+"file to override various variables. See "
+"``amrex/Tools/GNUMake/Make.local.template`` for more examples of how to "
+"customize the build process."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:224 755ad18e2a714d8b8547fd19cf840ed0
+msgid ""
+"If you need to pass macro definitions to the preprocessor, you can add "
+"them to your make file as follows,"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:231 8a01c9159b8c492e9e4d01a16cfd7864
+msgid ""
+"To link to an additional library say ``foo`` with headers located at "
+"``foopath/include`` and library at ``foopath/lib``, you can add the "
+"following to your make file before the line that includes AMReX's "
+"``Make.defs``,"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:245 76c1ac615c9c4c7a95474d2b7bd42c0f
+msgid "Specifying your own compiler"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:247 dfe17952d6bd4fb5941b4141c4f0c7d5
+msgid ""
+"The ``amrex/Tools/GNUMake/Make.local`` file can also specify your own "
+"compile commands by setting the variables ``CXX``, ``CC``, ``FC``, and "
+"``F90``. This might be necessary if your systems contains non-standard "
+"names for compiler commands."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:252 4d711e986a0748cdaaaa85f6a2ba7f1e
+msgid ""
+"For example, the following ``amrex/Tools/GNUMake/Make.local`` builds "
+"AMReX using a specific compiler (in this case ``gcc-8``) without MPI. "
+"Whenever ``USE_MPI``  is true, this configuration defaults to the "
+"appropriate ``mpixxx`` command: ::"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:270 1765593b1e4e4054917e54bd40525cdf
+msgid ""
+"For building with MPI, we assume ``mpicxx``, ``mpif90``, etc. provide "
+"access to the correct underlying compilers."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:277 3c56e23dd9fb487da32def0156043063
+msgid "GCC on macOS"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:279 1f883c74c3a94ffe93068e7b91522cb3
+msgid ""
+"The example configuration above should also run on the latest macOS. On "
+"macOS the default cxx compiler is clang, whereas the default Fortran "
+"compiler is gfortran. Sometimes it is good to avoid mixing compilers, in "
+"that case we can use the ``Make.local`` to force using GCC. However, "
+"macOS' Xcode ships with its own (woefully outdated) version of GCC "
+"(4.2.1). It is therefore recommended to install GCC using the `homebrew "
+"<https://brew.sh>`_ package manager. Running ``brew install gcc`` "
+"installs gcc with names reflecting the version number. If GCC 8.2 is "
+"installed, homebrew installs it as ``gcc-8``. AMReX can be built using "
+"``gcc-8`` (with and without MPI) by using the following "
+"``amrex/Tools/GNUMake/Make.local``:"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:299 f4407699b5f2468b8168d4c3ef4736b3
+msgid ""
+"The additional ``INCLUDE_LOCATIONS`` are installed using homebrew also. "
+"Note that if you are building AMReX using homebrew's gcc, it is "
+"recommended that you use homebrew's mpich. Normally it is fine to simply "
+"install its binaries: ``brew install mpich``. But if you are experiencing"
+" problems, we suggest building mpich using homebrew's gcc: ``brew install"
+" mpich --cc=gcc-8``."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:306 953d48485e3749e5b4babb4de7410e59
+msgid "Fortran"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:308 803fbb0c0b104ff5934e9794479f4020
+msgid ""
+"If your code does not use Fortran, you can add ``BL_NO_FORT=TRUE`` to "
+"your makefile to disable Fortran."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:312 e9148bff2cc541cc9f796fac6636f683
+msgid "ccache"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:314 20aa2630fe7a4e7d8d1c3350cf12821c
+msgid "If you use ccache, you can add ``USE_CCACHE=TRUE`` to your makefile."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:319 4c25055f4f964e3ebba8f9b6ffa8c98e
+msgid "Building libamrex"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:321 cd2d811a3aa24b25a17e533824bbccce
+msgid ""
+"If an application code already has its own elaborated build system and "
+"wants to use AMReX, an external AMReX library can be created instead. In "
+"this approach, one runs ``./configure``, followed by ``make`` and ``make "
+"install``. Other make options include ``make distclean`` and ``make "
+"uninstall``.  In the top AMReX directory, one can run ``./configure -h`` "
+"to show the various options for the configure script. In particular, one "
+"can specify the installation path for the AMReX library using::"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:330 a0f35280050d496ebb075919b1ca1261
+msgid ""
+"This approach is built on the AMReX GNU Make system. Thus the section on "
+":ref:`sec:build:make` is recommended if any fine tuning is needed.  The "
+"result of ``./configure`` is ``GNUmakefile`` in the AMReX top directory."
+"  One can modify the make file for fine tuning."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:335 7c0c9f9a83fa4cfeb76f2189b2a5b4c6
+msgid ""
+"To compile an application code against the external AMReX library, it is "
+"necessary to set appropriate compiler flags and set the library paths for"
+" linking. To assist with this, when the AMReX library is built, a "
+"configuration file is created in ``[AMReX library "
+"path]/lib/pkgconfig/amrex.pc``. This file contains the Fortran and C++ "
+"flags used to compile the AMReX library as well as the appropriate "
+"library and include entries."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:343 88f750a47ded45bd918c08764a653b65
+msgid ""
+"The following sample GNU Makefile will compile a ``main.cpp`` source file"
+" against an external AMReX library, using the C++ flags and library paths"
+" used to build AMReX::"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:364 b2cd44cc911d4ceebd42d20815fcfaaf
+msgid "Building with CMake"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:366 1fa651b71ec94bb0916011ebd9dcd793
+msgid ""
+"An alternative to the approach described in the section on "
+":ref:`sec:build:lib` is to install AMReX as an external library by using "
+"the CMake build system.  A CMake build is a two-step process. First "
+"``cmake`` is invoked to create configuration files and makefiles in a "
+"chosen directory (``builddir``).  This is roughly equivalent to running "
+"``./configure`` (see the section on :ref:`sec:build:lib`). Next, the "
+"actual build and installation are performed by invoking ``make install`` "
+"from within ``builddir``. This installs the library files in a chosen "
+"installation directory (``installdir``).  If no installation path is "
+"provided by the user, AMReX will be installed in "
+"``/path/to/amrex/installdir``. The CMake build process is summarized as "
+"follows:"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:387 a5ccea40eb1e4fba9cda051cdb5c7b9b
+msgid ""
+"In the above snippet, ``[options]`` indicates one or more options for the"
+" customization of the build, as described in the subsection on "
+":ref:`sec:build:cmake:options`. If the option ``CMAKE_BUILD_TYPE`` is "
+"omitted, ``CMAKE_BUILD_TYPE=Release`` is assumed. Although the AMReX "
+"source could be used as build directory, we advise against doing so.  "
+"After the installation is complete, ``builddir`` can be removed."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:398 e6f41197edad42108d141ae795f5cbb5
+msgid "Customization options"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:400 e0334b216a03425e8d7a392465b759d0
+msgid ""
+"AMReX build can be customized  by setting the value of suitable "
+"configuration variables on the command line via the ``-D <var>=<value>`` "
+"syntax, where ``<var>`` is the variable to set and ``<value>`` its "
+"desired value. For example, one can enable OpenMP support as follows:"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:411 f2b2687199604e96b6a472a1fc11abbc
+msgid ""
+"In the example above ``<var>=AMReX_OMP`` and ``<value>=YES``. "
+"Configuration variables requiring a boolean value are evaluated to true "
+"if they are assigned a value of ``1``, ``ON``, ``YES``, ``TRUE``, ``Y``. "
+"Conversely they are evaluated to false if they are assigned a value of "
+"``0``, ``OFF``, ``NO``, ``FALSE``, ``N``. Boolean configuration variables"
+" are case-insensitive. The list of available options is reported in the "
+":ref:`table <tab:cmakevar>` below."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:425 ac98954ad25d48c8b0590ef79750fcbb
+msgid ""
+"AMReX build options (refer to section :ref:`sec:gpu:build` for GPU-"
+"related options)."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:428 f25f59c223814fc8819b9189e8d5967d
+msgid "Variable Name"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:428 ../../source/BuildingAMReX.rst:605
+#: 2ae3ae20b7ee4eb4883c954585a203c6 b671bac79fd04f7c89e0bf3ac91b66d7
+msgid "Description"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:428 14b01abe72d94a3f9ad033c4672cc75c
+msgid "Possible values"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:430 29352360c26a443fbf11511f5d43f78b
+msgid "CMAKE_Fortran_COMPILER"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:430 c13374f13b9a4c61bd737b953a1ec717
+msgid "User-defined Fortran compiler"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:430 ../../source/BuildingAMReX.rst:432
+#: ../../source/BuildingAMReX.rst:434 ../../source/BuildingAMReX.rst:436
+#: 8ed390f903fa4218848fb0c9bc8de84c a0e9e5dfb3fb43bc87c8817eb87ee8fe
+#: b2aeb98c7cd94c55a2edbeec97daf00e fb1a087cdb3f4746bc3f12f37df2a35a
+msgid "user-defined"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:432 e881d49332824bbeae0ba09e2d5ef565
+msgid "CMAKE_CXX_COMPILER"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:432 b7bcfdfff8434f0db4085a67a4e7a086
+msgid "User-defined C++ compiler"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:434 32b030a539074bd9842fec43084753ff
+msgid "CMAKE_Fortran_FLAGS"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:434 2ae2fdb8b1ca402fa8c87e65245598dd
+msgid "User-defined Fortran flags"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:436 ad5f133146ab47168620200e261d8935
+msgid "CMAKE_CXX_FLAGS"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:436 aa2e276215e843a199bc0b8c4fa5714f
+msgid "User-defined C++ flags"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:438 c980d8f084874630be55f9ffecd830cd
+msgid "CMAKE_CXX_STANDARD"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:438 de647ef2cc2c4a82bb4e67695f7ed2c3
+msgid "C++ standard"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:438 2b5f5d25844f4abb9802f464bd596015
+msgid "compiler/17"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:438 30ba4a6ef72e4bef9bd3929400add677
+msgid "17, 20"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:440 ../../source/BuildingAMReX.rst:655
+#: ca75f2d0b3bc4839883ca7e5bd0ea01d d9741f2d5a004ede81bb91a32dfdf5e9
+msgid "AMReX_SPACEDIM"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:440 8247e6f93255487fa54273d618b73703
+msgid "Dimension of AMReX build"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:440 fce6133d6c494b889f49a6fda1f84c0a
+msgid "3 ``;``-separated list"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:440 fbeb744e53674d798a78f2ad650771e2
+msgid "\"1;2;3\""
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:442 a6045a858df54c9a84ce31bf715b9e7b
+msgid "USE_XSDK_DEFAULTS"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:442 c5665efb7b424824898afb94ec28cdc9
+msgid "Use xSDK defaults settings"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:442 ../../source/BuildingAMReX.rst:446
+#: ../../source/BuildingAMReX.rst:450 ../../source/BuildingAMReX.rst:452
+#: ../../source/BuildingAMReX.rst:456 ../../source/BuildingAMReX.rst:462
+#: ../../source/BuildingAMReX.rst:466 ../../source/BuildingAMReX.rst:470
+#: ../../source/BuildingAMReX.rst:476 ../../source/BuildingAMReX.rst:478
+#: ../../source/BuildingAMReX.rst:480 ../../source/BuildingAMReX.rst:482
+#: ../../source/BuildingAMReX.rst:484 ../../source/BuildingAMReX.rst:488
+#: ../../source/BuildingAMReX.rst:491 ../../source/BuildingAMReX.rst:493
+#: ../../source/BuildingAMReX.rst:495 ../../source/BuildingAMReX.rst:497
+#: ../../source/BuildingAMReX.rst:499 ../../source/BuildingAMReX.rst:501
+#: ../../source/BuildingAMReX.rst:505 ../../source/BuildingAMReX.rst:507
+#: ../../source/BuildingAMReX.rst:509 ../../source/BuildingAMReX.rst:511
+#: ../../source/BuildingAMReX.rst:513 ../../source/BuildingAMReX.rst:515
+#: ../../source/BuildingAMReX.rst:517 ../../source/BuildingAMReX.rst:519
+#: ../../source/BuildingAMReX.rst:521 ../../source/BuildingAMReX.rst:523
+#: ../../source/BuildingAMReX.rst:525 ../../source/BuildingAMReX.rst:529
+#: 089fc5465d4e4b36b0e23766e062bf80 0a33eb1c39924c52b342cd38711c103d
+#: 1a485e6fc9aa40e8b05ceac075f9aff2 207b535f5e4945b397141995314bf232
+#: 225907832aa2415bbb32bc71e1776f64 26bbbffadbee4eb499a6bdb3edd90c8b
+#: 2819d43a33e24544bd9a9b157958163a 28829b09986146dbb399220a000dfc02
+#: 2bda09ab32d4438b9789979115dec023 4206bd12c8584b1a848fb19dc4826b31
+#: 424d4311bdbe450c87cae90a092743a9 426d2752df77460685d834117ac88881
+#: 437a38bbfd734a1c994708229bde18e4 4623d1ec416342cc8d62328054a94f71
+#: 4b83548c8c904cacb952dd3079190c77 4c8ff88e3bb74eada7c8f217416d46de
+#: 5470cea59ba64e0b83849de7cfe3590c 5933c58f17de4cd580191ed7c587820b
+#: 664c1af807304289a2c90a19fbd25048 6a730f296c14424db56c6d1213aecd2a
+#: 6c339ca080fd48618e9c59346e6d2263 6e376757c94b4033b2bc125801a00304
+#: 7df7b2a47c1d4500ab525c21d4979543 823c0bfb396949ad881d583b0d1956cd
+#: 83c7ebe69a2e4dde96fb77e9b4b565b9 88c6f179cd05483fa0a31bbbfb89a9d7
+#: 9308e9c53ecf4761982681e3e61d2911 9bbee684ae244b0a8f5df4769dee2975
+#: e03b79b0951447dca321e7d66247c3d3 e0cea8fc30a94141952eff18b4a28233
+#: e6dfcc9418a3400cbc1f7a925145c2e6 ece9ba0908b64b34b76cf116179c5519
+msgid "NO"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:442 ../../source/BuildingAMReX.rst:444
+#: ../../source/BuildingAMReX.rst:446 ../../source/BuildingAMReX.rst:450
+#: ../../source/BuildingAMReX.rst:452 ../../source/BuildingAMReX.rst:454
+#: ../../source/BuildingAMReX.rst:456 ../../source/BuildingAMReX.rst:460
+#: ../../source/BuildingAMReX.rst:462 ../../source/BuildingAMReX.rst:464
+#: ../../source/BuildingAMReX.rst:466 ../../source/BuildingAMReX.rst:468
+#: ../../source/BuildingAMReX.rst:470 ../../source/BuildingAMReX.rst:472
+#: ../../source/BuildingAMReX.rst:476 ../../source/BuildingAMReX.rst:478
+#: ../../source/BuildingAMReX.rst:480 ../../source/BuildingAMReX.rst:482
+#: ../../source/BuildingAMReX.rst:484 ../../source/BuildingAMReX.rst:488
+#: ../../source/BuildingAMReX.rst:491 ../../source/BuildingAMReX.rst:493
+#: ../../source/BuildingAMReX.rst:495 ../../source/BuildingAMReX.rst:497
+#: ../../source/BuildingAMReX.rst:499 ../../source/BuildingAMReX.rst:501
+#: ../../source/BuildingAMReX.rst:503 ../../source/BuildingAMReX.rst:505
+#: ../../source/BuildingAMReX.rst:507 ../../source/BuildingAMReX.rst:509
+#: ../../source/BuildingAMReX.rst:511 ../../source/BuildingAMReX.rst:513
+#: ../../source/BuildingAMReX.rst:515 ../../source/BuildingAMReX.rst:517
+#: ../../source/BuildingAMReX.rst:519 ../../source/BuildingAMReX.rst:521
+#: ../../source/BuildingAMReX.rst:523 ../../source/BuildingAMReX.rst:525
+#: ../../source/BuildingAMReX.rst:529 ../../source/BuildingAMReX.rst:531
+#: ../../source/BuildingAMReX.rst:533 0633500d1e8c40cf947bfec3a97a9aed
+#: 066454dc89af417a9f26bf1a6b9040ba 0ccbcfb4bc274774b53e56af59a28cfe
+#: 12bd35b768804939ba1260f534dcbd78 183da04f2f49463d87bdb1f38ef61a5e
+#: 211cf874ebbf4c73a72d42fdacf6bb2c 217430efccaf4e7e9565425511c19337
+#: 2b572172a0b24698b2c6660e62a07ccf 2c95458cb9034a62aa131e69f7fd3bdf
+#: 32e73380378748dc9355848a20414703 3a4011e963e94a7589ca480a42b5f539
+#: 431ba3f78c4f43a5b0de4a695a8e7d00 48886f500698486ba261729f3fe8995d
+#: 496e7aaf36d741a18cdaf1f9125d7a2e 5cba544bc85c49b6b19cdc62c38df2d2
+#: 68fbc21b4a0d46f9b3fade0c970010b3 6dd9bf538c8d4ff6b37658aebc948057
+#: 7027fff3006246579e2b1df33eb1da8d 709f541423144fe686659ce775620211
+#: 77ae42d8131248738ebaa53927fe8f39 7a47f6396cd543f99fad3fcd989f51d0
+#: 7b52baeba4ac493fb0f6adba89bb6f3f 7be237dd38fa4ffea3325a9d53619033
+#: 88f98f98697e4e41bb38ac2f1377c0ba 89fe65f3d6404e6a800ed64c55afeb5c
+#: 8fc0aa7552064967826a3989c5e1bf1c 9c26e8b503bf4403839ed19c5d66d4db
+#: 9f8787da8d6b4a749e7e0e7486335b44 9fd92648faa146ef94afc1831bad4a77
+#: a06bd27b873642fe857522c909825deb a1bcd36211e34ebb9e01e6f19f333f1a
+#: aa44954ed8ce4602bf431303054cd611 ad9af6ac74f144d98e1e76c4fecb9870
+#: b17d9da3843647309e6052274f8ee1f9 d85f2cebdcd842caa3a068d46b0f64b8
+#: e7f28a0151f64aa19f13bc7c5e7155d6 e956d6d9158c44579fbeab57677c88c9
+#: f488f497618a409d83dd12293548287e f546670e5567445c928296d70db4df7a
+#: f7053954d9e84f1781810eed1eb75b13 fbbeb95da242458baefd88518798835d
+msgid "YES, NO"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:444 4227d3034cfc4573bc9c2e5a1624a0f0
+msgid "AMReX_BUILD_SHARED_LIBS"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:444 0d9fe6685e3a4b6786e9c0c2638ae229
+msgid "Build as shared C++ library"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:444 20c23f71b6d24a8db2bc953387e13513
+msgid "NO (unless xSDK)"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:446 ../../source/BuildingAMReX.rst:659
+#: 3e5513f1db9e45cd90aa5e3603d72e0d d6f1f3a547f441378de00e0dfb5003f1
+msgid "AMReX_FORTRAN"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:446 a347d67f8e7e4c979917329361cd14fb
+msgid "Enable Fortran language"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:448 ../../source/BuildingAMReX.rst:657
+#: 0eaf0fd738b149968212e848043947c5 18e1a32a5def45ddab03a65498d04712
+msgid "AMReX_PRECISION"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:448 87d7c6f1e6a6439cbee52b3ce3462ef4
+msgid "Set the precision of reals"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:448 ../../source/BuildingAMReX.rst:474
+#: ../../source/BuildingAMReX.rst:657 0410fc4b52bc44858e2dd122d02421c2
+#: 644eb81fdfd2479aaaed74033a2c7dda d9b668f4cd244257a83610b84ca1c56f
+msgid "DOUBLE, SINGLE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:450 ../../source/BuildingAMReX.rst:661
+#: 2290d462af904ffe89d8ad010e8f3ccf bc71dd86579b49efbf8d5c4b16da238b
+msgid "AMReX_PIC"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:450 048b2ac6f38843e9a7eaca5a7fe14c88
+msgid "Build Position Independent Code"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:452 7232c60dc7fc4fd2b18d7207f0c786bb
+msgid "AMReX_IPO"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:452 b5474f19bea04e68a650c6262f76eb27
+msgid "Interprocedural optimization (IPO/LTO)"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:454 ../../source/BuildingAMReX.rst:663
+#: 54cf85fa30fa421d9cc86f9bbb52d348 ba0b0e808ed3458dadd06eec3bf5483f
+msgid "AMReX_MPI"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:454 f8538d5153994db5951d0f0420ed8c0b
+msgid "Build with MPI support"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:454 ../../source/BuildingAMReX.rst:460
+#: ../../source/BuildingAMReX.rst:464 ../../source/BuildingAMReX.rst:468
+#: ../../source/BuildingAMReX.rst:472 ../../source/BuildingAMReX.rst:531
+#: 20872fa752d54bfeba337b0b5efa3975 325b1686c6ae4249abfbe926bec2aa46
+#: 476b112464ae485584a10c8c827a7e7b 6f605e4bbd814c09a5ef36fd5508fd51
+#: 8de941ce787b43c5a3f8c08bfd63e836 f6071641f6f24993b2e51721be655e14
+msgid "YES"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:456 ../../source/BuildingAMReX.rst:665
+#: 093f83e5e7d44d528d95908fece8a08f 74b035886835458ca585daa8fed19aea
+msgid "AMReX_OMP"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:456 23258696824e40fb8774f91387838e59
+msgid "Build with OpenMP support"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:458 ../../source/BuildingAMReX.rst:667
+#: 9e790ce8e6844b8792e822d67d59cfc9 e6dfbf58c8474b3ca50c2406df15b67c
+msgid "AMReX_GPU_BACKEND"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:458 000c1badd97b4aa2831f1995da903504
+msgid "Build with on-node, accelerated GPU backend"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:458 28119fa93d40486ea3d14fc3bde4ff13
+msgid "NONE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:458 3a99193659a543fca3ba2b4f71fc78fb
+msgid "NONE, SYCL, HIP, CUDA"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:460 e0213d2798bd4e8f81c2f491ef248b50
+msgid "AMReX_GPU_RDC"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:460 331e7b14b7d740dbad9d8c4bc7888019
+msgid "Build with Relocatable Device Code support"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:462 ../../source/BuildingAMReX.rst:669
+#: 67df4e8ec4c84a6bb179870ea06fea87 fa88e157d87449f6a1894574a95b6f05
+msgid "AMReX_FORTRAN_INTERFACES"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:462 4fd2d4ec12364517bd7d11b98e725e60
+msgid "Build Fortran API"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:464 ../../source/BuildingAMReX.rst:671
+#: 07085a3b9ea347c4a6d85dccfc06c230 22f4bdaa953b4ccea2934e053a4d4e92
+msgid "AMReX_LINEAR_SOLVERS"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:464 c996bc34d74e4a738527e2d411de71dd
+msgid "Build AMReX linear solvers"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:466 ../../source/BuildingAMReX.rst:673
+#: 96e4327aa1fa4a2f9acba0447682c35e dc65b614e5884cebb311c7c10228ed0d
+msgid "AMReX_AMRDATA"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:466 f09e197420e84c0a898cd067383465a6
+msgid "Build data services"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:468 ../../source/BuildingAMReX.rst:675
+#: 06eb7b4b8d1e45fe93fb072b9d12968b 216a4278b5ef4fd1a3b62b9d69f4bfc5
+msgid "AMReX_AMRLEVEL"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:468 7ce85f4b2c474a67a251dcb7ad2e0fe4
+msgid "Build AmrLevel class"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:470 ../../source/BuildingAMReX.rst:677
+#: 96f867fd29a74ccaa15a92fdeeee2891 edbd1fd9754340edbd9289b341a09abb
+msgid "AMReX_EB"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:470 b66d074eaf6448b0ab4ef4acc0e51abe
+msgid "Build Embedded Boundary support"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:472 ../../source/BuildingAMReX.rst:679
+#: 78fcaba70cac47c0a76ba5f06f0cc137 d99d62577627424e855615ac951ff77a
+msgid "AMReX_PARTICLES"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:472 f5e1f24721ed4df48e71b500e9ed9a30
+msgid "Build particle classes"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:474 ../../source/BuildingAMReX.rst:681
+#: 1cb8c5f38b474b149b0846bb707da9d4 8ef0aa2976424a94948a5d086b51c451
+msgid "AMReX_PARTICLES_PRECISION"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:474 b79c12471872487caa48e06158729c01
+msgid "Set reals precision in particle classes"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:474 109d54b148cc46108280d3d6a734cf35
+msgid "Same as AMReX_PRECISION"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:476 ../../source/BuildingAMReX.rst:683
+#: 153b0fbf329342b4a2e9a0fd93bc6049 7021e9355d584ec2b105df7866c0e40d
+msgid "AMReX_BASE_PROFILE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:476 7197b18042b546e8a9401915791c226c
+msgid "Build with basic profiling support"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:478 ../../source/BuildingAMReX.rst:685
+#: 7dbf0e4ebbef4a79af6a886afe6e92b6 91f1074f3e5d40c49860d3ce80174ead
+msgid "AMReX_TINY_PROFILE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:478 952333eb84524fae9602c21b99c84048
+msgid "Build with tiny profiling support"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:480 ../../source/BuildingAMReX.rst:687
+#: 8391b16dc4814b02b8b32ae452598331 ea76f5ca1db94eb0b6f62b4e03a36130
+msgid "AMReX_TRACE_PROFILE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:480 e2ca5c34bbde4d52b2b841eb69814db4
+msgid "Build with trace-profiling support"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:482 ../../source/BuildingAMReX.rst:689
+#: 00697f0885dc43d793cb12692a5ce593 8e3c6c78a53848749c33094d4ef8a254
+msgid "AMReX_COMM_PROFILE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:482 07a8bd3df41d40c9a80e2cdff5f70e18
+msgid "Build with comm-profiling support"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:484 ../../source/BuildingAMReX.rst:691
+#: 16aa43a6bcf5420688fa0a813bda04e7 1d52bb6a324546bcbdbd350368867845
+msgid "AMReX_MEM_PROFILE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:484 77fb3da43fb9408d9da486de2fc45df3
+msgid "Build with memory-profiling support"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:486 961bd554161647329220dc33cdbfee2d
+msgid "AMReX_TP_PROFILE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:486 baea21e5bbc54f1498cb90e510284e8f
+msgid "Third-party profiling options"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:486 2704f547414043e590f85233f491a5a8
+msgid "IGNORE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:486 f56a3f4b587c4d2e82d38427bd4a28b0
+msgid "CRAYPAT,FORGE,VTUNE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:488 1207e08992254e9483eabc11977ef434
+msgid "AMReX_TESTING"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:488 09b9322e66504ee8b9a560d99283aacf
+msgid "Build for testing --sets MultiFab initial data to NaN"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:491 9f0ddaf4699941d780bbb2939539ec9d
+msgid "AMReX_MPI_THREAD_MULTIPLE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:491 91c1c85699514e03977abe9f224fce2c
+msgid "Concurrent MPI calls from multiple threads"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:493 ../../source/BuildingAMReX.rst:693
+#: 5fb6b57e83dd46a8a86c091cb60588c0 ec28d8e3eb7c4dedb15b5ac533fd97cf
+msgid "AMReX_PROFPARSER"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:493 47473e6375a042ed850b86f5dd30858e
+msgid "Build with profile parser support"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:495 4f7e9ea7e2a64407b4c4c6d1886182fe
+msgid "AMReX_ROCTX"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:495 bfbdcd2adc8e49e3ad0ad6046b3158c1
+msgid "Build with roctx markup profiling support"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:497 ../../source/BuildingAMReX.rst:695
+#: 3a255052940f42ad8941d30ee2ca7805 e3896dd4adb84d24ab7d2b5632356fd2
+msgid "AMReX_FPE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:497 b97a0d35c6a74b24b9ffb51d1dbb0743
+msgid "Build with Floating Point Exceptions checks"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:499 ../../source/BuildingAMReX.rst:697
+#: 3ea3598d74774533adc0751eb8117b00 43b1dd0e0edd4321a15ff7fc6bc75382
+msgid "AMReX_ASSERTIONS"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:499 23c7d409827e48e68e7dfa3b1d830dcf
+msgid "Build with assertions turned on"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:501 1e3b1fb8cd6f47e5ac5a74180cbf4196
+msgid "AMReX_BOUND_CHECK"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:501 36f369741cb34c6b85649f2f8dc86af4
+msgid "Enable bound checking in Array4 class"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:503 df7c8d9dd8884c6d8fa0173af688ddb9
+msgid "AMReX_EXPORT_DYNAMIC"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:503 0ca1df8be75a40bcb29167de291ad9be
+msgid "Enable backtrace on macOS"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:503 88c9e1edb4b8413d8559380344a2e856
+msgid "NO (unless Darwin)"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:505 ../../source/BuildingAMReX.rst:699
+#: 3b459dd3d97248e5b2540c44cb844050 4dbfb137befa4c67a0f19691a8c0dc87
+msgid "AMReX_SENSEI"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:505 90d089744731425ebdf7a214ecbca590
+msgid "Enable the SENSEI in situ infrastructure"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:507 d3eb39c160644aee8e615444067f1ee7
+msgid "AMReX_NO_SENSEI_AMR_INST"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:507 10c75a11f2ca41a58a9bb558ac75441c
+msgid "Disables the instrumentation in amrex::Amr"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:509 ../../source/BuildingAMReX.rst:701
+#: 4399d8f3f45f4c50a6692ed113e7b32c 9ae26421d9794843811f170f43676f34
+msgid "AMReX_CONDUIT"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:509 a528f106976e4b888fa17a1e07b44650
+msgid "Enable Conduit support"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:511 ../../source/BuildingAMReX.rst:703
+#: 5982cd08f8104888a4f544c9e6e9165b 5cbd3363ffdc441cb271b30687b24a88
+msgid "AMReX_ASCENT"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:511 3c8c409062f94b12a10a9f5d9087d3c4
+msgid "Enable Ascent support"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:513 ../../source/BuildingAMReX.rst:705
+#: 0f00d09120924f9b9aeac273b8d03342 3d6a2a3a5a4a47169bcc07cd0a9dd7ef
+msgid "AMReX_HYPRE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:513 7ae3b1cf315745e89879303db5ce6a75
+msgid "Enable HYPRE interfaces"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:515 998054f318164b5cacefa073fd1e69f3
+msgid "AMReX_PETSC"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:515 05fffe8239cf4dcdb1156ce4199b7ea2
+msgid "Enable PETSc interfaces"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:517 bf537fd424984f53aa5c057624b2d7f7
+msgid "AMReX_SUNDIALS"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:517 3ecf80718f0d44cb807ad6817c1789bd
+msgid "Enable SUNDIALS interfaces"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:519 a6b8801654be4d22af4a7df4109eb219
+msgid "AMReX_HDF5"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:519 23b9a254487244308dbb51054264a468
+msgid "Enable HDF5-based I/O"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:521 fa6faa6951714679adf8a579dce90bc6
+msgid "AMReX_HDF5_ZFP"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:521 e7c4712bbd90455fa17f6fd8dd84df2a
+msgid "Enable compression with ZFP in HDF5-based I/O"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:523 ../../source/BuildingAMReX.rst:707
+#: 027a2c66283c4347bc233b0ddfa7fad0 9642d2fbfd344639be3c9bdc0eff83a3
+msgid "AMReX_PLOTFILE_TOOLS"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:523 911c99fbf45d494e939ff87c38607105
+msgid "Build and install plotfile postprocessing tools"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:525 c9bca81a29234a00b59f24a9cc257541
+msgid "AMReX_ENABLE_TESTS"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:525 5cf496e201234f07a1a26f503d1da355
+msgid "Enable CTest suite"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:527 1588527d880f4a3692c331156c27fc67
+msgid "AMReX_TEST_TYPE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:527 8930b423956d4a48869397252d7d2a75
+msgid "Test type -- affects the number of tests"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:527 dfb080bf76ea4e7896f2c38d725e8ec2
+msgid "All"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:527 0bc0bd19ccb745f6bf2b872e868edc9f
+msgid "All, Small"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:529 78334530ba0d4bef80fe5d9554ff9339
+msgid "AMReX_DIFFERENT_COMPILER"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:529 3315616d6e8f4cd68018a677ef6a0c6d
+msgid "Allow an app to use a different compiler"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:531 35e87db2b3d746798dc64784d4155f26
+msgid "AMReX_INSTALL"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:531 00eaa8132e374ccf89b73d28e7b9f04e
+msgid "Generate Install Targets"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:533 5cca9a9e147c4206a1778e24ab355132
+msgid "AMReX_PROBINIT"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:533 4da607b7c7014b1bbe3f0e5efc18417e
+msgid "Enable support for probin file"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:533 94b8386d445846b29c9d659439582d8f
+msgid "Platform dependent"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:539 adc1273a37c248eb9c012a5bb5075d5b
+msgid ""
+"The option ``CMAKE_BUILD_TYPE=Debug`` implies ``AMReX_ASSERTIONS=YES``. "
+"In order to turn off assertions in debug mode, ``AMReX_ASSERTIONS=NO`` "
+"must be set explicitly while invoking CMake."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:544 b8a70dd5906241cebdd0b20775969650
+msgid ""
+"The ``CMAKE_C_COMPILER``, ``CMAKE_CXX_COMPILER``, and  "
+"``CMAKE_Fortran_COMPILER`` options are used to tell CMake which compiler "
+"to use for the compilation of C, C++, and Fortran sources respectively. "
+"If those options are not set by the user, CMake will use the system "
+"default compilers."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:548 e7af1ac3627b4c138ce5daa5593cfd2a
+msgid ""
+"The options ``CMAKE_Fortran_FLAGS`` and ``CMAKE_CXX_FLAGS`` allow the "
+"user to set their own compilation flags for Fortran and C++ source files "
+"respectively. If ``CMAKE_Fortran_FLAGS``/ ``CMAKE_CXX_FLAGS`` are not set"
+" by the user, they will be initialized with the value of the "
+"environmental variables ``FFLAGS``/ ``CXXFLAGS``. If neither ``FFLAGS``/ "
+"``CXXFLAGS`` nor ``CMAKE_Fortran_FLAGS``/ ``CMAKE_CXX_FLAGS`` are "
+"defined, AMReX default flags are used."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:555 53fdfb2ab1124aa9a76051c964d405a1
+msgid ""
+"For a detailed explanation of GPU support in AMReX CMake, refer to "
+"section :ref:`sec:gpu:build`."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:558 5f17aa460bbc4d6db5d593f873099f97
+msgid "CMake and macOS"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:560 ee2006a9720a49429a1a7287faf61781
+msgid ""
+"While not strictly necessary when using homebrew on macOS, it is highly "
+"recommended that the user specifies ``-DCMAKE_C_COMPILER=$(which gcc-X) "
+"-DCMAKE_CXX_COMPILER=$(which g++-X)`` (where X is the GCC version "
+"installed by homebrew) when using gfortran. This is because homebrew's "
+"CMake defaults to the Clang C/C++ compiler. Normally Clang plays well "
+"with gfortran, but if there are some issues, we recommend telling CMake "
+"to use gcc for C/C++ also."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:570 898bd4696666423f9e7b8420bc17b27c
+msgid "Importing AMReX into your CMake project"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:572 0fcc9d8540994a65b4cd16c8801415c9
+msgid ""
+"In order to import AMReX into your CMake project, you need to include the"
+" following line in the appropriate CMakeLists.txt file:"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:582 dc6a07610ab4486bb7064b782aaf4d16
+msgid ""
+"Calls to ``find_package(AMReX)`` will find a valid installation of AMReX,"
+" if present, and import its settings and targets into your CMake project."
+" Imported AMReX targets can be linked to any of your targets, after they "
+"have been made available following a successful call to "
+"``find_package(AMReX)``, by including the following line in the "
+"appropriate CMakeLists.txt file:"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:594 309b34239e204761b9d0fd56f9dbf15f
+msgid ""
+"In the above snippet, ``<amrex-target-name>`` is any of the targets "
+"listed in the table below."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:602 a5668859c0ab47ba85bd9e5130c72f54
+msgid "AMReX targets available for import."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:605 05222a1f07854b879d03ae9ecb92cfc8
+msgid "Target name"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:607 680e8b434c4648e99bbe87df6d1663bb
+msgid "amrex_1d"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:607 d9d0cffa638e483a860f793c06736302
+msgid "AMReX library in 1D"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:609 0d5ff885ae654bac95e845eccccd1833
+msgid "amrex_2d"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:609 8dfbadecf87a4395a52e36627939c725
+msgid "AMReX library in 2D"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:611 3469f655622841b0a6e7f4b8e00dc418
+msgid "amrex_3d"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:611 f2a0404f98814742bb9d1de0a4931687
+msgid "AMReX library in 3D"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:613 e68e5f6217c9493f937ce33983689157
+msgid "amrex"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:613 3db4eff683a54962ab33874e71773f33
+msgid "AMReX library (alias, points to last dim)"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:615 4d8bb964d03a4db89a0b2d5fb1bd30b2
+msgid "Flags_CXX"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:615 54e35d904f72402c912ed532a4ac7679
+msgid "C++ flags preset (interface)"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:617 e352f4819ea54b66a86e4bb7f349e649
+msgid "Flags_Fortran"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:617 cde531a3f18944a68d79e6a3ca0edb0a
+msgid "Fortran flags preset (interface)"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:619 58b8723cd8f7487191b3f7993a5452bf
+msgid "Flags_FPE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:619 ee8e1b6f3c244bed9ba6e2c6abfe45fd
+msgid "Floating Point Exception flags (interface)"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:626 9cca653325dc472e822aaea26bbb3435
+msgid ""
+"The options used to configure the AMReX build may result in certain "
+"parts, or ``components``, of the AMReX source code to be excluded from "
+"compilation. For example, setting ``-DAMReX_LINEAR_SOLVERS=no`` at "
+"configure time prevents the compilation of AMReX linear solvers code. "
+"Your CMake project can check which component is included in the AMReX "
+"library via `find_package`:"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:639 2dcff30acaa14318b040f97a647f5d91
+msgid ""
+"The keyword ``REQUIRED`` in the snippet above will cause a fatal error if"
+" AMReX is not found, or if it is found but the components listed in "
+"``<components-list>`` are not include in the installation. A list of "
+"AMReX component names and related configure options are shown in the "
+"table below."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:650 9adfa2c3a55e45c781087fd0a8fd05e1
+msgid "AMReX components."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:653 92f0a453476a4230948af6b2d7307804
+msgid "Option"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:653 7b05fe4f7580481f9837488b560c24e8
+msgid "Component"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:655 8ff13b72f83a4aaa89d2e916ec79bf90
+msgid "1D, 2D, 3D"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:659 10dab11191604776a8bc6b1767b1f438
+msgid "FORTRAN"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:661 c9cc6146669d44048fe40b842b65c2cd
+msgid "PIC"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:663 7621b7726fe0475eb6dc4df46fe1e0d5
+msgid "MPI"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:665 52d8a97aabc24209b2289d39308ab407
+msgid "OMP"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:667 dfb84e1a86e44f60812da6f0fcd45de8
+msgid "CUDA, HIP, SYCL"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:669 82e0233d43eb4e40b7ffe30e27366f5f
+msgid "FINTERFACES"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:671 cae02a4b8a274b5ea23ee37187af94db
+msgid "LSOLVERS"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:673 0a631444a30348d9bc6f50706cf32c22
+msgid "AMRDATA"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:675 8f887a6ca7534238888c27698daea1ae
+msgid "AMRLEVEL"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:677 6e64a7f42f484a6699420d9190296b27
+msgid "EB"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:679 ce574b59e9bf44c8ba3bd73932644498
+msgid "PARTICLES"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:681 58cb65bb4904415e963274c5ee9c6a12
+msgid "PDOUBLE, PSINGLE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:683 4a89250df5ed4f93b827d8c6b604eac9
+msgid "BASEP"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:685 5fd7643c9a764ae499d95800e0fa7098
+msgid "TINYP"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:687 f99ab637cb564c8596e5128b890f7c7a
+msgid "TRACEP"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:689 6d5a6439f2af4603b94117d9b6156ade
+msgid "COMMP"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:691 bc4d0b1f016f4dd0b45ab610f69c7862
+msgid "MEMP"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:693 37c69ec4103b4bad8ba22ed8243675dd
+msgid "PROFPARSER"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:695 7a6b4c29d1ba45c09fc4f0bf07c869d1
+msgid "FPE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:697 d3af8dae326e4f3e866e363b55eed332
+msgid "ASSERTIONS"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:699 2ec896905b2c415baa77d887a7dd11ce
+msgid "SENSEI"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:701 1ba3b8f9565741a497d0bd4bcd83f212
+msgid "CONDUIT"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:703 9851c22a4f834026b6343921aea0d60c
+msgid "ASCENT"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:705 04899b1650914de1897dc3c1695c1bf7
+msgid "HYPRE"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:707 116dde236b894c76904c467dee1c8f4f
+msgid "PFTOOLS"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:714 45b59f632b3c41b38df8f3c24a4036ff
+msgid "As an example, consider the following CMake code:"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:724 c2ef290885d44587a22c90b58b45cc5c
+msgid ""
+"The code in the snippet above checks whether an AMReX installation with "
+"3D and Embedded Boundary support is available on the system. If so, AMReX"
+" is linked to target ``Foo`` and AMReX flags preset is used to compile "
+"``Foo``'s C++ sources. If no AMReX installation is found or if the "
+"available one was built without 3D or Embedded Boundary support, a fatal "
+"error is issued."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:737 56541950a2034087ba94648a520f12c8
+msgid ""
+"You can tell CMake to look for the AMReX library in non-standard paths by"
+" setting the environmental variable ``AMReX_ROOT`` to point to the AMReX "
+"installation directory or by adding "
+"``-DAMReX_ROOT=<path/to/amrex/installation/directory>`` to the ``cmake`` "
+"invocation. More details on ``find_package`` can be found `here "
+"<https://cmake.org/cmake/help/v3.25/command/find_package.html>`_."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:746 14d1635edd6f457db55c79e4ba2373ad
+msgid "AMReX on Windows"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:748 ccf1f072157d40dba97fb57cfda021b9
+msgid ""
+"The AMReX team does development on Linux machines, from laptops to "
+"supercomputers. Many people also use AMReX on Macs without issues."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:750 fbfd60c6f39346a4b8df0a9f1aa926e7
+msgid ""
+"We do not officially support AMReX on Windows, and many of us do not have"
+" access to any Windows machines.  However, we believe there are no "
+"fundamental issues for it to work on Windows."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:753 08b8b37aace74abd9c39b346dfd9b049
+msgid ""
+"(1) AMReX mostly uses standard C++17. We run continuous integration tests"
+" on Windows with MSVC and Clang compilers."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:756 800c6c2c02524d0a9af260656bf258cc
+msgid ""
+"(2) We use POSIX signal handling when floating point exceptions, "
+"segmentation faults, etc. happen. This capability is not supported on "
+"Windows."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:759 acab7e2c75f143f6b26aee2d6c0944cc
+msgid ""
+"(3) Memory profiling is an optional feature in AMReX that is not enabled "
+"by default.  It reads memory system information from the OS to give us a "
+"summary of our memory usage.  This is not supported on Windows."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:767 62b96a2532ca4f4aae5d75eec4fd7aa4
+msgid "Spack"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:769 74f79ecb25874e7ca6c5b5d8cd750d70
+msgid ""
+"AMReX can be installed using the scientific software package manager "
+"Spack. Spack supports multiple versions and configurations of AMReX "
+"across a wide variety of platforms and environments. To learn more about "
+"Spack visit http://www.spack.io. For system requirements and installation"
+" instructions please see https://spack.readthedocs.io/."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:774 b88c3bc03bca4cf18233f5689d2811ff
+msgid ""
+"Once Spack has been downloaded and the Spack environment enabled, AMReX "
+"can be installed with the command,"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:781 94c470a6543942168b184343629c10e6
+msgid ""
+"This will install the latest release of AMReX and required dependencies "
+"if needed."
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:783 e7175ef32cc04e75b7d3379108496d2d
+msgid ""
+"AMReX can be built in several combinations of versions and "
+"configurations. Available options can be viewed by typing,"
+msgstr ""
+
+#: ../../source/BuildingAMReX.rst:790 9f4eb0ebec284fd5bfc403abb39be7e9
+msgid ""
+"For example, suppose we want to install the development version of AMReX "
+"for a two dimensional simulation with Cuda support for Cuda Architecture "
+"``sm_60``. Then we would use the install commands,"
+msgstr ""
+

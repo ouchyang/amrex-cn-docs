@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/ManagingGridHierarchy_Chapter.rst:7
+#: ea4f75a062544b2fb9bb7c0778c256af
+msgid "Gridding and Load Balancing"
+msgstr ""
+
+#: ../../source/ManagingGridHierarchy_Chapter.rst:9
+#: 5cffd0d7c5534d0a980b60b57814c80f
+msgid ""
+"AMReX provides a great deal of generality when it comes to how to "
+"decompose the computational domain into individual logically rectangular "
+"grids, and how to distribute those grids to MPI ranks.  We use the phrase"
+" \"load balancing\" here to refer to the combined process of grid "
+"creation (and re-creation when regridding) and distribution of grids to "
+"MPI ranks."
+msgstr ""
+
+#: ../../source/ManagingGridHierarchy_Chapter.rst:14
+#: 734cc0cd21ab435eb1e74115823bc24a
+msgid ""
+"Even for single-level calculations, AMReX provides the flexibility to "
+"have different size grids, more than one grid per MPI rank, and different"
+" strategies for distributing the grids to MPI ranks."
+msgstr ""
+
+#: ../../source/ManagingGridHierarchy_Chapter.rst:17
+#: c548a0a0e9864306abaca97892367089
+msgid ""
+"For multi-level calculations, the same principles for load balancing "
+"apply as in single-level calculations, but there is additional complexity"
+" in how to tag cells for refinement and how to create the union of grids "
+"at levels > 0 where that union most likely does not cover the "
+"computational domain."
+msgstr ""
+
+#: ../../source/ManagingGridHierarchy_Chapter.rst:21
+#: c1dcef27429e449f813fdac739bd5acc
+msgid ""
+"See :ref:`sec:grid_creation` for grids are created, i.e. how the "
+":cpp:`BoxArray` on which :cpp:`MultiFabs` will be built is defined at "
+"each level."
+msgstr ""
+
+#: ../../source/ManagingGridHierarchy_Chapter.rst:24
+#: acf0bde61ee641b6a27458a1174e9e19
+msgid ""
+"See :ref:`sec:load_balancing` for the strategies AMReX supports for "
+"distributing grids to MPI ranks, i.e. defining the "
+":cpp:`DistributionMapping` with which :cpp:`MultiFabs` at that level will"
+" be built."
+msgstr ""
+
+#: ../../source/ManagingGridHierarchy_Chapter.rst:28
+#: ee9fba060cb945289c76df3a2b17a578
+msgid ""
+"We also note that we can create separate grids, and map them in different"
+" ways to MPI ranks, for different types of data in a single calculation."
+"  We refer to this as the \"dual grid approach\" and the most common "
+"usage is to load balance mesh and particle data separately. See "
+":ref:`sec:dual_grid` for more about this approach."
+msgstr ""
+
+#: ../../source/ManagingGridHierarchy_Chapter.rst:33
+#: 6b953233d1064c6d8dcba9a292525624
+msgid ""
+"When running on multicore machines with OpenMP, we can also control the "
+"distribution of work by setting the size of grid tiles (by defining "
+":cpp:`fabarray_mfiter.tile_size`), and if relevant, of particle tiles (by"
+" defining :cpp:`particle.tile_size`).  We can also specify the strategy "
+"for assigning tiles to OpenMP threads.  See "
+":ref:`sec:basics:mfiter:tiling` for more about tiling."
+msgstr ""
+

@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/LoadBalancing.rst:10 efb98dd98698422a9ab77e6e0e5c9514
+msgid "Load Balancing"
+msgstr ""
+
+#: ../../source/LoadBalancing.rst:12 c70946773b334cccaae93ced75e872b4
+msgid ""
+"The process of load balancing is typically independent of the process of "
+"grid creation; the inputs to load balancing are a given set of grids with"
+" a set of weights assigned to each grid.  (The exception to this is the "
+"KD-tree approach in which the grid creation process is governed by trying"
+" to balance the work in each grid.)"
+msgstr ""
+
+#: ../../source/LoadBalancing.rst:17 71dabca0673449aa8d96c266678d3df2
+msgid ""
+"Single-level load balancing algorithms are sequentially applied to each "
+"AMR level independently, and the resulting distributions are mapped onto "
+"the ranks taking into account the weights already assigned to them "
+"(assign heaviest set of grids to the least loaded rank).  Note that the "
+"load of each process is measured by how much memory has already been "
+"allocated, not how much memory will be allocated.  Therefore the "
+"following code is not recommended because it tends to generate non-"
+"optimal distributions."
+msgstr ""
+
+#: ../../source/LoadBalancing.rst:35 5a08de6824984240953609acc6d4d664
+msgid "Instead, one should do,"
+msgstr ""
+
+#: ../../source/LoadBalancing.rst:46 b4b5121e1bd4486abeefa24affbba2d8
+msgid ""
+"Distribution options supported by AMReX include the following; the "
+"default is SFC:"
+msgstr ""
+
+#: ../../source/LoadBalancing.rst:48 013ebbf4bd7f41aea3d0e617d7117953
+msgid ""
+"Knapsack: the default weight of a grid in the knapsack algorithm is the "
+"number of grid cells, but AMReX supports the option to pass an array of "
+"weights -- one per grid -- or alternatively to pass in a MultiFab of "
+"weights per cell which is used to compute the weight per grid."
+msgstr ""
+
+#: ../../source/LoadBalancing.rst:52 54b7f678065a4241acb669285f6ed4ea
+msgid ""
+"SFC: enumerate grids with a space-filling Z-morton curve, then partition "
+"the resulting ordering across ranks in a way that balances the load."
+msgstr ""
+
+#: ../../source/LoadBalancing.rst:55 1de1646bc86948aebb5c5ef8b578d62d
+msgid ""
+"Round-robin: sort grids and assign them to ranks in round-robin fashion "
+"-- specifically FAB i is owned by CPU i%N where N is the total number of "
+"MPI ranks."
+msgstr ""
+

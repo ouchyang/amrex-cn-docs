@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-20123, AMReX Team
+# This file is distributed under the same license as the amrex package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: amrex 23.00-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 14:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: ../../source/TimeIntegration_Chapter.rst:5 3aa1bd2c4fb249c3a174b60c3567095a
+msgid "Time Integration"
+msgstr ""
+
+#: ../../source/TimeIntegration_Chapter.rst:7 9c8ff6e33fcc4e15854fc44d567b7be0
+msgid ""
+"AMReX provides a basic explicit time integrator capable of Forward Euler "
+"or both predefined and custom Runge-Kutta schemes designed to advance "
+"data on a particular AMR level by a timestep. This integrator is designed"
+" to be flexible, requiring the user to supply a right-hand side function "
+"taking a ``MultiFab`` of state data and filling a ``MultiFab`` of the "
+"corresponding right hand side data. The user simply needs to supply a C++"
+" lambda function to implement whatever right hand side operations they "
+"need."
+msgstr ""
+
+#: ../../source/TimeIntegration_Chapter.rst:16 0b8236acdffb4076b1137bd94890fde8
+msgid "A Simple Time Integrator Setup"
+msgstr ""
+
+#: ../../source/TimeIntegration_Chapter.rst:18 117f45d5ca0e402bb84a564a7cc378d6
+msgid ""
+"This is best shown with some sample code that sets up a time integrator "
+"and asks it to step forwards by some interval ``dt``. The user needs to "
+"supply at minimum, the right-hand side function using the "
+"``TimeIntegrator::set_rhs()`` function. By using the "
+"``TimeIntegrator::set_post_update()`` function, a user can also supply a "
+"post update function which is called on state data immediately before "
+"evaluating the right-hand side. This post update function is a good "
+"opportunity to fill boundary conditions for Runge-Kutta stage solution "
+"data so that ghost cells are filled when the right hand side function is "
+"called on that solution data."
+msgstr ""
+
+#: ../../source/TimeIntegration_Chapter.rst:67 36075a938c1847c4817eea45b942d7e6
+msgid "Using SUNDIALS"
+msgstr ""
+
+#: ../../source/TimeIntegration_Chapter.rst:69 fd865ea413454fcbbc1746445495959b
+msgid ""
+"The AMReX Time Integration interface also supports a SUNDIALS backend "
+"that wraps both the explicit Runge-Kutta (ERK) and multirate (MRI) "
+"integration schemes in the SUNDIALS ARKODE package. To use either of "
+"them, the user needs to compile AMReX with `USE_SUNDIALS=TRUE` and use "
+"SUNDIALS v. 6.0 or later."
+msgstr ""
+
+#: ../../source/TimeIntegration_Chapter.rst:74 41426b07e6c24feea841c1074730f048
+msgid ""
+"There are only minor changes to the code above required to use the "
+"SUNDIALS interface. The first change is that the integration datatype is "
+"now a `Vector<MultiFab>` type instead of simply `MultiFab`. The reason "
+"for introducing a `Vector<MultiFab>` in this case, is to permit "
+"integrating state data with different spatial centering (e.g. cell "
+"centered, face centered, node centered) concurrently. Shown here is "
+"sample code equivalent to the code above, suitable for the SUNDIALS "
+"explicit Runge-Kutta integrator:"
+msgstr ""
+
+#: ../../source/TimeIntegration_Chapter.rst:119
+#: 66a2bab992264309875dd94157e22794
+msgid ""
+"Afterwards, to select the ERK integrator, one needs only to add the "
+"following two input parameters at runtime:"
+msgstr ""
+
+#: ../../source/TimeIntegration_Chapter.rst:127
+#: 09c41625bae44c77a0bdb2cd34902f16
+msgid ""
+"If instead one wishes to use the SUNDIALS multirate integrator, then the "
+"user will need to use the following runtime inputs parameters:"
+msgstr ""
+
+#: ../../source/TimeIntegration_Chapter.rst:135
+#: 1492ef29d36346ca9ff7044e68f2ef5f
+msgid ""
+"In addition, to set up the multirate problem, the user needs to supply a "
+"fast timescale right-hand-side function in addition to the usual right "
+"hand side function (which is interpreted as the slow timescale right-hand"
+" side). The user will also need to supply the ratio of the slow timestep "
+"size to the fast timestep size, which is an integer corresponding to the "
+"number of fast timesteps the integrator will take per every slow "
+"timestep. An example code snippet would look as follows:"
+msgstr ""
+
+#: ../../source/TimeIntegration_Chapter.rst:200
+#: ff7820c5db3e430c93c1bc5b539536ce
+msgid "Picking A Time Integration Method"
+msgstr ""
+
+#: ../../source/TimeIntegration_Chapter.rst:202
+#: 793e250cc9d84a2c922533d7434a8cbe
+msgid ""
+"The user can customize which integration method they wish to use with a "
+"set of runtime parameters that allow choosing between a simple Forward "
+"Euler method or a generic explicit Runge-Kutta method. If Runge-Kutta is "
+"selected, then the user can choose which of a set of predefined Butcher "
+"Tables to use, or can choose to use a custom table and supply it "
+"manually."
+msgstr ""
+
+#: ../../source/TimeIntegration_Chapter.rst:208
+#: fcaf12e18ead4c18806c94be20cc7a10
+msgid ""
+"When AMReX is compiled with SUNDIALS v.6 or later, the user also has an "
+"option to use the SUNDIALS ARKODE integrator as a backend for the AMReX "
+"Time Integrator class. The features of this interface evolve with the "
+"needs of our codes, so they may not yet support all SUNDIALS "
+"configurations available. If you find you need SUNDIALS options we have "
+"not implemented, please let us know."
+msgstr ""
+
+#: ../../source/TimeIntegration_Chapter.rst:214
+#: cbf0bbd910654d10a6d1a30142eb8900
+msgid "The full set of integrator options are detailed as follows:"
+msgstr ""
+
