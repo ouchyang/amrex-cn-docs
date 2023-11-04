@@ -101,5 +101,5 @@ msgid ""
 msgstr "AMReX的版权声明包含在AMReX主目录下的README.txt文件中。您对该软件的使用受到3条款的BSD许可证的约束，许可协议包含在AMReX主目录下的license.txt文件中。"
 
 #: ../../source/index.rst:84 7458df9cafd244c69ff67ea542b820a4
-msgid "For a pdf version of this documentation, click :download:`here <../build/latex/amrex.pdf>`."
-msgstr "要获取此文档的 PDF 版本，请点击：:download:`这里 <../build/latex/amrex.pdf>`。"
+msgid "For a pdf version of this documentation, click :download:`here <amrex.pdf>`."
+msgstr "要获取此文档的 PDF 版本，请点击：:download:`这里 <amrex_zh_CN.pdf>`。"
