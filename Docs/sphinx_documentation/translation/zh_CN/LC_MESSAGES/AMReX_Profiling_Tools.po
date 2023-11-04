@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,392 +21,364 @@ msgstr ""
 
 #: ../../source/AMReX_Profiling_Tools.rst:8 2a7c86c9e7f34907a16ac37e939f84f9
 msgid "Types of Profiling"
-msgstr ""
+msgstr "个人资料分析的类型"
 
 #: ../../source/AMReX_Profiling_Tools.rst:10 c90f3940abb649eb9e934496231e304c
 msgid ""
-"AMReX's built-in profiling works through objects that start and stop "
-"timers based on user-placed macros or an object's constructor and "
-"destructor. The results from these timers are stored in a global list "
-"that is consolidated and printed during finalization, or at a user-"
-"defined flush point."
-msgstr ""
+"AMReX's built-in profiling works through objects that start and stop timers based on user-placed macros or an object's "
+"constructor and destructor. The results from these timers are stored in a global list that is consolidated and printed "
+"during finalization, or at a user-defined flush point."
+msgstr "AMReX的内置性能分析通过对象来工作，这些对象根据用户放置的宏或对象的构造函数和析构函数启动和停止计时器。这些计时器的结果存储在一个全局列表中，在最终化时进行合并并打印出来，或者在用户定义的刷新点进行打印。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:15 26f30f91436d4ad1af08236a0b0949fd
-msgid ""
-"Currently, AMReX has two options for built-in profiling: "
-":ref:`sec:tiny:profiling` and :ref:`sec:full:profiling`."
-msgstr ""
+msgid "Currently, AMReX has two options for built-in profiling: :ref:`sec:tiny:profiling` and :ref:`sec:full:profiling`."
+msgstr "目前，AMReX有两种内置的性能分析选项：:ref:`sec:tiny:profiling`和:ref:`sec:full:profiling`。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:21 c2f4a8f4a3ff4f61b82f675b33d865f5
 msgid "Tiny Profiling"
-msgstr ""
+msgstr "微小的个人简介"
 
 #: ../../source/AMReX_Profiling_Tools.rst:23 0e6400eeaac94384b52628c477c6fcc7
-msgid ""
-"To enable \"Tiny Profiling\" with GNU Make edit the options in the file "
-"``GNUMakefile`` to show,"
-msgstr ""
+msgid "To enable \"Tiny Profiling\" with GNU Make edit the options in the file ``GNUMakefile`` to show,"
+msgstr "要在GNU Make中启用“Tiny Profiling”，请编辑文件“GNUMakefile”中的选项以显示。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:31 30e453e395d8443b882489ee6878f908
 msgid "If building with CMake, set the following CMake flags,"
-msgstr ""
+msgstr "如果使用CMake构建，请设置以下CMake标志："
 
 #: ../../source/AMReX_Profiling_Tools.rst:39 6cf5cf7b922e4fc685bde06edaf49143
 msgid ""
-"If you set ``PROFILE = TRUE`` (or ``AMReX_BASE_PROFILE = ON``) to enable "
-"full profiling then this will override the ``TINY_PROFILE`` flag and tiny"
-" profiling will be disabled."
-msgstr ""
+"If you set ``PROFILE = TRUE`` (or ``AMReX_BASE_PROFILE = ON``) to enable full profiling then this will override the "
+"``TINY_PROFILE`` flag and tiny profiling will be disabled."
+msgstr "如果您将``PROFILE = TRUE``（或``AMReX_BASE_PROFILE = ON``）设置为启用完整的性能分析，那么这将覆盖``TINY_PROFILE``标志，并且将禁用微小的性能分析。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:44 24c5398c9027424eb2e0e67b7bee9f5a
 msgid "Output"
-msgstr ""
+msgstr "输出"
 
 #: ../../source/AMReX_Profiling_Tools.rst:46 4ac7d874eff14ecf873f795a9f036241
 msgid ""
-"At the end of a run, a summary of exclusive and inclusive function times "
-"will be written to ``stdout``. This output includes the minimum and "
-"maximum (over processes) time spent in each routine as well as the "
-"average and the maximum percentage of total run time. See the sample "
-"output below."
-msgstr ""
+"At the end of a run, a summary of exclusive and inclusive function times will be written to ``stdout``. This output "
+"includes the minimum and maximum (over processes) time spent in each routine as well as the average and the maximum "
+"percentage of total run time. See the sample output below."
+msgstr "在运行结束时，将会将独占和包含函数时间的摘要写入到“stdout”。该输出包括每个例程中在进程间花费的最小和最大时间，以及总运行时间的平均和最大百分比。请参考下面的示例输出。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:74 bc204efb48054064b2692dc2a81ce8c2
 msgid ""
-"The tiny profiler automatically writes the results to ``stdout`` at the "
-"end of your code, when ``amrex::Finalize();`` is reached. However, you "
-"may want to write partial profiling results to ensure your information is"
-" saved when you may fail to converge or if you expect to run out of "
-"allocated time. Partial results can be written at user-defined points in "
-"the code by inserting the line:"
+"The tiny profiler automatically writes the results to ``stdout`` at the end of your code, when ``amrex::Finalize();`` "
+"is reached. However, you may want to write partial profiling results to ensure your information is saved when you may "
+"fail to converge or if you expect to run out of allocated time. Partial results can be written at user-defined points "
+"in the code by inserting the line:"
 msgstr ""
+"当代码执行到``amrex::Finalize();``时，微型分析器会自动将结果写入``stdout``"
+"。然而，您可能希望在某些情况下将部分分析结果写入，以确保在无法收敛或预计超出分配时间时保存信息。您可以通过在代码中插入以下行来写入部分结果："
 
 #: ../../source/AMReX_Profiling_Tools.rst:84 bbdf1d00f26e4e9f8993578916bb527e
 msgid ""
-"Any timers that have not reached their ``BL_PROFILE_VAR_STOP`` call or "
-"exited their scope and deconstructed will not be included in these "
-"partial outputs. (e.g., a properly instrumented ``main()`` should show a "
-"time of zero in all partial outputs.) Therefore, it is recommended to "
-"place these flush calls in easily identifiable regions of your code and "
-"outside of as many profiling timers as possible, such as immediately "
-"before or after writing a checkpoint."
+"Any timers that have not reached their ``BL_PROFILE_VAR_STOP`` call or exited their scope and deconstructed will not be "
+"included in these partial outputs. (e.g., a properly instrumented ``main()`` should show a time of zero in all partial "
+"outputs.) Therefore, it is recommended to place these flush calls in easily identifiable regions of your code and "
+"outside of as many profiling timers as possible, such as immediately before or after writing a checkpoint."
 msgstr ""
+"任何尚未达到其``BL_PROFILE_VAR_STOP``调用或退出其作用域并析构的计时器将不会包含在这些部分输出中（例如，一个正确插装的``main()``"
+"应该在所有部分输出中显示为零时间）。因此，建议将这些刷新调用放置在代码中易于识别的区域，并尽可能放在尽可能多的性能分析计时器之外，例如在写入检查点之前或之后立即进行刷新。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:91 e99e42ae4924427ebf333d11b799d692
 msgid ""
-"Also, since flush calls will print multiple, similar looking outputs to "
-"``stdout``, it is also recommended to wrap any "
-"``BL_PROFILE_TINY_FLUSH();`` calls in informative ``amrex::Print()`` "
-"lines to ensure accurate identification of each set of timers."
-msgstr ""
+"Also, since flush calls will print multiple, similar looking outputs to ``stdout``, it is also recommended to wrap any "
+"``BL_PROFILE_TINY_FLUSH();`` calls in informative ``amrex::Print()`` lines to ensure accurate identification of each "
+"set of timers."
+msgstr "此外，由于 flush 调用会将多个外观相似的输出打印到 stdout，因此建议在每个 BL_PROFILE_TINY_FLUSH(); 调用周围添加有信息的 amrex::Print() 行，以确保准确识别每组计时器。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:99 f2ed872da7ab47e1a9957e0c4b486f11
 msgid "Full Profiling"
-msgstr ""
+msgstr "全面剖析"
 
 #: ../../source/AMReX_Profiling_Tools.rst:101 cb92e6cf35734ce6b3975b761e625523
 msgid ""
-"If you set ``PROFILE = TRUE`` then a ``bl_prof`` directory will be "
-"written that contains detailed per-task timings for each processor.  This"
-" will be written in ``nfiles`` files (where ``nfiles`` is specified by "
-"the user). The information in the directory can be analyzed by the "
-":ref:`sec:amrprofparse` tool within :ref:`sec:amrvis`. In addition, an "
+"If you set ``PROFILE = TRUE`` then a ``bl_prof`` directory will be written that contains detailed per-task timings for "
+"each processor.  This will be written in ``nfiles`` files (where ``nfiles`` is specified by the user). The information "
+"in the directory can be analyzed by the :ref:`sec:amrprofparse` tool within :ref:`sec:amrvis`. In addition, an "
 "exclusive-only set of function timings will be written to ``stdout``."
 msgstr ""
+"如果你将``PROFILE = "
+"TRUE``设置为真，那么将会生成一个名为``bl_prof``的目录，其中包含每个处理器的每个任务的详细时间记录。这些记录将会以``nfiles``个文件的形式保存（其中``nfiles``由用户指定）。可以使用:ref:`"
+"sec:amrprofparse`工具在:ref:`sec:amrvis`中分析该目录中的信息。此外，还会将仅包含独占时间的函数时间记录写入``stdout``。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:109 b2834fcfd2f54950a920bacee9cbb413
 msgid "Trace Profiling"
-msgstr ""
+msgstr "追踪分析"
 
 #: ../../source/AMReX_Profiling_Tools.rst:111 959d1eb95dcc49f3b4b289881c511bfb
 msgid ""
-"If you set ``TRACE_PROFILE = TRUE`` in addition to ``PROFILE = TRUE``, "
-"then the profiler keeps track of when each profiled function is called "
-"and the ``bl_prof`` directory will include the function call stack. This "
-"is especially useful when core functions, such as :cpp:`FillBoundary` can"
-" be called from many different regions of the code. Using trace profiling"
-" allows one to specify regions in the code that can be analyzed for "
-"profiling information independently from other regions."
+"If you set ``TRACE_PROFILE = TRUE`` in addition to ``PROFILE = TRUE``, then the profiler keeps track of when each "
+"profiled function is called and the ``bl_prof`` directory will include the function call stack. This is especially "
+"useful when core functions, such as :cpp:`FillBoundary` can be called from many different regions of the code. Using "
+"trace profiling allows one to specify regions in the code that can be analyzed for profiling information independently "
+"from other regions."
 msgstr ""
+"如果你在``PROFILE = TRUE``的基础上设置``TRACE_PROFILE = "
+"TRUE``，那么分析器将会记录每个被分析函数的调用时间，并且``bl_prof``目录将包含函数调用堆栈信息。当核心函数（例如：``FillBoundary``"
+"）可以从代码的许多不同区域调用时，这将非常有用。使用追踪分析允许我们指定代码中可以独立于其他区域进行分析的区域，从而获取分析信息。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:120 171e6f31c0214763a0f112b2bfe3f8fe
 msgid "Communication Profiling"
-msgstr ""
+msgstr "沟通分析"
 
 #: ../../source/AMReX_Profiling_Tools.rst:122 63fd1b20920b48c59e4fd702f0fea942
 msgid ""
-"If you set ``COMM_PROFILE = TRUE`` in addition to ``PROFILE = TRUE``, "
-"then the ``bl_prof`` directory will contain additional information about "
-"MPI communication (point-to-point timings, data volume, barrier/reduction"
-" times, etc.). ``TRACE_PROFILE = TRUE`` and ``COMM_PROFILE = TRUE`` can "
-"be set together."
+"If you set ``COMM_PROFILE = TRUE`` in addition to ``PROFILE = TRUE``, then the ``bl_prof`` directory will contain "
+"additional information about MPI communication (point-to-point timings, data volume, barrier/reduction times, etc.). "
+"``TRACE_PROFILE = TRUE`` and ``COMM_PROFILE = TRUE`` can be set together."
 msgstr ""
+"如果您在``PROFILE = TRUE``的基础上设置``COMM_PROFILE = TRUE``，那么``bl_prof``目录将包含有关MPI通信的额外信息（点对点时间、数据量、屏障/归约时间等）。``TRACE_PROFILE "
+"= TRUE``和``COMM_PROFILE = TRUE``可以同时设置。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:128 b08bf9ac13854377a18d39ef17027b6f
 msgid ""
-"The AMReX-specific profiling tools are currently under development and "
-"this documentation will reflect the latest status in the development "
-"branch."
-msgstr ""
+"The AMReX-specific profiling tools are currently under development and this documentation will reflect the latest "
+"status in the development branch."
+msgstr "AMReX特定的性能分析工具目前正在开发中，本文档将反映开发分支中的最新状态。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:132 181a386331184a5c838bc7a3a4401d7f
 msgid "Instrumenting C++ Code"
-msgstr ""
+msgstr "对C++代码进行仪器化"
 
 #: ../../source/AMReX_Profiling_Tools.rst:134 25f9db3ca08a4a68b09e072ac11c8087
-msgid ""
-"AMReX profiler objects are created and managed through :cpp:`BL_PROF` "
-"macros."
-msgstr ""
+msgid "AMReX profiler objects are created and managed through :cpp:`BL_PROF` macros."
+msgstr "AMReX的性能分析器对象是通过`BL_PROF`宏来创建和管理的。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:138 2118e77f9e7b47869f761802c9754276
 msgid "To start, you must at least instrument main(), i.e.:"
-msgstr ""
+msgstr "首先，你必须至少在main()函数中进行仪器化操作，即："
 
 #: ../../source/AMReX_Profiling_Tools.rst:153 2e27c7aa289c43bd9f0b779ef2c97a36
 msgid "Or:"
 msgstr ""
+"Sure thing! I'll be waiting for your ENGLISH messages and will translate them into SIMPLIFIED CHINESE as per your "
+"guidelines. Feel free to send them over whenever you're ready."
 
 #: ../../source/AMReX_Profiling_Tools.rst:171 209850a8351945d5b88fa77289a43fc0
-msgid ""
-"You can then instrument any of your functions, or code blocks. There are "
-"four general profiler macro types available:"
-msgstr ""
+msgid "You can then instrument any of your functions, or code blocks. There are four general profiler macro types available:"
+msgstr "您可以对任何函数或代码块进行仪器化。有四种常见的性能分析器宏类型可供使用："
 
 #: ../../source/AMReX_Profiling_Tools.rst:175 8ae6e5d075e8444d8bda3e337233d03f
 msgid "1) A scoped timer, :cpp:`BL_PROFILE`:"
-msgstr ""
+msgstr "1) 一个作用域计时器，:cpp:`BL_PROFILE`:"
 
 #: ../../source/AMReX_Profiling_Tools.rst:177 334db1af50a943d8b74f4453b963c236
 msgid ""
-"These timers generate their own object names, so they can't be controlled"
-" after being defined. However, they are the cleanest and easiest to work "
-"with in many situations. They time from the point where the macro is "
-"called until the end of the enclosing scope. This macro is ideal for "
-"timing an entire function. For example:"
-msgstr ""
+"These timers generate their own object names, so they can't be controlled after being defined. However, they are the "
+"cleanest and easiest to work with in many situations. They time from the point where the macro is called until the end "
+"of the enclosing scope. This macro is ideal for timing an entire function. For example:"
+msgstr "这些计时器会生成自己的对象名称，因此在定义后无法进行控制。然而，在许多情况下，它们是最清晰、最易于使用的。它们从宏被调用的时刻开始计时，直到封闭作用域结束。这个宏非常适合计时整个函数。例如："
 
 #: ../../source/AMReX_Profiling_Tools.rst:192 518bb93c6e9a4606b42c2c41ba0cfdb1
 msgid ""
-"Note that all AMReX timers are scoped and will call \"stop\" when the "
-"corresponding object is destroyed. This macro is unique because it can "
-"*only* stop when it goes out of scope."
-msgstr ""
+"Note that all AMReX timers are scoped and will call \"stop\" when the corresponding object is destroyed. This macro is "
+"unique because it can *only* stop when it goes out of scope."
+msgstr "请注意，所有的 AMReX 计时器都是有作用域的，并且在相应的对象被销毁时会调用 \"stop\" 方法。这个宏是独特的，因为它只能在作用域结束时停止。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:196 885273c3ac4844d89f9019d6bb99deb9
 msgid "2) A named, scoped timer, :cpp:`BL_PROFILE_VAR`:"
-msgstr ""
+msgstr "2) 一个具有命名和作用域的计时器，:cpp:`BL_PROFILE_VAR`:"
 
 #: ../../source/AMReX_Profiling_Tools.rst:198 632682bb8dcb4c8fb777e07c64935864
 msgid ""
-"In some cases, using scopes to control a timer is not ideal. In such "
-"cases, you can use the ``_VAR_`` macros to create a named timer that can "
-"be controlled through ``_START_`` and ``_STOP_`` macros. ``_VAR_`` "
-"signifies that the macro takes a variable name. For example, to time a "
-"function without scoping:"
+"In some cases, using scopes to control a timer is not ideal. In such cases, you can use the ``_VAR_`` macros to create "
+"a named timer that can be controlled through ``_START_`` and ``_STOP_`` macros. ``_VAR_`` signifies that the macro "
+"takes a variable name. For example, to time a function without scoping:"
 msgstr ""
+"在某些情况下，使用作用域来控制计时器并不理想。在这种情况下，您可以使用``_VAR_``宏来创建一个可以通过``_START_``和``_STOP_``宏来控制的命名计时器。``_VAR_``"
+"表示该宏接受一个变量名。例如，要计时一个函数而不使用作用域："
 
 #: ../../source/AMReX_Profiling_Tools.rst:208 406c2212b4944dd482d082f7e918ecbc
 msgid ""
-"This can also be used to selectively time with the same scope. For "
-"example, to include :cpp:`Func_0` and :cpp:`Func_2`, but not "
-":cpp:`Func_1`:"
-msgstr ""
+"This can also be used to selectively time with the same scope. For example, to include :cpp:`Func_0` and :cpp:`Func_2`, "
+"but not :cpp:`Func_1`:"
+msgstr "这也可以用于在相同范围内进行选择性定时。例如，包括 `Func_0` 和 `Func_2`，但不包括 `Func_1`："
 
 #: ../../source/AMReX_Profiling_Tools.rst:223 d3b3a6b5e6e3490d92bc82b07d969e04
 msgid ""
-"Remember, these are still scoped. So, the scoped timer example can be "
-"reproduced exactly with named timers by just using the :cpp:`_VAR` macro:"
-msgstr ""
+"Remember, these are still scoped. So, the scoped timer example can be reproduced exactly with named timers by just "
+"using the :cpp:`_VAR` macro:"
+msgstr "请记住，这些仍然是有范围的。因此，通过仅使用`:cpp:`_VAR`宏，可以完全复制具有命名计时器的范围计时器示例。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:239 7ee1ee57e67840cf96052295f5517825
-msgid ""
-"3) A named, scoped timer that doesn't auto-start, "
-":cpp:`BL_PROFILE_VAR_NS`:"
-msgstr ""
+msgid "3) A named, scoped timer that doesn't auto-start, :cpp:`BL_PROFILE_VAR_NS`:"
+msgstr "3) 一个具有命名和作用域的计时器，不会自动启动，即 `BL_PROFILE_VAR_NS`。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:241 665ff05b75554aa3a11ff1c7fac9d732
 msgid ""
-"Sometimes, a complicated scoping may mean the profiling object needs to "
-"be defined before it's started. To create a named AMReX timer that "
-"doesn't start automatically, use the ``_NS_`` macros. (\"NS\" stands for "
-"\"no start\"). For example, this implementation times :cpp:`MyFunc0` and "
-":cpp:`MyFunc1` but not any of the \"Additional Code\" blocks:"
+"Sometimes, a complicated scoping may mean the profiling object needs to be defined before it's started. To create a "
+"named AMReX timer that doesn't start automatically, use the ``_NS_`` macros. (\"NS\" stands for \"no start\"). For "
+"example, this implementation times :cpp:`MyFunc0` and :cpp:`MyFunc1` but not any of the \"Additional Code\" blocks:"
 msgstr ""
+"有时，复杂的作用域可能意味着需要在启动之前定义分析对象。要创建一个不自动启动的命名 AMReX 计时器，请使用 \"_NS_\" 宏。例如，此实现计时 \"MyFunc0\" 和 \"MyFunc1\"，但不计时任何 "
+"\"Additional Code\" 块。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:272 dffc9e0671d644d9a0c4176689cd7dca
 msgid ""
-"The ``_NS_`` macro must, by necessity, also be a ``_VAR_`` macro. "
-"Otherwise, you would never be able to turn the timer on!"
-msgstr ""
+"The ``_NS_`` macro must, by necessity, also be a ``_VAR_`` macro. Otherwise, you would never be able to turn the timer "
+"on!"
+msgstr "``_NS_``宏必须同时也是一个``_VAR_``宏，这是必然的。否则，你将无法启动计时器！"
 
 #: ../../source/AMReX_Profiling_Tools.rst:276 a4a2180ae5494cdb8dd97e22b7462005
 msgid "4) Designate a sub-region to profile, :cpp:`BL_PROFILE_REGION`:"
-msgstr ""
+msgstr "4) 指定一个子区域进行分析，:cpp:`BL_PROFILE_REGION`:"
 
 #: ../../source/AMReX_Profiling_Tools.rst:278 3b813cb34c2848a2b47f671bed7c35b2
 msgid ""
-"Often, it's helpful to look at a subset of timers separately from the "
-"complete profile. For example, you may want to view the timing of a "
-"specific time step or isolate everything inside the \"Chemistry\" part of"
-" the code. This can be accomplished by designating profile regions. All "
-"timers within a named region will be included both in the full analysis, "
-"as well as in a separate sub-analysis."
+"Often, it's helpful to look at a subset of timers separately from the complete profile. For example, you may want to "
+"view the timing of a specific time step or isolate everything inside the \"Chemistry\" part of the code. This can be "
+"accomplished by designating profile regions. All timers within a named region will be included both in the full "
+"analysis, as well as in a separate sub-analysis."
 msgstr ""
+"通常，将计时器的子集与完整的配置文件分开查看会很有帮助。例如，您可能希望查看特定时间步骤的计时，或者将代码中的\"Chemistry\""
+"部分隔离出来。这可以通过指定配置文件区域来实现。命名区域内的所有计时器都将包含在完整分析和单独的子分析中。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:283 81928b82432940f48c98c3c0440b8b99
 msgid ""
-"Regions are meant to be large contiguous blocks of code, and should be "
-"used sparingly and purposefully to produce useful profiling reports. As "
-"such, the possible region options are purposefully limited."
-msgstr ""
+"Regions are meant to be large contiguous blocks of code, and should be used sparingly and purposefully to produce "
+"useful profiling reports. As such, the possible region options are purposefully limited."
+msgstr "区域应该是大块连续的代码，并且应该谨慎而有目的地使用，以产生有用的性能分析报告。因此，可能的区域选项是有意限制的。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:287 a615350f965c408ca76688a236043ff0
 msgid "Scoped Regions"
-msgstr ""
+msgstr "作用域区域"
 
 #: ../../source/AMReX_Profiling_Tools.rst:289 8e7919aac88a435f97d5c65b99b6134d
 msgid ""
-"When using the Tiny Profiler, the only available region macro is the "
-"scoped macro. To create a region that profiles the `MyFuncs` code block, "
-"including all timers in the \"Additional Code\" regions, add macros in "
-"the following way:"
-msgstr ""
+"When using the Tiny Profiler, the only available region macro is the scoped macro. To create a region that profiles the "
+"`MyFuncs` code block, including all timers in the \"Additional Code\" regions, add macros in the following way:"
+msgstr "在使用 Tiny Profiler 时，唯一可用的区域宏是 scoped 宏。要创建一个区域来对 `MyFuncs` 代码块进行性能分析，包括 \"Additional Code\" 区域中的所有计时器，请按照以下方式添加宏："
 
 #: ../../source/AMReX_Profiling_Tools.rst:316 b4ade33a9c5848a591aa28dffc6ae140
 msgid ""
-"The ``MyFuncs`` region appears in the Tiny Profiler output as an "
-"additional table. The following output example, mimics the above code. In"
-" it, the region is indicated by ``REG::MyFuncs``."
-msgstr ""
+"The ``MyFuncs`` region appears in the Tiny Profiler output as an additional table. The following output example, mimics "
+"the above code. In it, the region is indicated by ``REG::MyFuncs``."
+msgstr "在 Tiny Profiler 的输出中，``MyFuncs`` 区域以额外的表格形式出现。以下是一个输出示例，模拟了上述代码。在示例中，该区域由 ``REG::MyFuncs`` 表示。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:344 3774d72f8abd4a5e88d9512f68f91c8d
 msgid "Named Regions"
-msgstr ""
+msgstr "命名的地区"
 
 #: ../../source/AMReX_Profiling_Tools.rst:346 b075f39b1fdd48d6bf77439cd80a14d3
 msgid ""
-"If using the Full Profiler, named region objects are also available. "
-"Named regions allow control of start and stop points without relying on "
-"scope. These macros use slightly modified ``_VAR_``, ``_START_`` and "
-"``_STOP_`` formatting. The first argument is the name, followed by the "
-"profile variable. Names for each section can differ, but because the "
-"profiler variable will be used to group the sections into a region, it "
-"must be the same. Consider the following example:"
+"If using the Full Profiler, named region objects are also available. Named regions allow control of start and stop "
+"points without relying on scope. These macros use slightly modified ``_VAR_``, ``_START_`` and ``_STOP_`` formatting. "
+"The first argument is the name, followed by the profile variable. Names for each section can differ, but because the "
+"profiler variable will be used to group the sections into a region, it must be the same. Consider the following example:"
 msgstr ""
+"如果使用完整的分析器，还可以使用命名区域对象。命名区域允许在不依赖作用域的情况下控制起始点和结束点。这些宏使用稍微修改过的“_VAR_”、“_START_”和“_STOP_"
+"”格式。第一个参数是名称，后面是分析变量。每个部分的名称可以不同，但由于分析变量将用于将这些部分分组成一个区域，所以它必须相同。请考虑以下示例："
 
 #: ../../source/AMReX_Profiling_Tools.rst:382 5fafa133df584400b4ffc43184a4d894
 msgid ""
-"Here, :cpp:`<Code Block A>` and :cpp:`<Code Block C>` are grouped into "
-"one region labeled \"RegionAC\" for profiling. :cpp:`<Code Block B>` is "
-"isolated in its own group. Any timers inside :cpp:`MyFunc_0` and "
-":cpp:`MyFunc_1` are not included in the region groupings."
+"Here, :cpp:`<Code Block A>` and :cpp:`<Code Block C>` are grouped into one region labeled \"RegionAC\" for profiling. "
+":cpp:`<Code Block B>` is isolated in its own group. Any timers inside :cpp:`MyFunc_0` and :cpp:`MyFunc_1` are not "
+"included in the region groupings."
 msgstr ""
+"这里，:cpp:`<Code Block A>`和:cpp:`<Code Block C>`被分组到一个名为\"RegionAC\"的区域中进行性能分析。:cpp:`<Code Block "
+"B>`则独立成为一个单独的分组。在:cpp:`MyFunc_0`和:cpp:`MyFunc_1`内部的任何计时器都不包含在区域分组中。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:389 872a447bfab243098524a7589a48966c
 msgid "Instrumenting Fortran90 Code"
-msgstr ""
+msgstr "对Fortran90代码进行仪器化"
 
 #: ../../source/AMReX_Profiling_Tools.rst:391 3e60cd6a9ab04aa58397b1acbf8b8f2b
-msgid ""
-"When using the full profiler, Fortran90 functions can also be "
-"instrumented with the following calls:"
-msgstr ""
+msgid "When using the full profiler, Fortran90 functions can also be instrumented with the following calls:"
+msgstr "当使用完整的性能分析器时，还可以使用以下调用来对Fortran90函数进行仪器化："
 
 #: ../../source/AMReX_Profiling_Tools.rst:402 47e90b0168dd485cad7104e5802c7f19
 msgid ""
-"Note that the start and stop calls must be matched before leaving the "
-"scope of the corresponding start. Moreover, it is necessary to take into "
-"account all possible code paths. Therefore, you may need to add "
-":fortran:`bl_proffortfuncstop` in multiple locations, such as before any "
-"returns, at the end of the function and at the point in the function "
-"where you want to stop profiling. The profiling output will only warn of "
-"any :fortran:`bl_proffortfuncstart` calls that were not stopped with "
-":fortran:`bl_proffortfuncstop` calls when in debug mode."
+"Note that the start and stop calls must be matched before leaving the scope of the corresponding start. Moreover, it is "
+"necessary to take into account all possible code paths. Therefore, you may need to add :fortran:`bl_proffortfuncstop` "
+"in multiple locations, such as before any returns, at the end of the function and at the point in the function where "
+"you want to stop profiling. The profiling output will only warn of any :fortran:`bl_proffortfuncstart` calls that were "
+"not stopped with :fortran:`bl_proffortfuncstop` calls when in debug mode."
 msgstr ""
+"请注意，在离开相应起始点的范围之前，必须匹配开始和结束调用。此外，需要考虑所有可能的代码路径。因此，您可能需要在多个位置添加 "
+"`:fortran:`bl_proffortfuncstop`，例如在任何返回之前，在函数末尾以及在函数中希望停止分析的位置。仅当处于调试模式时，分析输出才会警告任何未使用 `:fortran:`bl_proffortfuncstop` "
+"调用停止的 `:fortran:`bl_proffortfuncstart` 调用。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:410 16dcbde0e59a449b903658c8bfbf3d72
-msgid ""
-"For functions with a high number of calls, there is a lighter-weight "
-"interface,"
-msgstr ""
+msgid "For functions with a high number of calls, there is a lighter-weight interface,"
+msgstr "对于调用次数较多的函数，有一种更轻量级的接口。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:418 5fc1b06b9d42463989ce92fe46d0cb22
 msgid ""
-"where ``n`` is an integer in the range ``[1,mFortProfsIntMaxFuncs]``. "
-"``mFortProfsIntMaxFuncs`` is currently set to 32.  The profiled function "
-"will be named ``FORTFUNC_n`` in the profiler output, unless you rename it"
-" with ``BL_PROFILE_CHANGE_FORT_INT_NAME(fname, int)`` where ``fname`` is "
-"a ``std::string`` and ``int`` is the integer ``n`` in the "
-"``bl_proffortfuncstart_int/bl_proffortfuncstop_int`` calls. "
-"``BL_PROFILE_CHANGE_FORT_INT_NAME`` should be called in ``main()``."
+"where ``n`` is an integer in the range ``[1,mFortProfsIntMaxFuncs]``. ``mFortProfsIntMaxFuncs`` is currently set to 32. "
+" The profiled function will be named ``FORTFUNC_n`` in the profiler output, unless you rename it with "
+"``BL_PROFILE_CHANGE_FORT_INT_NAME(fname, int)`` where ``fname`` is a ``std::string`` and ``int`` is the integer ``n`` "
+"in the ``bl_proffortfuncstart_int/bl_proffortfuncstop_int`` calls. ``BL_PROFILE_CHANGE_FORT_INT_NAME`` should be called "
+"in ``main()``."
 msgstr ""
+"where `n` is an integer in the range of 1 to mFortProfsIntMaxFuncs. Currently, mFortProfsIntMaxFuncs is set to 32. The "
+"profiled function will be named FORTFUNC_n in the profiler output, unless you rename it using "
+"BL_PROFILE_CHANGE_FORT_INT_NAME(fname, int), where fname is a std::string and int is the integer n in the "
+"bl_proffortfuncstart_int/bl_proffortfuncstop_int calls. BL_PROFILE_CHANGE_FORT_INT_NAME should be called in main()."
 
 #: ../../source/AMReX_Profiling_Tools.rst:427 53c0a518604248008f3a0eeb83726faa
 msgid ""
-"Fortran functions cannot be profiled when using the Tiny Profiler. You "
-"will need to turn on the Full Profiler to receive the results from "
-"fortran instrumentation."
-msgstr ""
+"Fortran functions cannot be profiled when using the Tiny Profiler. You will need to turn on the Full Profiler to "
+"receive the results from fortran instrumentation."
+msgstr "使用 Tiny Profiler 时无法对 Fortran 函数进行性能分析。您需要启用 Full Profiler 才能获取 Fortran 仪器化的结果。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:434 62e37f43b3cb46e993714fb6d55cdc8c
 msgid "Profiling Options"
-msgstr ""
+msgstr "配置文件选项"
 
 #: ../../source/AMReX_Profiling_Tools.rst:436 815168f7c26f4a51916e20eb8bb07446
 msgid ""
-"AMReX's communication algorithms are often regions of code that increase "
-"in wall clock time when the application is load imbalanced, due to the "
-"MPI_Wait calls in these functions. To better understand if this is "
-"occurring and by how much, you can turn on an AMReX timed synchronization"
-" with the runtime variable: ``amrex.use_profiler_syncs=1`` This adds "
-"named timers beginning with ``SyncBeforeComms`` immediately prior to the "
-"start of the FillBoundary, ParallelCopy and particle Redistribute "
-"functions, isolating any prior load imbalance to that timer before "
-"beginning the comm operation."
+"AMReX's communication algorithms are often regions of code that increase in wall clock time when the application is "
+"load imbalanced, due to the MPI_Wait calls in these functions. To better understand if this is occurring and by how "
+"much, you can turn on an AMReX timed synchronization with the runtime variable: ``amrex.use_profiler_syncs=1`` This "
+"adds named timers beginning with ``SyncBeforeComms`` immediately prior to the start of the FillBoundary, ParallelCopy "
+"and particle Redistribute functions, isolating any prior load imbalance to that timer before beginning the comm "
+"operation."
 msgstr ""
+"AMReX的通信算法通常是代码区域，在应用程序负载不平衡时，由于这些函数中的MPI_Wait调用而导致墙钟时间增加。为了更好地了解是否发生了这种情况以及增加了多少时间，您可以通过运行时变量``amrex.use_profiler_"
+"syncs=1``打开AMReX定时同步。这将在FillBoundary、ParallelCopy和particle "
+"Redistribute函数开始之前立即添加以``SyncBeforeComms``开头的命名计时器，将任何先前的负载不平衡隔离到该计时器中，然后开始通信操作。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:444 0966df2dd1e54f78977ed2f9de6840a7
-msgid ""
-"This is a diagnostic tool and may slow your code down, so it is not "
-"recommended to turn this on for production runs."
-msgstr ""
+msgid "This is a diagnostic tool and may slow your code down, so it is not recommended to turn this on for production runs."
+msgstr "这是一个诊断工具，可能会减慢您的代码运行速度，因此不建议在生产环境中启用。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:448 709c2c2a1797412cbc507bfc886c2d11
 msgid ""
-"Note: the ``SyncBeforeComms`` timer is not equal to your load imbalance. "
-"It only captures imbalance between the comm functions and the previous "
-"sync point; there may be other load imbalances captured elsewhere. Also, "
-"the timer reports in terms of MPI rank, so if the most imbalanced rank "
-"changes throughout the simulation, the timer will be an underestimation."
+"Note: the ``SyncBeforeComms`` timer is not equal to your load imbalance. It only captures imbalance between the comm "
+"functions and the previous sync point; there may be other load imbalances captured elsewhere. Also, the timer reports "
+"in terms of MPI rank, so if the most imbalanced rank changes throughout the simulation, the timer will be an "
+"underestimation."
 msgstr ""
+"请注意：``SyncBeforeComms``"
+"计时器并不等同于负载不平衡。它仅捕捉通信函数与前一个同步点之间的不平衡情况；可能还有其他地方捕捉到的负载不平衡。此外，该计时器报告的是MPI排名，因此如果在模拟过程中最不平衡的排名发生变化，计时器将低估负载不平衡情况。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:453 21b068d2884640a3985d33c40677ef20
 msgid ""
-"The effect on the communication timers may be more helpful: they will "
-"show the time to complete communications if there was no load imbalance. "
-"This means the difference between a case with and without this profiler "
-"sync may be a more useful metric for analysis."
-msgstr ""
+"The effect on the communication timers may be more helpful: they will show the time to complete communications if there "
+"was no load imbalance. This means the difference between a case with and without this profiler sync may be a more "
+"useful metric for analysis."
+msgstr "对通信计时器的影响可能更有帮助：它们将显示在没有负载不平衡的情况下完成通信所需的时间。这意味着使用此分析器同步的情况与不使用它的情况之间的差异可能是更有用的度量指标。"
 
 #: ../../source/AMReX_Profiling_Tools.rst:460 7d3e82addeed4395b3380852099c0b0f
 msgid "AMRProfParser"
-msgstr ""
+msgstr "AMRProfParser"
 
 #: ../../source/AMReX_Profiling_Tools.rst:462 f6dd645600434525a28bb23afb780a98
 msgid ""
-":cpp:`AMRProfParser` is a tool for processing and analyzing the "
-"``bl_prof`` database. It is a command line application that can create "
-"performance summaries, plotfiles showing point-to-point communication and"
-" timelines, HTML call trees, communication call statistics, function "
-"timing graphs, and other data products. The parser's data services "
-"functionality can be called from an interactive environment such as "
-":ref:`sec:amrvis`, from a sidecar for dynamic performance optimization, "
-"and from other utilities such as the command line version of the parser "
-"itself. It has been integrated into Amrvis for visual interpretation of "
-"the data allowing Amrvis to open the ``bl_prof`` database like a plotfile"
-" but with interfaces appropriate to profiling data. AMRProfParser and "
-"Amrvis can be run in parallel both interactively and in batch mode."
+":cpp:`AMRProfParser` is a tool for processing and analyzing the ``bl_prof`` database. It is a command line application "
+"that can create performance summaries, plotfiles showing point-to-point communication and timelines, HTML call trees, "
+"communication call statistics, function timing graphs, and other data products. The parser's data services "
+"functionality can be called from an interactive environment such as :ref:`sec:amrvis`, from a sidecar for dynamic "
+"performance optimization, and from other utilities such as the command line version of the parser itself. It has been "
+"integrated into Amrvis for visual interpretation of the data allowing Amrvis to open the ``bl_prof`` database like a "
+"plotfile but with interfaces appropriate to profiling data. AMRProfParser and Amrvis can be run in parallel both "
+"interactively and in batch mode."
 msgstr ""
-
+"`AMRProfParser`是用于处理和分析`bl_prof`"
+"数据库的工具。它是一个命令行应用程序，可以创建性能摘要、显示点对点通信和时间线的绘图文件、HTML调用树、通信调用统计、函数计时图以及其他数据产品。解析器的数据服务功能可以从交互环境（如:ref:`sec:amrvis`"
+"）、用于动态性能优化的附属程序以及解析器本身的命令行版本中调用。它已经集成到Amrvis中，用于对数据进行可视化解释，使Amrvis能够像打开绘图文件一样打开`bl_prof`"
+"数据库，但具有适用于分析数据的界面。AMRProfParser和Amrvis可以同时以交互方式和批处理模式运行。"

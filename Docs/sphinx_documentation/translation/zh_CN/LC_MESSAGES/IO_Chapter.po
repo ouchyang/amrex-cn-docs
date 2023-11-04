@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,12 +21,10 @@ msgstr ""
 
 #: ../../source/IO_Chapter.rst:4 ecd5891a305f4b9d9ee8601035bf4ccf
 msgid "I/O (Plotfile, Checkpoint)"
-msgstr ""
+msgstr "输入/输出（绘图文件，检查点）"
 
 #: ../../source/IO_Chapter.rst:7 fd4124914a1d4b6288133af74d7de3bf
 msgid ""
-"In this chapter, we will discuss parallel I/O capabilities for mesh data "
-"in AMReX. The section on :ref:`sec:Particles:IO` will discuss I/O for "
-"particle data."
-msgstr ""
-
+"In this chapter, we will discuss parallel I/O capabilities for mesh data in AMReX. The section on "
+":ref:`sec:Particles:IO` will discuss I/O for particle data."
+msgstr "在本章中，我们将讨论AMReX中用于网格数据的并行I/O功能。:ref:`sec:Particles:IO`部分将讨论粒子数据的I/O。"

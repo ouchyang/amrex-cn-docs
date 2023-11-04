@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -22,72 +22,63 @@ msgstr ""
 #: ../../source/ManagingGridHierarchy_Chapter.rst:7
 #: ea4f75a062544b2fb9bb7c0778c256af
 msgid "Gridding and Load Balancing"
-msgstr ""
+msgstr "网格化和负载均衡"
 
 #: ../../source/ManagingGridHierarchy_Chapter.rst:9
 #: 5cffd0d7c5534d0a980b60b57814c80f
 msgid ""
-"AMReX provides a great deal of generality when it comes to how to "
-"decompose the computational domain into individual logically rectangular "
-"grids, and how to distribute those grids to MPI ranks.  We use the phrase"
-" \"load balancing\" here to refer to the combined process of grid "
-"creation (and re-creation when regridding) and distribution of grids to "
-"MPI ranks."
-msgstr ""
+"AMReX provides a great deal of generality when it comes to how to decompose the computational domain into individual "
+"logically rectangular grids, and how to distribute those grids to MPI ranks.  We use the phrase \"load balancing\" here "
+"to refer to the combined process of grid creation (and re-creation when regridding) and distribution of grids to MPI "
+"ranks."
+msgstr "AMReX在将计算域分解为独立的逻辑矩形网格以及将这些网格分配给MPI进程时提供了很大的通用性。在这里，我们使用\"负载平衡\"这个词组来指代网格的创建（以及在重新网格化时的重新创建）以及将网格分配给MPI进程的综合过程。"
 
 #: ../../source/ManagingGridHierarchy_Chapter.rst:14
 #: 734cc0cd21ab435eb1e74115823bc24a
 msgid ""
-"Even for single-level calculations, AMReX provides the flexibility to "
-"have different size grids, more than one grid per MPI rank, and different"
-" strategies for distributing the grids to MPI ranks."
-msgstr ""
+"Even for single-level calculations, AMReX provides the flexibility to have different size grids, more than one grid per "
+"MPI rank, and different strategies for distributing the grids to MPI ranks."
+msgstr "即使对于单层计算，AMReX也提供了灵活性，可以使用不同大小的网格，每个MPI进程可以有多个网格，并且可以采用不同的策略将网格分配给MPI进程。"
 
 #: ../../source/ManagingGridHierarchy_Chapter.rst:17
 #: c548a0a0e9864306abaca97892367089
 msgid ""
-"For multi-level calculations, the same principles for load balancing "
-"apply as in single-level calculations, but there is additional complexity"
-" in how to tag cells for refinement and how to create the union of grids "
-"at levels > 0 where that union most likely does not cover the "
-"computational domain."
-msgstr ""
+"For multi-level calculations, the same principles for load balancing apply as in single-level calculations, but there "
+"is additional complexity in how to tag cells for refinement and how to create the union of grids at levels > 0 where "
+"that union most likely does not cover the computational domain."
+msgstr "对于多层次计算，与单层次计算相同的负载平衡原则同样适用，但在如何标记细化单元格以及如何创建级别大于0的网格的并集方面存在额外的复杂性，因为该并集很可能无法覆盖计算域。"
 
 #: ../../source/ManagingGridHierarchy_Chapter.rst:21
 #: c1dcef27429e449f813fdac739bd5acc
 msgid ""
-"See :ref:`sec:grid_creation` for grids are created, i.e. how the "
-":cpp:`BoxArray` on which :cpp:`MultiFabs` will be built is defined at "
-"each level."
-msgstr ""
+"See :ref:`sec:grid_creation` for grids are created, i.e. how the :cpp:`BoxArray` on which :cpp:`MultiFabs` will be "
+"built is defined at each level."
+msgstr "请参阅:ref:`sec:grid_creation`，了解如何创建网格，即在每个层次上如何定义将构建:cpp:`MultiFabs`的:cpp:`BoxArray`。"
 
 #: ../../source/ManagingGridHierarchy_Chapter.rst:24
 #: acf0bde61ee641b6a27458a1174e9e19
 msgid ""
-"See :ref:`sec:load_balancing` for the strategies AMReX supports for "
-"distributing grids to MPI ranks, i.e. defining the "
-":cpp:`DistributionMapping` with which :cpp:`MultiFabs` at that level will"
-" be built."
-msgstr ""
+"See :ref:`sec:load_balancing` for the strategies AMReX supports for distributing grids to MPI ranks, i.e. defining the "
+":cpp:`DistributionMapping` with which :cpp:`MultiFabs` at that level will be built."
+msgstr "请参阅:ref:`sec:load_balancing`，了解AMReX支持的用于将网格分发给MPI进程的策略，即使用哪种:cpp:`DistributionMapping`来构建该级别上的:cpp:`MultiFabs`。"
 
 #: ../../source/ManagingGridHierarchy_Chapter.rst:28
 #: ee9fba060cb945289c76df3a2b17a578
 msgid ""
-"We also note that we can create separate grids, and map them in different"
-" ways to MPI ranks, for different types of data in a single calculation."
-"  We refer to this as the \"dual grid approach\" and the most common "
-"usage is to load balance mesh and particle data separately. See "
-":ref:`sec:dual_grid` for more about this approach."
+"We also note that we can create separate grids, and map them in different ways to MPI ranks, for different types of "
+"data in a single calculation.  We refer to this as the \"dual grid approach\" and the most common usage is to load "
+"balance mesh and particle data separately. See :ref:`sec:dual_grid` for more about this approach."
 msgstr ""
+"我们还注意到，在单个计算中，我们可以创建不同的网格，并以不同的方式将它们映射到MPI排名上，用于处理不同类型的数据。我们将这称为“双网格方法”，最常见的用法是分别负载均衡网格和粒子数据。有关此方法的更多信息，请参阅:ref:`"
+"sec:dual_grid`。"
 
 #: ../../source/ManagingGridHierarchy_Chapter.rst:33
 #: 6b953233d1064c6d8dcba9a292525624
 msgid ""
-"When running on multicore machines with OpenMP, we can also control the "
-"distribution of work by setting the size of grid tiles (by defining "
-":cpp:`fabarray_mfiter.tile_size`), and if relevant, of particle tiles (by"
-" defining :cpp:`particle.tile_size`).  We can also specify the strategy "
-"for assigning tiles to OpenMP threads.  See "
+"When running on multicore machines with OpenMP, we can also control the distribution of work by setting the size of "
+"grid tiles (by defining :cpp:`fabarray_mfiter.tile_size`), and if relevant, of particle tiles (by defining "
+":cpp:`particle.tile_size`).  We can also specify the strategy for assigning tiles to OpenMP threads.  See "
 ":ref:`sec:basics:mfiter:tiling` for more about tiling."
 msgstr ""
-
+"在多核机器上使用OpenMP时，我们可以通过设置网格块的大小（通过定义:cpp:`fabarray_mfiter.tile_size`）以及必要时的粒子块的大小（通过定义:cpp:`particle.tile_size`"
+"）来控制工作的分配。我们还可以指定将块分配给OpenMP线程的策略。有关平铺的更多信息，请参阅:ref:`sec:basics:mfiter:tiling`。"

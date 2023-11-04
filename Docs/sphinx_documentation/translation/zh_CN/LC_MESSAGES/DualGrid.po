@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,39 +21,32 @@ msgstr ""
 
 #: ../../source/DualGrid.rst:10 283b07bb1f1f465faa09cd04d56fba9a
 msgid "Dual Grid Approach"
-msgstr ""
+msgstr "双网格方法"
 
 #: ../../source/DualGrid.rst:12 8aa39dd3f9454e9b8826035238993b62
 msgid ""
-"In AMReX-based applications that have both mesh data and particle data, "
-"the mesh work and particle work have very different requirements for load"
-" balancing."
-msgstr ""
+"In AMReX-based applications that have both mesh data and particle data, the mesh work and particle work have very "
+"different requirements for load balancing."
+msgstr "在基于AMReX的应用程序中，既有网格数据又有粒子数据，网格工作和粒子工作对负载平衡有非常不同的要求。"
 
 #: ../../source/DualGrid.rst:15 bbfab4b6e13d4418868b2063a10c6562
 msgid ""
-"Rather than using a combined work estimate to create the same grids for "
-"mesh and particle data, we have the option to pursue a \"dual grid\" "
-"approach."
-msgstr ""
+"Rather than using a combined work estimate to create the same grids for mesh and particle data, we have the option to "
+"pursue a \"dual grid\" approach."
+msgstr "与其使用一个综合的工作估计来创建网格和粒子数据的相同网格，我们有选择采用“双网格”方法。"
 
 #: ../../source/DualGrid.rst:18 8fc83b3adf944a3dbab1a0b76c39e0d2
 msgid ""
-"With this approach the mesh (:cpp:`MultiFab`) and particle "
-"(:cpp:`ParticleContainer`) data are allocated on different "
+"With this approach the mesh (:cpp:`MultiFab`) and particle (:cpp:`ParticleContainer`) data are allocated on different "
 ":cpp:`BoxArrays` with different :cpp:`DistributionMappings`."
-msgstr ""
+msgstr "采用这种方法，网格（:cpp:`MultiFab`）和粒子（:cpp:`ParticleContainer`）数据在不同的:cpp:`BoxArrays`上分配，并具有不同的:cpp:`DistributionMappings`。"
 
 #: ../../source/DualGrid.rst:21 e8b19c67c90342dca8cdf0146673f309
-msgid ""
-"This enables separate load balancing strategies to be used for the mesh "
-"and particle work."
-msgstr ""
+msgid "This enables separate load balancing strategies to be used for the mesh and particle work."
+msgstr "这样可以为网格和粒子工作使用不同的负载均衡策略。"
 
 #: ../../source/DualGrid.rst:23 99644a0160544c2bb095d075fafc21ba
 msgid ""
-"The cost of this strategy, of course, is the need to copy mesh data onto "
-"temporary :cpp:`MultiFabs` defined on the particle :cpp:`BoxArrays` when "
-"mesh-particle communication is required."
-msgstr ""
-
+"The cost of this strategy, of course, is the need to copy mesh data onto temporary :cpp:`MultiFabs` defined on the "
+"particle :cpp:`BoxArrays` when mesh-particle communication is required."
+msgstr "当然，这种策略的代价是在需要进行网格-粒子通信时，需要将网格数据复制到在粒子`BoxArrays`上定义的临时`MultiFabs`中。"

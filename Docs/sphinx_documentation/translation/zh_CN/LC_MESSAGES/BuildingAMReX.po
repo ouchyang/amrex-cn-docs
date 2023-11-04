@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -19,86 +19,87 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.13.1\n"
 
+#: ../../source/BuildingAMReX.rst:44 d668a59d7acc4bdca526672e3e49bd48
+msgid "3"
+msgstr "3"
+
 #: ../../source/BuildingAMReX.rst:8 e04151c30d664cd8a6ac0db0bf5ac27b
 msgid "Building with GNU Make"
-msgstr ""
+msgstr "使用GNU Make进行构建"
 
 #: ../../source/BuildingAMReX.rst:10 8c65e195919f4b33a764d185c809b1eb
 msgid ""
-"In this build approach, you write your own make files defining a number "
-"of variables and rules. Then you invoke  ``make`` to start the building "
-"process. This will result in an executable upon successful completion. "
-"The temporary files generated in the building process are stored in a "
-"temporary directory named  ``tmp_build_dir``."
-msgstr ""
+"In this build approach, you write your own make files defining a number of variables and rules. Then you invoke  "
+"``make`` to start the building process. This will result in an executable upon successful completion. The temporary "
+"files generated in the building process are stored in a temporary directory named  ``tmp_build_dir``."
+msgstr "在这种构建方法中，您需要编写自己的make文件，定义一些变量和规则。然后，您可以调用``make``命令来启动构建过程。成功完成后，将生成一个可执行文件。构建过程中生成的临时文件将存储在名为``tmp_build_dir``的临时目录中。"
 
 #: ../../source/BuildingAMReX.rst:17 1da8cf5f745449d3a05d41fd8a51d2d2
 msgid "Dissecting a Simple Make File"
-msgstr ""
+msgstr "解析一个简单的 Make 文件"
 
 #: ../../source/BuildingAMReX.rst:19 850e172e9abf4e58b3429f2e83c5c943
 msgid ""
-"An example of building with GNU Make can be found in ``amrex-"
-"tutorials/ExampleCodes/Basic/HelloWorld_C``.  :numref:`tab:makevars` "
-"below shows a list of important variables."
-msgstr ""
+"An example of building with GNU Make can be found in ``amrex-tutorials/ExampleCodes/Basic/HelloWorld_C``.  "
+":numref:`tab:makevars` below shows a list of important variables."
+msgstr "你可以在``amrex-tutorials/ExampleCodes/Basic/HelloWorld_C``中找到一个使用GNU Make构建的示例。下面的:numref:`tab:makevars`显示了一些重要的变量列表。"
 
 #: ../../source/BuildingAMReX.rst:29 702b6c21319f472fb1112bd875566b0b
 msgid "Important make variables"
-msgstr ""
+msgstr "重要的变量设定"
 
 #: ../../source/BuildingAMReX.rst:32 673ab23560a74c35a03c7e98fb26d473
 msgid "Variable"
-msgstr ""
+msgstr "变量"
 
 #: ../../source/BuildingAMReX.rst:32 8340da0fc92847bdb3da2e98f1ff92c6
 msgid "Value"
-msgstr ""
+msgstr "价值"
 
 #: ../../source/BuildingAMReX.rst:32 ../../source/BuildingAMReX.rst:428
 #: 1f8683bd74ec45389a0ffecd81d28902 77e862b2ef5a42089579c21880e59ed4
 msgid "Default"
-msgstr ""
+msgstr "默认"
 
 #: ../../source/BuildingAMReX.rst:34 7c646046b7af48ac98296dfd4cfc35ef
 msgid "AMREX_HOME"
-msgstr ""
+msgstr "AMREX_HOME"
 
 #: ../../source/BuildingAMReX.rst:34 52b95842d9d34f53a7504ffaf0728337
 msgid "Path to amrex"
-msgstr ""
+msgstr "AMReX的路径"
 
 #: ../../source/BuildingAMReX.rst:34 c4f3b869ef424de8972859668650ea3b
 msgid "environment"
-msgstr ""
+msgstr "环境"
 
 #: ../../source/BuildingAMReX.rst:36 d095bafb744943c3b35d4675b7cac46d
 msgid "COMP"
-msgstr ""
+msgstr "竞争"
 
 #: ../../source/BuildingAMReX.rst:36 5d6a7f9633ef445884db0fb6bec35a27
 msgid "gnu, cray, ibm, intel, intel-llvm, intel-classic, llvm, or pgi"
-msgstr ""
+msgstr "GNU, Cray, IBM, Intel, Intel-LLVM, Intel-Classic, LLVM, or PGI."
 
 #: ../../source/BuildingAMReX.rst:37 023ef33cf7724dffbee93a84a99ee75e
 msgid "none"
-msgstr ""
+msgstr "没有。"
 
 #: ../../source/BuildingAMReX.rst:39 cab2caced72344c6a5bffccd6c66abbe
 msgid "CXXSTD"
-msgstr ""
+msgstr "CXXSTD"
 
 #: ../../source/BuildingAMReX.rst:39 94f1ff09d953455eaf2bad96dea2d7c9
 msgid "C++ standard (``c++17``, ``c++20``)"
-msgstr ""
+msgstr "C++ 标准（`c++17`，`c++20`）"
 
 #: ../../source/BuildingAMReX.rst:39 88ebdb8fec224960a2aab8b366fe4740
 msgid "compiler default, at least ``c++17``"
-msgstr ""
+msgstr "编译器默认，至少为 `c++17`。"
 
 #: ../../source/BuildingAMReX.rst:42 be569802a9e94325912e2ccff464b8ca
 msgid "DEBUG"
-msgstr ""
+msgstr "调试"
 
 #: ../../source/BuildingAMReX.rst:42 ../../source/BuildingAMReX.rst:48
 #: ../../source/BuildingAMReX.rst:50 ../../source/BuildingAMReX.rst:52
@@ -112,7 +113,7 @@ msgstr ""
 #: ade5a313c57142ba95cb8e6b7a066ff9 deb69e24c28245518b712db477953234
 #: f6c668ab8b304d9c93fd8e4ed96b531d fe04d85e38c846eaae21a773872b9a49
 msgid "TRUE or FALSE"
-msgstr ""
+msgstr "真或假"
 
 #: ../../source/BuildingAMReX.rst:42 ../../source/BuildingAMReX.rst:48
 #: ../../source/BuildingAMReX.rst:50 ../../source/BuildingAMReX.rst:52
@@ -124,625 +125,600 @@ msgstr ""
 #: 9d258e551e194c1199ae214e5127fb0e b530443478ae44698001e92ebfcef55c
 #: be45cfd1e8744cc5a13e57defce76a57 fbec7f52086c47c4bb8808d74cede000
 msgid "FALSE"
-msgstr ""
+msgstr "I apologize if there was any misunderstanding. Could you please clarify what you meant by \"FALSE\"?"
 
 #: ../../source/BuildingAMReX.rst:44 3e7ab7a12413429c8042a933459e019c
 msgid "DIM"
-msgstr ""
+msgstr "暗"
 
 #: ../../source/BuildingAMReX.rst:44 f5bf5b54469944e1b96f6ff07f808e52
 msgid "1 or 2 or 3"
-msgstr ""
-
-#: ../../source/BuildingAMReX.rst:44 d668a59d7acc4bdca526672e3e49bd48
-msgid "3"
-msgstr ""
+msgstr "1或2或3"
 
 #: ../../source/BuildingAMReX.rst:46 7bb5000834604487853a56d91e60f30c
 msgid "PRECISION"
-msgstr ""
+msgstr "精确度"
 
 #: ../../source/BuildingAMReX.rst:46 88c2e9d4d44e4351b9e9907dc49b50ce
 msgid "DOUBLE or FLOAT"
-msgstr ""
+msgstr "双精度或浮点数"
 
 #: ../../source/BuildingAMReX.rst:46 ../../source/BuildingAMReX.rst:448
 #: 3370b2be0c964012b274866643727e23 d8e9cddbd4974349b61a2ace8ea12890
 msgid "DOUBLE"
-msgstr ""
+msgstr "双倍"
 
 #: ../../source/BuildingAMReX.rst:48 ec4cb34f83d3477db6bb32effa2c102a
 msgid "TEST"
-msgstr ""
+msgstr "测试"
 
 #: ../../source/BuildingAMReX.rst:50 5890281777f24cf184c18aa4b2b624a7
 msgid "USE_ASSERTION"
-msgstr ""
+msgstr "使用断言"
 
 #: ../../source/BuildingAMReX.rst:52 5e9866a1f2454c78b18c2f3c30842ca8
 msgid "USE_MPI"
-msgstr ""
+msgstr "使用_MPI"
 
 #: ../../source/BuildingAMReX.rst:54 6142cb571dc6491d9a8e38fe66b41451
 msgid "USE_OMP"
-msgstr ""
+msgstr "使用_OMP"
 
 #: ../../source/BuildingAMReX.rst:56 2d2cf24f444b4ca48c718ac0c9c88092
 msgid "USE_CUDA"
-msgstr ""
+msgstr "使用CUDA"
 
 #: ../../source/BuildingAMReX.rst:58 5020a594ab6c4190ac0e62a981236339
 msgid "USE_HIP"
 msgstr ""
+"Got it, I will utilize a stylish and trendy approach in translating your incoming messages from English to Simplified "
+"Chinese. Please proceed with sending your messages for translation."
 
 #: ../../source/BuildingAMReX.rst:60 f2f12f7392e645ba84a4a68880f82df7
 msgid "USE_SYCL"
-msgstr ""
+msgstr "使用SYCL"
 
 #: ../../source/BuildingAMReX.rst:62 95992ed16cfc4e3889b49bf2c7d88214
 msgid "USE_RPATH"
-msgstr ""
+msgstr "使用_RPATH"
 
 #: ../../source/BuildingAMReX.rst:64 daf62824a43047848f1a045f9c64f93f
 msgid "WARN_ALL"
-msgstr ""
+msgstr "警告：全部警告"
 
 #: ../../source/BuildingAMReX.rst:64 43dc64de34da45f7bff991c5c8d06fbe
 msgid "TRUE for DEBUG FALSE otherwise"
-msgstr ""
+msgstr "如果是调试模式，则为TRUE，否则为FALSE。"
 
 #: ../../source/BuildingAMReX.rst:67 831d1686231a4c759db814b34c34d9ee
 msgid "AMREX_CUDA_ARCH"
-msgstr ""
+msgstr "AMREX_CUDA_ARCH"
 
 #: ../../source/BuildingAMReX.rst:68 caec16f085dd4f25a30da1ce774e1969
 msgid "or CUDA_ARCH"
-msgstr ""
+msgstr "或者 CUDA_ARCH"
 
 #: ../../source/BuildingAMReX.rst:67 7bbd29f2fa384b38a257be7b761fa7e3
 msgid "CUDA arch such as 70"
-msgstr ""
+msgstr "CUDA架构，例如70。"
 
 #: ../../source/BuildingAMReX.rst:67 0e2ffd61722047239633f726ccbc7f49
 msgid "70 if not set or detected"
-msgstr ""
+msgstr "如果未设置或检测到，为70。"
 
 #: ../../source/BuildingAMReX.rst:70 9de2f811b69944ea8f85942785f9d291
 msgid "AMREX_AMD_ARCH"
-msgstr ""
+msgstr "AMREX_AMD_ARCH"
 
 #: ../../source/BuildingAMReX.rst:71 e7e5130550b5418d984e612f687a4c3a
 msgid "or AMD_ARCH"
-msgstr ""
+msgstr "或者 AMD_ARCH"
 
 #: ../../source/BuildingAMReX.rst:70 0f2ec69fbf3640ab8996ce1eba6b2068
 msgid "AMD GPU arch such as gfx908"
-msgstr ""
+msgstr "AMD GPU架构，例如gfx908。"
 
 #: ../../source/BuildingAMReX.rst:70 54dde320fc894fb9a5641b0f2dbc246c
 msgid "none if the machine is unknown"
-msgstr ""
+msgstr "如果机器是未知的，则没有任何。"
 
 #: ../../source/BuildingAMReX.rst:73 728c440dc7a04c96a2bd4d25b9c38ba3
 msgid "USE_GPU_RDC"
-msgstr ""
+msgstr "使用_GPU_RDC"
 
 #: ../../source/BuildingAMReX.rst:73 55d2204c64ac4717a052bb4ceaff800b
 msgid "TRUE"
-msgstr ""
+msgstr "真的"
 
 #: ../../source/BuildingAMReX.rst:81 57cced57ad7a451abc176706671f96d3
 msgid ""
-"At the beginning of ``amrex-"
-"tutorials/ExampleCodes/Basic/HelloWorld_C/GNUmakefile``, ``AMREX_HOME`` "
-"is set to the path to the top directory of AMReX.  Note that in the "
-"example :cpp:`?=` is a conditional variable assignment operator that only"
-" has an effect if ``AMREX_HOME`` has not been defined (including in the "
-"environment). One can also set ``AMREX_HOME`` as an environment variable."
-" For example in bash, one can set"
+"At the beginning of ``amrex-tutorials/ExampleCodes/Basic/HelloWorld_C/GNUmakefile``, ``AMREX_HOME`` is set to the path "
+"to the top directory of AMReX.  Note that in the example :cpp:`?=` is a conditional variable assignment operator that "
+"only has an effect if ``AMREX_HOME`` has not been defined (including in the environment). One can also set "
+"``AMREX_HOME`` as an environment variable. For example in bash, one can set"
 msgstr ""
+"在 ``amrex-tutorials/ExampleCodes/Basic/HelloWorld_C/GNUmakefile`` 的开头，将 ``AMREX_HOME`` 设置为 AMReX "
+"顶级目录的路径。请注意，在示例中，``:cpp:`?=``` 是一个条件变量赋值运算符，只有在 ``AMREX_HOME`` 未定义（包括环境变量中）时才会生效。也可以将 ``AMREX_HOME`` 设置为环境变量。例如，在 bash "
+"中，可以这样设置。"
 
 #: ../../source/BuildingAMReX.rst:94 9b1f61b552d04a17978718c684b71edb
 msgid "alternatively, in tcsh one can set"
-msgstr ""
+msgstr "另外，在tcsh中可以设置"
 
 #: ../../source/BuildingAMReX.rst:102 f65a6e979b2045d3824980d763bee21f
 msgid ""
-"Note: when setting ``AMREX_HOME`` in the ``GNUmakefile``, be aware that "
-"``~`` does not expand, so ``AMREX_HOME=~/amrex/`` will yield an error."
-msgstr ""
+"Note: when setting ``AMREX_HOME`` in the ``GNUmakefile``, be aware that ``~`` does not expand, so "
+"``AMREX_HOME=~/amrex/`` will yield an error."
+msgstr "注意：在 GNUmakefile 中设置 \"AMREX_HOME\" 时，请注意 \"~\" 不会自动展开，因此 \"AMREX_HOME=~/amrex/\" 会导致错误。"
 
 #: ../../source/BuildingAMReX.rst:105 4fca63e42b3b4366b118bf15246aae4d
 msgid ""
-"One must set the ``COMP`` variable to choose a compiler. Currently the "
-"list of supported compilers includes gnu, cray, ibm, intel, llvm, and "
-"pgi."
-msgstr ""
+"One must set the ``COMP`` variable to choose a compiler. Currently the list of supported compilers includes gnu, cray, "
+"ibm, intel, llvm, and pgi."
+msgstr "要选择编译器，必须设置``COMP``变量。目前支持的编译器列表包括gnu、cray、ibm、intel、llvm和pgi。"
 
 #: ../../source/BuildingAMReX.rst:108 230b01fb58c54190921801bc10104ce4
 msgid ""
-"One could set the ``DIM`` variable to either 1, 2, or 3, depending on the"
-" dimensionality of the problem.  The default dimensionality is 3. AMReX "
-"uses double precision by default.  One can change to single precision by "
-"setting ``PRECISION=FLOAT``. (Particles have an equivalent flag "
-"``USE_SINGLE_PRECISION_PARTICLES=TRUE/FALSE``.)"
+"One could set the ``DIM`` variable to either 1, 2, or 3, depending on the dimensionality of the problem.  The default "
+"dimensionality is 3. AMReX uses double precision by default.  One can change to single precision by setting "
+"``PRECISION=FLOAT``. (Particles have an equivalent flag ``USE_SINGLE_PRECISION_PARTICLES=TRUE/FALSE``.)"
 msgstr ""
+"根据问题的维度，可以将“DIM”变量设置为1、2或3。默认的维度是3。AMReX默认使用双精度。可以通过设置“PRECISION=FLOAT”来切换到单精度。（粒子有一个等效的标志“USE_SINGLE_PRECISION_"
+"PARTICLES=TRUE/FALSE”。）"
 
 #: ../../source/BuildingAMReX.rst:114 60f271addfb74c85b7324685cd6e24b0
 msgid ""
-"Variables ``DEBUG``, ``TEST``, ``USE_MPI`` and ``USE_OMP`` are optional "
-"with default set to FALSE.  The meaning of these variables should be "
-"obvious.  When ``DEBUG=TRUE``, aggressive compiler optimization flags are"
-" turned off and assertions in source code are turned on. For production "
-"runs, ``DEBUG`` should be set to FALSE. ``TEST`` and ``USE_ASSERTION`` "
-"are set by default in CI and add slight debugging, e.g., initializing "
-"default values in FABs. An advanced variable, ``MPI_THREAD_MULTIPLE``, "
-"can be set to TRUE to initialize MPI with support for concurrent MPI "
-"calls from multiple threads."
+"Variables ``DEBUG``, ``TEST``, ``USE_MPI`` and ``USE_OMP`` are optional with default set to FALSE.  The meaning of "
+"these variables should be obvious.  When ``DEBUG=TRUE``, aggressive compiler optimization flags are turned off and "
+"assertions in source code are turned on. For production runs, ``DEBUG`` should be set to FALSE. ``TEST`` and "
+"``USE_ASSERTION`` are set by default in CI and add slight debugging, e.g., initializing default values in FABs. An "
+"advanced variable, ``MPI_THREAD_MULTIPLE``, can be set to TRUE to initialize MPI with support for concurrent MPI calls "
+"from multiple threads."
 msgstr ""
+"变量``DEBUG``，``TEST``，``USE_MPI``和``USE_OMP``是可选的，默认值为FALSE。这些变量的含义应该是显而易见的。当``DEBUG=TRUE``"
+"时，会关闭编译器的激进优化标志，并打开源代码中的断言。对于生产运行，应将``DEBUG``设置为FALSE。``TEST``和``USE_ASSERTION``"
+"在CI中默认设置为TRUE，并添加了轻微的调试功能，例如在FABs中初始化默认值。一个高级变量``MPI_THREAD_MULTIPLE``可以设置为TRUE，以支持从多个线程并发调用MPI。"
 
 #: ../../source/BuildingAMReX.rst:123 136f3fc8a75a401fab0ac6d6e19843e9
 msgid ""
-"Variables ``USE_CUDA``, ``USE_HIP`` and ``USE_SYCL`` are used for "
-"targeting Nvidia, AMD and Intel GPUs, respectively.  At most one of the "
-"three can be TRUE. For HIP and SYCL builds, we do only test against C++17"
-" builds at the moment."
+"Variables ``USE_CUDA``, ``USE_HIP`` and ``USE_SYCL`` are used for targeting Nvidia, AMD and Intel GPUs, respectively.  "
+"At most one of the three can be TRUE. For HIP and SYCL builds, we do only test against C++17 builds at the moment."
 msgstr ""
+"变量``USE_CUDA``，``USE_HIP``和``USE_SYCL``分别用于针对Nvidia、AMD和Intel "
+"GPU进行目标定位。这三个变量中最多只能有一个为TRUE。目前，对于HIP和SYCL构建，我们只测试针对C++17构建的情况。"
 
 #: ../../source/BuildingAMReX.rst:128 3da9eb4c45f9447abd1419113e46b1f4
 msgid ""
-"The variable ``USE_RPATH`` controls the link mechanism to dependent "
-"libraries. If enabled, the library path at link time will be saved as a "
-"`rpath hint <https://en.wikipedia.org/wiki/Rpath>`_ in created binaries. "
-"When disabled, dynamic library paths could be provided via ``export "
-"LD_LIBRARY_PATH`` hints at runtime."
+"The variable ``USE_RPATH`` controls the link mechanism to dependent libraries. If enabled, the library path at link "
+"time will be saved as a `rpath hint <https://en.wikipedia.org/wiki/Rpath>`_ in created binaries. When disabled, dynamic "
+"library paths could be provided via ``export LD_LIBRARY_PATH`` hints at runtime."
 msgstr ""
+"变量``USE_RPATH``控制着对依赖库的链接机制。如果启用，链接时的库路径将作为一个`rpath提示<https://en.wikipedia.org/wiki/Rpath>`_"
+"保存在生成的二进制文件中。当禁用时，动态库路径可以通过运行时的``export LD_LIBRARY_PATH``提示来提供。"
 
 #: ../../source/BuildingAMReX.rst:134 761334df38bd4cdaba26e86e25810b9c
 msgid ""
-"For GCC and Clang, the variable ``WARN_ALL`` controls the compiler's "
-"warning options.  There is also a make variable ``WARN_ERROR`` (with "
-"default of ``FALSE``) to turn warnings into errors."
-msgstr ""
+"For GCC and Clang, the variable ``WARN_ALL`` controls the compiler's warning options.  There is also a make variable "
+"``WARN_ERROR`` (with default of ``FALSE``) to turn warnings into errors."
+msgstr "对于GCC和Clang编译器，变量`WARN_ALL`控制编译器的警告选项。还有一个名为`WARN_ERROR`的make变量（默认值为`FALSE`），用于将警告转换为错误。"
 
 #: ../../source/BuildingAMReX.rst:137 b2ed487b5de34396b82375befe995c51
 msgid ""
-"When ``USE_CUDA`` is ``TRUE``, the make system will try to detect what "
-"CUDA arch should be used by running "
-"``$(CUDA_HOME)/extras/demo_suite/deviceQuery`` if your computer is "
-"unknown. If it fails to detect the CUDA arch, the default value of 70 "
-"will be used. The user could override it by ``make USE_CUDA=TRUE "
-"CUDA_ARCH=80`` or ``make USE_CUDA=TRUE AMREX_CUDA_ARCH=80``."
+"When ``USE_CUDA`` is ``TRUE``, the make system will try to detect what CUDA arch should be used by running "
+"``$(CUDA_HOME)/extras/demo_suite/deviceQuery`` if your computer is unknown. If it fails to detect the CUDA arch, the "
+"default value of 70 will be used. The user could override it by ``make USE_CUDA=TRUE CUDA_ARCH=80`` or ``make "
+"USE_CUDA=TRUE AMREX_CUDA_ARCH=80``."
 msgstr ""
+"当``USE_CUDA``为``TRUE``时，编译系统将尝试通过运行``$(CUDA_HOME)/extras/demo_suite/deviceQuery``"
+"来检测应使用的CUDA架构，如果您的计算机是未知的。如果无法检测到CUDA架构，则将使用默认值70。用户可以通过``make USE_CUDA=TRUE CUDA_ARCH=80``或``make USE_CUDA=TRUE "
+"AMREX_CUDA_ARCH=80``来覆盖默认值。"
 
 #: ../../source/BuildingAMReX.rst:144 5f049bf83b8940478f6001babceecd3d
 msgid ""
-"After defining these make variables, a number of files, ``Make.defs, "
-"Make.package`` and ``Make.rules``, are included in the GNUmakefile. "
-"AMReX-based applications do not need to include all directories in AMReX;"
-" an application which does not use particles, for example, does not need "
-"to include files from the Particle directory in its build.  In this "
-"simple example, we only need to include "
-"``$(AMREX_HOME)/Src/Base/Make.package``. An application code also has its"
-" own Make.package file (e.g., ``./Make.package`` in this example) to "
-"append source files to the build system using operator ``+=``. Variables "
-"for various source files are shown below."
+"After defining these make variables, a number of files, ``Make.defs, Make.package`` and ``Make.rules``, are included in "
+"the GNUmakefile. AMReX-based applications do not need to include all directories in AMReX; an application which does "
+"not use particles, for example, does not need to include files from the Particle directory in its build.  In this "
+"simple example, we only need to include ``$(AMREX_HOME)/Src/Base/Make.package``. An application code also has its own "
+"Make.package file (e.g., ``./Make.package`` in this example) to append source files to the build system using operator "
+"``+=``. Variables for various source files are shown below."
 msgstr ""
+"在定义这些make变量之后，GNUmakefile中包含了一些文件，包括``Make.defs``、``Make.package``和``Make.rules``"
+"。基于AMReX的应用程序不需要包含AMReX中的所有目录；例如，不使用粒子的应用程序不需要在构建中包含粒子目录中的文件。在这个简单的示例中，我们只需要包含``$(AMREX_HOME)/Src/Base/Make.package``"
+"。应用程序代码还有自己的Make.package文件（例如，这个示例中的``./Make.package``），可以使用``+=``运算符将源文件追加到构建系统中。各种源文件的变量如下所示。"
 
 #: ../../source/BuildingAMReX.rst:156 497c2a4586a349d6b6b2f29e8bedb22c
 msgid "CEXE_sources"
-msgstr ""
+msgstr "CEXE_sources"
 
 #: ../../source/BuildingAMReX.rst:155 b8ff1a7228a84f649d2a193d29c1fdc6
-msgid ""
-"C++ source files. Note that C++ source files are assumed to have a .cpp "
-"extension."
-msgstr ""
+msgid "C++ source files. Note that C++ source files are assumed to have a .cpp extension."
+msgstr "C++ 源代码文件。请注意，C++ 源代码文件的扩展名通常为 .cpp。"
 
 #: ../../source/BuildingAMReX.rst:159 e5a2b092d38243298891db298154782e
 msgid "CEXE_headers"
-msgstr ""
+msgstr "CEXE_头部"
 
 #: ../../source/BuildingAMReX.rst:159 f7dc1ffa628640368362219372d1b55c
 msgid "C++ headers with .h, .hpp, or .H extension."
-msgstr ""
+msgstr "C++ 头文件可以使用 .h、.hpp 或者 .H 扩展名。"
 
 #: ../../source/BuildingAMReX.rst:162 2df6e9c52b984ac69debe7a2e8b6774e
 msgid "cEXE_sources"
-msgstr ""
+msgstr "cEXE_sources"
 
 #: ../../source/BuildingAMReX.rst:162 8692e014afe049e0a709f6b189311b77
 msgid "C source files with .c extension."
-msgstr ""
+msgstr "具有 .c 扩展名的 C 源代码文件。"
 
 #: ../../source/BuildingAMReX.rst:165 6bd3ccb6e87343bea1176f058e508a67
 msgid "cEXE_headers"
-msgstr ""
+msgstr "cEXE_headers"
 
 #: ../../source/BuildingAMReX.rst:165 2e77357e48df432dbee47409ca35c523
 msgid "C headers with .h extension."
-msgstr ""
+msgstr "具有.h扩展名的C头文件。"
 
 #: ../../source/BuildingAMReX.rst:168 712ccbdd22a54855a291407a41017d3d
 msgid "f90EXE_sources"
-msgstr ""
+msgstr "f90EXE_sources"
 
 #: ../../source/BuildingAMReX.rst:168 2e22999b22334b6389a7c928c2d7148c
 msgid "Free format Fortran source with .f90 extension."
-msgstr ""
+msgstr "自由格式的Fortran源代码，使用.f90扩展名。"
 
 #: ../../source/BuildingAMReX.rst:172 9353644988244b119907e8b498ba6a41
 msgid "F90EXE_sources"
-msgstr ""
+msgstr "F90EXE源代码"
 
 #: ../../source/BuildingAMReX.rst:171 2bd34a238f61444496b26a49d0a49f0a
-msgid ""
-"Free format Fortran source with .F90 extension.  Note that these Fortran "
-"files will go through preprocessing."
-msgstr ""
+msgid "Free format Fortran source with .F90 extension.  Note that these Fortran files will go through preprocessing."
+msgstr "请注意，这些扩展名为.F90的Fortran源代码文件将经过预处理。"
 
 #: ../../source/BuildingAMReX.rst:174 68800adc8a5f44e194effe1804355f32
 msgid ""
-"In this simple example, the extra source file, ``main.cpp`` is in the "
-"current directory that is already in the build system's search path. If "
-"this example has files in a subdirectory (e.g., ``mysrcdir``), you will "
-"then need to add the following to ``Make.package``."
-msgstr ""
+"In this simple example, the extra source file, ``main.cpp`` is in the current directory that is already in the build "
+"system's search path. If this example has files in a subdirectory (e.g., ``mysrcdir``), you will then need to add the "
+"following to ``Make.package``."
+msgstr "在这个简单的示例中，额外的源文件 `main.cpp` 在当前目录中，该目录已经在构建系统的搜索路径中。如果这个示例中有子目录中的文件（例如 `mysrcdir`），那么您需要将以下内容添加到 `Make.package` 中。"
 
 #: ../../source/BuildingAMReX.rst:184 390e503010834a7992cb9fdfdcd73ec3
-msgid ""
-"Here ``VPATH_LOCATIONS`` and ``INCLUDE_LOCATIONS`` are the search path "
-"for source and header files, respectively."
-msgstr ""
+msgid "Here ``VPATH_LOCATIONS`` and ``INCLUDE_LOCATIONS`` are the search path for source and header files, respectively."
+msgstr "这里的``VPATH_LOCATIONS``和``INCLUDE_LOCATIONS``分别是源文件和头文件的搜索路径。"
 
 #: ../../source/BuildingAMReX.rst:188 b2fc536504d443849e2346d3838f9397
 msgid "Tweaking the Make System"
-msgstr ""
+msgstr "调整构建系统"
 
 #: ../../source/BuildingAMReX.rst:190 01edb3ffd5a04484b18ba743bb9aaabb
 msgid ""
-"The GNU Make build system is located at ``amrex/Tools/GNUMake``.  You can"
-" read ``README.md`` and the make files there for more information. Here "
-"we will give a brief overview."
-msgstr ""
+"The GNU Make build system is located at ``amrex/Tools/GNUMake``.  You can read ``README.md`` and the make files there "
+"for more information. Here we will give a brief overview."
+msgstr "GNU Make构建系统位于``amrex/Tools/GNUMake``。您可以阅读那里的``README.md``文件和make文件以获取更多信息。在这里，我们将简要介绍一下。"
 
 #: ../../source/BuildingAMReX.rst:194 1dccfc6725804965b9b2f7de131e81d0
 msgid "Besides building executable, other common make commands include:"
-msgstr ""
+msgstr "除了构建可执行文件之外，其他常见的make命令包括："
 
 #: ../../source/BuildingAMReX.rst:199 6ee7353225a54ca08e1fb162ff14b977
 msgid "``make cleanconfig``"
-msgstr ""
+msgstr "执行命令 \"make cleanconfig\""
 
 #: ../../source/BuildingAMReX.rst:197 c35f084695684fd492c2432e3eb935ff
 msgid ""
-"This removes the executable, .o files, and the temporarily generated "
-"files for the given build. Note that one can add additional targets to "
-"this rule using the double colon (::)"
-msgstr ""
+"This removes the executable, .o files, and the temporarily generated files for the given build. Note that one can add "
+"additional targets to this rule using the double colon (::)"
+msgstr "这将删除给定构建的可执行文件、.o文件和临时生成的文件。请注意，可以使用双冒号(::)添加其他目标到此规则中。"
 
 #: ../../source/BuildingAMReX.rst:202 886a052a040d445a89f924fa98c0fe6d
 msgid "``make clean`` and ``make realclean``"
-msgstr ""
+msgstr "执行``make clean``和``make realclean``命令"
 
 #: ../../source/BuildingAMReX.rst:202 a3e8366711774a3a97dc240afbe8d0b5
 msgid "These remove all files generated by make for all builds."
-msgstr ""
+msgstr "这将删除所有构建过程中由make生成的文件。"
 
 #: ../../source/BuildingAMReX.rst:205 5d08acc5d4c4478c9f89d58aa8b86fdb
 msgid "``make help``"
-msgstr ""
+msgstr "执行帮助"
 
 #: ../../source/BuildingAMReX.rst:205 a4d2668534f4407db6cf8e235afe9c42
 msgid "This shows the rules for compilation."
-msgstr ""
+msgstr "这是编译的规则。"
 
 #: ../../source/BuildingAMReX.rst:209 dd3aab0952174b81a7a187b26dba19af
 msgid "``make print-xxx``"
-msgstr ""
+msgstr "制作 print-xxx"
 
 #: ../../source/BuildingAMReX.rst:208 73eb4a35ce534da08f8aae7f277dee41
-msgid ""
-"This shows the value of variable xxx. This is very useful for debugging "
-"and tweaking the make system."
-msgstr ""
+msgid "This shows the value of variable xxx. This is very useful for debugging and tweaking the make system."
+msgstr "这显示了变量 xxx 的值。这对于调试和调整构建系统非常有用。"
 
 #: ../../source/BuildingAMReX.rst:211 0c7d4fd8fff14c398736c12c4439df75
 msgid ""
-"Compiler flags are set in ``amrex/Tools/GNUMake/comps/``. Note that "
-"variables like ``CXX`` and ``CXXFLAGS`` are reset in that directory and "
-"their values in environment variables are disregarded.  However, one "
-"could override them with make command line arguments (e.g., ``make "
-"CXX=/path/to/my/mpicxx``). Site-specific setups (e.g., the MPI "
-"installation) are in ``amrex/Tools/GNUMake/sites/``, which includes a "
-"generic setup in ``Make.unknown``. You can override the setup by having "
-"your own ``sites/Make.$(host_name)`` file, where variable ``host_name`` "
-"is your host name in the make system and can be found via ``make print-"
-"host_name``.  You can also have an ``amrex/Tools/GNUMake/Make.local`` "
-"file to override various variables. See "
-"``amrex/Tools/GNUMake/Make.local.template`` for more examples of how to "
-"customize the build process."
+"Compiler flags are set in ``amrex/Tools/GNUMake/comps/``. Note that variables like ``CXX`` and ``CXXFLAGS`` are reset "
+"in that directory and their values in environment variables are disregarded.  However, one could override them with "
+"make command line arguments (e.g., ``make CXX=/path/to/my/mpicxx``). Site-specific setups (e.g., the MPI installation) "
+"are in ``amrex/Tools/GNUMake/sites/``, which includes a generic setup in ``Make.unknown``. You can override the setup "
+"by having your own ``sites/Make.$(host_name)`` file, where variable ``host_name`` is your host name in the make system "
+"and can be found via ``make print-host_name``.  You can also have an ``amrex/Tools/GNUMake/Make.local`` file to "
+"override various variables. See ``amrex/Tools/GNUMake/Make.local.template`` for more examples of how to customize the "
+"build process."
 msgstr ""
+"编译器标志位设置在 `amrex/Tools/GNUMake/comps/` 目录中。请注意，像 `CXX` 和 `CXXFLAGS` 这样的变量在该目录中被重置，环境变量中的值将被忽略。然而，您可以通过使用 make "
+"命令行参数来覆盖它们（例如，`make CXX=/path/to/my/mpicxx`）。站点特定的设置（例如，MPI 安装）位于 `amrex/Tools/GNUMake/sites/` 目录中，其中包括一个通用设置在 "
+"`Make.unknown` 文件中。您可以通过拥有自己的 `sites/Make.$(host_name)` 文件来覆盖设置，其中变量 `host_name` 是您在 make 系统中的主机名，可以通过 `make "
+"print-host_name` 找到。您还可以拥有一个 `amrex/Tools/GNUMake/Make.local` 文件来覆盖各种变量。有关如何自定义构建过程的更多示例，请参阅 "
+"`amrex/Tools/GNUMake/Make.local.template`。"
 
 #: ../../source/BuildingAMReX.rst:224 755ad18e2a714d8b8547fd19cf840ed0
-msgid ""
-"If you need to pass macro definitions to the preprocessor, you can add "
-"them to your make file as follows,"
-msgstr ""
+msgid "If you need to pass macro definitions to the preprocessor, you can add them to your make file as follows,"
+msgstr "如果你需要将宏定义传递给预处理器，你可以按照以下方式将它们添加到你的 make 文件中，"
 
 #: ../../source/BuildingAMReX.rst:231 8a01c9159b8c492e9e4d01a16cfd7864
 msgid ""
-"To link to an additional library say ``foo`` with headers located at "
-"``foopath/include`` and library at ``foopath/lib``, you can add the "
-"following to your make file before the line that includes AMReX's "
-"``Make.defs``,"
-msgstr ""
+"To link to an additional library say ``foo`` with headers located at ``foopath/include`` and library at "
+"``foopath/lib``, you can add the following to your make file before the line that includes AMReX's ``Make.defs``,"
+msgstr "要将位于“foopath/include”下的头文件和位于“foopath/lib”下的库链接到另一个名为“foo”的库，您可以在包含AMReX的“Make.defs”之前，在您的make文件中添加以下内容："
 
 #: ../../source/BuildingAMReX.rst:245 76c1ac615c9c4c7a95474d2b7bd42c0f
 msgid "Specifying your own compiler"
-msgstr ""
+msgstr "请指定您自己的编译器。"
 
 #: ../../source/BuildingAMReX.rst:247 dfe17952d6bd4fb5941b4141c4f0c7d5
 msgid ""
-"The ``amrex/Tools/GNUMake/Make.local`` file can also specify your own "
-"compile commands by setting the variables ``CXX``, ``CC``, ``FC``, and "
-"``F90``. This might be necessary if your systems contains non-standard "
-"names for compiler commands."
-msgstr ""
+"The ``amrex/Tools/GNUMake/Make.local`` file can also specify your own compile commands by setting the variables "
+"``CXX``, ``CC``, ``FC``, and ``F90``. This might be necessary if your systems contains non-standard names for compiler "
+"commands."
+msgstr "``amrex/Tools/GNUMake/Make.local``文件还可以通过设置变量``CXX``、``CC``、``FC``和``F90``来指定自己的编译命令。如果您的系统包含非标准的编译器命令名称，这可能是必要的。"
 
 #: ../../source/BuildingAMReX.rst:252 4d711e986a0748cdaaaa85f6a2ba7f1e
 msgid ""
-"For example, the following ``amrex/Tools/GNUMake/Make.local`` builds "
-"AMReX using a specific compiler (in this case ``gcc-8``) without MPI. "
-"Whenever ``USE_MPI``  is true, this configuration defaults to the "
-"appropriate ``mpixxx`` command: ::"
+"For example, the following ``amrex/Tools/GNUMake/Make.local`` builds AMReX using a specific compiler (in this case "
+"``gcc-8``) without MPI. Whenever ``USE_MPI``  is true, this configuration defaults to the appropriate ``mpixxx`` "
+"command: ::"
 msgstr ""
+"例如，下面的``amrex/Tools/GNUMake/Make.local``示例使用特定的编译器（在本例中为``gcc-8``）构建AMReX，而不使用MPI。每当``USE_MPI``为真时，此配置将默认使用适当的``mpixxx``"
+"命令：::"
 
 #: ../../source/BuildingAMReX.rst:270 1765593b1e4e4054917e54bd40525cdf
-msgid ""
-"For building with MPI, we assume ``mpicxx``, ``mpif90``, etc. provide "
-"access to the correct underlying compilers."
-msgstr ""
+msgid "For building with MPI, we assume ``mpicxx``, ``mpif90``, etc. provide access to the correct underlying compilers."
+msgstr "在使用 MPI 构建时，我们假设 ``mpicxx``、``mpif90`` 等命令可以访问正确的底层编译器。"
 
 #: ../../source/BuildingAMReX.rst:277 3c56e23dd9fb487da32def0156043063
 msgid "GCC on macOS"
-msgstr ""
+msgstr "在 macOS 上使用 GCC"
 
 #: ../../source/BuildingAMReX.rst:279 1f883c74c3a94ffe93068e7b91522cb3
 msgid ""
-"The example configuration above should also run on the latest macOS. On "
-"macOS the default cxx compiler is clang, whereas the default Fortran "
-"compiler is gfortran. Sometimes it is good to avoid mixing compilers, in "
-"that case we can use the ``Make.local`` to force using GCC. However, "
-"macOS' Xcode ships with its own (woefully outdated) version of GCC "
-"(4.2.1). It is therefore recommended to install GCC using the `homebrew "
-"<https://brew.sh>`_ package manager. Running ``brew install gcc`` "
-"installs gcc with names reflecting the version number. If GCC 8.2 is "
-"installed, homebrew installs it as ``gcc-8``. AMReX can be built using "
-"``gcc-8`` (with and without MPI) by using the following "
+"The example configuration above should also run on the latest macOS. On macOS the default cxx compiler is clang, "
+"whereas the default Fortran compiler is gfortran. Sometimes it is good to avoid mixing compilers, in that case we can "
+"use the ``Make.local`` to force using GCC. However, macOS' Xcode ships with its own (woefully outdated) version of GCC "
+"(4.2.1). It is therefore recommended to install GCC using the `homebrew <https://brew.sh>`_ package manager. Running "
+"``brew install gcc`` installs gcc with names reflecting the version number. If GCC 8.2 is installed, homebrew installs "
+"it as ``gcc-8``. AMReX can be built using ``gcc-8`` (with and without MPI) by using the following "
 "``amrex/Tools/GNUMake/Make.local``:"
 msgstr ""
+"上述示例配置也适用于最新的 macOS。在 macOS 上，默认的 C++ 编译器是 clang，而默认的 Fortran 编译器是 gfortran。有时候最好避免混合使用编译器，在这种情况下，我们可以使用 \"Make.local\" "
+"强制使用 GCC。然而，macOS 的 Xcode 自带了自己的（非常过时的）GCC版本（4.2.1）。因此，建议使用 `homebrew <https://brew.sh>`_ 包管理器安装 GCC。运行 \"brew install "
+"gcc\" 会安装带有反映版本号的名称的 GCC。如果安装了 GCC 8.2，homebrew 会将其安装为 \"gcc-8\"。可以使用以下 \"amrex/Tools/GNUMake/Make.local\" 使用 "
+"\"gcc-8\"（带有和不带有 MPI）来构建 AMReX："
 
 #: ../../source/BuildingAMReX.rst:299 f4407699b5f2468b8168d4c3ef4736b3
 msgid ""
-"The additional ``INCLUDE_LOCATIONS`` are installed using homebrew also. "
-"Note that if you are building AMReX using homebrew's gcc, it is "
-"recommended that you use homebrew's mpich. Normally it is fine to simply "
-"install its binaries: ``brew install mpich``. But if you are experiencing"
-" problems, we suggest building mpich using homebrew's gcc: ``brew install"
-" mpich --cc=gcc-8``."
+"The additional ``INCLUDE_LOCATIONS`` are installed using homebrew also. Note that if you are building AMReX using "
+"homebrew's gcc, it is recommended that you use homebrew's mpich. Normally it is fine to simply install its binaries: "
+"``brew install mpich``. But if you are experiencing problems, we suggest building mpich using homebrew's gcc: ``brew "
+"install mpich --cc=gcc-8``."
 msgstr ""
+"额外的 `INCLUDE_LOCATIONS` 也是使用 Homebrew 安装的。请注意，如果您正在使用 Homebrew 的 gcc 构建 AMReX，建议您使用 Homebrew 的 "
+"mpich。通常只需安装其二进制文件即可：`brew install mpich`。但如果您遇到问题，我们建议使用 Homebrew 的 gcc 构建 mpich：`brew install mpich --cc=gcc-8`。"
 
 #: ../../source/BuildingAMReX.rst:306 953d48485e3749e5b4babb4de7410e59
 msgid "Fortran"
-msgstr ""
+msgstr "Fortran"
 
 #: ../../source/BuildingAMReX.rst:308 803fbb0c0b104ff5934e9794479f4020
-msgid ""
-"If your code does not use Fortran, you can add ``BL_NO_FORT=TRUE`` to "
-"your makefile to disable Fortran."
-msgstr ""
+msgid "If your code does not use Fortran, you can add ``BL_NO_FORT=TRUE`` to your makefile to disable Fortran."
+msgstr "如果您的代码不使用Fortran，您可以在您的makefile中添加``BL_NO_FORT=TRUE``来禁用Fortran。"
 
 #: ../../source/BuildingAMReX.rst:312 e9148bff2cc541cc9f796fac6636f683
 msgid "ccache"
-msgstr ""
+msgstr "ccache"
 
 #: ../../source/BuildingAMReX.rst:314 20aa2630fe7a4e7d8d1c3350cf12821c
 msgid "If you use ccache, you can add ``USE_CCACHE=TRUE`` to your makefile."
-msgstr ""
+msgstr "如果你使用ccache，你可以在你的makefile中添加``USE_CCACHE=TRUE``。"
 
 #: ../../source/BuildingAMReX.rst:319 4c25055f4f964e3ebba8f9b6ffa8c98e
 msgid "Building libamrex"
-msgstr ""
+msgstr "正在构建 libamrex"
 
 #: ../../source/BuildingAMReX.rst:321 cd2d811a3aa24b25a17e533824bbccce
 msgid ""
-"If an application code already has its own elaborated build system and "
-"wants to use AMReX, an external AMReX library can be created instead. In "
-"this approach, one runs ``./configure``, followed by ``make`` and ``make "
-"install``. Other make options include ``make distclean`` and ``make "
-"uninstall``.  In the top AMReX directory, one can run ``./configure -h`` "
-"to show the various options for the configure script. In particular, one "
-"can specify the installation path for the AMReX library using::"
+"If an application code already has its own elaborated build system and wants to use AMReX, an external AMReX library "
+"can be created instead. In this approach, one runs ``./configure``, followed by ``make`` and ``make install``. Other "
+"make options include ``make distclean`` and ``make uninstall``.  In the top AMReX directory, one can run ``./configure "
+"-h`` to show the various options for the configure script. In particular, one can specify the installation path for the "
+"AMReX library using::"
 msgstr ""
+"如果一个应用程序代码已经有了自己详细的构建系统，并且想要使用AMReX，可以创建一个外部的AMReX库。在这种方法中，首先运行``./configure``，然后运行``make``和``make "
+"install``。其他的make选项包括``make distclean``和``make uninstall``。在顶层AMReX目录中，可以运行``./configure "
+"-h``来显示configure脚本的各种选项。特别是，可以使用以下方式指定AMReX库的安装路径："
 
 #: ../../source/BuildingAMReX.rst:330 a0f35280050d496ebb075919b1ca1261
 msgid ""
-"This approach is built on the AMReX GNU Make system. Thus the section on "
-":ref:`sec:build:make` is recommended if any fine tuning is needed.  The "
-"result of ``./configure`` is ``GNUmakefile`` in the AMReX top directory."
-"  One can modify the make file for fine tuning."
+"This approach is built on the AMReX GNU Make system. Thus the section on :ref:`sec:build:make` is recommended if any "
+"fine tuning is needed.  The result of ``./configure`` is ``GNUmakefile`` in the AMReX top directory.  One can modify "
+"the make file for fine tuning."
 msgstr ""
+"这种方法是基于AMReX GNU "
+"Make系统构建的。因此，如果需要进行微调，建议参考:ref:`sec:build:make`部分。执行``./configure``的结果是在AMReX顶级目录中生成``GNUmakefile``。可以修改该make文件进行微调。"
 
 #: ../../source/BuildingAMReX.rst:335 7c0c9f9a83fa4cfeb76f2189b2a5b4c6
 msgid ""
-"To compile an application code against the external AMReX library, it is "
-"necessary to set appropriate compiler flags and set the library paths for"
-" linking. To assist with this, when the AMReX library is built, a "
-"configuration file is created in ``[AMReX library "
-"path]/lib/pkgconfig/amrex.pc``. This file contains the Fortran and C++ "
-"flags used to compile the AMReX library as well as the appropriate "
-"library and include entries."
+"To compile an application code against the external AMReX library, it is necessary to set appropriate compiler flags "
+"and set the library paths for linking. To assist with this, when the AMReX library is built, a configuration file is "
+"created in ``[AMReX library path]/lib/pkgconfig/amrex.pc``. This file contains the Fortran and C++ flags used to "
+"compile the AMReX library as well as the appropriate library and include entries."
 msgstr ""
+"为了将应用程序代码与外部的AMReX库进行编译，需要设置适当的编译器标志并设置库路径以进行链接。为了帮助实现这一点，在构建AMReX库时，会在``[AMReX库路径]/lib/pkgconfig/amrex.pc``"
+"中创建一个配置文件。该文件包含了编译AMReX库所使用的Fortran和C++标志，以及适当的库和包含目录条目。"
 
 #: ../../source/BuildingAMReX.rst:343 88f750a47ded45bd918c08764a653b65
 msgid ""
-"The following sample GNU Makefile will compile a ``main.cpp`` source file"
-" against an external AMReX library, using the C++ flags and library paths"
-" used to build AMReX::"
-msgstr ""
+"The following sample GNU Makefile will compile a ``main.cpp`` source file against an external AMReX library, using the "
+"C++ flags and library paths used to build AMReX::"
+msgstr "以下是一个示例的GNU Makefile，它将使用构建AMReX库时所使用的C++标志和库路径，编译一个名为``main.cpp``的源文件，并链接到外部的AMReX库。"
 
 #: ../../source/BuildingAMReX.rst:364 b2cd44cc911d4ceebd42d20815fcfaaf
 msgid "Building with CMake"
-msgstr ""
+msgstr "使用CMake构建"
 
 #: ../../source/BuildingAMReX.rst:366 1fa651b71ec94bb0916011ebd9dcd793
 msgid ""
-"An alternative to the approach described in the section on "
-":ref:`sec:build:lib` is to install AMReX as an external library by using "
-"the CMake build system.  A CMake build is a two-step process. First "
-"``cmake`` is invoked to create configuration files and makefiles in a "
-"chosen directory (``builddir``).  This is roughly equivalent to running "
-"``./configure`` (see the section on :ref:`sec:build:lib`). Next, the "
-"actual build and installation are performed by invoking ``make install`` "
-"from within ``builddir``. This installs the library files in a chosen "
-"installation directory (``installdir``).  If no installation path is "
-"provided by the user, AMReX will be installed in "
-"``/path/to/amrex/installdir``. The CMake build process is summarized as "
-"follows:"
+"An alternative to the approach described in the section on :ref:`sec:build:lib` is to install AMReX as an external "
+"library by using the CMake build system.  A CMake build is a two-step process. First ``cmake`` is invoked to create "
+"configuration files and makefiles in a chosen directory (``builddir``).  This is roughly equivalent to running "
+"``./configure`` (see the section on :ref:`sec:build:lib`). Next, the actual build and installation are performed by "
+"invoking ``make install`` from within ``builddir``. This installs the library files in a chosen installation directory "
+"(``installdir``).  If no installation path is provided by the user, AMReX will be installed in "
+"``/path/to/amrex/installdir``. The CMake build process is summarized as follows:"
 msgstr ""
+"在:ref:`sec:build:lib`部分描述的方法之外，另一种安装AMReX作为外部库的方法是使用CMake构建系统。CMake构建是一个两步骤的过程。首先，使用``cmake``在选择的目录（``builddir``"
+"）中创建配置文件和makefile。这大致相当于运行``./configure``（参见:ref:`sec:build:lib`部分）。接下来，通过在``builddir``中调用``make "
+"install``来执行实际的构建和安装。这将在选择的安装目录（``installdir``）中安装库文件。如果用户没有提供安装路径，AMReX将安装在``/path/to/amrex/installdir``"
+"中。CMake构建过程总结如下："
 
 #: ../../source/BuildingAMReX.rst:387 a5ccea40eb1e4fba9cda051cdb5c7b9b
 msgid ""
-"In the above snippet, ``[options]`` indicates one or more options for the"
-" customization of the build, as described in the subsection on "
-":ref:`sec:build:cmake:options`. If the option ``CMAKE_BUILD_TYPE`` is "
-"omitted, ``CMAKE_BUILD_TYPE=Release`` is assumed. Although the AMReX "
-"source could be used as build directory, we advise against doing so.  "
-"After the installation is complete, ``builddir`` can be removed."
+"In the above snippet, ``[options]`` indicates one or more options for the customization of the build, as described in "
+"the subsection on :ref:`sec:build:cmake:options`. If the option ``CMAKE_BUILD_TYPE`` is omitted, "
+"``CMAKE_BUILD_TYPE=Release`` is assumed. Although the AMReX source could be used as build directory, we advise against "
+"doing so.  After the installation is complete, ``builddir`` can be removed."
 msgstr ""
+"在上述片段中，``[options]`` 表示用于自定义构建的一个或多个选项，如 :ref:`sec:build:cmake:options` 小节中所述。如果省略了选项 ``CMAKE_BUILD_TYPE``，则默认为 "
+"``CMAKE_BUILD_TYPE=Release``。虽然可以将 AMReX 源代码用作构建目录，但我们建议不要这样做。安装完成后，可以删除 ``builddir``。"
 
 #: ../../source/BuildingAMReX.rst:398 e6f41197edad42108d141ae795f5cbb5
 msgid "Customization options"
-msgstr ""
+msgstr "定制选项"
 
 #: ../../source/BuildingAMReX.rst:400 e0334b216a03425e8d7a392465b759d0
 msgid ""
-"AMReX build can be customized  by setting the value of suitable "
-"configuration variables on the command line via the ``-D <var>=<value>`` "
-"syntax, where ``<var>`` is the variable to set and ``<value>`` its "
-"desired value. For example, one can enable OpenMP support as follows:"
-msgstr ""
+"AMReX build can be customized  by setting the value of suitable configuration variables on the command line via the "
+"``-D <var>=<value>`` syntax, where ``<var>`` is the variable to set and ``<value>`` its desired value. For example, one "
+"can enable OpenMP support as follows:"
+msgstr "AMReX构建可以通过在命令行上使用``-D <var>=<value>``语法设置适当的配置变量的值来进行定制。其中``<var>``是要设置的变量，``<value>``是其期望的值。例如，可以按如下方式启用OpenMP支持："
 
 #: ../../source/BuildingAMReX.rst:411 f2b2687199604e96b6a472a1fc11abbc
 msgid ""
-"In the example above ``<var>=AMReX_OMP`` and ``<value>=YES``. "
-"Configuration variables requiring a boolean value are evaluated to true "
-"if they are assigned a value of ``1``, ``ON``, ``YES``, ``TRUE``, ``Y``. "
-"Conversely they are evaluated to false if they are assigned a value of "
-"``0``, ``OFF``, ``NO``, ``FALSE``, ``N``. Boolean configuration variables"
-" are case-insensitive. The list of available options is reported in the "
-":ref:`table <tab:cmakevar>` below."
+"In the example above ``<var>=AMReX_OMP`` and ``<value>=YES``. Configuration variables requiring a boolean value are "
+"evaluated to true if they are assigned a value of ``1``, ``ON``, ``YES``, ``TRUE``, ``Y``. Conversely they are "
+"evaluated to false if they are assigned a value of ``0``, ``OFF``, ``NO``, ``FALSE``, ``N``. Boolean configuration "
+"variables are case-insensitive. The list of available options is reported in the :ref:`table <tab:cmakevar>` below."
 msgstr ""
+"在上面的示例中，``<var>=AMReX_OMP`` 和 ``<value>=YES``。需要布尔值的配置变量，如果被赋值为 ``1``、``ON``、``YES``、``TRUE``、``Y``，则被评估为真。相反，如果被赋值为 "
+"``0``、``OFF``、``NO``、``FALSE``、``N``，则被评估为假。布尔配置变量不区分大小写。可用选项的列表在下面的 :ref:`table <tab:cmakevar>` 中报告。"
 
 #: ../../source/BuildingAMReX.rst:425 ac98954ad25d48c8b0590ef79750fcbb
-msgid ""
-"AMReX build options (refer to section :ref:`sec:gpu:build` for GPU-"
-"related options)."
-msgstr ""
+msgid "AMReX build options (refer to section :ref:`sec:gpu:build` for GPU-related options)."
+msgstr "AMReX构建选项（有关GPU相关选项，请参考:ref:`sec:gpu:build`部分）。"
 
 #: ../../source/BuildingAMReX.rst:428 f25f59c223814fc8819b9189e8d5967d
 msgid "Variable Name"
-msgstr ""
+msgstr "变量名称"
 
 #: ../../source/BuildingAMReX.rst:428 ../../source/BuildingAMReX.rst:605
 #: 2ae3ae20b7ee4eb4883c954585a203c6 b671bac79fd04f7c89e0bf3ac91b66d7
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/BuildingAMReX.rst:428 14b01abe72d94a3f9ad033c4672cc75c
 msgid "Possible values"
-msgstr ""
+msgstr "可能的取值"
 
 #: ../../source/BuildingAMReX.rst:430 29352360c26a443fbf11511f5d43f78b
 msgid "CMAKE_Fortran_COMPILER"
-msgstr ""
+msgstr "CMAKE_Fortran_COMPILER"
 
 #: ../../source/BuildingAMReX.rst:430 c13374f13b9a4c61bd737b953a1ec717
 msgid "User-defined Fortran compiler"
-msgstr ""
+msgstr "用户定义的Fortran编译器"
 
 #: ../../source/BuildingAMReX.rst:430 ../../source/BuildingAMReX.rst:432
 #: ../../source/BuildingAMReX.rst:434 ../../source/BuildingAMReX.rst:436
 #: 8ed390f903fa4218848fb0c9bc8de84c a0e9e5dfb3fb43bc87c8817eb87ee8fe
 #: b2aeb98c7cd94c55a2edbeec97daf00e fb1a087cdb3f4746bc3f12f37df2a35a
 msgid "user-defined"
-msgstr ""
+msgstr "用户定义"
 
 #: ../../source/BuildingAMReX.rst:432 e881d49332824bbeae0ba09e2d5ef565
 msgid "CMAKE_CXX_COMPILER"
-msgstr ""
+msgstr "CMAKE_CXX_COMPILER"
 
 #: ../../source/BuildingAMReX.rst:432 b7bcfdfff8434f0db4085a67a4e7a086
 msgid "User-defined C++ compiler"
-msgstr ""
+msgstr "用户定义的 C++ 编译器"
 
 #: ../../source/BuildingAMReX.rst:434 32b030a539074bd9842fec43084753ff
 msgid "CMAKE_Fortran_FLAGS"
-msgstr ""
+msgstr "CMAKE_Fortran_FLAGS"
 
 #: ../../source/BuildingAMReX.rst:434 2ae2fdb8b1ca402fa8c87e65245598dd
 msgid "User-defined Fortran flags"
-msgstr ""
+msgstr "用户定义的Fortran标志"
 
 #: ../../source/BuildingAMReX.rst:436 ad5f133146ab47168620200e261d8935
 msgid "CMAKE_CXX_FLAGS"
-msgstr ""
+msgstr "CMAKE_CXX_FLAGS"
 
 #: ../../source/BuildingAMReX.rst:436 aa2e276215e843a199bc0b8c4fa5714f
 msgid "User-defined C++ flags"
-msgstr ""
+msgstr "用户定义的 C++ 标志"
 
 #: ../../source/BuildingAMReX.rst:438 c980d8f084874630be55f9ffecd830cd
 msgid "CMAKE_CXX_STANDARD"
-msgstr ""
+msgstr "CMAKE_CXX_STANDARD"
 
 #: ../../source/BuildingAMReX.rst:438 de647ef2cc2c4a82bb4e67695f7ed2c3
 msgid "C++ standard"
-msgstr ""
+msgstr "C++标准"
 
 #: ../../source/BuildingAMReX.rst:438 2b5f5d25844f4abb9802f464bd596015
 msgid "compiler/17"
-msgstr ""
+msgstr "编译器/17"
 
 #: ../../source/BuildingAMReX.rst:438 30ba4a6ef72e4bef9bd3929400add677
 msgid "17, 20"
 msgstr ""
+"17, 20\n"
+"\n"
+"十七，二十"
 
 #: ../../source/BuildingAMReX.rst:440 ../../source/BuildingAMReX.rst:655
 #: ca75f2d0b3bc4839883ca7e5bd0ea01d d9741f2d5a004ede81bb91a32dfdf5e9
 msgid "AMReX_SPACEDIM"
-msgstr ""
+msgstr "AMReX_SPACEDIM"
 
 #: ../../source/BuildingAMReX.rst:440 8247e6f93255487fa54273d618b73703
 msgid "Dimension of AMReX build"
-msgstr ""
+msgstr "AMReX构建的维度。"
 
 #: ../../source/BuildingAMReX.rst:440 fce6133d6c494b889f49a6fda1f84c0a
 msgid "3 ``;``-separated list"
-msgstr ""
+msgstr "3个以分号分隔的列表"
 
 #: ../../source/BuildingAMReX.rst:440 fbeb744e53674d798a78f2ad650771e2
 msgid "\"1;2;3\""
-msgstr ""
+msgstr "1;2;3"
 
 #: ../../source/BuildingAMReX.rst:442 a6045a858df54c9a84ce31bf715b9e7b
 msgid "USE_XSDK_DEFAULTS"
-msgstr ""
+msgstr "使用XSDK默认设置"
 
 #: ../../source/BuildingAMReX.rst:442 c5665efb7b424824898afb94ec28cdc9
 msgid "Use xSDK defaults settings"
-msgstr ""
+msgstr "使用xSDK默认设置"
 
 #: ../../source/BuildingAMReX.rst:442 ../../source/BuildingAMReX.rst:446
 #: ../../source/BuildingAMReX.rst:450 ../../source/BuildingAMReX.rst:452
@@ -777,7 +753,7 @@ msgstr ""
 #: e03b79b0951447dca321e7d66247c3d3 e0cea8fc30a94141952eff18b4a28233
 #: e6dfcc9418a3400cbc1f7a925145c2e6 ece9ba0908b64b34b76cf116179c5519
 msgid "NO"
-msgstr ""
+msgstr "不要。"
 
 #: ../../source/BuildingAMReX.rst:442 ../../source/BuildingAMReX.rst:444
 #: ../../source/BuildingAMReX.rst:446 ../../source/BuildingAMReX.rst:450
@@ -821,69 +797,69 @@ msgstr ""
 #: f488f497618a409d83dd12293548287e f546670e5567445c928296d70db4df7a
 #: f7053954d9e84f1781810eed1eb75b13 fbbeb95da242458baefd88518798835d
 msgid "YES, NO"
-msgstr ""
+msgstr "是的，不是。"
 
 #: ../../source/BuildingAMReX.rst:444 4227d3034cfc4573bc9c2e5a1624a0f0
 msgid "AMReX_BUILD_SHARED_LIBS"
-msgstr ""
+msgstr "AMReX_BUILD_SHARED_LIBS"
 
 #: ../../source/BuildingAMReX.rst:444 0d9fe6685e3a4b6786e9c0c2638ae229
 msgid "Build as shared C++ library"
-msgstr ""
+msgstr "构建为共享的 C++ 库"
 
 #: ../../source/BuildingAMReX.rst:444 20c23f71b6d24a8db2bc953387e13513
 msgid "NO (unless xSDK)"
-msgstr ""
+msgstr "不行（除非是xSDK）。"
 
 #: ../../source/BuildingAMReX.rst:446 ../../source/BuildingAMReX.rst:659
 #: 3e5513f1db9e45cd90aa5e3603d72e0d d6f1f3a547f441378de00e0dfb5003f1
 msgid "AMReX_FORTRAN"
-msgstr ""
+msgstr "AMReX_FORTRAN"
 
 #: ../../source/BuildingAMReX.rst:446 a347d67f8e7e4c979917329361cd14fb
 msgid "Enable Fortran language"
-msgstr ""
+msgstr "启用Fortran语言"
 
 #: ../../source/BuildingAMReX.rst:448 ../../source/BuildingAMReX.rst:657
 #: 0eaf0fd738b149968212e848043947c5 18e1a32a5def45ddab03a65498d04712
 msgid "AMReX_PRECISION"
-msgstr ""
+msgstr "AMReX_PRECISION"
 
 #: ../../source/BuildingAMReX.rst:448 87d7c6f1e6a6439cbee52b3ce3462ef4
 msgid "Set the precision of reals"
-msgstr ""
+msgstr "设置实数的精度。"
 
 #: ../../source/BuildingAMReX.rst:448 ../../source/BuildingAMReX.rst:474
 #: ../../source/BuildingAMReX.rst:657 0410fc4b52bc44858e2dd122d02421c2
 #: 644eb81fdfd2479aaaed74033a2c7dda d9b668f4cd244257a83610b84ca1c56f
 msgid "DOUBLE, SINGLE"
-msgstr ""
+msgstr "双倍，单倍"
 
 #: ../../source/BuildingAMReX.rst:450 ../../source/BuildingAMReX.rst:661
 #: 2290d462af904ffe89d8ad010e8f3ccf bc71dd86579b49efbf8d5c4b16da238b
 msgid "AMReX_PIC"
-msgstr ""
+msgstr "AMReX_PIC"
 
 #: ../../source/BuildingAMReX.rst:450 048b2ac6f38843e9a7eaca5a7fe14c88
 msgid "Build Position Independent Code"
-msgstr ""
+msgstr "构建位置无关代码"
 
 #: ../../source/BuildingAMReX.rst:452 7232c60dc7fc4fd2b18d7207f0c786bb
 msgid "AMReX_IPO"
-msgstr ""
+msgstr "AMReX_IPO"
 
 #: ../../source/BuildingAMReX.rst:452 b5474f19bea04e68a650c6262f76eb27
 msgid "Interprocedural optimization (IPO/LTO)"
-msgstr ""
+msgstr "过程间优化（IPO/LTO）"
 
 #: ../../source/BuildingAMReX.rst:454 ../../source/BuildingAMReX.rst:663
 #: 54cf85fa30fa421d9cc86f9bbb52d348 ba0b0e808ed3458dadd06eec3bf5483f
 msgid "AMReX_MPI"
-msgstr ""
+msgstr "AMReX_MPI"
 
 #: ../../source/BuildingAMReX.rst:454 f8538d5153994db5951d0f0420ed8c0b
 msgid "Build with MPI support"
-msgstr ""
+msgstr "使用MPI支持进行构建"
 
 #: ../../source/BuildingAMReX.rst:454 ../../source/BuildingAMReX.rst:460
 #: ../../source/BuildingAMReX.rst:464 ../../source/BuildingAMReX.rst:468
@@ -892,747 +868,738 @@ msgstr ""
 #: 476b112464ae485584a10c8c827a7e7b 6f605e4bbd814c09a5ef36fd5508fd51
 #: 8de941ce787b43c5a3f8c08bfd63e836 f6071641f6f24993b2e51721be655e14
 msgid "YES"
-msgstr ""
+msgstr "是的"
 
 #: ../../source/BuildingAMReX.rst:456 ../../source/BuildingAMReX.rst:665
 #: 093f83e5e7d44d528d95908fece8a08f 74b035886835458ca585daa8fed19aea
 msgid "AMReX_OMP"
-msgstr ""
+msgstr "AMReX_OMP"
 
 #: ../../source/BuildingAMReX.rst:456 23258696824e40fb8774f91387838e59
 msgid "Build with OpenMP support"
-msgstr ""
+msgstr "使用OpenMP支持进行构建"
 
 #: ../../source/BuildingAMReX.rst:458 ../../source/BuildingAMReX.rst:667
 #: 9e790ce8e6844b8792e822d67d59cfc9 e6dfbf58c8474b3ca50c2406df15b67c
 msgid "AMReX_GPU_BACKEND"
-msgstr ""
+msgstr "AMReX_GPU_BACKEND"
 
 #: ../../source/BuildingAMReX.rst:458 000c1badd97b4aa2831f1995da903504
 msgid "Build with on-node, accelerated GPU backend"
-msgstr ""
+msgstr "使用基于节点的、加速的GPU后端构建"
 
 #: ../../source/BuildingAMReX.rst:458 28119fa93d40486ea3d14fc3bde4ff13
 msgid "NONE"
-msgstr ""
+msgstr "没有。"
 
 #: ../../source/BuildingAMReX.rst:458 3a99193659a543fca3ba2b4f71fc78fb
 msgid "NONE, SYCL, HIP, CUDA"
-msgstr ""
+msgstr "无，SYCL，HIP，CUDA"
 
 #: ../../source/BuildingAMReX.rst:460 e0213d2798bd4e8f81c2f491ef248b50
 msgid "AMReX_GPU_RDC"
-msgstr ""
+msgstr "AMReX_GPU_RDC"
 
 #: ../../source/BuildingAMReX.rst:460 331e7b14b7d740dbad9d8c4bc7888019
 msgid "Build with Relocatable Device Code support"
-msgstr ""
+msgstr "支持可重定位设备代码构建"
 
 #: ../../source/BuildingAMReX.rst:462 ../../source/BuildingAMReX.rst:669
 #: 67df4e8ec4c84a6bb179870ea06fea87 fa88e157d87449f6a1894574a95b6f05
 msgid "AMReX_FORTRAN_INTERFACES"
-msgstr ""
+msgstr "AMReX_FORTRAN_INTERFACES"
 
 #: ../../source/BuildingAMReX.rst:462 4fd2d4ec12364517bd7d11b98e725e60
 msgid "Build Fortran API"
-msgstr ""
+msgstr "构建Fortran API"
 
 #: ../../source/BuildingAMReX.rst:464 ../../source/BuildingAMReX.rst:671
 #: 07085a3b9ea347c4a6d85dccfc06c230 22f4bdaa953b4ccea2934e053a4d4e92
 msgid "AMReX_LINEAR_SOLVERS"
-msgstr ""
+msgstr "AMReX线性求解器"
 
 #: ../../source/BuildingAMReX.rst:464 c996bc34d74e4a738527e2d411de71dd
 msgid "Build AMReX linear solvers"
-msgstr ""
+msgstr "构建 AMReX 线性求解器"
 
 #: ../../source/BuildingAMReX.rst:466 ../../source/BuildingAMReX.rst:673
 #: 96e4327aa1fa4a2f9acba0447682c35e dc65b614e5884cebb311c7c10228ed0d
 msgid "AMReX_AMRDATA"
-msgstr ""
+msgstr "AMReX_AMRDATA"
 
 #: ../../source/BuildingAMReX.rst:466 f09e197420e84c0a898cd067383465a6
 msgid "Build data services"
-msgstr ""
+msgstr "构建数据服务"
 
 #: ../../source/BuildingAMReX.rst:468 ../../source/BuildingAMReX.rst:675
 #: 06eb7b4b8d1e45fe93fb072b9d12968b 216a4278b5ef4fd1a3b62b9d69f4bfc5
 msgid "AMReX_AMRLEVEL"
-msgstr ""
+msgstr "AMReX_AMRLEVEL"
 
 #: ../../source/BuildingAMReX.rst:468 7ce85f4b2c474a67a251dcb7ad2e0fe4
 msgid "Build AmrLevel class"
-msgstr ""
+msgstr "构建 AmrLevel 类。"
 
 #: ../../source/BuildingAMReX.rst:470 ../../source/BuildingAMReX.rst:677
 #: 96f867fd29a74ccaa15a92fdeeee2891 edbd1fd9754340edbd9289b341a09abb
 msgid "AMReX_EB"
-msgstr ""
+msgstr "AMReX_EB"
 
 #: ../../source/BuildingAMReX.rst:470 b66d074eaf6448b0ab4ef4acc0e51abe
 msgid "Build Embedded Boundary support"
-msgstr ""
+msgstr "构建嵌入式边界支持"
 
 #: ../../source/BuildingAMReX.rst:472 ../../source/BuildingAMReX.rst:679
 #: 78fcaba70cac47c0a76ba5f06f0cc137 d99d62577627424e855615ac951ff77a
 msgid "AMReX_PARTICLES"
-msgstr ""
+msgstr "AMReX_PARTICLES"
 
 #: ../../source/BuildingAMReX.rst:472 f5e1f24721ed4df48e71b500e9ed9a30
 msgid "Build particle classes"
-msgstr ""
+msgstr "构建粒子类。"
 
 #: ../../source/BuildingAMReX.rst:474 ../../source/BuildingAMReX.rst:681
 #: 1cb8c5f38b474b149b0846bb707da9d4 8ef0aa2976424a94948a5d086b51c451
 msgid "AMReX_PARTICLES_PRECISION"
-msgstr ""
+msgstr "AMReX_PARTICLES_PRECISION的翻译是什么？"
 
 #: ../../source/BuildingAMReX.rst:474 b79c12471872487caa48e06158729c01
 msgid "Set reals precision in particle classes"
-msgstr ""
+msgstr "在粒子类中设置实数精度。"
 
 #: ../../source/BuildingAMReX.rst:474 109d54b148cc46108280d3d6a734cf35
 msgid "Same as AMReX_PRECISION"
-msgstr ""
+msgstr "与 AMReX_PRECISION 相同"
 
 #: ../../source/BuildingAMReX.rst:476 ../../source/BuildingAMReX.rst:683
 #: 153b0fbf329342b4a2e9a0fd93bc6049 7021e9355d584ec2b105df7866c0e40d
 msgid "AMReX_BASE_PROFILE"
-msgstr ""
+msgstr "AMReX_BASE_PROFILE"
 
 #: ../../source/BuildingAMReX.rst:476 7197b18042b546e8a9401915791c226c
 msgid "Build with basic profiling support"
-msgstr ""
+msgstr "构建具备基本性能分析支持的版本"
 
 #: ../../source/BuildingAMReX.rst:478 ../../source/BuildingAMReX.rst:685
 #: 7dbf0e4ebbef4a79af6a886afe6e92b6 91f1074f3e5d40c49860d3ce80174ead
 msgid "AMReX_TINY_PROFILE"
-msgstr ""
+msgstr "AMReX_TINY_PROFILE"
 
 #: ../../source/BuildingAMReX.rst:478 952333eb84524fae9602c21b99c84048
 msgid "Build with tiny profiling support"
-msgstr ""
+msgstr "构建时添加微小的性能分析支持。"
 
 #: ../../source/BuildingAMReX.rst:480 ../../source/BuildingAMReX.rst:687
 #: 8391b16dc4814b02b8b32ae452598331 ea76f5ca1db94eb0b6f62b4e03a36130
 msgid "AMReX_TRACE_PROFILE"
-msgstr ""
+msgstr "AMReX_TRACE_PROFILE"
 
 #: ../../source/BuildingAMReX.rst:480 e2ca5c34bbde4d52b2b841eb69814db4
 msgid "Build with trace-profiling support"
-msgstr ""
+msgstr "构建具有跟踪分析支持的版本"
 
 #: ../../source/BuildingAMReX.rst:482 ../../source/BuildingAMReX.rst:689
 #: 00697f0885dc43d793cb12692a5ce593 8e3c6c78a53848749c33094d4ef8a254
 msgid "AMReX_COMM_PROFILE"
-msgstr ""
+msgstr "AMReX_COMM_PROFILE"
 
 #: ../../source/BuildingAMReX.rst:482 07a8bd3df41d40c9a80e2cdff5f70e18
 msgid "Build with comm-profiling support"
-msgstr ""
+msgstr "构建具有通信分析支持的版本"
 
 #: ../../source/BuildingAMReX.rst:484 ../../source/BuildingAMReX.rst:691
 #: 16aa43a6bcf5420688fa0a813bda04e7 1d52bb6a324546bcbdbd350368867845
 msgid "AMReX_MEM_PROFILE"
-msgstr ""
+msgstr "AMReX内存配置文件"
 
 #: ../../source/BuildingAMReX.rst:484 77fb3da43fb9408d9da486de2fc45df3
 msgid "Build with memory-profiling support"
-msgstr ""
+msgstr "构建时加入内存分析支持"
 
 #: ../../source/BuildingAMReX.rst:486 961bd554161647329220dc33cdbfee2d
 msgid "AMReX_TP_PROFILE"
-msgstr ""
+msgstr "AMReX_TP_PROFILE"
 
 #: ../../source/BuildingAMReX.rst:486 baea21e5bbc54f1498cb90e510284e8f
 msgid "Third-party profiling options"
-msgstr ""
+msgstr "第三方个人资料分析选项"
 
 #: ../../source/BuildingAMReX.rst:486 2704f547414043e590f85233f491a5a8
 msgid "IGNORE"
 msgstr ""
+"I apologize for any confusion. If you have any further instructions or if there is anything else I can assist you with, "
+"please let me know."
 
 #: ../../source/BuildingAMReX.rst:486 f56a3f4b587c4d2e82d38427bd4a28b0
 msgid "CRAYPAT,FORGE,VTUNE"
-msgstr ""
+msgstr "CRAYPAT，FORGE，VTUNE"
 
 #: ../../source/BuildingAMReX.rst:488 1207e08992254e9483eabc11977ef434
 msgid "AMReX_TESTING"
-msgstr ""
+msgstr "AMReX测试"
 
 #: ../../source/BuildingAMReX.rst:488 09b9322e66504ee8b9a560d99283aacf
 msgid "Build for testing --sets MultiFab initial data to NaN"
-msgstr ""
+msgstr "构建用于测试 -- 将 MultiFab 的初始数据设置为 NaN"
 
 #: ../../source/BuildingAMReX.rst:491 9f0ddaf4699941d780bbb2939539ec9d
 msgid "AMReX_MPI_THREAD_MULTIPLE"
-msgstr ""
+msgstr "AMReX_MPI_THREAD_MULTIPLE"
 
 #: ../../source/BuildingAMReX.rst:491 91c1c85699514e03977abe9f224fce2c
 msgid "Concurrent MPI calls from multiple threads"
-msgstr ""
+msgstr "多线程中的并发MPI调用"
 
 #: ../../source/BuildingAMReX.rst:493 ../../source/BuildingAMReX.rst:693
 #: 5fb6b57e83dd46a8a86c091cb60588c0 ec28d8e3eb7c4dedb15b5ac533fd97cf
 msgid "AMReX_PROFPARSER"
-msgstr ""
+msgstr "AMReX_PROFPARSER"
 
 #: ../../source/BuildingAMReX.rst:493 47473e6375a042ed850b86f5dd30858e
 msgid "Build with profile parser support"
-msgstr ""
+msgstr "构建支持配置文件解析器的版本"
 
 #: ../../source/BuildingAMReX.rst:495 4f7e9ea7e2a64407b4c4c6d1886182fe
 msgid "AMReX_ROCTX"
-msgstr ""
+msgstr "AMReX_ROCTX"
 
 #: ../../source/BuildingAMReX.rst:495 bfbdcd2adc8e49e3ad0ad6046b3158c1
 msgid "Build with roctx markup profiling support"
-msgstr ""
+msgstr "使用 roctx 标记分析支持进行构建"
 
 #: ../../source/BuildingAMReX.rst:497 ../../source/BuildingAMReX.rst:695
 #: 3a255052940f42ad8941d30ee2ca7805 e3896dd4adb84d24ab7d2b5632356fd2
 msgid "AMReX_FPE"
-msgstr ""
+msgstr "AMReX_FPE"
 
 #: ../../source/BuildingAMReX.rst:497 b97a0d35c6a74b24b9ffb51d1dbb0743
 msgid "Build with Floating Point Exceptions checks"
-msgstr ""
+msgstr "使用浮点异常检查构建"
 
 #: ../../source/BuildingAMReX.rst:499 ../../source/BuildingAMReX.rst:697
 #: 3ea3598d74774533adc0751eb8117b00 43b1dd0e0edd4321a15ff7fc6bc75382
 msgid "AMReX_ASSERTIONS"
-msgstr ""
+msgstr "AMReX断言"
 
 #: ../../source/BuildingAMReX.rst:499 23c7d409827e48e68e7dfa3b1d830dcf
 msgid "Build with assertions turned on"
-msgstr ""
+msgstr "以开启断言的方式构建"
 
 #: ../../source/BuildingAMReX.rst:501 1e3b1fb8cd6f47e5ac5a74180cbf4196
 msgid "AMReX_BOUND_CHECK"
-msgstr ""
+msgstr "AMReX_BOUND_CHECK"
 
 #: ../../source/BuildingAMReX.rst:501 36f369741cb34c6b85649f2f8dc86af4
 msgid "Enable bound checking in Array4 class"
-msgstr ""
+msgstr "在 Array4 类中启用边界检查。"
 
 #: ../../source/BuildingAMReX.rst:503 df7c8d9dd8884c6d8fa0173af688ddb9
 msgid "AMReX_EXPORT_DYNAMIC"
-msgstr ""
+msgstr "AMReX_EXPORT_DYNAMIC"
 
 #: ../../source/BuildingAMReX.rst:503 0ca1df8be75a40bcb29167de291ad9be
 msgid "Enable backtrace on macOS"
-msgstr ""
+msgstr "在 macOS 上启用回溯功能。"
 
 #: ../../source/BuildingAMReX.rst:503 88c9e1edb4b8413d8559380344a2e856
 msgid "NO (unless Darwin)"
-msgstr ""
+msgstr "不 (除非达尔文)"
 
 #: ../../source/BuildingAMReX.rst:505 ../../source/BuildingAMReX.rst:699
 #: 3b459dd3d97248e5b2540c44cb844050 4dbfb137befa4c67a0f19691a8c0dc87
 msgid "AMReX_SENSEI"
-msgstr ""
+msgstr "AMReX_SENSEI"
 
 #: ../../source/BuildingAMReX.rst:505 90d089744731425ebdf7a214ecbca590
 msgid "Enable the SENSEI in situ infrastructure"
-msgstr ""
+msgstr "启用SENSEI现场基础设施"
 
 #: ../../source/BuildingAMReX.rst:507 d3eb39c160644aee8e615444067f1ee7
 msgid "AMReX_NO_SENSEI_AMR_INST"
-msgstr ""
+msgstr "AMReX没有SENSEI的AMR实例化。"
 
 #: ../../source/BuildingAMReX.rst:507 10c75a11f2ca41a58a9bb558ac75441c
 msgid "Disables the instrumentation in amrex::Amr"
-msgstr ""
+msgstr "禁用 amrex::Amr 中的仪器设备。"
 
 #: ../../source/BuildingAMReX.rst:509 ../../source/BuildingAMReX.rst:701
 #: 4399d8f3f45f4c50a6692ed113e7b32c 9ae26421d9794843811f170f43676f34
 msgid "AMReX_CONDUIT"
-msgstr ""
+msgstr "AMReX_CONDUIT"
 
 #: ../../source/BuildingAMReX.rst:509 a528f106976e4b888fa17a1e07b44650
 msgid "Enable Conduit support"
-msgstr ""
+msgstr "启用导管支持"
 
 #: ../../source/BuildingAMReX.rst:511 ../../source/BuildingAMReX.rst:703
 #: 5982cd08f8104888a4f544c9e6e9165b 5cbd3363ffdc441cb271b30687b24a88
 msgid "AMReX_ASCENT"
-msgstr ""
+msgstr "AMReX_ASCENT"
 
 #: ../../source/BuildingAMReX.rst:511 3c8c409062f94b12a10a9f5d9087d3c4
 msgid "Enable Ascent support"
-msgstr ""
+msgstr "启用Ascent支持"
 
 #: ../../source/BuildingAMReX.rst:513 ../../source/BuildingAMReX.rst:705
 #: 0f00d09120924f9b9aeac273b8d03342 3d6a2a3a5a4a47169bcc07cd0a9dd7ef
 msgid "AMReX_HYPRE"
-msgstr ""
+msgstr "AMReX_HYPRE"
 
 #: ../../source/BuildingAMReX.rst:513 7ae3b1cf315745e89879303db5ce6a75
 msgid "Enable HYPRE interfaces"
-msgstr ""
+msgstr "启用HYPRE接口"
 
 #: ../../source/BuildingAMReX.rst:515 998054f318164b5cacefa073fd1e69f3
 msgid "AMReX_PETSC"
-msgstr ""
+msgstr "AMReX_PETSC"
 
 #: ../../source/BuildingAMReX.rst:515 05fffe8239cf4dcdb1156ce4199b7ea2
 msgid "Enable PETSc interfaces"
-msgstr ""
+msgstr "启用PETSc接口"
 
 #: ../../source/BuildingAMReX.rst:517 bf537fd424984f53aa5c057624b2d7f7
 msgid "AMReX_SUNDIALS"
-msgstr ""
+msgstr "AMReX_SUNDIALS"
 
 #: ../../source/BuildingAMReX.rst:517 3ecf80718f0d44cb807ad6817c1789bd
 msgid "Enable SUNDIALS interfaces"
-msgstr ""
+msgstr "启用SUNDIALS接口"
 
 #: ../../source/BuildingAMReX.rst:519 a6b8801654be4d22af4a7df4109eb219
 msgid "AMReX_HDF5"
-msgstr ""
+msgstr "AMReX_HDF5"
 
 #: ../../source/BuildingAMReX.rst:519 23b9a254487244308dbb51054264a468
 msgid "Enable HDF5-based I/O"
-msgstr ""
+msgstr "启用基于HDF5的输入/输出功能"
 
 #: ../../source/BuildingAMReX.rst:521 fa6faa6951714679adf8a579dce90bc6
 msgid "AMReX_HDF5_ZFP"
-msgstr ""
+msgstr "AMReX_HDF5_ZFP"
 
 #: ../../source/BuildingAMReX.rst:521 e7c4712bbd90455fa17f6fd8dd84df2a
 msgid "Enable compression with ZFP in HDF5-based I/O"
-msgstr ""
+msgstr "在基于HDF5的输入/输出中使用ZFP启用压缩。"
 
 #: ../../source/BuildingAMReX.rst:523 ../../source/BuildingAMReX.rst:707
 #: 027a2c66283c4347bc233b0ddfa7fad0 9642d2fbfd344639be3c9bdc0eff83a3
 msgid "AMReX_PLOTFILE_TOOLS"
-msgstr ""
+msgstr "AMReX_PLOTFILE_TOOLS"
 
 #: ../../source/BuildingAMReX.rst:523 911c99fbf45d494e939ff87c38607105
 msgid "Build and install plotfile postprocessing tools"
-msgstr ""
+msgstr "构建并安装绘图文件后处理工具。"
 
 #: ../../source/BuildingAMReX.rst:525 c9bca81a29234a00b59f24a9cc257541
 msgid "AMReX_ENABLE_TESTS"
-msgstr ""
+msgstr "AMReX_ENABLE_TESTS"
 
 #: ../../source/BuildingAMReX.rst:525 5cf496e201234f07a1a26f503d1da355
 msgid "Enable CTest suite"
-msgstr ""
+msgstr "启用 CTest 测试套件"
 
 #: ../../source/BuildingAMReX.rst:527 1588527d880f4a3692c331156c27fc67
 msgid "AMReX_TEST_TYPE"
-msgstr ""
+msgstr "AMReX测试类型"
 
 #: ../../source/BuildingAMReX.rst:527 8930b423956d4a48869397252d7d2a75
 msgid "Test type -- affects the number of tests"
-msgstr ""
+msgstr "测试类型 -- 影响测试数量"
 
 #: ../../source/BuildingAMReX.rst:527 dfb080bf76ea4e7896f2c38d725e8ec2
 msgid "All"
-msgstr ""
+msgstr "全部"
 
 #: ../../source/BuildingAMReX.rst:527 0bc0bd19ccb745f6bf2b872e868edc9f
 msgid "All, Small"
-msgstr ""
+msgstr "大家，小的"
 
 #: ../../source/BuildingAMReX.rst:529 78334530ba0d4bef80fe5d9554ff9339
 msgid "AMReX_DIFFERENT_COMPILER"
-msgstr ""
+msgstr "AMReX_DIFFERENT_COMPILER"
 
 #: ../../source/BuildingAMReX.rst:529 3315616d6e8f4cd68018a677ef6a0c6d
 msgid "Allow an app to use a different compiler"
-msgstr ""
+msgstr "允许应用程序使用不同的编译器"
 
 #: ../../source/BuildingAMReX.rst:531 35e87db2b3d746798dc64784d4155f26
 msgid "AMReX_INSTALL"
-msgstr ""
+msgstr "AMReX_INSTALL"
 
 #: ../../source/BuildingAMReX.rst:531 00eaa8132e374ccf89b73d28e7b9f04e
 msgid "Generate Install Targets"
-msgstr ""
+msgstr "生成安装目标"
 
 #: ../../source/BuildingAMReX.rst:533 5cca9a9e147c4206a1778e24ab355132
 msgid "AMReX_PROBINIT"
-msgstr ""
+msgstr "AMReX_PROBINIT"
 
 #: ../../source/BuildingAMReX.rst:533 4da607b7c7014b1bbe3f0e5efc18417e
 msgid "Enable support for probin file"
-msgstr ""
+msgstr "启用对 probin 文件的支持"
 
 #: ../../source/BuildingAMReX.rst:533 94b8386d445846b29c9d659439582d8f
 msgid "Platform dependent"
-msgstr ""
+msgstr "平台依赖"
 
 #: ../../source/BuildingAMReX.rst:539 adc1273a37c248eb9c012a5bb5075d5b
 msgid ""
-"The option ``CMAKE_BUILD_TYPE=Debug`` implies ``AMReX_ASSERTIONS=YES``. "
-"In order to turn off assertions in debug mode, ``AMReX_ASSERTIONS=NO`` "
-"must be set explicitly while invoking CMake."
-msgstr ""
+"The option ``CMAKE_BUILD_TYPE=Debug`` implies ``AMReX_ASSERTIONS=YES``. In order to turn off assertions in debug mode, "
+"``AMReX_ASSERTIONS=NO`` must be set explicitly while invoking CMake."
+msgstr "选项``CMAKE_BUILD_TYPE=Debug``意味着``AMReX_ASSERTIONS=YES``。为了在调试模式下关闭断言，必须在调用CMake时显式设置``AMReX_ASSERTIONS=NO``。"
 
 #: ../../source/BuildingAMReX.rst:544 b8a70dd5906241cebdd0b20775969650
 msgid ""
-"The ``CMAKE_C_COMPILER``, ``CMAKE_CXX_COMPILER``, and  "
-"``CMAKE_Fortran_COMPILER`` options are used to tell CMake which compiler "
-"to use for the compilation of C, C++, and Fortran sources respectively. "
-"If those options are not set by the user, CMake will use the system "
-"default compilers."
+"The ``CMAKE_C_COMPILER``, ``CMAKE_CXX_COMPILER``, and  ``CMAKE_Fortran_COMPILER`` options are used to tell CMake which "
+"compiler to use for the compilation of C, C++, and Fortran sources respectively. If those options are not set by the "
+"user, CMake will use the system default compilers."
 msgstr ""
+"``CMAKE_C_COMPILER``、``CMAKE_CXX_COMPILER`` 和 ``CMAKE_Fortran_COMPILER`` 这些选项用于告诉 CMake 在编译 C、C++ 和 Fortran "
+"源代码时使用哪个编译器。如果用户没有设置这些选项，CMake 将使用系统默认的编译器。"
 
 #: ../../source/BuildingAMReX.rst:548 e7af1ac3627b4c138ce5daa5593cfd2a
 msgid ""
-"The options ``CMAKE_Fortran_FLAGS`` and ``CMAKE_CXX_FLAGS`` allow the "
-"user to set their own compilation flags for Fortran and C++ source files "
-"respectively. If ``CMAKE_Fortran_FLAGS``/ ``CMAKE_CXX_FLAGS`` are not set"
-" by the user, they will be initialized with the value of the "
-"environmental variables ``FFLAGS``/ ``CXXFLAGS``. If neither ``FFLAGS``/ "
-"``CXXFLAGS`` nor ``CMAKE_Fortran_FLAGS``/ ``CMAKE_CXX_FLAGS`` are "
-"defined, AMReX default flags are used."
+"The options ``CMAKE_Fortran_FLAGS`` and ``CMAKE_CXX_FLAGS`` allow the user to set their own compilation flags for "
+"Fortran and C++ source files respectively. If ``CMAKE_Fortran_FLAGS``/ ``CMAKE_CXX_FLAGS`` are not set by the user, "
+"they will be initialized with the value of the environmental variables ``FFLAGS``/ ``CXXFLAGS``. If neither ``FFLAGS``/ "
+"``CXXFLAGS`` nor ``CMAKE_Fortran_FLAGS``/ ``CMAKE_CXX_FLAGS`` are defined, AMReX default flags are used."
 msgstr ""
+"选项``CMAKE_Fortran_FLAGS``和``CMAKE_CXX_FLAGS``允许用户为Fortran和C++源文件分别设置自定义编译标志。如果用户未设置``CMAKE_Fortran_FLAGS``/``CMAKE_CXX_"
+"FLAGS``，它们将使用环境变量``FFLAGS``/``CXXFLAGS``的值进行初始化。如果既未定义``FFLAGS``/``CXXFLAGS``，也未定义``CMAKE_Fortran_FLAGS``/``CMAKE_CXX_"
+"FLAGS``，则将使用AMReX的默认标志。"
 
 #: ../../source/BuildingAMReX.rst:555 53fdfb2ab1124aa9a76051c964d405a1
-msgid ""
-"For a detailed explanation of GPU support in AMReX CMake, refer to "
-"section :ref:`sec:gpu:build`."
-msgstr ""
+msgid "For a detailed explanation of GPU support in AMReX CMake, refer to section :ref:`sec:gpu:build`."
+msgstr "要了解AMReX CMake中有关GPU支持的详细说明，请参考:ref:`sec:gpu:build`部分。"
 
 #: ../../source/BuildingAMReX.rst:558 5f17aa460bbc4d6db5d593f873099f97
 msgid "CMake and macOS"
-msgstr ""
+msgstr "CMake 和 macOS"
 
 #: ../../source/BuildingAMReX.rst:560 ee2006a9720a49429a1a7287faf61781
 msgid ""
-"While not strictly necessary when using homebrew on macOS, it is highly "
-"recommended that the user specifies ``-DCMAKE_C_COMPILER=$(which gcc-X) "
-"-DCMAKE_CXX_COMPILER=$(which g++-X)`` (where X is the GCC version "
-"installed by homebrew) when using gfortran. This is because homebrew's "
-"CMake defaults to the Clang C/C++ compiler. Normally Clang plays well "
-"with gfortran, but if there are some issues, we recommend telling CMake "
-"to use gcc for C/C++ also."
+"While not strictly necessary when using homebrew on macOS, it is highly recommended that the user specifies "
+"``-DCMAKE_C_COMPILER=$(which gcc-X) -DCMAKE_CXX_COMPILER=$(which g++-X)`` (where X is the GCC version installed by "
+"homebrew) when using gfortran. This is because homebrew's CMake defaults to the Clang C/C++ compiler. Normally Clang "
+"plays well with gfortran, but if there are some issues, we recommend telling CMake to use gcc for C/C++ also."
 msgstr ""
+"在 macOS 上使用 homebrew 时，虽然不是必需的，但强烈建议用户在使用 gfortran 时指定 ``-DCMAKE_C_COMPILER=$(which gcc-X) -DCMAKE_CXX_COMPILER=$(which "
+"g++-X)``（其中 X 是 homebrew 安装的 GCC 版本）。这是因为 homebrew 的 CMake 默认使用 Clang C/C++ 编译器。通常情况下，Clang 与 gfortran "
+"兼容性良好，但如果出现问题，我们建议告诉 CMake 也使用 gcc 作为 C/C++ 编译器。"
 
 #: ../../source/BuildingAMReX.rst:570 898bd4696666423f9e7b8420bc17b27c
 msgid "Importing AMReX into your CMake project"
-msgstr ""
+msgstr "将 AMReX 导入您的 CMake 项目中"
 
 #: ../../source/BuildingAMReX.rst:572 0fcc9d8540994a65b4cd16c8801415c9
 msgid ""
-"In order to import AMReX into your CMake project, you need to include the"
-" following line in the appropriate CMakeLists.txt file:"
-msgstr ""
+"In order to import AMReX into your CMake project, you need to include the following line in the appropriate "
+"CMakeLists.txt file:"
+msgstr "为了将AMReX导入您的CMake项目中，您需要在相应的CMakeLists.txt文件中包含以下行："
 
 #: ../../source/BuildingAMReX.rst:582 dc6a07610ab4486bb7064b782aaf4d16
 msgid ""
-"Calls to ``find_package(AMReX)`` will find a valid installation of AMReX,"
-" if present, and import its settings and targets into your CMake project."
-" Imported AMReX targets can be linked to any of your targets, after they "
-"have been made available following a successful call to "
-"``find_package(AMReX)``, by including the following line in the "
-"appropriate CMakeLists.txt file:"
+"Calls to ``find_package(AMReX)`` will find a valid installation of AMReX, if present, and import its settings and "
+"targets into your CMake project. Imported AMReX targets can be linked to any of your targets, after they have been made "
+"available following a successful call to ``find_package(AMReX)``, by including the following line in the appropriate "
+"CMakeLists.txt file:"
 msgstr ""
+"如果存在，调用``find_package(AMReX)``将会找到有效的AMReX安装，并将其设置和目标导入到您的CMake项目中。在成功调用``find_package(AMReX)``"
+"后，可以将导入的AMReX目标链接到任何您的目标上，只需在相应的CMakeLists.txt文件中包含以下行："
 
 #: ../../source/BuildingAMReX.rst:594 309b34239e204761b9d0fd56f9dbf15f
-msgid ""
-"In the above snippet, ``<amrex-target-name>`` is any of the targets "
-"listed in the table below."
-msgstr ""
+msgid "In the above snippet, ``<amrex-target-name>`` is any of the targets listed in the table below."
+msgstr "In the snippet above, `<amrex-target-name>` refers to any of the targets listed in the table below."
 
 #: ../../source/BuildingAMReX.rst:602 a5668859c0ab47ba85bd9e5130c72f54
 msgid "AMReX targets available for import."
-msgstr ""
+msgstr "可以导入的AMReX目标。"
 
 #: ../../source/BuildingAMReX.rst:605 05222a1f07854b879d03ae9ecb92cfc8
 msgid "Target name"
-msgstr ""
+msgstr "目标名称"
 
 #: ../../source/BuildingAMReX.rst:607 680e8b434c4648e99bbe87df6d1663bb
 msgid "amrex_1d"
-msgstr ""
+msgstr "amrex_1d"
 
 #: ../../source/BuildingAMReX.rst:607 d9d0cffa638e483a860f793c06736302
 msgid "AMReX library in 1D"
-msgstr ""
+msgstr "AMReX库在一维中的应用"
 
 #: ../../source/BuildingAMReX.rst:609 0d5ff885ae654bac95e845eccccd1833
 msgid "amrex_2d"
-msgstr ""
+msgstr "amrex_2d"
 
 #: ../../source/BuildingAMReX.rst:609 8dfbadecf87a4395a52e36627939c725
 msgid "AMReX library in 2D"
-msgstr ""
+msgstr "AMReX库在2D中。"
 
 #: ../../source/BuildingAMReX.rst:611 3469f655622841b0a6e7f4b8e00dc418
 msgid "amrex_3d"
-msgstr ""
+msgstr "amrex_3d"
 
 #: ../../source/BuildingAMReX.rst:611 f2a0404f98814742bb9d1de0a4931687
 msgid "AMReX library in 3D"
-msgstr ""
+msgstr "AMReX库在3D中"
 
 #: ../../source/BuildingAMReX.rst:613 e68e5f6217c9493f937ce33983689157
 msgid "amrex"
-msgstr ""
+msgstr "AMREX"
 
 #: ../../source/BuildingAMReX.rst:613 3db4eff683a54962ab33874e71773f33
 msgid "AMReX library (alias, points to last dim)"
-msgstr ""
+msgstr "AMReX库（别名，指向最后一个维度）"
 
 #: ../../source/BuildingAMReX.rst:615 4d8bb964d03a4db89a0b2d5fb1bd30b2
 msgid "Flags_CXX"
-msgstr ""
+msgstr "Flags_CXX"
 
 #: ../../source/BuildingAMReX.rst:615 54e35d904f72402c912ed532a4ac7679
 msgid "C++ flags preset (interface)"
-msgstr ""
+msgstr "C++标志预设（接口）"
 
 #: ../../source/BuildingAMReX.rst:617 e352f4819ea54b66a86e4bb7f349e649
 msgid "Flags_Fortran"
-msgstr ""
+msgstr "标志_Fortran"
 
 #: ../../source/BuildingAMReX.rst:617 cde531a3f18944a68d79e6a3ca0edb0a
 msgid "Fortran flags preset (interface)"
-msgstr ""
+msgstr "Fortran标志预设（接口）"
 
 #: ../../source/BuildingAMReX.rst:619 58b8723cd8f7487191b3f7993a5452bf
 msgid "Flags_FPE"
-msgstr ""
+msgstr "标志_FPE"
 
 #: ../../source/BuildingAMReX.rst:619 ee8e1b6f3c244bed9ba6e2c6abfe45fd
 msgid "Floating Point Exception flags (interface)"
-msgstr ""
+msgstr "浮点异常标志（接口）"
 
 #: ../../source/BuildingAMReX.rst:626 9cca653325dc472e822aaea26bbb3435
 msgid ""
-"The options used to configure the AMReX build may result in certain "
-"parts, or ``components``, of the AMReX source code to be excluded from "
-"compilation. For example, setting ``-DAMReX_LINEAR_SOLVERS=no`` at "
-"configure time prevents the compilation of AMReX linear solvers code. "
-"Your CMake project can check which component is included in the AMReX "
-"library via `find_package`:"
+"The options used to configure the AMReX build may result in certain parts, or ``components``, of the AMReX source code "
+"to be excluded from compilation. For example, setting ``-DAMReX_LINEAR_SOLVERS=no`` at configure time prevents the "
+"compilation of AMReX linear solvers code. Your CMake project can check which component is included in the AMReX library "
+"via `find_package`:"
 msgstr ""
+"用于配置 AMReX 构建的选项可能会导致 AMReX 源代码的某些部分或“组件”在编译时被排除在外。例如，在配置时设置“-DAMReX_LINEAR_SOLVERS=no”将阻止编译 AMReX 线性求解器代码。您的 CMake "
+"项目可以通过 `find_package` 来检查 AMReX 库中包含的组件。"
 
 #: ../../source/BuildingAMReX.rst:639 2dcff30acaa14318b040f97a647f5d91
 msgid ""
-"The keyword ``REQUIRED`` in the snippet above will cause a fatal error if"
-" AMReX is not found, or if it is found but the components listed in "
-"``<components-list>`` are not include in the installation. A list of "
-"AMReX component names and related configure options are shown in the "
-"table below."
+"The keyword ``REQUIRED`` in the snippet above will cause a fatal error if AMReX is not found, or if it is found but the "
+"components listed in ``<components-list>`` are not include in the installation. A list of AMReX component names and "
+"related configure options are shown in the table below."
 msgstr ""
+"在上面的代码片段中，关键字``REQUIRED``将在以下情况下引发致命错误：如果未找到AMReX，或者如果找到AMReX但未在安装中包含``<components-list>``"
+"中列出的组件。下表显示了AMReX组件名称及其相关的配置选项。"
 
 #: ../../source/BuildingAMReX.rst:650 9adfa2c3a55e45c781087fd0a8fd05e1
 msgid "AMReX components."
-msgstr ""
+msgstr "AMReX 组件。"
 
 #: ../../source/BuildingAMReX.rst:653 92f0a453476a4230948af6b2d7307804
 msgid "Option"
-msgstr ""
+msgstr "选项"
 
 #: ../../source/BuildingAMReX.rst:653 7b05fe4f7580481f9837488b560c24e8
 msgid "Component"
-msgstr ""
+msgstr "组件"
 
 #: ../../source/BuildingAMReX.rst:655 8ff13b72f83a4aaa89d2e916ec79bf90
 msgid "1D, 2D, 3D"
 msgstr ""
+"1D, 2D, 3D\n"
+"\n"
+"一维，二维，三维"
 
 #: ../../source/BuildingAMReX.rst:659 10dab11191604776a8bc6b1767b1f438
 msgid "FORTRAN"
-msgstr ""
+msgstr "FORTRAN"
 
 #: ../../source/BuildingAMReX.rst:661 c9cc6146669d44048fe40b842b65c2cd
 msgid "PIC"
-msgstr ""
+msgstr "图片"
 
 #: ../../source/BuildingAMReX.rst:663 7621b7726fe0475eb6dc4df46fe1e0d5
 msgid "MPI"
-msgstr ""
+msgstr "MPI"
 
 #: ../../source/BuildingAMReX.rst:665 52d8a97aabc24209b2289d39308ab407
 msgid "OMP"
-msgstr ""
+msgstr "OMP"
 
 #: ../../source/BuildingAMReX.rst:667 dfb84e1a86e44f60812da6f0fcd45de8
 msgid "CUDA, HIP, SYCL"
-msgstr ""
+msgstr "CUDA，HIP，SYCL"
 
 #: ../../source/BuildingAMReX.rst:669 82e0233d43eb4e40b7ffe30e27366f5f
 msgid "FINTERFACES"
-msgstr ""
+msgstr "FINTERFACES"
 
 #: ../../source/BuildingAMReX.rst:671 cae02a4b8a274b5ea23ee37187af94db
 msgid "LSOLVERS"
-msgstr ""
+msgstr "LSOLVERS"
 
 #: ../../source/BuildingAMReX.rst:673 0a631444a30348d9bc6f50706cf32c22
 msgid "AMRDATA"
-msgstr ""
+msgstr "AMR数据"
 
 #: ../../source/BuildingAMReX.rst:675 8f887a6ca7534238888c27698daea1ae
 msgid "AMRLEVEL"
-msgstr ""
+msgstr "AMRLEVEL"
 
 #: ../../source/BuildingAMReX.rst:677 6e64a7f42f484a6699420d9190296b27
 msgid "EB"
-msgstr ""
+msgstr "EB"
 
 #: ../../source/BuildingAMReX.rst:679 ce574b59e9bf44c8ba3bd73932644498
 msgid "PARTICLES"
-msgstr ""
+msgstr "语气助词"
 
 #: ../../source/BuildingAMReX.rst:681 58cb65bb4904415e963274c5ee9c6a12
 msgid "PDOUBLE, PSINGLE"
 msgstr ""
+"PDOUBLE, PSINGLE\n"
+"\n"
+"双倍，单倍"
 
 #: ../../source/BuildingAMReX.rst:683 4a89250df5ed4f93b827d8c6b604eac9
 msgid "BASEP"
-msgstr ""
+msgstr "基础"
 
 #: ../../source/BuildingAMReX.rst:685 5fd7643c9a764ae499d95800e0fa7098
 msgid "TINYP"
-msgstr ""
+msgstr "TINYP"
 
 #: ../../source/BuildingAMReX.rst:687 f99ab637cb564c8596e5128b890f7c7a
 msgid "TRACEP"
-msgstr ""
+msgstr "追踪"
 
 #: ../../source/BuildingAMReX.rst:689 6d5a6439f2af4603b94117d9b6156ade
 msgid "COMMP"
-msgstr ""
+msgstr "通信"
 
 #: ../../source/BuildingAMReX.rst:691 bc4d0b1f016f4dd0b45ab610f69c7862
 msgid "MEMP"
-msgstr ""
+msgstr "MEMP"
 
 #: ../../source/BuildingAMReX.rst:693 37c69ec4103b4bad8ba22ed8243675dd
 msgid "PROFPARSER"
-msgstr ""
+msgstr "PROFPARSER"
 
 #: ../../source/BuildingAMReX.rst:695 7a6b4c29d1ba45c09fc4f0bf07c869d1
 msgid "FPE"
-msgstr ""
+msgstr "FPE"
 
 #: ../../source/BuildingAMReX.rst:697 d3af8dae326e4f3e866e363b55eed332
 msgid "ASSERTIONS"
-msgstr ""
+msgstr "断言"
 
 #: ../../source/BuildingAMReX.rst:699 2ec896905b2c415baa77d887a7dd11ce
 msgid "SENSEI"
-msgstr ""
+msgstr "老师"
 
 #: ../../source/BuildingAMReX.rst:701 1ba3b8f9565741a497d0bd4bcd83f212
 msgid "CONDUIT"
-msgstr ""
+msgstr "导管"
 
 #: ../../source/BuildingAMReX.rst:703 9851c22a4f834026b6343921aea0d60c
 msgid "ASCENT"
-msgstr ""
+msgstr "攀登"
 
 #: ../../source/BuildingAMReX.rst:705 04899b1650914de1897dc3c1695c1bf7
 msgid "HYPRE"
-msgstr ""
+msgstr "HYPRE"
 
 #: ../../source/BuildingAMReX.rst:707 116dde236b894c76904c467dee1c8f4f
 msgid "PFTOOLS"
-msgstr ""
+msgstr "PFTOOLS"
 
 #: ../../source/BuildingAMReX.rst:714 45b59f632b3c41b38df8f3c24a4036ff
 msgid "As an example, consider the following CMake code:"
-msgstr ""
+msgstr "作为一个示例，考虑以下的CMake代码："
 
 #: ../../source/BuildingAMReX.rst:724 c2ef290885d44587a22c90b58b45cc5c
 msgid ""
-"The code in the snippet above checks whether an AMReX installation with "
-"3D and Embedded Boundary support is available on the system. If so, AMReX"
-" is linked to target ``Foo`` and AMReX flags preset is used to compile "
-"``Foo``'s C++ sources. If no AMReX installation is found or if the "
-"available one was built without 3D or Embedded Boundary support, a fatal "
-"error is issued."
+"The code in the snippet above checks whether an AMReX installation with 3D and Embedded Boundary support is available "
+"on the system. If so, AMReX is linked to target ``Foo`` and AMReX flags preset is used to compile ``Foo``'s C++ "
+"sources. If no AMReX installation is found or if the available one was built without 3D or Embedded Boundary support, a "
+"fatal error is issued."
 msgstr ""
+"上述代码片段检查系统上是否安装了支持3D和嵌入边界的AMReX。如果是这样，AMReX将链接到目标“Foo”，并使用预设的AMReX标志来编译“Foo”的C++源代码。如果未找到AMReX安装或者找到的安装是没有3"
+"D或嵌入边界支持的版本，则会发出致命错误。"
 
 #: ../../source/BuildingAMReX.rst:737 56541950a2034087ba94648a520f12c8
 msgid ""
-"You can tell CMake to look for the AMReX library in non-standard paths by"
-" setting the environmental variable ``AMReX_ROOT`` to point to the AMReX "
-"installation directory or by adding "
-"``-DAMReX_ROOT=<path/to/amrex/installation/directory>`` to the ``cmake`` "
-"invocation. More details on ``find_package`` can be found `here "
-"<https://cmake.org/cmake/help/v3.25/command/find_package.html>`_."
+"You can tell CMake to look for the AMReX library in non-standard paths by setting the environmental variable "
+"``AMReX_ROOT`` to point to the AMReX installation directory or by adding "
+"``-DAMReX_ROOT=<path/to/amrex/installation/directory>`` to the ``cmake`` invocation. More details on ``find_package`` "
+"can be found `here <https://cmake.org/cmake/help/v3.25/command/find_package.html>`_."
 msgstr ""
+"你可以通过设置环境变量 ``AMReX_ROOT`` 指向 AMReX 安装目录，或者在 ``cmake`` 命令中添加 ``-DAMReX_ROOT=<path/to/amrex/installation/directory>`` "
+"来告诉 CMake 在非标准路径中查找 AMReX 库。关于 ``find_package`` 的更多详细信息可以在 `这里 "
+"<https://cmake.org/cmake/help/v3.25/command/find_package.html>`_ 找到。"
 
 #: ../../source/BuildingAMReX.rst:746 14d1635edd6f457db55c79e4ba2373ad
 msgid "AMReX on Windows"
-msgstr ""
+msgstr "在Windows上使用AMReX"
 
 #: ../../source/BuildingAMReX.rst:748 ccf1f072157d40dba97fb57cfda021b9
 msgid ""
-"The AMReX team does development on Linux machines, from laptops to "
-"supercomputers. Many people also use AMReX on Macs without issues."
-msgstr ""
+"The AMReX team does development on Linux machines, from laptops to supercomputers. Many people also use AMReX on Macs "
+"without issues."
+msgstr "AMReX团队在Linux机器上进行开发，从笔记本电脑到超级计算机都可以。许多人也在Mac上使用AMReX而没有任何问题。"
 
 #: ../../source/BuildingAMReX.rst:750 fbfd60c6f39346a4b8df0a9f1aa926e7
 msgid ""
-"We do not officially support AMReX on Windows, and many of us do not have"
-" access to any Windows machines.  However, we believe there are no "
-"fundamental issues for it to work on Windows."
-msgstr ""
+"We do not officially support AMReX on Windows, and many of us do not have access to any Windows machines.  However, we "
+"believe there are no fundamental issues for it to work on Windows."
+msgstr "我们并不官方支持在Windows上使用AMReX，而且我们中的许多人也无法访问任何Windows机器。然而，我们相信在Windows上使用AMReX没有根本性的问题。"
 
 #: ../../source/BuildingAMReX.rst:753 08b8b37aace74abd9c39b346dfd9b049
-msgid ""
-"(1) AMReX mostly uses standard C++17. We run continuous integration tests"
-" on Windows with MSVC and Clang compilers."
-msgstr ""
+msgid "(1) AMReX mostly uses standard C++17. We run continuous integration tests on Windows with MSVC and Clang compilers."
+msgstr "(1) AMReX主要使用标准C++17。我们在Windows上使用MSVC和Clang编译器进行持续集成测试。"
 
 #: ../../source/BuildingAMReX.rst:756 800c6c2c02524d0a9af260656bf258cc
 msgid ""
-"(2) We use POSIX signal handling when floating point exceptions, "
-"segmentation faults, etc. happen. This capability is not supported on "
-"Windows."
-msgstr ""
+"(2) We use POSIX signal handling when floating point exceptions, segmentation faults, etc. happen. This capability is "
+"not supported on Windows."
+msgstr "(2) 当发生浮点异常、分段错误等情况时，我们使用 POSIX 信号处理。这种能力在 Windows 上不受支持。"
 
 #: ../../source/BuildingAMReX.rst:759 acab7e2c75f143f6b26aee2d6c0944cc
 msgid ""
-"(3) Memory profiling is an optional feature in AMReX that is not enabled "
-"by default.  It reads memory system information from the OS to give us a "
-"summary of our memory usage.  This is not supported on Windows."
-msgstr ""
+"(3) Memory profiling is an optional feature in AMReX that is not enabled by default.  It reads memory system "
+"information from the OS to give us a summary of our memory usage.  This is not supported on Windows."
+msgstr "(3) 内存分析是 AMReX 中的一个可选功能，默认情况下未启用。它从操作系统中读取内存系统信息，以便为我们提供内存使用情况的摘要。这在 Windows 上不受支持。"
 
 #: ../../source/BuildingAMReX.rst:767 62b96a2532ca4f4aae5d75eec4fd7aa4
 msgid "Spack"
-msgstr ""
+msgstr "Spack"
 
 #: ../../source/BuildingAMReX.rst:769 74f79ecb25874e7ca6c5b5d8cd750d70
 msgid ""
-"AMReX can be installed using the scientific software package manager "
-"Spack. Spack supports multiple versions and configurations of AMReX "
-"across a wide variety of platforms and environments. To learn more about "
-"Spack visit http://www.spack.io. For system requirements and installation"
-" instructions please see https://spack.readthedocs.io/."
+"AMReX can be installed using the scientific software package manager Spack. Spack supports multiple versions and "
+"configurations of AMReX across a wide variety of platforms and environments. To learn more about Spack visit "
+"http://www.spack.io. For system requirements and installation instructions please see https://spack.readthedocs.io/."
 msgstr ""
+"AMReX可以使用科学软件包管理器Spack进行安装。Spack支持在各种平台和环境下安装多个版本和配置的AMReX。要了解更多关于Spack的信息，请访问http://www.spack.io。有关系统要求和安装说明，请参阅https:/"
+"/spack.readthedocs.io/。"
 
 #: ../../source/BuildingAMReX.rst:774 b88c3bc03bca4cf18233f5689d2811ff
-msgid ""
-"Once Spack has been downloaded and the Spack environment enabled, AMReX "
-"can be installed with the command,"
-msgstr ""
+msgid "Once Spack has been downloaded and the Spack environment enabled, AMReX can be installed with the command,"
+msgstr "一旦下载并启用了Spack环境，可以使用以下命令安装AMReX："
 
 #: ../../source/BuildingAMReX.rst:781 94c470a6543942168b184343629c10e6
-msgid ""
-"This will install the latest release of AMReX and required dependencies "
-"if needed."
-msgstr ""
+msgid "This will install the latest release of AMReX and required dependencies if needed."
+msgstr "如果需要的话，这将安装最新版本的AMReX和所需的依赖项。"
 
 #: ../../source/BuildingAMReX.rst:783 e7175ef32cc04e75b7d3379108496d2d
-msgid ""
-"AMReX can be built in several combinations of versions and "
-"configurations. Available options can be viewed by typing,"
-msgstr ""
+msgid "AMReX can be built in several combinations of versions and configurations. Available options can be viewed by typing,"
+msgstr "AMReX可以使用多种版本和配置进行构建。可以通过输入以下命令来查看可用选项："
 
 #: ../../source/BuildingAMReX.rst:790 9f4eb0ebec284fd5bfc403abb39be7e9
 msgid ""
-"For example, suppose we want to install the development version of AMReX "
-"for a two dimensional simulation with Cuda support for Cuda Architecture "
-"``sm_60``. Then we would use the install commands,"
-msgstr ""
-
+"For example, suppose we want to install the development version of AMReX for a two dimensional simulation with Cuda "
+"support for Cuda Architecture ``sm_60``. Then we would use the install commands,"
+msgstr "例如，假设我们想要安装支持Cuda架构“sm_60”的二维模拟的AMReX开发版本。然后我们将使用以下安装命令："

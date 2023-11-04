@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,231 +21,213 @@ msgstr ""
 
 #: ../../source/Faq.rst:5 7d03489fe3a44ba085d82d8119fb626c
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "常见问题解答"
 
 #: ../../source/Faq.rst:8 e73fd021bb374b12b3833d5eebd59fd4
 msgid "**Q.** Why am I getting a segmentation fault after my code runs?"
 msgstr ""
+"**问：**为什么我的代码运行后会出现分段错误？\n"
+"\n"
+"**答：**为什么我的代码运行后会出现分段错误？"
 
 #: ../../source/Faq.rst:10 cccca2c059a24f608da4c81458088af4
 msgid ""
-"**A.** Do you have :cpp:`amrex::Initialize(); {` and :cpp:`} "
-"amrex::Finalize();` at the beginning and end of your code? For all AMReX "
-"commands to function properly, including to release resources, they need "
-"to be contained between these two curly braces or in a separate function."
-" In the `Initialize and Finalize`_ section, these commands are discussed "
+"**A.** Do you have :cpp:`amrex::Initialize(); {` and :cpp:`} amrex::Finalize();` at the beginning and end of your code? "
+"For all AMReX commands to function properly, including to release resources, they need to be contained between these "
+"two curly braces or in a separate function. In the `Initialize and Finalize`_ section, these commands are discussed "
 "further detail."
 msgstr ""
+"**A.** 你的代码开头和结尾是否包含 `amrex::Initialize(); {` 和 `} amrex::Finalize();`？为了使所有 AMReX "
+"命令正常运行，包括释放资源，它们需要被包含在这两个花括号之间或者在一个单独的函数中。在 `Initialize and Finalize`_ 部分中，进一步详细讨论了这些命令。"
 
 #: ../../source/Faq.rst:20 8ce1fddd574f4d76a2165bef548259b4
-msgid ""
-"**Q.** I want to use a different compiler with GNU Make to compile AMReX."
-" How do I do this?"
+msgid "**Q.** I want to use a different compiler with GNU Make to compile AMReX. How do I do this?"
 msgstr ""
+"**Q.** 我想使用GNU Make和另一个编译器来编译AMReX。我该如何做？\n"
+"\n"
+"**A.** 我想使用GNU Make和另一个编译器来编译AMReX。我该如何做？"
 
 #: ../../source/Faq.rst:22 7abc8b758fa443b4a0569e679088e739
 msgid ""
-"**A.** In the file ``amrex/Tools/GNUMake/Make.local`` you can specify "
-"your own compile commands by setting the variables ``CXX``, ``CC``, "
-"``FC``, and ``F90``. An example can be found at `Specifying your own "
-"compiler`_ . Additional customizations are described in the file, "
-"``amrex/Tools/GNUMake/Make.local.template``. In the same directory, "
-"``amrex/Tools/GNUMake/README.md`` contains detailed information on "
-"compiler commands."
+"**A.** In the file ``amrex/Tools/GNUMake/Make.local`` you can specify your own compile commands by setting the "
+"variables ``CXX``, ``CC``, ``FC``, and ``F90``. An example can be found at `Specifying your own compiler`_ . Additional "
+"customizations are described in the file, ``amrex/Tools/GNUMake/Make.local.template``. In the same directory, "
+"``amrex/Tools/GNUMake/README.md`` contains detailed information on compiler commands."
 msgstr ""
+"**A.** 在文件 ``amrex/Tools/GNUMake/Make.local`` 中，您可以通过设置变量 ``CXX``、``CC``、``FC`` 和 ``F90`` 来指定自己的编译命令。可以在 `Specifying "
+"your own compiler`_ 中找到一个示例。文件 ``amrex/Tools/GNUMake/Make.local.template`` "
+"中描述了其他自定义选项。在同一目录下，``amrex/Tools/GNUMake/README.md`` 包含有关编译器命令的详细信息。"
 
 #: ../../source/Faq.rst:33 a1043aca6a3d47678cd7ca29d27ef548
 msgid "**Q.** I'm having trouble compiling my code."
-msgstr ""
+msgstr "**Q.** 我在编译我的代码时遇到了问题。"
 
 #: ../../source/Faq.rst:35 db3755d462394ee0b568ee83398c716b
-msgid ""
-"**A.** AMReX developers have found that running the command ``make "
-"clean`` can resolve many compilation issues."
-msgstr ""
+msgid "**A.** AMReX developers have found that running the command ``make clean`` can resolve many compilation issues."
+msgstr "**A.** AMReX的开发人员发现运行命令``make clean``可以解决许多编译问题。"
 
 #: ../../source/Faq.rst:38 0e60212ae94e4ec1b0bd0599c0ff94e9
 msgid ""
-"If you are working in an environment that uses a module system, please "
-"ensure you have the correct modules loaded. Typically, to do this, type "
-"``module list`` at the command prompt."
-msgstr ""
+"If you are working in an environment that uses a module system, please ensure you have the correct modules loaded. "
+"Typically, to do this, type ``module list`` at the command prompt."
+msgstr "如果您在使用模块系统的环境中工作，请确保已加载正确的模块。通常，您可以在命令提示符下输入\"module list\"来执行此操作。"
 
 #: ../../source/Faq.rst:44 4e87040a5c524281bc6dd65b4493430c
-msgid ""
-"**Q.** When I profile my code that uses GPUs with ``TINY_PROFILE=TRUE`` "
-"or ``PROFILE=TRUE`` my timings are inconsistent."
-msgstr ""
+msgid "**Q.** When I profile my code that uses GPUs with ``TINY_PROFILE=TRUE`` or ``PROFILE=TRUE`` my timings are inconsistent."
+msgstr "**Q.** 当我使用``TINY_PROFILE=TRUE``或``PROFILE=TRUE``对使用GPU的代码进行性能分析时，我的计时结果不一致。"
 
 #: ../../source/Faq.rst:47 2475d8a6ace54f32bced2c9f2971886c
 msgid ""
-"**A.** Due to the asynchronous nature of GPU execution, profilers might "
-"only measure the run time on CPU, if there is no explicit "
-"synchronization.  For ``TINY_PROFILE``, one could use :cpp:`ParmParse` "
-"parameter ``tiny_profiler.device_synchronize_around_region=1`` to add "
-"synchronization. Note that this may degrade performance."
+"**A.** Due to the asynchronous nature of GPU execution, profilers might only measure the run time on CPU, if there is "
+"no explicit synchronization.  For ``TINY_PROFILE``, one could use :cpp:`ParmParse` parameter "
+"``tiny_profiler.device_synchronize_around_region=1`` to add synchronization. Note that this may degrade performance."
 msgstr ""
+"**A.** 由于GPU执行的异步性质，如果没有显式的同步，分析器可能只能测量CPU上的运行时间。对于``TINY_PROFILE``，可以使用 :cpp:`ParmParse` 参数 "
+"``tiny_profiler.device_synchronize_around_region=1`` 来添加同步。请注意，这可能会降低性能。"
 
 #: ../../source/Faq.rst:55 faad8d3bcaa145feab2536b5bf0ad136
 msgid "**Q.** How do I know I am getting the right answer?"
-msgstr ""
+msgstr "**Q.** 我怎么知道我得到了正确的答案？"
 
 #: ../../source/Faq.rst:57 1aa691536d88480fb84d19266485a2f9
-msgid ""
-"**A.** AMReX provides support for verifying output with several tools. To"
-" briefly mention a few:"
-msgstr ""
+msgid "**A.** AMReX provides support for verifying output with several tools. To briefly mention a few:"
+msgstr "**A.** AMReX提供了几种工具来验证输出。简要提及几个："
 
 #: ../../source/Faq.rst:59 c4c39609e4684f47acec5edfae711a92
-msgid ""
-"The :cpp:`print_state` function can be used to output the data of a "
-"single cell."
-msgstr ""
+msgid "The :cpp:`print_state` function can be used to output the data of a single cell."
+msgstr "可以使用 `print_state` 函数来输出单个单元格的数据。"
 
 #: ../../source/Faq.rst:60 1eed16b05adb4c15af80c98ef9ec2e70
-msgid ""
-":cpp:`VisMF::Write` can be used to write MultiFab data to disk that can "
-"be viewed with `Amrvis`_."
-msgstr ""
+msgid ":cpp:`VisMF::Write` can be used to write MultiFab data to disk that can be viewed with `Amrvis`_."
+msgstr "可以使用`VisMF::Write`将MultiFab数据写入磁盘，然后可以使用`Amrvis`来查看。"
 
 #: ../../source/Faq.rst:61 df24f4530a3644d2820146a61375966e
 msgid ""
-":cpp:`amrex::Print()` and :cpp:`amrex::AllPrint()` are useful for "
-"printing output when using multiple processes or threads as it prevents "
-"messages from getting mixed up."
-msgstr ""
+":cpp:`amrex::Print()` and :cpp:`amrex::AllPrint()` are useful for printing output when using multiple processes or "
+"threads as it prevents messages from getting mixed up."
+msgstr ":cpp:`amrex::Print()`和:cpp:`amrex::AllPrint()`在使用多个进程或线程时非常有用，它们可以防止消息混乱而导致输出错误。"
 
 #: ../../source/Faq.rst:64 603fa682159d46ebb0aae50403c04226
-msgid ""
-"`fcompare`_ compares two plotfiles and reports absolute and relative "
-"error."
-msgstr ""
+msgid "`fcompare`_ compares two plotfiles and reports absolute and relative error."
+msgstr "`fcompare`_ 比较两个 plot 文件并报告绝对误差和相对误差。"
 
 #: ../../source/Faq.rst:66 759927bc6b224e0eb14a3c1adc9316b6
-msgid ""
-"Additional tools and discussion on this topic is contained in the section"
-" `Debugging`_."
-msgstr ""
+msgid "Additional tools and discussion on this topic is contained in the section `Debugging`_."
+msgstr "在本主题中，附加工具和讨论内容包含在“调试(Debugging)”部分中。"
 
 #: ../../source/Faq.rst:77 a6855e0fa0f442e2977414643e421c18
-msgid ""
-"**Q.** What's the difference between :cpp:`Copy` and :cpp:`ParallelCopy` "
-"for :cpp:`MultiFab` data?"
-msgstr ""
+msgid "**Q.** What's the difference between :cpp:`Copy` and :cpp:`ParallelCopy` for :cpp:`MultiFab` data?"
+msgstr "**Q.** `Copy` 和 `ParallelCopy` 在 `MultiFab` 数据中有什么区别？"
 
 #: ../../source/Faq.rst:80 2dd5ab701e58468383783d22e3678a4f
 msgid ""
-"**A.** :cpp:`MultiFab::Copy` is for two :cpp:`MultiFab`\\ s built with "
-"the same :cpp:`BoxArray` and :cpp:`DistributionMapping`, whereas "
-":cpp:`ParallelCopy` is for parallel communication of two "
-":cpp:`MultiFab`\\ s with different :cpp:`BoxArray` and/or "
-":cpp:`DistributionMapping`."
+"**A.** :cpp:`MultiFab::Copy` is for two :cpp:`MultiFab`\\ s built with the same :cpp:`BoxArray` and "
+":cpp:`DistributionMapping`, whereas :cpp:`ParallelCopy` is for parallel communication of two :cpp:`MultiFab`\\ s with "
+"different :cpp:`BoxArray` and/or :cpp:`DistributionMapping`."
 msgstr ""
+"**A.**: "
+"`MultiFab::Copy`用于两个具有相同`BoxArray`和`DistributionMapping`的`MultiFab`，而`ParallelCopy`用于并行通信两个具有不同`BoxArray`和/或`"
+"DistributionMapping`的`MultiFab`。"
 
 #: ../../source/Faq.rst:87 099a411b691e4d288c4ced170ccf4822
 msgid "**Q.** How do I fill ghost cells?"
-msgstr ""
+msgstr "**Q.** 如何填充幽灵单元格？"
 
 #: ../../source/Faq.rst:89 12e7022d37ad44fcaebd2f235b02f1f2
 msgid "**A.** See `Ghost Cells`_ in the AMReX Source Documentation."
-msgstr ""
+msgstr "**A.** 请参阅 AMReX 源代码文档中的 \"Ghost Cells\"。"
 
 #: ../../source/Faq.rst:95 f62bf81d60c44a49a62c12fc3de494b1
-msgid ""
-"**Q.** What's the difference between ``AmrCore`` and ``AmrLevel``? How do"
-" I decide which to use?"
+msgid "**Q.** What's the difference between ``AmrCore`` and ``AmrLevel``? How do I decide which to use?"
 msgstr ""
+"**Q.** ``AmrCore``和``AmrLevel``有什么区别？我该如何决定使用哪一个？\n"
+"\n"
+"**A.** ``AmrCore`` represents the core functionality of the system, while ``AmrLevel`` represents the different levels "
+"of functionality available. The choice between the two depends on your specific requirements and the level of "
+"functionality you need."
 
 #: ../../source/Faq.rst:98 adb583abe9c3425a9bf537dc52e68b89
 msgid ""
-"**A.** The :cpp:`AmrLevel` class is an abstract base class that holds "
-"data for a single AMR level.  A vector of :cpp:`AmrLevel` is stored in "
-"the :cpp:`Amr` class, which is derived from :cpp:`AmrCore`.  An "
-"application code can derive from :cpp:`AmrLevel` and override functions."
-"  :cpp:`AmrCore` contains the meta-data for the AMR hierarchy, but it "
-"does not contain any floating point mesh data.  Instead of using "
-":cpp:`Amr`/:cpp:`AmrLevel`, an application can also derive from "
-":cpp:`AmrCore`.  If you want flexibility, you might choose the "
-":cpp:`AmrCore` approach, otherwise the :cpp:`AmrLevel` approach might be "
-"easier because it already has a lot of built-in capabilities that are "
-"common for AMR applications."
+"**A.** The :cpp:`AmrLevel` class is an abstract base class that holds data for a single AMR level.  A vector of "
+":cpp:`AmrLevel` is stored in the :cpp:`Amr` class, which is derived from :cpp:`AmrCore`.  An application code can "
+"derive from :cpp:`AmrLevel` and override functions.  :cpp:`AmrCore` contains the meta-data for the AMR hierarchy, but "
+"it does not contain any floating point mesh data.  Instead of using :cpp:`Amr`/:cpp:`AmrLevel`, an application can also "
+"derive from :cpp:`AmrCore`.  If you want flexibility, you might choose the :cpp:`AmrCore` approach, otherwise the "
+":cpp:`AmrLevel` approach might be easier because it already has a lot of built-in capabilities that are common for AMR "
+"applications."
 msgstr ""
+"**A.** "
+"`AmrLevel`类是一个抽象基类，用于保存单个自适应网格细化（AMR）层的数据。`Amr`类中存储了一个`AmrLevel`的向量，而`Amr`类是从`AmrCore`派生而来的。应用程序可以从`AmrLevel`派生并重写函数。`"
+"AmrCore`包含了AMR层次结构的元数据，但不包含任何浮点网格数据。除了使用`Amr`/`AmrLevel`之外，应用程序还可以从`AmrCore`派生。如果您需要灵活性，您可以选择`AmrCore`的方法，否则`AmrLevel`"
+"的方法可能更容易，因为它已经具备了许多对于AMR应用程序来说常见的内置功能。"
 
 #: ../../source/Faq.rst:111 2a945b1888b94f2c8baed95e551afa4c
 msgid ""
-"**Q.** For GPU usage, how can I perform explicit host to device and "
-"device to host copies without relying on managed memory?"
-msgstr ""
+"**Q.** For GPU usage, how can I perform explicit host to device and device to host copies without relying on managed "
+"memory?"
+msgstr "**Q.** 如何在使用GPU时执行显式的主机到设备和设备到主机的拷贝，而不依赖于托管内存？"
 
 #: ../../source/Faq.rst:114 4afe56f7ee264749a93bbc447695b5b7
-msgid ""
-"**A.** Use ``The_Pinned_Arena()`` (See `Memory Allocation`_ in the AMReX "
-"Source Documentation.) and"
-msgstr ""
+msgid "**A.** Use ``The_Pinned_Arena()`` (See `Memory Allocation`_ in the AMReX Source Documentation.) and"
+msgstr "**A.** 使用``The_Pinned_Arena()``（请参阅AMReX源代码文档中的`Memory Allocation`_）和"
 
 #: ../../source/Faq.rst:128 224f253033894f2b9a3ee354e837c591
-msgid ""
-"**Q.** How do I generate random numbers with AMReX? Can I set the seed? "
-"Are they thread safe with MPI and OpenMP?"
-msgstr ""
+msgid "**Q.** How do I generate random numbers with AMReX? Can I set the seed? Are they thread safe with MPI and OpenMP?"
+msgstr "**Q.** 如何在 AMReX 中生成随机数？我可以设置种子吗？在使用 MPI 和 OpenMP 时，它们是线程安全的吗？"
 
 #: ../../source/Faq.rst:131 f351f299766c41bab9ba46667456f8b4
 msgid ""
-"**A.** (Thread safe) Yes, :cpp:`amrex::Random()` is thread safe. When "
-"OpenMP is on, each thread will have its own dedicated Random Number "
-"Generator that is totally independent of the others."
-msgstr ""
+"**A.** (Thread safe) Yes, :cpp:`amrex::Random()` is thread safe. When OpenMP is on, each thread will have its own "
+"dedicated Random Number Generator that is totally independent of the others."
+msgstr "**A.** （线程安全）是的，:cpp:`amrex::Random()` 是线程安全的。当 OpenMP 打开时，每个线程都会拥有自己独立的随机数生成器，彼此之间完全独立。"
 
 #: ../../source/Faq.rst:137 512e8e0ccad245d690e228f0bc508298
 msgid ""
-"**Q.** Is Dirichlet boundary condition data loaded into cell-centered, or"
-" face-centered containers? How is it used in AMReX-based codes like MLMG "
-"and the advection routines in AMReX-Hydro?"
+"**Q.** Is Dirichlet boundary condition data loaded into cell-centered, or face-centered containers? How is it used in "
+"AMReX-based codes like MLMG and the advection routines in AMReX-Hydro?"
 msgstr ""
+"**Q.** Dirichlet边界条件数据是加载到以单元为中心还是以面为中心的容器中？在基于AMReX的代码（如MLMG和AMReX-Hydro中的平流例程）中如何使用它？\n"
+"\n"
+"**A.** Dirichlet边界条件数据在AMReX基于的代码中，如MLMG和AMReX-Hydro中的平流例程中，是加载到以面为中心的容器中。具体使用方式可能因代码而异，但通常用于指定边界处的数值或梯度。"
 
 #: ../../source/Faq.rst:141 ef54cd70e3684fd9a1490b061cd02431
 msgid ""
-"**A.** In the cell-centered MLMG solver, the Dirichlet boundary data are "
-"stored in containers that have the information of the location of the "
-"data."
-msgstr ""
+"**A.** In the cell-centered MLMG solver, the Dirichlet boundary data are stored in containers that have the information "
+"of the location of the data."
+msgstr "**A.** 在以单元为中心的MLMG求解器中，迪里切特边界数据存储在容器中，该容器包含数据的位置信息。"
 
 #: ../../source/Faq.rst:146 94fecbbd1279411b9168106e92dac41f
-msgid ""
-"**Q.** How does coarse-grained OpenMP parallelism work in AMReX? How is "
-"it different from the fine-grained approach?"
-msgstr ""
+msgid "**Q.** How does coarse-grained OpenMP parallelism work in AMReX? How is it different from the fine-grained approach?"
+msgstr "**A.** AMReX中的粗粒度OpenMP并行性是如何工作的？它与细粒度方法有何不同？"
 
 #: ../../source/Faq.rst:149 01f488695cfe4335864f94e5ead2a66a
-msgid ""
-"**A.** Our OpenMP strategy is explained in this paper, "
-"https://arxiv.org/abs/1604.03570."
-msgstr ""
+msgid "**A.** Our OpenMP strategy is explained in this paper, https://arxiv.org/abs/1604.03570."
+msgstr "**A.** 我们的 OpenMP 策略在这篇论文中有详细解释，链接为：https://arxiv.org/abs/1604.03570。"
 
 #: ../../source/Faq.rst:153 f121d643e4324645ba37596e6ce028a0
 msgid ""
-"**Q.** How to avoid running into :cpp:`Formal parameter space overflowed`"
-" CUDA error while building complex EB geometries using AMReX implicit "
-"functions and CSG functionalities ?"
+"**Q.** How to avoid running into :cpp:`Formal parameter space overflowed` CUDA error while building complex EB "
+"geometries using AMReX implicit functions and CSG functionalities ?"
 msgstr ""
+"**Q.** 如何在使用 AMReX 隐式函数和 CSG 功能构建复杂的 EB 几何体时，避免出现 `Formal parameter space overflowed` CUDA 错误？\n"
+"\n"
 
 #: ../../source/Faq.rst:156 fac5170feb424c37a8d3931a25ca4ab3
 msgid ""
-"**A.** AMReX enables logical operations and transformations to assemble "
-"basic shapes `Implicit Functions`_ into complex geometries. Each "
-"operation results in a more complex type which can eventually overflow "
-"the parameter space (4096 bytes on CUDA 11.4 for instance). To circumvent"
-" the problem, explicitly copy the object to the device and pass a device "
+"**A.** AMReX enables logical operations and transformations to assemble basic shapes `Implicit Functions`_ into complex "
+"geometries. Each operation results in a more complex type which can eventually overflow the parameter space (4096 bytes "
+"on CUDA 11.4 for instance). To circumvent the problem, explicitly copy the object to the device and pass a device "
 "pointer function object `DevicePtrIF` into the `EB2` function using:"
 msgstr ""
+"**A.** AMReX使得逻辑操作和转换能够将基本形状“隐式函数”_组合成复杂的几何体。每个操作都会产生一个更复杂的类型，最终可能会超出参数空间（例如，在CUDA "
+"11.4上为4096字节）。为了避免这个问题，需要显式地将对象复制到设备上，并使用设备指针函数对象`DevicePtrIF`将其传递给`EB2`函数。"
 
 #: ../../source/Faq.rst:176 87def4ff26254dbf86537c16938e343b
 msgid "More Questions"
-msgstr ""
+msgstr "更多问题"
 
 #: ../../source/Faq.rst:178 659f8917f89b40db8723e60d2b25397a
 msgid ""
-"If your question was not addressed here, you are encouraged to search and"
-" ask for help on the `AMReX GitHub Discussions`_ page."
-msgstr ""
-
+"If your question was not addressed here, you are encouraged to search and ask for help on the `AMReX GitHub "
+"Discussions`_ page."
+msgstr "如果您的问题在这里没有得到解答，我们鼓励您在 `AMReX GitHub Discussions`_ 页面上搜索并寻求帮助。"

@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,21 +21,17 @@ msgstr ""
 
 #: ../../source/Particle_Chapter.rst:4 d52e2f2466944ba0899e399a9c4a0438
 msgid "Particles"
-msgstr ""
+msgstr "粒子"
 
 #: ../../source/Particle_Chapter.rst:6 2e7869f11c184748b0c0fccbd19f6f37
 msgid ""
-"In addition to the tools for working with mesh data described in previous"
-" chapters, AMReX also provides data structures and iterators for "
-"performing data-parallel particle simulations. Our approach is "
-"particularly suited to particles that interact with data defined on a "
-"(possibly adaptive) block-structured hierarchy of meshes. Example "
-"applications include Particle-in-Cell (PIC) simulations, Lagrangian "
-"tracers, or particles that exert drag forces onto a fluid, such as in "
-"multi-phase flow calculations. The overall goals of AMReX's particle "
-"tools are to allow users flexibility in specifying how the particle data "
-"is laid out in memory and to handle the parallel communication of "
-"particle data. In the following sections, we give an overview of AMReX's "
-"particle classes and how to use them."
+"In addition to the tools for working with mesh data described in previous chapters, AMReX also provides data structures "
+"and iterators for performing data-parallel particle simulations. Our approach is particularly suited to particles that "
+"interact with data defined on a (possibly adaptive) block-structured hierarchy of meshes. Example applications include "
+"Particle-in-Cell (PIC) simulations, Lagrangian tracers, or particles that exert drag forces onto a fluid, such as in "
+"multi-phase flow calculations. The overall goals of AMReX's particle tools are to allow users flexibility in specifying "
+"how the particle data is laid out in memory and to handle the parallel communication of particle data. In the following "
+"sections, we give an overview of AMReX's particle classes and how to use them."
 msgstr ""
-
+"除了前几章中描述的用于处理网格数据的工具之外，AMReX还提供了用于执行数据并行粒子模拟的数据结构和迭代器。我们的方法特别适用于与在（可能是自适应的）块结构网格层次上定义的数据相互作用的粒子。示例应用包括粒子-"
+"电磁场（PIC）模拟、拉格朗日示踪器或对流体施加阻力力的粒子，例如在多相流计算中。AMReX粒子工具的总体目标是允许用户灵活地指定粒子数据在内存中的布局，并处理粒子数据的并行通信。在接下来的几节中，我们将概述AMReX的粒子类及其使用方法。"

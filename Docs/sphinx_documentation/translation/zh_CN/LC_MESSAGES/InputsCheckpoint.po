@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,68 +21,65 @@ msgstr ""
 
 #: ../../source/InputsCheckpoint.rst:4 5d8cbe6434a14257a445187e882fdd28
 msgid "Checkpoint/Restart"
-msgstr ""
+msgstr "检查点/重启"
 
 #: ../../source/InputsCheckpoint.rst:6 78264b43414547e2bd8487955d98de50
-msgid ""
-"The following inputs must be preceded by \"amr\" and control "
-"checkpoint/restart."
-msgstr ""
+msgid "The following inputs must be preceded by \"amr\" and control checkpoint/restart."
+msgstr "以下输入必须以\"amr\"开头，并控制检查点/重启。"
 
 #: ../../source/InputsCheckpoint.rst:9 e19288353a9146b0bfa6577d0602ecf2
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/InputsCheckpoint.rst:9 dc63c20fab094e87bee7ba670faf65a5
 msgid "Type"
-msgstr ""
+msgstr "输入"
 
 #: ../../source/InputsCheckpoint.rst:9 75bdc71722ed4c8e9e33b11ae6c0cb9a
 msgid "Default"
-msgstr ""
+msgstr "默认"
 
 #: ../../source/InputsCheckpoint.rst:11 e0ce1670dde142269a30c95e57ea95ea
 msgid "restart"
-msgstr ""
+msgstr "重新开始"
 
 #: ../../source/InputsCheckpoint.rst:11 e213b460060d49009061e3d2aacddac6
 msgid "If present, then the name of file to restart from"
-msgstr ""
+msgstr "如果有的话，请提供要重新开始的文件名称。"
 
 #: ../../source/InputsCheckpoint.rst:11 ../../source/InputsCheckpoint.rst:16
 #: 984c6aa096914cbdb235fb2ff1b2e62f f74a11aacb254b10b849273c7517413b
 msgid "String"
-msgstr ""
+msgstr "字符串"
 
 #: ../../source/InputsCheckpoint.rst:11 27f384dce56e4405b0c928d8f77667b7
 msgid "None"
-msgstr ""
+msgstr "Understood. Please let me know if you have any messages that need translation."
 
 #: ../../source/InputsCheckpoint.rst:13 304ea136cb7047fbab01aeb5db70f229
 msgid "check_int"
-msgstr ""
+msgstr "检查整数"
 
 #: ../../source/InputsCheckpoint.rst:13 aa725d2da3084c83a1f7151c0bb1ffc8
 msgid "Frequency of checkpoint output; if -1 then no checkpoints will be written"
-msgstr ""
+msgstr "检查点输出的频率；如果为-1，则不会写入任何检查点。"
 
 #: ../../source/InputsCheckpoint.rst:13 8f92780ee2754113b83a1c9673ea804d
 msgid "Int"
-msgstr ""
+msgstr "Int"
 
 #: ../../source/InputsCheckpoint.rst:13 77b7859000d84a969dca58e26d8ad75d
 msgid "-1"
-msgstr ""
+msgstr "-1"
 
 #: ../../source/InputsCheckpoint.rst:16 030aadb82f9943a0a98494fd37d693c8
 msgid "check_file"
-msgstr ""
+msgstr "检查文件"
 
 #: ../../source/InputsCheckpoint.rst:16 cca6b882c3d5467d9a1d560785c630c2
 msgid "Prefix to use for checkpoint output"
-msgstr ""
+msgstr "用于检查点输出的前缀"
 
 #: ../../source/InputsCheckpoint.rst:16 e9fcd34de71649a6a993474c460f3e59
 msgid "chk"
-msgstr ""
-
+msgstr "检查"

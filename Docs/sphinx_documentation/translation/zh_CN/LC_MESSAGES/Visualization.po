@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,1042 +21,981 @@ msgstr ""
 
 #: ../../source/Visualization.rst:7 1fcaf46d9bcd4d96a1d5778a266eafc6
 msgid "Amrvis"
-msgstr ""
+msgstr "Amrvis"
 
 #: ../../source/Visualization.rst:9 8b0189a59dd24f8ea9951963bca93bd1
 msgid ""
-"Our favorite visualization tool is Amrvis. We heartily encourage you to "
-"build the ``amrvis1d``, ``amrvis2d``, and ``amrvis3d`` executables, and "
-"use them to visualize your data. A useful feature is ``View/Dataset``, "
-"which allows you to view data in a nested spreadsheet that reflects the "
-"AMR hierarchy -- this can be handy for debugging. Other display options "
-"include: the ability to select the number of levels of data to show, "
-"whether to display grid boxes, and to specify the color palette. Below "
-"are instructions and tips for using Amrvis. Additional information is "
-"contained in the document ``Amrvis/Docs/Amrvis.tex`` (which can built "
-"into a ``pdf`` using ``pdflatex``)."
+"Our favorite visualization tool is Amrvis. We heartily encourage you to build the ``amrvis1d``, ``amrvis2d``, and "
+"``amrvis3d`` executables, and use them to visualize your data. A useful feature is ``View/Dataset``, which allows you "
+"to view data in a nested spreadsheet that reflects the AMR hierarchy -- this can be handy for debugging. Other display "
+"options include: the ability to select the number of levels of data to show, whether to display grid boxes, and to "
+"specify the color palette. Below are instructions and tips for using Amrvis. Additional information is contained in the "
+"document ``Amrvis/Docs/Amrvis.tex`` (which can built into a ``pdf`` using ``pdflatex``)."
 msgstr ""
+"我们最喜欢的可视化工具是Amrvis。我们衷心鼓励您构建``amrvis1d``、``amrvis2d``和``amrvis3d``可执行文件，并使用它们来可视化您的数据。一个有用的功能是``View/Dataset``"
+"，它允许您在反映AMR层次结构的嵌套电子表格中查看数据，这对于调试非常方便。其他显示选项包括：选择要显示的数据级别数量、是否显示网格框和指定颜色调色板。以下是使用Amrvis的说明和提示。更多信息请参阅文档``Amrvis/Docs/"
+"Amrvis.tex``（可以使用``pdflatex``构建为``pdf``）。"
 
 #: ../../source/Visualization.rst:20 db7d783132c74b0483e84e8e440f8e1a
 msgid "**Download and Build**:"
-msgstr ""
+msgstr "**下载和构建**:"
 
 #: ../../source/Visualization.rst:22 9b337414322d460e80e116e644fa5ae2
-msgid ""
-"Amrvis is available for download from the ``AMReX-Codes/Amrvis`` GitHub "
-"repository. To download use,"
-msgstr ""
+msgid "Amrvis is available for download from the ``AMReX-Codes/Amrvis`` GitHub repository. To download use,"
+msgstr "Amrvis可以从``AMReX-Codes/Amrvis`` GitHub存储库下载。要进行下载使用，请使用以下步骤："
 
 #: ../../source/Visualization.rst:29 98eacd8754d544bf972c6ae0afc2e0a7
-msgid ""
-"To build, ``cd`` into ``Amrvis/``, and edit ``GNUmakefile`` by setting "
-"the variable ``COMP`` to your compiler suite."
-msgstr ""
+msgid "To build, ``cd`` into ``Amrvis/``, and edit ``GNUmakefile`` by setting the variable ``COMP`` to your compiler suite."
+msgstr "要构建，请进入“Amrvis/”目录，并通过将变量“COMP”设置为您的编译器套件来编辑“GNUmakefile”文件。"
 
 #: ../../source/Visualization.rst:32 a8292b32b0cc48e9b827357262371365
 msgid ""
-"Type ``make DIM=1``, ``make DIM=2``, or ``make DIM=3`` to build. The "
-"result is an executable that looks like ``amrvis2d.<ver>.ex``."
-msgstr ""
+"Type ``make DIM=1``, ``make DIM=2``, or ``make DIM=3`` to build. The result is an executable that looks like "
+"``amrvis2d.<ver>.ex``."
+msgstr "输入``make DIM=1``，``make DIM=2``或``make DIM=3``来进行构建。结果将是一个名为``amrvis2d.<ver>.ex``的可执行文件。"
 
 #: ../../source/Visualization.rst:37 5983af712ef64528b11e1c1ada8701f3
 msgid "*3D Data Visualization with Volpack*"
-msgstr ""
+msgstr "使用Volpack进行3D数据可视化。"
 
 #: ../../source/Visualization.rst:39 f9911be493dd4db5a19064e2c039c4ef
 msgid ""
-"If you want to build Amrvis with ``DIM=3`` for display of 3-dimensional "
-"data, you must first download and build ``volpack``. This can be done by "
-"cloning the repository or via package manager. To install by cloning the "
-"repository:"
-msgstr ""
+"If you want to build Amrvis with ``DIM=3`` for display of 3-dimensional data, you must first download and build "
+"``volpack``. This can be done by cloning the repository or via package manager. To install by cloning the repository:"
+msgstr "如果你想使用“DIM=3”构建Amrvis来显示三维数据，你首先需要下载并构建“volpack”。你可以通过克隆存储库或使用软件包管理器来完成这个步骤。如果选择通过克隆存储库来安装："
 
 #: ../../source/Visualization.rst:47 47afdefdd87641ae8ad8dc3b73c44252
 msgid "After downloading, ``cd`` into ``volpack/`` and type ``make``."
-msgstr ""
+msgstr "下载完成后，进入 \"volpack/\" 目录，然后输入 \"make\" 命令。"
 
 #: ../../source/Visualization.rst:49 cd378aa5538e4b79a643511869006403
 msgid ""
-"To install via package manager, it is necessary to install the package, "
-"``libvolpack1-dev``. This package is available for Debian Linux and can "
-"be installed with the command:"
-msgstr ""
+"To install via package manager, it is necessary to install the package, ``libvolpack1-dev``. This package is available "
+"for Debian Linux and can be installed with the command:"
+msgstr "要通过软件包管理器安装，需要安装``libvolpack1-dev``软件包。该软件包适用于Debian Linux，并可使用以下命令进行安装："
 
 #: ../../source/Visualization.rst:61 6b50e532084a473bbf44ea059527ac01
 msgid ""
-"Amrvis requires the OSF/Motif libraries and headers. If you don't have "
-"these you will need to install the development version of motif through "
-"your package manager.  ``lesstif`` gives some functionality and will "
-"allow you to build the Amrvis executable, but Amrvis may exhibit subtle "
-"anomalies."
-msgstr ""
+"Amrvis requires the OSF/Motif libraries and headers. If you don't have these you will need to install the development "
+"version of motif through your package manager.  ``lesstif`` gives some functionality and will allow you to build the "
+"Amrvis executable, but Amrvis may exhibit subtle anomalies."
+msgstr "Amrvis需要OSF/Motif库和头文件。如果您没有这些文件，您需要通过软件包管理器安装Motif的开发版本。``lesstif``提供了一些功能，并且可以让您构建Amrvis可执行文件，但Amrvis可能会出现一些细微的异常。"
 
 #: ../../source/Visualization.rst:66 3b845d08d15c47d0a1ec4d3a35635f90
 msgid ""
-"On most Linux distributions, the motif library is provided by the "
-"``openmotif`` package, and its header files (like ``Xm.h``) are provided "
-"by ``openmotif-devel``. If those packages are not installed, then use the"
-" OS-specific package management tool to install them."
-msgstr ""
+"On most Linux distributions, the motif library is provided by the ``openmotif`` package, and its header files (like "
+"``Xm.h``) are provided by ``openmotif-devel``. If those packages are not installed, then use the OS-specific package "
+"management tool to install them."
+msgstr "在大多数Linux发行版中，Motif库由``openmotif``软件包提供，其头文件（如``Xm.h``）由``openmotif-devel``提供。如果这些软件包未安装，则使用特定于操作系统的软件包管理工具来安装它们。"
 
 #: ../../source/Visualization.rst:75 10f585a9ef9f426e9a075588644f3cc9
 msgid ""
-"These instructions assume that the install directories for Amrvis and "
-"volpack share the same parent directory. To install volpack in a "
-"different location specify the location of volpack in Amrvis's "
-"``GNUmakefile`` by changing the variable ``VOLPACKDIR`` to the desired "
-"location."
+"These instructions assume that the install directories for Amrvis and volpack share the same parent directory. To "
+"install volpack in a different location specify the location of volpack in Amrvis's ``GNUmakefile`` by changing the "
+"variable ``VOLPACKDIR`` to the desired location."
 msgstr ""
+"这些说明假设 Amrvis 和 volpack 的安装目录共享相同的父目录。如果要将 volpack 安装在不同的位置，请通过修改 Amrvis 的 \"GNUmakefile\" 文件中的变量 \"VOLPACKDIR\" 来指定 "
+"volpack 的位置。"
 
 #: ../../source/Visualization.rst:83 53d54eb5758943adbb25f506e5eb222c
-msgid ""
-"After building you may want to create an alias for convenience. To do "
-"this type,"
-msgstr ""
+msgid "After building you may want to create an alias for convenience. To do this type,"
+msgstr "在构建完成后，您可能希望为了方便起见创建一个别名。要执行此操作，请输入以下命令："
 
 #: ../../source/Visualization.rst:92 4ea7d9480dc4494f88ba5f1c5b23ab15
 msgid "**Configure**:"
-msgstr ""
+msgstr "**配置**："
 
 #: ../../source/Visualization.rst:94 946706882f3649e48b505acec81b8b10
 msgid ""
-"The settings for Amrvis are saved in the configuration file "
-"``.amrvis.defaults`` in your home directory. A default version of this "
-"file is available in the parent directory of the Amrvis repo. Run the "
-"command ``cp Amrvis/amrvis.defaults ~/.amrvis.defaults`` to copy it to "
-"your home directory. A color palette is also available in the Amrvis "
-"directory as a file named ``Palette``. To configure Amrvis to use this "
-"palette you can open the ``.amrvis.defaults`` file in your home directory"
-" and edit the line containing ``palette`` to point to the location of "
+"The settings for Amrvis are saved in the configuration file ``.amrvis.defaults`` in your home directory. A default "
+"version of this file is available in the parent directory of the Amrvis repo. Run the command ``cp "
+"Amrvis/amrvis.defaults ~/.amrvis.defaults`` to copy it to your home directory. A color palette is also available in the "
+"Amrvis directory as a file named ``Palette``. To configure Amrvis to use this palette you can open the "
+"``.amrvis.defaults`` file in your home directory and edit the line containing ``palette`` to point to the location of "
 "this file. For example,"
 msgstr ""
+"Amrvis的设置保存在您的主目录下的配置文件``.amrvis.defaults``中。Amrvis存储库的父目录中提供了一个默认版本的此文件。运行命令``cp Amrvis/amrvis.defaults "
+"~/.amrvis.defaults``将其复制到您的主目录中。Amrvis目录中还有一个名为``Palette``的文件，作为一种颜色调色板。要配置Amrvis使用此调色板，您可以打开主目录中的``.amrvis.defaults``"
+"文件，并编辑包含``palette``的行，将其指向此文件的位置。例如，"
 
 #: ../../source/Visualization.rst:107 c62f215f7baf4eca9e80bdbeefaa1342
 msgid ""
-"Other lines in ``.amrvis.defaults`` control options such as the initial "
-"field to display, the number format, window size, etc. If there are "
-"multiple instances of the same option, the last option takes precedence."
-msgstr ""
+"Other lines in ``.amrvis.defaults`` control options such as the initial field to display, the number format, window "
+"size, etc. If there are multiple instances of the same option, the last option takes precedence."
+msgstr "``.amrvis.defaults`` 文件中的其他行控制选项，例如初始显示的字段、数字格式、窗口大小等。如果同一选项有多个实例，则以最后一个选项为准。"
 
 #: ../../source/Visualization.rst:112 78c83398a99c405e8e1dd124dfa05112
 msgid "**Run**:"
-msgstr ""
+msgstr "**运行**"
 
 #: ../../source/Visualization.rst:114 b1f775c78e1747e9a681e51ec6060f45
 msgid ""
-"By default, the plotfiles are directories that have the form pltXXXXX, "
-"where XXXXX is a number corresponding to the timestep that the file was "
-"created. Use ``amrvis2d <filename>`` or ``amrvis3d <filename>`` to see a "
-"single plotfile, or for 2D data sets, ``amrvis2d -a plt*``, which will "
-"animate the sequence of plotfiles. FArrayBoxes and MultiFabs can also be "
-"viewed with the ``-fab`` and ``-mf`` options. When opening MultiFabs, use"
-" the name of the MultiFab's header file ``amrvis2d -mf MyMultiFab_H``."
+"By default, the plotfiles are directories that have the form pltXXXXX, where XXXXX is a number corresponding to the "
+"timestep that the file was created. Use ``amrvis2d <filename>`` or ``amrvis3d <filename>`` to see a single plotfile, or "
+"for 2D data sets, ``amrvis2d -a plt*``, which will animate the sequence of plotfiles. FArrayBoxes and MultiFabs can "
+"also be viewed with the ``-fab`` and ``-mf`` options. When opening MultiFabs, use the name of the MultiFab's header "
+"file ``amrvis2d -mf MyMultiFab_H``."
 msgstr ""
+"默认情况下，plotfiles是以pltXXXXX的形式命名的目录，其中XXXXX是文件创建时的时间步数。使用``amrvis2d <filename>``或``amrvis3d "
+"<filename>``来查看单个plotfile，对于2D数据集，使用``amrvis2d -a "
+"plt*``来播放一系列的plotfiles。FArrayBoxes和MultiFabs也可以通过``-fab``和``-mf``选项进行查看。打开MultiFabs时，请使用MultiFab的头文件名称``amrvis2d -mf "
+"MyMultiFab_H``。"
 
 #: ../../source/Visualization.rst:122 a8558325006e4be8a86c75b9430f9a57
 msgid ""
-"You can use the \"Variable\" menu to change the variable. You can left-"
-"click drag a box around a region and click \"View\" :math:`\\rightarrow` "
-"\"Dataset\" in order to look at the actual numerical values (see "
-":numref:`Fig:Amrvis`).  Or you can simply left click on a point to obtain"
-" the numerical value.  You can also export the pictures in several "
-"different formats under ``File/Export``.  In 2D you can right or center "
-"click to get line-out plots.  In 3D you can right or center click to "
-"change the planes, and hold shift+(right or center) click to get line-out"
-" plots."
+"You can use the \"Variable\" menu to change the variable. You can left-click drag a box around a region and click "
+"\"View\" :math:`\\rightarrow` \"Dataset\" in order to look at the actual numerical values (see :numref:`Fig:Amrvis`).  "
+"Or you can simply left click on a point to obtain the numerical value.  You can also export the pictures in several "
+"different formats under ``File/Export``.  In 2D you can right or center click to get line-out plots.  In 3D you can "
+"right or center click to change the planes, and hold shift+(right or center) click to get line-out plots."
 msgstr ""
+"你可以使用“变量”菜单来更改变量。你可以左键拖动一个框选一个区域，然后点击“查看” :math:`\\rightarrow` “数据集”来查看实际的数值（参见 "
+":numref:`Fig:Amrvis`）。或者你可以直接左键点击一个点来获取数值。你还可以在“文件/"
+"导出”下以多种不同的格式导出图片。在二维中，你可以右键或中键点击以获取线外图。在三维中，你可以右键或中键点击以更改平面，并按住Shift键+(右键或中键)点击以获取线外图。"
 
 #: ../../source/Visualization.rst:134 8932d62a4386440f978e93e3469fed93
 msgid ""
-"We have created a number of routines to convert AMReX plotfile data to "
-"other formats (such as Matlab), but in order to properly interpret the "
-"hierarchical AMR data, each tends to require its own idiosyncrasies. If "
-"you would like to display the data in another format, please leave a "
-"message on `AMReX's GitHub Discussions page`_."
-msgstr ""
+"We have created a number of routines to convert AMReX plotfile data to other formats (such as Matlab), but in order to "
+"properly interpret the hierarchical AMR data, each tends to require its own idiosyncrasies. If you would like to "
+"display the data in another format, please leave a message on `AMReX's GitHub Discussions page`_."
+msgstr "我们已经创建了一些例程，用于将AMReX plotfile数据转换为其他格式（如Matlab），但为了正确解释分层AMR数据，每个例程往往需要自己的特殊处理方式。如果您希望以其他格式显示数据，请在AMReX的GitHub讨论页面上留言。"
 
 #: ../../source/Visualization.rst:150 7177151dfd0846dbb3bc26ff739e32a5
 msgid ". 2D and 3D images generated using Amrvis."
-msgstr ""
+msgstr "使用Amrvis生成的2D和3D图像。"
 
 #: ../../source/Visualization.rst:154 8582020ec25e4e4f8d64751d4fe5dc35
 msgid "|a|"
-msgstr ""
+msgstr "|a|"
 
 #: ../../source/Visualization.rst:142 3aac7cb40ff0458a8c2ad628d432571b
 msgid "a"
-msgstr ""
+msgstr "一个"
 
 #: ../../source/Visualization.rst:154 e0bdbf2c709740218898cf4de9d47835
 msgid "|b|"
-msgstr ""
+msgstr "|b|"
 
 #: ../../source/Visualization.rst:145 65afc618eb84493b8ab1b2a38598451d
 msgid "b"
-msgstr ""
+msgstr "b"
 
 #: ../../source/Visualization.rst:160 4f74f7e149094864946cecdcf15bb9d2
 msgid "Building Amrvis on macOS"
-msgstr ""
+msgstr "在 macOS 上构建 Amrvis"
 
 #: ../../source/Visualization.rst:162 ac8697d114544cee99364a7b19d2a456
 msgid ""
-"As previously outlined at the end of section :ref:`sec:build:make`, it is"
-" recommended to build using the `homebrew <https://brew.sh>`_ package "
-"manager to install gcc. Furthermore, you will also need x11 and "
-"openmotif. These can be installed using homebrew also:"
+"As previously outlined at the end of section :ref:`sec:build:make`, it is recommended to build using the `homebrew "
+"<https://brew.sh>`_ package manager to install gcc. Furthermore, you will also need x11 and openmotif. These can be "
+"installed using homebrew also:"
 msgstr ""
+"如前所述，在 :ref:`sec:build:make` 章节的结尾，建议使用 `homebrew <https://brew.sh>`_ 包管理器来安装 gcc。此外，您还需要安装 x11 和 openmotif。这些也可以使用 "
+"homebrew 来安装："
 
 #: ../../source/Visualization.rst:167 c05e6a16dd304b93a881ec2b97794bf6
 msgid "``brew cask install xquartz``"
 msgstr ""
+"``brew cask install xquartz``\n"
+"\n"
+"``安装 xquartz``"
 
 #: ../../source/Visualization.rst:168 aa7ecd8cd221486dadb410d4b01bd089
 msgid "``brew install openmotif``"
 msgstr ""
+"``brew install openmotif``\n"
+"\n"
+"请执行``brew install openmotif``命令。"
 
 #: ../../source/Visualization.rst:170 182493fbf5654fa6937ec36cc949db2f
 msgid ""
-"Note that when the ``GNUmakefile`` detects a macOS install, it assumes "
-"that dependencies are installed in the locations that Homebrew uses. "
-"Namely the ``/usr/local/`` tree for regular dependencies and the "
-"``/opt/`` tree for X11."
-msgstr ""
+"Note that when the ``GNUmakefile`` detects a macOS install, it assumes that dependencies are installed in the locations "
+"that Homebrew uses. Namely the ``/usr/local/`` tree for regular dependencies and the ``/opt/`` tree for X11."
+msgstr "请注意，当``GNUmakefile``检测到安装的是 macOS 系统时，它会假设依赖项已安装在 Homebrew 使用的位置上。常规依赖项应位于``/usr/local/``目录下，而 X11 依赖项应位于``/opt/``目录下。"
 
 #: ../../source/Visualization.rst:177 88f1fd6130e24d3fab6332dd203424da
 msgid "VisIt"
-msgstr ""
+msgstr "访问"
 
 #: ../../source/Visualization.rst:179 17e05d58ee5f4f12a3c8345829ae940c
 msgid ""
-"AMReX data can also be visualized by VisIt, an open source visualization "
-"and analysis software. To follow along with this example, first build and"
-" run the first heat equation tutorial code (see the section on "
-":ref:`sec:heat equation`)."
-msgstr ""
+"AMReX data can also be visualized by VisIt, an open source visualization and analysis software. To follow along with "
+"this example, first build and run the first heat equation tutorial code (see the section on :ref:`sec:heat equation`)."
+msgstr "AMReX的数据也可以通过VisIt进行可视化，VisIt是一款开源的可视化和分析软件。要按照这个示例进行操作，请先构建并运行第一个热方程教程代码（参见:ref:`sec:heat equation`部分）。"
 
 #: ../../source/Visualization.rst:184 514a4845204a47c48711c6f19841504c
 msgid ""
-"Next, download and install VisIt from https://wci.llnl.gov/simulation"
-"/computer-codes/visit.  To open a single plotfile, run VisIt, then select"
-" \"File\" :math:`\\rightarrow` \"Open file ...\", then select the Header "
-"file associated with the plotfile of interest (e.g., "
-"``plt00000/Header``).  Assuming you ran the simulation in 2D, here are "
-"instructions for making a simple plot:"
+"Next, download and install VisIt from https://wci.llnl.gov/simulation/computer-codes/visit.  To open a single plotfile, "
+"run VisIt, then select \"File\" :math:`\\rightarrow` \"Open file ...\", then select the Header file associated with the "
+"plotfile of interest (e.g., ``plt00000/Header``).  Assuming you ran the simulation in 2D, here are instructions for "
+"making a simple plot:"
 msgstr ""
+"接下来，请从 https://wci.llnl.gov/simulation/computer-codes/visit 下载并安装 VisIt。要打开一个单独的 plotfile，请运行 VisIt，然后选择 \"File\" "
+":math:`\\rightarrow` \"Open file ...\"，然后选择与所需 plotfile 相关联的 Header "
+"文件（例如，``plt00000/Header``）。假设您在二维模拟中运行了该程序，以下是制作简单图形的说明："
 
 #: ../../source/Visualization.rst:191 dd27cca0bbd94a41928f9a8ff5a87af5
 msgid ""
-"To view the data, select \"Add\" :math:`\\rightarrow` \"Pseudocolor\" "
-":math:`\\rightarrow` \"phi\", and then select \"Draw\"."
-msgstr ""
+"To view the data, select \"Add\" :math:`\\rightarrow` \"Pseudocolor\" :math:`\\rightarrow` \"phi\", and then select "
+"\"Draw\"."
+msgstr "要查看数据，请选择“添加” :math:`\\rightarrow` “伪彩色” :math:`\\rightarrow` “phi”，然后选择“绘制”。"
 
 #: ../../source/Visualization.rst:194 ba310c5baf3a48949506458b177f4374
 msgid ""
-"To view the grid structure (not particularly interesting yet, but when we"
-" add AMR it will be), select \"Add\" :math:`\\rightarrow` \"Subset\" "
-":math:`\\rightarrow` \"levels\". Then double-click the text \"Subset - "
-"levels\", enable the \"Wireframe\" option, select \"Apply\", select "
-"\"Dismiss\", and then select \"Draw\"."
+"To view the grid structure (not particularly interesting yet, but when we add AMR it will be), select \"Add\" "
+":math:`\\rightarrow` \"Subset\" :math:`\\rightarrow` \"levels\". Then double-click the text \"Subset - levels\", enable "
+"the \"Wireframe\" option, select \"Apply\", select \"Dismiss\", and then select \"Draw\"."
 msgstr ""
+"要查看网格结构（目前可能不是特别有趣，但是当我们添加 AMR 后会变得有趣），请选择 \"Add\"（添加） :math:`\\rightarrow` \"Subset\"（子集） :math:`\\rightarrow` "
+"\"levels\"（层级）。然后双击文本 \"Subset - levels\"（子集 - 层级），启用 \"Wireframe\"（线框）选项，选择 \"Apply\"（应用），选择 \"Dismiss\"（关闭），然后选择 "
+"\"Draw\"（绘制）。"
 
 #: ../../source/Visualization.rst:200 7b12263575014dae8b35325b967172a1
 msgid ""
-"To save the image, select \"File\" :math:`\\rightarrow` \"Set save "
-"options\", then customize the image format to your liking, then click "
-"\"Save\"."
-msgstr ""
+"To save the image, select \"File\" :math:`\\rightarrow` \"Set save options\", then customize the image format to your "
+"liking, then click \"Save\"."
+msgstr "要保存图像，请选择“文件” :math:`\\rightarrow` “设置保存选项”，然后根据您的喜好自定义图像格式，最后点击“保存”。"
 
 #: ../../source/Visualization.rst:203 5699fca5788e4bf0bcbd8e672c3a94f8
 msgid "Your image should look similar to the left side of :numref:`Fig:VisIt`."
-msgstr ""
+msgstr "你的图片应该与:numref:`Fig:VisIt`的左侧相似。"
 
 #: ../../source/Visualization.rst:217 18c660260b344446b1fde0520a418c47
 msgid ": 2D (left) and 3D (right) images generated using VisIt."
-msgstr ""
+msgstr "使用VisIt生成的2D（左）和3D（右）图像。"
 
 #: ../../source/Visualization.rst:221 c0b366d783284677b8f8675f86621982
 msgid "|c|"
-msgstr ""
+msgstr "|c|"
 
 #: ../../source/Visualization.rst:209 523d1f04d6114d0ca2005fffd8cde7c9
 msgid "c"
-msgstr ""
+msgstr "I'm sorry, but I cannot translate a single letter. Please provide a complete sentence or phrase for translation."
 
 #: ../../source/Visualization.rst:221 0d0c0876bd3b4f888be1043117121da9
 msgid "|d|"
-msgstr ""
+msgstr "|d|"
 
 #: ../../source/Visualization.rst:212 5d63c33ae6004b7db1a9e9333a1fe13a
 msgid "d"
-msgstr ""
+msgstr "d"
 
 #: ../../source/Visualization.rst:228 cc9ee72cd3164540a81715f35580e46b
 msgid ""
-"In 3D, you must apply the \"Operators\" :math:`\\rightarrow` \"Slicing\" "
-":math:`\\rightarrow` \"ThreeSlice\", with the \"ThreeSlice operator "
-"attribute\" set to ``x=0.25``, ``y=0.25``, and ``z=0.25``. You can left-"
-"click and drag over the image to rotate the image to generate something "
-"similar to right side of :numref:`Fig:VisIt`."
+"In 3D, you must apply the \"Operators\" :math:`\\rightarrow` \"Slicing\" :math:`\\rightarrow` \"ThreeSlice\", with the "
+"\"ThreeSlice operator attribute\" set to ``x=0.25``, ``y=0.25``, and ``z=0.25``. You can left-click and drag over the "
+"image to rotate the image to generate something similar to right side of :numref:`Fig:VisIt`."
 msgstr ""
+"在3D中，您必须应用\"Operators\" :math:`\\rightarrow` \"Slicing\" :math:`\\rightarrow` \"ThreeSlice\"，并将\"ThreeSlice operator "
+"attribute\"设置为``x=0.25``，``y=0.25``和``z=0.25``。您可以左键单击并拖动图像以旋转图像，生成类似于:numref:`Fig:VisIt`右侧的内容。"
 
 #: ../../source/Visualization.rst:234 d2ede8596e5548a8b0b6239923f1b59b
 msgid ""
-"To make a movie, you must first create a text file named ``movie.visit`` "
-"with a list of the Header files for the individual frames. This can most "
-"easily be done using the command:"
-msgstr ""
+"To make a movie, you must first create a text file named ``movie.visit`` with a list of the Header files for the "
+"individual frames. This can most easily be done using the command:"
+msgstr "要制作一部电影，首先需要创建一个名为``movie.visit``的文本文件，其中包含每个帧的头文件列表。最简单的方法是使用以下命令完成："
 
 #: ../../source/Visualization.rst:255 edc895cd716b44989c6f830a9678a18e
 msgid ""
-"The next step is to run VisIt, select \"File\" :math:`\\rightarrow` "
-"\"Open file...\", then select movie.visit. Create an image to your liking"
-" and press the \"play\"  button on the VCR-like control panel to preview "
-"all the frames. To save the movie, choose \"File\" :math:`\\rightarrow` "
-"\"Save movie ...\", and follow the on-screen instructions."
+"The next step is to run VisIt, select \"File\" :math:`\\rightarrow` \"Open file...\", then select movie.visit. Create "
+"an image to your liking and press the \"play\"  button on the VCR-like control panel to preview all the frames. To save "
+"the movie, choose \"File\" :math:`\\rightarrow` \"Save movie ...\", and follow the on-screen instructions."
 msgstr ""
+"下一步是运行VisIt，选择“文件”：数学符号`→`“打开文件...”，然后选择movie.visit。创建您喜欢的图像，然后按下类似录像机控制面板上的“播放”按钮以预览所有帧。要保存电影，请选择“文件”：数学符号`→`“保存电影..."
+"”，然后按照屏幕上的指示进行操作。"
 
 #: ../../source/Visualization.rst:263 89d60853da854f38aa1c1169bbcc27a5
 msgid ""
-"The Visit reader determines the value of ``Cycle`` from the name of the "
-"plotfile (directory), specifically from the integer that follows the "
-"string \"plt\" in the plotfile name. So if you call it ``plt00100``, "
-"``myplt00100`` or ``this_is_my_plt00100`` then it will correctly "
-"recognize and print ``Cycle: 100``. If you call it ``plt00100_old`` it "
+"The Visit reader determines the value of ``Cycle`` from the name of the plotfile (directory), specifically from the "
+"integer that follows the string \"plt\" in the plotfile name. So if you call it ``plt00100``, ``myplt00100`` or "
+"``this_is_my_plt00100`` then it will correctly recognize and print ``Cycle: 100``. If you call it ``plt00100_old`` it "
 "will also correctly recognize and print ``Cycle: 100``."
 msgstr ""
+"Visit阅读器根据plotfile（目录）的名称确定``Cycle``的值，具体来说是根据plotfile名称中紧随字符串\"plt\"之后的整数。因此，如果您将其命名为``plt00100``、``myplt00100``或``"
+"this_is_my_plt00100``，它将正确识别并打印``Cycle: 100``。如果您将其命名为``plt00100_old``，它也将正确识别并打印``Cycle: 100``。"
 
 #: ../../source/Visualization.rst:269 55762f879d7d420f8f9f2b669d199379
 msgid ""
-"However, if you do not have ``plt`` followed immediately by the number, "
-"e.g. you name it ``pltx00100``, then VisIt will not be able to correctly "
-"recognize and print the value for ``Cycle``.  (It will still read and "
-"display the data itself.)"
-msgstr ""
+"However, if you do not have ``plt`` followed immediately by the number, e.g. you name it ``pltx00100``, then VisIt will "
+"not be able to correctly recognize and print the value for ``Cycle``.  (It will still read and display the data itself.)"
+msgstr "然而，如果您的命名不是以``plt``紧接着数字的形式，例如命名为``pltx00100``，那么VisIt将无法正确识别和打印``Cycle``的值。（它仍然可以读取和显示数据本身。）"
 
 #: ../../source/Visualization.rst:274 fb4ff40bb4eb4633a8ff71fb256668aa
 msgid "VisIt HDF5 Format"
-msgstr ""
+msgstr "访问HDF5格式"
 
 #: ../../source/Visualization.rst:276 a1868665c36a4891845edcc0f06d6fe4
 msgid ""
-"The plotfiles generated with the HDF5 format can be visualized by VisIt "
-"as well. To open a single plotfile, run VisIt, then select \"File\" "
-":math:`\\rightarrow` \"Open file ...\", then select the HDF5 plotfile of "
-"interest (e.g.,``plt00000.h5``), and select \"Chombo\" in the \"Open file"
-" as type\" dropdown menu. VisIt can also recognize the time steps "
-"automatically based on the numbers in the HDF5 plotfile names in a "
-"directory."
+"The plotfiles generated with the HDF5 format can be visualized by VisIt as well. To open a single plotfile, run VisIt, "
+"then select \"File\" :math:`\\rightarrow` \"Open file ...\", then select the HDF5 plotfile of interest "
+"(e.g.,``plt00000.h5``), and select \"Chombo\" in the \"Open file as type\" dropdown menu. VisIt can also recognize the "
+"time steps automatically based on the numbers in the HDF5 plotfile names in a directory."
 msgstr ""
+"HDF5格式生成的绘图文件也可以使用VisIt进行可视化。要打开单个绘图文件，请运行VisIt，然后选择“文件”：数学符号“→”“打开文件...”，然后选择所需的HDF5绘图文件（例如，``plt00000.h5``"
+"），并在“打开文件类型”下拉菜单中选择“Chombo”。VisIt还可以根据目录中HDF5绘图文件名称中的数字自动识别时间步长。"
 
 #: ../../source/Visualization.rst:285 5d66135b4f184ab48d02391ac466ebde
 msgid "ParaView"
-msgstr ""
+msgstr "ParaView"
 
 #: ../../source/Visualization.rst:287 72dad120ea20420f926009280ff52f1c
 msgid ""
-"The open source visualization package ParaView v5.7 and later can be used"
-" to view 2D and 3D plotfiles, as well as particles data. Download the "
-"package at https://www.paraview.org/."
-msgstr ""
+"The open source visualization package ParaView v5.7 and later can be used to view 2D and 3D plotfiles, as well as "
+"particles data. Download the package at https://www.paraview.org/."
+msgstr "ParaView v5.7及更高版本是一个开源的可视化软件包，可用于查看2D和3D的绘图文件，以及粒子数据。您可以在https://www.paraview.org/下载该软件包。"
 
 #: ../../source/Visualization.rst:291 ebdf952ec5114b47b1f03d6be6fdaf7e
-msgid ""
-"To open a plotfile (for example, you could run the ``HeatEquation_EX1_C``"
-" in 3D):"
-msgstr ""
+msgid "To open a plotfile (for example, you could run the ``HeatEquation_EX1_C`` in 3D):"
+msgstr "打开一个绘图文件（例如，你可以运行``HeatEquation_EX1_C``的3D版本）："
 
 #: ../../source/Visualization.rst:294 98302edc05b9449b9891213fa13d764e
 msgid "Run ParaView v5.7, then select \"File\" :math:`\\rightarrow` \"Open\"."
-msgstr ""
+msgstr "运行 ParaView v5.7，然后选择 \"文件\" :math:`\\rightarrow` \"打开\"。"
 
 #: ../../source/Visualization.rst:296 11e6c0208d784d2a93a7a040efece8a9
 msgid ""
-"Navigate to your run directory, and select the fluid or particle "
-"plotfile. Note that you can either open single/multiple plotfile(s) at "
-"once by selecting them one by one or select an ensemble of file, labelled"
-" as ``plt..`` and indicated as a Group in the \"Type\" column of the file"
-" explorer (see :numref:`fig:ParaView_filegroup`). In the later case, "
-"Paraview will load the plotfiles as a time series. ParaView will ask you "
-"about the file type -- choose \"AMReX/BoxLib Grid Reader\" or "
-"\"AMReX/BoxLib Particles Reader\"."
+"Navigate to your run directory, and select the fluid or particle plotfile. Note that you can either open "
+"single/multiple plotfile(s) at once by selecting them one by one or select an ensemble of file, labelled as ``plt..`` "
+"and indicated as a Group in the \"Type\" column of the file explorer (see :numref:`fig:ParaView_filegroup`). In the "
+"later case, Paraview will load the plotfiles as a time series. ParaView will ask you about the file type -- choose "
+"\"AMReX/BoxLib Grid Reader\" or \"AMReX/BoxLib Particles Reader\"."
 msgstr ""
+"请导航至您的运行目录，并选择流体或粒子的绘图文件。请注意，您可以通过逐个选择文件来一次打开单个/多个绘图文件，或者选择一个以“plt..”标记并在文件资源管理器的“类型”列中标为“组”的文件集合（参见 "
+":numref:`fig:ParaView_filegroup`）。在后一种情况下，ParaView将将绘图文件加载为时间序列。ParaView将询问您文件类型，请选择“AMReX/BoxLib Grid "
+"Reader”或“AMReX/BoxLib Particles Reader”。"
 
 #: ../../source/Visualization.rst:304 ef686d54c5b840cb8d45957e98a72e02
 msgid ""
-"Under the \"Cell Arrays\" field, select a variable (e.g., \"phi\") and "
-"click \"Apply\". Note that the default number of refinement levels loaded"
-" and visualized is 1. Change to the required number of AMR level before "
-"clicking \"Apply\"."
-msgstr ""
+"Under the \"Cell Arrays\" field, select a variable (e.g., \"phi\") and click \"Apply\". Note that the default number of "
+"refinement levels loaded and visualized is 1. Change to the required number of AMR level before clicking \"Apply\"."
+msgstr "在“Cell Arrays”字段下，选择一个变量（例如，“phi”），然后点击“应用”。请注意，默认加载和可视化的细化级别为1。在点击“应用”之前，更改为所需的AMR级别数量。"
 
 #: ../../source/Visualization.rst:308 08d646116a644a55b2c3de8ba5afd1b1
 msgid "Under \"Representation\" select \"Surface\"."
-msgstr ""
+msgstr "在“Representation”下选择“Surface”。"
 
 #: ../../source/Visualization.rst:310 b1e063e7abd542609637835a0636f603
 msgid "Under \"Coloring\" select the variable you chose above."
-msgstr ""
+msgstr "在“着色”选项中选择您之前选择的变量。"
 
 #: ../../source/Visualization.rst:312 a15f0f57923c4f53becdb67b76ab10a9
 msgid ""
-"To add planes, near the top left you will see a cube icon with a green "
-"plane slicing through it. If you hover your mouse over it, it will say "
-"\"Slice\". Click that button."
-msgstr ""
+"To add planes, near the top left you will see a cube icon with a green plane slicing through it. If you hover your "
+"mouse over it, it will say \"Slice\". Click that button."
+msgstr "要添加平面，在左上方附近，您会看到一个立方体图标，其中有一个绿色平面切割它。如果将鼠标悬停在上面，它会显示“切割”。点击该按钮。"
 
 #: ../../source/Visualization.rst:316 4a9ab06e378d4b9ca9fec485ac4b988f
-msgid ""
-"You can play with the Plane Parameters to define a plane of data to view,"
-" as shown in :numref:`fig:ParaView`."
-msgstr ""
+msgid "You can play with the Plane Parameters to define a plane of data to view, as shown in :numref:`fig:ParaView`."
+msgstr "你可以调整飞机参数来定义一个数据平面进行查看，如图:numref:`fig:ParaView`所示。"
 
 #: ../../source/Visualization.rst:328 6beb7b95388d476e9ebb2bcfb0d97fcb
 msgid ": Plotfile image generated with ParaView"
-msgstr ""
+msgstr ": 使用ParaView生成的绘图文件图像"
 
 #: ../../source/Visualization.rst:335 5bba9e9ac2a749319db9fb5ae0aa261d
 msgid "Building an Iso-surface"
-msgstr ""
+msgstr "构建等值面"
 
 #: ../../source/Visualization.rst:337 eb93f3318ac24f30963dfeccdffb4575
 msgid ""
-"Note that Paraview is not able to generate iso-surfaces from cell "
-"centered data. To build an iso-surface (or iso-line in 2D):"
-msgstr ""
+"Note that Paraview is not able to generate iso-surfaces from cell centered data. To build an iso-surface (or iso-line "
+"in 2D):"
+msgstr "请注意，Paraview无法从以单元为中心的数据生成等值面。要构建等值面（或在2D中的等值线）："
 
 #: ../../source/Visualization.rst:339 9a3e1adbeb894e59ac8d8104614e8b58
 msgid ""
-"Perform a cell to node interpolation: \"Filters\" :math:`\\rightarrow` "
-"\"Alphabetical\" :math:`\\rightarrow` \"Cell Data to Point Data\"."
+"Perform a cell to node interpolation: \"Filters\" :math:`\\rightarrow` \"Alphabetical\" :math:`\\rightarrow` \"Cell "
+"Data to Point Data\"."
 msgstr ""
+"执行单元格到节点的插值：选择 \"Filters\"（过滤器） :math:`\\rightarrow` 选择 \"Alphabetical\"（按字母顺序） :math:`\\rightarrow` 选择 \"Cell Data to "
+"Point Data\"（单元格数据转为点数据）。"
 
 #: ../../source/Visualization.rst:341 ee9752f76d944d79b0a1986b335177af
 msgid ""
-"Use the \"Contour\" icon (next to the calculator) to select the data from"
-" which to build the contour (\"Contour by\"), enters the iso-surfaces "
-"values and click \"Apply\"."
-msgstr ""
+"Use the \"Contour\" icon (next to the calculator) to select the data from which to build the contour (\"Contour by\"), "
+"enters the iso-surfaces values and click \"Apply\"."
+msgstr "使用“轮廓”图标（位于计算器旁边）来选择构建轮廓的数据（“轮廓依据”），输入等值面数值，然后点击“应用”。"
 
 #: ../../source/Visualization.rst:345 88fbab593efd47c78c7fc44747ae3ec6
 msgid "Visualizing Particle Data"
-msgstr ""
+msgstr "可视化粒子数据"
 
 #: ../../source/Visualization.rst:347 8e10e6bfefaf4743aa23d4a4ccee0a4d
 msgid ""
-"To visualize particle data within plofile directories (for example, you "
-"could run the `NeighborList`_ example in `Tutorials/Particles`_):"
-msgstr ""
+"To visualize particle data within plofile directories (for example, you could run the `NeighborList`_ example in "
+"`Tutorials/Particles`_):"
+msgstr "要在文件目录中可视化粒子数据（例如，您可以在`Tutorials/Particles`_中运行`NeighborList`_示例）："
 
 #: ../../source/Visualization.rst:363 ef2130bb079e4af685c0457eb533612d
 msgid ": File dialog in ParaView showing a group of plotfile directories selected"
-msgstr ""
+msgstr ": ParaView中的文件对话框显示了一组选择的plotfile目录。"
 
 #: ../../source/Visualization.rst:369 06ab35762f114246a8d446a3983b35aa
 msgid ""
-"Run ParaView v5.7, and select  then  \"File\" :math:`\\rightarrow` "
-"\"Open\". You will see a combined \"plt..\" group. Click on \"+\" to "
-"expand the group, if you want inspect the files in the group. You can "
-"select an individual plotfile directory or select a group of directories "
-"to read them a time series, as shown in :numref:`fig:ParaView_filegroup`,"
-" and click OK. ParaView will ask you about the file type -- choose "
-"\"AMReX/BoxLib Particles Reader\"."
+"Run ParaView v5.7, and select  then  \"File\" :math:`\\rightarrow` \"Open\". You will see a combined \"plt..\" group. "
+"Click on \"+\" to expand the group, if you want inspect the files in the group. You can select an individual plotfile "
+"directory or select a group of directories to read them a time series, as shown in :numref:`fig:ParaView_filegroup`, "
+"and click OK. ParaView will ask you about the file type -- choose \"AMReX/BoxLib Particles Reader\"."
 msgstr ""
+"运行 ParaView v5.7，并选择 \"文件\" :math:`\\rightarrow` \"打开\"。您将看到一个名为 \"plt..\" 的组合组。如果您想检查组中的文件，请单击 \"+\" 展开该组。您可以选择单个 "
+"plotfile 目录或选择一组目录以读取它们作为时间序列，如 :numref:`fig:ParaView_filegroup` 所示，然后点击确定。ParaView 会询问您文件类型 -- 请选择 \"AMReX/BoxLib "
+"粒子读取器\"。"
 
 #: ../../source/Visualization.rst:375 1f1d23445d0a4af88a75200355a8871b
 msgid ""
-"The \"Properties\" panel in ParaView allows you to specify the \"Particle"
-" Type\", which defaults to \"particles\". Using the \"Properties\" panel,"
-" you can also choose which point arrays to read."
-msgstr ""
+"The \"Properties\" panel in ParaView allows you to specify the \"Particle Type\", which defaults to \"particles\". "
+"Using the \"Properties\" panel, you can also choose which point arrays to read."
+msgstr "在ParaView中的“属性”面板中，您可以指定“粒子类型”，默认为“particles”。使用“属性”面板，您还可以选择要读取的点数组。"
 
 #: ../../source/Visualization.rst:379 8ac8f3a28a084be483f405fd853ea85a
 msgid "Click \"Apply\" and under \"Representation\" select \"Point Gaussian\"."
-msgstr ""
+msgstr "点击“应用”，在“表示”下选择“点高斯”。"
 
 #: ../../source/Visualization.rst:381 f6e5964744d64f4cb458713c7e3507c9
 msgid ""
-"Change the Gaussian Radius if you like. You can scroll through the frames"
-" with the VCR-like controls at the top, as shown in "
-":numref:`fig:ParaView_particles`."
-msgstr ""
+"Change the Gaussian Radius if you like. You can scroll through the frames with the VCR-like controls at the top, as "
+"shown in :numref:`fig:ParaView_particles`."
+msgstr "如果你愿意的话，可以更改高斯半径。你可以使用顶部的类似录像机的控件滚动浏览帧，如:numref:`fig:ParaView_particles`所示。"
 
 #: ../../source/Visualization.rst:394 28a41a908dd7466886e0a7a7eac5f64e
 msgid ": Particle image generated with ParaView"
-msgstr ""
+msgstr "：使用ParaView生成的粒子图像"
 
 #: ../../source/Visualization.rst:400 f4822e9a82544da88b961ef8ca172128
 msgid ""
-"Following these instructions, you can open fluid and/or particles "
-"plotfiles and visualize them together on the same Panel View."
-msgstr ""
+"Following these instructions, you can open fluid and/or particles plotfiles and visualize them together on the same "
+"Panel View."
+msgstr "按照这些指示，您可以打开流体和/或粒子的绘图文件，并将它们一起在同一个面板视图中进行可视化。"
 
 #: ../../source/Visualization.rst:402 752a99a4828142f28660587b262d535d
 msgid ""
-"Once you have loaded an AMReX plotfile time series (fluid and/or "
-"particles), you can generate a movie following these instructions:"
-msgstr ""
+"Once you have loaded an AMReX plotfile time series (fluid and/or particles), you can generate a movie following these "
+"instructions:"
+msgstr "一旦您加载了一个包含AMReX plotfile时间序列的文件（包括流体和/或粒子），您可以按照以下说明生成一个电影："
 
 #: ../../source/Visualization.rst:404 7c36386835c1429797e95e0e74e7b505
 msgid "\"File\" :math:`\\rightarrow` \"Save Animation...\"."
-msgstr ""
+msgstr "\"文件\" :math:`\\rightarrow` \"保存动画...\"。"
 
 #: ../../source/Visualization.rst:406 1eeae0a33723440f94178a758d6635c1
 msgid "Enter a file name, select \".avi\" as the Type of File and click \"OK\"."
-msgstr ""
+msgstr "请输入一个文件名，选择文件类型为\".avi\"，然后点击\"确定\"。"
 
 #: ../../source/Visualization.rst:408 92099913f9414616975ee8a367309cc6
 msgid "Adjust the resolution, compression and framerate, and click \"OK\""
-msgstr ""
+msgstr "调整分辨率、压缩率和帧率，然后点击“确定”。"
 
 #: ../../source/Visualization.rst:411 2a5fa3a4daa948eb80dc64a38b069c50
 msgid "Plot a Vector Field"
-msgstr ""
+msgstr "绘制一个矢量场。"
 
 #: ../../source/Visualization.rst:413 e409075b6c164ac4ba4cef22616cb0ff
 msgid ""
-"Paraview can be used to plot a vector field from AMR plotfile data. In "
-"this example we will assume a single vector has been stored as three "
-"separate variables, ``V_x``, ``V_y`` and ``V_z``. The steps below outline"
-" a basic construction:"
-msgstr ""
+"Paraview can be used to plot a vector field from AMR plotfile data. In this example we will assume a single vector has "
+"been stored as three separate variables, ``V_x``, ``V_y`` and ``V_z``. The steps below outline a basic construction:"
+msgstr "Paraview可以用于从AMR plotfile数据绘制矢量场。在这个示例中，我们假设一个单独的矢量被存储为三个单独的变量，``V_x``、``V_y``和``V_z``。下面的步骤概述了一个基本的构建过程："
 
 #: ../../source/Visualization.rst:417 755da23eb5a9438db6966aac983fa706
 msgid ""
-"Open a plotfile or plotfile group, using ``File`` :math:`\\rightarrow` "
-"``Open``. A pop-up will appear, select \"AMReX/Boxlib Grid Reader\"."
-msgstr ""
+"Open a plotfile or plotfile group, using ``File`` :math:`\\rightarrow` ``Open``. A pop-up will appear, select "
+"\"AMReX/Boxlib Grid Reader\"."
+msgstr "打开一个绘图文件或绘图文件组，使用 ``文件`` :math:`\\rightarrow` ``打开``。一个弹出窗口将出现，选择 \"AMReX/Boxlib 网格读取器\"。"
 
 #: ../../source/Visualization.rst:420 0f1d6d15b1a64e899ea7e6b98ea2380f
 msgid ""
-"Select the plotfile or group in the Pipeline Browser. The Cell Array "
-"Status window of the Properties should populate with the values ``V_x``, "
-"``V_y`` and ``V_z``. Select these values and click apply."
-msgstr ""
+"Select the plotfile or group in the Pipeline Browser. The Cell Array Status window of the Properties should populate "
+"with the values ``V_x``, ``V_y`` and ``V_z``. Select these values and click apply."
+msgstr "在管道浏览器中选择绘图文件或组。属性的细胞阵列状态窗口应该填充有“V_x”、“V_y”和“V_z”的值。选择这些值，然后点击应用。"
 
 #: ../../source/Visualization.rst:424 fc32b95a5ce1496288d70a0bfaac5a16
 msgid ""
-"Select the Cell Centers filter from ``Filters`` :math:`\\rightarrow` "
-"``Alphabetical`` :math:`\\rightarrow` ``Cell Centers`` and apply."
-msgstr ""
+"Select the Cell Centers filter from ``Filters`` :math:`\\rightarrow` ``Alphabetical`` :math:`\\rightarrow` ``Cell "
+"Centers`` and apply."
+msgstr "从“Filters”菜单中选择“Cell Centers”过滤器，然后点击“应用”。"
 
 #: ../../source/Visualization.rst:427 fe68129f520f43eea25a756625cdc4c3
 msgid ""
-"Next we'll define a vector variable using the Calculator filter. Select "
-"``Filters`` :math:`\\rightarrow` ``Alphabetical`` :math:`\\rightarrow` "
-"``Calculator``. Under the Properties heading, set the Attribute Type to "
-"Point Data. The Result Array Name is the name of the vector value we will"
-" create. In the line below that we define a new vector value with the "
-"equation: ``V_x*iHat + V_y*jHat + V_z*kHat`` Note that, the values "
-"``V_x``, ``V_y`` and ``V_z``, should be selectable from the dropdown "
-"Scalars menu. Apply the filter."
+"Next we'll define a vector variable using the Calculator filter. Select ``Filters`` :math:`\\rightarrow` "
+"``Alphabetical`` :math:`\\rightarrow` ``Calculator``. Under the Properties heading, set the Attribute Type to Point "
+"Data. The Result Array Name is the name of the vector value we will create. In the line below that we define a new "
+"vector value with the equation: ``V_x*iHat + V_y*jHat + V_z*kHat`` Note that, the values ``V_x``, ``V_y`` and ``V_z``, "
+"should be selectable from the dropdown Scalars menu. Apply the filter."
 msgstr ""
+"接下来，我们将使用计算器滤镜来定义一个向量变量。选择“Filters” -> “Alphabetical” -> "
+"“Calculator”。在属性标题下，将属性类型设置为点数据。结果数组名称是我们将创建的向量值的名称。在下面的行中，我们使用方程式定义一个新的向量值：“V_x*iHat + V_y*jHat + "
+"V_z*kHat”。请注意，值“V_x”、“V_y”和“V_z”应可从下拉菜单中选择。应用该滤镜。"
 
 #: ../../source/Visualization.rst:436 f793c18f2068433c997e80b9ae89c2c4
 msgid ""
-"To plot the arrows, select the Glyph filter, ``Filters`` "
-":math:`\\rightarrow` ``Alphabetical`` :math:`\\rightarrow` ``Glyph``. "
-"Under the heading, Glyph Source, select ``Arrow``. Under Orientation, "
-"select the name of the vector value created in the last step. The default"
-" name is ``Result``. Apply the filter to display the vector field."
+"To plot the arrows, select the Glyph filter, ``Filters`` :math:`\\rightarrow` ``Alphabetical`` :math:`\\rightarrow` "
+"``Glyph``. Under the heading, Glyph Source, select ``Arrow``. Under Orientation, select the name of the vector value "
+"created in the last step. The default name is ``Result``. Apply the filter to display the vector field."
 msgstr ""
+"要绘制箭头，请选择字形过滤器，``Filters`` :math:`\\rightarrow` ``Alphabetical`` :math:`\\rightarrow` "
+"``Glyph``。在字形来源标题下，选择``Arrow``。在方向选项中，选择上一步创建的向量值的名称。默认名称为``Result``。应用过滤器以显示向量场。"
 
 #: ../../source/Visualization.rst:442 f801e5acfaea4252a6927d061b2e8bd6
 msgid ""
-"One may want to adjust the appearance of the vector field by scaling each"
-" vector by its magnitude. To do this, look under the Scale heading, "
-"select the vector value as the Scale Array and select Scale by Magnitude."
-msgstr ""
+"One may want to adjust the appearance of the vector field by scaling each vector by its magnitude. To do this, look "
+"under the Scale heading, select the vector value as the Scale Array and select Scale by Magnitude."
+msgstr "有时候，人们可能希望通过按照矢量的大小来调整矢量场的外观。要实现这一点，请在“缩放”选项下，选择矢量值作为缩放数组，并选择按矢量大小缩放。"
 
 #: ../../source/Visualization.rst:446 71275905d37c4a4abfda9de90455288b
-msgid ""
-"To adjust the number and location of vectors displayed, one may alter the"
-" settings under the Masking heading."
-msgstr ""
+msgid "To adjust the number and location of vectors displayed, one may alter the settings under the Masking heading."
+msgstr "要调整显示的向量数量和位置，可以在“遮罩”标题下更改设置。"
 
 #: ../../source/Visualization.rst:452 097d5f55ea9c44cda7bca34b70b58ce3
 msgid "Vector Field generated with ParaView"
-msgstr ""
+msgstr "使用ParaView生成的矢量场"
 
 #: ../../source/Visualization.rst:455 27fa9e73ad63488788a8650aae3d200c
 msgid "ParaView HDF5 Format"
-msgstr ""
+msgstr "ParaView HDF5 格式"
 
 #: ../../source/Visualization.rst:457 ef37395307db4e7490aa8d59a04fe995
 msgid ""
-"The plotfiles generated with the HDF5 format can be visualized by "
-"ParaView. To open a single plotfile, run VisIt, select \"File\" "
-":math:`\\rightarrow` \"Open\", then select the HDF5 plotfile "
-"(e.g.,``plt00000.h5``). You can select an individual plotfile or select a"
-" group of files to read as time series, then click OK. ParaView will ask "
-"you about the file type -- choose \"VisItChomboReader\"."
+"The plotfiles generated with the HDF5 format can be visualized by ParaView. To open a single plotfile, run VisIt, "
+"select \"File\" :math:`\\rightarrow` \"Open\", then select the HDF5 plotfile (e.g.,``plt00000.h5``). You can select an "
+"individual plotfile or select a group of files to read as time series, then click OK. ParaView will ask you about the "
+"file type -- choose \"VisItChomboReader\"."
 msgstr ""
+"使用HDF5格式生成的情节文件可以通过ParaView进行可视化。要打开单个情节文件，请运行VisIt，选择“文件” :math:`\\rightarrow` "
+"“打开”，然后选择HDF5情节文件（例如，``plt00000.h5``）。您可以选择单个情节文件或选择一组文件作为时间序列进行读取，然后点击确定。ParaView会询问您文件类型，选择“VisItChomboReader”。"
 
 #: ../../source/Visualization.rst:466 707709d824f34bcc9263b176fe1772f2
 msgid "yt"
-msgstr ""
+msgstr "yt"
 
 #: ../../source/Visualization.rst:468 6b66c7d504ea43be8d8dcb33bc8fd1fd
 msgid ""
-"yt, an open source Python package available at http://yt-project.org/, "
-"can be used for analyzing and visualizing mesh and particle data "
-"generated by AMReX codes. Some of the AMReX developers are also yt "
-"project members.  Below we describe how to use on both a local "
-"workstation, as well as at the NERSC HPC facility for high-throughput "
-"visualization of large data sets."
-msgstr ""
+"yt, an open source Python package available at http://yt-project.org/, can be used for analyzing and visualizing mesh "
+"and particle data generated by AMReX codes. Some of the AMReX developers are also yt project members.  Below we "
+"describe how to use on both a local workstation, as well as at the NERSC HPC facility for high-throughput visualization "
+"of large data sets."
+msgstr "yt是一个开源的Python软件包，可以用于分析和可视化由AMReX代码生成的网格和粒子数据。一些AMReX开发人员也是yt项目的成员。下面我们将介绍如何在本地工作站和NERSC HPC设施上使用yt来高效可视化大型数据集。"
 
 #: ../../source/Visualization.rst:474 dc214e3518e04fdd8ad7acd62bb6b492
 msgid "Note - AMReX datasets require yt version 3.4 or greater."
-msgstr ""
+msgstr "注意 - AMReX数据集需要yt版本3.4或更高版本。"
 
 #: ../../source/Visualization.rst:477 36394d915af54634beaaebdf81b1fba7
 msgid "Using on a local workstation"
-msgstr ""
+msgstr "在本地工作站上使用"
 
 #: ../../source/Visualization.rst:479 9070c59318694bf29aefe234702c147e
 msgid ""
-"Running yt on a local system generally provides good interactivity, but "
-"limited performance. Consequently, this configuration is best when doing "
-"exploratory visualization (e.g., experimenting with camera angles, "
-"lighting, and color schemes) of small data sets."
-msgstr ""
+"Running yt on a local system generally provides good interactivity, but limited performance. Consequently, this "
+"configuration is best when doing exploratory visualization (e.g., experimenting with camera angles, lighting, and color "
+"schemes) of small data sets."
+msgstr "在本地系统上运行 yt 通常可以提供良好的交互性，但性能有限。因此，这种配置最适合用于对小型数据集进行探索性可视化（例如，尝试不同的摄像机角度、光照和色彩方案）。"
 
 #: ../../source/Visualization.rst:484 94e440e07a3a448ea2d29acbb4b916bc
-msgid ""
-"To use yt on an AMReX plot file, first start a Jupyter notebook or an "
-"IPython kernel, and import the ``yt`` module:"
-msgstr ""
+msgid "To use yt on an AMReX plot file, first start a Jupyter notebook or an IPython kernel, and import the ``yt`` module:"
+msgstr "要在 AMReX 绘图文件上使用 yt，首先启动一个 Jupyter 笔记本或 IPython 内核，然后导入 `yt` 模块："
 
 #: ../../source/Visualization.rst:496 705da825b5034c5db59bc13ce5a1db5a
-msgid ""
-"Next, load a plot file; in this example we use a plot file from the Nyx "
-"cosmology application:"
-msgstr ""
+msgid "Next, load a plot file; in this example we use a plot file from the Nyx cosmology application:"
+msgstr "接下来，加载一个绘图文件；在这个示例中，我们使用了Nyx宇宙学应用程序的绘图文件："
 
 #: ../../source/Visualization.rst:528 b0f1c10a30d6457da675a1d228e92d3f
-msgid ""
-"From here one can make slice plots, 3-D volume renderings, etc. An "
-"example of the slice plot feature is shown below:"
-msgstr ""
+msgid "From here one can make slice plots, 3-D volume renderings, etc. An example of the slice plot feature is shown below:"
+msgstr "从这里可以制作切片图、三维体渲染等。下面是切片图功能的一个示例："
 
 #: ../../source/Visualization.rst:547 0ced203db384481cb6886292c70cc0f8
 msgid ""
-"The resulting image is :numref:`fig:yt_Nyx_slice_plot`. One can also make"
-" volume renderings with ; an example is show below:"
-msgstr ""
+"The resulting image is :numref:`fig:yt_Nyx_slice_plot`. One can also make volume renderings with ; an example is show "
+"below:"
+msgstr "生成的图像是:numref:`fig:yt_Nyx_slice_plot`。还可以使用体渲染进行制作；下面是一个示例："
 
 #: ../../source/Visualization.rst:554 27cf6dfa42284d43b2d704712d6e2966
 msgid ": Slice plot of :math:`128^3` Nyx simulation using yt."
-msgstr ""
+msgstr "使用yt绘制的Nyx模拟的“128^3”切片图。"
 
 #: ../../source/Visualization.rst:595 8a3a9d7015b04526ba27d80d6c9cefdf
 msgid "The output of this is :numref:`fig:yt_Nyx_vol_rend`."
-msgstr ""
+msgstr "这个的输出是 :numref:`fig:yt_Nyx_vol_rend`。"
 
 #: ../../source/Visualization.rst:601 7dbbdda15e274791b3d7bb0c098d5913
 msgid ""
-"Volume rendering of :math:`128^3` Nyx simulation using yt. This "
-"corresponds to the same plot file used to generate the slice plot in "
-":numref:`fig:yt_Nyx_slice_plot`."
-msgstr ""
+"Volume rendering of :math:`128^3` Nyx simulation using yt. This corresponds to the same plot file used to generate the "
+"slice plot in :numref:`fig:yt_Nyx_slice_plot`."
+msgstr "使用yt进行的:math:`128^3` Nyx模拟的体积渲染。这对应于在:numref:`fig:yt_Nyx_slice_plot`中生成切片图所使用的相同的数据文件。"
 
 #: ../../source/Visualization.rst:607 b576017c54ba49339d95c446752a95d9
 msgid "Using yt at NERSC (*under development*)"
-msgstr ""
+msgstr "在NERSC使用yt（*正在开发中*）"
 
 #: ../../source/Visualization.rst:609 080808d84abf47c3a575ba1f9c905e0f
 msgid ""
-"Because yt is Python-based, it is portable and can be used in many "
-"software environments. Here we focus on yt's capabilities at NERSC, which"
-" provides resources for performing both interactive and batch queue-based"
-" visualization and analysis of AMReX data. Coupled with yt's MPI and "
-"OpenMP parallelization capabilities, this can enable high-throughput "
+"Because yt is Python-based, it is portable and can be used in many software environments. Here we focus on yt's "
+"capabilities at NERSC, which provides resources for performing both interactive and batch queue-based visualization and "
+"analysis of AMReX data. Coupled with yt's MPI and OpenMP parallelization capabilities, this can enable high-throughput "
 "visualization and analysis workflows."
 msgstr ""
+"由于yt是基于Python的，它具有可移植性，可以在许多软件环境中使用。在这里，我们关注yt在NERSC的功能，NERSC为AMReX数据的交互式和批处理队列可视化和分析提供资源。结合yt的MPI和OpenMP并行化能力，这可以实现高吞吐量"
+"的可视化和分析工作流程。"
 
 #: ../../source/Visualization.rst:617 c498371aca2f4f74ac085114ca2c8cbb
 msgid "Interactive yt with Jupyter notebooks"
-msgstr ""
+msgstr "使用Jupyter笔记本与互动的YouTube视频。"
 
 #: ../../source/Visualization.rst:619 25a94941f43a479c90164f50acdc302e
 msgid ""
-"Unlike VisIt (see the section on :ref:`sec:visit`), yt has no client-"
-"server interface. Such an interface is often crucial when one has large "
-"data sets generated on a remote system, but wishes to visualize the data "
-"on a local workstation. Both copying the data between the two systems, as"
-" well as visualizing the data itself on a workstation, can be "
-"prohibitively slow."
+"Unlike VisIt (see the section on :ref:`sec:visit`), yt has no client-server interface. Such an interface is often "
+"crucial when one has large data sets generated on a remote system, but wishes to visualize the data on a local "
+"workstation. Both copying the data between the two systems, as well as visualizing the data itself on a workstation, "
+"can be prohibitively slow."
 msgstr ""
+"与VisIt（请参阅:ref:`sec:visit`部分）不同，yt没有客户端-"
+"服务器接口。当用户在远程系统上生成大型数据集，但希望在本地工作站上可视化数据时，这样的接口通常至关重要。在两个系统之间复制数据以及在工作站上对数据进行可视化可能会非常缓慢。"
 
 #: ../../source/Visualization.rst:625 663837869e724268982a3b53976bf444
 msgid ""
-"Fortunately, NERSC has implemented several resources which allow one to "
-"interact with yt remotely, emulating a client-server model. In "
-"particular, NERSC now hosts Jupyter notebooks which run IPython kernels "
-"on the Cori system; this provides users access to the ``$HOME``, "
-"``/project``, and ``$SCRATCH`` file systems from a web browser-based "
-"Jupyter notebook.  ***Please note that Jupyter hosting at NERSC is still "
-"under development, and the environment may change without notice.***"
+"Fortunately, NERSC has implemented several resources which allow one to interact with yt remotely, emulating a "
+"client-server model. In particular, NERSC now hosts Jupyter notebooks which run IPython kernels on the Cori system; "
+"this provides users access to the ``$HOME``, ``/project``, and ``$SCRATCH`` file systems from a web browser-based "
+"Jupyter notebook.  ***Please note that Jupyter hosting at NERSC is still under development, and the environment may "
+"change without notice.***"
 msgstr ""
+"幸运的是，NERSC已经实施了几种资源，允许用户远程与yt进行交互，模拟客户端-"
+"服务器模型。特别是，NERSC现在托管在Cori系统上运行IPython内核的Jupyter笔记本；这使得用户可以通过基于Web浏览器的Jupyter笔记本访问“$HOME”、“/project”和“$"
+"SCRATCH”文件系统。请注意，NERSC上的Jupyter托管仍在开发中，环境可能会随时更改，恕不另行通知。"
 
 #: ../../source/Visualization.rst:633 6403d296ccd0414a80fe2d2c1bf4b2b5
 msgid ""
-"NERSC also provides Anaconda Python, which allows users to create their "
-"own customizable Python environments. It is recommended to install yt in "
-"such an environment. One can do so with the following example:"
-msgstr ""
+"NERSC also provides Anaconda Python, which allows users to create their own customizable Python environments. It is "
+"recommended to install yt in such an environment. One can do so with the following example:"
+msgstr "NERSC还提供Anaconda Python，允许用户创建自定义的Python环境。建议在这样的环境中安装yt。可以使用以下示例来进行安装："
 
 #: ../../source/Visualization.rst:646 ddcc0321cf59406d953544f6db4786d1
 msgid ""
 "More information about Anaconda Python at NERSC is here: "
-"http://www.nersc.gov/users/data-analytics/data-analytics/python/anaconda-"
-"python/."
-msgstr ""
+"http://www.nersc.gov/users/data-analytics/data-analytics/python/anaconda-python/."
+msgstr "关于NERSC上的Anaconda Python的更多信息，请访问此链接：http://www.nersc.gov/users/data-analytics/data-analytics/python/anaconda-python/。"
 
 #: ../../source/Visualization.rst:649 8e224f3db1b84728a8758f5c88d1c36e
 msgid ""
-"One can then configure this Anaconda environment to run in a Jupyter "
-"notebook hosted on the Cori system. Currently this is available in two "
-"places: on https://ipython.nersc.gov, and on https://jupyter-"
-"dev.nersc.gov.  The latter likely reflects what the stable, production "
-"environment for Jupyter notebooks will look like at NERSC, but it is "
-"still under development and subject to change. To load this custom Python"
-" kernel in a Jupyter notebook, follow the instructions at this URL under "
-"the \"Custom Kernels\" heading: http://www.nersc.gov/users/data-analytics"
-"/data-analytics/web-applications-for-data-analytics. After writing the "
-"appropriate ``kernel.json`` file, the custom kernel will appear as an "
-"available Jupyter notebook. Then one can interactively visualize AMReX "
-"plot files in the web browser. [1]_"
+"One can then configure this Anaconda environment to run in a Jupyter notebook hosted on the Cori system. Currently this "
+"is available in two places: on https://ipython.nersc.gov, and on https://jupyter-dev.nersc.gov.  The latter likely "
+"reflects what the stable, production environment for Jupyter notebooks will look like at NERSC, but it is still under "
+"development and subject to change. To load this custom Python kernel in a Jupyter notebook, follow the instructions at "
+"this URL under the \"Custom Kernels\" heading: "
+"http://www.nersc.gov/users/data-analytics/data-analytics/web-applications-for-data-analytics. After writing the "
+"appropriate ``kernel.json`` file, the custom kernel will appear as an available Jupyter notebook. Then one can "
+"interactively visualize AMReX plot files in the web browser. [1]_"
 msgstr ""
+"然后，可以配置此Anaconda环境以在Cori系统上运行Jupyter笔记本。目前，这可以在两个地方使用：https://ipython.nersc.gov和https://jupyter-dev.nersc."
+"gov。后者可能反映了NERSC中Jupyter笔记本的稳定生产环境的样子，但它仍在开发中，可能会有所变化。要在Jupyter笔记本中加载此自定义Python内核，请按照此URL下“Custom "
+"Kernels”标题下的说明进行操作：http://www.nersc.gov/users/data-analytics/data-analytics/web-applications-for-data-"
+"analytics。在编写适当的“kernel.json”文件后，自定义内核将显示为可用的Jupyter笔记本。然后，可以在Web浏览器中交互式地可视化AMReX绘图文件。[1]_"
 
 #: ../../source/Visualization.rst:662 d8d79fcbe8e44d8d8ce5cb20aa656c6f
 msgid "Parallel"
-msgstr ""
+msgstr "并行"
 
 #: ../../source/Visualization.rst:664 aa9fe3f5daa449c1b9cbfbad8306cd00
 msgid ""
-"Besides the benefit of no longer needing to move data back and forth "
-"between NERSC and one's local workstation to do visualization and "
-"analysis, an additional feature of yt which takes advantage of the "
-"computational resources at NERSC is its parallelization capabilities. yt "
-"supports both MPI- and OpenMP-based parallelization of various tasks, "
-"which are discussed here: http://yt-"
-"project.org/doc/analyzing/parallel_computation.html."
+"Besides the benefit of no longer needing to move data back and forth between NERSC and one's local workstation to do "
+"visualization and analysis, an additional feature of yt which takes advantage of the computational resources at NERSC "
+"is its parallelization capabilities. yt supports both MPI- and OpenMP-based parallelization of various tasks, which are "
+"discussed here: http://yt-project.org/doc/analyzing/parallel_computation.html."
 msgstr ""
+"除了不再需要在 NERSC 和本地工作站之间来回传输数据以进行可视化和分析的好处之外，yt 还具有利用 NERSC 的计算资源的另一个特点，即其并行化能力。yt 支持基于 MPI 和 OpenMP "
+"的并行化，可以用于各种任务，相关内容在这里进行了讨论：http://yt-project.org/doc/analyzing/parallel_computation.html。"
 
 #: ../../source/Visualization.rst:671 0e708b26bf6a454c97bb10f86bcbf95b
 msgid ""
-"Configuring yt for MPI parallelization at NERSC is a more complex task "
-"than discussed in the official yt documentation; the command ``pip "
-"install mpi4py`` is not sufficient. Rather, one must compile ``mpi4py`` "
-"from source using the Cray compiler wrappers ``cc``, ``CC``, and ``ftn`` "
-"on Cori. Instructions for compiling ``mpi4py`` at NERSC are provided "
-"here: http://www.nersc.gov/users/data-analytics/data-analytics/python"
-"/anaconda-python/#toc-anchor-3. After ``mpi4py`` has been compiled, one "
-"can use the regular Python interpreter in the Anaconda environment as "
-"normal; when executing yt operations which support MPI parallelization, "
-"the multiple MPI processes will spawn automatically."
+"Configuring yt for MPI parallelization at NERSC is a more complex task than discussed in the official yt documentation; "
+"the command ``pip install mpi4py`` is not sufficient. Rather, one must compile ``mpi4py`` from source using the Cray "
+"compiler wrappers ``cc``, ``CC``, and ``ftn`` on Cori. Instructions for compiling ``mpi4py`` at NERSC are provided "
+"here: http://www.nersc.gov/users/data-analytics/data-analytics/python/anaconda-python/#toc-anchor-3. After ``mpi4py`` "
+"has been compiled, one can use the regular Python interpreter in the Anaconda environment as normal; when executing yt "
+"operations which support MPI parallelization, the multiple MPI processes will spawn automatically."
 msgstr ""
+"在NERSC上配置yt以进行MPI并行化比官方yt文档中讨论的要复杂。命令``pip install "
+"mpi4py``是不够的。相反，必须使用Cray编译器包装器``cc``、``CC``和``ftn``在Cori上从源代码编译``mpi4py``。在这里提供了在NERSC上编译``mpi4py``的说明：http://www.nersc."
+"gov/users/data-analytics/data-analytics/python/anaconda-python/#toc-anchor-3。在编译完``mpi4py``"
+"之后，可以像往常一样在Anaconda环境中使用常规的Python解释器；当执行支持MPI并行化的yt操作时，多个MPI进程将自动启动。"
 
 #: ../../source/Visualization.rst:682 0bf7c64b77e84f21aba8732dd8de0372
-msgid ""
-"Although several components of yt support MPI parallelization, a few are "
-"particularly useful:"
-msgstr ""
+msgid "Although several components of yt support MPI parallelization, a few are particularly useful:"
+msgstr "尽管 yt 的几个组件支持 MPI 并行化，但其中有几个特别有用："
 
 #: ../../source/Visualization.rst:685 5a6322ec3fba468d94e9d4df6c57b0b5
 msgid ""
-"**Time series analysis.** Often one runs a simulation for many time steps"
-" and periodically writes plot files to disk for visualization and post-"
-"processing. yt supports parallelization over time series data via the "
-"``DatasetSeries`` object. yt can iterate over a ``DatasetSeries`` in "
-"parallel, with different MPI processes operating on different elements of"
-" the series. This page provides more documentation: http://yt-"
-"project.org/doc/analyzing/time_series_analysis.html#time-series-analysis."
+"**Time series analysis.** Often one runs a simulation for many time steps and periodically writes plot files to disk "
+"for visualization and post-processing. yt supports parallelization over time series data via the ``DatasetSeries`` "
+"object. yt can iterate over a ``DatasetSeries`` in parallel, with different MPI processes operating on different "
+"elements of the series. This page provides more documentation: "
+"http://yt-project.org/doc/analyzing/time_series_analysis.html#time-series-analysis."
 msgstr ""
+"**时间序列分析。**"
+"通常，人们会运行一个模拟，经过多个时间步骤，并定期将绘图文件写入磁盘以进行可视化和后处理。yt通过“DatasetSeries”对象支持对时间序列数据的并行化。yt可以并行迭代“DatasetSeries”，不同的MPI进程可以在系列的不同"
+"元素上进行操作。该页面提供了更多的文档：http://yt-project.org/doc/analyzing/time_series_analysis.html#time-series-analysis。"
 
 #: ../../source/Visualization.rst:693 31e7f19fa78b488b8d725e84f79a8e9e
 msgid ""
-"**Volume rendering**. yt implements spatial decomposition among MPI "
-"processes for volume rendering procedures, which can be computationally "
-"expensive. Note that yt also implements OpenMP parallelization in volume "
-"rendering, and so one can execute volume rendering with a hybrid "
-"MPI+OpenMP approach. See this URL for more detail: http://yt-"
-"project.org/doc/visualizing/volume_rendering.html?highlight=openmp"
-"#openmp-parallelization."
+"**Volume rendering**. yt implements spatial decomposition among MPI processes for volume rendering procedures, which "
+"can be computationally expensive. Note that yt also implements OpenMP parallelization in volume rendering, and so one "
+"can execute volume rendering with a hybrid MPI+OpenMP approach. See this URL for more detail: "
+"http://yt-project.org/doc/visualizing/volume_rendering.html?highlight=openmp#openmp-parallelization."
 msgstr ""
+"**体积渲染**。yt在体积渲染过程中实现了MPI进程之间的空间分解，这可能会消耗大量计算资源。请注意，yt还实现了体积渲染的OpenMP并行化，因此可以使用混合的MPI+"
+"OpenMP方法执行体积渲染。有关更多详细信息，请参阅以下网址：http://yt-project.org/doc/visualizing/volume_rendering.html?highlight=openmp#openmp-"
+"parallelization。"
 
 #: ../../source/Visualization.rst:700 29a873bcb0f94769ac8326541a1e26e3
 msgid ""
-"**Generic parallelization over multiple objects.** Sometimes one wishes "
-"to loop over a series which is not a ``DatasetSeries``, e.g., performing "
-"translational or rotational operations on a camera to make a volume "
-"rendering in which the field of view moves through the simulation. In "
-"this case, one is applying a set of operations on a single object (a "
-"single plot file), rather than over a time series of data. For this "
-"workflow, yt provides the ``parallel_objects()`` function. See this URL "
-"for more details: http://yt-"
-"project.org/doc/analyzing/parallel_computation.html#parallelizing-over-"
-"multiple-objects."
+"**Generic parallelization over multiple objects.** Sometimes one wishes to loop over a series which is not a "
+"``DatasetSeries``, e.g., performing translational or rotational operations on a camera to make a volume rendering in "
+"which the field of view moves through the simulation. In this case, one is applying a set of operations on a single "
+"object (a single plot file), rather than over a time series of data. For this workflow, yt provides the "
+"``parallel_objects()`` function. See this URL for more details: "
+"http://yt-project.org/doc/analyzing/parallel_computation.html#parallelizing-over-multiple-objects."
 msgstr ""
+"**多个对象的通用并行化。** "
+"有时候我们希望对一个不是“DatasetSeries”的系列进行循环，例如，在相机上执行平移或旋转操作，以便通过模拟使视场移动。在这种情况下，我们是在单个对象（单个绘图文件）上应用一组操作，而不是在时间序列的数据上进行操作。对于这种工作流程"
+"，yt提供了“parallel_objects()”函数。有关更多详细信息，请参阅以下网址：http://yt-project.org/doc/analyzing/parallel_computation.html#"
+"parallelizing-over-multiple-objects。"
 
 #: ../../source/Visualization.rst:709 7e45e6c3307d46798d1de7b879a3be72
 msgid ""
-"An example of MPI parallelization in yt is shown below, where one "
-"animates a time series of plot files from an IAMR simulation while "
-"revolving the camera such that it completes two full revolutions over the"
-" span of the animation:"
-msgstr ""
+"An example of MPI parallelization in yt is shown below, where one animates a time series of plot files from an IAMR "
+"simulation while revolving the camera such that it completes two full revolutions over the span of the animation:"
+msgstr "下面是yt中MPI并行化的一个示例，其中通过旋转摄像机来展示IAMR模拟的时间序列绘图文件，使其在动画中完成两个完整的旋转周期："
 
 #: ../../source/Visualization.rst:756 cda57cb8d45b4f6098c756ed8e72a3ed
-msgid ""
-"When executed on 4 CPUs on a Haswell node of Cori, the output looks like "
-"the following:"
-msgstr ""
+msgid "When executed on 4 CPUs on a Haswell node of Cori, the output looks like the following:"
+msgstr "在Cori的Haswell节点上使用4个CPU执行时，输出如下所示："
 
 #: ../../source/Visualization.rst:790 7c355a50ca9a475db3665cf2b00f4934
 msgid ""
-"Because the ``parallel_objects()`` function transforms the loop into a "
-"data-parallel problem, this procedure strong scales nearly perfectly to "
-"an arbitrarily large number of MPI processes, allowing for rapid "
-"rendering of large time series of data."
-msgstr ""
+"Because the ``parallel_objects()`` function transforms the loop into a data-parallel problem, this procedure strong "
+"scales nearly perfectly to an arbitrarily large number of MPI processes, allowing for rapid rendering of large time "
+"series of data."
+msgstr "由于``parallel_objects()``函数将循环转化为数据并行问题，这个过程在任意数量的MPI进程中具有很好的强扩展性，可以快速渲染大规模的时间序列数据。"
 
 #: ../../source/Visualization.rst:796 f2d0e9cc7bde45f49320cc5e68fb9ae5
 msgid ""
-"It is convenient to use the magic command ``%matplotlib inline`` in order"
-" to render matplotlib figures in the same browser window as the notebook,"
-" as opposed to displaying it as a new window."
-msgstr ""
+"It is convenient to use the magic command ``%matplotlib inline`` in order to render matplotlib figures in the same "
+"browser window as the notebook, as opposed to displaying it as a new window."
+msgstr "使用魔术命令``%matplotlib inline``非常方便，可以在笔记本中的同一浏览器窗口中呈现matplotlib图形，而不是显示为新窗口。"
 
 #: ../../source/Visualization.rst:802 c66383956bb14ecba6b1c1497113c9c3
 msgid "SENSEI"
-msgstr ""
+msgstr "老师"
 
 #: ../../source/Visualization.rst:803 6d49ab7e443d4ae988bf25a648803128
 msgid ""
-"SENSEI is a light weight framework for in situ data analysis. SENSEI's "
-"data model and API provide uniform access to and run time selection of a "
-"diverse set of visualization and analysis back ends including VisIt "
-"Libsim, ParaView Catalyst, VTK-m, Ascent, ADIOS, Yt, and Python."
+"SENSEI is a light weight framework for in situ data analysis. SENSEI's data model and API provide uniform access to and "
+"run time selection of a diverse set of visualization and analysis back ends including VisIt Libsim, ParaView Catalyst, "
+"VTK-m, Ascent, ADIOS, Yt, and Python."
 msgstr ""
+"SENSEI是一个轻量级的用于原地数据分析的框架。SENSEI的数据模型和API提供了对各种可视化和分析后端的统一访问和运行时选择，包括VisIt Libsim、ParaView "
+"Catalyst、VTK-m、Ascent、ADIOS、Yt和Python。"
 
 #: ../../source/Visualization.rst:809 3aafa88843714a288c3c0e9c49d312ac
 msgid "System Architecture"
-msgstr ""
+msgstr "系统架构"
 
 #: ../../source/Visualization.rst:814 21fc4f5407e14c4eb680669991f685ec
 msgid ""
-"SENSEI's in situ architecture enables use of a diverse of back ends which"
-" can be selected at run time via an XML configuration file"
-msgstr ""
+"SENSEI's in situ architecture enables use of a diverse of back ends which can be selected at run time via an XML "
+"configuration file"
+msgstr "SENSEI的现场架构使得可以使用多种后端，可以通过XML配置文件在运行时进行选择。"
 
 #: ../../source/Visualization.rst:817 9044ccb1e60e457abfdf6f6ca17e18aa
 msgid ""
-"The three major architectural components in SENSEI are *data adaptors* "
-"which present simulation data in SENSEI's data model, *analysis adaptors*"
-" which present the back end data consumers to the simulation, and *bridge"
-" code* from which the simulation manages adaptors and periodically pushes"
-" data through the system. SENSEI comes equipped with a number of analysis"
-" adaptors enabling use of popular analysis and visualization libraries "
-"such as VisIt Libsim, ParaView Catalyst, Python, and ADIOS to name a few."
-" AMReX contains SENSEI data adaptors and bridge code making it easy to "
-"use in AMReX based simulation codes."
+"The three major architectural components in SENSEI are *data adaptors* which present simulation data in SENSEI's data "
+"model, *analysis adaptors* which present the back end data consumers to the simulation, and *bridge code* from which "
+"the simulation manages adaptors and periodically pushes data through the system. SENSEI comes equipped with a number of "
+"analysis adaptors enabling use of popular analysis and visualization libraries such as VisIt Libsim, ParaView Catalyst, "
+"Python, and ADIOS to name a few. AMReX contains SENSEI data adaptors and bridge code making it easy to use in AMReX "
+"based simulation codes."
 msgstr ""
+"在SENSEI中，有三个主要的架构组件：*数据适配器*，它将模拟数据呈现为SENSEI的数据模型；*分析适配器*，它将后端数据消费者呈现给模拟程序；以及*桥接代码*"
+"，用于模拟程序管理适配器并定期将数据推送到系统中。SENSEI配备了许多分析适配器，可以使用流行的分析和可视化库，如VisIt Libsim、ParaView "
+"Catalyst、Python和ADIOS等。AMReX包含SENSEI数据适配器和桥接代码，使其在基于AMReX的模拟代码中易于使用。"
 
 #: ../../source/Visualization.rst:826 a258c97dd7504bf793736fe919225f05
 msgid ""
-"SENSEI provides a *configurable analysis adaptor* which uses an XML file "
-"to select and configure one or more back ends at run time. Run time "
-"selection of the back end via XML means one user can access Catalyst, "
-"another Libsim, yet another Python with no changes to the code.  This is "
-"depicted in figure :numref:`sensei_arch`. On the left side of the figure "
-"AMReX produces data, the bridge code pushes the data through the "
-"configurable analysis adaptor to the back end that was selected at run "
-"time."
+"SENSEI provides a *configurable analysis adaptor* which uses an XML file to select and configure one or more back ends "
+"at run time. Run time selection of the back end via XML means one user can access Catalyst, another Libsim, yet another "
+"Python with no changes to the code.  This is depicted in figure :numref:`sensei_arch`. On the left side of the figure "
+"AMReX produces data, the bridge code pushes the data through the configurable analysis adaptor to the back end that was "
+"selected at run time."
 msgstr ""
+"SENSEI提供了一个可配置的分析适配器，它使用一个XML文件在运行时选择和配置一个或多个后端。通过XML在运行时选择后端意味着一个用户可以访问Catalyst，另一个用户可以访问Libsim，还有另一个用户可以访问Python，而不需要对"
+"代码进行任何更改。这在图:numref:`sensei_arch`中有所描述。在图的左侧，AMReX生成数据，桥接代码将数据通过可配置的分析适配器推送到在运行时选择的后端。"
 
 #: ../../source/Visualization.rst:835 105583c0e6f7434dab830685c6b29d68
 msgid "AMReX Integration"
-msgstr ""
+msgstr "AMReX 集成"
 
 #: ../../source/Visualization.rst:836 1c7de8a04f654ec3a539c61efaf529f5
 msgid ""
-"AMReX codes based on :cpp:`amrex::Amr` can use SENSEI simply by enabling "
-"it in the build and run via ParmParse parameters.  AMReX codes based on "
-":cpp:`amrex::AmrMesh` need to additionally invoke the bridge code in "
+"AMReX codes based on :cpp:`amrex::Amr` can use SENSEI simply by enabling it in the build and run via ParmParse "
+"parameters.  AMReX codes based on :cpp:`amrex::AmrMesh` need to additionally invoke the bridge code in "
 ":cpp:`amrex::AmrMeshInSituBridge`."
 msgstr ""
+"基于 `amrex::Amr` 的 AMReX 代码可以通过在构建过程中启用并通过 ParmParse 参数运行来使用 SENSEI。基于 `amrex::AmrMesh` 的 AMReX 代码还需要在 "
+"`amrex::AmrMeshInSituBridge` 中调用桥接代码。"
 
 #: ../../source/Visualization.rst:842 eeb5a46d011f497b8a4d21a4c9c0a35e
 msgid "Compiling with GNU Make"
-msgstr ""
+msgstr "使用GNU Make进行编译"
 
 #: ../../source/Visualization.rst:843 70ae282c708640f9a42405725b0bf1dc
-msgid ""
-"For codes making use of AMReX's build system add the following variable "
-"to the code's main :code:`GNUmakefile`."
-msgstr ""
+msgid "For codes making use of AMReX's build system add the following variable to the code's main :code:`GNUmakefile`."
+msgstr "对于使用AMReX构建系统的代码，请将以下变量添加到代码的主要 `GNUmakefile` 中。"
 
 #: ../../source/Visualization.rst:850 4bae38211e9c46078f3c7ee630fc3d3e
 msgid ""
-"When set, AMReX's make files will query environment variables for the "
-"lists of compiler and linker flags, include directories, and link "
-"libraries. These lists can be quite elaborate when using more "
-"sophisticated back ends, and are best set automatically using the "
-":code:`sensei_config` command line tool that should be installed with "
-"SENSEI. Prior to invoking make use the following command to set these "
-"variables:"
+"When set, AMReX's make files will query environment variables for the lists of compiler and linker flags, include "
+"directories, and link libraries. These lists can be quite elaborate when using more sophisticated back ends, and are "
+"best set automatically using the :code:`sensei_config` command line tool that should be installed with SENSEI. Prior to "
+"invoking make use the following command to set these variables:"
 msgstr ""
+"当设置好后，AMReX的make文件将查询环境变量以获取编译器和链接器标志、包含目录和链接库的列表。当使用更复杂的后端时，这些列表可能会非常复杂，最好使用与SENSEI一起安装的`sensei_config`"
+"命令行工具自动设置。在调用make之前，请使用以下命令设置这些变量："
 
 #: ../../source/Visualization.rst:861 b05e0053fb2d4cb28220ccfe0549e7e0
 msgid ""
-"Typically, the :code:`sensei_config` tool is in the users PATH after "
-"loading the desired SENSEI module. After configuring the build "
-"environment with :code:`sensei_config`, proceed as usual."
-msgstr ""
+"Typically, the :code:`sensei_config` tool is in the users PATH after loading the desired SENSEI module. After "
+"configuring the build environment with :code:`sensei_config`, proceed as usual."
+msgstr "通常，在加载所需的SENSEI模块后，`sensei_config`工具会出现在用户的PATH中。在使用`sensei_config`配置构建环境后，可以按照通常的方式继续进行。"
 
 #: ../../source/Visualization.rst:870 3fa40a89995d411aa20600c263b63619
 msgid "Compiling with CMake"
-msgstr ""
+msgstr "使用CMake进行编译"
 
 #: ../../source/Visualization.rst:871 b752165d42994e9485a7a1f6b7824947
 msgid ""
-"For codes making use of AMReX's CMake based build, one needs to enable "
-"SENSEI and point to the CMake configuration installed with SENSEI."
-msgstr ""
+"For codes making use of AMReX's CMake based build, one needs to enable SENSEI and point to the CMake configuration "
+"installed with SENSEI."
+msgstr "使用基于CMake的AMReX构建的代码，需要启用SENSEI并指向与SENSEI安装的CMake配置相对应的位置。"
 
 #: ../../source/Visualization.rst:878 e95f5bd0fbb14a7d99eadce6f3d2646a
 msgid ""
-"When CMake generates the make files proceed as usual. Note: <lib dir> may"
-" be `lib` or `lib64` or something else depending on what CMake decided to"
-" use for your particular OS. See the CMake GNUInstallDirs documentation "
-"for more information."
+"When CMake generates the make files proceed as usual. Note: <lib dir> may be `lib` or `lib64` or something else "
+"depending on what CMake decided to use for your particular OS. See the CMake GNUInstallDirs documentation for more "
+"information."
 msgstr ""
+"当CMake生成make文件后，按照通常的方式进行操作。注意：<lib dir>可能是`lib`、`lib64`或其他，具体取决于CMake在您的特定操作系统上决定使用的内容。有关更多信息，请参阅CMake "
+"GNUInstallDirs文档。"
 
 #: ../../source/Visualization.rst:888 795d31d3a02c465fb9a3879be016b5e7
 msgid "ParmParse Configuration"
-msgstr ""
+msgstr "ParmParse 配置"
 
 #: ../../source/Visualization.rst:889 f4a695673b1249c0948fc03ad5160555
 msgid ""
-"Once an AMReX code has been compiled with SENSEI features enabled, it "
-"will need to be enabled and configured at runtime. This is done using "
-"ParmParse input file. The following 3 ParmParse parameters are used:"
-msgstr ""
+"Once an AMReX code has been compiled with SENSEI features enabled, it will need to be enabled and configured at "
+"runtime. This is done using ParmParse input file. The following 3 ParmParse parameters are used:"
+msgstr "一旦启用了SENSEI功能，AMReX代码在编译后需要在运行时进行启用和配置。这是通过使用ParmParse输入文件来完成的。以下是使用的3个ParmParse参数："
 
 #: ../../source/Visualization.rst:899 731b76218cc644d095b27a24e8e5d943
 msgid ""
-":code:`sensei.enabled` turns SENSEI on or off.  :code:`sensei.config` "
-"points to the SENSEI XML file which selects and configures the desired "
-"back end. :code:`sensei.frequency` controls the number of level 0 time "
-"steps in between SENSEI processing."
+":code:`sensei.enabled` turns SENSEI on or off.  :code:`sensei.config` points to the SENSEI XML file which selects and "
+"configures the desired back end. :code:`sensei.frequency` controls the number of level 0 time steps in between SENSEI "
+"processing."
 msgstr ""
+":code:`sensei.enabled` 控制是否启用 SENSEI。:code:`sensei.config` 指向 SENSEI XML 文件，该文件选择并配置所需的后端。:code:`sensei.frequency` 控制 "
+"SENSEI 处理之间的级别 0 时间步数。"
 
 #: ../../source/Visualization.rst:906 a945277022d04c13b329317cd4080f5f
 msgid "Back-end Selection and Configuration"
-msgstr ""
+msgstr "后端选择和配置"
 
 #: ../../source/Visualization.rst:907 8f73bbf3a26249ebb11f79b7686cacff
 msgid ""
-"The back end is selected and configured at run time using the SENSEI XML "
-"file. The XML sets parameters specific to SENSEI and to the chosen back "
-"end. Many of the back ends have sophisticated configuration mechanisms "
-"which SENSEI makes use of.  For example the following XML configuration "
-"was used on NERSC's Cori with IAMR to render 10 iso surfaces, shown in "
-"figure :numref:`rt_visit`, using VisIt Libsim."
+"The back end is selected and configured at run time using the SENSEI XML file. The XML sets parameters specific to "
+"SENSEI and to the chosen back end. Many of the back ends have sophisticated configuration mechanisms which SENSEI makes "
+"use of.  For example the following XML configuration was used on NERSC's Cori with IAMR to render 10 iso surfaces, "
+"shown in figure :numref:`rt_visit`, using VisIt Libsim."
 msgstr ""
+"在运行时使用SENSEI "
+"XML文件选择和配置后端。XML文件设置了SENSEI和所选择的后端的特定参数。许多后端都具有复杂的配置机制，SENSEI利用这些机制。例如，在NERSC的Cori上使用IAMR渲染了10个等值面，如图:numref:`rt_visit`"
+"所示，使用了VisIt Libsim的以下XML配置。"
 
 #: ../../source/Visualization.rst:924 8934780edd134d869dfa4c170c8f2860
 msgid ""
-"The *session* attribute names a session file that contains VisIt specific"
-" runtime configuration. The session file is generated using VisIt GUI on "
-"a representative dataset. Usually this data set is generated in a low "
-"resolution run of the desired simulation."
-msgstr ""
+"The *session* attribute names a session file that contains VisIt specific runtime configuration. The session file is "
+"generated using VisIt GUI on a representative dataset. Usually this data set is generated in a low resolution run of "
+"the desired simulation."
+msgstr "*session* 属性指定了一个包含 VisIt 特定运行时配置的会话文件。该会话文件是使用 VisIt 图形用户界面在一个代表性数据集上生成的。通常，这个数据集是在所需模拟的低分辨率运行中生成的。"
 
 #: ../../source/Visualization.rst:932 14cbfd8c31a94434bb390051f7316122
-msgid ""
-"SENSEI-Libsim in situ visualization of a Raleigh-Taylor instability "
-"computed by IAMR on NERSC Cori using 2048 cores."
-msgstr ""
+msgid "SENSEI-Libsim in situ visualization of a Raleigh-Taylor instability computed by IAMR on NERSC Cori using 2048 cores."
+msgstr "在NERSC Cori上使用2048个核心，通过IAMR计算得出的Raleigh-Taylor不稳定性，通过SENSEI-Libsim进行原地可视化。"
 
 #: ../../source/Visualization.rst:935 2c4570d24a4c47cd93bb207332ecbe39
 msgid ""
-"The same run and visualization was repeated using ParaView Catalyst, "
-"shown in figure :numref:`rt_pv`, by providing the following XML "
-"configuration."
-msgstr ""
+"The same run and visualization was repeated using ParaView Catalyst, shown in figure :numref:`rt_pv`, by providing the "
+"following XML configuration."
+msgstr "使用ParaView Catalyst重复了相同的运行和可视化，如图:numref:`rt_pv`所示，通过提供以下XML配置。"
 
 #: ../../source/Visualization.rst:945 90754795cd7d472fb073ba5435057367
 msgid ""
-"Here the *filename* attribute is used to pass Catalyst a Catalyst "
-"specific configuration that was generated using the ParaView GUI on a "
-"representative dataset."
-msgstr ""
+"Here the *filename* attribute is used to pass Catalyst a Catalyst specific configuration that was generated using the "
+"ParaView GUI on a representative dataset."
+msgstr "在这里，*filename* 属性用于向 Catalyst 传递一个使用 ParaView 图形用户界面在一个代表性数据集上生成的 Catalyst 特定配置。"
 
 #: ../../source/Visualization.rst:952 255eb54e2f8048aca9ba6d412fb2224b
-msgid ""
-"SENSEI-Catalyst in situ visualization of a Raleigh-Taylor instability "
-"computed by IAMR on NERSC Cori using 2048 cores."
-msgstr ""
+msgid "SENSEI-Catalyst in situ visualization of a Raleigh-Taylor instability computed by IAMR on NERSC Cori using 2048 cores."
+msgstr "SENSEI-Catalyst 在 NERSC Cori 上使用 2048 个核心，通过 IAMR 计算得出的 Raleigh-Taylor 不稳定性进行原地可视化。"
 
 #: ../../source/Visualization.rst:957 07f031440af54a339554b39be866cb37
 msgid "Obtaining SENSEI"
-msgstr ""
+msgstr "获取SENSEI"
 
 #: ../../source/Visualization.rst:958 89675f10772242cdaf7ad19dfb6938dc
 msgid "SENSEI is hosted on github at https://github.com/SENSEI-insitu/SENSEI.git"
-msgstr ""
+msgstr "SENSEI托管在GitHub上，网址为https://github.com/SENSEI-insitu/SENSEI.git。"
 
 #: ../../source/Visualization.rst:960 f32e9b9c3b6049aca57c7c63c2a5a7f5
 msgid ""
-"To ease the burden of wrangling back end installs SENSEI provides two "
-"platforms with all dependencies pre-installed, a VirtualBox VM, and a "
-"NERSC Cori deployment. New users are encouraged to experiment with one of"
-" these."
-msgstr ""
+"To ease the burden of wrangling back end installs SENSEI provides two platforms with all dependencies pre-installed, a "
+"VirtualBox VM, and a NERSC Cori deployment. New users are encouraged to experiment with one of these."
+msgstr "为了减轻后端安装的负担，SENSEI提供了两个平台，其中包含了所有预先安装的依赖项，一个是VirtualBox虚拟机，另一个是NERSC Cori部署。鼓励新用户尝试其中之一进行实验。"
 
 #: ../../source/Visualization.rst:966 4b0ddbaea925472db5466ba7652fa20d
 msgid "SENSEI VM"
-msgstr ""
+msgstr "先生虚拟机"
 
 #: ../../source/Visualization.rst:967 7756a3ee5d1949e99b1cf1d9bebfd976
 msgid ""
-"The SENSEI VM comes with all of SENSEI's dependencies and the major back "
-"ends such as VisIt and ParaView installed. The VM is the easiest way to "
-"test things out. It also can be used to see how installs were done and "
-"the environment configured."
-msgstr ""
+"The SENSEI VM comes with all of SENSEI's dependencies and the major back ends such as VisIt and ParaView installed. The "
+"VM is the easiest way to test things out. It also can be used to see how installs were done and the environment "
+"configured."
+msgstr "SENSEI虚拟机（VM）已经预装了SENSEI的所有依赖项以及主要的后端工具，如VisIt和ParaView。使用虚拟机是最简单的测试方法。它还可以用于查看安装过程和环境配置的方式。"
 
 #: ../../source/Visualization.rst:973 231c26d1dcd9459e93b63c1ef1548ead
 msgid "NERSC Cori"
-msgstr ""
+msgstr "NERSC Cori"
 
 #: ../../source/Visualization.rst:974 e8502ef2fe554c8691aefc50726747ac
 msgid ""
-"SENSEI is deployed at NERSC on Cori. The NERSC deployment includes the "
-"major back ends such as ParaView Catalyst, VisIt Libsim, and Python."
-msgstr ""
+"SENSEI is deployed at NERSC on Cori. The NERSC deployment includes the major back ends such as ParaView Catalyst, VisIt "
+"Libsim, and Python."
+msgstr "SENSEI部署在NERSC的Cori上。NERSC的部署包括主要的后端，如ParaView Catalyst、VisIt Libsim和Python。"
 
 #: ../../source/Visualization.rst:979 6ba57e9ebfc84b728bd05325a8c2f52c
 msgid "AmrLevel Tutorial with Catalyst"
-msgstr ""
+msgstr "AmrLevel教程与催化剂"
 
 #: ../../source/Visualization.rst:980 978fba7a0aea4d89bfe54419a56a31d7
 msgid ""
-"The following steps show how to run the tutorial with ParaView Catalyst. "
-"The simulation will periodically write images during the run."
-msgstr ""
+"The following steps show how to run the tutorial with ParaView Catalyst. The simulation will periodically write images "
+"during the run."
+msgstr "以下步骤展示了如何使用ParaView Catalyst运行教程。模拟将在运行过程中定期写入图像。"
 
 #: ../../source/Visualization.rst:1005 5e800655c0f84289b926a3b38554cca0
 msgid "AmrLevel Tutorial with Libsim"
-msgstr ""
+msgstr "AmrLevel教程与Libsim"
 
 #: ../../source/Visualization.rst:1006 25311a8c2e7245da8766a9b838fa0f7b
 msgid ""
-"The following steps show how to run the tutorial with VisIt Libsim. The "
-"simulation will periodically write images during the run."
-msgstr ""
-
+"The following steps show how to run the tutorial with VisIt Libsim. The simulation will periodically write images "
+"during the run."
+msgstr "以下步骤展示了如何使用VisIt Libsim运行教程。模拟将在运行过程中定期写入图像。"

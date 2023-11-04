@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,211 +21,199 @@ msgstr ""
 
 #: ../../source/SWFFT.rst:13 7e43b9e4c5ab45c8a281f94dc46cded1
 msgid "SWFFT"
-msgstr ""
+msgstr "SWFFT"
 
 #: ../../source/SWFFT.rst:15 b1b287ce81d54e7eb37a6104150cc254
 msgid ""
-"``hacc/SWFFT``, developed by Adrian Pope et al. at Argonne National Lab, "
-"provides the functionality to perform forward and reverse Fast Fourier "
-"Transforms (FFT) within a fully parallelized framework built in C++ and "
-"F90. In the words of HACC's developers, SWFFT is a \"distributed-memory, "
-"pencil-decomposed, parallel 3D FFT.\" [1]_ The SWFFT source code is also "
-"contained in the following directory within AMReX: "
-"``amrex/Src/Extern/SWFFT``. [2]_"
+"``hacc/SWFFT``, developed by Adrian Pope et al. at Argonne National Lab, provides the functionality to perform forward "
+"and reverse Fast Fourier Transforms (FFT) within a fully parallelized framework built in C++ and F90. In the words of "
+"HACC's developers, SWFFT is a \"distributed-memory, pencil-decomposed, parallel 3D FFT.\" [1]_ The SWFFT source code is "
+"also contained in the following directory within AMReX: ``amrex/Src/Extern/SWFFT``. [2]_"
 msgstr ""
+"``hacc/SWFFT``, "
+"是由阿贾安·波普等人在阿贡国家实验室开发的，它提供了在完全并行化的C++和F90框架中执行正向和反向快速傅里叶变换（FFT）的功能。用HACC开发者的话来说，SWFFT是一个\"分布式内存、铅笔分解、并行三维FFT\"。[1]_ "
+"SWFFT的源代码也包含在AMReX的以下目录中：``amrex/Src/Extern/SWFFT``。[2]_"
 
 #: ../../source/SWFFT.rst:18 8951f81fb87a4b0ab7873b6134c07791
 msgid "Pencil Redistribution"
-msgstr ""
+msgstr "铅笔再分配"
 
 #: ../../source/SWFFT.rst:20 bc6504c83c6b403bb498b5cc36500d77
 msgid ""
-"As input, SWFFT takes three-dimensional arrays of data distributed across"
-" block-structured grids, and redistributes the data into \"pencil\" grids"
-" in :math:`z, x,` and then :math:`y`, belonging to different MPI "
-"processes. After each pencil conversion, a 1D FFT is performed on the "
-"data along the pencil direction using calls to the FFTW [3]_ library. The"
-" ``README`` files in the tutorial directories specify the relationship "
-"between the number of grids and the number of MPI processes that should "
-"be used. The ``hacc/SWFFT`` ``README`` document by Adrian Pope et al. "
-"explains restrictions on grid dimensions in relation to the number of MPI"
-" processes [1]_  [2]_:"
+"As input, SWFFT takes three-dimensional arrays of data distributed across block-structured grids, and redistributes the "
+"data into \"pencil\" grids in :math:`z, x,` and then :math:`y`, belonging to different MPI processes. After each pencil "
+"conversion, a 1D FFT is performed on the data along the pencil direction using calls to the FFTW [3]_ library. The "
+"``README`` files in the tutorial directories specify the relationship between the number of grids and the number of MPI "
+"processes that should be used. The ``hacc/SWFFT`` ``README`` document by Adrian Pope et al. explains restrictions on "
+"grid dimensions in relation to the number of MPI processes [1]_  [2]_:"
 msgstr ""
+"SWFFT接受在块结构网格上分布的三维数据数组作为输入，并将数据重新分布到属于不同MPI进程的“铅笔”网格中，其中铅笔网格按照z、x和y的顺序进行。在每次铅笔转换之后，使用FFTW "
+"[3]_库的函数调用在铅笔方向上对数据进行一维FFT。教程目录中的“README”文件指定了应该使用的网格数量和MPI进程数量之间的关系。Adrian "
+"Pope等人编写的“hacc/SWFFT”“README”文档解释了网格维度与MPI进程数量之间的限制[1]_ [2]_。"
 
 #: ../../source/SWFFT.rst:22 4ec8a1ba8fba4755aa758b6baa54863e
 msgid ""
-"[...] A rule of thumb is that [SWFFT] generally works when the number of "
-"vertices along one side of the global 3D grid (\"ng\") can be factored "
-"into small primes, and when the number of MPI ranks can also be factored "
-"into small primes. I believe that all of the unique prime factors of the "
-"number of MPI ranks must be present in the set of prime factors of the "
-"grid, eg. if you have 20 MPI ranks then ng must be a multiple of 5 and 2."
-" The ``CheckDecomposition`` utility is provided to check (on one rank) "
-"whether a proposed grid size and number of MPI ranks will work, which can"
-" be done before submitting a large test with ``TestDfft/TestFDfft``."
+"[...] A rule of thumb is that [SWFFT] generally works when the number of vertices along one side of the global 3D grid "
+"(\"ng\") can be factored into small primes, and when the number of MPI ranks can also be factored into small primes. I "
+"believe that all of the unique prime factors of the number of MPI ranks must be present in the set of prime factors of "
+"the grid, eg. if you have 20 MPI ranks then ng must be a multiple of 5 and 2. The ``CheckDecomposition`` utility is "
+"provided to check (on one rank) whether a proposed grid size and number of MPI ranks will work, which can be done "
+"before submitting a large test with ``TestDfft/TestFDfft``."
 msgstr ""
+"[...] "
+"一个经验法则是，当全局三维网格的一边的顶点数（\"ng\"）可以分解为小的质数，并且MPI进程数也可以分解为小的质数时，[SWFFT]通常有效。我相信，MPI进程数的所有唯一质因数必须存在于网格的质因数集合中，例如，如果你有20"
+"个MPI进程，则ng必须是5和2的倍数。提供了``CheckDecomposition``实用程序来检查（在一个进程中）所提议的网格大小和MPI进程数是否可行，可以在使用``TestDfft/TestFDfft``提交大型测试之前进行检查。"
 
 #: ../../source/SWFFT.rst:32 3e5ce083a7e942db8ee9b1aab06965e7
 msgid ""
-"The relationship between the number of processes versus global grid "
-"dimensions is determined by how the total number of grids can be factored"
-" from a three dimensional grid structure (block structured grids) into a "
-"two dimensional structure (pencil arrays), as shown in the figures below."
-msgstr ""
+"The relationship between the number of processes versus global grid dimensions is determined by how the total number of "
+"grids can be factored from a three dimensional grid structure (block structured grids) into a two dimensional structure "
+"(pencil arrays), as shown in the figures below."
+msgstr "关于进程数量与全局网格维度之间的关系，取决于如何将三维网格结构（块状结构网格）中的总网格数分解为二维结构（铅笔阵列），如下图所示。"
 
 #: ../../source/SWFFT.rst:34 646e27a2dfbd4b89b46a8d6452d7f771
 msgid ""
-"The following figures illustrate how data is distributed from block "
-"structured grids to pencil arrays within SWFFT, where the colors of each "
-"box indicate which MPI rank it belongs to:"
-msgstr ""
+"The following figures illustrate how data is distributed from block structured grids to pencil arrays within SWFFT, "
+"where the colors of each box indicate which MPI rank it belongs to:"
+msgstr "下面的图示说明了数据在SWFFT中从块结构网格分布到铅笔数组的过程，其中每个方框的颜色表示它属于哪个MPI进程的范围。"
 
 #: ../../source/SWFFT.rst:54 8574e630fd014974865c4d479757b96a
-msgid ""
-"SWFFT Redistribution from :math:`4 \\times 4 \\times 4` Box Array into "
-"Pencils"
-msgstr ""
+msgid "SWFFT Redistribution from :math:`4 \\times 4 \\times 4` Box Array into Pencils"
+msgstr "从一个大小为4x4x4的盒子阵列中将SWFFT重新分配为铅笔。"
 
 #: ../../source/SWFFT.rst:58 e0efe58a0e444da7af9913ee553d7e0b
 msgid "|a|"
-msgstr ""
+msgstr "|a|"
 
 #: ../../source/SWFFT.rst:36 547969dcb3b740f68ec53dc694807a93
 msgid "a"
-msgstr ""
+msgstr "一个"
 
 #: ../../source/SWFFT.rst:58 6fdb6badf3a942d8b280e72583ce589a
 msgid "|b|"
-msgstr ""
+msgstr "|b|"
 
 #: ../../source/SWFFT.rst:39 9ba11c4ebc8444c4affdc00dbc5f8ed5
 msgid "b"
-msgstr ""
+msgstr "b"
 
 #: ../../source/SWFFT.rst ff3f900f364842869860726b4327980e
 msgid "(a) Block structured grids: :math:`N_x=4,N_y=4,N_z=4`"
-msgstr ""
+msgstr "(a) 块结构网格: :math:`N_x=4,N_y=4,N_z=4`"
 
 #: ../../source/SWFFT.rst 38654b35e282465e89638d65c04679a8
 msgid "(b) Z-pencils: :math:`N_x=8,N_y=8,N_z=1`"
-msgstr ""
+msgstr "(b) Z-铅笔: :math:`N_x=8,N_y=8,N_z=1`"
 
 #: ../../source/SWFFT.rst:64 bb87a78550e4471bbd85e65e976f5270
-msgid ""
-"SWFFT Redistribution from :math:`2 \\times 2 \\times 2` Box Array into "
-"Pencils"
-msgstr ""
+msgid "SWFFT Redistribution from :math:`2 \\times 2 \\times 2` Box Array into Pencils"
+msgstr "从一个大小为 :math:`2 \\times 2 \\times 2` 的盒状阵列中将 SWFFT 重新分配为铅笔。"
 
 #: ../../source/SWFFT.rst:68 5333396c33724d3ba6f220dd860cea5b
 msgid "|c|"
-msgstr ""
+msgstr "|c|"
 
 #: ../../source/SWFFT.rst:42 3052a2ecd9fb4e0eba9774c6f1c8d80f
 msgid "c"
-msgstr ""
+msgstr "c"
 
 #: ../../source/SWFFT.rst:68 feb98df91dcb4ab6bb8531ce2a191d80
 msgid "|d|"
-msgstr ""
+msgstr "|d|"
 
 #: ../../source/SWFFT.rst:45 5eef930a75204dac85710fc1727a9e74
 msgid "d"
-msgstr ""
+msgstr "d"
 
 #: ../../source/SWFFT.rst e2f4dc3915344f5b9472179381fe26d4
 msgid "(a) Block structured grids: :math:`N_x=2,N_y=2,N_z=2`"
-msgstr ""
+msgstr "(a) 块结构网格: :math:`N_x=2,N_y=2,N_z=2`"
 
 #: ../../source/SWFFT.rst 3f6ed7e651484e8a97cd83fa5948f335
 msgid "(b) Z-pencils: :math:`N_x=4,N_y=2,N_z=1`"
-msgstr ""
+msgstr "(b) Z-铅笔: :math:`N_x=4,N_y=2,N_z=1`"
 
 #: ../../source/SWFFT.rst:72 1c741826f78d4bf393a4ba93d3c3b346
 msgid "|e|"
-msgstr ""
+msgstr "|e|"
 
 #: ../../source/SWFFT.rst:48 c984061f5cbe47188b60d586286a9aa9
 msgid "e"
-msgstr ""
+msgstr "e"
 
 #: ../../source/SWFFT.rst:72 88567d374cf046069f5bda2e00f3bc11
 msgid "|f|"
-msgstr ""
+msgstr "|f|"
 
 #: ../../source/SWFFT.rst:51 897a4df0f8284930b1b9194332535ddc
 msgid "f"
-msgstr ""
+msgstr "f"
 
 #: ../../source/SWFFT.rst 8bfe1b795595442bb8faa94915226ac2
 msgid "(c) X-pencils: :math:`N_x=1,N_y=4,N_z=2`"
-msgstr ""
+msgstr "(c) X-铅笔: :math:`N_x=1,N_y=4,N_z=2`"
 
 #: ../../source/SWFFT.rst 2c81f96ab00344a7b34979991a7d20a9
 msgid "(d) Y-pencils: :math:`N_x=4,N_y=1,N_z=2`"
-msgstr ""
+msgstr "(d) Y-铅笔: :math:`N_x=4,N_y=1,N_z=2`"
 
 #: ../../source/SWFFT.rst:77 462d15aabc034b86a63ad9a9b9b1296e
 msgid ""
-"Using the same number of AMReX grids as processes has been verified to "
-"work in the `SWFFT Poisson`_ and `SWFFT Simple`_ tutorials. This can be "
-"illustrated by the following equation for the total number of grids, "
-":math:`N_{b}`, in a regularly structured domain:"
-msgstr ""
+"Using the same number of AMReX grids as processes has been verified to work in the `SWFFT Poisson`_ and `SWFFT Simple`_ "
+"tutorials. This can be illustrated by the following equation for the total number of grids, :math:`N_{b}`, in a "
+"regularly structured domain:"
+msgstr "在“SWFFT Poisson”和“SWFFT Simple”教程中，已经验证了使用与进程数量相同的AMReX网格是可行的。这可以通过以下方程来说明在一个规则结构域中网格的总数 :math:`N_{b}` ："
 
 #: ../../source/SWFFT.rst:79 d06953921bfb46358e93679be075cab6
 msgid ""
 "N_{b} = m_{bi} m_{bj} = n_{bi} n_{bj} n_{bk},\n"
 "\n"
-msgstr ""
+msgstr "N_{b} = m_{bi} m_{bj} = n_{bi} n_{bj} n_{bk},"
 
 #: ../../source/SWFFT.rst:81 2a045f35e79e47e391242aa8c64be53f
 msgid ""
-"where :math:`n_{bi}, n_{bj},` and  :math:`n_{bk}` are the number of "
-"grids, or boxes, in the :math:`x, y,` and :math:`z` dimensions of the "
-"block-structured grid. Analogously, for pencil distributions, "
-":math:`m_{bi}` and :math:`m_{bj}` are the number of grids along the "
-"remaining dimensions if pencils are taken in the :math:`k` direction. "
-"There are many possible ways of redistributing the data, for example "
-":math:`m_{bi} = n_{bi}n_{bk}` & :math:`m_{bj} = n_{bj}` is one possible "
-"simple configuration. However, it is evident from the figures above that "
-"the SWFFT redistribution algorithm has a more sophisticated method for "
-"finding the prime factors of the grid."
+"where :math:`n_{bi}, n_{bj},` and  :math:`n_{bk}` are the number of grids, or boxes, in the :math:`x, y,` and :math:`z` "
+"dimensions of the block-structured grid. Analogously, for pencil distributions, :math:`m_{bi}` and :math:`m_{bj}` are "
+"the number of grids along the remaining dimensions if pencils are taken in the :math:`k` direction. There are many "
+"possible ways of redistributing the data, for example :math:`m_{bi} = n_{bi}n_{bk}` & :math:`m_{bj} = n_{bj}` is one "
+"possible simple configuration. However, it is evident from the figures above that the SWFFT redistribution algorithm "
+"has a more sophisticated method for finding the prime factors of the grid."
 msgstr ""
+"其中 :math:`n_{bi}, n_{bj},` 和 :math:`n_{bk}` 分别表示块结构网格在 :math:`x, y,` 和 :math:`z` 维度上的网格或盒子数量。类似地，对于铅笔分布，如果在 :math:`k` "
+"方向上采用铅笔，则 :math:`m_{bi}` 和 :math:`m_{bj}` 分别表示在剩余维度上的网格数量。有许多可能的数据重新分布方式，例如 :math:`m_{bi} = n_{bi}n_{bk}` 和 "
+":math:`m_{bj} = n_{bj}` 是一种可能的简单配置。然而，从上述图中可以明显看出，SWFFT 重新分布算法具有一种更复杂的方法来找到网格的质因数。"
 
 #: ../../source/SWFFT.rst:84 950458824756409cafdb01e2a1a1ba6c
 msgid "Tutorials"
-msgstr ""
+msgstr "教程"
 
 #: ../../source/SWFFT.rst:86 ee7558edaca842728ee086a62935a712
 msgid "AMReX contains two SWFFT tutorials, `SWFFT Poisson`_ and `SWFFT Simple`_:"
-msgstr ""
+msgstr "AMReX 包含两个 SWFFT 教程，`SWFFT Poisson`_ 和 `SWFFT Simple`_。"
 
 #: ../../source/SWFFT.rst:88 163b7ae2a2a248a6b5cbef4266c17418
 msgid ""
-"`SWFFT Poisson`_ solves a Poisson equation with periodic boundary "
-"conditions.  In it, both a forward FFT and reverse FFT are called to "
-"solve the equation, however, no reordering of the DFT data in k-space is "
-"performed."
-msgstr ""
+"`SWFFT Poisson`_ solves a Poisson equation with periodic boundary conditions.  In it, both a forward FFT and reverse "
+"FFT are called to solve the equation, however, no reordering of the DFT data in k-space is performed."
+msgstr "`SWFFT Poisson`_ 用于求解具有周期边界条件的泊松方程。在其中，通过调用正向FFT和反向FFT来解决方程，但是没有对k空间中的DFT数据进行重新排序。"
 
 #: ../../source/SWFFT.rst:91 930185f6de8f41e09141ee50c94d52b6
 msgid ""
-"`SWFFT Simple`_ is useful if the objective is to simply take a forward "
-"FFT of data, and the DFT's ordering in k-space matters to the user. This "
-"tutorial initializes a 3D or 2D :cpp:`MultiFab`, takes a forward FFT, and"
-" then redistributes the data in k-space back to the \"correct,\" 0 to "
-":math:`2\\pi`, ordering. The results are written to a plot file."
+"`SWFFT Simple`_ is useful if the objective is to simply take a forward FFT of data, and the DFT's ordering in k-space "
+"matters to the user. This tutorial initializes a 3D or 2D :cpp:`MultiFab`, takes a forward FFT, and then redistributes "
+"the data in k-space back to the \"correct,\" 0 to :math:`2\\pi`, ordering. The results are written to a plot file."
 msgstr ""
+"如果目标只是对数据进行正向FFT，并且DFT在k空间中的顺序对用户很重要，那么`SWFFT "
+"Simple`_是很有用的。本教程初始化一个3D或2D的:cpp:`MultiFab`，进行正向FFT，然后将数据在k空间中重新分布到“正确”的0到:math:`2\\pi`的顺序。结果将被写入一个绘图文件。"
 
 #: ../../source/SWFFT.rst:101 6850e1abfa7b40b9a6386908995ec249
 msgid "https://git.cels.anl.gov/hacc/SWFFT"
-msgstr ""
+msgstr "https://git.cels.anl.gov/hacc/SWFFT"
 
 #: ../../source/SWFFT.rst:104 114aaa4bd8764077bcc566a138cebec1
 msgid "SWFFT source code directory in AMReX: amrex/Src/Extern/SWFFT"
-msgstr ""
+msgstr "SWFFT源代码目录在AMReX中的位置是amrex/Src/Extern/SWFFT。"
 
 #: ../../source/SWFFT.rst:107 175b9c5cafa9432ebd8dfa6797b9dffe
 msgid "http://www.fftw.org/"
-msgstr ""
-
+msgstr "http://www.fftw.org/"

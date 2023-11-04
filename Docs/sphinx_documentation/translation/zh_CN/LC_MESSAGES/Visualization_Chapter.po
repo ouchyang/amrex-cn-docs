@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,15 +21,14 @@ msgstr ""
 
 #: ../../source/Visualization_Chapter.rst:4 4703dea458f7407b88cd189be4e36988
 msgid "Visualization"
-msgstr ""
+msgstr "可视化"
 
 #: ../../source/Visualization_Chapter.rst:6 bb612593de1a4f2eb794b618870df248
 msgid ""
-"There are several visualization tools that can be used for AMReX "
-"plotfiles. The standard tool used within the AMReX-community is Amrvis, a"
-" package developed and supported by CCSE that is designed specifically "
-"for highly efficient visualization of block-structured hierarchical AMR "
-"data. Plotfiles can also be viewed using the VisIt, ParaView, and yt "
+"There are several visualization tools that can be used for AMReX plotfiles. The standard tool used within the "
+"AMReX-community is Amrvis, a package developed and supported by CCSE that is designed specifically for highly efficient "
+"visualization of block-structured hierarchical AMR data. Plotfiles can also be viewed using the VisIt, ParaView, and yt "
 "packages. Particle data can be viewed using ParaView."
 msgstr ""
-
+"有几种可用于 AMReX plotfiles 的可视化工具。在 AMReX 社区中，标准工具是 Amrvis，这是由 CCSE 开发和支持的一个专门用于高效可视化块结构分层 AMR 数据的软件包。还可以使用 VisIt、ParaView "
+"和 yt 软件包来查看 plotfiles。使用 ParaView 可以查看粒子数据。"

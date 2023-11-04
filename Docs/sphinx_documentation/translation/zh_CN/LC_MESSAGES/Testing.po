@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,131 +21,119 @@ msgstr ""
 
 #: ../../source/Testing.rst:5 e1c9a6bf94144e0c8f20d639fdcc660d
 msgid "Continuous Compilation Testing"
-msgstr ""
+msgstr "持续编译测试"
 
 #: ../../source/Testing.rst:7 3689f8b21d154ec49a9e2fdfdc1dc076
 msgid ""
-"As a first line of testing, on every commit to the repository, we verify "
-"that we can compile AMReX as a library for a common set of configuration "
-"options. This operation is performed through Travis-CI. This layer of "
-"testing is deliberately limited, so that it can be run quickly on every "
-"commit. For more extensive testing, we rely on the nightly regression "
-"results."
-msgstr ""
+"As a first line of testing, on every commit to the repository, we verify that we can compile AMReX as a library for a "
+"common set of configuration options. This operation is performed through Travis-CI. This layer of testing is "
+"deliberately limited, so that it can be run quickly on every commit. For more extensive testing, we rely on the nightly "
+"regression results."
+msgstr "作为测试的第一步，在每次提交到代码库时，我们会验证能够使用一组常见的配置选项将AMReX编译为库。这个操作是通过Travis-CI执行的。这一层测试被有意地限制，以便能够在每次提交时快速运行。对于更全面的测试，我们依赖于每晚的回归测试结果。"
 
 #: ../../source/Testing.rst:14 f12313d0b40a47c6a9ccbad30916ce7c
 msgid "Nightly Regression Testing"
-msgstr ""
+msgstr "夜间回归测试"
 
 #: ../../source/Testing.rst:16 f5224d1596144d909046f8e9d8efcf72
 msgid ""
-"Each night, we automatically run a suite of tests, both on AMReX itself, "
-"and on a most of the major application codes that use it as a framework. "
-"We use an in-house test runner script to manage this operation, "
-"originally developed by Michael Zingale for the Castro code, and later "
-"expanded to other application codes as well. The results for each night "
-"are collected and stored on a web page; see "
-"https://ccse.lbl.gov/pub/RegressionTesting/ for the latest set of "
-"results. The runtime option ``amrex.abort_on_unused_inputs`` (``0`` or "
-"``1``; default is ``0`` for false) is useful for making sure that tests "
-"always stay up to date with API changes as it will abort the application "
-"after the test run if any unused input parameters were detected."
+"Each night, we automatically run a suite of tests, both on AMReX itself, and on a most of the major application codes "
+"that use it as a framework. We use an in-house test runner script to manage this operation, originally developed by "
+"Michael Zingale for the Castro code, and later expanded to other application codes as well. The results for each night "
+"are collected and stored on a web page; see https://ccse.lbl.gov/pub/RegressionTesting/ for the latest set of results. "
+"The runtime option ``amrex.abort_on_unused_inputs`` (``0`` or ``1``; default is ``0`` for false) is useful for making "
+"sure that tests always stay up to date with API changes as it will abort the application after the test run if any "
+"unused input parameters were detected."
 msgstr ""
+"每天晚上，我们会自动运行一套测试，既针对AMReX本身，也针对使用它作为框架的大多数主要应用程序代码。我们使用一个内部的测试运行脚本来管理这个操作，最初由Michael "
+"Zingale为Castro代码开发，后来扩展到其他应用程序代码。每天的结果会被收集并存储在一个网页上；请参阅https://ccse.lbl.gov/pub/RegressionTesting/获取最新的结果集。运行时选项``amrex."
+"abort_on_unused_inputs``（``0``或``1``；默认为``0``表示false）对于确保测试始终与API更改保持同步非常有用，因为如果检测到任何未使用的输入参数，它将在测试运行后中止应用程序。"
 
 #: ../../source/Testing.rst:24 02a61c4b27214d79bf4b5e1b43c294c2
 msgid "Running the test suite locally"
-msgstr ""
+msgstr "在本地运行测试套件"
 
 #: ../../source/Testing.rst:26 1a0eac54e20a4dbc9a059911e3112192
 msgid ""
-"The test suite is mostly used internally by AMReX developers. However, if"
-" you are making a pull request to AMReX, it can be useful to run the test"
-" suite on your local machine to reduce the likelihood that your changes "
-"break some existing functionality. To run the test suite locally, you "
-"must first obtain a copy of the test runner source, available on Github "
-"here: https://github.com/AMReX-Codes/regression_testing. The test runner "
-"requires Python version 2.7 or greater. Additional information on the "
-"test suite software can be found at, https://amrex-"
-"codes.github.io/regression_testing/."
+"The test suite is mostly used internally by AMReX developers. However, if you are making a pull request to AMReX, it "
+"can be useful to run the test suite on your local machine to reduce the likelihood that your changes break some "
+"existing functionality. To run the test suite locally, you must first obtain a copy of the test runner source, "
+"available on Github here: https://github.com/AMReX-Codes/regression_testing. The test runner requires Python version "
+"2.7 or greater. Additional information on the test suite software can be found at, "
+"https://amrex-codes.github.io/regression_testing/."
 msgstr ""
+"测试套件主要由AMReX开发人员在内部使用。然而，如果您要向AMReX提交拉取请求，运行测试套件可以帮助您在本地机器上减少您的更改破坏现有功能的可能性。要在本地运行测试套件，您首先必须获取测试运行器源代码的副本，可在Github上找到：ht"
+"tps://github.com/AMReX-Codes/regression_testing。测试运行器要求使用Python "
+"2.7或更高版本。有关测试套件软件的更多信息，请访问https://amrex-codes.github.io/regression_testing/。"
 
 #: ../../source/Testing.rst:34 54e20ded7ee2448c94aa0d6b448df70a
 msgid ""
-"After obtaining the code, you will need a configuration file that defines"
-" which tests to run, which amrex repository to test, which branch to use,"
-" etc. A sample configuration file for AMReX is distributed with the amrex"
-" source code at :cpp:`amrex/Tools/RegressionTesting/AMReX-tests.ini`. You"
-" will need to modify a few of the entries to, for example, point the test"
-" runner to the clone of amrex on your local machine. Entries you will "
-"likely want to change include:"
+"After obtaining the code, you will need a configuration file that defines which tests to run, which amrex repository to "
+"test, which branch to use, etc. A sample configuration file for AMReX is distributed with the amrex source code at "
+":cpp:`amrex/Tools/RegressionTesting/AMReX-tests.ini`. You will need to modify a few of the entries to, for example, "
+"point the test runner to the clone of amrex on your local machine. Entries you will likely want to change include:"
 msgstr ""
+"在获取代码之后，您将需要一个配置文件来定义要运行的测试、要测试的amrex存储库、要使用的分支等。AMReX的示例配置文件随amrex源代码一起分发，位于：cpp：`amrex/Tools/RegressionTesting/AMReX-"
+"tests.ini`。您需要修改一些条目，例如将测试运行器指向您本地机器上的amrex克隆。您可能想要更改的条目包括："
 
 #: ../../source/Testing.rst:48 05b22ecb29b840d1b16db84e7f3642e9
 msgid "to control where the generated output will be written, and"
-msgstr ""
+msgstr "控制生成的输出将被写入的位置，并且"
 
 #: ../../source/Testing.rst:56 dc1319737de64d0d9e2e0ea38aa61a76
 msgid "to control which repository and branch to test."
-msgstr ""
+msgstr "控制要测试的存储库和分支。"
 
 #: ../../source/Testing.rst:58 6c444d8a269c432d8f3a9c1e44c460f3
 msgid "The test runner is a Python script and can be invoked like so:"
-msgstr ""
+msgstr "测试运行器是一个Python脚本，可以这样调用："
 
 #: ../../source/Testing.rst:64 b49a336fd80d4b7eadc0e46e15cd870e
 msgid ""
-"Before you can use it, you must first generate a set of \"benchmarks\" - "
-"i.e. known \"good\" answers to the tests that will be run. If you are "
-"testing a pull request, you can generate these by running the script with"
-" a recent version of the :cpp:`development` branch of AMReX. You can "
-"generate the benchmarks like so:"
-msgstr ""
+"Before you can use it, you must first generate a set of \"benchmarks\" - i.e. known \"good\" answers to the tests that "
+"will be run. If you are testing a pull request, you can generate these by running the script with a recent version of "
+"the :cpp:`development` branch of AMReX. You can generate the benchmarks like so:"
+msgstr "在使用之前，您必须首先生成一组“基准” - 即将运行的测试的已知“良好”答案。如果您正在测试一个拉取请求，您可以通过使用AMReX的最新版本的“开发”分支来运行脚本来生成这些基准。您可以按照以下方式生成基准："
 
 #: ../../source/Testing.rst:72 b97bf44db8874d33a2e666399f88f9a0
 msgid ""
-"Once that is finished, you can switch over to the branch you want to test"
-" in :cpp:`AMReX-tests.ini`, and then re-run the script without the "
-":cpp:`--make_benchmarks` option:"
-msgstr ""
+"Once that is finished, you can switch over to the branch you want to test in :cpp:`AMReX-tests.ini`, and then re-run "
+"the script without the :cpp:`--make_benchmarks` option:"
+msgstr "完成后，您可以切换到您想要在 `cpp:AMReX-tests.ini` 中进行测试的分支，然后重新运行脚本，不需要使用 `cpp:--make_benchmarks` 选项。"
 
 #: ../../source/Testing.rst:79 600d3eda15eb4f6499c1854a4e641417
 msgid ""
-"The script will generate a set of html pages in the directory specified "
-"in your :cpp:`AMReX-tests.ini` file that you can examine using the "
-"browser of your choice."
-msgstr ""
+"The script will generate a set of html pages in the directory specified in your :cpp:`AMReX-tests.ini` file that you "
+"can examine using the browser of your choice."
+msgstr "脚本将在您在 :cpp:`AMReX-tests.ini` 文件中指定的目录中生成一组 HTML 页面，您可以使用您选择的浏览器查看这些页面。"
 
 #: ../../source/Testing.rst:82 1292f9491f014325acf7ec8945f6fe9b
 msgid "For a complete set of script options, run"
-msgstr ""
+msgstr "要查看完整的脚本选项，请运行"
 
 #: ../../source/Testing.rst:88 6b262d2e9f774fa29586194a60e6c9f2
-msgid ""
-"A particularly useful option lets you run just a subset of the complete "
-"test suite. To run only one test, you can do:"
-msgstr ""
+msgid "A particularly useful option lets you run just a subset of the complete test suite. To run only one test, you can do:"
+msgstr "有一个特别有用的选项可以让你只运行完整测试套件的一部分。要只运行一个测试，你可以这样做："
 
 #: ../../source/Testing.rst:94 3c80ddaa85824d928294d3e47e009249
 msgid "To run an enumerated list of tests, do:"
-msgstr ""
+msgstr "要运行一个枚举列表的测试，请执行以下操作："
 
 #: ../../source/Testing.rst:102 a11b0f8e9aa24ede8f2a4207f6c4cf0e
 msgid "Adding a new test"
-msgstr ""
+msgstr "添加一个新的测试"
 
 #: ../../source/Testing.rst:104 4084fe2267334427bed79b4feafd69bb
 msgid ""
-"New tests can be added to the suite by modifying the :cpp:`AMReX-"
-"tests.ini` file. The easiest thing to do is start from an existing test "
-"and modify it. For example, this entry:"
-msgstr ""
+"New tests can be added to the suite by modifying the :cpp:`AMReX-tests.ini` file. The easiest thing to do is start from "
+"an existing test and modify it. For example, this entry:"
+msgstr "可以通过修改 :cpp:`AMReX-tests.ini` 文件向测试套件中添加新的测试。最简单的方法是从现有的测试开始进行修改。例如，可以修改以下条目："
 
 #: ../../source/Testing.rst:123 1a982e7d12c24462bea83879124bc2b6
 msgid ""
-"defines a test called :cpp:`MLMG_FI_PoisCom` by specifying the "
-"appropriate build directory, inputs file, and a set of configuration "
-"options. The above options are the most commonly changed; for a full list"
-" of options, see the example configuration file at https://github.com"
-"/AMReX-Codes/regression_testing/blob/main/example-tests.ini."
+"defines a test called :cpp:`MLMG_FI_PoisCom` by specifying the appropriate build directory, inputs file, and a set of "
+"configuration options. The above options are the most commonly changed; for a full list of options, see the example "
+"configuration file at https://github.com/AMReX-Codes/regression_testing/blob/main/example-tests.ini."
 msgstr ""
-
+"通过指定适当的构建目录、输入文件和一组配置选项，定义了一个名为 `MLMG_FI_PoisCom` 的测试。上述选项是最常更改的选项；有关完整的选项列表，请参阅示例配置文件，网址为 "
+"https://github.com/AMReX-Codes/regression_testing/blob/main/example-tests.ini。"

@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,68 +21,60 @@ msgstr ""
 
 #: ../../source/Introduction.rst:2 5d7a3116969246ce86097aeed336f15b
 msgid "AMReX Introduction"
-msgstr ""
+msgstr "AMReX 简介"
 
 #: ../../source/Introduction.rst:4 c9145add1fa148449c7da8938cdff028
 msgid ""
-"AMReX is a publicly available software framework designed for building "
-"massively parallel block-structured adaptive mesh refinement (AMR) "
-"applications."
-msgstr ""
+"AMReX is a publicly available software framework designed for building massively parallel block-structured adaptive "
+"mesh refinement (AMR) applications."
+msgstr "AMReX 是一个公开可用的软件框架，旨在构建大规模并行的基于块结构的自适应网格细化（AMR）应用程序。"
 
 #: ../../source/Introduction.rst:8 535d957c25b549c1b45cdfce1590ce47
 msgid "Key features of AMReX include:"
-msgstr ""
+msgstr "AMReX的主要特点包括："
 
 #: ../../source/Introduction.rst:10 d93d3377a50945459cd449b7fff4a2ed
 msgid "C++ and Fortran interfaces"
-msgstr ""
+msgstr "C++和Fortran接口"
 
 #: ../../source/Introduction.rst:11 2ea44540f8c64ba7a84a3095ec52b4f9
 msgid "1-, 2- and 3-D support"
-msgstr ""
+msgstr "1D, 2D, 和 3D 支持"
 
 #: ../../source/Introduction.rst:12 2ae12d621e7b434785901b55bdf790d3
 msgid "Support for cell-centered, face-centered, edge-centered, and nodal data"
-msgstr ""
+msgstr "支持以单元为中心、面为中心、边为中心和节点数据。"
 
 #: ../../source/Introduction.rst:13 117e50a7036b4b059ec2cdbcbd579182
-msgid ""
-"Support for hyperbolic, parabolic, and elliptic solves on hierarchical "
-"adaptive grid structure"
-msgstr ""
+msgid "Support for hyperbolic, parabolic, and elliptic solves on hierarchical adaptive grid structure"
+msgstr "对分层自适应网格结构上的双曲线、抛物线和椭圆方程求解的支持。"
 
 #: ../../source/Introduction.rst:15 5a4aa2651d714d92be78ac6234db97e5
 msgid "Optional subcycling in time for time-dependent PDEs"
-msgstr ""
+msgstr "时间相关的偏微分方程中的可选子循环"
 
 #: ../../source/Introduction.rst:16 f41602167b19460ea30026d0768e16cd
 msgid "Support for particles"
-msgstr ""
+msgstr "对于粒子的支持"
 
 #: ../../source/Introduction.rst:17 e7093d8aa47542019493e7a83d23addf
-msgid ""
-"Support for embedded boundary (cut cell) representations of complex "
-"geometries"
-msgstr ""
+msgid "Support for embedded boundary (cut cell) representations of complex geometries"
+msgstr "支持复杂几何形状的嵌入边界（切割单元）表示。"
 
 #: ../../source/Introduction.rst:18 7e32406294e14b89a07ceef3f1552e1b
-msgid ""
-"Parallelization via flat MPI, OpenMP, hybrid MPI/OpenMP, hybrid MPI/(CUDA"
-" or HIP or SYCL), or MPI/MPI"
-msgstr ""
+msgid "Parallelization via flat MPI, OpenMP, hybrid MPI/OpenMP, hybrid MPI/(CUDA or HIP or SYCL), or MPI/MPI"
+msgstr "通过平行化的方式，可以使用平坦的MPI、OpenMP、混合MPI/OpenMP、混合MPI/(CUDA或HIP或SYCL)，或者MPI/MPI。"
 
 #: ../../source/Introduction.rst:20 07a2fd4b2c5144b899b0dc0d2f458faf
 msgid "Parallel I/O"
-msgstr ""
+msgstr "并行输入/输出"
 
 #: ../../source/Introduction.rst:21 6cea489664e240fba3fc8ea50c5c02dc
 msgid "Plotfile format supported by AmrVis, VisIt, ParaView, and yt."
-msgstr ""
+msgstr "AmrVis、VisIt、ParaView 和 yt 支持的 Plotfile 格式。"
 
 #: ../../source/Introduction.rst:23 9a82d1efaf7442079b5e5d909a6424c4
 msgid ""
-"AMReX is developed at LBNL, NREL, and ANL as part of the Block-Structured"
-" AMR Co-Design Center in DOE's Exascale Computing Project."
-msgstr ""
-
+"AMReX is developed at LBNL, NREL, and ANL as part of the Block-Structured AMR Co-Design Center in DOE's Exascale "
+"Computing Project."
+msgstr "AMReX是在LBNL、NREL和ANL开发的，作为DOE的Exascale Computing Project中块结构AMR Co-Design Center的一部分。"

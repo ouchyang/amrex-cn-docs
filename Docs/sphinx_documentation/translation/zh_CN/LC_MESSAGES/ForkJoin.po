@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,75 +21,63 @@ msgstr ""
 
 #: ../../source/ForkJoin.rst:8 a8eea42938004306938ed033ed6b0732
 msgid "Fork-Join"
-msgstr ""
+msgstr "分叉-合并"
 
 #: ../../source/ForkJoin.rst:10 1894d544ddf448c5a73284a1413901ac
 msgid ""
-"An AMReX program consists of a set of MPI ranks cooperating together on "
-"distributed data. Typically, all of the ranks in a job compute in a bulk-"
-"synchronous, data-parallel fashion, where every rank does the same "
-"sequence of operations, each on different parts of the distributed data."
-msgstr ""
+"An AMReX program consists of a set of MPI ranks cooperating together on distributed data. Typically, all of the ranks "
+"in a job compute in a bulk-synchronous, data-parallel fashion, where every rank does the same sequence of operations, "
+"each on different parts of the distributed data."
+msgstr "一个 AMReX 程序由一组 MPI 进程协同工作，处理分布式数据。通常情况下，作业中的所有进程以批同步、数据并行的方式进行计算，每个进程在分布式数据的不同部分上执行相同的操作序列。"
 
 #: ../../source/ForkJoin.rst:16 48552a8cbc5a463c880141f1008969db
 msgid ""
-"The AMReX Fork-Join functionality described here allows the user to "
-"divide the job's MPI ranks into subgroups (i.e. `fork`) and assign each "
-"subgroup an independent task to compute in parallel with each other. "
-"After all of the forked child tasks complete, they synchronize (i.e. "
-"`join`), and the parent task continues execution as before."
-msgstr ""
+"The AMReX Fork-Join functionality described here allows the user to divide the job's MPI ranks into subgroups (i.e. "
+"`fork`) and assign each subgroup an independent task to compute in parallel with each other. After all of the forked "
+"child tasks complete, they synchronize (i.e. `join`), and the parent task continues execution as before."
+msgstr "这里描述的AMReX分叉-合并功能允许用户将作业的MPI进程划分为子组（即`fork`），并为每个子组分配一个独立的任务以并行计算。在所有分叉的子任务完成后，它们进行同步（即`join`），然后父任务继续之前的执行。"
 
 #: ../../source/ForkJoin.rst:27 a239c90898de428da7b2d41224b21e7b
 msgid "Fork-Join Tasks"
-msgstr ""
+msgstr "分叉-合并任务"
 
 #: ../../source/ForkJoin.rst:27 0f2327ad4fce42a5a08ab9d254f39a0d
 msgid ""
-"Example of a fork-join operation where the parent task's MPI processes "
-"(ranks) are split into two independent child tasks that execute in "
-"parallel and then join to resume execution of the parent task."
-msgstr ""
+"Example of a fork-join operation where the parent task's MPI processes (ranks) are split into two independent child "
+"tasks that execute in parallel and then join to resume execution of the parent task."
+msgstr "一个分叉-合并操作的示例，其中父任务的MPI进程（排名）被分成两个独立的子任务，这两个子任务并行执行，然后再合并以继续执行父任务。"
 
 #: ../../source/ForkJoin.rst:31 a415a9f6e8e948c58d831d32fd0725f7
 msgid ""
-"The Fork-Join operation can also be invoked in a nested fashion, creating"
-" a hierarchy of fork-join operations, where each fork further subdivides "
-"the ranks of a task into child tasks. This approach enables heterogeneous"
-" computation and reduces the strong scaling penalty for operations with "
-"less inherent parallelism or with large communication overheads."
-msgstr ""
+"The Fork-Join operation can also be invoked in a nested fashion, creating a hierarchy of fork-join operations, where "
+"each fork further subdivides the ranks of a task into child tasks. This approach enables heterogeneous computation and "
+"reduces the strong scaling penalty for operations with less inherent parallelism or with large communication overheads."
+msgstr "Fork-Join操作也可以以嵌套的方式调用，创建一个fork-join操作的层次结构，其中每个fork进一步将任务的等级细分为子任务。这种方法实现了异构计算，并减少了对具有较少内在并行性或具有大量通信开销的操作的强扩展惩罚。"
 
 #: ../../source/ForkJoin.rst:43 d25a537eec3a432a92dea881114de03f
 msgid "Nested Fork-Join Tasks"
-msgstr ""
+msgstr "嵌套的Fork-Join任务"
 
 #: ../../source/ForkJoin.rst:43 800d77826d6a403ebcae6852d3db1e07
-msgid ""
-"Example of nested fork-join operations where a child task is further "
-"split into more subtasks."
-msgstr ""
+msgid "Example of nested fork-join operations where a child task is further split into more subtasks."
+msgstr "嵌套的分叉-合并操作示例，其中一个子任务进一步分割为更多子任务。"
 
 #: ../../source/ForkJoin.rst:46 d5ef537771ce4907ab1fa2c2d8ce6251
 msgid "The fork-join operation is accomplished by:"
-msgstr ""
+msgstr "分叉-合并操作的实现方式是："
 
 #: ../../source/ForkJoin.rst:48 5c1b3fa504584ce5916967821143808d
 msgid ""
-"redistributing MultiFab data so that **all** of the data in each "
-"registered MultiFab is visible to ranks within a subtask, and"
-msgstr ""
+"redistributing MultiFab data so that **all** of the data in each registered MultiFab is visible to ranks within a "
+"subtask, and"
+msgstr "重新分配MultiFab数据，以便在子任务中的所有等级都可以看到每个注册的MultiFab中的所有数据。"
 
 #: ../../source/ForkJoin.rst:51 2dea19c87c034b6d886ea84927cd94d0
 msgid ""
-"dividing the root MPI communicator into sub-communicators so that each "
-"subgroup of ranks in a tasks will only synchronize with each other during"
-" subtask collectives (e.g. for ``MPI_Allreduce``)."
-msgstr ""
+"dividing the root MPI communicator into sub-communicators so that each subgroup of ranks in a tasks will only "
+"synchronize with each other during subtask collectives (e.g. for ``MPI_Allreduce``)."
+msgstr "将根MPI通信器划分为子通信器，以便每个任务中的排名子组仅在子任务集合操作（例如``MPI_Allreduce``）期间与彼此同步。"
 
 #: ../../source/ForkJoin.rst:55 da720d79590e4377ac6fb3e01bddf0c4
-msgid ""
-"When the program starts, all of the ranks in the MPI communicator are in "
-"the root task."
-msgstr ""
-
+msgid "When the program starts, all of the ranks in the MPI communicator are in the root task."
+msgstr "当程序启动时，MPI通信器中的所有进程都位于根任务中。"

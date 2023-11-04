@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,606 +21,567 @@ msgstr ""
 
 #: ../../source/External_Profiling_Tools.rst:8 8c459b3522e64d3ca83f66b6dfad3895
 msgid "CrayPat"
-msgstr ""
+msgstr "CrayPat"
 
 #: ../../source/External_Profiling_Tools.rst:10
 #: 2069a95ecd3b4c778518fca6ebfc3a30
 msgid ""
-"The profiling suite available on Cray XC systems is Cray Performance "
-"Measurement and Analysis Tools (\"CrayPat\") [1]_.  Most CrayPat "
-"functionality is supported for all compilers available in the Cray "
-"\"programming environments\" (modules which begin \"``PrgEnv-``\"); "
-"however, a few features, chiefly the \"Reveal\" tool, are supported only "
-"on applications compiled with Cray's compiler CCE [2]_ [3]_."
+"The profiling suite available on Cray XC systems is Cray Performance Measurement and Analysis Tools (\"CrayPat\") [1]_. "
+" Most CrayPat functionality is supported for all compilers available in the Cray \"programming environments\" (modules "
+"which begin \"``PrgEnv-``\"); however, a few features, chiefly the \"Reveal\" tool, are supported only on applications "
+"compiled with Cray's compiler CCE [2]_ [3]_."
 msgstr ""
+"Cray XC系统上可用的性能分析套件是Cray Performance Measurement and Analysis "
+"Tools（\"CrayPat\"）[1]_。大多数CrayPat功能适用于Cray的“编程环境”中提供的所有编译器（以“``PrgEnv-``"
+"”开头的模块）；然而，一些功能，主要是“Reveal”工具，仅支持使用Cray的编译器CCE编译的应用程序[2]_ [3]_。"
 
 #: ../../source/External_Profiling_Tools.rst:17
 #: 9e0a3b99637048aabbcfd43b9abe8eed
 msgid ""
-"CrayPat supports both high-level profiling tools, as well as fine-grained"
-" performance analysis, such as reading hardware counters. The default "
-"behavior uses sampling to identify the most time-consuming functions in "
-"an application."
-msgstr ""
+"CrayPat supports both high-level profiling tools, as well as fine-grained performance analysis, such as reading "
+"hardware counters. The default behavior uses sampling to identify the most time-consuming functions in an application."
+msgstr "CrayPat支持高级性能分析工具和细粒度性能分析，例如读取硬件计数器。默认行为使用采样来识别应用程序中耗时最多的函数。"
 
 #: ../../source/External_Profiling_Tools.rst:22
 #: a99faea56f674ee6b5a2482b9749b975
 msgid "High-level application profiling"
-msgstr ""
+msgstr "高级应用程序分析"
 
 #: ../../source/External_Profiling_Tools.rst:24
 #: 69944c1692654a80b3d03c46fe7f70ed
-msgid ""
-"The simplest way to obtain a high-level overview of an application's "
-"performance consists of the following steps:"
-msgstr ""
+msgid "The simplest way to obtain a high-level overview of an application's performance consists of the following steps:"
+msgstr "获取应用程序性能的最简单方法包括以下步骤："
 
 #: ../../source/External_Profiling_Tools.rst:27
 #: b3dd958b98a1482e8e845dd14a068017
 msgid ""
-"Load the ``perftools-base`` module, then the ``perftools-lite`` module. "
-"(The modules will not work if loaded in the opposite order.)"
-msgstr ""
+"Load the ``perftools-base`` module, then the ``perftools-lite`` module. (The modules will not work if loaded in the "
+"opposite order.)"
+msgstr "加载``perftools-base``模块，然后加载``perftools-lite``模块。（如果以相反的顺序加载模块，它们将无法正常工作。）"
 
 #: ../../source/External_Profiling_Tools.rst:30
 #: 21c4b65b4ae54c24ab4de75c6f92130a
 msgid ""
-"Compile the application with the Cray compiler wrappers ``cc``, ``CC``, "
-"and/or ``ftn``. This works with any of the compilers available in the "
-"``PrgEnv-`` modules. E.g., on the Cori system at NERSC, one can use the "
-"Intel, GCC, or CCE compilers. No extra compiler flags are necessary in "
-"order for CrayPat to work. CrayPat instruments the application, so the "
-"``perftools-`` modules must be loaded before one compiles the "
-"application."
+"Compile the application with the Cray compiler wrappers ``cc``, ``CC``, and/or ``ftn``. This works with any of the "
+"compilers available in the ``PrgEnv-`` modules. E.g., on the Cori system at NERSC, one can use the Intel, GCC, or CCE "
+"compilers. No extra compiler flags are necessary in order for CrayPat to work. CrayPat instruments the application, so "
+"the ``perftools-`` modules must be loaded before one compiles the application."
 msgstr ""
+"请使用Cray编译器包装器“cc”，“CC”和/或“ftn”编译应用程序。这适用于“PrgEnv-"
+"”模块中可用的任何编译器。例如，在NERSC的Cori系统上，可以使用Intel，GCC或CCE编译器。为了使CrayPat正常工作，不需要额外的编译器标志。CrayPat会对应用程序进行仪器化，因此在编译应用程序之前必须加载“perfto"
+"ols-”模块。"
 
 #: ../../source/External_Profiling_Tools.rst:37
 #: 2274b9dd57824419811fe58c600644f2
 msgid ""
-"Run the application as normal. No special flags are required. Upon "
-"application completion, CrayPat will write a few files to the directory "
-"from which the application was launched. The profiling database is a "
-"single file with the ``.ap2`` suffix."
-msgstr ""
+"Run the application as normal. No special flags are required. Upon application completion, CrayPat will write a few "
+"files to the directory from which the application was launched. The profiling database is a single file with the "
+"``.ap2`` suffix."
+msgstr "请按照正常流程运行该应用程序，无需使用任何特殊标志。应用程序完成后，CrayPat将会在启动应用程序的目录下写入几个文件。其中，性能分析数据库是一个以``.ap2``为后缀的单个文件。"
 
 #: ../../source/External_Profiling_Tools.rst:42
 #: 0a0bcb51adc84093954d130e03241431
 msgid ""
-"One can query the database in many different ways using the "
-"``pat_report`` command on the ``.ap2`` file. ``pat_report`` is available "
-"on login nodes, so the analysis need not be done on a compute node.  "
-"Querying the database with no arguments to ``pat_report`` prints several "
-"different profiling reports to STDOUT, including a list of the most time-"
-"consuming regions in the application. The output of this command can be "
-"long, so it can be convenient to pipe the output to a pager or a file. A "
-"portion of the output from ``pat_report <file>.ap2`` is shown below:"
+"One can query the database in many different ways using the ``pat_report`` command on the ``.ap2`` file. ``pat_report`` "
+"is available on login nodes, so the analysis need not be done on a compute node.  Querying the database with no "
+"arguments to ``pat_report`` prints several different profiling reports to STDOUT, including a list of the most "
+"time-consuming regions in the application. The output of this command can be long, so it can be convenient to pipe the "
+"output to a pager or a file. A portion of the output from ``pat_report <file>.ap2`` is shown below:"
 msgstr ""
+"使用``pat_report``命令在``.ap2``文件上可以以多种不同的方式查询数据库。``pat_report``命令可在登录节点上使用，因此分析无需在计算节点上进行。在没有任何参数的情况下查询数据库，``pat_report``"
+"会将多个不同的分析报告打印到STDOUT，其中包括应用程序中耗时最长的区域列表。该命令的输出可能很长，因此将输出导入到分页器或文件中会很方便。下面是``pat_report <file>.ap2``命令的部分输出示例："
 
 #: ../../source/External_Profiling_Tools.rst:97
 #: 0e809cdbf6b24cd7a16728455ad39a35
 msgid "IPM - Cross-Platform Integrated Performance Monitoring"
-msgstr ""
+msgstr "IPM - 跨平台集成性能监控"
 
 #: ../../source/External_Profiling_Tools.rst:99
 #: 1a69354b42cd414d8a1280419bf723ee
 msgid ""
-"IPM provides portable profiling capabilities across HPC platforms, "
-"including support on selected Cray and IBM machines (cori and (TODO: "
-"verify it works on) summit). Running an IPM instrumented binary generates"
-" a summary of number of calls and time spent on MPI communication library"
-" functions. In addition, hardware performance counters can also be "
-"collected through PAPI."
+"IPM provides portable profiling capabilities across HPC platforms, including support on selected Cray and IBM machines "
+"(cori and (TODO: verify it works on) summit). Running an IPM instrumented binary generates a summary of number of calls "
+"and time spent on MPI communication library functions. In addition, hardware performance counters can also be collected "
+"through PAPI."
 msgstr ""
+"IPM在高性能计算平台上提供便携式的性能分析能力，包括对选定的Cray和IBM机器（cori和（待办事项：验证其在）summit上的支持）。运行一个经过IPM仪器化的二进制文件会生成一个关于MPI通信库函数调用次数和耗时的摘要。此外，还可以"
+"通过PAPI收集硬件性能计数器的数据。"
 
 #: ../../source/External_Profiling_Tools.rst:105
 #: e5088454036a44fdb03d3a13ec99fd25
 msgid "Detailed instructions can be found at  [4]_ and [5]_."
-msgstr ""
+msgstr "详细的指示可以在[4]_和[5]_中找到。"
 
 #: ../../source/External_Profiling_Tools.rst:108
 #: f46bbce1114447b0bda7c6355633ca32
 msgid "Building with IPM on cori"
-msgstr ""
+msgstr "在Cori上使用IPM进行构建"
 
 #: ../../source/External_Profiling_Tools.rst:110
 #: 0673d1bcef3d4be6b14697240188b3c3
 msgid "Steps:"
-msgstr ""
+msgstr "步骤："
 
 #: ../../source/External_Profiling_Tools.rst:112
 #: ced14deb2c324390b7e93d9afc0de478
 msgid "Run module load ipm."
-msgstr ""
+msgstr "运行模块加载 ipm。"
 
 #: ../../source/External_Profiling_Tools.rst:114
 #: 133d8090495e456591a022487d917102
 msgid "Build code as normal with make."
-msgstr ""
+msgstr "按照正常流程使用make构建代码。"
 
 #: ../../source/External_Profiling_Tools.rst:116
 #: 4d90c5dc8ac946ee8c77b3d3aa5c8f85
-msgid ""
-"Re-run the link command (e.g. cut-and-paste) with ``$IPM`` added to the "
-"end of the line."
-msgstr ""
+msgid "Re-run the link command (e.g. cut-and-paste) with ``$IPM`` added to the end of the line."
+msgstr "请重新运行链接命令（例如，复制并粘贴），在行尾添加``$IPM``。"
 
 #: ../../source/External_Profiling_Tools.rst:119
 #: 2a1e902b8f54489eab2dd6e74c0ca61b
 msgid "Running with IPM on cori"
-msgstr ""
+msgstr "在Cori上使用IPM运行。"
 
 #: ../../source/External_Profiling_Tools.rst:121
 #: 1670707ada654067b4c3a8cfc0e1ce6e
-msgid ""
-"Set environment variables: ``export IPM_REPORT=full IPM_LOG=full "
-"IPM_LOGDIR= <dir>``"
-msgstr ""
+msgid "Set environment variables: ``export IPM_REPORT=full IPM_LOG=full IPM_LOGDIR= <dir>``"
+msgstr "设置环境变量：``export IPM_REPORT=full IPM_LOG=full IPM_LOGDIR=<dir>``"
 
 #: ../../source/External_Profiling_Tools.rst:123
 #: 123b89e7ad414a5c9330babff67245ae
-msgid ""
-"Results will be printed to stdout and an xml file generated in the "
-"directory specified by ``IPM_LOGDIR``."
-msgstr ""
+msgid "Results will be printed to stdout and an xml file generated in the directory specified by ``IPM_LOGDIR``."
+msgstr "结果将打印到标准输出(stdout)，并在由``IPM_LOGDIR``指定的目录中生成一个XML文件。"
 
 #: ../../source/External_Profiling_Tools.rst:125
 #: 4eea25306f2b4bd1abb85c983b718d39
-msgid ""
-"Post-process the xml with ``ipm_parse -html <xmlfile>``, which produces "
-"an directory with html."
-msgstr ""
+msgid "Post-process the xml with ``ipm_parse -html <xmlfile>``, which produces an directory with html."
+msgstr "使用``ipm_parse -html <xmlfile>``对XML进行后处理，将生成一个包含HTML的目录。"
 
 #: ../../source/External_Profiling_Tools.rst:128
 #: 5cafad7627084644ad86ef7ad087ab3d
 msgid "Summary MPI Profile"
-msgstr ""
+msgstr "MPI概况摘要"
 
 #: ../../source/External_Profiling_Tools.rst:130
 #: 8dfb38c511c54538af71117f905246aa
 msgid "Example MPI profile output:"
-msgstr ""
+msgstr "示例MPI配置文件输出："
 
 #: ../../source/External_Profiling_Tools.rst:173
 #: c3582074d5394159ac2da317802f83c5
 msgid ""
-"The total, average, minimum, and maximum wallclock and MPI times across "
-"ranks is shown.  The memory footprint is also collected.  Finally, "
-"results include number of calls and total time spent in each type of MPI "
-"call."
-msgstr ""
+"The total, average, minimum, and maximum wallclock and MPI times across ranks is shown.  The memory footprint is also "
+"collected.  Finally, results include number of calls and total time spent in each type of MPI call."
+msgstr "显示了各个排名之间的总计、平均、最小和最大的墙钟时间和MPI时间。还收集了内存占用情况。最后，结果包括每种MPI调用的调用次数和总时间。"
 
 #: ../../source/External_Profiling_Tools.rst:178
 #: cca18dd868334b82ba50c35653e3cad9
 msgid "PAPI Performance Counters"
-msgstr ""
+msgstr "PAPI 性能计数器"
 
 #: ../../source/External_Profiling_Tools.rst:180
 #: 9cebc4b049ba4f27a89455b3e67d8eb0
 msgid ""
-"To collect performance counters, set ``IPM_HPM=<list>``, where the list "
-"is a comma-separated list of PAPI counters. For example: ``export "
-"IPM_HPM=PAPI_L2_TCA,PAPI_L2_TCM``."
-msgstr ""
+"To collect performance counters, set ``IPM_HPM=<list>``, where the list is a comma-separated list of PAPI counters. For "
+"example: ``export IPM_HPM=PAPI_L2_TCA,PAPI_L2_TCM``."
+msgstr "要收集性能计数器，请设置``IPM_HPM=<list>``，其中列表是逗号分隔的PAPI计数器列表。例如：``export IPM_HPM=PAPI_L2_TCA,PAPI_L2_TCM``。"
 
 #: ../../source/External_Profiling_Tools.rst:184
 #: 1f4b790f5f494b878c39970dc92346c0
-msgid ""
-"For reference, here is the list of available counters on cori, which can "
-"be found by running ``papi_avail``:"
-msgstr ""
+msgid "For reference, here is the list of available counters on cori, which can be found by running ``papi_avail``:"
+msgstr "供参考，以下是在cori上可用的计数器列表，可以通过运行``papi_avail``命令找到："
 
 #: ../../source/External_Profiling_Tools.rst:219
 #: 7ebe614cf195496abbe93dfc6e0f7d96
 msgid ""
-"Due to hardware limitations, there is a limit to which counters can be "
-"collected simultaneously in a single run. Some counters may map to the "
-"same registers and thus cannot be collected at the same time."
-msgstr ""
+"Due to hardware limitations, there is a limit to which counters can be collected simultaneously in a single run. Some "
+"counters may map to the same registers and thus cannot be collected at the same time."
+msgstr "由于硬件限制，单次运行中可以同时收集的计数器有一定限制。某些计数器可能映射到相同的寄存器，因此无法同时收集。"
 
 #: ../../source/External_Profiling_Tools.rst:224
 #: 7cd955e702cd4553b1005ef6fe8a015b
 msgid "Example HTML Performance Summary"
-msgstr ""
+msgstr "HTML 性能摘要示例"
 
 #: ../../source/External_Profiling_Tools.rst:226
 #: af6ebdc799aa44ba88719991f4f71c54
 msgid ""
-"Running ``ipm_parse -html <xmlfile>`` on the generated xml file will "
-"produce an HTML document that includes summary performance numbers and "
-"automatically generated figures. Some examples are shown here."
-msgstr ""
+"Running ``ipm_parse -html <xmlfile>`` on the generated xml file will produce an HTML document that includes summary "
+"performance numbers and automatically generated figures. Some examples are shown here."
+msgstr "在生成的 XML 文件上运行 `ipm_parse -html <xmlfile>` 将会生成一个包含性能摘要数据和自动生成图表的 HTML 文档。以下是一些示例。"
 
 #: ../../source/External_Profiling_Tools.rst:232
 #: e2db124346204de9b0693ef59db73590
 msgid "Sample performance summary generated by IPM"
-msgstr ""
+msgstr "由IPM生成的样本绩效总结"
 
 #: ../../source/External_Profiling_Tools.rst:253
 #: bcfdc5bfa1f44c02ac077930e33fbcb5
 msgid "Example of performance graphs generated by IPM"
-msgstr ""
+msgstr "IPM生成的性能图表示例"
 
 #: ../../source/External_Profiling_Tools.rst:257
 #: a8b209c2d7d345fbb967bdd1d9fe174b
 msgid "|a|"
-msgstr ""
+msgstr "|a|"
 
 #: ../../source/External_Profiling_Tools.rst:238
 #: 1560aad018ab48d8bfa8dea913119016
 msgid "a"
-msgstr ""
+msgstr "一个"
 
 #: ../../source/External_Profiling_Tools.rst:257
 #: 2e12e7a139774474885377b56600f83c
 msgid "|b|"
-msgstr ""
+msgstr "|b|"
 
 #: ../../source/External_Profiling_Tools.rst:241
 #: 072190e783df45fe8027f6622f4d3d9e
 msgid "b"
-msgstr ""
+msgstr "b"
 
 #: ../../source/External_Profiling_Tools.rst 0638b822161b4ca7b62326f3fcb524be
 msgid "Timings"
-msgstr ""
+msgstr "时间安排"
 
 #: ../../source/External_Profiling_Tools.rst d1bf0489ef504824aefa9b6dfcf46c28
 msgid "PAPI Counters"
-msgstr ""
+msgstr "PAPI 计数器"
 
 #: ../../source/External_Profiling_Tools.rst:261
 #: 18bbbd52f4df4e9c904e6c0a2a7756f2
 msgid "|c|"
-msgstr ""
+msgstr "|c|"
 
 #: ../../source/External_Profiling_Tools.rst:244
 #: 410c4ab4ac354ad0ad7f8e968800ff03
 msgid "c"
-msgstr ""
+msgstr "c"
 
 #: ../../source/External_Profiling_Tools.rst:261
 #: 820e11710d884103b14bf34f56c04bdd
 msgid "|d|"
-msgstr ""
+msgstr "|d|"
 
 #: ../../source/External_Profiling_Tools.rst:247
 #: 69bd07c42bee4318b154b77be5890f74
 msgid "d"
-msgstr ""
+msgstr "d"
 
 #: ../../source/External_Profiling_Tools.rst ba1693d128624c6e9073a27b811e3ad9
 msgid "MPI Time by Function"
-msgstr ""
+msgstr "按函数划分的MPI时间"
 
 #: ../../source/External_Profiling_Tools.rst cb7802603f4141dd9a893bcf29261226
 msgid "MPI Time by Message Size"
-msgstr ""
+msgstr "按照消息大小计算的 MPI 时间"
 
 #: ../../source/External_Profiling_Tools.rst:265
 #: 804ee5a81cce4dd4b4177f4764611240
 msgid "|e|"
-msgstr ""
+msgstr "|e|"
 
 #: ../../source/External_Profiling_Tools.rst:250
 #: 519cf36689f84ae284acecc440c48976
 msgid "e"
-msgstr ""
+msgstr "e"
 
 #: ../../source/External_Profiling_Tools.rst e5f99774ad8a4bf5801416a623fd04d2
 msgid "(left) Point-to-Point Communication Volume"
-msgstr ""
+msgstr "（左侧）点对点通信量"
 
 #: ../../source/External_Profiling_Tools.rst:269
 #: 2c4b17be3c54430ea15fc2478ad646f1
-msgid ""
-"https://pubs.cray.com/content/S-2376/6.4.6/cray-performance-measurement-"
-"and-analysis-tools-user-guide-646-s-2376"
+msgid "https://pubs.cray.com/content/S-2376/6.4.6/cray-performance-measurement-and-analysis-tools-user-guide-646-s-2376"
 msgstr ""
+"请点击以下链接查看《Cray性能测量和分析工具用户指南》的内容：https://pubs.cray.com/content/S-2376/6.4.6/cray-performance-measurement-and-analysis-"
+"tools-user-guide-646-s-2376"
 
 #: ../../source/External_Profiling_Tools.rst:272
 #: 431a5876547e4975adb19c7be83f1264
-msgid ""
-"https://pubs.cray.com/content/S-2179/8.5/cray-c-and-c++-reference-"
-"manual-85"
-msgstr ""
+msgid "https://pubs.cray.com/content/S-2179/8.5/cray-c-and-c++-reference-manual-85"
+msgstr "请点击以下链接查看《Cray C and C++ 参考手册 8.5》的内容：https://pubs.cray.com/content/S-2179/8.5/cray-c-and-c++-reference-manual-85"
 
 #: ../../source/External_Profiling_Tools.rst:275
 #: c949376d9f3d43d6940dc9eaa0daf2d7
 msgid "https://pubs.cray.com/content/S-3901/8.5/cray-fortran-reference-manual-85"
-msgstr ""
+msgstr "https://pubs.cray.com/content/S-3901/8.5/cray-fortran-reference-manual-85"
 
 #: ../../source/External_Profiling_Tools.rst:278
 #: 9084d1d5f12a4e45befd2ddc08e86edc
 msgid "http://ipm-hpc.sourceforge.net/userguide.html"
-msgstr ""
+msgstr "http://ipm-hpc.sourceforge.net/userguide.html"
 
 #: ../../source/External_Profiling_Tools.rst:281
 #: b50b3b4934d940d488f75d2b4851f0b5
 msgid "https://www.nersc.gov/users/software/performance-and-debugging-tools/ipm/"
-msgstr ""
+msgstr "https://www.nersc.gov/users/software/performance-and-debugging-tools/ipm/"
 
 #: ../../source/External_Profiling_Tools.rst:284
 #: 5833355a80d84d9b855a1eaf5816ec30
 msgid "Nsight Systems"
-msgstr ""
+msgstr "Nsight Systems"
 
 #: ../../source/External_Profiling_Tools.rst:286
 #: 1b10594c01204c3abfed4f3f86487153
 msgid ""
-"The Nsight Systems tool provides a high-level overview of your code, "
-"displaying the kernel launches, API calls, NVTX regions and more in a "
-"timeline for a clear, visual picture of the overall runtime patterns.  It"
-" analyzes CPU-codes or CUDA-based GPU codes and is available on Summit "
-"and Cori in a system module."
+"The Nsight Systems tool provides a high-level overview of your code, displaying the kernel launches, API calls, NVTX "
+"regions and more in a timeline for a clear, visual picture of the overall runtime patterns.  It analyzes CPU-codes or "
+"CUDA-based GPU codes and is available on Summit and Cori in a system module."
 msgstr ""
+"Nsight "
+"Systems工具提供了对代码的高级概述，以时间轴的形式显示内核启动、API调用、NVTX区域等，以清晰、可视化的方式展示整体运行时模式。它可以分析CPU代码或基于CUDA的GPU代码，并在Summit和Cori上作为系统模块提供。"
 
 #: ../../source/External_Profiling_Tools.rst:291
 #: f5018c797a2a40e0b5f9b7ee0bb27414
 msgid ""
-"Nsight Systems provides a variety of profiling options.  This "
-"documentation will cover the most commonly used options for AMReX users "
-"to keep track of useful flags and analysis patterns. For the complete "
-"details of using Nsight Systems, refer to the `Nsight Systems official "
-"documentation <https://docs.nvidia.com/nsight-systems/index.html>`_."
+"Nsight Systems provides a variety of profiling options.  This documentation will cover the most commonly used options "
+"for AMReX users to keep track of useful flags and analysis patterns. For the complete details of using Nsight Systems, "
+"refer to the `Nsight Systems official documentation <https://docs.nvidia.com/nsight-systems/index.html>`_."
 msgstr ""
+"Nsight Systems提供了多种分析选项。本文档将介绍AMReX用户最常用的选项，以便跟踪有用的标志和分析模式。有关使用Nsight Systems的完整详细信息，请参阅`Nsight "
+"Systems官方文档<https://docs.nvidia.com/nsight-systems/index.html>`_。"
 
 #: ../../source/External_Profiling_Tools.rst:297
 #: 88d8e406917c4879b30fd209b4c1cff2
 msgid "Profile Analysis"
-msgstr ""
+msgstr "个人资料分析"
 
 #: ../../source/External_Profiling_Tools.rst:299
 #: c83561b278c64286bfe9d986f202211e
 msgid ""
-"The most common use case of Nsight Systems for AMReX users is the "
-"creation of a qdrep file that is viewed in the Nsight Systems GUI, "
-"typically on a local workstation or machine."
-msgstr ""
+"The most common use case of Nsight Systems for AMReX users is the creation of a qdrep file that is viewed in the Nsight "
+"Systems GUI, typically on a local workstation or machine."
+msgstr "对于AMReX用户来说，Nsight Systems最常见的用法是创建一个qdrep文件，然后在Nsight Systems的图形用户界面中查看该文件，通常是在本地工作站或机器上进行。"
 
 #: ../../source/External_Profiling_Tools.rst:302
 #: 0d78812c8c97494aae19376718d9462b
 msgid "To generate a qdrep file, run nsys with the ``-o`` option:"
-msgstr ""
+msgstr "要生成一个 qdrep 文件，请使用 ``-o`` 选项运行 nsys。"
 
 #: ../../source/External_Profiling_Tools.rst:310
 #: f5a31f324b62438880a462fe14403ab9
 msgid ""
-"AMReX's lambda-based launch system often makes these timelines difficult "
-"to parse, as the kernel are mangled and are difficult to decipher. "
-"AMReX's Tiny Profiler includes NVTX region markers, which can be used to "
-"mark the respective section of the Nsight Systems timeline.  To include "
-"AMReX's built-in Tiny Profiler NVTX regions in Nsight Systems outputs, "
-"compile AMReX with ``TINY_PROFILE=TRUE``."
+"AMReX's lambda-based launch system often makes these timelines difficult to parse, as the kernel are mangled and are "
+"difficult to decipher. AMReX's Tiny Profiler includes NVTX region markers, which can be used to mark the respective "
+"section of the Nsight Systems timeline.  To include AMReX's built-in Tiny Profiler NVTX regions in Nsight Systems "
+"outputs, compile AMReX with ``TINY_PROFILE=TRUE``."
 msgstr ""
+"AMReX的基于lambda的启动系统经常使得这些时间轴难以解析，因为内核被混淆了，很难辨认。AMReX的Tiny Profiler包括NVTX区域标记，可以用来标记Nsight Systems时间轴中的相应部分。要在Nsight "
+"Systems输出中包含AMReX内置的Tiny Profiler NVTX区域，请使用``TINY_PROFILE=TRUE``编译AMReX。"
 
 #: ../../source/External_Profiling_Tools.rst:315
 #: 40992fe413664ca1abbe4658ebd6c987
 msgid ""
-"Nsight Systems timelines only profile a single, contiguous block of time."
-" There are a variety of methods to specify the specific region you would "
-"like to analyze. The most common options that AMReX users may find "
-"helpful are:"
-msgstr ""
+"Nsight Systems timelines only profile a single, contiguous block of time. There are a variety of methods to specify the "
+"specific region you would like to analyze. The most common options that AMReX users may find helpful are:"
+msgstr "Nsight Systems的时间轴只能对单个连续的时间块进行分析。有多种方法可以指定您想要分析的特定区域。对于AMReX用户来说，最常见且有用的选项有："
 
 #: ../../source/External_Profiling_Tools.rst:319
 #: 07fc155783e04ef297d982e36809b4fe
 msgid "**Specify an NVTX region as the starting point of the analysis.**"
-msgstr ""
+msgstr "指定一个NVTX区域作为分析的起点。"
 
 #: ../../source/External_Profiling_Tools.rst:321
 #: 7734e8dd6c0a4e8cbcbed35f7d6ce2dc
 msgid ""
-"This is done using ``-c nvtx -p \"region_name@*\" -e "
-"NSYS_NVTX_PROFILER_REGISTER_ONLY=0``, where ``region_name`` is the "
-"identification string for the of the NVTX region. The additional "
-"environment variable, ``-e ...`` is needed because AMReX's NVTX region "
-"names currently do not use a registered string. TinyProfiler's built-in "
-"NVTX regions use the same identification string as the timer itself. For "
-"example, to start an analysis at the ``do_hydro`` NVTX region, run:"
+"This is done using ``-c nvtx -p \"region_name@*\" -e NSYS_NVTX_PROFILER_REGISTER_ONLY=0``, where ``region_name`` is the "
+"identification string for the of the NVTX region. The additional environment variable, ``-e ...`` is needed because "
+"AMReX's NVTX region names currently do not use a registered string. TinyProfiler's built-in NVTX regions use the same "
+"identification string as the timer itself. For example, to start an analysis at the ``do_hydro`` NVTX region, run:"
 msgstr ""
+"这是使用``-c nvtx -p \"region_name@*\" -e "
+"NSYS_NVTX_PROFILER_REGISTER_ONLY=0``完成的，其中``region_name``是NVTX区域的标识字符串。额外的环境变量``-e "
+"...``是必需的，因为AMReX的NVTX区域名称目前不使用注册字符串。TinyProfiler内置的NVTX区域使用与计时器本身相同的标识字符串。例如，要在``do_hydro`` NVTX区域开始分析，请运行："
 
 #: ../../source/External_Profiling_Tools.rst:333
 #: 4cffb8f5f28b4764b786659fc5377b8e
 msgid ""
-"This will profile from the first instance of the specified NVTX region "
-"until the end of the application.  In AMReX applications, this can be "
-"helpful to skip initialization and analyze the remainder of the code.  To"
-" only analyze the specified NVTX region, add the flag ``-x true``, which "
-"will end the analysis at the end of the region:"
+"This will profile from the first instance of the specified NVTX region until the end of the application.  In AMReX "
+"applications, this can be helpful to skip initialization and analyze the remainder of the code.  To only analyze the "
+"specified NVTX region, add the flag ``-x true``, which will end the analysis at the end of the region:"
 msgstr ""
+"这将从指定的 NVTX 区域的第一个实例开始，直到应用程序结束时进行分析。在 AMReX 应用程序中，这对于跳过初始化并分析代码的其余部分非常有帮助。如果只想分析指定的 NVTX 区域，请添加标志“-x "
+"true”，这将在区域结束时结束分析。"
 
 #: ../../source/External_Profiling_Tools.rst:344
 #: cc1e7d8733884785afae2fe15962dcf6
 msgid ""
-"Again, it's important to remember that Nsight Systems only analyzes a "
-"single contiguous block of time. So, this will only give you a profile "
-"for the first instance of the named region.  Plan your Nsight System "
-"analyses accordingly."
-msgstr ""
+"Again, it's important to remember that Nsight Systems only analyzes a single contiguous block of time. So, this will "
+"only give you a profile for the first instance of the named region.  Plan your Nsight System analyses accordingly."
+msgstr "再次强调，Nsight Systems仅分析连续的时间块。因此，这只会为命名区域的第一个实例提供分析结果。请相应地规划您的Nsight Systems分析。"
 
 #: ../../source/External_Profiling_Tools.rst:348
 #: 5604c20490c64ac3bcec8e029b8bf35f
 msgid "**Specify a region with cuda profiler function calls.**"
-msgstr ""
+msgstr "指定一个使用CUDA分析器函数调用的区域。"
 
 #: ../../source/External_Profiling_Tools.rst:350
 #: d5bbc540fae04d80892b432cbbaeb5a3
 msgid ""
-"This requires manually altering your source code, but can provide better "
-"specificity in what you analyze. Directly insert "
-"``cudaProfilerStart\\Stop`` around the region of code you want to "
-"analyze:"
-msgstr ""
+"This requires manually altering your source code, but can provide better specificity in what you analyze. Directly "
+"insert ``cudaProfilerStart\\Stop`` around the region of code you want to analyze:"
+msgstr "这需要手动修改您的源代码，但可以提供更精确的分析。直接在您想要分析的代码区域插入 \"cudaProfilerStart\\Stop\"："
 
 #: ../../source/External_Profiling_Tools.rst:364
 #: acaecb2c72aa449fac43286530b3b1ac
 msgid "Then, run with ``-c cudaProfilerApi``:"
-msgstr ""
+msgstr "那么，请使用``-c cudaProfilerApi``运行："
 
 #: ../../source/External_Profiling_Tools.rst:372
 #: ddd4f5df9ea4409d81ba7ebdd04095e2
 msgid ""
-"As with NVTX regions, Nsight Systems will only profile from the first "
-"call to ``cudaProfilerStart()`` to the first call to "
-"``cudaProfilerStop()``, so be sure to add these markers appropriately."
-msgstr ""
+"As with NVTX regions, Nsight Systems will only profile from the first call to ``cudaProfilerStart()`` to the first call "
+"to ``cudaProfilerStop()``, so be sure to add these markers appropriately."
+msgstr "与NVTX区域一样，Nsight Systems仅会从第一次调用``cudaProfilerStart()``到第一次调用``cudaProfilerStop()``之间进行性能分析，因此请确保适当地添加这些标记。"
 
 #: ../../source/External_Profiling_Tools.rst:377
 #: dd5b75fa1b7042c58cebf5a55ce20c62
 msgid "Nsight Systems GUI Tips"
-msgstr ""
+msgstr "Nsight Systems GUI提示"
 
 #: ../../source/External_Profiling_Tools.rst:379
 #: 551c91f541ed4146b41eb873f0cb2784
 msgid ""
-"When analyzing an AMReX application in the Nsight Systems GUI using NVTX "
-"regions or ``TINY_PROFILE=TRUE``, AMReX users may find it useful to turn "
-"on the feature \"Rename CUDA Kernels by NVTX\". This will change the CUDA"
-" kernel names to match the inner-most NVTX region in which they were "
-"launched instead of the typical mangled compiler name. This will make "
-"identifying AMReX CUDA kernels in Nsight Systems reports considerably "
-"easier."
+"When analyzing an AMReX application in the Nsight Systems GUI using NVTX regions or ``TINY_PROFILE=TRUE``, AMReX users "
+"may find it useful to turn on the feature \"Rename CUDA Kernels by NVTX\". This will change the CUDA kernel names to "
+"match the inner-most NVTX region in which they were launched instead of the typical mangled compiler name. This will "
+"make identifying AMReX CUDA kernels in Nsight Systems reports considerably easier."
 msgstr ""
+"当使用NVTX区域或\"TINY_PROFILE=TRUE\"在Nsight Systems "
+"GUI中分析AMReX应用程序时，AMReX用户可能会发现打开\"按NVTX重命名CUDA内核\"功能很有用。这将会将CUDA内核名称更改为与其启动的最内层NVTX区域匹配，而不是通常的编译器混淆名称。这将大大方便在Nsight "
+"Systems报告中识别AMReX CUDA内核。"
 
 #: ../../source/External_Profiling_Tools.rst:384
 #: 1ba12438116a4412a978cc2011cc206d
 msgid "This feature can be found in the GUI's drop down menu, under:"
-msgstr ""
+msgstr "这个功能可以在图形用户界面的下拉菜单中找到，位置在："
 
 #: ../../source/External_Profiling_Tools.rst:394
 #: 7a346bbac8134801842e97aa13132e43
 msgid "Nsight Compute"
-msgstr ""
+msgstr "Nsight Compute"
 
 #: ../../source/External_Profiling_Tools.rst:396
 #: 7d8d8118bb714aeaa97380f70b38670a
 msgid ""
-"The Nsight Compute tool provides a detailed, fine-grained analysis of "
-"your CUDA kernels, giving details about the kernel launch, occupancy, and"
-" limitations while suggesting possible improvements to maximize the use "
-"of the GPU.  It analyzes CUDA-based GPU codes and is available on Summit "
-"and Cori in system modules."
+"The Nsight Compute tool provides a detailed, fine-grained analysis of your CUDA kernels, giving details about the "
+"kernel launch, occupancy, and limitations while suggesting possible improvements to maximize the use of the GPU.  It "
+"analyzes CUDA-based GPU codes and is available on Summit and Cori in system modules."
 msgstr ""
+"Nsight "
+"Compute工具提供了对您的CUDA内核进行详细、细粒度分析的功能，提供有关内核启动、占用率和限制的详细信息，同时建议可能的改进措施以最大化GPU的使用。它可以分析基于CUDA的GPU代码，并在Summit和Cori的系统模块中提供。"
 
 #: ../../source/External_Profiling_Tools.rst:401
 #: 08c64bc0f9c14cf48f0eb54e95710c57
 msgid ""
-"Nsight Compute provides a variety of profiling options.  This "
-"documentation will focus on the most commonly used options for AMReX "
-"users, primarily to keep track of useful flags and analysis patterns.  "
-"For the complete details of using Nsight Compute, refer to the `Nsight "
-"compute official documentation <https://docs.nvidia.com/nsight-"
-"compute/index.html>`_."
+"Nsight Compute provides a variety of profiling options.  This documentation will focus on the most commonly used "
+"options for AMReX users, primarily to keep track of useful flags and analysis patterns.  For the complete details of "
+"using Nsight Compute, refer to the `Nsight compute official documentation "
+"<https://docs.nvidia.com/nsight-compute/index.html>`_."
 msgstr ""
+"Nsight Compute提供了多种性能分析选项。本文档将重点介绍AMReX用户最常用的选项，主要是为了跟踪有用的标志和分析模式。有关使用Nsight Compute的完整详细信息，请参阅`Nsight "
+"Compute官方文档<https://docs.nvidia.com/nsight-compute/index.html>`_。"
 
 #: ../../source/External_Profiling_Tools.rst:408
 #: d217b728ef7c4f3f81ccde26dcd8aaa0
 msgid "Kernel Analysis"
-msgstr ""
+msgstr "内核分析"
 
 #: ../../source/External_Profiling_Tools.rst:410
 #: f0783825897742e1a879b0808e9995ec
 msgid ""
-"The standard way to run Nsight Compute on an AMReX application is to "
-"specify an output file that will be transferred to a local workstation of"
-" machine for viewing in the Nsight Compute GUI. Nsight Compute can be "
-"told to return a report file using the ``-o`` flag. In addition, when "
-"running with Nsight compute on an AMReX application, it is important to "
-"turn off the floating point exception trap, as it causes a runtime error."
-"  So, an entire AMReX application can be analyzed with Nsight Compute by "
-"running:"
+"The standard way to run Nsight Compute on an AMReX application is to specify an output file that will be transferred to "
+"a local workstation of machine for viewing in the Nsight Compute GUI. Nsight Compute can be told to return a report "
+"file using the ``-o`` flag. In addition, when running with Nsight compute on an AMReX application, it is important to "
+"turn off the floating point exception trap, as it causes a runtime error.  So, an entire AMReX application can be "
+"analyzed with Nsight Compute by running:"
 msgstr ""
+"在 AMReX 应用程序中运行 Nsight Compute 的标准方法是指定一个输出文件，该文件将被传输到本地工作站或机器上，以便在 Nsight Compute GUI 中查看。可以使用 \"-o\" 标志告诉 Nsight "
+"Compute 返回一个报告文件。此外，在使用 Nsight Compute 运行 AMReX 应用程序时，关闭浮点异常陷阱非常重要，因为它会导致运行时错误。因此，可以通过以下方式运行 Nsight Compute 来分析整个 AMReX "
+"应用程序："
 
 #: ../../source/External_Profiling_Tools.rst:423
 #: 88eade7d518b40cba19f6a927dfced40
 msgid ""
-"However, this implementation should almost never used by AMReX "
-"applications, as the analysis of every kernel would be  extremely lengthy"
-" and unnecessary.  To analyze a desired subset of CUDA kernels, AMReX "
-"users can use the Tiny Profiler's built-in NVTX regions to narrow the "
-"scope of the analysis.  Nsight Compute allows users to specify which NVTX"
-" regions to include and exclude through the ``--nvtx``, ``--nvtx-"
-"include`` and ``--nvtx-exclude`` flags. For example:"
+"However, this implementation should almost never used by AMReX applications, as the analysis of every kernel would be  "
+"extremely lengthy and unnecessary.  To analyze a desired subset of CUDA kernels, AMReX users can use the Tiny "
+"Profiler's built-in NVTX regions to narrow the scope of the analysis.  Nsight Compute allows users to specify which "
+"NVTX regions to include and exclude through the ``--nvtx``, ``--nvtx-include`` and ``--nvtx-exclude`` flags. For "
+"example:"
 msgstr ""
+"然而，AMReX应用程序几乎不应使用此实现，因为分析每个内核将非常冗长且不必要。为了分析所需的CUDA内核子集，AMReX用户可以使用Tiny Profiler的内置NVTX区域来缩小分析范围。NVIDIA Nsight "
+"Compute允许用户通过``--nvtx``、``--nvtx-include``和``--nvtx-exclude``标志来指定要包含和排除的NVTX区域。例如："
 
 #: ../../source/External_Profiling_Tools.rst:435
 #: 6d029b29cd8247859e8546c57e14e1a0
 msgid ""
-"will return a file named ``kernels`` which contains an analysis of the "
-"CUDA kernels launched inside the ``Hydro()`` region, ignoring any kernels"
-" launched inside ``StencilA()`` and ``StencilC()``. When using the NVTX "
-"regions built into AMReX's TinyProfiler, be aware that the application "
-"must be built with ``TINY_PROFILE=TRUE`` and the NVTX region names are "
-"identical to the TinyProfiler timer names."
+"will return a file named ``kernels`` which contains an analysis of the CUDA kernels launched inside the ``Hydro()`` "
+"region, ignoring any kernels launched inside ``StencilA()`` and ``StencilC()``. When using the NVTX regions built into "
+"AMReX's TinyProfiler, be aware that the application must be built with ``TINY_PROFILE=TRUE`` and the NVTX region names "
+"are identical to the TinyProfiler timer names."
 msgstr ""
+"将返回一个名为“kernels”的文件，其中包含在“Hydro()”区域内启动的CUDA内核的分析结果，忽略在“StencilA()”和“StencilC()"
+"”内启动的任何内核。当使用内置在AMReX的TinyProfiler中的NVTX区域时，请注意应用程序必须使用“TINY_PROFILE=TRUE”进行构建，并且NVTX区域的名称与TinyProfiler计时器的名称相同。"
 
 #: ../../source/External_Profiling_Tools.rst:440
 #: b2c9553d235643a8abdd536a00db59fc
 msgid ""
-"Another helpful flag for selecting a reasonable subset of kernels for "
-"analysis is the ``-c`` option. This flag specifies the total number of "
-"kernels to be analyzed. For example:"
-msgstr ""
+"Another helpful flag for selecting a reasonable subset of kernels for analysis is the ``-c`` option. This flag "
+"specifies the total number of kernels to be analyzed. For example:"
+msgstr "选择合理的内核子集进行分析的另一个有用标志是``-c``选项。该标志指定要分析的内核总数。例如："
 
 #: ../../source/External_Profiling_Tools.rst:449
 #: c1fca57d4b3348d1ba89f179003b84e2
-msgid ""
-"will only analyze the first ten kernels inside of the ``GravitySolve()`` "
-"NVTX region."
-msgstr ""
+msgid "will only analyze the first ten kernels inside of the ``GravitySolve()`` NVTX region."
+msgstr "只会分析“GravitySolve()” NVTX 区域内的前十个内核。"
 
 #: ../../source/External_Profiling_Tools.rst:451
 #: 80c388e1262a48a59ebb2c675c557c70
 msgid ""
-"For further details on how to choose a subset of CUDA kernels to analyze,"
-" or to run a more detailed analysis, including CUDA hardware counters, "
-"refer to the Nsight Compute official documentation on `NVTX Filtering "
-"<https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html#nvtx-"
-"filtering>`_."
+"For further details on how to choose a subset of CUDA kernels to analyze, or to run a more detailed analysis, including "
+"CUDA hardware counters, refer to the Nsight Compute official documentation on `NVTX Filtering "
+"<https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html#nvtx-filtering>`_."
 msgstr ""
+"要了解如何选择要分析的CUDA内核子集，或者运行更详细的分析，包括CUDA硬件计数器，请参考NVIDIA官方文档中关于`NVTX过滤 "
+"<https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html#nvtx-filtering>`_的部分。"
 
 #: ../../source/External_Profiling_Tools.rst:457
 #: 4d10f8bbaa4744e7b231f25f1b2bc748
 msgid "Roofline"
-msgstr ""
+msgstr "屋顶线"
 
 #: ../../source/External_Profiling_Tools.rst:459
 #: 05a93ac1a9d344418615c2904743035b
 msgid ""
-"As of version 2020.1.0, Nsight Compute has added the capability to "
-"perform roofline analyses on CUDA kernels to describe how well a given "
-"kernel is running on a given NVIDIA architecture.  For details on the "
-"roofline capabilities in Nsight Compute, refer to the `NVIDIA Kernel "
-"Profiling Guide <https://docs.nvidia.com/nsight-"
-"compute/ProfilingGuide/index.html#roofline>`_."
+"As of version 2020.1.0, Nsight Compute has added the capability to perform roofline analyses on CUDA kernels to "
+"describe how well a given kernel is running on a given NVIDIA architecture.  For details on the roofline capabilities "
+"in Nsight Compute, refer to the `NVIDIA Kernel Profiling Guide "
+"<https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#roofline>`_."
 msgstr ""
+"从2020.1.0版本开始，Nsight Compute已经增加了在CUDA内核上执行屋顶线分析的功能，以描述给定内核在给定的NVIDIA架构上的运行情况。有关Nsight "
+"Compute中屋顶线功能的详细信息，请参阅`NVIDIA内核分析指南<https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#roofline>`_。"
 
 #: ../../source/External_Profiling_Tools.rst:464
 #: c02f98fcce284a53a3734759a98da7fa
 msgid ""
-"To run a roofline analysis on an AMReX application, run ``ncu`` with the "
-"flag ``--section SpeedOfLight_RooflineChart``. Again, using appropriate "
-"NVTX flags to limit the scope of the analysis will be critical to achieve"
-" results within a reasonable time. For example:"
-msgstr ""
+"To run a roofline analysis on an AMReX application, run ``ncu`` with the flag ``--section SpeedOfLight_RooflineChart``. "
+"Again, using appropriate NVTX flags to limit the scope of the analysis will be critical to achieve results within a "
+"reasonable time. For example:"
+msgstr "要在AMReX应用程序上运行屋顶线分析，请使用``ncu``命令并加上``--section SpeedOfLight_RooflineChart``标志。同样，使用适当的NVTX标志来限定分析范围对于在合理时间内获得结果至关重要。例如："
 
 #: ../../source/External_Profiling_Tools.rst:474
 #: 647e6df6d7024a5eaddca7d5bb6278c3
 msgid ""
-"will perform a roofline analysis of the first ten kernels inside of the "
-"region ``MLMG()``, and report their relative performance in the file "
-"``roofline``, which can be read by the Nsight Compute GUI."
-msgstr ""
+"will perform a roofline analysis of the first ten kernels inside of the region ``MLMG()``, and report their relative "
+"performance in the file ``roofline``, which can be read by the Nsight Compute GUI."
+msgstr "将对位于“MLMG()”区域内的前十个内核执行屋顶线分析，并将它们的相对性能记录在名为“roofline”的文件中，该文件可以由NVIDIA Nsight Compute GUI读取。"
 
 #: ../../source/External_Profiling_Tools.rst:477
 #: 8feb69cdec4c4efebb413030434dcd53
 msgid ""
-"For further information on the roofline model, refer to the scientific "
-"literature, `Wikipedia overview "
+"For further information on the roofline model, refer to the scientific literature, `Wikipedia overview "
 "<https://en.wikipedia.org/wiki/Roofline_model>`_, NERSC `documentation "
-"<https://docs.nersc.gov/development/performance-debugging-"
-"tools/roofline/>`_ and `tutorials "
-"<https://www.nersc.gov/users/training/events/roofline-on-nvidia-gpus-"
-"hackathon/>`_."
-msgstr ""
-
+"<https://docs.nersc.gov/development/performance-debugging-tools/roofline/>`_ and `tutorials "
+"<https://www.nersc.gov/users/training/events/roofline-on-nvidia-gpus-hackathon/>`_."
+msgstr "关于屋顶线模型的更多信息，请参考科学文献、维基百科概述、NERSC文档和教程。"

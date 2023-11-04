@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,60 +21,60 @@ msgstr ""
 
 #: ../../source/InputsTimeStepping.rst:4 4b5bac95ddfd4c798984b17ead9f4511
 msgid "Time Stepping"
-msgstr ""
+msgstr "时间步进"
 
 #: ../../source/InputsTimeStepping.rst:6 5af999a6196a493390678cb67dea17a5
 msgid ""
-"The following inputs must be preceded by \"amr.\"   Note that if both are"
-" specified, both criteria are used and the simulation still stop when the"
-" first criterion is hit.  In the case of unsteady flow, the simulation "
-"will stop when either the number of steps reaches max_step or time "
-"reaches stop_time. In the case of unsteady flow, the simulation will stop"
-" when either the tolerance (difference between subsequent steps) is "
-"reached or the number of iterations reaches the maximum number specified."
+"The following inputs must be preceded by \"amr.\"   Note that if both are specified, both criteria are used and the "
+"simulation still stop when the first criterion is hit.  In the case of unsteady flow, the simulation will stop when "
+"either the number of steps reaches max_step or time reaches stop_time. In the case of unsteady flow, the simulation "
+"will stop when either the tolerance (difference between subsequent steps) is reached or the number of iterations "
+"reaches the maximum number specified."
 msgstr ""
+"以下输入必须以\"amr.\""
+"开头。请注意，如果两者都指定了，将同时使用两个条件，并且在满足第一个条件时模拟仍将停止。在非稳定流动的情况下，当步数达到最大步数或时间达到停止时间时，模拟将停止。在非稳定流动的情况下，当达到容差（连续步骤之间的差异）或迭代次数达到最大指定次"
+"数时，模拟将停止。"
 
 #: ../../source/InputsTimeStepping.rst:13 80a7970ca97743eb95a94b18a418f17c
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/InputsTimeStepping.rst:13 485c447c36d246f4856d87b743784ced
 msgid "Type"
-msgstr ""
+msgstr "输入"
 
 #: ../../source/InputsTimeStepping.rst:13 9b5ce233980248289b0dee8e0d0fdf83
 msgid "Default"
-msgstr ""
+msgstr "默认"
 
 #: ../../source/InputsTimeStepping.rst:15 4758de7ac17d4630b370ee2ead53ff24
 msgid "max_step"
-msgstr ""
+msgstr "最大步骤"
 
 #: ../../source/InputsTimeStepping.rst:15 3a91eb5e798845d48332c249f929b508
 msgid "Maximum number of time steps to take"
-msgstr ""
+msgstr "最大时间步数"
 
 #: ../../source/InputsTimeStepping.rst:15 0c910211490743428813cfec7b18ec0e
 msgid "Int"
-msgstr ""
+msgstr "Int"
 
 #: ../../source/InputsTimeStepping.rst:15 1cc5318efe6147cc9fe1f65bc388c7c4
 msgid "-1"
-msgstr ""
+msgstr "-1"
 
 #: ../../source/InputsTimeStepping.rst:17 42d9fa6f3e08489ebf6b7f63a06f2cb0
 msgid "stop_time"
-msgstr ""
+msgstr "停止时间"
 
 #: ../../source/InputsTimeStepping.rst:17 3c57ccf3697a40e1a5f896406ee79d9f
 msgid "Maximum time to reach"
-msgstr ""
+msgstr "最长到达时间"
 
 #: ../../source/InputsTimeStepping.rst:17 e20d2cabbe35480d9a306d29894e8cc4
 msgid "Real"
-msgstr ""
+msgstr "真实的"
 
 #: ../../source/InputsTimeStepping.rst:17 ae354e1dda87400185e86fe1bfd70d15
 msgid "-1.0"
-msgstr ""
-
+msgstr "-1.0"

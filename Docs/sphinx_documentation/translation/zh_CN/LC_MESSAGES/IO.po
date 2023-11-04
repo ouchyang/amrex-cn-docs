@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,439 +21,434 @@ msgstr ""
 
 #: ../../source/IO.rst:10 8c74ed65e1634fcc92f5dd36fffc4f44
 msgid "Plotfile"
-msgstr ""
+msgstr "绘图文件"
 
 #: ../../source/IO.rst:12 4a5fd355a0ba441e9d8835d02debe3fb
 msgid ""
-"AMReX has its own native plotfile format. Many visualization tools are "
-"available for AMReX plotfiles (see the chapter on "
-":ref:`Chap:Visualization`). AMReX provides the following two functions "
-"for writing a generic AMReX plotfile. Many AMReX application codes may "
-"have their own plotfile routines that store additional information such "
-"as compiler options, git hashes of the source codes and :cpp:`ParmParse` "
-"runtime parameters."
+"AMReX has its own native plotfile format. Many visualization tools are available for AMReX plotfiles (see the chapter "
+"on :ref:`Chap:Visualization`). AMReX provides the following two functions for writing a generic AMReX plotfile. Many "
+"AMReX application codes may have their own plotfile routines that store additional information such as compiler "
+"options, git hashes of the source codes and :cpp:`ParmParse` runtime parameters."
 msgstr ""
+"AMReX拥有自己的原生plotfile格式。有许多可用于AMReX plotfile的可视化工具（请参阅:ref:`Chap:Visualization`章节）。AMReX提供了以下两个函数用于编写通用的AMReX "
+"plotfile。许多AMReX应用程序代码可能具有自己的plotfile例程，用于存储额外的信息，例如编译器选项、源代码的git哈希和:cpp:`ParmParse`运行时参数。"
 
 #: ../../source/IO.rst:39 e8611166d53048de9152f15302476fd5
 msgid ""
-":cpp:`WriteSingleLevelPlotfile` is for single level runs and "
-":cpp:`WriteMultiLevelPlotfile` is for multiple levels. The name of the "
-"plotfile is specified by the plotfilename argument. This is the top level"
-" directory name for the plotfile. In AMReX convention, the plotfile name "
-"consist of letters followed by numbers (e.g., plt00258). "
-":cpp:`amrex::Concatenate` is a useful helper function for making such "
-"strings."
+":cpp:`WriteSingleLevelPlotfile` is for single level runs and :cpp:`WriteMultiLevelPlotfile` is for multiple levels. The "
+"name of the plotfile is specified by the plotfilename argument. This is the top level directory name for the plotfile. "
+"In AMReX convention, the plotfile name consist of letters followed by numbers (e.g., plt00258). "
+":cpp:`amrex::Concatenate` is a useful helper function for making such strings."
 msgstr ""
+":cpp:`WriteSingleLevelPlotfile` 用于单层运行，而 :cpp:`WriteMultiLevelPlotfile` 用于多层运行。绘图文件的名称由 `plotfilename` "
+"参数指定。这是绘图文件的顶层目录名称。按照 AMReX 的约定，绘图文件名由字母后跟数字组成（例如，plt00258）。:cpp:`amrex::Concatenate` 是一个有用的辅助函数，用于生成这样的字符串。"
 
 #: ../../source/IO.rst:60 5acef7f42aec4188a07f99adc9acd863
 msgid ""
-"The argument :cpp:`mf` above (:cpp:`MultiFab` for single level and "
-":cpp:`Vector<const MultiFab*>` for multi-level) is the data to be written"
-" to the disk. Note that many visualization tools expect this to be cell-"
-"centered data. So for nodal data, we need to convert them to cell-"
-"centered data through some kind of averaging. Also note that if you have "
-"data at each AMR level in several MultiFabs, you need to build a new "
-"MultiFab at each level to hold all the data on that level. This involves "
-"local data copy in memory and is not expected to significantly increase "
-"the total wall time for writing plotfiles. For the multi-level version, "
-"the function expects :cpp:`Vector<const MultiFab*>`, whereas the multi-"
-"level data are often stored as :cpp:`Vector<std::unique_ptr<MultiFab>>`. "
-"AMReX has a helper function for this and one can use it as follows,"
+"The argument :cpp:`mf` above (:cpp:`MultiFab` for single level and :cpp:`Vector<const MultiFab*>` for multi-level) is "
+"the data to be written to the disk. Note that many visualization tools expect this to be cell-centered data. So for "
+"nodal data, we need to convert them to cell-centered data through some kind of averaging. Also note that if you have "
+"data at each AMR level in several MultiFabs, you need to build a new MultiFab at each level to hold all the data on "
+"that level. This involves local data copy in memory and is not expected to significantly increase the total wall time "
+"for writing plotfiles. For the multi-level version, the function expects :cpp:`Vector<const MultiFab*>`, whereas the "
+"multi-level data are often stored as :cpp:`Vector<std::unique_ptr<MultiFab>>`. AMReX has a helper function for this and "
+"one can use it as follows,"
 msgstr ""
+"上述参数 `mf`（对于单层使用 `MultiFab`，对于多层使用 `Vector<const "
+"MultiFab*>`）是要写入磁盘的数据。请注意，许多可视化工具期望这些数据是以单元为中心的数据。因此，对于节点数据，我们需要通过某种平均方法将其转换为以单元为中心的数据。还请注意，如果您在多个 MultiFab 中的每个 AMR "
+"层级上都有数据，则需要在每个层级上构建一个新的 MultiFab 来保存该层级上的所有数据。这涉及到在内存中进行本地数据复制，并不会显著增加写入 plotfiles 的总墙时间。对于多层版本，该函数期望的是 `Vector<const "
+"MultiFab*>`，而多层数据通常存储为 `Vector<std::unique_ptr<MultiFab>>`。AMReX 提供了一个辅助函数来处理这个问题，可以按照以下方式使用它，"
 
 #: ../../source/IO.rst:80 3505fb51b9c243699713b4be1ac6cdca
 msgid ""
-"The argument :cpp:`varnames` has the names for each component of the "
-"MultiFab data. The size of the Vector should be equal to the number of "
-"components. The argument :cpp:`geom` is for passing :cpp:`Geometry` "
-"objects that contain the physical domain information. The argument "
-":cpp:`time` is for the time associated with the data. The argument "
-":cpp:`level_step` is for the current time step associated with the data. "
-"For multi-level plotfiles, the argument :cpp:`nlevels` is the total "
-"number of levels, and we also need to provide the refinement ratio via an"
-" :cpp:`Vector` of size nlevels-1."
+"The argument :cpp:`varnames` has the names for each component of the MultiFab data. The size of the Vector should be "
+"equal to the number of components. The argument :cpp:`geom` is for passing :cpp:`Geometry` objects that contain the "
+"physical domain information. The argument :cpp:`time` is for the time associated with the data. The argument "
+":cpp:`level_step` is for the current time step associated with the data. For multi-level plotfiles, the argument "
+":cpp:`nlevels` is the total number of levels, and we also need to provide the refinement ratio via an :cpp:`Vector` of "
+"size nlevels-1."
 msgstr ""
+"参数 `varnames` 是用于指定 MultiFab 数据中每个组件的名称。`Vector` 的大小应与组件的数量相等。参数 `geom` 用于传递包含物理域信息的 `Geometry` 对象。参数 `time` "
+"用于表示数据所关联的时间。参数 `level_step` 用于表示数据所关联的当前时间步。对于多层级的 plotfiles，参数 `nlevels` 是总层数，我们还需要通过一个大小为 nlevels-1 的 `Vector` "
+"提供细化比率。"
 
 #: ../../source/IO.rst:90 f724fd5498fe49a793451266855de507
 msgid ""
-"We note that AMReX does not overwrite old plotfiles if the new plotfile "
-"has the same name. The old plotfiles will be renamed to new directories "
-"named like plt00350.old.46576787980."
-msgstr ""
+"We note that AMReX does not overwrite old plotfiles if the new plotfile has the same name. The old plotfiles will be "
+"renamed to new directories named like plt00350.old.46576787980."
+msgstr "我们注意到，如果新的 plotfile 与旧的 plotfile 同名，AMReX 不会覆盖旧的 plotfile。旧的 plotfile 将被重命名为类似 plt00350.old.46576787980 的新目录。"
 
 #: ../../source/IO.rst:95 43234a44128c42e987786986b7d7bfde
 msgid "Async Output"
-msgstr ""
+msgstr "异步输出"
 
 #: ../../source/IO.rst:97 c73fdebf2b474d848dee7e5bd4a0b077
 msgid ""
-"AMReX provides the ability to print MultiFabs, plotfiles and particle "
-"data asynchronously.  Asynchronous output works by creating a copy of the"
-" data at the time of the call, which is written to disk by a persistent "
-"thread created during AMReX's initialization.  This allows the "
-"calculation to continue immediately, which can drastically reduce "
-"walltime spent writing to disk."
-msgstr ""
+"AMReX provides the ability to print MultiFabs, plotfiles and particle data asynchronously.  Asynchronous output works "
+"by creating a copy of the data at the time of the call, which is written to disk by a persistent thread created during "
+"AMReX's initialization.  This allows the calculation to continue immediately, which can drastically reduce walltime "
+"spent writing to disk."
+msgstr "AMReX提供了异步输出多重Fab、绘图文件和粒子数据的功能。异步输出通过在调用时创建数据的副本，并由AMReX初始化期间创建的持久线程写入磁盘来实现。这使得计算可以立即继续进行，从而大大减少了写入磁盘所花费的时间。"
 
 #: ../../source/IO.rst:104 5d6923cf70514b779f71129c60d11f1d
 msgid ""
-"If the number of output files is less than the number of MPI ranks, "
-"AMReX's async output requires MPI to be initialized with THREAD_MULTIPLE "
-"support. THREAD_MULTIPLE support allows multiple unique threads to run "
-"unique MPI calls simultaneously.  This support is required to allow AMReX"
-" applications to perform MPI work while the Async Output concurrently "
-"pings ranks to signal that they can safely begin writing to their "
-"assigned files.  However, THREAD_MULTIPLE can introduce additional "
-"overhead as each threads' MPI operations must be scheduled safely around "
-"each other. Therefore, AMReX uses a lower level of support, SERIALIZED, "
-"by default and applications have to turn on THREAD_MULTIPLE support."
+"If the number of output files is less than the number of MPI ranks, AMReX's async output requires MPI to be initialized "
+"with THREAD_MULTIPLE support. THREAD_MULTIPLE support allows multiple unique threads to run unique MPI calls "
+"simultaneously.  This support is required to allow AMReX applications to perform MPI work while the Async Output "
+"concurrently pings ranks to signal that they can safely begin writing to their assigned files.  However, "
+"THREAD_MULTIPLE can introduce additional overhead as each threads' MPI operations must be scheduled safely around each "
+"other. Therefore, AMReX uses a lower level of support, SERIALIZED, by default and applications have to turn on "
+"THREAD_MULTIPLE support."
 msgstr ""
+"If the number of output files is fewer than the number of MPI ranks, AMReX's async output feature requires that MPI be "
+"initialized with THREAD_MULTIPLE support. THREAD_MULTIPLE support enables multiple distinct threads to execute separate "
+"MPI calls simultaneously. This support is necessary to allow AMReX applications to carry out MPI tasks while the Async "
+"Output feature concurrently notifies ranks that they can safely begin writing to their assigned files. However, "
+"THREAD_MULTIPLE support can introduce additional overhead as the MPI operations of each thread must be scheduled "
+"carefully to avoid conflicts. Therefore, AMReX defaults to using a lower level of support, SERIALIZED, and applications "
+"need to enable THREAD_MULTIPLE support manually."
 
 #: ../../source/IO.rst:115 852dd437a48c43419a635a51508c90f9
 msgid ""
-"To turn on Async Output, use the input flag ``amrex.async_out=1``.  The "
-"number of output files can also be set, using ``amrex.async_out_nfiles``."
-"  The default number of files is ``64``. If the number of ranks is larger"
-" than the number of files, THREAD_MULTIPLE must be turned on by adding "
-"``MPI_THREAD_MULTIPLE=TRUE`` to the GNUMakefile. Otherwise, AMReX will "
-"throw an error."
+"To turn on Async Output, use the input flag ``amrex.async_out=1``.  The number of output files can also be set, using "
+"``amrex.async_out_nfiles``.  The default number of files is ``64``. If the number of ranks is larger than the number of "
+"files, THREAD_MULTIPLE must be turned on by adding ``MPI_THREAD_MULTIPLE=TRUE`` to the GNUMakefile. Otherwise, AMReX "
+"will throw an error."
 msgstr ""
+"要启用异步输出，请使用输入标志``amrex.async_out=1``。还可以使用``amrex.async_out_nfiles``设置输出文件的数量。默认文件数量为``64``"
+"。如果进程数量大于文件数量，则必须在GNUMakefile中添加``MPI_THREAD_MULTIPLE=TRUE``以启用THREAD_MULTIPLE。否则，AMReX将抛出错误。"
 
 #: ../../source/IO.rst:122 6f5d8a9951564c89ac29d0fddf4cfdf7
 msgid "Async Output works for a wide range of AMReX calls, including:"
-msgstr ""
+msgstr "异步输出适用于各种 AMReX 调用，包括但不限于："
 
 #: ../../source/IO.rst:124 2f441bb0682a4ebca87efb61d9444825
 msgid "``amrex::WriteSingleLevelPlotfile()``"
-msgstr ""
+msgstr "``amrex::WriteSingleLevelPlotfile()``"
 
 #: ../../source/IO.rst:125 ed67eab92cee41d99623e5a070c90d53
 msgid "``amrex::WriteMultiLevelPlotfile()``"
-msgstr ""
+msgstr "``amrex::WriteMultiLevelPlotfile()``"
 
 #: ../../source/IO.rst:126 c14dd9c726a64151a0dee0003b25904b
 msgid "``amrex::WriteMLMF()``"
-msgstr ""
+msgstr "``amrex::WriteMLMF()``"
 
 #: ../../source/IO.rst:127 311ccfc849ff49018634dc2f92d7b9e0
 msgid "``VisMF::AsyncWrite()``"
-msgstr ""
+msgstr "``VisMF::AsyncWrite()``"
 
 #: ../../source/IO.rst:128 82a9246f69264db7acfc5b98bea89824
 msgid "``ParticleContainer::Checkpoint()``"
-msgstr ""
+msgstr "``ParticleContainer::Checkpoint()``"
 
 #: ../../source/IO.rst:129 b907f6b0f71e4028899c7e5e53d3285f
 msgid "``ParticleContainer::WritePlotFile()``"
-msgstr ""
+msgstr "``ParticleContainer::WritePlotFile()``"
 
 #: ../../source/IO.rst:130 70ee8982ab3c4e728c30516ada715eb3
 msgid "``Amr::writePlotFile()``"
-msgstr ""
+msgstr "``Amr::writePlotFile()``"
 
 #: ../../source/IO.rst:131 abaea7ff1e89467390946109e32c694e
 msgid "``Amr::writeSmallPlotFile()``"
-msgstr ""
+msgstr "``Amr::writeSmallPlotFile()``"
 
 #: ../../source/IO.rst:132 e3a60384cc1b4441b521f6b3176ed9c0
 msgid "``Amr::checkpoint()``"
-msgstr ""
+msgstr "``Amr::checkpoint()``"
 
 #: ../../source/IO.rst:133 7a9ce998360a4cddbf0825f218e0046d
 msgid "``AmrLevel::writePlotFile()``"
-msgstr ""
+msgstr "``AmrLevel::writePlotFile()``"
 
 #: ../../source/IO.rst:134 beda2c179aba4939826d14aa8899f702
 msgid "``StateData::checkPoint()``"
-msgstr ""
+msgstr "``StateData::checkPoint()``"
 
 #: ../../source/IO.rst:135 584777a7326e45588da085354c22a33b
 msgid "``FabSet::write()``"
-msgstr ""
+msgstr "``FabSet::write()``"
 
 #: ../../source/IO.rst:137 fdd79ff5d3fc4a72a195adeee0a863a8
 msgid ""
-"Be aware: when using Async Output, a thread is spawned and exclusively "
-"used to perform output throughout the runtime.  As such, you may "
-"oversubscribe resources if you launch an AMReX application that assigns "
-"all available hardware threads in another way, such as OpenMP.  If you "
-"see any degradation when using Async Output and OpenMP, try using one "
-"less thread in ``OMP_NUM_THREADS`` to prevent oversubscription and get "
-"more consistent results."
+"Be aware: when using Async Output, a thread is spawned and exclusively used to perform output throughout the runtime.  "
+"As such, you may oversubscribe resources if you launch an AMReX application that assigns all available hardware threads "
+"in another way, such as OpenMP.  If you see any degradation when using Async Output and OpenMP, try using one less "
+"thread in ``OMP_NUM_THREADS`` to prevent oversubscription and get more consistent results."
 msgstr ""
+"请注意：在使用异步输出时，会生成一个线程，专门用于在运行时执行输出操作。因此，如果您在另一种方式（如OpenMP）中启动了一个分配了所有可用硬件线程的AMReX应用程序，可能会过度订阅资源。如果在使用异步输出和OpenMP时出现任何性能下降"
+"，请尝试在“OMP_NUM_THREADS”中使用一个较少的线程，以防止过度订阅并获得更一致的结果。"
 
 #: ../../source/IO.rst:146 270564da451d43b0acd5de3402451c6e
 msgid "HDF5 Plotfile"
-msgstr ""
+msgstr "HDF5绘图文件"
 
 #: ../../source/IO.rst:147 f6e1de6d62114bf2b8271a0210a304fd
 msgid ""
-"Besides AMReX's native plotfile, applications can also write plotfile in "
-"the HDF5 format, which is a cross-platform, self-describing file format. "
-"The HDF5 plotfiles store the same information as the native format, and "
-"has the additional compression capability that can reduce the file size. "
-"Currently supported compression libraries include `SZ`_ and `ZFP`_."
+"Besides AMReX's native plotfile, applications can also write plotfile in the HDF5 format, which is a cross-platform, "
+"self-describing file format. The HDF5 plotfiles store the same information as the native format, and has the additional "
+"compression capability that can reduce the file size. Currently supported compression libraries include `SZ`_ and "
+"`ZFP`_."
 msgstr ""
+"除了AMReX的原生plotfile格式，应用程序还可以以HDF5格式编写plotfile，这是一种跨平台、自描述的文件格式。HDF5 "
+"plotfile存储的信息与原生格式相同，并具有额外的压缩功能，可以减小文件大小。目前支持的压缩库包括`SZ`_和`ZFP`_。"
 
 #: ../../source/IO.rst:156 57fd68bc3b364b3e8db00e0daef0ab50
 msgid ""
-"To enable HDF5 output, AMReX must be compiled and linked to an HDF5 "
-"library with parallel I/O support, by adding ``USE_HDF5=TRUE`` and "
-"``HDF5_HOME=/path/to/hdf5/install/dir`` to the GNUMakefile. many HPC "
-"systems have an HDF5 module available that can be loaded with ``module "
-"load hdf5`` or ``module load cray-hdf5-parallel``. To download and "
-"compile HDF5 from source code, please go to `HDF5 Download`_ webpage and "
-"follow the instructions (latest version is recommended and remember to "
-"turn on parallel I/O)."
+"To enable HDF5 output, AMReX must be compiled and linked to an HDF5 library with parallel I/O support, by adding "
+"``USE_HDF5=TRUE`` and ``HDF5_HOME=/path/to/hdf5/install/dir`` to the GNUMakefile. many HPC systems have an HDF5 module "
+"available that can be loaded with ``module load hdf5`` or ``module load cray-hdf5-parallel``. To download and compile "
+"HDF5 from source code, please go to `HDF5 Download`_ webpage and follow the instructions (latest version is recommended "
+"and remember to turn on parallel I/O)."
 msgstr ""
+"为了启用HDF5输出，需要将AMReX编译并链接到支持并行I/O的HDF5库，方法是在GNUMakefile中添加``USE_HDF5=TRUE``和``HDF5_HOME=/path/to/hdf5/install/dir``"
+"。许多HPC系统提供了可加载的HDF5模块，可以使用``module load hdf5``或``module load cray-hdf5-parallel``命令加载。如果需要从源代码下载和编译HDF5，请访问`HDF5 "
+"Download`_网页并按照说明进行操作（建议使用最新版本，并记得启用并行I/O）。"
 
 #: ../../source/IO.rst:167 0946fa6365a44a5aa0b064b51fae60c9
 msgid ""
-"Following are two functions for writing a generic AMReX plotfile in HDF5 "
-"format, which are very similar to the AMReX native write functions."
-msgstr ""
+"Following are two functions for writing a generic AMReX plotfile in HDF5 format, which are very similar to the AMReX "
+"native write functions."
+msgstr "以下是两个用于以HDF5格式编写通用AMReX plotfile的函数，这些函数与AMReX本地写函数非常相似。"
 
 #: ../../source/IO.rst:192 c0e0a19b315d4f818633106d941bd02b
 msgid ""
-":cpp:`WriteSingleLevelPlotfileHDF5` is for single level runs and "
-":cpp:`WriteMultiLevelPlotfileHDF5` is for multiple levels. Their "
-"arguments are the same as the native ones except the last one, which "
-"optional, and specifies the compression parameters. These two functions "
-"write plotfiles with a Chombo-compatible HDF5 file schema, which can be "
-"read by visualization tools such as VisIt and ParaView using their built-"
-"in Chombo reader plugin (see the chapter on :ref:`Chap:Visualization`)"
+":cpp:`WriteSingleLevelPlotfileHDF5` is for single level runs and :cpp:`WriteMultiLevelPlotfileHDF5` is for multiple "
+"levels. Their arguments are the same as the native ones except the last one, which optional, and specifies the "
+"compression parameters. These two functions write plotfiles with a Chombo-compatible HDF5 file schema, which can be "
+"read by visualization tools such as VisIt and ParaView using their built-in Chombo reader plugin (see the chapter on "
+":ref:`Chap:Visualization`)"
 msgstr ""
+"`WriteSingleLevelPlotfileHDF5`用于单层运行，而`WriteMultiLevelPlotfileHDF5`"
+"用于多层运行。它们的参数与原生函数相同，除了最后一个参数是可选的，并且用于指定压缩参数。这两个函数会使用与Chombo兼容的HDF5"
+"文件模式编写plotfiles，可以通过可视化工具（如VisIt和ParaView）使用其内置的Chombo读取器插件来读取（请参阅:ref:`Chap:Visualization`章节）。"
 
 #: ../../source/IO.rst:201 00240e308e994807a97348dedab3ae1a
 msgid "HDF5 Plotfile Compression"
-msgstr ""
+msgstr "HDF5绘图文件压缩"
 
 #: ../../source/IO.rst:202 f2d3ea2f5dfd4cf790423c31173d6102
 msgid ""
-"To enable data compression on the HDF5 datasets, the corresponding "
-"compression library and its HDF5 plugin must be available. To compile "
-"`SZ`_ or `ZFP`_ plugin, please refer to their documentation: `H5Z-SZ`_ "
-"and `H5Z-ZFP`_, and adding ``USE_HDF5_SZ=TRUE``, ``SZ_HOME=``, or "
-"``USE_HDF5_ZFP=TRUE``, ``ZFP_HOME=``, ``H5Z_HOME=`` to the GNUMakefile."
+"To enable data compression on the HDF5 datasets, the corresponding compression library and its HDF5 plugin must be "
+"available. To compile `SZ`_ or `ZFP`_ plugin, please refer to their documentation: `H5Z-SZ`_ and `H5Z-ZFP`_, and adding "
+"``USE_HDF5_SZ=TRUE``, ``SZ_HOME=``, or ``USE_HDF5_ZFP=TRUE``, ``ZFP_HOME=``, ``H5Z_HOME=`` to the GNUMakefile."
 msgstr ""
+"要在HDF5数据集上启用数据压缩，必须提供相应的压缩库及其HDF5插件。要编译`SZ`_或`ZFP`_插件，请参考它们的文档：`H5Z-SZ`_和`H5Z-ZFP`_，并将``USE_HDF5_SZ=TRUE``、``SZ_HOME=``"
+"或``USE_HDF5_ZFP=TRUE``、``ZFP_HOME=``、``H5Z_HOME=``添加到GNUMakefile中。"
 
 #: ../../source/IO.rst:213 ee595d0ed8ae4091b1d690e12b4d8e52
 msgid ""
-"The string argument :cpp:`compression` in the above two functions "
-"controls whether to enable data compression and its parameters. Currently"
-" supported options include:"
-msgstr ""
+"The string argument :cpp:`compression` in the above two functions controls whether to enable data compression and its "
+"parameters. Currently supported options include:"
+msgstr "上述两个函数中的字符串参数 `compression` 控制是否启用数据压缩以及其参数。目前支持的选项包括："
 
 #: ../../source/IO.rst:217 76adbd6c429a462ea21248e2db50cafb
 msgid "No compression"
-msgstr ""
+msgstr "不压缩"
 
 #: ../../source/IO.rst:218 f690ee0d30b24ed1ac4457de53ce7d1b
 msgid "``None@0``"
-msgstr ""
+msgstr "``无@0``"
 
 #: ../../source/IO.rst:219 f4379874176d40f7a0c67a7fe92aa279
 msgid "SZ compression"
-msgstr ""
+msgstr "SZ压缩"
 
 #: ../../source/IO.rst:220 d4fd459a1f8e487bb307306110c0f6dc
 msgid "``SZ@/path/to/sz.config``"
 msgstr ""
+"``SZ@/path/to/sz.config``\n"
+"\n"
+"``SZ@/path/to/sz.config``"
 
 #: ../../source/IO.rst:226 68597fda8a9648469d173759b6c83de1
 msgid "ZFP compression"
-msgstr ""
+msgstr "ZFP压缩"
 
 #: ../../source/IO.rst:222 1e93504bf46d4ff28ab56ac2b3f5edd4
 msgid "``ZFP_RATE@rate``"
-msgstr ""
+msgstr "``ZFP_RATE@rate``"
 
 #: ../../source/IO.rst:223 5fba3fdb15ec498eacc01a59bcf8128e
 msgid "``ZFP_PRECISION@precision``"
 msgstr ""
+"``ZFP_PRECISION@precision``\n"
+"\n"
+"``ZFP_PRECISION@precision``"
 
 #: ../../source/IO.rst:224 ecc5c1b741f6464cb41230468583ae6b
 msgid "``ZFP_ACCURACY@accuracy``"
 msgstr ""
+"``ZFP_ACCURACY@accuracy``\n"
+"\n"
+"``ZFP_ACCURACY@accuracy``"
 
 #: ../../source/IO.rst:225 351cd8633c5d434b8eac019eade09f65
 msgid "``ZFP_REVERSIBLE@reversible``"
 msgstr ""
+"``ZFP_REVERSIBLE@reversible``\n"
+"\n"
+"``ZFP_REVERSIBLE@可逆``"
 
 #: ../../source/IO.rst:229 2ad1dd8479bc461ca4126d426b7cd264
 msgid "HDF5 Asynchronous Output"
-msgstr ""
+msgstr "HDF5 异步输出"
 
 #: ../../source/IO.rst:230 661213b5a4c448739a7737eb63d75289
 msgid ""
-"The HDF5 output also comes with its own asynchronous I/O support, which "
-"is different from the native async output mentioned in the previous "
-"section. To use the HDF5 asynchronous I/O VOL connector, download and "
-"compile by following the instructions at `vol-async`_."
-msgstr ""
+"The HDF5 output also comes with its own asynchronous I/O support, which is different from the native async output "
+"mentioned in the previous section. To use the HDF5 asynchronous I/O VOL connector, download and compile by following "
+"the instructions at `vol-async`_."
+msgstr "HDF5输出还配备了自己的异步I/O支持，这与前一节提到的本机异步输出不同。要使用HDF5异步I/O VOL连接器，请按照`vol-async`_中的说明下载并编译。"
 
 #: ../../source/IO.rst:237 68cfdbe1df844bda8c7a50bb8a6c762e
 msgid ""
-"Since the HDF5 asynchronous I/O in AMReX does not use double buffering, "
-"vol-async must be compiled with ``-DENABLE_WRITE_MEMCPY=1`` added to "
-"``CFLAGS``. When compiling AMReX, add ``USE_HDF5_ASYNC = TRUE``, "
-"``ABT_HOME=``, ``ASYNC_HOME=``, and ``MPI_THREAD_MULTIPLE=TRUE`` to the "
-"GNUMakefile. Refer to ``amrex/Tests/HDF5Benchmark/GNUmakefile`` for the "
-"example usage."
+"Since the HDF5 asynchronous I/O in AMReX does not use double buffering, vol-async must be compiled with "
+"``-DENABLE_WRITE_MEMCPY=1`` added to ``CFLAGS``. When compiling AMReX, add ``USE_HDF5_ASYNC = TRUE``, ``ABT_HOME=``, "
+"``ASYNC_HOME=``, and ``MPI_THREAD_MULTIPLE=TRUE`` to the GNUMakefile. Refer to "
+"``amrex/Tests/HDF5Benchmark/GNUmakefile`` for the example usage."
 msgstr ""
+"由于AMReX中的HDF5异步I/O不使用双缓冲，因此在编译vol-async时，需要在\"CFLAGS\"中添加\"-DENABLE_WRITE_MEMCPY=1\"。在编译AMReX时，在GNUMakefile中添加\"USE_HDF5"
+"_ASYNC = "
+"TRUE\"、\"ABT_HOME=\"、\"ASYNC_HOME=\"和\"MPI_THREAD_MULTIPLE=TRUE\"。有关示例用法，请参考\"amrex/Tests/HDF5Benchmark/GNUmakefile\"。"
 
 #: ../../source/IO.rst:245 ba73a1b443c54a14be6ef2fbb3234219
 msgid "Alternative HDF5 Plotfile Schema"
-msgstr ""
+msgstr "替代的HDF5绘图文件模式"
 
 #: ../../source/IO.rst:246 ecbd6804949c44b5969b996ba6663849
 msgid ""
-":cpp:`WriteSingleLevelPlotfileHDF5` and "
-":cpp:`WriteMultiLevelPlotfileHDF5` write HDF5 plotfiles that store all "
-"the data on an AMR level as one 1D HDF5 dataset. Each AMR box's data is "
-"linearized and the data of different variables are concatenated, "
-"resulting in an interleaved pattern for each variable. This could be "
-"undesirable when compression is used, as it may lead to applying the "
-"compression algorithm to multiple variables with different value ranges "
-"and characteristics, and reduce the compression ratio. To overcome this "
-"issue, two additional functions are provided to write each variable into "
-"individual HDF5 datasets: :cpp:`WriteSingleLevelPlotfileHDF5MultiDset` "
-"and :cpp:`WriteMultiLevelPlotfileHDF5MultiDset`. They use the exact same "
-"arguments as :cpp:`WriteSingleLevelPlotfileHDF5` and "
-":cpp:`WriteMultiLevelPlotfileHDF5`. However, this alternative schema is "
-"not yet supported by the visualization tools."
+":cpp:`WriteSingleLevelPlotfileHDF5` and :cpp:`WriteMultiLevelPlotfileHDF5` write HDF5 plotfiles that store all the data "
+"on an AMR level as one 1D HDF5 dataset. Each AMR box's data is linearized and the data of different variables are "
+"concatenated, resulting in an interleaved pattern for each variable. This could be undesirable when compression is "
+"used, as it may lead to applying the compression algorithm to multiple variables with different value ranges and "
+"characteristics, and reduce the compression ratio. To overcome this issue, two additional functions are provided to "
+"write each variable into individual HDF5 datasets: :cpp:`WriteSingleLevelPlotfileHDF5MultiDset` and "
+":cpp:`WriteMultiLevelPlotfileHDF5MultiDset`. They use the exact same arguments as :cpp:`WriteSingleLevelPlotfileHDF5` "
+"and :cpp:`WriteMultiLevelPlotfileHDF5`. However, this alternative schema is not yet supported by the visualization "
+"tools."
 msgstr ""
+"`WriteSingleLevelPlotfileHDF5`和`WriteMultiLevelPlotfileHDF5`会将所有数据以一维HDF5数据集的形式写入HDF5 "
+"plotfile中。每个自适应网格块的数据会被线性化，并且不同变量的数据会被串联起来，从而形成每个变量的交错模式。当使用压缩时，这可能是不理想的，因为它可能导致将压缩算法应用于具有不同值范围和特征的多个变量，并降低压缩比。为了解决这个问题，"
+"提供了另外两个函数，用于将每个变量写入单独的HDF5数据集：`WriteSingleLevelPlotfileHDF5MultiDset`和`WriteMultiLevelPlotfileHDF5MultiDset`。它们与`"
+"WriteSingleLevelPlotfileHDF5`和`WriteMultiLevelPlotfileHDF5`具有完全相同的参数。然而，目前可视化工具尚不支持这种替代方案。"
 
 #: ../../source/IO.rst:260 695837337eca48efb46e36dc041081af
 msgid "Checkpoint File"
-msgstr ""
+msgstr "检查点文件"
 
 #: ../../source/IO.rst:262 46b26c864e06408ea6597fa81d27d6aa
 msgid ""
-"Checkpoint files are used for restarting simulations from where the "
-"checkpoints are written. Each application code has its own set of data "
-"needed for restart. AMReX provides I/O functions for basic data "
-"structures like :cpp:`MultiFab` and :cpp:`BoxArray`. These functions can "
-"be used to build codes for reading and writing checkpoint files. Since "
-"each application code has its own requirement, there is no standard AMReX"
-" checkpoint format. However we have provided an example restart "
-"capability in the tutorial `Advection AmrCore`_. Refer to the functions "
-":cpp:`ReadCheckpointFile()` and :cpp:`WriteCheckpointFile()` in this "
-"tutorial."
+"Checkpoint files are used for restarting simulations from where the checkpoints are written. Each application code has "
+"its own set of data needed for restart. AMReX provides I/O functions for basic data structures like :cpp:`MultiFab` and "
+":cpp:`BoxArray`. These functions can be used to build codes for reading and writing checkpoint files. Since each "
+"application code has its own requirement, there is no standard AMReX checkpoint format. However we have provided an "
+"example restart capability in the tutorial `Advection AmrCore`_. Refer to the functions :cpp:`ReadCheckpointFile()` and "
+":cpp:`WriteCheckpointFile()` in this tutorial."
 msgstr ""
+"检查点文件用于从检查点位置重新启动模拟。每个应用程序代码都有自己的一组用于重新启动的数据。AMReX提供了用于基本数据结构（如：cpp：`MultiFab`和：cpp：`BoxArray`）的I/"
+"O函数。这些函数可用于构建用于读取和写入检查点文件的代码。由于每个应用程序代码都有自己的要求，因此没有标准的AMReX检查点格式。但是，在教程“Advection "
+"AmrCore”中，我们提供了一个示例重新启动功能。请参考该教程中的函数：cpp：`ReadCheckpointFile()`和：cpp：`WriteCheckpointFile()`。"
 
 #: ../../source/IO.rst:276 aaf71ebc2ed84db9aef5af4a09ed0d76
 msgid ""
-"A checkpoint file is actually a directory with name, e.g., ``chk00010`` "
-"containing a ``Header`` (text) file, along with subdirectories "
-"``Level_0``, ``Level_1``, etc. containing the :cpp:`MultiFab` data at "
-"each level of refinement. The ``Header`` file contains problem-specific "
-"data (such as the finest level, simulation time, time step, etc.), along "
-"with a printout of the :cpp:`BoxArray` at each level of refinement."
+"A checkpoint file is actually a directory with name, e.g., ``chk00010`` containing a ``Header`` (text) file, along with "
+"subdirectories ``Level_0``, ``Level_1``, etc. containing the :cpp:`MultiFab` data at each level of refinement. The "
+"``Header`` file contains problem-specific data (such as the finest level, simulation time, time step, etc.), along with "
+"a printout of the :cpp:`BoxArray` at each level of refinement."
 msgstr ""
+"一个检查点文件实际上是一个带有名称的目录，例如``chk00010``，其中包含一个``Header``（文本）文件，以及子目录``Level_0``，``Level_1``等，这些子目录包含了每个细化级别上的:cpp:`MultiFab`"
+"数据。``Header``文件包含问题特定的数据（例如最精细的级别、模拟时间、时间步长等），以及每个细化级别上的:cpp:`BoxArray`的打印输出。"
 
 #: ../../source/IO.rst:284 92f0eb946b5f4ef9aa0d491f469ba49e
-msgid ""
-"When starting a simulation from a checkpoint file, a typical sequence in "
-"the code could be:"
-msgstr ""
+msgid "When starting a simulation from a checkpoint file, a typical sequence in the code could be:"
+msgstr "从检查点文件开始模拟时，代码中的典型序列可能是："
 
 #: ../../source/IO.rst:287 1a209c08a96d4519a87ef3e929e9501b
 msgid "Read in the ``Header`` file data (except for the :cpp:`BoxArray` data)."
-msgstr ""
+msgstr "读取“Header”文件中的数据（除了:cpp:`BoxArray`数据）。"
 
 #: ../../source/IO.rst:289 2c7643655c4e4b3fb764ab612b722530
 msgid "For each level of refinement, do the following in order:"
-msgstr ""
+msgstr "For each level of refinement, please follow the instructions in the given order:"
 
 #: ../../source/IO.rst:291 42ff754974b8430bbe256d3733dddb98
 msgid "-- Read in the :cpp:`BoxArray`"
-msgstr ""
+msgstr "-- 在 :cpp:`BoxArray` 中读取"
 
 #: ../../source/IO.rst:293 843698027fc8488f9305f0122834768f
 msgid "-- Build a :cpp:`DistributionMapping`"
-msgstr ""
+msgstr "-- 构建一个 :cpp:`DistributionMapping`"
 
 #: ../../source/IO.rst:295 4c19f993eb904c4f9e994dde2a9e19f2
 msgid ""
-"-- Define any :cpp:`MultiFab`, :cpp:`FluxRegister`, etc. objects that are"
-" built upon the :cpp:`BoxArray` and the :cpp:`DistributionMapping`"
-msgstr ""
+"-- Define any :cpp:`MultiFab`, :cpp:`FluxRegister`, etc. objects that are built upon the :cpp:`BoxArray` and the "
+":cpp:`DistributionMapping`"
+msgstr "-- 定义任何基于 `BoxArray` 和 `DistributionMapping` 构建的 `MultiFab`、`FluxRegister` 等对象。"
 
 #: ../../source/IO.rst:298 ee7cbd6bfb6d497389ee09db65426a95
 msgid "-- Read in the :cpp:`MultiFab` data"
-msgstr ""
+msgstr "-- 在 :cpp:`MultiFab` 数据中读取"
 
 #: ../../source/IO.rst:300 74454c3b638e4e989915878d2d3548da
 msgid ""
-"We do this one level at a time because when you create a distribution "
-"map, it checks how much allocated :cpp:`MultiFab` data already exists "
-"before assigning grids to processors."
-msgstr ""
+"We do this one level at a time because when you create a distribution map, it checks how much allocated :cpp:`MultiFab` "
+"data already exists before assigning grids to processors."
+msgstr "我们逐级进行此操作，因为在创建分布图时，它会检查已分配的 `MultiFab` 数据量，然后再将网格分配给处理器。"
 
 #: ../../source/IO.rst:304 be426120013947579307d7448c11bfa1
 msgid ""
-"Typically a checkpoint file is a directory containing some text files and"
-" sub-directories (e.g., ``Level_0`` and ``Level_1``) containing various "
-"data. It is a good idea that we fist make these directories ready for "
-"subsequently writing to the disk. For example, to build directories "
-"``chk00010``, ``chk00010/Level_0``, and ``chk00010/Level_1``, you could "
-"write:"
+"Typically a checkpoint file is a directory containing some text files and sub-directories (e.g., ``Level_0`` and "
+"``Level_1``) containing various data. It is a good idea that we fist make these directories ready for subsequently "
+"writing to the disk. For example, to build directories ``chk00010``, ``chk00010/Level_0``, and ``chk00010/Level_1``, "
+"you could write:"
 msgstr ""
+"通常，检查点文件是一个包含一些文本文件和子目录（例如``Level_0``和``Level_1``）的目录。首先，我们最好先准备好这些目录，以便随后将数据写入磁盘。例如，要构建目录``chk00010``、``chk00010/Level_"
+"0``和``chk00010/Level_1``，您可以编写以下代码："
 
 #: ../../source/IO.rst:331 23bfc7fc2be0447c82884380eabdf99e
 msgid ""
-"A checkpoint file of AMReX application codes often has a clear text "
-"Header file that only the I/O process writes to it using "
-":cpp:`std::ofstream`. The Header file contains problem-dependent "
-"information such as the time, the physical domain size, grids, etc. that "
-"are necessary for restarting the simulation. To guarantee that precision "
-"is not lost for storing floating point number like time in clear text "
-"file, the file stream's precision needs to be set properly. And a stream "
-"buffer can also be used. For example,"
+"A checkpoint file of AMReX application codes often has a clear text Header file that only the I/O process writes to it "
+"using :cpp:`std::ofstream`. The Header file contains problem-dependent information such as the time, the physical "
+"domain size, grids, etc. that are necessary for restarting the simulation. To guarantee that precision is not lost for "
+"storing floating point number like time in clear text file, the file stream's precision needs to be set properly. And a "
+"stream buffer can also be used. For example,"
 msgstr ""
+"AMReX应用程序代码的检查点文件通常具有一个明文的头文件，只有I/O进程使用`std::ofstream`"
+"进行写入。头文件包含了与问题相关的信息，如时间、物理域大小、网格等，这些信息对于重新启动模拟是必要的。为了确保在明文文件中存储浮点数（如时间）时不丢失精度，需要适当设置文件流的精度。同时，还可以使用流缓冲区。例如，"
 
 #: ../../source/IO.rst:394 473a6da4f3be496cb1bf1998990b62ce
 msgid ""
-":cpp:`amrex::VisMF` is a class that can be used to perform "
-":cpp:`MultiFab` I/O in parallel. How many processes are allowed to "
-"perform I/O simultaneously can be set via"
-msgstr ""
+":cpp:`amrex::VisMF` is a class that can be used to perform :cpp:`MultiFab` I/O in parallel. How many processes are "
+"allowed to perform I/O simultaneously can be set via"
+msgstr "`amrex::VisMF`是一个可以用于并行执行`MultiFab`输入输出的类。可以通过设置来确定同时执行I/O的进程数量。"
 
 #: ../../source/IO.rst:402 f82dbf965d5342d28b1049878953e974
-msgid ""
-"The optimal number is of course system dependent. The following code "
-"shows how to write a :cpp:`MultiFab`."
-msgstr ""
+msgid "The optimal number is of course system dependent. The following code shows how to write a :cpp:`MultiFab`."
+msgstr "当然，最佳数量是依赖于系统的。下面的代码展示了如何编写一个 `MultiFab`。"
 
 #: ../../source/IO.rst:415 5ef21df0abbf4ec89cab32f85816ad59
-msgid ""
-"It should also be noted that all the data including those in ghost cells "
-"are written/read by :cpp:`VisMF::Write/Read`."
-msgstr ""
+msgid "It should also be noted that all the data including those in ghost cells are written/read by :cpp:`VisMF::Write/Read`."
+msgstr "还需要注意的是，所有的数据，包括幽灵单元格中的数据，都是通过 `VisMF::Write/Read` 进行写入和读取的。"
 
 #: ../../source/IO.rst:419 cfeba5ffff164da4a4b3f15002a84e3a
 msgid ""
-"For reading the Header file, AMReX can have the I/O process read the file"
-" from the disk and broadcast it to others as :cpp:`Vector<char>`. Then "
-"all processes can read the information with :cpp:`std::istringstream`. "
-"For example,"
-msgstr ""
+"For reading the Header file, AMReX can have the I/O process read the file from the disk and broadcast it to others as "
+":cpp:`Vector<char>`. Then all processes can read the information with :cpp:`std::istringstream`. For example,"
+msgstr "为了读取头文件，AMReX可以让I/O进程从磁盘读取文件，并将其作为`Vector<char>`广播给其他进程。然后，所有进程可以使用`std::istringstream`读取信息。例如，"
 
 #: ../../source/IO.rst:476 6ef8a430f2e24b81b3f838c79c8410e8
 msgid ""
-"The following code how to read in a :cpp:`BoxArray`, create a "
-":cpp:`DistributionMapping`, build :cpp:`MultiFab` and :cpp:`FluxRegister`"
-" data, and read in a :cpp:`MultiFab` from a checkpoint file, on a level-"
-"by-level basis:"
-msgstr ""
+"The following code how to read in a :cpp:`BoxArray`, create a :cpp:`DistributionMapping`, build :cpp:`MultiFab` and "
+":cpp:`FluxRegister` data, and read in a :cpp:`MultiFab` from a checkpoint file, on a level-by-level basis:"
+msgstr "以下代码演示了如何逐层读取一个 `BoxArray`，创建一个 `DistributionMapping`，构建 `MultiFab` 和 `FluxRegister` 数据，并从检查点文件中读取一个 `MultiFab`："
 
 #: ../../source/IO.rst:514 d90812698da34fa39d9b1cbd65303b1a
 msgid ""
-"It should be emphasized that calling :cpp:`VisMF::Read` with an empty "
-":cpp:`MultiFab` (i.e., no memory allocated for floating point data) will "
-"result in a :cpp:`MultiFab` with a new :cpp:`DistributionMapping` that "
-"could be different from any other existing :cpp:`DistributionMapping` "
-"objects and is not recommended."
+"It should be emphasized that calling :cpp:`VisMF::Read` with an empty :cpp:`MultiFab` (i.e., no memory allocated for "
+"floating point data) will result in a :cpp:`MultiFab` with a new :cpp:`DistributionMapping` that could be different "
+"from any other existing :cpp:`DistributionMapping` objects and is not recommended."
 msgstr ""
-
+"需要强调的是，如果使用空的 `MultiFab`（即没有为浮点数据分配内存），调用 `VisMF::Read` 将导致一个具有新的 `DistributionMapping` 的 `MultiFab`，该 "
+"`DistributionMapping` 可能与其他现有的 `DistributionMapping` 对象不同，这是不推荐的。"

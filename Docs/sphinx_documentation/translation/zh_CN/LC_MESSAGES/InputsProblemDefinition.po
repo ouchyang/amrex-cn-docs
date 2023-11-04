@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -19,43 +19,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.13.1\n"
 
+#: ../../source/InputsProblemDefinition.rst:21 2071639ffd5a49acbb949c6fd80d904a
+msgid "0"
+msgstr "0"
+
 #: ../../source/InputsProblemDefinition.rst:4 dcc87bbf37ee42a98641f62eea50133e
 msgid "Problem Definition"
-msgstr ""
+msgstr "问题定义"
 
 #: ../../source/InputsProblemDefinition.rst:6 d2c4c46e8dfb4e9d84db42a2a0986eee
 msgid "The following inputs must be preceded by \"amr.\""
-msgstr ""
+msgstr "以下输入必须以\"amr.\"开头。"
 
 #: ../../source/InputsProblemDefinition.rst:9
 #: ../../source/InputsProblemDefinition.rst:19 e23ccce3c5644fe691c7fb69a2445dbe
 #: ebc537e38c7c4eb0a8e3b01fb5df842f
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/InputsProblemDefinition.rst:9
 #: ../../source/InputsProblemDefinition.rst:19 7350079d633d4aff8e9b5f002bcf0844
 #: ee4b3f78219648bab8d33e03d085cf22
 msgid "Type"
-msgstr ""
+msgstr "输入"
 
 #: ../../source/InputsProblemDefinition.rst:9
 #: ../../source/InputsProblemDefinition.rst:19 26e35c996413479c951bbdd65c98cdc3
 #: 4effc6aef4ca4191b34aad1925bce92d
 msgid "Default"
-msgstr ""
+msgstr "默认"
 
 #: ../../source/InputsProblemDefinition.rst:11 7be032a549784fb9abfe2a94f4fe90c6
 msgid "n_cell"
-msgstr ""
+msgstr "n_cell"
 
 #: ../../source/InputsProblemDefinition.rst:11 54839ca80cad41c2add481e2744bf334
 msgid "Number of cells at level 0 in each coordinate direction"
-msgstr ""
+msgstr "每个坐标方向上的零级单元格数量"
 
 #: ../../source/InputsProblemDefinition.rst:11 556e4320cc3c440ca2ab9486e7e11a10
 msgid "Int Int Int"
-msgstr ""
+msgstr "整数 整数 整数"
 
 #: ../../source/InputsProblemDefinition.rst:11
 #: ../../source/InputsProblemDefinition.rst:13
@@ -64,97 +68,94 @@ msgstr ""
 #: 9cde0110e02d409784bae023c511063b ab5f2623dc2241248c0b70fbb6b3415c
 #: e9045f31431e4b07835a98f7a2a8fefd
 msgid "None"
-msgstr ""
+msgstr "Understood. Please let me know if you have any messages that need translation."
 
 #: ../../source/InputsProblemDefinition.rst:13 4576f6f9113c405fb2d72f800c88ef17
 msgid "max_level"
-msgstr ""
+msgstr "最高等级"
 
 #: ../../source/InputsProblemDefinition.rst:13 4342da9da93f4abe9baf838a4234cb27
 msgid "Maximum level of refinement allowed (0 when single-level)"
 msgstr ""
+"Please provide the maximum level of refinement allowed for the translation. If there is no specific requirement for "
+"refinement levels, please indicate 0 for a single-level translation."
 
 #: ../../source/InputsProblemDefinition.rst:13
 #: ../../source/InputsProblemDefinition.rst:21 24ec0d8befd34d35906a6e65ff9d016e
 #: 37243d8003984c30a644704338bc00fc
 msgid "Int"
-msgstr ""
+msgstr "Int"
 
 #: ../../source/InputsProblemDefinition.rst:16 9b3f969d521b49f6bd15c115519a287f
 msgid "The following inputs must be preceded by \"geometry.\""
-msgstr ""
+msgstr "以下输入必须以\"geometry.\"开头。"
 
 #: ../../source/InputsProblemDefinition.rst:21 c6cea91eb2eb49e1899432fbe9004567
 msgid "coord_sys"
-msgstr ""
+msgstr "坐标系"
 
 #: ../../source/InputsProblemDefinition.rst:21 dc6cdb903b58411bbf1e523ef0fd1f4c
 msgid "0 for Cartesian"
-msgstr ""
-
-#: ../../source/InputsProblemDefinition.rst:21 2071639ffd5a49acbb949c6fd80d904a
-msgid "0"
-msgstr ""
+msgstr "0 对应笛卡尔坐标系"
 
 #: ../../source/InputsProblemDefinition.rst:23 db58b3c7583d40fbb2c3c2aaef7f7dca
 msgid "is_periodic"
-msgstr ""
+msgstr "是周期性的"
 
 #: ../../source/InputsProblemDefinition.rst:23 4bd16b5cea27487985ccb03db7b2e4cb
 msgid "1 for true, 0 for false (one value for each coordinate direction)"
-msgstr ""
+msgstr "每个坐标方向上的值，1表示真，0表示假。"
 
 #: ../../source/InputsProblemDefinition.rst:23 5eccf98a7fd84d738f3d0b5246b085cd
 msgid "Ints"
-msgstr ""
+msgstr "整数"
 
 #: ../../source/InputsProblemDefinition.rst:23
 #: ../../source/InputsProblemDefinition.rst:25 bb3199aaae764d7284aa40bc7abd465d
 #: ee6d991b423540c0b09a4d82438215b3
 msgid "0 0 0"
-msgstr ""
+msgstr "0 0 0"
 
 #: ../../source/InputsProblemDefinition.rst:25 d82513d9900541ff999c2309f579b93a
 msgid "prob_lo"
-msgstr ""
+msgstr "问题所在"
 
 #: ../../source/InputsProblemDefinition.rst:25 c3ad081dd033409688ad14c8d5deb602
 msgid "Low corner of physical domain (physical not index space)"
-msgstr ""
+msgstr "物理域的低角落（物理域而非索引空间）"
 
 #: ../../source/InputsProblemDefinition.rst:25
 #: ../../source/InputsProblemDefinition.rst:27
 #: ../../source/InputsProblemDefinition.rst:29 12e6e3ca6d724c14b03b973d37a116b7
 #: 74798eaaab9f423ead8cfbbc873247b9 b07f2cc7da724313b7d1041cde9d57b5
 msgid "Reals"
-msgstr ""
+msgstr "真实的"
 
 #: ../../source/InputsProblemDefinition.rst:27 160fc69d0d8f4a70b0faf652d6b4db7a
 msgid "prob_hi"
-msgstr ""
+msgstr "嗨，有什么问题吗？"
 
 #: ../../source/InputsProblemDefinition.rst:27 2e5082b21b6f41e5be360b3a32e63875
 msgid "High corner of physical domain (physical not index space)"
-msgstr ""
+msgstr "物理域的高角落（物理域而非索引空间）"
 
 #: ../../source/InputsProblemDefinition.rst:29 d477b479f19b4a85b6f4b430c039861c
 msgid "prob_extent"
-msgstr ""
+msgstr "问题的程度"
 
 #: ../../source/InputsProblemDefinition.rst:29 8daf2aae9f9f4abeb31631d070fe2a92
 msgid "Extent of physical domain (physical not index space)"
-msgstr ""
+msgstr "物理域的范围（指的是物理空间，而非索引空间）"
 
 #: ../../source/InputsProblemDefinition.rst:32 f25feae6f8a249ff8a520777773d012d
 msgid ""
-"Note that internally ``prob_lo`` and ``prob_hi`` are the variables "
-"carried by the ``Geometry`` class. In the inputs file (or command line), "
-"one can specify 1) ``geometry.prob_hi`` only or 2) "
-"``geometry.prob_extent`` only or 3) ``geometry.prob_lo`` and "
-"``geometry.prob_hi`` or 4) ``geometry.prob_lo`` and "
-"``geometry.prob_extent``. If ``geometry.prob_lo`` is not specified then "
-"it will be 0 in each coordinate direction. If ``geometry.prob_extent`` is"
-" specified (and ``geometry.prob_hi`` is not) then internally \"prob_hi\" "
-"will be set to \"prob_lo\" + \"prob_extent\"."
+"Note that internally ``prob_lo`` and ``prob_hi`` are the variables carried by the ``Geometry`` class. In the inputs "
+"file (or command line), one can specify 1) ``geometry.prob_hi`` only or 2) ``geometry.prob_extent`` only or 3) "
+"``geometry.prob_lo`` and ``geometry.prob_hi`` or 4) ``geometry.prob_lo`` and ``geometry.prob_extent``. If "
+"``geometry.prob_lo`` is not specified then it will be 0 in each coordinate direction. If ``geometry.prob_extent`` is "
+"specified (and ``geometry.prob_hi`` is not) then internally \"prob_hi\" will be set to \"prob_lo\" + \"prob_extent\"."
 msgstr ""
-
+"请注意，在``Geometry``类中，``prob_lo``和``prob_hi``是所携带的变量。在输入文件（或命令行）中，可以指定以下几种情况：1）仅指定``geometry.prob_hi``；2）仅指定``geometry."
+"prob_extent``；3）同时指定``geometry.prob_lo``和``geometry.prob_hi``；4）同时指定``geometry.prob_lo``和``geometry.prob_extent``。如果未指定`"
+"`geometry.prob_lo``，则在每个坐标方向上都将为0。如果指定了``geometry.prob_extent``（且未指定``geometry.prob_hi``），则内部将设置``prob_hi``为``prob_lo`` "
+"+ ``prob_extent``。"

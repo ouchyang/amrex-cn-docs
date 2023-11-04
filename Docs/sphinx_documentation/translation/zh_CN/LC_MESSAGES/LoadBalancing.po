@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,57 +21,49 @@ msgstr ""
 
 #: ../../source/LoadBalancing.rst:10 efb98dd98698422a9ab77e6e0e5c9514
 msgid "Load Balancing"
-msgstr ""
+msgstr "负载均衡"
 
 #: ../../source/LoadBalancing.rst:12 c70946773b334cccaae93ced75e872b4
 msgid ""
-"The process of load balancing is typically independent of the process of "
-"grid creation; the inputs to load balancing are a given set of grids with"
-" a set of weights assigned to each grid.  (The exception to this is the "
-"KD-tree approach in which the grid creation process is governed by trying"
-" to balance the work in each grid.)"
-msgstr ""
+"The process of load balancing is typically independent of the process of grid creation; the inputs to load balancing "
+"are a given set of grids with a set of weights assigned to each grid.  (The exception to this is the KD-tree approach "
+"in which the grid creation process is governed by trying to balance the work in each grid.)"
+msgstr "负载均衡的过程通常与网格创建的过程无关；负载均衡的输入是一组给定的网格，每个网格都有一个分配的权重。（唯一的例外是KD树方法，其中网格创建的过程是通过尝试平衡每个网格中的工作来进行调控。）"
 
 #: ../../source/LoadBalancing.rst:17 71dabca0673449aa8d96c266678d3df2
 msgid ""
-"Single-level load balancing algorithms are sequentially applied to each "
-"AMR level independently, and the resulting distributions are mapped onto "
-"the ranks taking into account the weights already assigned to them "
-"(assign heaviest set of grids to the least loaded rank).  Note that the "
-"load of each process is measured by how much memory has already been "
-"allocated, not how much memory will be allocated.  Therefore the "
-"following code is not recommended because it tends to generate non-"
-"optimal distributions."
+"Single-level load balancing algorithms are sequentially applied to each AMR level independently, and the resulting "
+"distributions are mapped onto the ranks taking into account the weights already assigned to them (assign heaviest set "
+"of grids to the least loaded rank).  Note that the load of each process is measured by how much memory has already been "
+"allocated, not how much memory will be allocated.  Therefore the following code is not recommended because it tends to "
+"generate non-optimal distributions."
 msgstr ""
+"单层负载均衡算法会逐级独立应用于每个AMR层级，并将结果分布映射到已分配权重的排名上（将最重的网格集分配给负载最轻的排名）。请注意，每个进程的负载是通过已分配的内存量来衡量的，而不是将要分配的内存量。因此，不建议使用以下代码，因为它往往会生"
+"成非最优的分布。"
 
 #: ../../source/LoadBalancing.rst:35 5a08de6824984240953609acc6d4d664
 msgid "Instead, one should do,"
-msgstr ""
+msgstr "相反，应该这样做，"
 
 #: ../../source/LoadBalancing.rst:46 b4b5121e1bd4486abeefa24affbba2d8
-msgid ""
-"Distribution options supported by AMReX include the following; the "
-"default is SFC:"
-msgstr ""
+msgid "Distribution options supported by AMReX include the following; the default is SFC:"
+msgstr "AMReX支持的分布选项包括以下几种；默认选项是SFC："
 
 #: ../../source/LoadBalancing.rst:48 013ebbf4bd7f41aea3d0e617d7117953
 msgid ""
-"Knapsack: the default weight of a grid in the knapsack algorithm is the "
-"number of grid cells, but AMReX supports the option to pass an array of "
-"weights -- one per grid -- or alternatively to pass in a MultiFab of "
-"weights per cell which is used to compute the weight per grid."
-msgstr ""
+"Knapsack: the default weight of a grid in the knapsack algorithm is the number of grid cells, but AMReX supports the "
+"option to pass an array of weights -- one per grid -- or alternatively to pass in a MultiFab of weights per cell which "
+"is used to compute the weight per grid."
+msgstr "背包问题：在背包算法中，格子的默认权重是格子数量，但AMReX支持传递一个权重数组，每个格子对应一个权重，或者传递一个每个单元格的权重的MultiFab，用于计算每个格子的权重。"
 
 #: ../../source/LoadBalancing.rst:52 54b7f678065a4241acb669285f6ed4ea
 msgid ""
-"SFC: enumerate grids with a space-filling Z-morton curve, then partition "
-"the resulting ordering across ranks in a way that balances the load."
-msgstr ""
+"SFC: enumerate grids with a space-filling Z-morton curve, then partition the resulting ordering across ranks in a way "
+"that balances the load."
+msgstr "SFC：使用填充空间的Z-Morton曲线对网格进行枚举，然后将得到的顺序划分到各个进程中，以实现负载均衡。"
 
 #: ../../source/LoadBalancing.rst:55 1de1646bc86948aebb5c5ef8b578d62d
 msgid ""
-"Round-robin: sort grids and assign them to ranks in round-robin fashion "
-"-- specifically FAB i is owned by CPU i%N where N is the total number of "
-"MPI ranks."
-msgstr ""
-
+"Round-robin: sort grids and assign them to ranks in round-robin fashion -- specifically FAB i is owned by CPU i%N where "
+"N is the total number of MPI ranks."
+msgstr "轮转法：按照轮转的方式对网格进行排序，并将它们分配给各个排名 — 具体而言，FAB i 由 CPU i%N 拥有，其中 N 是 MPI 排名的总数。"

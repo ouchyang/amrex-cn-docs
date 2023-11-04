@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -19,757 +19,703 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.13.1\n"
 
+#: ../../source/Particle.rst:758 124fbae8fa004ab492de1b3b8b8425bc
+msgid "2"
+msgstr "2 (两)"
+
+#: ../../source/Particle.rst:739 d752bd9597c540bf83b6c16bb662a6f7
+msgid "5"
+msgstr "5 (五)"
+
+#: ../../source/Particle.rst:733 3daa9155d9ec4b53bd68fedc5dc4865f
+msgid "64"
+msgstr "64"
+
+#: ../../source/Particle.rst:731 60911f65389046d6bb99afb07e2a2c2d
+msgid "1024"
+msgstr "1024"
+
+#: ../../source/Particle.rst:736 b75177b565e946c1af6914630064f805
+msgid "100000"
+msgstr "10万"
+
 #: ../../source/Particle.rst:11 a102e1efca684fe598797fd65cba8868
 msgid "The Particle"
-msgstr ""
+msgstr "这个粒子"
 
 #: ../../source/Particle.rst:13 c1d88a7c6d9a46fdb44915eadda1e956
 msgid ""
-"The particle classes can be used by including the header "
-"AMReX_Particles.H. The most basic particle data structure is the particle"
-" itself:"
-msgstr ""
+"The particle classes can be used by including the header AMReX_Particles.H. The most basic particle data structure is "
+"the particle itself:"
+msgstr "粒子类可以通过包含头文件AMReX_Particles.H来使用。最基本的粒子数据结构就是粒子本身："
 
 #: ../../source/Particle.rst:22 18a0baf8095b485e9735bd5e13e498ae
 msgid ""
-"This is a templated data type, designed to allow flexibility in the "
-"number and type of components that the particles carry. The first "
-"template parameter is the number of extra :cpp:`Real` variables this "
-"particle will have (either single or double precision [1]_), while the "
-"second is the number of extra integer variables.  It is important to note"
-" that this is the number of *extra* real and integer variables; a "
-"particle will always have at least :cpp:`BL_SPACEDIM` real components "
-"that store the particle's position and 2 integer components that store "
-"the particle's :cpp:`id` and :cpp:`cpu` numbers. [2]_"
+"This is a templated data type, designed to allow flexibility in the number and type of components that the particles "
+"carry. The first template parameter is the number of extra :cpp:`Real` variables this particle will have (either single "
+"or double precision [1]_), while the second is the number of extra integer variables.  It is important to note that "
+"this is the number of *extra* real and integer variables; a particle will always have at least :cpp:`BL_SPACEDIM` real "
+"components that store the particle's position and 2 integer components that store the particle's :cpp:`id` and "
+":cpp:`cpu` numbers. [2]_"
 msgstr ""
+"这是一个模板化的数据类型，旨在允许粒子携带的组件数量和类型的灵活性。第一个模板参数是该粒子将具有的额外的 `Real` "
+"变量的数量（可以是单精度或双精度[1]_），而第二个参数是额外的整数变量的数量。需要注意的是，这是额外的实数和整数变量的数量；一个粒子始终至少具有存储粒子位置的 `BL_SPACEDIM` 个实数组件和存储粒子 `id` 和 `cpu` "
+"编号的 2 个整数组件[2]_。"
 
 #: ../../source/Particle.rst:31 983debd67fbe4c54b4ed5632e7eafd6a
 msgid ""
-"The particle struct is designed to store these variables in a way that "
-"minimizes padding, which in practice means that the :cpp:`Real` "
-"components always come first, and the integer components second. "
-"Additionally, the required particle variables are stored before the "
-"optional ones, for both the real and the integer components. For example,"
-" say we want to define a particle type that stores a mass, three velocity"
-" components, and two extra integer flags. Our particle struct would be "
-"set up like:"
+"The particle struct is designed to store these variables in a way that minimizes padding, which in practice means that "
+"the :cpp:`Real` components always come first, and the integer components second. Additionally, the required particle "
+"variables are stored before the optional ones, for both the real and the integer components. For example, say we want "
+"to define a particle type that stores a mass, three velocity components, and two extra integer flags. Our particle "
+"struct would be set up like:"
 msgstr ""
+"粒子结构体被设计为以最小化填充的方式存储这些变量，实际上意味着:cpp:`Real` "
+"组件总是排在前面，整数组件排在其后。此外，所需的粒子变量在实数和整数组件中都排在可选变量之前。例如，假设我们想定义一个粒子类型，它存储一个质量、三个速度分量和两个额外的整数标志。我们的粒子结构体将被设置如下："
 
 #: ../../source/Particle.rst:43 182b1046e5d24cf0810d3903c05d06b3
 msgid ""
-"and the order of the particle components in would be (assuming "
-":cpp:`BL_SPACEDIM` is 3): :cpp:`x y z m vx vy vz id cpu flag1 flag2`.  "
-"[3]_"
-msgstr ""
+"and the order of the particle components in would be (assuming :cpp:`BL_SPACEDIM` is 3): :cpp:`x y z m vx vy vz id cpu "
+"flag1 flag2`.  [3]_"
+msgstr "假设：cpp:`BL_SPACEDIM`的值为3，粒子组件的顺序将为：cpp:`x y z m vx vy vz id cpu flag1 flag2`。[3]_"
 
 #: ../../source/Particle.rst:47 9727c1507f824578ad2ce1e61706794a
 msgid "Setting Particle data"
-msgstr ""
+msgstr "设置粒子数据"
 
 #: ../../source/Particle.rst:49 588486773abb4e58962c89b211e63792
 msgid ""
-"The :cpp:`Particle` struct provides a number of methods for getting and "
-"setting a particle's data. For the required particle components, there "
-"are special, named methods. For the \"extra\" real and integer data, you "
-"can use the :cpp:`rdata` and :cpp:`idata` methods, respectively."
-msgstr ""
+"The :cpp:`Particle` struct provides a number of methods for getting and setting a particle's data. For the required "
+"particle components, there are special, named methods. For the \"extra\" real and integer data, you can use the "
+":cpp:`rdata` and :cpp:`idata` methods, respectively."
+msgstr "`Particle` 结构体提供了许多方法来获取和设置粒子的数据。对于所需的粒子组件，有特殊的命名方法。对于“额外”的实数和整数数据，分别可以使用 `rdata` 和 `idata` 方法。"
 
 #: ../../source/Particle.rst:79 820a765de0f148c99422f2d226bc8019
 msgid "The ParticleContainer"
-msgstr ""
+msgstr "粒子容器"
 
 #: ../../source/Particle.rst:81 33be67ef675940e29a5d686cdb53075a
 msgid ""
-"One particle by itself is not very useful. To do real calculations, a "
-"collection of particles needs to be defined, and the location of the "
-"particles within the AMR hierarchy (and the corresponding MPI process) "
-"needs to be tracked as the particle positions change. To do this, we "
-"provide the :cpp:`ParticleContainer` class:"
-msgstr ""
+"One particle by itself is not very useful. To do real calculations, a collection of particles needs to be defined, and "
+"the location of the particles within the AMR hierarchy (and the corresponding MPI process) needs to be tracked as the "
+"particle positions change. To do this, we provide the :cpp:`ParticleContainer` class:"
+msgstr "一个粒子本身并不是非常有用。要进行真正的计算，需要定义一组粒子，并跟踪粒子在AMR层次结构中的位置（以及相应的MPI进程），以便随着粒子位置的变化进行追踪。为了实现这一点，我们提供了:cpp:`ParticleContainer`类："
 
 #: ../../source/Particle.rst:91 ba86e912f61448778c65569e8b7d3e52
 msgid ""
-"Like the :cpp:`Particle` class itself, the :cpp:`ParticleContainer` class"
-" is templated. The first two template parameters have the same meaning as"
-" before: they define the number of each type of variables that the "
-"particles in this container will store. Particles added to the container "
-"are stored in the Array-of-Structs style. In addition, there are two more"
-" optional template parameters that allow the user to specify additional "
-"particle variables that will be stored in Struct-of-Arrays form."
+"Like the :cpp:`Particle` class itself, the :cpp:`ParticleContainer` class is templated. The first two template "
+"parameters have the same meaning as before: they define the number of each type of variables that the particles in this "
+"container will store. Particles added to the container are stored in the Array-of-Structs style. In addition, there are "
+"two more optional template parameters that allow the user to specify additional particle variables that will be stored "
+"in Struct-of-Arrays form."
 msgstr ""
+"就像`Particle`类本身一样，`ParticleContainer`"
+"类也是模板化的。前两个模板参数的含义与之前相同：它们定义了此容器中的粒子将存储的每种类型变量的数量。添加到容器中的粒子以数组结构的方式存储。此外，还有两个可选的模板参数，允许用户指定将以结构数组形式存储的额外粒子变量。"
 
 #: ../../source/Particle.rst:100 a32a491ed8e940d2957b188604944505
 msgid "Arrays-of-Structs and Structs-of-Arrays"
-msgstr ""
+msgstr "数组的结构体和结构体的数组"
 
 #: ../../source/Particle.rst:102 311234bea8d54b3993e735a92c946e25
 msgid ""
-"The difference between Array-of-Structs (AoS) and Struct-of-Arrays (SoA) "
-"data is in how the data is laid out in memory. For the AoS data, all the "
-"variables associated with particle 1 are next to each other in memory, "
-"followed by all the variables associated with particle 2, and so on. For "
-"variables stored in SoA style, all the particle data for a given "
-"component is next to each other in memory, and each component is stored "
-"in a separate array. For convenience, we (arbitrarily) refer to the "
-"components in the particle struct as particle *data*, and components "
-"stored in the Struct-of-Arrays as particle *attributes*. See the figure "
-":ref:`below<fig:particles:particle_arrays>` for an illustration."
+"The difference between Array-of-Structs (AoS) and Struct-of-Arrays (SoA) data is in how the data is laid out in memory. "
+"For the AoS data, all the variables associated with particle 1 are next to each other in memory, followed by all the "
+"variables associated with particle 2, and so on. For variables stored in SoA style, all the particle data for a given "
+"component is next to each other in memory, and each component is stored in a separate array. For convenience, we "
+"(arbitrarily) refer to the components in the particle struct as particle *data*, and components stored in the "
+"Struct-of-Arrays as particle *attributes*. See the figure :ref:`below<fig:particles:particle_arrays>` for an "
+"illustration."
 msgstr ""
+"Array-of-Structs (AoS)和Struct-of-Arrays "
+"(SoA)数据的区别在于它们在内存中的布局方式。对于AoS数据，与粒子1相关的所有变量都相邻存储在内存中，然后是与粒子2"
+"相关的所有变量，依此类推。而对于以SoA风格存储的变量，同一组分的所有粒子数据相邻存储在内存中，并且每个组分都存储在单独的数组中。为方便起见，我们（任意地）将粒子结构中的组分称为粒子的“数据”，而在Struct-of-"
+"Arrays中存储的组分称为粒子的“属性”。请参见下方的图示（:ref:`below<fig:particles:particle_arrays>`）以了解更多信息。"
 
 #: ../../source/Particle.rst:120 f24bdea1865242ca88d39733fa6ea94c
 msgid ""
-"An illustration of how the particle data for a single tile is arranged in"
-" memory. This particle container has been defined with ``NStructReal = "
-"1``, ``NStructInt = 2``, ``NArrayReal = 2``, and ``NArrayInt = 2``. In "
-"this case, each tile in the particle container has five arrays: one with "
-"the particle struct data, two additional real arrays, and two additional "
-"integer arrays.  In the tile shown, there are only 2 particles. We have "
-"labelled the extra real data member of the particle struct to be "
-"``mass``, while the extra integer members of the particle struct are "
-"labeled ``p``, and ``s``, for \"phase\" and \"state\". The variables in "
-"the real and integer arrays are labelled ``foo``, ``bar``, ``l``, and "
-"``n``, respectively. We have assumed that the particles are double "
-"precision."
+"An illustration of how the particle data for a single tile is arranged in memory. This particle container has been "
+"defined with ``NStructReal = 1``, ``NStructInt = 2``, ``NArrayReal = 2``, and ``NArrayInt = 2``. In this case, each "
+"tile in the particle container has five arrays: one with the particle struct data, two additional real arrays, and two "
+"additional integer arrays.  In the tile shown, there are only 2 particles. We have labelled the extra real data member "
+"of the particle struct to be ``mass``, while the extra integer members of the particle struct are labeled ``p``, and "
+"``s``, for \"phase\" and \"state\". The variables in the real and integer arrays are labelled ``foo``, ``bar``, ``l``, "
+"and ``n``, respectively. We have assumed that the particles are double precision."
 msgstr ""
+"这是一个关于单个瓦片中粒子数据在内存中的排列示例。该粒子容器的定义为``NStructReal = 1``，``NStructInt = 2``，``NArrayReal = 2``，以及``NArrayInt = "
+"2``。在这种情况下，粒子容器中的每个瓦片都有五个数组：一个用于存储粒子结构数据，另外两个是实数数组，还有两个整数数组。在所示的瓦片中，只有两个粒子。我们将粒子结构的额外实数数据成员标记为``mass``"
+"，而粒子结构的额外整数成员分别标记为``p``和``s``，表示\"phase\"和\"state\"。实数数组和整数数组中的变量分别标记为``foo``，``bar``，``l``和``n``。我们假设粒子是双精度的。"
 
 #: ../../source/Particle.rst:137 dc94e265b3b943858385f18d51324ad3
 msgid ""
-"To see why the distinction between AoS and SoA data is important, "
-"consider the following extreme case. Say you have particles that carry "
-"100 different components, but that most of the time, you only need to do "
-"calculations involving 3 of them (say, the particle positions) at once. "
-"In this case, storing all 100 particle variables in the particle struct "
-"is clearly inefficient, since most of the time you are reading 97 extra "
-"variables into cache that you will never use. By splitting up the "
-"particle variables into stuff that gets used all the time (stored in the "
-"AoS) and stuff that only gets used infrequently (stored in the SoA), you "
-"can in principle achieve much better cache reuse. Of course, the usage "
-"pattern of your application likely won't be so clear-cut. Flexibility in "
-"how the particle data is stored also makes it easier to interface between"
-" AMReX and already-existing Fortran subroutines."
+"To see why the distinction between AoS and SoA data is important, consider the following extreme case. Say you have "
+"particles that carry 100 different components, but that most of the time, you only need to do calculations involving 3 "
+"of them (say, the particle positions) at once. In this case, storing all 100 particle variables in the particle struct "
+"is clearly inefficient, since most of the time you are reading 97 extra variables into cache that you will never use. "
+"By splitting up the particle variables into stuff that gets used all the time (stored in the AoS) and stuff that only "
+"gets used infrequently (stored in the SoA), you can in principle achieve much better cache reuse. Of course, the usage "
+"pattern of your application likely won't be so clear-cut. Flexibility in how the particle data is stored also makes it "
+"easier to interface between AMReX and already-existing Fortran subroutines."
 msgstr ""
+"为了理解AoS和SoA数据之间的区别为何重要，考虑以下极端情况。假设你有携带100个不同组件的粒子，但大部分时间内，你只需要同时进行3个组件的计算（比如，粒子位置）。在这种情况下，将所有100"
+"个粒子变量存储在粒子结构中显然是低效的，因为大部分时间你都在将多余的97"
+"个变量读入缓存中，而你永远不会使用它们。通过将粒子变量分成经常使用的部分（存储在AoS中）和很少使用的部分（存储在SoA中），你可以原则上实现更好的缓存重用。当然，你的应用程序的使用模式可能不会如此明确。粒子数据存储方式的灵活性还使得AMR"
+"eX和已存在的Fortran子程序之间的接口更加容易。"
 
 #: ../../source/Particle.rst:150 f40f8fd9e1dd416c86687bb73c734b8b
 msgid ""
-"Note that while \"extra\" particle data can be stored in either the SoA "
-"or AoS style, the particle positions and id numbers are **always** stored"
-" in the particle structs. This is because these particle variables are "
-"special and used internally by AMReX to assign the particles to grids and"
-" to mark particles as valid or invalid, respectively."
+"Note that while \"extra\" particle data can be stored in either the SoA or AoS style, the particle positions and id "
+"numbers are **always** stored in the particle structs. This is because these particle variables are special and used "
+"internally by AMReX to assign the particles to grids and to mark particles as valid or invalid, respectively."
 msgstr ""
+"请注意，虽然“额外”粒子数据可以以SoA（Structure of Arrays）或AoS（Array of "
+"Structures）的方式存储，但粒子的位置和ID编号始终存储在粒子结构体中。这是因为这些粒子变量是特殊的，并且由AMReX在内部使用，用于将粒子分配到网格并标记粒子的有效性或无效性。"
 
 #: ../../source/Particle.rst:157 01d091f238004c08af300f4a6f07ccee
 msgid "Constructing ParticleContainers"
-msgstr ""
+msgstr "构建粒子容器"
 
 #: ../../source/Particle.rst:159 f7484379b1994989b8f0edaf28901222
 msgid ""
-"A particle container is always associated with a particular set of AMR "
-"grids and a particular set of DistributionMaps that describes which MPI "
-"processes those grids live on.  For example, if you only have one level, "
-"you can define a :cpp:`ParticleContainer` to store particles on that "
-"level using the following constructor:"
-msgstr ""
+"A particle container is always associated with a particular set of AMR grids and a particular set of DistributionMaps "
+"that describes which MPI processes those grids live on.  For example, if you only have one level, you can define a "
+":cpp:`ParticleContainer` to store particles on that level using the following constructor:"
+msgstr "一个粒子容器总是与特定的AMR网格集合和描述这些网格所在MPI进程的DistributionMaps相关联。例如，如果只有一个层级，您可以使用以下构造函数定义一个:cpp:`ParticleContainer`来存储该层级上的粒子："
 
 #: ../../source/Particle.rst:173 725d22bd3b7c478386850626716bd3af
-msgid ""
-"Or, if you have multiple levels, you can use following constructor "
-"instead:"
-msgstr ""
+msgid "Or, if you have multiple levels, you can use following constructor instead:"
+msgstr "或者，如果您有多个层级，您可以使用以下构造函数代替："
 
 #: ../../source/Particle.rst:184 354dfd172887400998dea14948dd9e61
 msgid ""
-"Note the set of grids used to define the :cpp:`ParticleContainer` doesn't"
-" have to be the same set used to define the simulation's mesh data. "
-"However, it is often desirable to have the two hierarchies track each "
-"other. If you are using an :cpp:`AmrCore` class in your simulation (see "
-"the Chapter on :ref:`Chap:AmrCore`), you can achieve this by using the "
-":cpp:`AmrParticleContainer` class. The constructor for this class takes a"
-" pointer to your AmrCore derived class, instead:"
+"Note the set of grids used to define the :cpp:`ParticleContainer` doesn't have to be the same set used to define the "
+"simulation's mesh data. However, it is often desirable to have the two hierarchies track each other. If you are using "
+"an :cpp:`AmrCore` class in your simulation (see the Chapter on :ref:`Chap:AmrCore`), you can achieve this by using the "
+":cpp:`AmrParticleContainer` class. The constructor for this class takes a pointer to your AmrCore derived class, "
+"instead:"
 msgstr ""
+"请注意，用于定义 `ParticleContainer` 的网格集合不一定要与定义模拟的网格数据的集合相同。然而，通常希望这两个层次结构能够相互跟踪。如果您在模拟中使用了一个 `AmrCore` 类（请参阅关于 "
+"`Chap:AmrCore` 的章节），您可以通过使用 `AmrParticleContainer` 类来实现这一点。该类的构造函数接受一个指向您的派生自 AmrCore 的类的指针："
 
 #: ../../source/Particle.rst:198 e91e6ae26b0c496b98ae59ec8006ef72
 msgid ""
-"In this case, the :cpp:`Vector<BoxArray>` and "
-":cpp:`Vector<DistributionMap>` used by your :cpp:`ParticleContainer` will"
-" be updated automatically to match those in your :cpp:`AmrCore`."
-msgstr ""
+"In this case, the :cpp:`Vector<BoxArray>` and :cpp:`Vector<DistributionMap>` used by your :cpp:`ParticleContainer` will "
+"be updated automatically to match those in your :cpp:`AmrCore`."
+msgstr "在这种情况下，您的 `ParticleContainer` 中使用的 `Vector<BoxArray>` 和 `Vector<DistributionMap>` 将会自动更新以匹配您的 `AmrCore` 中的相应内容。"
 
 #: ../../source/Particle.rst:203 b63c1d3cafae4365a8462cafce5eed08
 msgid "The ParticleTile"
-msgstr ""
+msgstr "粒子瓷砖"
 
 #: ../../source/Particle.rst:205 391cbe1082504967a8063a4b5d6d1dc8
 msgid ""
-"The :cpp:`ParticleContainer` stores the particle data in a manner "
-"prescribed by the set of AMR grids used to define it. Local particle data"
-" is always stored in a data structure called a :cpp:`ParticleTile`, which"
-" contains a mixture of AoS and SoA components as described above. The "
-"tiling behavior of :cpp:`ParticleTile` is determined by the parameter, "
+"The :cpp:`ParticleContainer` stores the particle data in a manner prescribed by the set of AMR grids used to define it. "
+"Local particle data is always stored in a data structure called a :cpp:`ParticleTile`, which contains a mixture of AoS "
+"and SoA components as described above. The tiling behavior of :cpp:`ParticleTile` is determined by the parameter, "
 "``particle.do_tiling``:"
 msgstr ""
+"`:cpp:`ParticleContainer`以一组用于定义它的AMR网格的方式存储粒子数据。本地粒子数据始终存储在名为:cpp:`ParticleTile`的数据结构中，其中包含了上述所描述的AoS和SoA组件的混合。:cpp:`"
+"ParticleTile`的平铺行为由参数``particle.do_tiling``确定："
 
 #: ../../source/Particle.rst:211 ee3ce39394b14f8eaf75d0e2a9ccc605
 msgid ""
-"If ``particles.do_tiling=0``, then there is always exactly one "
-":cpp:`ParticleTile` per grid. This is equivalent to setting a very large "
-"``particles.tile_size`` in each direction."
-msgstr ""
+"If ``particles.do_tiling=0``, then there is always exactly one :cpp:`ParticleTile` per grid. This is equivalent to "
+"setting a very large ``particles.tile_size`` in each direction."
+msgstr "如果 ``particles.do_tiling=0``，那么每个网格上始终只有一个 :cpp:`ParticleTile`。这相当于在每个方向上设置一个非常大的 ``particles.tile_size``。"
 
 #: ../../source/Particle.rst:215 d9be5abb439f49cc84879927a14216da
 msgid ""
-"If ``particles.do_tiling=1``, then each grid can have multiple "
-":cpp:`ParticleTile` objects associated with it based on the "
-"``particles.tile_size`` parameter."
-msgstr ""
+"If ``particles.do_tiling=1``, then each grid can have multiple :cpp:`ParticleTile` objects associated with it based on "
+"the ``particles.tile_size`` parameter."
+msgstr "如果 ``particles.do_tiling=1``，那么每个网格可以根据 ``particles.tile_size`` 参数关联多个 :cpp:`ParticleTile` 对象。"
 
 #: ../../source/Particle.rst:219 e7a69ee509d64c96b978427d6bb345dd
 msgid ""
-"The AMR grid to which a particle is assigned, is determined by examining "
-"its position and binning it, using the domain left edge as an offset. By "
-"default, a particle is assigned to the finest level that contains its "
-"position, although this behavior can be tweaked if desired."
-msgstr ""
+"The AMR grid to which a particle is assigned, is determined by examining its position and binning it, using the domain "
+"left edge as an offset. By default, a particle is assigned to the finest level that contains its position, although "
+"this behavior can be tweaked if desired."
+msgstr "一个粒子被分配到的AMR网格是通过检查其位置并将其分组来确定的，使用域的左边缘作为偏移量进行分组。默认情况下，一个粒子被分配到包含其位置的最细级别，尽管如果需要的话，可以调整这种行为。"
 
 #: ../../source/Particle.rst:228 34a17bf4465244ebb62d3bc591994305
 msgid ""
-":cpp:`ParticleTile` data tiling with :ref:`MFIter<sec:basics:mfiter>` "
-"behaves differently than mesh data. With mesh data, the tiling is "
-"strictly logical --the data is laid out in memory the same way whether "
-"tiling is turned on or off. With particle data, however, the particles "
-"are actually stored in different arrays when tiling is enabled. As with "
-"mesh data, the particle tile size can be tuned so that an entire tile's "
-"worth of particles will fit into a cache line at once."
+":cpp:`ParticleTile` data tiling with :ref:`MFIter<sec:basics:mfiter>` behaves differently than mesh data. With mesh "
+"data, the tiling is strictly logical --the data is laid out in memory the same way whether tiling is turned on or off. "
+"With particle data, however, the particles are actually stored in different arrays when tiling is enabled. As with mesh "
+"data, the particle tile size can be tuned so that an entire tile's worth of particles will fit into a cache line at "
+"once."
 msgstr ""
+"使用`MFIter`进行`ParticleTile`数据切片与网格数据的行为不同。对于网格数据，切片是严格逻辑的--"
+"无论切片是否打开，数据在内存中的布局都是相同的。然而，对于粒子数据，当启用切片时，实际上将粒子存储在不同的数组中。与网格数据一样，可以调整粒子切片大小，以便整个切片的粒子可以一次性适应缓存行。"
 
 #: ../../source/Particle.rst:238 b8f2c5eb1ceb4df18d6aaeb649f61736
 msgid "Redistribute"
-msgstr ""
+msgstr "重新分配"
 
 #: ../../source/Particle.rst:240 6d664be941024c45b678a457de802ecb
 msgid ""
-"Once the particles move, their data may no longer be in the right place "
-"in the container. They can be reassigned by calling the "
-":cpp:`Redistribute()` method of :cpp:`ParticleContainer`.  After calling "
-"this method, all the particles will be moved to their proper places in "
-"the container, and all invalid particles (particles with id set to "
-":cpp:`-1`) will be removed. All the MPI communication needed to do this "
-"happens automatically."
+"Once the particles move, their data may no longer be in the right place in the container. They can be reassigned by "
+"calling the :cpp:`Redistribute()` method of :cpp:`ParticleContainer`.  After calling this method, all the particles "
+"will be moved to their proper places in the container, and all invalid particles (particles with id set to :cpp:`-1`) "
+"will be removed. All the MPI communication needed to do this happens automatically."
 msgstr ""
+"一旦粒子移动，它们的数据可能不再位于容器中的正确位置。可以通过调用 `ParticleContainer` 的 `Redistribute()` 方法来重新分配它们。调用此方法后，所有粒子将被移动到容器中的正确位置，并且所有无效粒子（id "
+"设置为 `-1` 的粒子）将被移除。完成这一过程所需的所有 MPI 通信将自动进行。"
 
 #: ../../source/Particle.rst:247 aacd33c59999455a97ca2bda710badbd
 msgid ""
-"Application codes will likely want to create their own derived "
-"ParticleContainer class that specializes the template parameters and adds"
-" additional functionality, like setting the initial conditions, moving "
-"the particles, etc. See the `particle tutorials`_ for examples of this. "
-".. _`particle tutorials`: https://amrex-"
-"codes.github.io/amrex/tutorials_html/Particles_Tutorial.html"
+"Application codes will likely want to create their own derived ParticleContainer class that specializes the template "
+"parameters and adds additional functionality, like setting the initial conditions, moving the particles, etc. See the "
+"`particle tutorials`_ for examples of this. .. _`particle tutorials`: "
+"https://amrex-codes.github.io/amrex/tutorials_html/Particles_Tutorial.html"
 msgstr ""
+"应用程序代码可能希望创建自己的派生 ParticleContainer 类，专门针对模板参数进行特化，并添加额外的功能，比如设置初始条件、移动粒子等。请参阅 `particle tutorials`_ 中的示例来了解更多。 .. "
+"_`particle tutorials`: https://amrex-codes.github.io/amrex/tutorials_html/Particles_Tutorial.html"
 
 #: ../../source/Particle.rst:256 6027a8a9471c4e83874e877916f9a147
 msgid "Initializing Particle Data"
-msgstr ""
+msgstr "粒子数据初始化中"
 
 #: ../../source/Particle.rst:258 bab7f6642af847bf9d9f357261e7be31
 msgid ""
-"In the following code snippet, we demonstrate how to set particle initial"
-" conditions for both SoA and AoS data. We loop over all the tiles using "
-":cpp:`MFIter`, and add as many particles as we want to each one."
-msgstr ""
+"In the following code snippet, we demonstrate how to set particle initial conditions for both SoA and AoS data. We loop "
+"over all the tiles using :cpp:`MFIter`, and add as many particles as we want to each one."
+msgstr "在下面的代码片段中，我们演示了如何为SoA和AoS数据设置粒子的初始条件。我们使用:cpp:`MFIter`循环遍历所有的瓦片，并向每个瓦片添加所需数量的粒子。"
 
 #: ../../source/Particle.rst:304 726b55fa9dc04812bab1b17b7770c61c
 msgid ""
-"Often, it makes sense to have each process only generate particles that "
-"it owns, so that the particles are already in the right place in the "
-"container. In general, however, users may need to call "
-":cpp:`Redistribute()` after adding particles, if the processes generate "
-"particles they don't own (for example, if the particle positions are "
-"perturbed from the cell centers and thus end up outside their parent "
-"grid)."
+"Often, it makes sense to have each process only generate particles that it owns, so that the particles are already in "
+"the right place in the container. In general, however, users may need to call :cpp:`Redistribute()` after adding "
+"particles, if the processes generate particles they don't own (for example, if the particle positions are perturbed "
+"from the cell centers and thus end up outside their parent grid)."
 msgstr ""
+"通常情况下，每个进程只生成属于自己的粒子是有意义的，这样粒子就已经位于容器的正确位置上了。然而，一般情况下，如果进程生成了它们不拥有的粒子（例如，如果粒子位置从单元格中心扰动，从而导致粒子位于其父网格之外），用户可能需要在添加粒子后调用:c"
+"pp:`Redistribute()`。"
 
 #: ../../source/Particle.rst:314 a74b30b63b444b548728e861e7bfc151
 msgid "Adding particle components at runtime"
-msgstr ""
+msgstr "在运行时添加粒子组件"
 
 #: ../../source/Particle.rst:316 17975c035c224433ae26b4368f04ff27
 msgid ""
-"In addition to the components specified as template parameters, you can "
-"also add additional :cpp:`Real` and :cpp:`int` components at runtime. "
-"These components will be stored in Struct-of-Array style. To add a "
-"runtime component, use the :cpp:`AddRealComp` and :cpp:`AddIntComp` "
-"methods of :cpp:`ParticleContainer`, like so:"
+"In addition to the components specified as template parameters, you can also add additional :cpp:`Real` and :cpp:`int` "
+"components at runtime. These components will be stored in Struct-of-Array style. To add a runtime component, use the "
+":cpp:`AddRealComp` and :cpp:`AddIntComp` methods of :cpp:`ParticleContainer`, like so:"
 msgstr ""
+"除了在模板参数中指定的组件之外，您还可以在运行时添加额外的 `Real` 和 `int` 组件。这些组件将以结构数组的方式存储。要添加运行时组件，请使用 `ParticleContainer` 的 `AddRealComp` 和 "
+"`AddIntComp` 方法，如下所示："
 
 #: ../../source/Particle.rst:336 f6c36d23df334c0f9c773dac0978ae1d
 msgid ""
-"Runtime-added components can be accessed like regular Struct-of-Array "
-"data. The new components will be added at the end of the compile-time "
-"defined ones."
-msgstr ""
+"Runtime-added components can be accessed like regular Struct-of-Array data. The new components will be added at the end "
+"of the compile-time defined ones."
+msgstr "运行时添加的组件可以像常规的结构体数组数据一样访问。新的组件将被添加在编译时定义的组件的末尾。"
 
 #: ../../source/Particle.rst:339 0077a63f6c294139a008f99896673ccb
 msgid ""
-"When you are using runtime components, it is crucial that when you are "
-"adding particles to the container, you call the "
-":cpp:`DefineAndReturnParticleTile` method for each tile prior to adding "
-"any particles. This will make sure the space for the new components has "
-"been allocated. For example, in the above section on :ref:`initializing "
-"particle data <sec:Particles:Initializing>`, we accessed the particle "
-"tile data using the :cpp:`GetParticles` method. If we runtime components "
-"are used, :cpp:`DefineAndReturnParticleTile` should be used instead:"
+"When you are using runtime components, it is crucial that when you are adding particles to the container, you call the "
+":cpp:`DefineAndReturnParticleTile` method for each tile prior to adding any particles. This will make sure the space "
+"for the new components has been allocated. For example, in the above section on :ref:`initializing particle data "
+"<sec:Particles:Initializing>`, we accessed the particle tile data using the :cpp:`GetParticles` method. If we runtime "
+"components are used, :cpp:`DefineAndReturnParticleTile` should be used instead:"
 msgstr ""
+"在使用运行时组件时，非常重要的一点是，在向容器添加粒子时，要在添加任何粒子之前为每个粒子瓦片调用`:cpp:`DefineAndReturnParticleTile`方法。这将确保为新组件分配了空间。例如，在上述关于`:ref:`"
+"初始化粒子数据 "
+"<sec:Particles:Initializing>`的部分中，我们使用`:cpp:`GetParticles`方法访问了粒子瓦片数据。如果使用了运行时组件，则应改用`:cpp:`DefineAndReturnParticleTile`"
+"。"
 
 #: ../../source/Particle.rst:367 b41f862e178d44bbaf23eb6dee7106a5
 msgid "Iterating over Particles"
-msgstr ""
+msgstr "遍历粒子"
 
 #: ../../source/Particle.rst:369 8c69552b89c241b182c3aae0089f81c5
 msgid ""
-"To iterate over the particles on a given level in your container, you can"
-" use the :cpp:`ParIter` class, which comes in both const and non-const "
-"flavors. For example, to iterate over all the AoS data:"
-msgstr ""
+"To iterate over the particles on a given level in your container, you can use the :cpp:`ParIter` class, which comes in "
+"both const and non-const flavors. For example, to iterate over all the AoS data:"
+msgstr "要在容器中的特定级别上迭代粒子，您可以使用 `ParIter` 类，它有 const 和非 const 两种版本。例如，要迭代所有的 AoS 数据："
 
 #: ../../source/Particle.rst:386 06cfd0a85b3b445c95dbdbcda6992948
 msgid ""
-"The outer loop will execute once every grid (or tile, if tiling is "
-"enabled) *that contains particles*; grids or tiles that don't have any "
-"particles will be skipped. You can also access the SoA data using the "
-":math:`ParIter` as follows:"
-msgstr ""
+"The outer loop will execute once every grid (or tile, if tiling is enabled) *that contains particles*; grids or tiles "
+"that don't have any particles will be skipped. You can also access the SoA data using the :math:`ParIter` as follows:"
+msgstr "外部循环将每次执行包含粒子的网格（或瓦片，如果启用了平铺）；不包含任何粒子的网格或瓦片将被跳过。您还可以使用 :math:`ParIter` 来访问 SoA 数据，如下所示："
 
 #: ../../source/Particle.rst:409 77c48f7dd237471e9b714ec38b7308ce
 msgid "Passing particle data into Fortran routines"
-msgstr ""
+msgstr "将粒子数据传递给Fortran例程"
 
 #: ../../source/Particle.rst:411 0d9d536e7eef447188a181f98396a0d4
 msgid ""
-"Because the AMReX particle struct is a Plain-Old-Data type, it is "
-"interoperable with Fortran when the :fortran:`bind(C)` attribute is used."
-" It is therefore possible to pass a grid or tile worth of particles into "
-"fortran routines for processing, instead of iterating over them in C++. "
-"You can also define a Fortran derived type that is equivalent to C struct"
-" used for the particles. For example:"
+"Because the AMReX particle struct is a Plain-Old-Data type, it is interoperable with Fortran when the "
+":fortran:`bind(C)` attribute is used. It is therefore possible to pass a grid or tile worth of particles into fortran "
+"routines for processing, instead of iterating over them in C++. You can also define a Fortran derived type that is "
+"equivalent to C struct used for the particles. For example:"
 msgstr ""
+"由于AMReX粒子结构是一个普通的数据类型（Plain-Old-Data "
+"type），在使用:fortran:`bind(C)`属性时，它与Fortran是可互操作的。因此，可以将一个网格或瓦片的粒子传递到Fortran例程中进行处理，而不是在C++"
+"中对它们进行迭代。您还可以定义一个与用于粒子的C结构等效的Fortran派生类型。例如："
 
 #: ../../source/Particle.rst:434 29f60a91081a4ceb976f45d8903ca56c
 msgid ""
-"is equivalent to a particle struct you get with :cpp:`Particle<6, 0>`. "
-"Here, :fortran:`amrex_particle_real` is either single or doubled "
-"precision, depending on whether ``USE_SINGLE_PRECISION_PARTICLES`` is "
-"``TRUE`` or not. We recommend always using this type in Fortran routines "
-"that work on particle data to avoid hard-to-debug incompatibilities "
-"between floating point types."
+"is equivalent to a particle struct you get with :cpp:`Particle<6, 0>`. Here, :fortran:`amrex_particle_real` is either "
+"single or doubled precision, depending on whether ``USE_SINGLE_PRECISION_PARTICLES`` is ``TRUE`` or not. We recommend "
+"always using this type in Fortran routines that work on particle data to avoid hard-to-debug incompatibilities between "
+"floating point types."
 msgstr ""
+"相当于使用`:cpp:`Particle<6, "
+"0>`得到的粒子结构。在这里，`:fortran:`amrex_particle_real`是单精度或双精度，取决于``USE_SINGLE_PRECISION_PARTICLES``是否为``TRUE``"
+"。我们建议在处理粒子数据的Fortran例程中始终使用此类型，以避免浮点类型之间难以调试的不兼容性。"
 
 #: ../../source/Particle.rst:444 470978b000014d12a6ab54e4abe2abeb
 msgid "Interacting with Mesh Data"
-msgstr ""
+msgstr "与网格数据交互"
 
 #: ../../source/Particle.rst:446 06291fe337e34464aa2658fa49f378f2
 msgid ""
-"It is common to want to have the mesh communicate information to the "
-"particles and vice versa. For example, in Particle-in-Cell calculations, "
-"the particles deposit their charges onto the mesh, and later, the "
-"electric fields computed on the mesh are interpolated back to the "
-"particles. Below, we show examples of both these sorts of operations."
-msgstr ""
+"It is common to want to have the mesh communicate information to the particles and vice versa. For example, in "
+"Particle-in-Cell calculations, the particles deposit their charges onto the mesh, and later, the electric fields "
+"computed on the mesh are interpolated back to the particles. Below, we show examples of both these sorts of operations."
+msgstr "在网格与粒子之间相互传递信息是很常见的。例如，在粒子-网格计算中，粒子将其电荷沉积到网格上，然后，计算得到的电场会被插值回粒子上。下面，我们展示了这两种操作的示例。"
 
 #: ../../source/Particle.rst:476 bf12ecb882a94fe1a58de28a9f0c37b9
 msgid ""
-"Here, :fortran:`interpolate_cic` is a Fortran subroutine that actually "
-"performs the interpolation on a single box. :cpp:`Ex`, :cpp:`Ey`, and "
-":cpp:`Ez` are MultiFabs that contain the electric field data. These "
-"MultiFabs must be defined with the correct number of ghost cells to "
-"perform the desired type of interpolation, and we call "
-":cpp:`FillBoundary` prior to the Fortran call so that those ghost cells "
-"will be up-to-date."
+"Here, :fortran:`interpolate_cic` is a Fortran subroutine that actually performs the interpolation on a single box. "
+":cpp:`Ex`, :cpp:`Ey`, and :cpp:`Ez` are MultiFabs that contain the electric field data. These MultiFabs must be defined "
+"with the correct number of ghost cells to perform the desired type of interpolation, and we call :cpp:`FillBoundary` "
+"prior to the Fortran call so that those ghost cells will be up-to-date."
 msgstr ""
+"这里，:fortran:`interpolate_cic` 是一个Fortran子程序，用于在单个盒子上执行插值操作。:cpp:`Ex`、:cpp:`Ey` 和 :cpp:`Ez` 是包含电场数据的 "
+"MultiFabs。为了执行所需类型的插值，这些 MultiFabs 必须定义具有正确数量的幽灵单元，并且在调用Fortran子程序之前，我们调用 :cpp:`FillBoundary` 以确保这些幽灵单元是最新的。"
 
 #: ../../source/Particle.rst:483 5bffc9df90c14a2a970ee694c61051e4
 msgid ""
-"In this example, we have assumed that the :cpp:`ParticleContainer MyPC` "
-"has been defined on the same grids as the electric field MultiFabs, so "
-"that we use the :cpp:`ParIter` to index into the MultiFabs to get the "
-"data associated with current tile. If this is not the case, then an "
-"additional copy will need to be performed. However, if the particles are "
-"distributed in an extremely uneven fashion, it is possible that the load "
-"balancing improvements associated with the two-grid approach are worth "
-"the cost of the extra copy."
+"In this example, we have assumed that the :cpp:`ParticleContainer MyPC` has been defined on the same grids as the "
+"electric field MultiFabs, so that we use the :cpp:`ParIter` to index into the MultiFabs to get the data associated with "
+"current tile. If this is not the case, then an additional copy will need to be performed. However, if the particles are "
+"distributed in an extremely uneven fashion, it is possible that the load balancing improvements associated with the "
+"two-grid approach are worth the cost of the extra copy."
 msgstr ""
+"在这个示例中，我们假设：cpp:`ParticleContainer "
+"MyPC`已经在与电场MultiFabs相同的网格上定义，这样我们可以使用cpp:`ParIter`"
+"来索引到MultiFabs中与当前tile相关联的数据。如果不是这种情况，那么就需要进行额外的复制操作。然而，如果粒子的分布极不均匀，那么与双网格方法相关的负载平衡改进可能值得额外复制的代价。"
 
 #: ../../source/Particle.rst:491 7b4df28e079a4299a8597cc5d5ad97a4
-msgid ""
-"The inverse operation, in which the particles communicate data *to* the "
-"mesh, is quite similar:"
-msgstr ""
+msgid "The inverse operation, in which the particles communicate data *to* the mesh, is quite similar:"
+msgstr "逆操作，即粒子向网格传递数据的过程，与之相似："
 
 #: ../../source/Particle.rst:515 91f561cc9f464f5c89c77a06f245ab08
 msgid ""
-"As before, we loop over all our particles, calling a Fortran routine that"
-" deposits them on to the appropriate :cpp:`FArrayBox rhofab`. The "
-":cpp:`rhofab` must have enough ghost cells to cover the support of all "
-"the particles associated with them. Note that we call :cpp:`SumBoundary` "
-"instead of :cpp:`FillBoundary` after performing the deposition, to add up"
-" the charge in the ghost cells surrounding each Fab into the "
-"corresponding valid cells."
+"As before, we loop over all our particles, calling a Fortran routine that deposits them on to the appropriate "
+":cpp:`FArrayBox rhofab`. The :cpp:`rhofab` must have enough ghost cells to cover the support of all the particles "
+"associated with them. Note that we call :cpp:`SumBoundary` instead of :cpp:`FillBoundary` after performing the "
+"deposition, to add up the charge in the ghost cells surrounding each Fab into the corresponding valid cells."
 msgstr ""
+"与之前一样，我们循环遍历所有的粒子，调用一个Fortran例程将它们放置在适当的:cpp:`FArrayBox "
+"rhofab`上。:cpp:`rhofab`必须具有足够的幽灵单元来覆盖与其相关的所有粒子的支持区域。请注意，在执行沉积后，我们调用:cpp:`SumBoundary`而不是:cpp:`FillBoundary`"
+"，以将包围每个Fab的幽灵单元中的电荷累加到相应的有效单元中。"
 
 #: ../../source/Particle.rst:522 6034382a84d542e88ef30dac933c54fe
 msgid ""
-"For a complete example of an electrostatic PIC calculation that includes "
-"static mesh refinement, please see the `Electrostatic PIC tutorial`."
-msgstr ""
+"For a complete example of an electrostatic PIC calculation that includes static mesh refinement, please see the "
+"`Electrostatic PIC tutorial`."
+msgstr "要查看一个完整的静电PIC计算示例，其中包括静态网格细化，请参阅`静电PIC教程`。"
 
 #: ../../source/Particle.rst:530 d1a42da0d6174c368e57c8731d8916db
 msgid "Short Range Forces"
-msgstr ""
+msgstr "短程力量"
 
 #: ../../source/Particle.rst:532 0fc0654340c5470e9f7c8a2932fbb41c
 msgid ""
-"In a PIC calculation, the particles don't interact with each other "
-"directly; they only see each other through the mesh. An alternative use "
-"case is particles that exert short-range forces on each other. In this "
-"case, beyond some cut-off distance, the particles don't interact with "
-"each other and therefore don't need to be included in the force "
-"calculation. Our approach to these kind of particles is to fill "
-"\"neighbor buffers\" on each tile that contain copies of the particles on"
-" neighboring tiles that are within some number of cells :math:`N_g` of "
-"the tile boundaries. See :numref:`fig:particles:neighbor_particles`, "
-"below for an illustration. By choosing the number of ghost cells to match"
-" the interaction radius of the particles, you can capture all of the "
-"neighbors that can possibly influence the particles in the valid region "
-"of the tile. The forces on the particles on different tiles can then be "
-"computed independently of each other using a variety of methods."
+"In a PIC calculation, the particles don't interact with each other directly; they only see each other through the mesh. "
+"An alternative use case is particles that exert short-range forces on each other. In this case, beyond some cut-off "
+"distance, the particles don't interact with each other and therefore don't need to be included in the force "
+"calculation. Our approach to these kind of particles is to fill \"neighbor buffers\" on each tile that contain copies "
+"of the particles on neighboring tiles that are within some number of cells :math:`N_g` of the tile boundaries. See "
+":numref:`fig:particles:neighbor_particles`, below for an illustration. By choosing the number of ghost cells to match "
+"the interaction radius of the particles, you can capture all of the neighbors that can possibly influence the particles "
+"in the valid region of the tile. The forces on the particles on different tiles can then be computed independently of "
+"each other using a variety of methods."
 msgstr ""
+"在PIC计算中，粒子之间不直接相互作用，它们只通过网格相互观察。另一种情况是粒子之间施加短程力。在这种情况下，超出某个截断距离的粒子不会相互作用，因此不需要包含在力计算中。我们处理这类粒子的方法是在每个网格单元上填充“邻居缓冲区”，其中包含"
+"在距离网格边界一定数量的单元（:math:`N_g`）内的相邻网格上的粒子的副本。请参见下方的图示:numref:`fig:particles:neighbor_particles`"
+"。通过选择幽灵单元的数量与粒子的相互作用半径相匹配，您可以捕获在网格单元有效区域内可能影响粒子的所有邻居。然后可以使用各种方法独立地计算不同网格单元上的粒子的受力情况。"
 
 #: ../../source/Particle.rst:555 7d78766fb8be42b4bb7e84729d02d0cb
 msgid ""
-": An illustration of filling neighbor particles for short-range force "
-"calculations. Here, we have a domain consisting of one :math:`32 \\times "
-"32` grid, broken up into :math:`8 \\times 8` tiles. The number of ghost "
-"cells is taken to be :math:`1`.  For the tile in green, particles on "
-"other tiles in the entire shaded region will copied and packed into the "
-"green tile's neighbor buffer. These particles can then be included in the"
-" force calculation. If the domain is periodic, particles in the grown "
-"region for the blue tile that lie on the other side of the domain will "
-"also be copied, and their positions will modified so that a naive "
-"distance calculation between valid particles and neighbors will be "
-"correct."
+": An illustration of filling neighbor particles for short-range force calculations. Here, we have a domain consisting "
+"of one :math:`32 \\times 32` grid, broken up into :math:`8 \\times 8` tiles. The number of ghost cells is taken to be "
+":math:`1`.  For the tile in green, particles on other tiles in the entire shaded region will copied and packed into the "
+"green tile's neighbor buffer. These particles can then be included in the force calculation. If the domain is periodic, "
+"particles in the grown region for the blue tile that lie on the other side of the domain will also be copied, and their "
+"positions will modified so that a naive distance calculation between valid particles and neighbors will be correct."
 msgstr ""
+"这是一个用于计算短程力的填充邻居粒子的示意图。在这里，我们有一个由一个32x32的网格组成的区域，分割成8x8个瓦片。鬼单元的数量被设定为1"
+"。对于绿色的瓦片，其他瓦片上整个阴影区域内的粒子将被复制并打包到绿色瓦片的邻居缓冲区中。这些粒子随后可以包含在力计算中。如果区域是周期性的，蓝色瓦片的扩展区域中位于区域另一侧的粒子也将被复制，并且它们的位置将被修改，以便在有效粒子和邻居之间"
+"进行简单的距离计算时是正确的。"
 
 #: ../../source/Particle.rst:570 cd20441e49c0455a85cb95168d086d52
 msgid ""
-"For a :cpp:`ParticleContainer` that does this neighbor finding, please "
-"see :cpp:`NeighborParticleContainer` in "
-"``amrex/Src/Particles/AMReX_NeighborParticleContainer.H.`` The "
-":cpp:`NeighborParticleContainer` has additional methods called "
-":cpp:`fillNeighbors()` and :cpp:`clearNeighbors()` that fill the "
-":cpp:`neighbors` data structure with copies of the proper particles. A "
-"tutorial that uses these features is available at `NeighborList`_. In "
-"this tutorial the function :cpp:`void "
-"MDParticleContainer:computeForces()` computes the forces on a given tile "
-"via direct summation over the real and neighbor particles, as follows:"
+"For a :cpp:`ParticleContainer` that does this neighbor finding, please see :cpp:`NeighborParticleContainer` in "
+"``amrex/Src/Particles/AMReX_NeighborParticleContainer.H.`` The :cpp:`NeighborParticleContainer` has additional methods "
+"called :cpp:`fillNeighbors()` and :cpp:`clearNeighbors()` that fill the :cpp:`neighbors` data structure with copies of "
+"the proper particles. A tutorial that uses these features is available at `NeighborList`_. In this tutorial the "
+"function :cpp:`void MDParticleContainer:computeForces()` computes the forces on a given tile via direct summation over "
+"the real and neighbor particles, as follows:"
 msgstr ""
+"请参考位于``amrex/Src/Particles/AMReX_NeighborParticleContainer.H``的`:cpp:`NeighborParticleContainer`，它用于进行邻居查找。`:cpp:`"
+"NeighborParticleContainer`还有两个额外的方法，分别是`:cpp:`fillNeighbors()``和`:cpp:`clearNeighbors()``，它们会将正确的粒子副本填充到`:cpp:`"
+"neighbors`数据结构中。关于如何使用这些功能的教程可以在`NeighborList`_中找到。在这个教程中，函数`:cpp:`void "
+"MDParticleContainer:computeForces()``通过对真实粒子和邻居粒子进行直接求和来计算给定区块上的力量，具体如下："
 
 #: ../../source/Particle.rst:640 ff75ed7479f1402fb257eb56e0c79214
 msgid ""
-"Doing a direct :math:`N^2` summation over the particles on a tile is "
-"avoided by binning the particles by cell and building a neighbor list.  "
-"The data structure used to represent the neighbor lists is illustrated in"
-" :numref:`fig:particles:neighbor_list`."
-msgstr ""
+"Doing a direct :math:`N^2` summation over the particles on a tile is avoided by binning the particles by cell and "
+"building a neighbor list.  The data structure used to represent the neighbor lists is illustrated in "
+":numref:`fig:particles:neighbor_list`."
+msgstr "为了避免对瓦片上的粒子进行直接的 :math:`N^2` 求和，可以通过将粒子按单元格进行分组并构建邻居列表来实现。用于表示邻居列表的数据结构如图 :numref:`fig:particles:neighbor_list` 所示。"
 
 #: ../../source/Particle.rst:653 07aa4f905a5f4951a7550be75bda2f6f
 msgid ""
-": An illustration of the neighbor list data structure used by AMReX. The "
-"list for each tile is represented by an array of integers. The first "
-"number in the array is the number of real (i.e., not in the neighbor "
-"buffers) collision partners for the first particle on this tile, while "
-"the second is the number of collision partners from nearby tiles in the "
-"neighbor buffer. Based on the number of collision partners, the next "
-"several entries are the indices of the collision partners in the real and"
-" neighbor particle arrays, respectively. This pattern continues for all "
-"the particles on this tile."
+": An illustration of the neighbor list data structure used by AMReX. The list for each tile is represented by an array "
+"of integers. The first number in the array is the number of real (i.e., not in the neighbor buffers) collision partners "
+"for the first particle on this tile, while the second is the number of collision partners from nearby tiles in the "
+"neighbor buffer. Based on the number of collision partners, the next several entries are the indices of the collision "
+"partners in the real and neighbor particle arrays, respectively. This pattern continues for all the particles on this "
+"tile."
 msgstr ""
+"这是AMReX使用的邻居列表数据结构的示例。每个网格块的列表由整数数组表示。数组中的第一个数字是该网格块上第一个粒子的真实碰撞伙伴数量（即不在邻居缓冲区中的伙伴），而第二个数字是来自邻居缓冲区的附近网格块的碰撞伙伴数量。根据碰撞伙伴的数量，"
+"接下来的几个条目分别是真实粒子数组和邻居粒子数组中碰撞伙伴的索引。这个模式对该网格块上的所有粒子都适用，并且会一直持续下去。"
 
 #: ../../source/Particle.rst:666 4ef58fd5b4cd4d478749d7a3f5791814
 msgid ""
-"This array can then be used to compute the forces on all the particles in"
-" one scan. Users can define their own :cpp:`NeighborParticleContainer` "
-"subclasses that have their own collision criteria by overloading the "
-"virtual :cpp:`check_pair` function."
-msgstr ""
+"This array can then be used to compute the forces on all the particles in one scan. Users can define their own "
+":cpp:`NeighborParticleContainer` subclasses that have their own collision criteria by overloading the virtual "
+":cpp:`check_pair` function."
+msgstr "这个数组可以用来计算一次扫描中所有粒子的受力。用户可以通过重载虚拟函数:cpp:`check_pair`来定义自己的:cpp:`NeighborParticleContainer`子类，从而拥有自己的碰撞判定标准。"
 
 #: ../../source/Particle.rst:676 1ded840d753e4899a118b7a64853ae6f
 msgid "Particle IO"
-msgstr ""
+msgstr "粒子IO"
 
 #: ../../source/Particle.rst:678 f17c2b50b15f455a84c8f16ca003af04
 msgid ""
-"AMReX provides routines for writing particle data to disk for analysis, "
-"visualization, and for checkpoint / restart. The most important methods "
-"are the :cpp:`WritePlotFile`, :cpp:`Checkpoint`, and :cpp:`Restart` "
-"methods of :cpp:`ParticleContainer`, which all use a parallel-aware "
-"binary file format for reading and writing particle data on a grid-by-"
-"grid basis. These methods are designed to complement the functions in "
-"AMReX_PlotFileUtil.H for performing mesh data IO. For example:"
+"AMReX provides routines for writing particle data to disk for analysis, visualization, and for checkpoint / restart. "
+"The most important methods are the :cpp:`WritePlotFile`, :cpp:`Checkpoint`, and :cpp:`Restart` methods of "
+":cpp:`ParticleContainer`, which all use a parallel-aware binary file format for reading and writing particle data on a "
+"grid-by-grid basis. These methods are designed to complement the functions in AMReX_PlotFileUtil.H for performing mesh "
+"data IO. For example:"
 msgstr ""
+"AMReX提供了用于将粒子数据写入磁盘以进行分析、可视化和检查点/重启的例程。最重要的方法是`ParticleContainer`的`:cpp:`WritePlotFile`、`:cpp:`Checkpoint`和`:cpp:`"
+"Restart`方法，它们都使用并行感知的二进制文件格式，按网格逐个网格地读写粒子数据。这些方法旨在与AMReX_PlotFileUtil.H中的函数相辅相成，用于执行网格数据IO。例如："
 
 #: ../../source/Particle.rst:695 c9805292a8264047b5924c2186421f8b
 msgid ""
-"will create a plot file called \"plt00000\" and write the mesh data in "
-":cpp:`output` to it, and then write the particle data in a subdirectory "
-"called \"particle0\". There is also the :cpp:`WriteAsciiFile` method, "
-"which writes the particles in a human-readable text format. This is "
-"mainly useful for testing and debugging."
+"will create a plot file called \"plt00000\" and write the mesh data in :cpp:`output` to it, and then write the particle "
+"data in a subdirectory called \"particle0\". There is also the :cpp:`WriteAsciiFile` method, which writes the particles "
+"in a human-readable text format. This is mainly useful for testing and debugging."
 msgstr ""
+"将创建一个名为\"plt00000\"的绘图文件，并将网格数据写入其中，然后将粒子数据写入名为\"particle0\"的子目录中。还有一个名为:cpp:`WriteAsciiFile`"
+"的方法，它以人类可读的文本格式写入粒子数据。这主要用于测试和调试。"
 
 #: ../../source/Particle.rst:697 4b6701aeb4b84d728a04c0e90fef0979
 msgid ""
-"The binary file format is currently readable by :cpp:`yt`. In additional,"
-" there is a Python conversion script in "
-"``amrex/Tools/Py_util/amrex_particles_to_vtp`` that can convert both the "
-"ASCII and the binary particle files to a format readable by Paraview. See"
-" the chapter on :ref:`Chap:Visualization` for more information on "
-"visualizing AMReX datasets, including those with particles."
+"The binary file format is currently readable by :cpp:`yt`. In additional, there is a Python conversion script in "
+"``amrex/Tools/Py_util/amrex_particles_to_vtp`` that can convert both the ASCII and the binary particle files to a "
+"format readable by Paraview. See the chapter on :ref:`Chap:Visualization` for more information on visualizing AMReX "
+"datasets, including those with particles."
 msgstr ""
+"目前，二进制文件格式可以被 `yt` 的 C++ 版本读取。此外，在 `amrex/Tools/Py_util/amrex_particles_to_vtp` 目录下还有一个 Python 转换脚本，可以将 ASCII "
+"和二进制粒子文件转换为 Paraview 可读取的格式。有关使用 Paraview 可视化 AMReX 数据集（包括带有粒子的数据集）的更多信息，请参阅 :ref:`Chap:Visualization` 章节。"
 
 #: ../../source/Particle.rst:702 5930e631c65c4481a333bf7adffa9cb6
 msgid "Inputs parameters"
-msgstr ""
+msgstr "输入参数"
 
 #: ../../source/Particle.rst:706 1902bb0601a74fed867cd6012df35e77
 msgid ""
-"There are several runtime parameters users can set in their :cpp:`inputs`"
-" files that control the behavior of the AMReX particle classes. These are"
-" summarized below. They should be preceded by \"particles\" in your "
-"inputs deck."
-msgstr ""
+"There are several runtime parameters users can set in their :cpp:`inputs` files that control the behavior of the AMReX "
+"particle classes. These are summarized below. They should be preceded by \"particles\" in your inputs deck."
+msgstr "在用户的 `inputs` 文件中，有几个运行时参数可以设置，用于控制 AMReX 粒子类的行为。以下是对它们的概述。在你的输入文件中，它们应该以 \"particles\" 开头。"
 
 #: ../../source/Particle.rst:710 be2e3ece8ee94fc580d5e7fbe6806534
 msgid ""
-"The first set of parameters concerns the tiling capability of the "
-"ParticleContainer. If you are seeing poor performance with OpenMP, the "
-"first thing to look at is whether there are enough tiles available for "
-"each thread to work on."
-msgstr ""
+"The first set of parameters concerns the tiling capability of the ParticleContainer. If you are seeing poor performance "
+"with OpenMP, the first thing to look at is whether there are enough tiles available for each thread to work on."
+msgstr "首先，关于ParticleContainer的平铺能力，第一组参数是与之相关的。如果您在使用OpenMP时遇到性能不佳的情况，首先要检查的是每个线程是否有足够的平铺可供处理。"
 
 #: ../../source/Particle.rst:714 ../../source/Particle.rst:729
 #: ../../source/Particle.rst:750 3f002ecf2ef44506ae9f41cb9e24fe28
 #: 575d5155f6e24af2ace35c6743f08dee d12874cbe4cc4ed6b19c846e2506ab9b
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/Particle.rst:714 ../../source/Particle.rst:729
 #: ../../source/Particle.rst:750 059405987b584d3f99ff05e595f5f40e
 #: 227279644d9f4d8aad8cc21c0be5bb18 f6400ac0913f4083a3ae491884207501
 msgid "Type"
-msgstr ""
+msgstr "输入"
 
 #: ../../source/Particle.rst:714 ../../source/Particle.rst:729
 #: ../../source/Particle.rst:750 47b44a38d7d44be3bef25aa76c342f49
 #: 80179110f65648bca9765b8002b918f8 9076ceccb77b42d1810d8886adf5342b
 msgid "Default"
-msgstr ""
+msgstr "默认"
 
 #: ../../source/Particle.rst:716 17bcedddbecc4abf9a480836d3cc393c
 msgid "do_tiling"
-msgstr ""
+msgstr "铺砖"
 
 #: ../../source/Particle.rst:716 0aa29d3f2e9e4e5e84f66efdccbc8f38
-msgid ""
-"Whether to use tiling for particles. Should be on when using OpenMP, and "
-"off when running on GPUs."
-msgstr ""
+msgid "Whether to use tiling for particles. Should be on when using OpenMP, and off when running on GPUs."
+msgstr "在使用粒子时是否使用平铺。在使用 OpenMP 时应该打开，而在运行在 GPU 上时应该关闭。"
 
 #: ../../source/Particle.rst:716 ../../source/Particle.rst:742
 #: 0fbe68c44df042738a8b5b523d38907b eec4dc85120f4097a6fd2c81b4be2b2c
 msgid "Bool"
-msgstr ""
+msgstr "布尔"
 
 #: ../../source/Particle.rst:716 ../../source/Particle.rst:742
 #: a8e3248b1eaa41bab90ce77dbce43547 fd8ea31188be4714b2f36eb3bdb49465
 msgid "false"
-msgstr ""
+msgstr "错误的"
 
 #: ../../source/Particle.rst:719 5802feeaa8984d5c885c4967609a88a3
 msgid "tile_size"
-msgstr ""
+msgstr "瓷砖尺寸"
 
 #: ../../source/Particle.rst:719 1f4927f1e9bf4d55b6234e59aed44df0
 msgid "If tiling is on, the maximum tile_size to in each direction"
-msgstr ""
+msgstr "如果启用了平铺功能，每个方向的最大平铺尺寸是多少？"
 
 #: ../../source/Particle.rst:719 ../../source/Particle.rst:733
 #: ../../source/Particle.rst:736 868db16ac5ad4e1186622a4ed65bf92e
 #: cf34009d0f7a4955a24385e5fde04dba e26441448ee444e381d5e860cd87c499
 msgid "Ints"
-msgstr ""
+msgstr "整数"
 
 #: ../../source/Particle.rst:719 f7021a7034e442ea9f4cbde1aca7b4bf
 msgid "1024000,8,8"
-msgstr ""
+msgstr "1024000，8，8"
 
 #: ../../source/Particle.rst:722 3c8448fe98e24e8894ff410ce397b94d
 msgid ""
-"The next set concerns runtime parameters that control the particle IO. "
-"Parallel file systems tend not to like it when too many MPI tasks touch "
-"the disk at once. Additionally, performance can degrade if all MPI tasks "
-"try writing to the same file, or if too many small files are created. In "
-"general, the \"correct\" values of these parameters will depend on the "
-"size of your problem (i.e., number of boxes, number of MPI tasks), as "
-"well as the system you are using. If you are experiencing problems with "
-"particle IO, you could try varying some / all of these parameters."
+"The next set concerns runtime parameters that control the particle IO. Parallel file systems tend not to like it when "
+"too many MPI tasks touch the disk at once. Additionally, performance can degrade if all MPI tasks try writing to the "
+"same file, or if too many small files are created. In general, the \"correct\" values of these parameters will depend "
+"on the size of your problem (i.e., number of boxes, number of MPI tasks), as well as the system you are using. If you "
+"are experiencing problems with particle IO, you could try varying some / all of these parameters."
 msgstr ""
+"下一组问题涉及控制粒子输入输出的运行时参数。并行文件系统通常不喜欢同时有太多的MPI任务访问磁盘。此外，如果所有的MPI任务都尝试写入同一个文件，或者创建了太多的小文件，性能可能会下降。一般来说，这些参数的“正确”值将取决于问题的规模（即盒"
+"子的数量、MPI任务的数量）以及您使用的系统。如果您在粒子输入输出方面遇到问题，可以尝试改变其中一些或全部参数的值。"
 
 #: ../../source/Particle.rst:731 935f70ecea16456f8f896b1d0967b038
 msgid "particles_nfiles"
-msgstr ""
+msgstr "粒子_n文件"
 
 #: ../../source/Particle.rst:731 b796e1451e4c481d8e23d0bb7fa8d8fd
 msgid "How many files to use when writing particle data to plt directories"
-msgstr ""
+msgstr "写入粒子数据到 plt 目录时使用多少个文件？"
 
 #: ../../source/Particle.rst:731 ../../source/Particle.rst:739
 #: ../../source/Particle.rst:758 184310bd1c4142dc8f4803740f54ae65
 #: 431ecb7d6a8d458c9254cb59babbb356 5be346cdfe9444b094a94fb1cb8f22a7
 msgid "Int"
-msgstr ""
-
-#: ../../source/Particle.rst:731 60911f65389046d6bb99afb07e2a2c2d
-msgid "1024"
-msgstr ""
+msgstr "Int"
 
 #: ../../source/Particle.rst:733 ffb0e2f927df43cbbd92c75bb36b4319
 msgid "nreaders"
-msgstr ""
+msgstr "读者们"
 
 #: ../../source/Particle.rst:733 6fbe2539787d483fbfda0f9b6481a773
-msgid ""
-"How many MPI tasks to use as readers when initializing particles from "
-"binary files."
-msgstr ""
-
-#: ../../source/Particle.rst:733 3daa9155d9ec4b53bd68fedc5dc4865f
-msgid "64"
-msgstr ""
+msgid "How many MPI tasks to use as readers when initializing particles from binary files."
+msgstr "在从二进制文件初始化粒子时，使用多少个MPI任务作为读取器？"
 
 #: ../../source/Particle.rst:736 31e23b1f06fd457eabc0f2b3a20191c9
 msgid "nparts_per_read"
-msgstr ""
+msgstr "每次读取的部件数"
 
 #: ../../source/Particle.rst:736 4404187d256f48f9896c3c1ccd75024e
-msgid ""
-"How many particles each task should read from said files before calling "
-"Redistribute"
-msgstr ""
-
-#: ../../source/Particle.rst:736 b75177b565e946c1af6914630064f805
-msgid "100000"
-msgstr ""
+msgid "How many particles each task should read from said files before calling Redistribute"
+msgstr "在调用Redistribute之前，每个任务应该从这些文件中读取多少个粒子？"
 
 #: ../../source/Particle.rst:739 2cf8528de2b345b38f8def32a707b1c1
 msgid "datadigits_read"
-msgstr ""
+msgstr "数据数字读取"
 
 #: ../../source/Particle.rst:739 5a0eaa3480254fb880d5b29fc66da76f
-msgid ""
-"This for backwards compatibility, don't use unless you need to read and "
-"old (pre mid 2017) AMReX dataset."
-msgstr ""
-
-#: ../../source/Particle.rst:739 d752bd9597c540bf83b6c16bb662a6f7
-msgid "5"
-msgstr ""
+msgid "This for backwards compatibility, don't use unless you need to read and old (pre mid 2017) AMReX dataset."
+msgstr "这是为了向后兼容而存在的，除非你需要读取旧的（2017年中期之前）AMReX数据集，否则请不要使用。"
 
 #: ../../source/Particle.rst:742 df57faa893af439c9db529e0bdfb6d48
 msgid "use_prepost"
 msgstr ""
+"I apologize for any confusion, but I'm unable to understand the instruction \"use_prepost.\" Could you please provide "
+"further clarification or rephrase your request?"
 
 #: ../../source/Particle.rst:742 85f74d2efabf48889332a996b8f0daf2
 msgid ""
-"This is an optimization for large particle datasets that groups MPI calls"
-" needed during the IO together. Try it seeing poor IO speeds on large "
-"problems."
-msgstr ""
+"This is an optimization for large particle datasets that groups MPI calls needed during the IO together. Try it seeing "
+"poor IO speeds on large problems."
+msgstr "这是一个针对大型粒子数据集的优化方案，它将在IO过程中需要的MPI调用进行分组。如果在处理大型问题时遇到IO速度较慢的情况，可以尝试使用这个方案。"
 
 #: ../../source/Particle.rst:747 5d4f5d585e6141e1af3b25fa3c4c9149
-msgid ""
-"The following runtime parameters affect the behavior of virtual particles"
-" in Nyx."
-msgstr ""
+msgid "The following runtime parameters affect the behavior of virtual particles in Nyx."
+msgstr "以下运行时参数会影响Nyx中虚拟粒子的行为。"
 
 #: ../../source/Particle.rst:752 0e9d453a9b8241f689e9086af9490ac9
 msgid "aggregation_type"
-msgstr ""
+msgstr "聚合类型"
 
 #: ../../source/Particle.rst:752 95e79e808ab147e4b2f9403a58835956
 msgid "How to create virtual particles from finer levels. The options are:"
-msgstr ""
+msgstr "如何从更细的层次创建虚拟粒子。可选项有："
 
 #: ../../source/Particle.rst:754 25c11d4342a742a48fdb3518189f8693
-msgid ""
-"\"None\" - don't do any aggregation. \"Cell\" - when creating virtuals, "
-"combine all particles that are in the same cell."
-msgstr ""
+msgid "\"None\" - don't do any aggregation. \"Cell\" - when creating virtuals, combine all particles that are in the same cell."
+msgstr "\"None\" - 不要进行任何聚合。\"Cell\" - 在创建虚拟粒子时，将同一单元格中的所有粒子合并。"
 
 #: ../../source/Particle.rst:752 222718780e8b45e0ae56165752eb0874
 msgid "String"
-msgstr ""
+msgstr "字符串"
 
 #: ../../source/Particle.rst:752 f5b697508a5849348ae297bd2f72a652
 msgid "\"None\""
-msgstr ""
+msgstr "无"
 
 #: ../../source/Particle.rst:758 d6b153ec6f3f47e6a6b0e159eee57659
 msgid "aggregation_buffer"
-msgstr ""
+msgstr "聚合缓冲区"
 
 #: ../../source/Particle.rst:758 386614fc1389437cb33e046476a3aa69
-msgid ""
-"If aggregation on, the number of cells around the coarse/fine boundary in"
-" which no aggregation should be performed."
-msgstr ""
-
-#: ../../source/Particle.rst:758 124fbae8fa004ab492de1b3b8b8425bc
-msgid "2"
-msgstr ""
+msgid "If aggregation on, the number of cells around the coarse/fine boundary in which no aggregation should be performed."
+msgstr "如果启用了聚合（aggregation），则在粗/细边界周围不应执行聚合的单元格数量。"
 
 #: ../../source/Particle.rst:762 3ad404a2d0ef46689b3d80606767bb89
 msgid ""
-"Finally, the `amrex.use_gpu_aware_mpi` switch can also affect the "
-"behavior of the particle communication routines when running on GPU "
-"platforms like Summit. We recommend leaving it off."
-msgstr ""
+"Finally, the `amrex.use_gpu_aware_mpi` switch can also affect the behavior of the particle communication routines when "
+"running on GPU platforms like Summit. We recommend leaving it off."
+msgstr "最后，`amrex.use_gpu_aware_mpi`开关也会影响在GPU平台（如Summit）上运行时的粒子通信例程的行为。我们建议将其关闭。"
 
 #: ../../source/Particle.rst:766 3b17012c7c434a08aaf500cde992a1f5
 msgid ""
-"Particles default to double precision for their real data. To use single "
-"precision, compile your code with "
+"Particles default to double precision for their real data. To use single precision, compile your code with "
 "``USE_SINGLE_PRECISION_PARTICLES=TRUE``."
-msgstr ""
+msgstr "粒子的实数数据默认为双精度。如果要使用单精度，请使用编译选项``USE_SINGLE_PRECISION_PARTICLES=TRUE``编译您的代码。"
 
 #: ../../source/Particle.rst:769 85e90c6353074b71a9304c0349ed445c
 msgid ""
-"Note that :cpp:`cpu` stores the number of the process the particle was "
-"*generated* on, not the one it's currently assigned to. This number is "
-"set on initialization and never changes, just like the particle "
-":cpp:`id`. In essence, the particles have two integer id numbers, and "
-"only the combination of the two is unique. This was done to facilitate "
-"the creation of particle initial conditions in parallel."
+"Note that :cpp:`cpu` stores the number of the process the particle was *generated* on, not the one it's currently "
+"assigned to. This number is set on initialization and never changes, just like the particle :cpp:`id`. In essence, the "
+"particles have two integer id numbers, and only the combination of the two is unique. This was done to facilitate the "
+"creation of particle initial conditions in parallel."
 msgstr ""
+"请注意：`:cpp:`cpu` 存储的是粒子*生成*时所在的进程编号，而不是当前所分配的进程编号。这个编号在初始化时被设置，并且永远不会改变，就像粒子的 `:cpp:`id` 一样。实质上，粒子有两个整数 id "
+"编号，只有两者的组合才是唯一的。这样做是为了方便并行创建粒子的初始条件。"
 
 #: ../../source/Particle.rst:772 5939c7daa0ac4616a0f508fd8e1eb3da
 msgid ""
-"Note that for the extra particle components, which component refers to "
-"which variable is an application-specific convention - the particles have"
-" 4 extra real comps, but which one is \"mass\" is up to the user. We "
-"suggest using an :cpp:`enum` to keep these indices straight; please see "
-"``amrex-"
-"tutorials/ExampleCodes/Particles/ElectrostaticPIC/ElectrosticParticleContainer.H``"
-" for an example of this."
+"Note that for the extra particle components, which component refers to which variable is an application-specific "
+"convention - the particles have 4 extra real comps, but which one is \"mass\" is up to the user. We suggest using an "
+":cpp:`enum` to keep these indices straight; please see "
+"``amrex-tutorials/ExampleCodes/Particles/ElectrostaticPIC/ElectrosticParticleContainer.H`` for an example of this."
 msgstr ""
-
+"请注意，对于额外的粒子组件，哪个组件对应哪个变量是应用程序特定的约定 - 这些粒子有4个额外的实数组件，但哪一个是“质量”取决于用户。我们建议使用一个 :cpp:`enum` 来明确这些索引；请参考 "
+"``amrex-tutorials/ExampleCodes/Particles/ElectrostaticPIC/ElectrosticParticleContainer.H`` 中的示例。"

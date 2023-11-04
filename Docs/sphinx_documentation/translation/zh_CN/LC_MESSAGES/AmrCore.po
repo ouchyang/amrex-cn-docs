@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -19,112 +19,120 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.13.1\n"
 
+#: ../../source/AmrCore.rst:101 dec7e60cf93b42cf9dab97e3782bdbed
+msgid "0"
+msgstr "0"
+
+#: ../../source/AmrCore.rst:107 ../../source/AmrCore.rst:111
+#: 38779d2cf1de406c831d3bf3e5e49d09 92855c6ebc5e4bbfa24cd0f117acd8c9
+msgid "1"
+msgstr "1"
+
+#: ../../source/AmrCore.rst:113 1817a002b8da4a4591a039c0e4365d3a
+msgid "8"
+msgstr "8"
+
 #: ../../source/AmrCore.rst:28 0dfc472a23c24eec8112f36a0e97c964
 msgid ""
-"Time sequence (:math:`t=0,0.5,1,1.5,2` s) of advection of a Gaussian "
-"profile using the SingleVortex tutorial. The analytic velocity field "
-"distorts the profile, and then restores the profile to the original "
-"configuration.  The red, green, and blue boxes indicate grids at AMR "
-"levels :math:`\\ell=0,1`, and :math:`2`."
+"Time sequence (:math:`t=0,0.5,1,1.5,2` s) of advection of a Gaussian profile using the SingleVortex tutorial. The "
+"analytic velocity field distorts the profile, and then restores the profile to the original configuration.  The red, "
+"green, and blue boxes indicate grids at AMR levels :math:`\\ell=0,1`, and :math:`2`."
 msgstr ""
+"时间序列（:math:`t=0,0.5,1,1.5,2` 秒）中使用 SingleVortex 教程进行高斯轮廓的平流。解析速度场扭曲了轮廓，然后将轮廓恢复到原始配置。红色、绿色和蓝色框表示 AMR 等级为 "
+":math:`\\ell=0,1` 和 :math:`2` 的网格。"
 
 #: ../../source/AmrCore.rst:32 93c248140f6046df94dc0fd59747b38e
 msgid "|a|"
-msgstr ""
+msgstr "|a|"
 
 #: ../../source/AmrCore.rst:11 187ed74f3eb343c6bf32f9a4cb244ae4
 msgid "a"
-msgstr ""
+msgstr "一个"
 
 #: ../../source/AmrCore.rst:32 eb3d7dcf267e4cb4a91cae7a3d832506
 msgid "|b|"
-msgstr ""
+msgstr "|b|"
 
 #: ../../source/AmrCore.rst:14 3d2a1e034b624116a5ceacdfedeaa3e4
 msgid "b"
-msgstr ""
+msgstr "b"
 
 #: ../../source/AmrCore.rst:32 776dd8cc94614e5bb964fc47264984a5
 msgid "|c|"
-msgstr ""
+msgstr "|c|"
 
 #: ../../source/AmrCore.rst:17 8a47a61a0e18465c91c5836c727d99ad
 msgid "c"
-msgstr ""
+msgstr "c"
 
 #: ../../source/AmrCore.rst:32 b7550308420a43c89f90914d9afa5fd2
 msgid "|d|"
-msgstr ""
+msgstr "|d|"
 
 #: ../../source/AmrCore.rst:20 cbd743acda454cc580c3a4a3aaf07ffa
 msgid "d"
-msgstr ""
+msgstr "d"
 
 #: ../../source/AmrCore.rst:32 953d83cf75154decb70f48b61df09f1a
 msgid "|e|"
-msgstr ""
+msgstr "|e|"
 
 #: ../../source/AmrCore.rst:23 cfe9fc18b66640b1be6707b9c47f2364
 msgid "e"
-msgstr ""
+msgstr "e"
 
 #: ../../source/AmrCore.rst:42 810cc0d2b95d4b229aa758d3ccb56b58
 msgid "AmrCore Source Code: Details"
-msgstr ""
+msgstr "AmrCore源代码：详细信息"
 
 #: ../../source/AmrCore.rst:44 595a474a6e6f4e7f855f51ef0e715757
-msgid ""
-"Here we provide more information about the source code in "
-"``amrex/Src/AmrCore``."
-msgstr ""
+msgid "Here we provide more information about the source code in ``amrex/Src/AmrCore``."
+msgstr "在这里，我们提供有关``amrex/Src/AmrCore``源代码的更多信息。"
 
 #: ../../source/AmrCore.rst:47 75d241305bfa4cf9af155f52b7cffe11
 msgid "AmrMesh and AmrCore"
-msgstr ""
+msgstr "AmrMesh 和 AmrCore"
 
 #: ../../source/AmrCore.rst:49 8b1aa2c2c3554a5493d66a84f2d9bc7e
 msgid ""
-"For single-level simulations (see e.g., ``amrex-"
-"tutorials/ExampleCodes/Basic/HeatEquation_EX1_C/main.cpp``) the user "
-"needs to build :cpp:`Geometry`, :cpp:`DistributionMapping`, and "
-":cpp:`BoxArray` objects associated with the simulation. For simulations "
-"with multiple levels of refinement, the :cpp:`AmrMesh` class can be "
-"thought of as a container to store arrays of these objects (one for each "
-"level), and information about the current grid structure."
+"For single-level simulations (see e.g., ``amrex-tutorials/ExampleCodes/Basic/HeatEquation_EX1_C/main.cpp``) the user "
+"needs to build :cpp:`Geometry`, :cpp:`DistributionMapping`, and :cpp:`BoxArray` objects associated with the simulation. "
+"For simulations with multiple levels of refinement, the :cpp:`AmrMesh` class can be thought of as a container to store "
+"arrays of these objects (one for each level), and information about the current grid structure."
 msgstr ""
+"对于单层模拟（例如，参见``amrex-tutorials/ExampleCodes/Basic/HeatEquation_EX1_C/main.cpp``），用户需要构建与模拟相关的 "
+":cpp:`Geometry`、:cpp:`DistributionMapping` 和 :cpp:`BoxArray` 对象。对于具有多个细化级别的模拟，:cpp:`AmrMesh` "
+"类可以被视为一个容器，用于存储这些对象的数组（每个级别一个），以及有关当前网格结构的信息。"
 
 #: ../../source/AmrCore.rst:57 9f8b94dab43c4180981a1b1c436823e2
-msgid ""
-"``amrex/Src/AmrCore/AMReX_AmrMesh.cpp/H`` contains the :cpp:`AmrMesh` "
-"class. The protected data members are:"
-msgstr ""
+msgid "``amrex/Src/AmrCore/AMReX_AmrMesh.cpp/H`` contains the :cpp:`AmrMesh` class. The protected data members are:"
+msgstr "``amrex/Src/AmrCore/AMReX_AmrMesh.cpp/H`` 包含了 :cpp:`AmrMesh` 类。该类的受保护数据成员有："
 
 #: ../../source/AmrCore.rst:87 aa955311062147b1bfcd42400395cab4
 msgid ""
-"The following parameters are frequently set via the inputs file or the "
-"command line. Their usage is described in the section on "
-":ref:`sec:grid_creation`"
-msgstr ""
+"The following parameters are frequently set via the inputs file or the command line. Their usage is described in the "
+"section on :ref:`sec:grid_creation`"
+msgstr "这些参数通常通过输入文件或命令行进行设置。它们的使用方法在 :ref:`sec:grid_creation` 部分进行了描述。"
 
 #: ../../source/AmrCore.rst:96 552766239c504dd3831de8431586ad1b
 msgid "AmrCore parameters"
-msgstr ""
+msgstr "AmrCore参数"
 
 #: ../../source/AmrCore.rst:99 625701c550c14e23a486ec357fca3b23
 msgid "Variable"
-msgstr ""
+msgstr "变量"
 
 #: ../../source/AmrCore.rst:99 f5a7f883ecb04dec8908803cc598e3d2
 msgid "Value"
-msgstr ""
+msgstr "价值"
 
 #: ../../source/AmrCore.rst:99 6dd13fca592f4b9e9cc37ccedb217d5d
 msgid "Default"
-msgstr ""
+msgstr "默认"
 
 #: ../../source/AmrCore.rst:101 e9c0858c6d024f5aa9037c3efb48ea02
 msgid "amr.verbose"
-msgstr ""
+msgstr "amr.verbose"
 
 #: ../../source/AmrCore.rst:101 ../../source/AmrCore.rst:103
 #: ../../source/AmrCore.rst:107 ../../source/AmrCore.rst:111
@@ -133,619 +141,578 @@ msgstr ""
 #: 7b0c9472dcaf4c7f83499a3bf6b39d8f 941be44df2f345d7a2ccf1d0c527c85a
 #: d435589ac13946b188e840ce60027a63 eab350c19c8a442294a4408c9d25a0ef
 msgid "int"
-msgstr ""
-
-#: ../../source/AmrCore.rst:101 dec7e60cf93b42cf9dab97e3782bdbed
-msgid "0"
-msgstr ""
+msgstr "整数"
 
 #: ../../source/AmrCore.rst:103 169910581ef24f8db5e67d04e9050e28
 msgid "amr.max_level"
-msgstr ""
+msgstr "amr.max_level"
 
 #: ../../source/AmrCore.rst:103 b20019b5c704433eac7e98016f157cf8
 msgid "none"
-msgstr ""
+msgstr "没有。"
 
 #: ../../source/AmrCore.rst:105 5c0a92b2a57440bca91d85088bc54393
 msgid "amr.max_grid_size"
-msgstr ""
+msgstr "amr.max_grid_size"
 
 #: ../../source/AmrCore.rst:105 b48266227ee846ac9de06a1f6d67feb4
 msgid "ints"
-msgstr ""
+msgstr "整数"
 
 #: ../../source/AmrCore.rst:105 7b6182b377234b4e8dc782019cb05346
 msgid "32 in 3D, 128 in 2D"
-msgstr ""
+msgstr "3D中的32，2D中的128。"
 
 #: ../../source/AmrCore.rst:107 2bae8aee9f8d48ad9464ce8a00f00330
 msgid "amr.n_proper"
-msgstr ""
-
-#: ../../source/AmrCore.rst:107 ../../source/AmrCore.rst:111
-#: 38779d2cf1de406c831d3bf3e5e49d09 92855c6ebc5e4bbfa24cd0f117acd8c9
-msgid "1"
-msgstr ""
+msgstr "阿姆尔.恩_适当"
 
 #: ../../source/AmrCore.rst:109 4860e50689be4e87a5ac4ad7fec0c447
 msgid "amr.grid_eff"
-msgstr ""
+msgstr "amr.grid_eff"
 
 #: ../../source/AmrCore.rst:109 50c41151a382442abf1d1134976dd753
 msgid "Real"
-msgstr ""
+msgstr "真实的"
 
 #: ../../source/AmrCore.rst:109 56fb1d626dbb4c1aacb8e5f06c4c6674
 msgid "0.7"
-msgstr ""
+msgstr "0.7"
 
 #: ../../source/AmrCore.rst:111 7d7514f8a43e4f60bc70a6c17be4d8a6
 msgid "amr.n_error_buf"
-msgstr ""
+msgstr "amr.n_error_buf"
 
 #: ../../source/AmrCore.rst:113 a2866f90905f4671bb1fd0aed7306f4f
 msgid "amr.blocking_factor"
-msgstr ""
-
-#: ../../source/AmrCore.rst:113 1817a002b8da4a4591a039c0e4365d3a
-msgid "8"
-msgstr ""
+msgstr "amr.blocking_factor"
 
 #: ../../source/AmrCore.rst:115 d237d1a8ef2a4620b6ef151f4fac31f3
 msgid "amr.refine_grid_layout"
-msgstr ""
+msgstr "amr.refine_grid_layout"
 
 #: ../../source/AmrCore.rst:115 7bfd740fee96428f83599671f60d79d8
 msgid "true"
-msgstr ""
+msgstr "真的"
 
 #: ../../source/AmrCore.rst:122 760e8cb303fb4a50b5241852214fbd8a
 msgid ""
-"AMReX_AmrCore.cpp/H contains the pure virtual class :cpp:`AmrCore`, which"
-" is derived from the :cpp:`AmrMesh` class. AmrCore does not actually have"
-" any data members, just additional member functions, some of which "
-"override the base class AmrMesh."
-msgstr ""
+"AMReX_AmrCore.cpp/H contains the pure virtual class :cpp:`AmrCore`, which is derived from the :cpp:`AmrMesh` class. "
+"AmrCore does not actually have any data members, just additional member functions, some of which override the base "
+"class AmrMesh."
+msgstr "AMReX_AmrCore.cpp/H 包含了纯虚类 `AmrCore`，它是从 `AmrMesh` 类派生而来。AmrCore 实际上没有任何数据成员，只有额外的成员函数，其中一些覆盖了基类 AmrMesh。"
 
 #: ../../source/AmrCore.rst:127 19962f500f5f4aa09ba762c36b24b655
 msgid ""
-"There are no pure virtual functions in :cpp:`AmrMesh`, but there are 5 "
-"pure virtual functions in the :cpp:`AmrCore` class. Any applications you "
-"create must implement these functions. The tutorial code "
-"Amr/Advection_AmrCore provides sample implementation in the derived class"
-" :cpp:`AmrCoreAdv`."
+"There are no pure virtual functions in :cpp:`AmrMesh`, but there are 5 pure virtual functions in the :cpp:`AmrCore` "
+"class. Any applications you create must implement these functions. The tutorial code Amr/Advection_AmrCore provides "
+"sample implementation in the derived class :cpp:`AmrCoreAdv`."
 msgstr ""
+"在 `AmrMesh` 类中没有纯虚函数，但是在 `AmrCore` 类中有 5 个纯虚函数。您创建的任何应用程序都必须实现这些函数。教程代码 `Amr/Advection_AmrCore` 在派生类 `AmrCoreAdv` "
+"中提供了示例实现。"
 
 #: ../../source/AmrCore.rst:159 9e79a5e160d944a2803b822714ebe3eb
 msgid ""
-"Refer to the :cpp:`AmrCoreAdv` class in the ``amrex-"
-"tutorials/ExampleCodes/Amr/AmrCore_Advection/Source`` code for a sample "
-"implementation."
-msgstr ""
+"Refer to the :cpp:`AmrCoreAdv` class in the ``amrex-tutorials/ExampleCodes/Amr/AmrCore_Advection/Source`` code for a "
+"sample implementation."
+msgstr "请参考位于`amrex-tutorials/ExampleCodes/Amr/AmrCore_Advection/Source`代码中的`AmrCoreAdv`类，以获取一个示例实现。"
 
 #: ../../source/AmrCore.rst:164 60ce76d97f584f5db0ae2d4844c608bb
 msgid "TagBox, and Cluster"
-msgstr ""
+msgstr "标签框（TagBox）和聚类（Cluster）"
 
 #: ../../source/AmrCore.rst:166 586f12ec42dd41c98c9eb25848dc937e
 msgid ""
-"These classes are used in the grid generation process. The :cpp:`TagBox` "
-"class is essentially a data structure that marks which cells are "
-"\"tagged\" for refinement. :cpp:`Cluster` (and :cpp:`ClusterList` "
-"contained within the same file) are classes that help sort tagged cells "
-"and generate a grid structure that contains all the tagged cells. These "
-"classes and their member functions are largely hidden from any "
-"application codes through simple interfaces such as :cpp:`regrid` and "
-":cpp:`ErrorEst` (a routine for tagging cells for refinement)."
+"These classes are used in the grid generation process. The :cpp:`TagBox` class is essentially a data structure that "
+"marks which cells are \"tagged\" for refinement. :cpp:`Cluster` (and :cpp:`ClusterList` contained within the same file) "
+"are classes that help sort tagged cells and generate a grid structure that contains all the tagged cells. These classes "
+"and their member functions are largely hidden from any application codes through simple interfaces such as "
+":cpp:`regrid` and :cpp:`ErrorEst` (a routine for tagging cells for refinement)."
 msgstr ""
+"这些类在网格生成过程中使用。:cpp:`TagBox` 类实际上是一个数据结构，用于标记哪些单元格需要进行细化。:cpp:`Cluster`（以及同一文件中包含的 "
+":cpp:`ClusterList`）是帮助对标记的单元格进行排序并生成包含所有标记单元格的网格结构的类。这些类及其成员函数通过简单的接口（如 :cpp:`regrid` 和 "
+":cpp:`ErrorEst`）在应用程序代码中大部分是隐藏的，用于标记需要进行细化的单元格的例程。"
 
 #: ../../source/AmrCore.rst:179 7636c5e2cf2f43ed94571125be6ceb0b
 msgid "FillPatchUtil and Interpolater"
-msgstr ""
+msgstr "FillPatchUtil 和 Interpolater"
 
 #: ../../source/AmrCore.rst:193 4d22af3eca574ae69ee577ce13d4a46a
 msgid ""
-"Many codes, including the Advection_AmrCore example, contain an array of "
-"MultiFabs (one for each level of refinement), and then use \"fillpatch\" "
-"operations to fill temporary MultiFabs that may include a different "
-"number of ghost cells. Fillpatch operations fill all cells, valid and "
-"ghost, from actual valid data at that level, space-time interpolated data"
-" from the next-coarser level, neighboring grids at the same level, and "
-"domain boundary conditions (for examples that have non-periodic boundary "
-"conditions). Note that at the coarsest level, the interior and domain "
-"boundary (which can be periodic or prescribed based on physical "
-"considerations) need to be filled. At the non-coarsest level, the ghost "
-"cells can also be interior or domain, but can also be at coarse-fine "
-"interfaces away from the domain boundary. "
-":cpp:`AMReX_FillPatchUtil.cpp/H` contains two primary functions of "
-"interest."
+"Many codes, including the Advection_AmrCore example, contain an array of MultiFabs (one for each level of refinement), "
+"and then use \"fillpatch\" operations to fill temporary MultiFabs that may include a different number of ghost cells. "
+"Fillpatch operations fill all cells, valid and ghost, from actual valid data at that level, space-time interpolated "
+"data from the next-coarser level, neighboring grids at the same level, and domain boundary conditions (for examples "
+"that have non-periodic boundary conditions). Note that at the coarsest level, the interior and domain boundary (which "
+"can be periodic or prescribed based on physical considerations) need to be filled. At the non-coarsest level, the ghost "
+"cells can also be interior or domain, but can also be at coarse-fine interfaces away from the domain boundary. "
+":cpp:`AMReX_FillPatchUtil.cpp/H` contains two primary functions of interest."
 msgstr ""
+"许多代码，包括Advection_AmrCore示例，都包含一个MultiFabs数组（每个细化级别一个），然后使用\"fillpatch\""
+"操作来填充临时的MultiFabs，这些MultiFabs可能包含不同数量的幽灵单元。fillpatch操作从该级别的实际有效数据、下一个粗略级别的空间-"
+"时间插值数据、相同级别的相邻网格以及域边界条件（对于具有非周期性边界条件的示例）填充所有单元，包括有效和幽灵单元。请注意，在最粗糙的级别上，需要填充内部和域边界（根据物理考虑可以是周期性或预设的边界条件）。在非最粗糙的级别上，幽灵单元也可以"
+"是内部或域边界，但也可以位于远离域边界的粗细界面上。cpp:`AMReX_FillPatchUtil.cpp/H`包含两个主要的相关函数。"
 
 #: ../../source/AmrCore.rst:205 c8a98fd1713143f8ac1ef6d6a91ccace
 msgid ""
-":cpp:`FillPatchSingleLevel()` fills a :cpp:`MultiFab` and its ghost "
-"region at a single level of refinement. The routine is flexible enough to"
-" interpolate in time between two MultiFabs associated with different "
-"times."
-msgstr ""
+":cpp:`FillPatchSingleLevel()` fills a :cpp:`MultiFab` and its ghost region at a single level of refinement. The routine "
+"is flexible enough to interpolate in time between two MultiFabs associated with different times."
+msgstr "`FillPatchSingleLevel()`函数在单个细化层级上填充一个`MultiFab`及其幽灵区域。该例程足够灵活，可以在不同时间关联的两个`MultiFab`之间进行时间插值。"
 
 #: ../../source/AmrCore.rst:209 6ab8ef9b96564fd7bf7a620838325587
 msgid ""
-":cpp:`FillPatchTwoLevels()` fills a :cpp:`MultiFab` and its ghost region "
-"at a single level of refinement, assuming there is an underlying coarse "
-"level. This routine is flexible enough to interpolate the coarser level "
-"in time first using :cpp:`FillPatchSingleLevel()`."
+":cpp:`FillPatchTwoLevels()` fills a :cpp:`MultiFab` and its ghost region at a single level of refinement, assuming "
+"there is an underlying coarse level. This routine is flexible enough to interpolate the coarser level in time first "
+"using :cpp:`FillPatchSingleLevel()`."
 msgstr ""
+":cpp:`FillPatchTwoLevels()`函数在单个细化层上填充一个:cpp:`MultiFab`及其幽灵区域，假设存在一个底层粗糙层。该例程足够灵活，可以使用:cpp:`FillPatchSingleLevel()`"
+"首先对粗糙层进行时间插值。"
 
 #: ../../source/AmrCore.rst:213 e676fe5815fe4adab5f3dadae6784881
 msgid ""
-"Note that :cpp:`FillPatchSingleLevel()` and :cpp:`FillPatchTwoLevels()` "
-"call the single-level routines :cpp:`MultiFab::FillBoundary` and "
-":cpp:`FillDomainBoundary()` to fill interior, periodic, and physical "
-"boundary ghost cells.  In principle, you can write a single-level "
-"application that calls :cpp:`FillPatchSingleLevel()` instead of using "
-":cpp:`MultiFab::FillBoundary` and :cpp:`FillDomainBoundary()`."
+"Note that :cpp:`FillPatchSingleLevel()` and :cpp:`FillPatchTwoLevels()` call the single-level routines "
+":cpp:`MultiFab::FillBoundary` and :cpp:`FillDomainBoundary()` to fill interior, periodic, and physical boundary ghost "
+"cells.  In principle, you can write a single-level application that calls :cpp:`FillPatchSingleLevel()` instead of "
+"using :cpp:`MultiFab::FillBoundary` and :cpp:`FillDomainBoundary()`."
 msgstr ""
+"请注意，`FillPatchSingleLevel()` 和 `FillPatchTwoLevels()` 调用了单层例程 `MultiFab::FillBoundary` 和 `FillDomainBoundary()` "
+"来填充内部、周期性和物理边界的幽灵单元。原则上，您可以编写一个单层应用程序，调用 `FillPatchSingleLevel()` 而不是使用 `MultiFab::FillBoundary` 和 "
+"`FillDomainBoundary()`。"
 
 #: ../../source/AmrCore.rst:219 bce2efba54c6437392f3e13a6162efa4
 msgid ""
-"A :cpp:`FillPatchUtil` uses an :cpp:`Interpolator`. This is largely "
-"hidden from application codes. AMReX_Interpolater.cpp/H contains the "
-"virtual base class :cpp:`Interpolater`, which provides an interface for "
-"coarse-to-fine spatial interpolation operators. The fillpatch routines "
-"described above require an Interpolater for FillPatchTwoLevels(). Within "
-"AMReX_Interpolater.cpp/H are the derived classes:"
+"A :cpp:`FillPatchUtil` uses an :cpp:`Interpolator`. This is largely hidden from application codes. "
+"AMReX_Interpolater.cpp/H contains the virtual base class :cpp:`Interpolater`, which provides an interface for "
+"coarse-to-fine spatial interpolation operators. The fillpatch routines described above require an Interpolater for "
+"FillPatchTwoLevels(). Within AMReX_Interpolater.cpp/H are the derived classes:"
 msgstr ""
+"`FillPatchUtil` 使用了一个 `Interpolator`。这在应用程序代码中大部分是隐藏的。AMReX_Interpolater.cpp/H 包含了虚基类 "
+"`Interpolater`，它为粗到细的空间插值算子提供了接口。上面描述的 fillpatch 例程需要一个 Interpolater 用于 FillPatchTwoLevels()。在 AMReX_Interpolater.cpp/H "
+"中有派生类："
 
 #: ../../source/AmrCore.rst:225 8be80104e003484ea077f40cf6c9e1e7
 msgid ":cpp:`NodeBilinear`"
-msgstr ""
+msgstr ":cpp:`NodeBilinear`"
 
 #: ../../source/AmrCore.rst:227 184ad8846a8247cc80ad86042a7362ea
 msgid ":cpp:`CellBilinear`"
-msgstr ""
+msgstr ":cpp:`CellBilinear`"
 
 #: ../../source/AmrCore.rst:229 3ca2bb94a45b434e81b463a821644f60
 msgid ":cpp:`CellConservativeLinear`"
-msgstr ""
+msgstr ":cpp:`CellConservativeLinear`"
 
 #: ../../source/AmrCore.rst:231 6aacf80dcb9f48d8a59b730e2fafd5fa
 msgid ":cpp:`CellConservativeProtected`"
-msgstr ""
+msgstr ":cpp:`CellConservativeProtected`"
 
 #: ../../source/AmrCore.rst:233 1b4f4c79585a4f41880e11560c0c0661
 msgid ":cpp:`CellConservativeQuartic`"
-msgstr ""
+msgstr ":cpp:`CellConservativeQuartic`"
 
 #: ../../source/AmrCore.rst:235 cb518e69160e40d88677f7ea91f4a647
 msgid ":cpp:`CellQuadratic`"
-msgstr ""
+msgstr ":cpp:`CellQuadratic`"
 
 #: ../../source/AmrCore.rst:237 ddd44d0148b6460ca6944418e4565c49
 msgid ":cpp:`PCInterp`"
-msgstr ""
+msgstr ":cpp:`PCInterp`"
 
 #: ../../source/AmrCore.rst:239 3096ae5aaf954474a827d7e5666c26d2
 msgid ":cpp:`FaceLinear`"
-msgstr ""
+msgstr ":cpp:`FaceLinear`"
 
 #: ../../source/AmrCore.rst:241 e46a43dc5040466192cc2729a516f80f
 msgid ""
-":cpp:`FaceDivFree`: This is more accurately a divergence-preserving "
-"interpolation on face centered data, i.e., it ensures the divergence of "
-"the fine ghost cells match the value of the divergence of the underlying "
-"coarse cell. All fine cells overlying a given coarse cell will have the "
-"same divergence, even when the coarse grid divergence is spatially "
-"varying. Note that when using this with :cpp:`FillPatch` for time sub-"
-"cycling, the coarse grid times may not match the fine grid time, in which"
-" case :cpp:`FillPatch` will create coarse values at the fine time before "
-"calling this interpolation and the result of the :cpp:`FillPatch` is "
-"*not* guaranteed to preserve the original divergence."
+":cpp:`FaceDivFree`: This is more accurately a divergence-preserving interpolation on face centered data, i.e., it "
+"ensures the divergence of the fine ghost cells match the value of the divergence of the underlying coarse cell. All "
+"fine cells overlying a given coarse cell will have the same divergence, even when the coarse grid divergence is "
+"spatially varying. Note that when using this with :cpp:`FillPatch` for time sub-cycling, the coarse grid times may not "
+"match the fine grid time, in which case :cpp:`FillPatch` will create coarse values at the fine time before calling this "
+"interpolation and the result of the :cpp:`FillPatch` is *not* guaranteed to preserve the original divergence."
 msgstr ""
+":cpp:`FaceDivFree`: "
+"这实际上是一种在面心数据上保持散度的插值方法，即确保细粒度幽灵单元的散度与底层粗粒度单元的散度值相匹配。即使粗粒度网格的散度在空间上变化，覆盖给定粗粒度单元的所有细粒度单元的散度也将相同。请注意，当与时间子循环的 "
+":cpp:`FillPatch` 结合使用时，粗粒度网格的时间可能与细粒度网格的时间不匹配，在这种情况下，:cpp:`FillPatch` 将在调用此插值之前在细粒度时间上创建粗粒度值，而 :cpp:`FillPatch` "
+"的结果*不能*保证保持原始的散度。"
 
 #: ../../source/AmrCore.rst:243 1edfc41784ba4c8480a17bbfe49278ed
-msgid ""
-"These Interpolaters can be executed on CPU or GPU, with certain "
-"limitations:"
-msgstr ""
+msgid "These Interpolaters can be executed on CPU or GPU, with certain limitations:"
+msgstr "这些插值器可以在CPU或GPU上执行，但有一定的限制："
 
 #: ../../source/AmrCore.rst:245 55b654448ac34792878323eede42b2d4
 msgid ":cpp:`CellConservativeProtected` only works in 2D and 3D."
-msgstr ""
+msgstr "`CellConservativeProtected` 只适用于二维和三维。"
 
 #: ../../source/AmrCore.rst:247 7f50fdca58be4c11858aa82b2027e7f4
 msgid ":cpp:`CellQuadratic` only works in 2D and 3D."
-msgstr ""
+msgstr ":cpp:`CellQuadratic` 只适用于二维和三维。"
 
 #: ../../source/AmrCore.rst:249 09dc0d10704147798bab8bb8d04945b5
 msgid ":cpp:`CellConservativeQuartic` only works with a refinement ratio of 2."
-msgstr ""
+msgstr "只有在细化比为2的情况下，`CellConservativeQuartic`才能正常工作。"
 
 #: ../../source/AmrCore.rst:251 0f83144d17a34abd8acd8a3c9e051838
-msgid ""
-":cpp:`FaceDivFree` only works in 2D and 3D and with a refinement ratio of"
-" 2."
-msgstr ""
+msgid ":cpp:`FaceDivFree` only works in 2D and 3D and with a refinement ratio of 2."
+msgstr "`FaceDivFree` 只适用于二维和三维，并且要求细化比例为2。"
 
 #: ../../source/AmrCore.rst:256 cfa125291ca646afb0c3fb7df71fff1e
 msgid "Using FluxRegisters"
-msgstr ""
+msgstr "使用FluxRegisters"
 
 #: ../../source/AmrCore.rst:258 3bb339abe7e84ca0a15e778c5dd71057
 msgid ""
-"AMReX_FluxRegister.cpp/H contains the class :cpp:`FluxRegister`, which is"
-" derived from the class :cpp:`BndryRegister` (in "
-"``amrex/Src/Boundary/AMReX_BndryRegister``). In the most general terms, a"
-" FluxRegister is a special type of BndryRegister that stores and "
-"manipulates data (most often fluxes) at coarse-fine interfaces. A simple "
-"usage scenario comes from a conservative discretization of a hyperbolic "
-"system:"
+"AMReX_FluxRegister.cpp/H contains the class :cpp:`FluxRegister`, which is derived from the class :cpp:`BndryRegister` "
+"(in ``amrex/Src/Boundary/AMReX_BndryRegister``). In the most general terms, a FluxRegister is a special type of "
+"BndryRegister that stores and manipulates data (most often fluxes) at coarse-fine interfaces. A simple usage scenario "
+"comes from a conservative discretization of a hyperbolic system:"
 msgstr ""
+"AMReX_FluxRegister.cpp/H文件中包含了类:cpp:`FluxRegister`，它是从类:cpp:`BndryRegister`（位于``amrex/Src/Boundary/AMReX_BndryRegister``"
+"）派生而来的。从最一般的角度来看，FluxRegister是一种特殊类型的BndryRegister，用于存储和操作粗细界面上的数据（通常是通量）。一个简单的使用场景可以来自于对双曲系统进行保守离散化的情况："
 
 #: ../../source/AmrCore.rst:265 6b5321f4865f43bf838fe39ca1afe16f
 msgid ""
-"\\frac{\\partial\\phi}{\\partial t} = \\nabla\\cdot{\\bf F}\n"
+"\\frac{\\partial\\phi}{\\partial t} = \\n"
+"abla\\cdot{\\bf F}\n"
 "\\rightarrow\n"
-"\\frac{\\phi_{i,\\,j}^{n+1}-\\phi_{i,\\,j}^n}{\\Delta t} = "
-"\\frac{F_{i+^1\\!/_2,\\,j}-F_{i-^1\\!/_2,\\,j}}{\\Delta x} + "
+"\\frac{\\phi_{i,\\,j}^{n+1}-\\phi_{i,\\,j}^n}{\\Delta t} = \\frac{F_{i+^1\\!/_2,\\,j}-F_{i-^1\\!/_2,\\,j}}{\\Delta x} + "
 "\\frac{F_{i,\\,j+^1\\!/_2} - F_{i,\\,j-^1\\!/_2}}{\\Delta y}."
 msgstr ""
+"\\frac{\\partial\\phi}{\\partial t} = \\n"
+"abla\\cdot{\\bf F}\n"
+"\\rightarrow\n"
+"\\frac{\\phi_{i,\\,j}^{n+1}-\\phi_{i,\\,j}^n}{\\Delta t} = \\frac{F_{i+^1\\!/_2,\\,j}-F_{i-^1\\!/_2,\\,j}}{\\Delta x} + "
+"\\frac{F_{i,\\,j+^1\\!/_2} - F_{i,\\,j-^1\\!/_2}}{\\Delta y}."
 
 #: ../../source/AmrCore.rst:271 9849e7596c2d4b8d84c82340599a2132
 msgid ""
-"Consider a two-level, two-dimensional simulation. A standard methodology "
-"for advancing the solution in time is to first advance the coarse grid "
-"solution ignoring the fine level, and then advance the fine grid solution"
-" using the coarse level only to supply boundary conditions. At the "
-"coarse-fine interface, the area-weighted fluxes from the fine grid "
-"advance do not in general match the underlying flux from the coarse grid "
-"face, resulting in a lack of global conservation. Note that for "
-"subcycling-in-time algorithms (where for each coarse grid advance, the "
-"fine grid is advanced :math:`r` times using a coarse grid time step "
-"reduced by a factor of :math:`r`, where :math:`r` is the refinement "
-"ratio), the coarse grid flux must be compared to the area *and* time-"
-"weighted fine grid fluxes. A :cpp:`FluxRegister` accumulates and "
-"ultimately stores the net difference in fluxes between the coarse grid "
-"and fine grid advance over each face over a given coarse time step. The "
-"simplest possible synchronization step is to modify the coarse grid "
-"solution in coarse cells immediately adjacent to the coarse-fine "
-"interface are updated to account for the mismatch stored in the "
-"FluxRegister. This can be done \"simply\" by taking the coarse-level "
-"divergence of the data in the FluxRegister using the :cpp:`reflux` "
-"function."
+"Consider a two-level, two-dimensional simulation. A standard methodology for advancing the solution in time is to first "
+"advance the coarse grid solution ignoring the fine level, and then advance the fine grid solution using the coarse "
+"level only to supply boundary conditions. At the coarse-fine interface, the area-weighted fluxes from the fine grid "
+"advance do not in general match the underlying flux from the coarse grid face, resulting in a lack of global "
+"conservation. Note that for subcycling-in-time algorithms (where for each coarse grid advance, the fine grid is "
+"advanced :math:`r` times using a coarse grid time step reduced by a factor of :math:`r`, where :math:`r` is the "
+"refinement ratio), the coarse grid flux must be compared to the area *and* time-weighted fine grid fluxes. A "
+":cpp:`FluxRegister` accumulates and ultimately stores the net difference in fluxes between the coarse grid and fine "
+"grid advance over each face over a given coarse time step. The simplest possible synchronization step is to modify the "
+"coarse grid solution in coarse cells immediately adjacent to the coarse-fine interface are updated to account for the "
+"mismatch stored in the FluxRegister. This can be done \"simply\" by taking the coarse-level divergence of the data in "
+"the FluxRegister using the :cpp:`reflux` function."
 msgstr ""
+"考虑一个两层、二维的模拟。在时间上推进解决方案的标准方法是先推进粗网格解决方案，忽略细层，然后使用粗层提供边界条件来推进细网格解决方案。在粗细界面上，来自细网格推进的面积加权通量通常与粗网格面的基础通量不匹配，导致全局守恒不足。请注意，对于"
+"时间子循环算法（对于每个粗网格推进，使用缩小了一个因子r的粗网格时间步长，将细网格推进r次，其中r是细化比率），必须将粗网格通量与面积和时间加权的细网格通量进行比较。一个FluxRegister在给定的粗时间步长内累积并最终存储粗网格和细网"
+"格推进之间的通量净差异。最简单的同步步骤是通过使用reflux函数对FluxRegister中的数据进行粗网格散度的修改，以便立即更新与粗细界面相邻的粗单元格，以考虑FluxRegister中存储的不匹配情况。"
 
 #: ../../source/AmrCore.rst:289 c0a6c78f3bc24c53be7f7e0dd5cd2af7
 msgid ""
-"The Fortran routines that perform the actual floating point work "
-"associated with incrementing data in a :cpp:`FluxRegister` are contained "
-"in the files AMReX_FLUXREG_F.H and AMReX_FLUXREG_xD.F."
-msgstr ""
+"The Fortran routines that perform the actual floating point work associated with incrementing data in a "
+":cpp:`FluxRegister` are contained in the files AMReX_FLUXREG_F.H and AMReX_FLUXREG_xD.F."
+msgstr "实际执行与在 `FluxRegister` 中增加数据相关的浮点运算的Fortran例程包含在文件AMReX_FLUXREG_F.H和AMReX_FLUXREG_xD.F中。"
 
 #: ../../source/AmrCore.rst:294 aeb1e261565c4377919a8940ca270a55
 msgid "AmrParticles and AmrParGDB"
-msgstr ""
+msgstr "AmrParticles 和 AmrParGDB"
 
 #: ../../source/AmrCore.rst:296 d9c2e82561504aaf9498731a02b463fb
 msgid ""
-"The AmrCore/ directory contains derived classes for dealing with "
-"particles in a multi-level framework. The description of the base classes"
-" are given in the chapter on :ref:`Chap:Particles`."
-msgstr ""
+"The AmrCore/ directory contains derived classes for dealing with particles in a multi-level framework. The description "
+"of the base classes are given in the chapter on :ref:`Chap:Particles`."
+msgstr "AmrCore/目录包含了在多层框架中处理粒子的派生类。基类的描述在:ref:`Chap:Particles`章节中给出。"
 
 #: ../../source/AmrCore.rst:300 50dc0ee2f9e74d51908150697eea3414
 msgid ""
-"AMReX_AmrParticles.cpp/H contains the classes :cpp:`AmrParticleContainer`"
-" and :cpp:`AmrTracerParticleContainer`, which are derived from the "
-"classes :cpp:`ParticleContainer` (in "
-"``amrex/Src/Particle/AMReX_Particles``) and "
-":cpp:`TracerParticleContainer` (in "
-"``amrex/Src/Particle/AMReX_TracerParticles``)."
+"AMReX_AmrParticles.cpp/H contains the classes :cpp:`AmrParticleContainer` and :cpp:`AmrTracerParticleContainer`, which "
+"are derived from the classes :cpp:`ParticleContainer` (in ``amrex/Src/Particle/AMReX_Particles``) and "
+":cpp:`TracerParticleContainer` (in ``amrex/Src/Particle/AMReX_TracerParticles``)."
 msgstr ""
+"`AMReX_AmrParticles.cpp/H`文件包含了两个类：`:cpp:`AmrParticleContainer`和`:cpp:`AmrTracerParticleContainer`，它们都是从`:cpp:`"
+"ParticleContainer`类（位于``amrex/Src/Particle/AMReX_Particles``）和`:cpp:`TracerParticleContainer`类（位于``amrex/Src/Particle/"
+"AMReX_TracerParticles``）派生而来。"
 
 #: ../../source/AmrCore.rst:305 7059ec9ddb154984b14b5c1a8c5aa1d1
 msgid ""
-"AMReX_AmrParGDB.cpp/H contains the class :cpp:`AmrParGDB`, which is "
-"derived from the class :cpp:`ParGDBBase` (in "
+"AMReX_AmrParGDB.cpp/H contains the class :cpp:`AmrParGDB`, which is derived from the class :cpp:`ParGDBBase` (in "
 "``amrex/Src/Particle/AMReX_ParGDB``)."
-msgstr ""
+msgstr "AMReX_AmrParGDB.cpp/H文件中包含了类:cpp:`AmrParGDB`，该类派生自类:cpp:`ParGDBBase`（位于``amrex/Src/Particle/AMReX_ParGDB``）。"
 
 #: ../../source/AmrCore.rst:309 6683e1c923e0474891d9b6b47af667d1
 msgid "Example: Advection_AmrCore"
-msgstr ""
+msgstr "示例：Advection_AmrCore"
 
 #: ../../source/AmrCore.rst:312 a1063f8f3ed44a0ba81f6a99dc9702d2
 msgid "The Advection Equation"
-msgstr ""
+msgstr "平流方程"
 
 #: ../../source/AmrCore.rst:314 43ad61ad785e438199117a0a6e5105c7
-msgid ""
-"We seek to solve the advection equation on a multi-level, adaptive grid "
-"structure:"
-msgstr ""
+msgid "We seek to solve the advection equation on a multi-level, adaptive grid structure:"
+msgstr "我们希望在一个多层自适应网格结构上解决平流方程。"
 
 #: ../../source/AmrCore.rst:316 159a9910169a4e72ab65258d9adc309f
 msgid ""
-"\\frac{\\partial\\phi}{\\partial t} = -\\nabla\\cdot(\\phi{\\bf U}).\n"
+"\\frac{\\partial\\phi}{\\partial t} = -\\n"
+"abla\\cdot(\\phi{\\bf U}).\n"
 "\n"
 msgstr ""
+"\\frac{\\partial\\phi}{\\partial t} = -\\n"
+"abla\\cdot(\\phi{\\bf U})."
 
 #: ../../source/AmrCore.rst:318 9e13c8622659458d98edbcd9b3f49e8a
 msgid ""
-"The velocity field is a specified divergence-free (so the flow field is "
-"incompressible) function of space and time. The initial scalar field is a"
-" Gaussian profile. To integrate these equations on a given level, we use "
-"a simple conservative update,"
-msgstr ""
+"The velocity field is a specified divergence-free (so the flow field is incompressible) function of space and time. The "
+"initial scalar field is a Gaussian profile. To integrate these equations on a given level, we use a simple conservative "
+"update,"
+msgstr "速度场是空间和时间的特定无散场（因此流场是不可压缩的）函数。初始标量场是一个高斯分布。为了在给定层上积分这些方程，我们使用一个简单的保守更新方法。"
 
 #: ../../source/AmrCore.rst:322 aa39199e6adf4c13be5ebc91ffbf5e78
 msgid ""
-"\\frac{\\phi_{i,\\,j}^{n+1}-\\phi_{i,\\,j}^n}{\\Delta t} = \\frac{(\\phi "
-"u)_{i+^1\\!/_2,\\,j}^{n+^1\\!/_2}-(\\phi "
-"u)_{i-^1\\!/_2,\\,j}^{n+^1\\!/_2}}{\\Delta x} + \\frac{(\\phi "
-"v)_{i,\\,j+^1\\!/_2}^{n+^1\\!/_2} - (\\phi "
+"\\frac{\\phi_{i,\\,j}^{n+1}-\\phi_{i,\\,j}^n}{\\Delta t} = \\frac{(\\phi u)_{i+^1\\!/_2,\\,j}^{n+^1\\!/_2}-(\\phi "
+"u)_{i-^1\\!/_2,\\,j}^{n+^1\\!/_2}}{\\Delta x} + \\frac{(\\phi v)_{i,\\,j+^1\\!/_2}^{n+^1\\!/_2} - (\\phi "
 "v)_{i,\\,j-^1\\!/_2}^{n+^1\\!/_2}}{\\Delta y},\n"
 "\n"
 msgstr ""
+"\\frac{\\phi_{i,\\,j}^{n+1}-\\phi_{i,\\,j}^n}{\\Delta t} = \\frac{(\\phi u)_{i+^1\\!/_2,\\,j}^{n+^1\\!/_2}-(\\phi "
+"u)_{i-^1\\!/_2,\\,j}^{n+^1\\!/_2}}{\\Delta x} + \\frac{(\\phi v)_{i,\\,j+^1\\!/_2}^{n+^1\\!/_2} - (\\phi "
+"v)_{i,\\,j-^1\\!/_2}^{n+^1\\!/_2}}{\\Delta y},"
 
 #: ../../source/AmrCore.rst:324 5d8b5727c6c84d24b9855abf9397b48a
 msgid ""
-"where the velocities on faces are prescribed functions of space and time,"
-" and the scalars on faces are computed using a Godunov advection "
-"integration scheme. The fluxes in this case are the face-centered, time-"
-"centered \":math:`\\phi u`\" and \":math:`\\phi v`\" terms."
-msgstr ""
+"where the velocities on faces are prescribed functions of space and time, and the scalars on faces are computed using a "
+"Godunov advection integration scheme. The fluxes in this case are the face-centered, time-centered \":math:`\\phi u`\" "
+"and \":math:`\\phi v`\" terms."
+msgstr "在这种情况下，面上的速度是空间和时间的预设函数，而面上的标量则使用Godunov平流积分方案计算。在这种情况下，通量是面心、时间居中的\":math:`\\phi u`\"和\":math:`\\phi v`\"项。"
 
 #: ../../source/AmrCore.rst:328 922c5cb18faf4a71a5d1a0eeae991522
 msgid ""
-"We use a subcycling-in-time approach where finer levels are advanced with"
-" smaller time steps than coarser levels, and then synchronization is "
-"later performed between levels. More specifically, the multi-level "
-"procedure can most easily be thought of as a recursive algorithm in "
-"which, to advance level :math:`\\ell`, :math:`0\\le\\ell\\le\\ell_{\\rm "
-"max}`, the following steps are taken:"
+"We use a subcycling-in-time approach where finer levels are advanced with smaller time steps than coarser levels, and "
+"then synchronization is later performed between levels. More specifically, the multi-level procedure can most easily be "
+"thought of as a recursive algorithm in which, to advance level :math:`\\ell`, :math:`0\\le\\ell\\le\\ell_{\\rm max}`, "
+"the following steps are taken:"
 msgstr ""
+"我们采用时间子循环的方法，其中较细的层级使用较小的时间步长进行推进，然后在层级之间进行同步。更具体地说，多层级过程可以最容易地被视为一个递归算法，用于推进层级 :math:`\\ell`，其中 "
+":math:`0\\le\\ell\\le\\ell_{\\rm max}`，采取以下步骤："
 
 #: ../../source/AmrCore.rst:334 8555331d8bcc4d0aa80f8eade2347bcb
 msgid ""
-"Advance level :math:`\\ell` in time by one time step, :math:`\\Delta "
-"t^{\\ell}`, as if it is the only level. If :math:`\\ell>0`, obtain "
-"boundary data (i.e. fill the level :math:`\\ell` ghost cells) using "
-"space- and time-interpolated data from the grids at :math:`\\ell-1` where"
-" appropriate."
+"Advance level :math:`\\ell` in time by one time step, :math:`\\Delta t^{\\ell}`, as if it is the only level. If "
+":math:`\\ell>0`, obtain boundary data (i.e. fill the level :math:`\\ell` ghost cells) using space- and "
+"time-interpolated data from the grids at :math:`\\ell-1` where appropriate."
 msgstr ""
+"将时间中的高级等级 :math:`\\ell` 推进一个时间步长 :math:`\\Delta t^{\\ell}`，就好像它是唯一的等级一样。如果 :math:`\\ell>0`，则使用适当的空间和时间插值数据从 "
+":math:`\\ell-1` 级的网格获取边界数据（即填充等级 :math:`\\ell` 的幽灵单元）。"
 
 #: ../../source/AmrCore.rst:338 6dd910fd34c6449c8685997de3a94b65
 msgid "If :math:`\\ell<\\ell_{\\rm max}`"
-msgstr ""
+msgstr "如果 :math:`\\ell<\\ell_{\\rm max}`"
 
 #: ../../source/AmrCore.rst:340 9df8f14825f7498d976cb5275c9bcf90
 msgid ""
-"Advance level :math:`(\\ell+1)` for :math:`r` time steps with "
-":math:`\\Delta t^{\\ell+1} = \\frac{1}{r}\\Delta t^{\\ell}`."
-msgstr ""
+"Advance level :math:`(\\ell+1)` for :math:`r` time steps with :math:`\\Delta t^{\\ell+1} = \\frac{1}{r}\\Delta "
+"t^{\\ell}`."
+msgstr "高级水平：使用 :math:`\\Delta t^{\\ell+1} = \\frac{1}{r}\\Delta t^{\\ell}`，在 :math:`r` 个时间步骤中进行 :math:`(\\ell+1)` 阶级的推进。"
 
 #: ../../source/AmrCore.rst:342 532063ac1395440f83e2cf756e8bc3f8
 msgid "Synchronize the data between levels :math:`\\ell` and :math:`\\ell+1`."
-msgstr ""
+msgstr "将级别 :math:`\\ell` 和 :math:`\\ell+1` 之间的数据进行同步。"
 
 #: ../../source/AmrCore.rst:353 efe0a85f3292473188f93158feeb2aa3
 msgid "Schematic of subcycling-in-time algorithm."
-msgstr ""
+msgstr "时间子循环算法的示意图。"
 
 #: ../../source/AmrCore.rst:359 c5e7706b32cc470e9edb5f3b26ec5420
-msgid ""
-"Specifically, for a 3-level simulation, depicted graphically in the "
-"figure showing the :ref:`fig:subcycling` above:"
-msgstr ""
+msgid "Specifically, for a 3-level simulation, depicted graphically in the figure showing the :ref:`fig:subcycling` above:"
+msgstr "具体来说，对于一个三级模拟，如上图所示的:ref:`fig:subcycling`，请提供图形化表示的翻译。"
 
 #: ../../source/AmrCore.rst:362 e5961716165a4af9bb7ecc64aed81bf3
 msgid "Integrate :math:`\\ell=0` over :math:`\\Delta t`."
-msgstr ""
+msgstr "对于给定的时间间隔 :math:`\\Delta t`，对 :math:`\\ell=0` 进行积分。"
 
 #: ../../source/AmrCore.rst:364 ../../source/AmrCore.rst:372
 #: 47aa31e0f3db4660a35d044d2e54bda7 f27f0d30def9415a8587c7fe7ebd0c1b
 msgid "Integrate :math:`\\ell=1` over :math:`\\Delta t/2`."
-msgstr ""
+msgstr "对于 :math:`\\ell=1`，在 :math:`\\Delta t/2` 上进行积分。"
 
 #: ../../source/AmrCore.rst:366 ../../source/AmrCore.rst:368
 #: ../../source/AmrCore.rst:374 ../../source/AmrCore.rst:376
 #: 11259209f9cb49a3b984e8e885994f01 7a11375d04e3429c826eab1b499fc419
 #: a20767e18de44d37a81e80709e5edb1a b47dd5ec1f794705b08d95280233935a
 msgid "Integrate :math:`\\ell=2` over :math:`\\Delta t/4`."
-msgstr ""
+msgstr "对于 :math:`\\Delta t/4`，对 :math:`\\ell=2` 进行积分。"
 
 #: ../../source/AmrCore.rst:370 ../../source/AmrCore.rst:378
 #: 1598079b073841ddac956affae6eccde ee39184225f9497e821201b2d4888df9
 msgid "Synchronize levels :math:`\\ell=1,2`."
-msgstr ""
+msgstr "同步等级：:math:`\\ell=1,2`。"
 
 #: ../../source/AmrCore.rst:380 1b2a4bfb237340a5b0586b9be7d177c4
 msgid "Synchronize levels :math:`\\ell=0,1`."
-msgstr ""
+msgstr "同步等级：数学符号中的 :math:`\\ell=0,1`。"
 
 #: ../../source/AmrCore.rst:384 cc7498c5eecd4bd8862ec2394fb7b0dd
 msgid ""
-"For the scalar field, we keep track volume and time-weighted fluxes at "
-"coarse-fine interfaces. We accumulate area and time-weighted fluxes in "
-":cpp:`FluxRegister` objects, which can be thought of as special boundary "
-"FABsets associated with coarse-fine interfaces. Since the fluxes are area"
-" and time-weighted (and sign-weighted, depending on whether they come "
-"from the coarse or fine level), the flux registers essentially store the "
-"extent by which the solution does not maintain conservation. Conservation"
-" only happens if the sum of the (area and time-weighted) fine fluxes "
-"equals the coarse flux, which in general is not true."
+"For the scalar field, we keep track volume and time-weighted fluxes at coarse-fine interfaces. We accumulate area and "
+"time-weighted fluxes in :cpp:`FluxRegister` objects, which can be thought of as special boundary FABsets associated "
+"with coarse-fine interfaces. Since the fluxes are area and time-weighted (and sign-weighted, depending on whether they "
+"come from the coarse or fine level), the flux registers essentially store the extent by which the solution does not "
+"maintain conservation. Conservation only happens if the sum of the (area and time-weighted) fine fluxes equals the "
+"coarse flux, which in general is not true."
 msgstr ""
+"对于标量场，我们在粗细界面上跟踪体积和时间加权通量。我们在 `FluxRegister` 对象中累积面积和时间加权通量，可以将其视为与粗细界面相关的特殊边界 "
+"FABsets。由于通量是面积和时间加权的（并且根据其来自粗细层级的情况而有符号权重），通量寄存器实际上存储了解决方案未能保持守恒的程度。只有当（面积和时间加权的）细通量之和等于粗通量时，才会发生守恒，而这通常是不成立的。"
 
 #: ../../source/AmrCore.rst:393 2e4040a5af1649d291cd03108c4db96a
 msgid ""
-"The idea behind the level :math:`\\ell/(\\ell+1)` synchronization step is"
-" to correct for sources of mismatch in the composite solution:"
-msgstr ""
+"The idea behind the level :math:`\\ell/(\\ell+1)` synchronization step is to correct for sources of mismatch in the "
+"composite solution:"
+msgstr "`level :math:`\\ell/(\\ell+1)` 同步步骤的背后思想是为了纠正复合解中的不匹配源。"
 
 #: ../../source/AmrCore.rst:396 54895856a0f54dfab4193e94fea9f164
 msgid ""
-"The data at level :math:`\\ell` that underlie the level :math:`\\ell+1` "
-"data are not synchronized with the level :math:`\\ell+1` data. This is "
-"simply corrected by overwriting covered coarse cells to be the average of"
-" the overlying fine cells."
-msgstr ""
+"The data at level :math:`\\ell` that underlie the level :math:`\\ell+1` data are not synchronized with the level "
+":math:`\\ell+1` data. This is simply corrected by overwriting covered coarse cells to be the average of the overlying "
+"fine cells."
+msgstr "在级别 :math:`\\ell` 下面支撑级别 :math:`\\ell+1` 的数据与级别 :math:`\\ell+1` 的数据不同步。这可以通过将覆盖的粗单元格覆盖为上方细单元格的平均值来简单地进行修正。"
 
 #: ../../source/AmrCore.rst:399 075131f64c864194902612c932fbb4a9
 msgid ""
-"The area and time-weighted fluxes from the level :math:`\\ell` faces and "
-"the level :math:`\\ell+1` faces do not agree at the "
-":math:`\\ell/(\\ell+1)` interface, resulting in a loss of conservation. "
-"The remedy is to modify the solution in the coarse cells immediately next"
-" to the coarse-fine interface to account for the mismatch stored in the "
-"flux register (computed by taking the coarse-level divergence of the flux"
-" register data)."
+"The area and time-weighted fluxes from the level :math:`\\ell` faces and the level :math:`\\ell+1` faces do not agree "
+"at the :math:`\\ell/(\\ell+1)` interface, resulting in a loss of conservation. The remedy is to modify the solution in "
+"the coarse cells immediately next to the coarse-fine interface to account for the mismatch stored in the flux register "
+"(computed by taking the coarse-level divergence of the flux register data)."
 msgstr ""
+"从第 :math:`\\ell` 层面和第 :math:`\\ell+1` 层面的面积加权通量以及时间加权通量在 :math:`\\ell/(\\ell+1)` "
+"界面上不一致，导致了守恒性的损失。解决方法是修改紧邻粗细界面的粗网格单元中的解，以考虑在通量寄存器中存储的不匹配（通过计算通量寄存器数据的粗级散度来获得）。"
 
 #: ../../source/AmrCore.rst:406 14178e28f9ff469d875b8ff8044162aa
 msgid "Code Structure"
-msgstr ""
+msgstr "代码结构"
 
 #: ../../source/AmrCore.rst:413 031a4b7e0f274cd5986b4c9db8db2aca
 msgid "Source code tree for the AmrAdvection_AmrCore example."
-msgstr ""
+msgstr "AmrAdvection_AmrCore示例的源代码树。"
 
 #: ../../source/AmrCore.rst:416 0a88559c9c294671a3b729a86e17947f
 msgid "The figure shows the :ref:`fig:AmrAdvection_AmrCore_flowchart`"
-msgstr ""
+msgstr "该图显示了 :ref:`fig:AmrAdvection_AmrCore_flowchart`。"
 
 #: ../../source/AmrCore.rst:419 70acb480f2324fba8ec777916e3819e1
 msgid "amrex/Src/"
-msgstr ""
+msgstr "amrex/Src/"
 
 #: ../../source/AmrCore.rst:421 e364f98aa9cf407289403fd1f6605892
 msgid "Base/ Base amrex library."
-msgstr ""
+msgstr "基础/基础 amrex 库。"
 
 #: ../../source/AmrCore.rst:423 1dd706d0378a4517a6ab97533b4d0895
 msgid "Boundary/ An assortment of classes for handling boundary data."
-msgstr ""
+msgstr "边界/一系列用于处理边界数据的类。"
 
 #: ../../source/AmrCore.rst:425 33a91272743d4a659c9ee96655e23bef
 msgid "AmrCore/ AMR data management classes, described in more detail above."
-msgstr ""
+msgstr "AmrCore/ AMR数据管理类，如上所述，更详细地描述。"
 
 #: ../../source/AmrCore.rst:428 c6d586cc49fe497c8df1bb65188e67ee
 msgid ""
-"``Advection_AmrCore/Src`` Source code specific to this example. Most "
-"notably is the :cpp:`AmrCoreAdv` class, which is derived from "
-":cpp:`AmrCore`. The subdirectories ``Src_2d`` and ``Src_3d`` contain "
-"dimension specific routines. ``Src_nd`` contains dimension-independent "
-"routines."
+"``Advection_AmrCore/Src`` Source code specific to this example. Most notably is the :cpp:`AmrCoreAdv` class, which is "
+"derived from :cpp:`AmrCore`. The subdirectories ``Src_2d`` and ``Src_3d`` contain dimension specific routines. "
+"``Src_nd`` contains dimension-independent routines."
 msgstr ""
+"``Advection_AmrCore/Src`` 这个示例中特定的源代码。其中最重要的是 :cpp:`AmrCoreAdv` 类，它是从 :cpp:`AmrCore` 派生出来的。子目录 ``Src_2d`` 和 ``Src_3d`` "
+"包含特定维度的例程。``Src_nd`` 包含与维度无关的例程。"
 
 #: ../../source/AmrCore.rst:433 9b3644a0636d484abb4be997d6a33aee
-msgid ""
-"Exec Contains a makefile so a user can write other examples besides "
-"SingleVortex."
-msgstr ""
+msgid "Exec Contains a makefile so a user can write other examples besides SingleVortex."
+msgstr "Exec包含一个makefile，以便用户可以编写除SingleVortex之外的其他示例。"
 
 #: ../../source/AmrCore.rst:436 740743f2c45747b88f1e8626f7bc9881
 msgid ""
-"SingleVortex Build the code here by editing the GNUmakefile and running "
-"make. There is also problem-specific source code here used for "
-"initialization or specifying the velocity field used in this simulation."
-msgstr ""
+"SingleVortex Build the code here by editing the GNUmakefile and running make. There is also problem-specific source "
+"code here used for initialization or specifying the velocity field used in this simulation."
+msgstr "SingleVortex 在这里通过编辑 GNUmakefile 并运行 make 来构建代码。还有特定于问题的源代码，用于初始化或指定在此模拟中使用的速度场。"
 
 #: ../../source/AmrCore.rst:440 01a1f9c80e7841d5a9fac7e46fbd6f9d
 msgid "Here is a high-level pseudo-code of the flow of the program:"
-msgstr ""
+msgstr "这是程序流程的高级伪代码："
 
 #: ../../source/AmrCore.rst:487 dd1953301de549e9b1f2c85674d8bc07
 msgid "The AmrCoreAdv Class"
-msgstr ""
+msgstr "AmrCoreAdv 类"
 
 #: ../../source/AmrCore.rst:489 768367020ece483dbce51fd667f2db81
 msgid ""
-"This example uses the class :cpp:`AmrCoreAdv`, which is derived from the "
-"class :cpp:`AmrCore` (which is derived from :cpp:`AmrMesh`). The function"
-" definitions/implementations are given in AmrCoreAdv.H/cpp."
-msgstr ""
+"This example uses the class :cpp:`AmrCoreAdv`, which is derived from the class :cpp:`AmrCore` (which is derived from "
+":cpp:`AmrMesh`). The function definitions/implementations are given in AmrCoreAdv.H/cpp."
+msgstr "这个示例使用了类 `AmrCoreAdv`，它是从类 `AmrCore`（派生自 `AmrMesh` 类）派生而来的。函数的定义和实现在 `AmrCoreAdv.H/cpp` 文件中。"
 
 #: ../../source/AmrCore.rst:494 ccc5f570818d4c3c95776b5215cac8f0
 msgid "FluxRegisters"
-msgstr ""
+msgstr "通量寄存器"
 
 #: ../../source/AmrCore.rst:496 3d64932238c84ef89fe92d84a7c6ab93
 msgid ""
-"The function :cpp:`AmrCoreAdv::Advance()` calls the Fortran subroutine, "
-":fortran:`advect` (in ``./Src_xd/Adv_xd.f90``). :fortran:`advect` "
-"computes and returns the time-advanced state as well as the fluxes used "
-"to update the state. These fluxes are used to set or increment the flux "
-"registers."
+"The function :cpp:`AmrCoreAdv::Advance()` calls the Fortran subroutine, :fortran:`advect` (in ``./Src_xd/Adv_xd.f90``). "
+":fortran:`advect` computes and returns the time-advanced state as well as the fluxes used to update the state. These "
+"fluxes are used to set or increment the flux registers."
 msgstr ""
+"函数 `AmrCoreAdv::Advance()` 调用了 Fortran 子程序 `advect`（位于 `./Src_xd/Adv_xd.f90`）。`advect` "
+"计算并返回时间推进后的状态以及用于更新状态的通量。这些通量用于设置或增加通量寄存器。"
 
 #: ../../source/AmrCore.rst:526 92595533152340788ff0096ff9292313
-msgid ""
-"The synchronization is performed at the end of "
-":cpp:`AmrCoreAdv::timeStep`:"
-msgstr ""
+msgid "The synchronization is performed at the end of :cpp:`AmrCoreAdv::timeStep`:"
+msgstr "同步操作在 `AmrCoreAdv::timeStep` 函数的末尾执行。"
 
 #: ../../source/AmrCore.rst:545 eab0a2d3a11644e29de6ec1083ef422e
 msgid "Regridding"
-msgstr ""
+msgstr "网格重采样"
 
 #: ../../source/AmrCore.rst:547 b56d3c01094341da81ced7cd50999337
 msgid ""
-"The regrid function belongs to the :cpp:`AmrCore` class (it is virtual --"
-" in this tutorial we use the instance in :cpp:`AmrCore`)."
-msgstr ""
+"The regrid function belongs to the :cpp:`AmrCore` class (it is virtual -- in this tutorial we use the instance in "
+":cpp:`AmrCore`)."
+msgstr "`regrid`函数属于`AmrCore`类（它是虚函数 -- 在本教程中我们使用`AmrCore`的实例）。"
 
 #: ../../source/AmrCore.rst:550 bb761082f66841cbbc3a057e169c043a
 msgid ""
-"At the beginning of each time step, we check whether we need to regrid. "
-"In this example, we use a :cpp:`regrid_int` and keep track of how many "
-"times each level has been advanced. When any given particular level "
-":math:`\\ell<\\ell_{\\rm max}` has been advanced a multiple of "
-":cpp:`regrid_int`, we call the :cpp:`regrid` function."
+"At the beginning of each time step, we check whether we need to regrid. In this example, we use a :cpp:`regrid_int` and "
+"keep track of how many times each level has been advanced. When any given particular level :math:`\\ell<\\ell_{\\rm "
+"max}` has been advanced a multiple of :cpp:`regrid_int`, we call the :cpp:`regrid` function."
 msgstr ""
+"在每个时间步的开始，我们检查是否需要重新网格化。在这个示例中，我们使用一个 `regrid_int` 并跟踪每个层级被推进的次数。当任何给定的特定层级 :math:`\\ell<\\ell_{\\rm max}` 被推进了 "
+":cpp:`regrid_int` 的倍数时，我们调用 `regrid` 函数。"
 
 #: ../../source/AmrCore.rst:583 dd3ed30ec87b49c4b2f55a583b2c002b
 msgid ""
-"Central to the regridding process is the concept of \"tagging\" which "
-"cells need refinement. :cpp:`ErrorEst` is a pure virtual function of "
-":cpp:`AmrCore`, so each application code must contain an implementation. "
-"In AmrCoreAdv.cpp the ErrorEst function is essentially an interface to a "
-"Fortran routine that tags cells (in this case, :fortran:`state_error` in "
-"``Src_nd/Tagging_nd.f90``). Note that this code uses tiling."
+"Central to the regridding process is the concept of \"tagging\" which cells need refinement. :cpp:`ErrorEst` is a pure "
+"virtual function of :cpp:`AmrCore`, so each application code must contain an implementation. In AmrCoreAdv.cpp the "
+"ErrorEst function is essentially an interface to a Fortran routine that tags cells (in this case, "
+":fortran:`state_error` in ``Src_nd/Tagging_nd.f90``). Note that this code uses tiling."
 msgstr ""
+"在重新网格化过程中，\"标记\"哪些单元需要细化是核心概念。:cpp:`ErrorEst`是:cpp:`AmrCore`的一个纯虚函数，因此每个应用程序代码都必须包含一个实现。在AmrCoreAdv."
+"cpp中，ErrorEst函数本质上是一个接口，用于调用Fortran例程来标记单元（在这种情况下，是``Src_nd/Tagging_nd.f90``中的:fortran:`state_error`）。请注意，此代码使用了平铺技术。"
 
 #: ../../source/AmrCore.rst:665 a8868bb1127e4d5f9a1d1ade5cef1e55
-msgid ""
-"The :fortran:`state_error` subroutine in ``Src_nd/Tagging_nd.f90`` in "
-"this example is simple:"
-msgstr ""
+msgid "The :fortran:`state_error` subroutine in ``Src_nd/Tagging_nd.f90`` in this example is simple:"
+msgstr "在这个示例中，位于``Src_nd/Tagging_nd.f90``中的:fortran:`state_error`子程序非常简单："
 
 #: ../../source/AmrCore.rst:711 fa4f4c61d8674d2b962b1a153fe12f3d
 msgid "FillPatch"
-msgstr ""
+msgstr "填充补丁"
 
 #: ../../source/AmrCore.rst:713 7877d13f895542e5870cc7a342cd7e5b
 msgid ""
-"This example has two functions, :cpp:`AmrCoreAdv::FillPatch` and "
-":cpp:`AmrCoreAdv::CoarseFillPatch`, that make use of functions in "
-"AmrCore/AMReX_FillPatchUtil."
-msgstr ""
+"This example has two functions, :cpp:`AmrCoreAdv::FillPatch` and :cpp:`AmrCoreAdv::CoarseFillPatch`, that make use of "
+"functions in AmrCore/AMReX_FillPatchUtil."
+msgstr "这个示例有两个函数，:cpp:`AmrCoreAdv::FillPatch` 和 :cpp:`AmrCoreAdv::CoarseFillPatch`，它们使用了 AmrCore/AMReX_FillPatchUtil 中的函数。"
 
 #: ../../source/AmrCore.rst:716 f38d12d3c1ac49dd87409a32c474417c
 msgid ""
-"In :cpp:`AmrCoreAdv::Advance`, we create a temporary :cpp:`MultiFab` "
-"called :cpp:`Sborder`, which is essentially :math:`\\phi` but with ghost "
-"cells filled in. The valid and ghost cells are filled in from actual "
-"valid data at that level, space-time interpolated data from the next-"
-"coarser level, neighboring grids at the same level, or domain boundary "
-"conditions (for examples that have non-periodic boundary conditions)."
+"In :cpp:`AmrCoreAdv::Advance`, we create a temporary :cpp:`MultiFab` called :cpp:`Sborder`, which is essentially "
+":math:`\\phi` but with ghost cells filled in. The valid and ghost cells are filled in from actual valid data at that "
+"level, space-time interpolated data from the next-coarser level, neighboring grids at the same level, or domain "
+"boundary conditions (for examples that have non-periodic boundary conditions)."
 msgstr ""
+"在 `AmrCoreAdv::Advance` 函数中，我们创建了一个临时的 `MultiFab`，名为 `Sborder`，它实质上是带有填充了幽灵单元的 "
+"`phi`。有效单元和幽灵单元的数据来自于当前层级的实际有效数据、下一层级的空间-时间插值数据、同一层级的相邻网格，或者是域边界条件（对于具有非周期性边界条件的情况）。"
 
 #: ../../source/AmrCore.rst:729 93598268c0794c62ba1c1860d92d683a
-msgid ""
-"Several other calls to fillpatch routines are hidden from the user in the"
-" regridding process."
-msgstr ""
-
+msgid "Several other calls to fillpatch routines are hidden from the user in the regridding process."
+msgstr "在重新网格化过程中，还有几个调用填补程序的其他调用对用户隐藏起来。"

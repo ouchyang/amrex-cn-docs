@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,18 +21,17 @@ msgstr ""
 
 #: ../../source/Basics_Chapter.rst:4 babc4927037a4bec9444561457b05184
 msgid "Basics"
-msgstr ""
+msgstr "基础知识"
 
 #: ../../source/Basics_Chapter.rst:6 e9f9e8d666404159a49509cbe0e9b80a
 msgid ""
-"In this chapter, we present the basics of AMReX. The implementation "
-"source codes are in ``amrex/Src/Base/``. Note that AMReX classes and "
-"functions are in namespace ``amrex``. For clarity, we usually drop "
-"``amrex::`` in the example codes here. It is also assumed that headers "
-"have been properly included. We recommend you study the tutorial in "
-"``amrex-tutorials/ExampleCodes/Basic/HeatEquation_EX1_C`` while reading "
-"this chapter.  After reading this chapter, one should be able to develop "
-"single-level parallel codes using AMReX. It should also be noted that "
-"this is not a comprehensive reference manual."
+"In this chapter, we present the basics of AMReX. The implementation source codes are in ``amrex/Src/Base/``. Note that "
+"AMReX classes and functions are in namespace ``amrex``. For clarity, we usually drop ``amrex::`` in the example codes "
+"here. It is also assumed that headers have been properly included. We recommend you study the tutorial in "
+"``amrex-tutorials/ExampleCodes/Basic/HeatEquation_EX1_C`` while reading this chapter.  After reading this chapter, one "
+"should be able to develop single-level parallel codes using AMReX. It should also be noted that this is not a "
+"comprehensive reference manual."
 msgstr ""
-
+"在本章中，我们介绍了AMReX的基础知识。实现源代码位于``amrex/Src/Base/``目录下。请注意，AMReX的类和函数位于``amrex``命名空间中。为了清晰起见，在这里的示例代码中，我们通常省略了``amrex::``"
+"。同时，假设头文件已经正确地被包含进来。我们建议您在阅读本章的同时，学习``amrex-tutorials/ExampleCodes/Basic/HeatEquation_EX1_C``"
+"中的教程。阅读完本章后，您应该能够使用AMReX开发单层并行代码。需要注意的是，本文不是一本全面的参考手册。"

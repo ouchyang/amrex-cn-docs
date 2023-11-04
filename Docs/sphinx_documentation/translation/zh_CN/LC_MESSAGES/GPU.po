@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -19,266 +19,260 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.13.1\n"
 
+#: ../../source/GPU.rst:1745 ../../source/GPU.rst:1750
+#: ../../source/GPU.rst:1754 4f2720fd3d814d7ebf5e20bb10da5d2e
+#: bfecb98f46e3445b8a0461c5b26bd7e3 eaa1117cbb214718b56773e1ee8667b7
+msgid "0"
+msgstr "0"
+
+#: ../../source/GPU.rst:220 eb622b2da42149b8b1d6d05c0e7c2032
+msgid "1"
+msgstr "1"
+
+#: ../../source/GPU.rst:218 ../../source/GPU.rst:445
+#: e0c6280e9ee845e78f2fec92fc74d1d6 f9c5bd7382ad4d4ebd9176b1f0079901
+msgid "32"
+msgstr "32 三十二"
+
+#: ../../source/GPU.rst:273 f3897af512e546e3ae2e716437c8aab8
+msgid "255"
+msgstr "255"
+
 #: ../../source/GPU.rst:10 18884b001e7a435da621b3c5e76418e1
 msgid "Overview of AMReX GPU Strategy"
-msgstr ""
+msgstr "AMReX GPU策略概述"
 
 #: ../../source/GPU.rst:12 b4f1c44bbd7743fe9dfd86380f3aa162
 msgid ""
-"AMReX's GPU strategy focuses on providing performant GPU support with "
-"minimal changes and maximum flexibility.  This allows application teams "
-"to get running on GPUs quickly while allowing long term performance "
-"tuning and programming model selection.  AMReX uses the native "
-"programming language for GPUs: CUDA for NVIDIA, HIP for AMD and SYCL for "
-"Intel. This will be designated with ``CUDA/HIP/SYCL`` throughout the "
-"documentation.  However, application teams can also use OpenACC or OpenMP"
-" in their individual codes."
+"AMReX's GPU strategy focuses on providing performant GPU support with minimal changes and maximum flexibility.  This "
+"allows application teams to get running on GPUs quickly while allowing long term performance tuning and programming "
+"model selection.  AMReX uses the native programming language for GPUs: CUDA for NVIDIA, HIP for AMD and SYCL for Intel. "
+"This will be designated with ``CUDA/HIP/SYCL`` throughout the documentation.  However, application teams can also use "
+"OpenACC or OpenMP in their individual codes."
 msgstr ""
+"AMReX的GPU策略专注于提供高性能的GPU支持，同时最大限度地减少更改并保持最大的灵活性。这使得应用团队能够快速在GPU上运行，并允许长期的性能调优和编程模型选择。AMReX使用了适用于GPU的本机编程语言：CUDA适用于NVIDIA，"
+"HIP适用于AMD，SYCL适用于Intel。在文档中，这将用``CUDA/HIP/SYCL``来表示。然而，应用团队也可以在其个别代码中使用OpenACC或OpenMP。"
 
 #: ../../source/GPU.rst:21 135e4d0c4b8f4b4b9d57f2aab9d67946
 msgid ""
-"At this time, AMReX does not support cross-native language compilation "
-"(HIP for non-AMD systems and SYCL for non Intel systems).  It may work "
-"with a given version, but AMReX does not track or guarantee such "
-"functionality."
-msgstr ""
+"At this time, AMReX does not support cross-native language compilation (HIP for non-AMD systems and SYCL for non Intel "
+"systems).  It may work with a given version, but AMReX does not track or guarantee such functionality."
+msgstr "目前，AMReX不支持跨原生语言编译（非AMD系统的HIP和非Intel系统的SYCL）。在某些版本中可能可以工作，但AMReX不追踪或保证此类功能的可用性。"
 
 #: ../../source/GPU.rst:25 eced8ba9b1334c8ea650e403c59eae5f
 msgid ""
-"When running AMReX on a CPU system, the parallelization strategy is a "
-"combination of MPI and OpenMP using tiling, as detailed in "
-":ref:`sec:basics:mfiter:tiling`. However, tiling is ineffective on GPUs "
-"due to the overhead associated with kernel launching.  Instead, efficient"
-" use of the GPU's resources is the primary concern.  Improving resource "
-"efficiency allows a larger percentage of GPU threads to work "
-"simultaneously, increasing effective parallelism and decreasing the time "
-"to solution."
+"When running AMReX on a CPU system, the parallelization strategy is a combination of MPI and OpenMP using tiling, as "
+"detailed in :ref:`sec:basics:mfiter:tiling`. However, tiling is ineffective on GPUs due to the overhead associated with "
+"kernel launching.  Instead, efficient use of the GPU's resources is the primary concern.  Improving resource efficiency "
+"allows a larger percentage of GPU threads to work simultaneously, increasing effective parallelism and decreasing the "
+"time to solution."
 msgstr ""
+"在CPU系统上运行AMReX时，并行化策略是使用MPI和OpenMP的组合，并采用平铺（tiling）方法，详细信息请参考:ref:`sec:basics:mfiter:tiling`"
+"。然而，在GPU上，平铺方法由于内核启动的开销而变得无效。相反，高效利用GPU的资源是主要关注点。提高资源利用效率可以使更大比例的GPU线程同时工作，增加有效的并行性并缩短解决方案的时间。"
 
 #: ../../source/GPU.rst:34 46de8d0c06b34a92944f5c368647511e
 msgid ""
-"When running on CPUs, AMReX uses an ``MPI+X`` strategy where the ``X`` "
-"threads are used to perform parallelization techniques, like tiling. The "
-"most common ``X`` is ``OpenMP``.  On GPUs, AMReX requires "
-"``CUDA/HIP/SYCL`` and can be further combined with other parallel GPU "
-"languages, including ``OpenACC`` and ``OpenMP``, to control the "
-"offloading of subroutines to the GPU.  This ``MPI+X+Y`` GPU strategy has "
-"been developed to give users the maximum flexibility to find the best "
-"combination of portability, readability and performance for their "
-"applications."
+"When running on CPUs, AMReX uses an ``MPI+X`` strategy where the ``X`` threads are used to perform parallelization "
+"techniques, like tiling. The most common ``X`` is ``OpenMP``.  On GPUs, AMReX requires ``CUDA/HIP/SYCL`` and can be "
+"further combined with other parallel GPU languages, including ``OpenACC`` and ``OpenMP``, to control the offloading of "
+"subroutines to the GPU.  This ``MPI+X+Y`` GPU strategy has been developed to give users the maximum flexibility to find "
+"the best combination of portability, readability and performance for their applications."
 msgstr ""
+"当在CPU上运行时，AMReX使用“MPI+X”策略，其中“X”线程用于执行并行化技术，如切片。最常见的“X”是“OpenMP”。在GPU上，AMReX需要“CUDA/HIP/"
+"SYCL”，并且可以进一步与其他并行GPU语言结合使用，包括“OpenACC”和“OpenMP”，以控制将子程序卸载到GPU上。这种“MPI+X+Y” "
+"GPU策略的开发旨在为用户提供最大的灵活性，以找到最佳的可移植性、可读性和性能组合，以适用于他们的应用程序。"
 
 #: ../../source/GPU.rst:43 b13e24b612394d2bbdf7b40bb0682624
 msgid ""
-"Presented here is an overview of important features of AMReX's GPU "
-"strategy. Additional information that is required for creating GPU "
-"applications is detailed throughout the rest of this chapter:"
-msgstr ""
+"Presented here is an overview of important features of AMReX's GPU strategy. Additional information that is required "
+"for creating GPU applications is detailed throughout the rest of this chapter:"
+msgstr "这里提供了AMReX GPU策略的重要特点概述。在本章的其余部分中，详细介绍了创建GPU应用所需的其他信息。"
 
 #: ../../source/GPU.rst:47 ac6c7b3e736e416ba8699699bcdaaf9d
-msgid ""
-"Each MPI rank offloads its work to a single GPU. ``(MPI ranks == Number "
-"of GPUs)``"
-msgstr ""
+msgid "Each MPI rank offloads its work to a single GPU. ``(MPI ranks == Number of GPUs)``"
+msgstr "每个 MPI 进程将其工作分配给单个 GPU。 ``(MPI 进程数 == GPU 数量)``"
 
 #: ../../source/GPU.rst:49 fa698fa27dbb44b1a0e5c2eef3dc82d7
 msgid ""
-"Calculations that can be offloaded efficiently to GPUs use GPU threads to"
-" parallelize over a valid box at a time.  This is done by launching over "
-"a large number GPU threads that only work on a few cells each. This work "
-"distribution is illustrated in :numref:`fig:gpu:threads`."
-msgstr ""
+"Calculations that can be offloaded efficiently to GPUs use GPU threads to parallelize over a valid box at a time.  This "
+"is done by launching over a large number GPU threads that only work on a few cells each. This work distribution is "
+"illustrated in :numref:`fig:gpu:threads`."
+msgstr "可以高效地将计算任务转移到GPU上的计算，使用GPU线程以每次一个有效的盒子进行并行化。这是通过启动大量的GPU线程，每个线程只处理少量的单元格来实现的。这种工作分配的示意图如图:numref:`fig:gpu:threads`所示。"
 
 #: ../../source/GPU.rst:62 86919b72979c44fa88397dce1dfd78cd
-msgid ""
-"Comparison of OpenMP and GPU work distribution. Pictures provided by Mike"
-" Zingale and the CASTRO team."
-msgstr ""
+msgid "Comparison of OpenMP and GPU work distribution. Pictures provided by Mike Zingale and the CASTRO team."
+msgstr "对比OpenMP和GPU的工作分配。图片由Mike Zingale和CASTRO团队提供。"
 
 #: ../../source/GPU.rst:65 caf5b920821c4769ba1fe0a5ddadaf18
 msgid "|a|"
-msgstr ""
+msgstr "|a|"
 
 #: ../../source/GPU.rst:54 2a1c8364e21146e1b9f2982e2462faa6
 msgid "a"
-msgstr ""
+msgstr "一个"
 
 #: ../../source/GPU.rst:65 c4bca08cd9da42edb9ab6eb4a33a7089
 msgid "|b|"
-msgstr ""
+msgstr "|b|"
 
 #: ../../source/GPU.rst:57 f29508037708464693e74f79b8fe4258
 msgid "b"
-msgstr ""
+msgstr "b"
 
 #: ../../source/GPU.rst:67 a02bef09fa8a45d194c1c6571929ca44
 msgid ""
-"OpenMP tiled box. OpenMP threads break down the valid box into two large "
-"boxes (blue and orange). The lo and hi of one tiled box are marked."
-msgstr ""
+"OpenMP tiled box. OpenMP threads break down the valid box into two large boxes (blue and orange). The lo and hi of one "
+"tiled box are marked."
+msgstr "OpenMP 平铺盒子。OpenMP 线程将有效盒子分解为两个大盒子（蓝色和橙色）。一个平铺盒子的 lo 和 hi 已标记。"
 
 #: ../../source/GPU.rst:67 bc84b66bd969428f9ff5e8f66ceb2e91
 msgid ""
-"GPU threaded box. Each GPU thread works on a few cells of the valid box. "
-"This example uses one cell per thread, each thread using a box with lo = "
-"hi."
-msgstr ""
+"GPU threaded box. Each GPU thread works on a few cells of the valid box. This example uses one cell per thread, each "
+"thread using a box with lo = hi."
+msgstr "GPU 线程化盒子。每个 GPU 线程在有效盒子的几个单元上工作。这个示例每个线程使用一个单元，每个线程使用具有 lo = hi 的盒子。"
 
 #: ../../source/GPU.rst:73 169872a2cf3e4a62af795bef9fce9a21
 msgid ""
-"C++ macros and GPU extended lambdas are used to provide performance "
-"portability while making the code as understandable as possible to "
-"science-focused code teams."
-msgstr ""
+"C++ macros and GPU extended lambdas are used to provide performance portability while making the code as understandable "
+"as possible to science-focused code teams."
+msgstr "使用C++宏和GPU扩展的lambda表达式可以在保持代码易于理解的同时，提供性能可移植性，特别适用于以科学为重点的代码团队。"
 
 #: ../../source/GPU.rst:77 7989e12787e2414a8106a371f718ff04
 msgid ""
-"AMReX can utilize GPU managed memory to automatically handle memory "
-"movement for mesh and particle data.  Simple data structures, such as "
-":cpp:`IntVect`\\s can be passed by value and complex data structures, "
-"such as :cpp:`FArrayBox`\\es, have specialized AMReX classes to handle "
-"the data movement for the user.  Tests have shown CUDA managed memory to "
-"be efficient and reliable, especially when applications remove any "
-"unnecessary data accesses. However, managed memory is not used by "
-":cpp:`FArrayBox` and :cpp:`MultiFab` by default."
+"AMReX can utilize GPU managed memory to automatically handle memory movement for mesh and particle data.  Simple data "
+"structures, such as :cpp:`IntVect`\\s can be passed by value and complex data structures, such as :cpp:`FArrayBox`\\es, "
+"have specialized AMReX classes to handle the data movement for the user.  Tests have shown CUDA managed memory to be "
+"efficient and reliable, especially when applications remove any unnecessary data accesses. However, managed memory is "
+"not used by :cpp:`FArrayBox` and :cpp:`MultiFab` by default."
 msgstr ""
+"AMReX可以利用GPU管理的内存来自动处理网格和粒子数据的内存移动。简单的数据结构，如：cpp：IntVect可以按值传递，而复杂的数据结构，如：cpp：FArrayBox则有专门的AMReX类来处理用户的数据移动。测试表明，CUDA管理"
+"的内存在应用程序消除任何不必要的数据访问时效率和可靠性都很高。然而，默认情况下，：cpp：FArrayBox和：cpp：MultiFab不使用管理的内存。"
 
 #: ../../source/GPU.rst:86 d4867ff50cf2452a911a7fcbd01034f2
 msgid ""
-"Application teams should strive to keep mesh and particle data structures"
-" on the GPU for as long as possible, minimizing movement back to the CPU."
-" This strategy lends itself to AMReX applications readily; the mesh and "
-"particle data can stay on the GPU for most subroutines except for of "
-"redistribution, communication and I/O operations."
-msgstr ""
+"Application teams should strive to keep mesh and particle data structures on the GPU for as long as possible, "
+"minimizing movement back to the CPU. This strategy lends itself to AMReX applications readily; the mesh and particle "
+"data can stay on the GPU for most subroutines except for of redistribution, communication and I/O operations."
+msgstr "应用团队应该尽可能将网格和粒子数据结构保留在GPU上，最大限度地减少返回CPU的移动。这种策略非常适用于AMReX应用程序；除了重新分配、通信和I/O操作之外，网格和粒子数据可以在大多数子程序中保留在GPU上。"
 
 #: ../../source/GPU.rst:92 22e7741b61f34405b3502c44a980abbd
 msgid ""
-"AMReX's GPU strategy is focused on launching GPU kernels inside AMReX's "
-":cpp:`MFIter` and :cpp:`ParIter` loops.  By performing GPU work within "
-":cpp:`MFIter` and :cpp:`ParIter` loops, GPU work is isolated to "
-"independent data sets on well-established AMReX data objects, providing "
-"consistency and safety that also matches AMReX's coding methodology.  "
-"Similar tools are also available for launching work outside of AMReX "
-"loops."
+"AMReX's GPU strategy is focused on launching GPU kernels inside AMReX's :cpp:`MFIter` and :cpp:`ParIter` loops.  By "
+"performing GPU work within :cpp:`MFIter` and :cpp:`ParIter` loops, GPU work is isolated to independent data sets on "
+"well-established AMReX data objects, providing consistency and safety that also matches AMReX's coding methodology.  "
+"Similar tools are also available for launching work outside of AMReX loops."
 msgstr ""
+"AMReX的GPU策略专注于在AMReX的`MFIter`和`ParIter`循环内启动GPU内核。通过在`MFIter`和`ParIter`"
+"循环内执行GPU工作，GPU工作被隔离到独立的数据集上，这些数据集是基于成熟的AMReX数据对象，提供了与AMReX编码方法一致的一致性和安全性。类似的工具也可用于在AMReX循环之外启动工作。"
 
 #: ../../source/GPU.rst:99 0c3c6d031de347c0a33be578a7ac37ae
 msgid ""
-"AMReX further parallelizes GPU applications by utilizing streams. Streams"
-" guarantee execution order of kernels within the same stream, while "
-"allowing different streams to run simultaneously. AMReX places each "
-"iteration of :cpp:`MFIter` loops on separate streams, allowing each "
-"independent iteration to be run simultaneously and sequentially, while "
+"AMReX further parallelizes GPU applications by utilizing streams. Streams guarantee execution order of kernels within "
+"the same stream, while allowing different streams to run simultaneously. AMReX places each iteration of :cpp:`MFIter` "
+"loops on separate streams, allowing each independent iteration to be run simultaneously and sequentially, while "
 "maximizing GPU usage."
 msgstr ""
+"AMReX通过利用流（streams）进一步并行化GPU应用程序。流可以保证同一流中内核的执行顺序，同时允许不同的流同时运行。AMReX将每个:cpp:`MFIter`"
+"循环的迭代放在单独的流上，使得每个独立的迭代可以同时和顺序地运行，从而最大化GPU的使用。"
 
 #: ../../source/GPU.rst:105 e45e327091d74fc1923b99502fc3b556
 msgid ""
-"The AMReX implementation of streams is illustrated in "
-":numref:`fig:gpu:streams`. The CPU runs the first iteration of the MFIter"
-" loop (blue), which contains three GPU kernels.  The kernels begin "
-"immediately in GPU Stream 1 and run in the same order they were added. "
-"The second (red) and third (green) iterations are similarly launched in "
-"Streams 2 and 3. The fourth (orange) and fifth (purple) iterations "
-"require more GPU resources than remain, so they have to wait until "
-"resources are freed before beginning. Meanwhile, after all the loop "
-"iterations are launched, the CPU reaches a synchronize in the MFIter's "
-"destructor and waits for all GPU launches to complete before continuing."
+"The AMReX implementation of streams is illustrated in :numref:`fig:gpu:streams`. The CPU runs the first iteration of "
+"the MFIter loop (blue), which contains three GPU kernels.  The kernels begin immediately in GPU Stream 1 and run in the "
+"same order they were added. The second (red) and third (green) iterations are similarly launched in Streams 2 and 3. "
+"The fourth (orange) and fifth (purple) iterations require more GPU resources than remain, so they have to wait until "
+"resources are freed before beginning. Meanwhile, after all the loop iterations are launched, the CPU reaches a "
+"synchronize in the MFIter's destructor and waits for all GPU launches to complete before continuing."
 msgstr ""
+"AMReX对流的实现如图:numref:`fig:gpu:streams`所示。CPU运行MFIter循环的第一次迭代（蓝色），其中包含三个GPU内核。这些内核立即在GPU Stream "
+"1中开始运行，并按照添加的顺序运行。第二次（红色）和第三次（绿色）迭代类似地在Stream 2和Stream "
+"3中启动。第四次（橙色）和第五次（紫色）迭代所需的GPU资源超过了剩余资源，因此它们必须等待资源释放后才能开始。与此同时，在启动所有循环迭代之后，CPU在MFIter的析构函数中达到同步点，并等待所有GPU启动完成后再继续执行。"
 
 #: ../../source/GPU.rst:115 9eb0f470000b4ce5a6d8fa5b7a9a401d
 msgid ""
-"The Fortran interface of AMReX does not currently have GPU support.  "
-"AMReX recommends porting Fortran code to C++ when coding for GPUs."
-msgstr ""
+"The Fortran interface of AMReX does not currently have GPU support.  AMReX recommends porting Fortran code to C++ when "
+"coding for GPUs."
+msgstr "AMReX的Fortran接口目前不支持GPU。AMReX建议在为GPU编程时将Fortran代码转换为C++。"
 
 #: ../../source/GPU.rst:126 8f84592dcffc410282c4e83f7fdf5665
 msgid ""
-"Timeline illustration of GPU streams. Illustrates the case of an MFIter "
-"loop of five iterations with three GPU kernels each being ran with three "
-"GPU streams."
-msgstr ""
+"Timeline illustration of GPU streams. Illustrates the case of an MFIter loop of five iterations with three GPU kernels "
+"each being ran with three GPU streams."
+msgstr "GPU流的时间线示意图。展示了一个包含五次迭代的MFIter循环，每次迭代中有三个GPU内核在三个GPU流上运行的情况。"
 
 #: ../../source/GPU.rst:137 0ac427a76cd54135969c98c1044f5160
 msgid "Building GPU Support"
-msgstr ""
+msgstr "构建GPU支持"
 
 #: ../../source/GPU.rst:140 409fd4a37bb84e669383b4361d554438
 msgid "Building with GNU Make"
-msgstr ""
+msgstr "使用GNU Make进行构建"
 
 #: ../../source/GPU.rst:142 4bbc91d84d5b406c8d4691f03c52fb64
 msgid ""
-"To build AMReX with GPU support, add ``USE_CUDA=TRUE``, ``USE_HIP=TRUE`` "
-"or ``USE_SYCL=TRUE`` to the ``GNUmakefile`` or as a command line "
-"argument."
-msgstr ""
+"To build AMReX with GPU support, add ``USE_CUDA=TRUE``, ``USE_HIP=TRUE`` or ``USE_SYCL=TRUE`` to the ``GNUmakefile`` or "
+"as a command line argument."
+msgstr "要在 AMReX 中启用 GPU 支持，请在 GNUmakefile 中或作为命令行参数添加 \"USE_CUDA=TRUE\"、\"USE_HIP=TRUE\" 或 \"USE_SYCL=TRUE\"。"
 
 #: ../../source/GPU.rst:145 8b9f501786f1432e998c60c0a66dfac2
 msgid ""
-"AMReX does not require OpenACC, but application codes can use them if "
-"they are supported by the compiler.  For OpenACC support, add "
-"``USE_ACC=TRUE``.  PGI, Cray and GNU compilers support OpenACC.  Thus, "
-"for OpenACC, you must use ``COMP=pgi``, ``COMP=cray`` or ``COMP=gnu``."
+"AMReX does not require OpenACC, but application codes can use them if they are supported by the compiler.  For OpenACC "
+"support, add ``USE_ACC=TRUE``.  PGI, Cray and GNU compilers support OpenACC.  Thus, for OpenACC, you must use "
+"``COMP=pgi``, ``COMP=cray`` or ``COMP=gnu``."
 msgstr ""
+"AMReX不要求使用OpenACC，但如果编译器支持，应用程序代码可以使用它们。要添加OpenACC支持，请添加``USE_ACC=TRUE``。PGI、Cray和GNU编译器支持OpenACC。因此，要使用OpenACC，您必须使用``"
+"COMP=pgi``、``COMP=cray``或``COMP=gnu``。"
 
 #: ../../source/GPU.rst:150 245338faf48c4515a99cedc22f782512
-msgid ""
-"Currently, only IBM is supported with OpenMP offloading. To use OpenMP "
-"offloading, make with ``USE_OMP_OFFLOAD=TRUE``."
-msgstr ""
+msgid "Currently, only IBM is supported with OpenMP offloading. To use OpenMP offloading, make with ``USE_OMP_OFFLOAD=TRUE``."
+msgstr "目前，只有IBM与OpenMP卸载（offloading）兼容。要使用OpenMP卸载功能，请使用``USE_OMP_OFFLOAD=TRUE``进行编译。"
 
 #: ../../source/GPU.rst:153 bbe0f7cbfcd9482784c9763280645727
 msgid ""
-"Compiling AMReX with CUDA requires compiling the code through NVIDIA's "
-"CUDA compiler driver in addition to the standard compiler.  This driver "
-"is called ``nvcc`` and it requires a host compiler to work through. The "
-"default host compiler for NVCC is GCC even if ``COMP`` is set to a "
-"different compiler.  One can change this by setting ``NVCC_HOST_COMP``. "
-"For example, ``COMP=pgi`` alone will compile C/C++ codes with NVCC/GCC "
-"and Fortran codes with PGI, and link with PGI.  Using ``COMP=pgi`` and "
-"``NVCC_HOST_COMP=pgi`` will compile C/C++ codes with PGI and NVCC/PGI."
+"Compiling AMReX with CUDA requires compiling the code through NVIDIA's CUDA compiler driver in addition to the standard "
+"compiler.  This driver is called ``nvcc`` and it requires a host compiler to work through. The default host compiler "
+"for NVCC is GCC even if ``COMP`` is set to a different compiler.  One can change this by setting ``NVCC_HOST_COMP``. "
+"For example, ``COMP=pgi`` alone will compile C/C++ codes with NVCC/GCC and Fortran codes with PGI, and link with PGI.  "
+"Using ``COMP=pgi`` and ``NVCC_HOST_COMP=pgi`` will compile C/C++ codes with PGI and NVCC/PGI."
 msgstr ""
+"使用CUDA编译AMReX需要通过NVIDIA的CUDA编译器驱动程序进行编译，除了标准编译器之外。该驱动程序称为``nvcc``，它需要一个主机编译器来进行工作。即使``COMP``"
+"设置为不同的编译器，NVCC的默认主机编译器仍然是GCC。可以通过设置``NVCC_HOST_COMP``来更改这一设置。例如，仅设置``COMP=pgi``将使用NVCC/GCC编译C/C++"
+"代码，使用PGI编译Fortran代码，并链接PGI。使用``COMP=pgi``和``NVCC_HOST_COMP=pgi``将使用PGI编译C/C++代码和NVCC/PGI。"
 
 #: ../../source/GPU.rst:162 6bb46581dfb548f68b9befb6601c727a
 msgid ""
-"You can use ``amrex-tutorials/ExampleCodes/Basic/HelloWorld_C/`` to test "
-"your programming environment.  For example, building with:"
-msgstr ""
+"You can use ``amrex-tutorials/ExampleCodes/Basic/HelloWorld_C/`` to test your programming environment.  For example, "
+"building with:"
+msgstr "你可以使用``amrex-tutorials/ExampleCodes/Basic/HelloWorld_C/``来测试你的编程环境。例如，使用以下命令进行构建："
 
 #: ../../source/GPU.rst:171 be2b2a84060c4d8c96e0e02efab36df7
-msgid ""
-"should produce an executable named ``main3d.gnu.DEBUG.CUDA.ex``.  You can"
-" run it and that will generate results like:"
-msgstr ""
+msgid "should produce an executable named ``main3d.gnu.DEBUG.CUDA.ex``.  You can run it and that will generate results like:"
+msgstr "应该生成一个名为``main3d.gnu.DEBUG.CUDA.ex``的可执行文件。您可以运行它，这将生成类似以下的结果："
 
 #: ../../source/GPU.rst:191 f2336d4fba2b4ab2893c622b8b335462
 msgid "SYCL configuration variables"
-msgstr ""
+msgstr "SYCL配置变量"
 
 #: ../../source/GPU.rst:193 f30dd0cebf51489a946a7692e814f073
-msgid ""
-"When building with ``USE_SYCL=TRUE``, one can set the following makefile "
-"variables to configure the build"
-msgstr ""
+msgid "When building with ``USE_SYCL=TRUE``, one can set the following makefile variables to configure the build"
+msgstr "当使用``USE_SYCL=TRUE``进行构建时，可以设置以下makefile变量来配置构建过程。"
 
 #: ../../source/GPU.rst:202 e5829482e0ef4e0685ccb31da82c4c38
 msgid "AMReX SYCL-specific GNU Make build options"
-msgstr ""
+msgstr "AMReX SYCL-specific GNU Make构建选项"
 
 #: ../../source/GPU.rst:205 ../../source/GPU.rst:252 ../../source/GPU.rst:432
 #: ac2830f98405449c9a5a64001bbecbf5 be70597ec53444b88ffd0c329b5c5507
 #: d88a74e7135649cd8dada95b2690a55e
 msgid "Variable Name"
-msgstr ""
+msgstr "变量名称"
 
 #: ../../source/GPU.rst:205 ../../source/GPU.rst:252 ../../source/GPU.rst:432
 #: ../../source/GPU.rst:1743 06308348b3f841bb93be5502f039d724
 #: 5e22cc8ac4704f139ec8332bd4bb2a76 cc18b1327bfc4afebb7b40310213c0b8
 #: e6388533a5b2457ba1bf5e8bf6bad49f
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/GPU.rst:205 ../../source/GPU.rst:209 ../../source/GPU.rst:252
 #: ../../source/GPU.rst:432 ../../source/GPU.rst:436 ../../source/GPU.rst:1743
@@ -286,84 +280,84 @@ msgstr ""
 #: 8ec6953c28594f2aab541c5cd64a096f b0f554e25ca149409cbe9e89a9952e04
 #: cad54c8501a34c199e96fa5348eca600 ec3d58dafa6c42499d19aabc7d4fca1a
 msgid "Default"
-msgstr ""
+msgstr "默认"
 
 #: ../../source/GPU.rst:205 ../../source/GPU.rst:252 ../../source/GPU.rst:432
 #: 0952afba09a84408baf43de6062554c5 426108c5e318455186131d3d08dfd75e
 #: a2e2e05d373f4c03b669c704ce269565
 msgid "Possible values"
-msgstr ""
+msgstr "可能的取值"
 
 #: ../../source/GPU.rst:207 c20f61f52d5d4a9692e2c9142a8238de
 msgid "SYCL_AOT"
-msgstr ""
+msgstr "SYCL_AOT"
 
 #: ../../source/GPU.rst:207 ../../source/GPU.rst:434
 #: 7eccb6aecd1846c5a3093e36b2b83ad7 fe5c48f7869741f2826b14f736d961db
 msgid "Enable SYCL ahead-of-time compilation"
-msgstr ""
+msgstr "启用 SYCL 预编译"
 
 #: ../../source/GPU.rst:207 ../../source/GPU.rst:214
 #: 1026d34074bf413184ac685ee331ae53 cbce172ffb864dba9b135c1bdb858ceb
 msgid "FALSE"
-msgstr ""
+msgstr "I apologize if there was any misunderstanding. Could you please clarify what you meant by \"FALSE\"?"
 
 #: ../../source/GPU.rst:207 ../../source/GPU.rst:214
 #: b0233d0832264afdb04685109860b740 cc825e1ebcad4161b3412e9b3bfa21b5
 msgid "TRUE, FALSE"
-msgstr ""
+msgstr "真，假"
 
 #: ../../source/GPU.rst:209 49eaa77b24e6430ebb7a2341948f00ae
 msgid "SYCL_AOT_GRF_MODE"
-msgstr ""
+msgstr "SYCL_AOT_GRF_MODE"
 
 #: ../../source/GPU.rst:209 ../../source/GPU.rst:436
 #: 89438d2432354b1ca6cedb07c008aff1 f91c6c259b1546babe10bf842c6f1e6f
 msgid "Specify AOT register file mode"
-msgstr ""
+msgstr "请指定AOT寄存器文件模式。"
 
 #: ../../source/GPU.rst:209 ../../source/GPU.rst:436
 #: 870b1211f0de4938876f753c4b52657c c1e791822d214b1da530372203bcabe1
 msgid "Default, Large, AutoLarge"
-msgstr ""
+msgstr "默认，大号，自动大号"
 
 #: ../../source/GPU.rst:212 ../../source/GPU.rst:439
 #: 2ff8ab5ed1074a4080b1e246c134faab 87ddbd333d4e434f862328a0183e0868
 msgid "AMREX_INTEL_ARCH"
-msgstr ""
+msgstr "AMREX_INTEL_ARCH"
 
 #: ../../source/GPU.rst:212 ../../source/GPU.rst:439
 #: 01f6f0cecbc24b469c50e29cfb79919f 253f5ce2140d493ea7eb1645d5dd38c6
 msgid "Specify target if AOT is enabled"
-msgstr ""
+msgstr "请在启用AOT的情况下指定目标。"
 
 #: ../../source/GPU.rst:212 ../../source/GPU.rst:439
 #: 6b1ce8ba6fa64dc9b289c8a9122d3368 ddecaca063884285b748054fa50852f6
 msgid "None"
-msgstr ""
+msgstr "没有。"
 
 #: ../../source/GPU.rst:212 ../../source/GPU.rst:439
 #: 0c719680737a4dae8b7aab97bc6abeeb f98a1941a5eb4d92aec47a3bfec146b4
 msgid "pvc, etc."
-msgstr ""
+msgstr "PVC，等等。"
 
 #: ../../source/GPU.rst:214 30a625cbefae406293a51938ef4a2003
 msgid "SYCL_SPLIT_KERNEL"
-msgstr ""
+msgstr "SYCL_SPLIT_KERNEL"
 
 #: ../../source/GPU.rst:214 ../../source/GPU.rst:441
 #: 2cecd196a0e9424a9e51d9cf5ad0d38d e78c4c94417d4e318920db8b7401a05f
 msgid "Enable SYCL kernel splitting"
-msgstr ""
+msgstr "启用SYCL内核分割"
 
 #: ../../source/GPU.rst:216 75ea948426e3438bbb13c1d797411084
 msgid "USE_ONEDPL"
-msgstr ""
+msgstr "使用ONEDPL"
 
 #: ../../source/GPU.rst:216 ../../source/GPU.rst:443
 #: a37b7331da2f448b8001055e58a17760 f599cb1fcdf146d48b8dec735bfe4966
 msgid "Enable SYCL's oneDPL algorithms"
-msgstr ""
+msgstr "启用SYCL的oneDPL算法"
 
 #: ../../source/GPU.rst:216 ../../source/GPU.rst:260 ../../source/GPU.rst:264
 #: ../../source/GPU.rst:266 ../../source/GPU.rst:269 ../../source/GPU.rst:271
@@ -374,7 +368,7 @@ msgstr ""
 #: a4852c8b993343e4adb4d4a7a4c6bc08 d6218016b24f42c8b851fb59fde4f3e4
 #: f2b057a5fb9a4e3f9addfb8ab113b482
 msgid "NO"
-msgstr ""
+msgstr "不要。"
 
 #: ../../source/GPU.rst:216 ../../source/GPU.rst:256 ../../source/GPU.rst:258
 #: ../../source/GPU.rst:260 ../../source/GPU.rst:262 ../../source/GPU.rst:264
@@ -391,1476 +385,1394 @@ msgstr ""
 #: d8db6f4170004c63929026fed8c6a03d e2383dc27f824b278e3995be32fd5d36
 #: eb8670e2034447ba9267134f36644167
 msgid "YES, NO"
-msgstr ""
+msgstr "是的，不是。"
 
 #: ../../source/GPU.rst:218 44751b3d41b540edbb3f0576873d56a1
 msgid "SYCL_SUB_GROUP_SIZE"
-msgstr ""
+msgstr "SYCL_SUB_GROUP_SIZE"
 
 #: ../../source/GPU.rst:218 ../../source/GPU.rst:445
 #: 8929b0e32f174a2ebe3719cc8ee4eb8d dd5a7608dbad410eb0a550291dab8cf6
 msgid "Specify subgroup size"
-msgstr ""
-
-#: ../../source/GPU.rst:218 ../../source/GPU.rst:445
-#: e0c6280e9ee845e78f2fec92fc74d1d6 f9c5bd7382ad4d4ebd9176b1f0079901
-msgid "32"
-msgstr ""
+msgstr "请指定子组大小。"
 
 #: ../../source/GPU.rst:218 ../../source/GPU.rst:445
 #: 1838829ff07a43ec8c3e20ea30e22803 9d8f45eab5e54b72b327e4c6dea58890
 msgid "64, 32, 16"
 msgstr ""
+"64, 32, 16\n"
+"64，32，16"
 
 #: ../../source/GPU.rst:220 0a893866ad3044239068615b70da7590
 msgid "SYCL_MAX_PARALLEL_LINK_JOBS"
-msgstr ""
+msgstr "SYCL_MAX_PARALLEL_LINK_JOBS的翻译是什么？"
 
 #: ../../source/GPU.rst:220 0d93c2d48e424efa803b68cf794d8320
 msgid "Number of parallel jobs in device link"
-msgstr ""
-
-#: ../../source/GPU.rst:220 eb622b2da42149b8b1d6d05c0e7c2032
-msgid "1"
-msgstr ""
+msgstr "设备链接中的并行作业数量"
 
 #: ../../source/GPU.rst:220 41c9188658ad4366b8f15f9ead6929ce
 msgid "1, 2, 3, etc."
-msgstr ""
+msgstr "1，2，3，等等。"
 
 #: ../../source/GPU.rst:228 3cd391a0a3fa422e9f1adbd5631fcc7c
 msgid "Building with CMake"
-msgstr ""
+msgstr "使用CMake构建"
 
 #: ../../source/GPU.rst:230 98478999420c421198e1170326f37981
 msgid ""
-"To build AMReX with GPU support in CMake, add "
-"``-DAMReX_GPU_BACKEND=CUDA|HIP|SYCL`` to the ``cmake`` invocation, for "
-"CUDA, HIP and SYCL, respectively. By default, AMReX uses 256 threads per "
-"GPU block/group in most situations. This can be changed with "
-"``-DAMReX_GPU_MAX_THREADS=N``, where ``N`` is 128 for example."
+"To build AMReX with GPU support in CMake, add ``-DAMReX_GPU_BACKEND=CUDA|HIP|SYCL`` to the ``cmake`` invocation, for "
+"CUDA, HIP and SYCL, respectively. By default, AMReX uses 256 threads per GPU block/group in most situations. This can "
+"be changed with ``-DAMReX_GPU_MAX_THREADS=N``, where ``N`` is 128 for example."
 msgstr ""
+"要在CMake中构建支持GPU的AMReX，请在cmake调用中添加\"-DAMReX_GPU_BACKEND=CUDA|HIP|SYCL\"，分别对应CUDA、HIP和SYCL。默认情况下，在大多数情况下，AMReX每个GPU块/组使用2"
+"56个线程。可以使用\"-DAMReX_GPU_MAX_THREADS=N\"来更改此值，其中N可以是128，例如。"
 
 #: ../../source/GPU.rst:237 f6dd63fc7f51445eab3b637a3e6f7dab
 msgid "Enabling CUDA support"
-msgstr ""
+msgstr "启用CUDA支持"
 
 #: ../../source/GPU.rst:239 4b77d0ce1a4e4a26b62c4a5c1a88373b
 msgid ""
-"To build AMReX with CUDA support in CMake, add "
-"``-DAMReX_GPU_BACKEND=CUDA`` to the ``cmake`` invocation. For a full list"
-" of CUDA-specific configuration options, check the :ref:`table "
-"<tab:cmakecudavar>` below."
-msgstr ""
+"To build AMReX with CUDA support in CMake, add ``-DAMReX_GPU_BACKEND=CUDA`` to the ``cmake`` invocation. For a full "
+"list of CUDA-specific configuration options, check the :ref:`table <tab:cmakecudavar>` below."
+msgstr "要在CMake中构建支持CUDA的AMReX，请在cmake调用中添加\"-DAMReX_GPU_BACKEND=CUDA\"。有关CUDA特定配置选项的完整列表，请查看下面的表格。"
 
 #: ../../source/GPU.rst:249 af0f08f7ee1240518532000038fe80f1
 msgid "AMReX CUDA-specific build options"
 msgstr ""
+"AMReX CUDA-specific build options\n"
+"\n"
+"AMReX CUDA特定的构建选项"
 
 #: ../../source/GPU.rst:254 96bc31cd8bfa40c6ba6c3883f48b8106
 msgid "AMReX_CUDA_ARCH"
-msgstr ""
+msgstr "AMReX_CUDA_ARCH"
 
 #: ../../source/GPU.rst:254 30aa38679b564239922735fefaead703
 msgid "CUDA target architecture"
-msgstr ""
+msgstr "CUDA目标架构"
 
 #: ../../source/GPU.rst:254 ../../source/GPU.rst:258 ../../source/GPU.rst:277
 #: ../../source/GPU.rst:279 44a307e0134e4646ae3e2f042243a5b0
 #: 66f340b9f8b44d3aa24ec3f795f96bb9 690b08dcde95449da59076cc8adc79bd
 #: 69ca3db278ad42d6ab1a8eee4d06c646
 msgid "Auto"
-msgstr ""
+msgstr "自动"
 
 #: ../../source/GPU.rst:254 ../../source/GPU.rst:273
 #: 8b6b12af6e864a97903a2b734479700c cc2702671f8940369fe7f1895f49ef9f
 msgid "User-defined"
-msgstr ""
+msgstr "用户定义"
 
 #: ../../source/GPU.rst:256 5f1b45e7ac024170967532595422d146
 msgid "AMReX_CUDA_FASTMATH"
-msgstr ""
+msgstr "AMReX_CUDA_FASTMATH"
 
 #: ../../source/GPU.rst:256 bc6cd05e5f9d435eb495834cb419db3b
 msgid "Enable CUDA fastmath library"
-msgstr ""
+msgstr "启用CUDA快速数学库"
 
 #: ../../source/GPU.rst:256 ../../source/GPU.rst:281 ../../source/GPU.rst:441
 #: 3e2c71e0febc4721a70f80172d2d5279 4190f75d37f344afbd8a518ee5fda808
 #: ffb9936b1149464186244ac62bcf537e
 msgid "YES"
-msgstr ""
+msgstr "是的"
 
 #: ../../source/GPU.rst:258 37f9adbbabce44989c397d727e4dd70e
 msgid "AMReX_CUDA_BACKTRACE"
-msgstr ""
+msgstr "AMReX_CUDA_BACKTRACE"
 
 #: ../../source/GPU.rst:258 c8f1a5eff7d2455bad81378af608f435
 msgid "Host function symbol names (e.g. cuda-memcheck)"
-msgstr ""
+msgstr "主机函数符号名称（例如，cuda-memcheck）"
 
 #: ../../source/GPU.rst:260 41e2d6aa7617424abfdcbc106c7c967a
 msgid "AMReX_CUDA_COMPILATION_TIMER"
-msgstr ""
+msgstr "AMReX_CUDA_COMPILATION_TIMER"
 
 #: ../../source/GPU.rst:260 d04015e32d184d94aafbc29bec486586
 msgid "CSV table with time for each compilation phase"
-msgstr ""
+msgstr "每个编译阶段的时间的CSV表格"
 
 #: ../../source/GPU.rst:262 15d942d55eef45adb76f367524c187f8
 msgid "AMReX_CUDA_DEBUG"
-msgstr ""
+msgstr "AMReX_CUDA_DEBUG"
 
 #: ../../source/GPU.rst:262 8b93dceffbb44915b0b669c0590c3506
 msgid "Device debug information (optimizations: off)"
-msgstr ""
+msgstr "设备调试信息（优化：关闭）"
 
 #: ../../source/GPU.rst:262 cf74c54810414e8ebc8b55eb53a9b93f
 msgid "YES: Debug"
-msgstr ""
+msgstr "是的：调试"
 
 #: ../../source/GPU.rst:264 7da44b436efc481f9a3206dd8a0289ec
 msgid "AMReX_CUDA_ERROR_CAPTURE_THIS"
-msgstr ""
+msgstr "AMReX_CUDA_ERROR_CAPTURE_THIS"
 
 #: ../../source/GPU.rst:264 e9d0bddb674246f8a2129ca652bb3b02
 msgid "Error if a CUDA lambda captures a class' this"
-msgstr ""
+msgstr "如果一个CUDA lambda捕获了一个类的this指针，会出现错误。"
 
 #: ../../source/GPU.rst:266 43f85a700ca44fd481aec4695bdb208a
 msgid "AMReX_CUDA_ERROR_CROSS _EXECUTION_SPACE_CALL"
-msgstr ""
+msgstr "AMReX_CUDA_ERROR_CROSS_EXECUTION_SPACE_CALL"
 
 #: ../../source/GPU.rst:266 c7f485f9e5934f9b9fa2d23570735ef2
 msgid "Error if a host function is called from a host device function"
-msgstr ""
+msgstr "如果从主机设备函数调用主机函数，则会出现错误。"
 
 #: ../../source/GPU.rst:269 b4859b5b5b9846788396cddd46535312
 msgid "AMReX_CUDA_KEEP_FILES"
-msgstr ""
+msgstr "AMReX_CUDA_KEEP_FILES"
 
 #: ../../source/GPU.rst:269 0cb639d25b154f1abfdce00783ef332f
 msgid "Keep intermediately files (folder: nvcc_tmp)"
-msgstr ""
+msgstr "保留中间文件（文件夹：nvcc_tmp）"
 
 #: ../../source/GPU.rst:271 b666d50bfc3348a58d602903b4a2283b
 msgid "AMReX_CUDA_LTO"
-msgstr ""
+msgstr "AMReX_CUDA_LTO"
 
 #: ../../source/GPU.rst:271 628be4d63df046ddb54741a93a0c5d1c
 msgid "Enable CUDA link-time-optimization"
-msgstr ""
+msgstr "启用CUDA链接时优化"
 
 #: ../../source/GPU.rst:273 f8c2cac9d04e4e82a048827f68589ffb
 msgid "AMReX_CUDA_MAXREGCOUNT"
-msgstr ""
+msgstr "AMReX_CUDA_MAXREGCOUNT的翻译是什么？"
 
 #: ../../source/GPU.rst:273 efc091c6ec7347bc94d04096afa482bb
 msgid "Limits the number of CUDA registers available"
-msgstr ""
-
-#: ../../source/GPU.rst:273 f3897af512e546e3ae2e716437c8aab8
-msgid "255"
-msgstr ""
+msgstr "限制可用的CUDA寄存器数量"
 
 #: ../../source/GPU.rst:275 7ad27e7ffca742578b7b93d6b1ac6311
 msgid "AMReX_CUDA_PTX_VERBOSE"
-msgstr ""
+msgstr "AMReX_CUDA_PTX_VERBOSE"
 
 #: ../../source/GPU.rst:275 f11bd5d169da41d8912b37c45e092d54
 msgid "Verbose code generation statistics in ptxas"
-msgstr ""
+msgstr "在 ptxas 中生成冗长的代码统计信息"
 
 #: ../../source/GPU.rst:277 f86e2ce84b144199a4b3f8a3a18fdcec
 msgid "AMReX_CUDA_SHOW_CODELINES"
-msgstr ""
+msgstr "AMReX_CUDA_SHOW_CODELINES"
 
 #: ../../source/GPU.rst:277 62dac2d07fe0448e8b3fbccc637a3111
 msgid "Source information in PTX (optimizations: on)"
-msgstr ""
+msgstr "在 PTX 中的源代码信息（优化：开启）"
 
 #: ../../source/GPU.rst:279 a5cb7b525d074ff8b9302cd4256b0f57
 msgid "AMReX_CUDA_SHOW_LINENUMBERS"
-msgstr ""
+msgstr "AMReX_CUDA_SHOW_LINENUMBERS"
 
 #: ../../source/GPU.rst:279 8a1eb4e804864df8a652b31f29f7fea7
 msgid "Line-number information (optimizations: on)"
-msgstr ""
+msgstr "行号信息（优化：开启）"
 
 #: ../../source/GPU.rst:281 72988c1978264d93be4cfc849acaec79
 msgid "AMReX_CUDA_WARN_CAPTURE_THIS"
-msgstr ""
+msgstr "AMReX_CUDA_WARN_CAPTURE_THIS"
 
 #: ../../source/GPU.rst:281 5307ddc9072c472290bdad558eb83f3f
 msgid "Warn if a CUDA lambda captures a class' this"
-msgstr ""
+msgstr "如果一个 CUDA lambda 捕获了一个类的 this 指针，请进行警告。"
 
 #: ../../source/GPU.rst:288 4af133d92a72411489faa36e9aa9c060
 msgid ""
-"The target architecture to build for can be specified via the "
-"configuration option ``-DAMReX_CUDA_ARCH=<target-architecture>``, where "
-"``<target-architecture>`` can be either the name of the NVIDIA GPU "
-"generation, i.e. ``Turing``, ``Volta``, ``Ampere``, ``...`` , or its "
-"`compute capability <https://developer.nvidia.com/cuda-gpus>`_, i.e. "
-"``10.0``, ``9.0``,  ``...`` . For example, on Cori GPUs you can specify "
-"the architecture as follows:"
+"The target architecture to build for can be specified via the configuration option "
+"``-DAMReX_CUDA_ARCH=<target-architecture>``, where ``<target-architecture>`` can be either the name of the NVIDIA GPU "
+"generation, i.e. ``Turing``, ``Volta``, ``Ampere``, ``...`` , or its `compute capability "
+"<https://developer.nvidia.com/cuda-gpus>`_, i.e. ``10.0``, ``9.0``,  ``...`` . For example, on Cori GPUs you can "
+"specify the architecture as follows:"
 msgstr ""
+"可以通过配置选项``-DAMReX_CUDA_ARCH=<目标架构>``来指定要构建的目标架构，其中``<目标架构>``可以是NVIDIA "
+"GPU的代号，例如``Turing``、``Volta``、``Ampere``等，或者是其`计算能力 "
+"<https://developer.nvidia.com/cuda-gpus>`_，例如``10.0``、``9.0``等。例如，在Cori GPU上，您可以按如下方式指定架构："
 
 #: ../../source/GPU.rst:301 d9d1c18842754b42859d5797e65459fd
 msgid ""
-"If no architecture is specified, CMake will default to the architecture "
-"defined in the *environment variable* ``AMREX_CUDA_ARCH`` (note: all "
-"caps). If the latter is not defined, CMake will try to determine which "
-"GPU architecture is supported by the system. If more than one is found, "
-"CMake will build for all of them. If autodetection fails, a list of "
-"\"common\" architectures is assumed. `Multiple CUDA architectures "
-"<https://cmake.org/cmake/help/latest/module/FindCUDA.html#commands>`__ "
-"can also be set manually as semicolon-separated list, e.g. "
-"``-DAMReX_CUDA_ARCH=7.0;8.0``. Building for multiple CUDA architectures "
-"will generally result in a larger library and longer build times."
+"If no architecture is specified, CMake will default to the architecture defined in the *environment variable* "
+"``AMREX_CUDA_ARCH`` (note: all caps). If the latter is not defined, CMake will try to determine which GPU architecture "
+"is supported by the system. If more than one is found, CMake will build for all of them. If autodetection fails, a list "
+"of \"common\" architectures is assumed. `Multiple CUDA architectures "
+"<https://cmake.org/cmake/help/latest/module/FindCUDA.html#commands>`__ can also be set manually as semicolon-separated "
+"list, e.g. ``-DAMReX_CUDA_ARCH=7.0;8.0``. Building for multiple CUDA architectures will generally result in a larger "
+"library and longer build times."
 msgstr ""
+"如果未指定架构，CMake将默认使用*环境变量* "
+"``AMREX_CUDA_ARCH``（注意：全大写）中定义的架构。如果未定义后者，CMake将尝试确定系统支持的GPU架构。如果找到多个架构，CMake将为所有架构进行构建。如果自动检测失败，则假定为“常见”架构列表。也可以手动设置`"
+"多个CUDA架构 <https://cmake.org/cmake/help/latest/module/FindCUDA.html#commands>`__，以分号分隔的列表形式，例如 "
+"``-DAMReX_CUDA_ARCH=7.0;8.0``。构建多个CUDA架构通常会导致库文件更大，构建时间更长。"
 
 #: ../../source/GPU.rst:309 b5c38f8d5b0a4706a344e06e32bb407b
 msgid ""
-"**Note that AMReX supports NVIDIA GPU architectures with compute "
-"capability 6.0 or higher and CUDA Toolkit version 9.0 or higher.**"
-msgstr ""
+"**Note that AMReX supports NVIDIA GPU architectures with compute capability 6.0 or higher and CUDA Toolkit version 9.0 "
+"or higher.**"
+msgstr "请注意，AMReX支持具有计算能力6.0或更高版本的NVIDIA GPU架构和CUDA Toolkit 9.0或更高版本。"
 
 #: ../../source/GPU.rst:312 3e3394905d6f4cf89033335aace09d2a
 msgid ""
-"In order to import the CUDA-enabled AMReX library into your CMake "
-"project, you need to include the following code into the appropriate "
-"CMakeLists.txt file:"
-msgstr ""
+"In order to import the CUDA-enabled AMReX library into your CMake project, you need to include the following code into "
+"the appropriate CMakeLists.txt file:"
+msgstr "为了将支持CUDA的AMReX库导入到您的CMake项目中，您需要将以下代码包含在适当的CMakeLists.txt文件中："
 
 #: ../../source/GPU.rst:323 d6e6fbc790ec4a43b1e26236b1188ff0
 msgid ""
-"If instead of using an external installation of AMReX you prefer to "
-"include AMReX as a subproject in your CMake setup, we strongly encourage "
-"you to use the ``AMReX_SetupCUDA`` module as shown below if the CMake "
-"version is less than 3.20:"
-msgstr ""
+"If instead of using an external installation of AMReX you prefer to include AMReX as a subproject in your CMake setup, "
+"we strongly encourage you to use the ``AMReX_SetupCUDA`` module as shown below if the CMake version is less than 3.20:"
+msgstr "如果您不想使用外部安装的 AMReX，而是希望将 AMReX 作为子项目包含在您的 CMake 设置中，我们强烈建议您在 CMake 版本低于 3.20 的情况下使用下面所示的 \"AMReX_SetupCUDA\" 模块。"
 
 #: ../../source/GPU.rst:344 63126142be8c43cf9bb61dacc4f78714
 msgid ""
-"To ensure consistency between CUDA-enabled AMReX and any CMake target "
-"that links against it, we provide the helper function "
-"``setup_target_for_cuda_compilation()``:"
-msgstr ""
+"To ensure consistency between CUDA-enabled AMReX and any CMake target that links against it, we provide the helper "
+"function ``setup_target_for_cuda_compilation()``:"
+msgstr "为了确保CUDA-enabled AMReX与任何链接到它的CMake目标之间的一致性，我们提供了辅助函数``setup_target_for_cuda_compilation()``："
 
 #: ../../source/GPU.rst:365 7dadef68f0f64eff9955031235c82465
 msgid "Enabling HIP Support"
-msgstr ""
+msgstr "启用 HIP 支持"
 
 #: ../../source/GPU.rst:367 38a81759dcee4c5ebc2d9143715752d5
 msgid ""
-"To build AMReX with HIP support in CMake, add ``-DAMReX_GPU_BACKEND=HIP "
-"-DAMReX_AMD_ARCH=<target-arch> -DCMAKE_CXX_COMPILER=<your-hip-compiler>``"
-" to the ``cmake`` invocation. If you don't need Fortran features "
-"(``AMReX_FORTRAN=OFF``), it is recommended to use AMD's ``clang++`` as "
-"the HIP compiler. (Please see these issues for reference in rocm/HIP <= "
-"4.2.0 `[1] <https://github.com/ROCm-Developer-Tools/HIP/issues/2275>`__ "
-"`[2] <https://github.com/AMReX-Codes/amrex/pull/2031>`__.)"
+"To build AMReX with HIP support in CMake, add ``-DAMReX_GPU_BACKEND=HIP -DAMReX_AMD_ARCH=<target-arch> "
+"-DCMAKE_CXX_COMPILER=<your-hip-compiler>`` to the ``cmake`` invocation. If you don't need Fortran features "
+"(``AMReX_FORTRAN=OFF``), it is recommended to use AMD's ``clang++`` as the HIP compiler. (Please see these issues for "
+"reference in rocm/HIP <= 4.2.0 `[1] <https://github.com/ROCm-Developer-Tools/HIP/issues/2275>`__ `[2] "
+"<https://github.com/AMReX-Codes/amrex/pull/2031>`__.)"
 msgstr ""
+"要在CMake中构建支持HIP的AMReX，请在``cmake``调用中添加``-DAMReX_GPU_BACKEND=HIP -DAMReX_AMD_ARCH=<target-arch> "
+"-DCMAKE_CXX_COMPILER=<your-hip-compiler>``。如果您不需要Fortran功能（``AMReX_FORTRAN=OFF``），建议使用AMD的``clang++``"
+"作为HIP编译器。（请参考以下问题以了解在rocm/HIP <= 4.2.0中的参考 `[1] <https://github.com/ROCm-Developer-Tools/HIP/issues/2275>`__ `[2] "
+"<https://github.com/AMReX-Codes/amrex/pull/2031>`__。）"
 
 #: ../../source/GPU.rst:375 aa7c03b935c6495aa2e66423b1938946
 msgid ""
-"In AMReX CMake, the HIP compiler is treated as a special C++ compiler and"
-" therefore the standard CMake variables used to customize the compilation"
-" process for C++, for example ``CMAKE_CXX_FLAGS``, can be used for HIP as"
-" well."
-msgstr ""
+"In AMReX CMake, the HIP compiler is treated as a special C++ compiler and therefore the standard CMake variables used "
+"to customize the compilation process for C++, for example ``CMAKE_CXX_FLAGS``, can be used for HIP as well."
+msgstr "在AMReX的CMake中，HIP编译器被视为特殊的C++编译器，因此用于自定义C++编译过程的标准CMake变量，例如``CMAKE_CXX_FLAGS``，也可以用于HIP。"
 
 #: ../../source/GPU.rst:380 5565e6565593481985519b762167fd19
 msgid ""
-"Since CMake does not support autodetection of HIP compilers/target "
-"architectures yet, ``CMAKE_CXX_COMPILER`` must be set to a valid HIP "
-"compiler, i.e. ``clang++`` or ``hipcc``, and ``AMReX_AMD_ARCH`` to the "
-"target architecture you are building for. Thus **AMReX_AMD_ARCH and "
-"CMAKE_CXX_COMPILER are required user-inputs when AMReX_GPU_BACKEND=HIP**."
-" We again read also an *environment variable*: ``AMREX_AMD_ARCH`` (note: "
-"all caps) and the C++ compiler can be hinted as always, e.g. with "
-"``export CXX=$(which clang++)``. Below is an example configuration for "
-"HIP on Tulip:"
+"Since CMake does not support autodetection of HIP compilers/target architectures yet, ``CMAKE_CXX_COMPILER`` must be "
+"set to a valid HIP compiler, i.e. ``clang++`` or ``hipcc``, and ``AMReX_AMD_ARCH`` to the target architecture you are "
+"building for. Thus **AMReX_AMD_ARCH and CMAKE_CXX_COMPILER are required user-inputs when AMReX_GPU_BACKEND=HIP**. We "
+"again read also an *environment variable*: ``AMREX_AMD_ARCH`` (note: all caps) and the C++ compiler can be hinted as "
+"always, e.g. with ``export CXX=$(which clang++)``. Below is an example configuration for HIP on Tulip:"
 msgstr ""
+"由于CMake目前不支持自动检测HIP编译器/目标架构，因此在使用AMReX_GPU_BACKEND=HIP时，必须将``CMAKE_CXX_COMPILER``设置为有效的HIP编译器，例如``clang++``或``hipcc``"
+"，并将``AMReX_AMD_ARCH``设置为正在构建的目标架构。因此，在AMReX_GPU_BACKEND=HIP时，**AMReX_AMD_ARCH和CMAKE_CXX_COMPILER是必需的用户输入**"
+"。我们还会读取一个环境变量：``AMREX_AMD_ARCH``（注意：全大写），并且C++编译器可以像往常一样进行提示，例如``export CXX=$(which clang++)``。以下是在Tulip上使用HIP的示例配置："
 
 #: ../../source/GPU.rst:396 ba493790b44948d08eaa6e1db485ad0a
 msgid "Enabling SYCL Support"
-msgstr ""
+msgstr "启用 SYCL 支持"
 
 #: ../../source/GPU.rst:398 4d74da9951b54dfdbbecbc3a825aa9cc
 msgid ""
-"To build AMReX with SYCL support in CMake, add ``-DAMReX_GPU_BACKEND=SYCL"
-" -DCMAKE_CXX_COMPILER=<your-sycl-compiler>`` to the ``cmake`` invocation."
-" For a full list of SYCL-specific configuration options, check the "
-":ref:`table <tab:cmakesyclvar>` below."
+"To build AMReX with SYCL support in CMake, add ``-DAMReX_GPU_BACKEND=SYCL -DCMAKE_CXX_COMPILER=<your-sycl-compiler>`` "
+"to the ``cmake`` invocation. For a full list of SYCL-specific configuration options, check the :ref:`table "
+"<tab:cmakesyclvar>` below."
 msgstr ""
+"要在CMake中构建支持SYCL的AMReX，请在cmake调用中添加\"-DAMReX_GPU_BACKEND=SYCL "
+"-DCMAKE_CXX_COMPILER=<your-sycl-compiler>\"。有关SYCL特定配置选项的完整列表，请查看下面的表格。"
 
 #: ../../source/GPU.rst:405 d17eb3defc4b4050b7d4e77b697ce3d3
 msgid ""
-"In AMReX CMake, the SYCL compiler is treated as a special C++ compiler "
-"and therefore the standard CMake variables used to customize the "
-"compilation process for C++, for example ``CMAKE_CXX_FLAGS``, can be used"
-" for SYCL as well."
-msgstr ""
+"In AMReX CMake, the SYCL compiler is treated as a special C++ compiler and therefore the standard CMake variables used "
+"to customize the compilation process for C++, for example ``CMAKE_CXX_FLAGS``, can be used for SYCL as well."
+msgstr "在 AMReX CMake 中，SYCL 编译器被视为特殊的 C++ 编译器，因此用于自定义 C++ 编译过程的标准 CMake 变量，例如 `CMAKE_CXX_FLAGS`，同样适用于 SYCL。"
 
 #: ../../source/GPU.rst:410 5ff922e3015a42b981b45117948ce5d6
 msgid ""
-"Since CMake does not support autodetection of SYCL compilers yet, "
-"``CMAKE_CXX_COMPILER`` must be set to a valid SYCL compiler. i.e. "
-"``icpx``. Thus **CMAKE_CXX_COMPILER is a required user-input when "
-"AMReX_GPU_BACKEND=SYCL**. At this time, **the only supported SYCL "
-"compiler is icpx**. Below is an example configuration for SYCL:"
+"Since CMake does not support autodetection of SYCL compilers yet, ``CMAKE_CXX_COMPILER`` must be set to a valid SYCL "
+"compiler. i.e. ``icpx``. Thus **CMAKE_CXX_COMPILER is a required user-input when AMReX_GPU_BACKEND=SYCL**. At this "
+"time, **the only supported SYCL compiler is icpx**. Below is an example configuration for SYCL:"
 msgstr ""
+"由于CMake目前尚不支持SYCL编译器的自动检测，因此必须将``CMAKE_CXX_COMPILER``设置为有效的SYCL编译器，例如``icpx``。因此，在AMReX_GPU_BACKEND=SYCL时，**CMAKE_CXX_"
+"COMPILER是必需的用户输入**。目前，**icpx是唯一支持的SYCL编译器**。以下是SYCL的示例配置："
 
 #: ../../source/GPU.rst:429 cf4ecb1698e9463ab91c196b1ed9397c
 msgid "AMReX SYCL-specific build options"
-msgstr ""
+msgstr "AMReX SYCL特定的构建选项"
 
 #: ../../source/GPU.rst:434 16ba11f98eb24b7e94291fd444ce9d0f
 msgid "AMReX_SYCL_AOT"
-msgstr ""
+msgstr "AMReX_SYCL_AOT"
 
 #: ../../source/GPU.rst:436 2a59769e3d664d07a589896d1ba4b524
 msgid "AMReX_SYCL_AOT_GRF_MODE"
-msgstr ""
+msgstr "AMReX_SYCL_AOT_GRF_MODE"
 
 #: ../../source/GPU.rst:441 29f8f3fac1be4fcfbaa82a5224075264
 msgid "AMReX_SYCL_SPLIT_KERNEL"
-msgstr ""
+msgstr "AMReX_SYCL_SPLIT_KERNEL"
 
 #: ../../source/GPU.rst:443 6354f02f87ed45e0890d4d1a67bcbe61
 msgid "AMReX_SYCL_ONEDPL"
-msgstr ""
+msgstr "AMReX_SYCL_ONEDPL"
 
 #: ../../source/GPU.rst:445 2b8059901dd64dcdbd1a4d6782662603
 msgid "AMReX_SYCL_SUB_GROUP_SIZE"
-msgstr ""
+msgstr "AMReX_SYCL_SUB_GROUP_SIZE的翻译是什么？"
 
 #: ../../source/GPU.rst:458 7e3794ee23be4033a106560bd2650e30
 msgid "Gpu Namespace and Macros"
-msgstr ""
+msgstr "GPU命名空间和宏"
 
 #: ../../source/GPU.rst:460 76e31fc2a3ff4b1fbf8827f837f06630
 msgid ""
-"Most GPU related classes and functions are in ``namespace Gpu``, which is"
-" inside ``namespace amrex``. For example, the GPU configuration class "
-"``Device`` can be referenced to at ``amrex::Gpu::Device``."
-msgstr ""
+"Most GPU related classes and functions are in ``namespace Gpu``, which is inside ``namespace amrex``. For example, the "
+"GPU configuration class ``Device`` can be referenced to at ``amrex::Gpu::Device``."
+msgstr "大多数与 GPU 相关的类和函数位于 `Gpu` 命名空间中，该命名空间位于 `amrex` 命名空间内。例如，GPU 配置类 `Device` 可以通过 `amrex::Gpu::Device` 引用。"
 
 #: ../../source/GPU.rst:464 a66da17dfade4a528a7905b7cb9aed1e
 msgid ""
-"For portability, AMReX defines some macros for CUDA/HIP function "
-"qualifiers and they should be preferred to allow execution when "
-"``USE_CUDA=FALSE`` and ``USE_HIP=FALSE``. These include:"
-msgstr ""
+"For portability, AMReX defines some macros for CUDA/HIP function qualifiers and they should be preferred to allow "
+"execution when ``USE_CUDA=FALSE`` and ``USE_HIP=FALSE``. These include:"
+msgstr "为了提高可移植性，AMReX为CUDA/HIP函数限定符定义了一些宏，应优先使用这些宏，以便在“USE_CUDA=FALSE”和“USE_HIP=FALSE”时执行。这些宏包括："
 
 #: ../../source/GPU.rst:478 0d639296aa0d4a6dabbe95318d9a51b7
-msgid ""
-"Note that when AMReX is not built with ``CUDA/HIP/SYCL``, these macros "
-"expand to empty space."
-msgstr ""
+msgid "Note that when AMReX is not built with ``CUDA/HIP/SYCL``, these macros expand to empty space."
+msgstr "请注意，当未使用CUDA/HIP/SYCL构建AMReX时，这些宏会展开为空白。"
 
 #: ../../source/GPU.rst:481 b4345ad0ecda4484a50c06d88e043803
 msgid ""
-"When AMReX is compiled with ``USE_CUDA=TRUE``, ``USE_HIP=TRUE``, "
-"``USE_SYCL=TRUE``, or ``USE_ACC=TRUE``  the preprocessor macros "
-"``AMREX_USE_CUDA``, ``AMREX_USE_HIP``, ``AMREX_USE_SYCL``, or "
-"``AMREX_USE_ACC`` respectively are defined for conditional programming, "
-"as well as ``AMREX_USE_GPU``. This ``AMREX_USE_GPU`` definition can be "
-"used in application code if different functionality should be used when "
-"AMReX is built with GPU support. When AMReX is compiled with "
-"``USE_OMP_OFFLOAD=TRUE``, ``AMREX_USE_OMP_OFFLOAD`` is defined."
+"When AMReX is compiled with ``USE_CUDA=TRUE``, ``USE_HIP=TRUE``, ``USE_SYCL=TRUE``, or ``USE_ACC=TRUE``  the "
+"preprocessor macros ``AMREX_USE_CUDA``, ``AMREX_USE_HIP``, ``AMREX_USE_SYCL``, or ``AMREX_USE_ACC`` respectively are "
+"defined for conditional programming, as well as ``AMREX_USE_GPU``. This ``AMREX_USE_GPU`` definition can be used in "
+"application code if different functionality should be used when AMReX is built with GPU support. When AMReX is compiled "
+"with ``USE_OMP_OFFLOAD=TRUE``, ``AMREX_USE_OMP_OFFLOAD`` is defined."
 msgstr ""
+"When AMReX is compiled with the options \"USE_CUDA=TRUE\", \"USE_HIP=TRUE\", \"USE_SYCL=TRUE\", or \"USE_ACC=TRUE\", "
+"the corresponding preprocessor macros \"AMREX_USE_CUDA\", \"AMREX_USE_HIP\", \"AMREX_USE_SYCL\", or \"AMREX_USE_ACC\" "
+"are defined for conditional programming. Additionally, the macro \"AMREX_USE_GPU\" is defined. This \"AMREX_USE_GPU\" "
+"definition can be utilized in the application code to implement different functionality when AMReX is built with GPU "
+"support. Similarly, when AMReX is compiled with the option \"USE_OMP_OFFLOAD=TRUE\", the macro "
+"\"AMREX_USE_OMP_OFFLOAD\" is defined."
 
 #: ../../source/GPU.rst:492 8a1d77a3fb634fc4876aae29cfc787b2
 msgid ""
-"In addition to AMReX's preprocessor macros, CUDA provides the "
-"``__CUDA_ARCH__`` macro which is only defined when in device code. HIP "
-"and Sycl provide similar macros. ``AMREX_DEVICE_COMPILE`` should be used "
-"when a ``__host__ __device__`` function requires separate code for the "
-"CPU and GPU implementations."
+"In addition to AMReX's preprocessor macros, CUDA provides the ``__CUDA_ARCH__`` macro which is only defined when in "
+"device code. HIP and Sycl provide similar macros. ``AMREX_DEVICE_COMPILE`` should be used when a ``__host__ "
+"__device__`` function requires separate code for the CPU and GPU implementations."
 msgstr ""
+"除了AMReX的预处理宏之外，CUDA还提供了``__CUDA_ARCH__``宏，该宏仅在设备代码中定义。HIP和Sycl也提供类似的宏。当一个``__host__ "
+"__device__``函数需要为CPU和GPU实现编写不同的代码时，应使用``AMREX_DEVICE_COMPILE``。"
 
 #: ../../source/GPU.rst:503 2cd546409c8d42118e62875f6707b864
 msgid "Memory Allocation"
-msgstr ""
+msgstr "内存分配"
 
 #: ../../source/GPU.rst:505 7765735be4604b0686b320bc697e5c22
 msgid ""
-"To provide portability and improve memory allocation performance, AMReX "
-"provides a number of memory pools.  When compiled without GPU support, "
-"all :cpp:`Arena`\\ s use standard :cpp:`new` and :cpp:`delete` operators."
-" With GPU support, the :cpp:`Arena`\\ s each allocate with a specific "
-"type of GPU memory:"
-msgstr ""
+"To provide portability and improve memory allocation performance, AMReX provides a number of memory pools.  When "
+"compiled without GPU support, all :cpp:`Arena`\\ s use standard :cpp:`new` and :cpp:`delete` operators. With GPU "
+"support, the :cpp:`Arena`\\ s each allocate with a specific type of GPU memory:"
+msgstr "为了提供可移植性并改善内存分配性能，AMReX提供了多个内存池。在没有GPU支持的情况下编译时，所有的Arena都使用标准的new和delete运算符。有了GPU支持，每个Arena都使用特定类型的GPU内存进行分配："
 
 #: ../../source/GPU.rst:517 8bbc68cb397d43198478d14be87331a3
 msgid "Memory Arenas"
-msgstr ""
+msgstr "内存区域"
 
 #: ../../source/GPU.rst:520 ../../source/GPU.rst:721
 #: 994dc76ad2c2446a97cf452fd7c8dd77 9ae67437d9d0431cbf9141fd0bf3471f
 msgid "Arena"
-msgstr ""
+msgstr "竞技场"
 
 #: ../../source/GPU.rst:520 4ef264b02d80485798f3f9904e68c45c
 msgid "Memory Type"
-msgstr ""
+msgstr "内存类型"
 
 #: ../../source/GPU.rst:522 ../../source/GPU.rst:723
 #: 28ea5d98a3fa479ea07803c7e9f54abe 54c43e45860b40af9254a8177d3ac4b6
 msgid "The_Arena()"
-msgstr ""
+msgstr "竞技场()"
 
 #: ../../source/GPU.rst:522 2427f2545846407496285e9848c7b6dc
 msgid "managed or device memory"
-msgstr ""
+msgstr "管理或设备内存"
 
 #: ../../source/GPU.rst:524 f23f6abdeae940ba8b4a603c0807fd19
 msgid "The_Device_Arena()"
-msgstr ""
+msgstr "The_Device_Arena() 设备竞技场()"
 
 #: ../../source/GPU.rst:524 8e64130125da4845b9ea2dc71f16c268
 msgid "device memory, could be an alias to The_Arena()"
-msgstr ""
+msgstr "设备内存，可以作为The_Arena()的别名。"
 
 #: ../../source/GPU.rst:526 ../../source/GPU.rst:727
 #: 070d6a654d95436fb8538f0f25bccef1 8620db4da08949b395ad09c26a54366b
 msgid "The_Managed_Arena()"
-msgstr ""
+msgstr "The_Managed_Arena()"
 
 #: ../../source/GPU.rst:526 c3e65e3b5bcf421dbfa862c4b8fbd96d
 msgid "managed memory, could be an alias to The_Arena()"
-msgstr ""
+msgstr "管理内存，可能是对The_Arena()的别名。"
 
 #: ../../source/GPU.rst:528 ../../source/GPU.rst:725
 #: 1c91722899d34ff6ae443e9c03bccbe3 5e1dffd028ae4111b20f928d81e42c14
 msgid "The_Pinned_Arena()"
-msgstr ""
+msgstr "固定竞技场()"
 
 #: ../../source/GPU.rst:528 ef812149c42547f89a391a3d4bb2efb4
 msgid "pinned memory"
-msgstr ""
+msgstr "固定内存"
 
 #: ../../source/GPU.rst:535 715c35ac96ec45508be9203fea29e939
 msgid "The Arena object returned by these calls provides access to two functions:"
-msgstr ""
+msgstr "这些调用返回的Arena对象提供了访问两个函数的方式："
 
 #: ../../source/GPU.rst:545 e23026a61f0741c08388ba079d12798a
 msgid ""
-":cpp:`The_Arena()` is used for memory allocation of data in "
-":cpp:`BaseFab`.  By default, it allocates device memory.  This can be "
-"changed with a boolean runtime parameter "
-"``amrex.the_arena_is_managed=1``. When managed memory is enabled, the "
-"data in a :cpp:`MultiFab` is placed in device memory by default and is "
-"accessible from both CPU host and GPU device. This allows application "
-"codes to develop their GPU capability gradually. The behavior of "
-":cpp:`The_Managed_Arena()` likewise depends on the "
-"``amrex.the_arena_is_managed`` parameter. If "
-"``amrex.the_arena_is_managed=0``, :cpp:`The_Managed_Arena()` is a "
-"separate pool of managed memory. If ``amrex.the_arena_is_managed=1``, "
-":cpp:`The_Managed_Arena()` is simply aliased to :cpp:`The_Arena()` to "
-"reduce memory fragmentation."
+":cpp:`The_Arena()` is used for memory allocation of data in :cpp:`BaseFab`.  By default, it allocates device memory.  "
+"This can be changed with a boolean runtime parameter ``amrex.the_arena_is_managed=1``. When managed memory is enabled, "
+"the data in a :cpp:`MultiFab` is placed in device memory by default and is accessible from both CPU host and GPU "
+"device. This allows application codes to develop their GPU capability gradually. The behavior of "
+":cpp:`The_Managed_Arena()` likewise depends on the ``amrex.the_arena_is_managed`` parameter. If "
+"``amrex.the_arena_is_managed=0``, :cpp:`The_Managed_Arena()` is a separate pool of managed memory. If "
+"``amrex.the_arena_is_managed=1``, :cpp:`The_Managed_Arena()` is simply aliased to :cpp:`The_Arena()` to reduce memory "
+"fragmentation."
 msgstr ""
+":cpp:`The_Arena()`函数用于在:cpp:`BaseFab`中分配数据的内存。默认情况下，它分配设备内存。可以通过一个布尔型的运行时参数``amrex.the_arena_is_managed=1``"
+"来改变这一行为。当启用托管内存时，:cpp:`MultiFab`中的数据默认存储在设备内存中，并且可以从CPU主机和GPU设备访问。这使得应用程序能够逐步开发其GPU能力。:cpp:`The_Managed_Arena()`的行为也取决于`"
+"`amrex.the_arena_is_managed``参数。如果``amrex.the_arena_is_managed=0``，:cpp:`The_Managed_Arena()`是一个独立的托管内存池。如果``amrex.the_"
+"arena_is_managed=1``，:cpp:`The_Managed_Arena()`只是简单地别名为:cpp:`The_Arena()`，以减少内存碎片化。"
 
 #: ../../source/GPU.rst:557 e3f030f3160c422296b7d56e1d4ae2ee
 msgid ""
-"In :cpp:`amrex::Initialize`, a large amount of GPU device memory is "
-"allocated and is kept in :cpp:`The_Arena()`.  The default is 3/4 of the "
-"total device memory, and it can be changed with a :cpp:`ParmParse` "
-"parameter, ``amrex.the_arena_init_size``, in the unit of bytes.  The "
-"default initial size for other arenas is 8388608 (i.e., 8 MB).  For "
-":cpp:`The_Managed_Arena()` and :cpp:`The_Device_Arena()`, it can be "
-"changed with ``amrex.the_managed_arena_init_size`` and "
-"``amrex.the_device_arena_init_size``, respectively, if they are not an "
-"alias to :cpp:`The_Arena()`.  For :cpp:`The_Pinned_Arena()`, it can be "
-"changed with ``amrex.the_pinned_arena_init_size``.  The user can also "
-"specify a release threshold for these arenas.  If the memory usage in an "
-"arena is below the threshold, the arena will keep the memory for later "
-"reuse, otherwise it will try to release memory back to the system if it "
-"is not being used.  By default, the release threshold for "
-":cpp:`The_Arena()` is set to be a huge number that prevents the memory "
-"being released automatically, and it can be changed with a parameter, "
-"``amrex.the_arena_release_threshold``.  For :cpp:`The_Pinned_Arena()`, "
-"the default release threshold is the size of the total device memory, and"
-" the runtime parameter is ``amrex.the_pinned_arena_release_threshold``.  "
-"If it is a separate arena, the behavior of :cpp:`The_Device_Area()` or "
-":cpp:`The_Managed_Arena()` can be changed with "
-"``amrex.the_device_arena_release_threshold`` or "
-"``amrex.the_managed_arena_release_threshold``.  Note that the units for "
-"all the parameter discussed above are bytes.  All these arenas also have "
-"a member function :cpp:`freeUnused()` that can be used to manually "
-"release unused memory back to the system."
+"In :cpp:`amrex::Initialize`, a large amount of GPU device memory is allocated and is kept in :cpp:`The_Arena()`.  The "
+"default is 3/4 of the total device memory, and it can be changed with a :cpp:`ParmParse` parameter, "
+"``amrex.the_arena_init_size``, in the unit of bytes.  The default initial size for other arenas is 8388608 (i.e., 8 "
+"MB).  For :cpp:`The_Managed_Arena()` and :cpp:`The_Device_Arena()`, it can be changed with "
+"``amrex.the_managed_arena_init_size`` and ``amrex.the_device_arena_init_size``, respectively, if they are not an alias "
+"to :cpp:`The_Arena()`.  For :cpp:`The_Pinned_Arena()`, it can be changed with ``amrex.the_pinned_arena_init_size``.  "
+"The user can also specify a release threshold for these arenas.  If the memory usage in an arena is below the "
+"threshold, the arena will keep the memory for later reuse, otherwise it will try to release memory back to the system "
+"if it is not being used.  By default, the release threshold for :cpp:`The_Arena()` is set to be a huge number that "
+"prevents the memory being released automatically, and it can be changed with a parameter, "
+"``amrex.the_arena_release_threshold``.  For :cpp:`The_Pinned_Arena()`, the default release threshold is the size of the "
+"total device memory, and the runtime parameter is ``amrex.the_pinned_arena_release_threshold``.  If it is a separate "
+"arena, the behavior of :cpp:`The_Device_Area()` or :cpp:`The_Managed_Arena()` can be changed with "
+"``amrex.the_device_arena_release_threshold`` or ``amrex.the_managed_arena_release_threshold``.  Note that the units for "
+"all the parameter discussed above are bytes.  All these arenas also have a member function :cpp:`freeUnused()` that can "
+"be used to manually release unused memory back to the system."
 msgstr ""
+"在`amrex::Initialize`函数中，会分配大量的GPU设备内存，并将其保存在`The_Arena()`中。默认情况下，分配的内存大小为设备总内存的3/4，并且可以通过`ParmParse`参数`amrex.the_arena_"
+"init_size`进行更改，单位为字节。其他arena的默认初始大小为8388608（即8MB）。对于`The_Managed_Arena()`和`The_Device_Arena()`，可以通过`amrex.the_managed_"
+"arena_init_size`和`amrex.the_device_arena_init_size`进行更改，如果它们不是`The_Arena()`的别名。对于`The_Pinned_Arena()`，可以通过`amrex.the_"
+"pinned_arena_init_size`进行更改。用户还可以为这些arena指定释放阈值。如果arena中的内存使用量低于阈值，则arena将保留内存以供以后重用；否则，如果内存未被使用，则尝试将内存释放回系统。默认情况下，`The_"
+"Arena()`的释放阈值设置为一个巨大的数，防止内存自动释放，可以通过参数`amrex.the_arena_release_threshold`进行更改。对于`The_Pinned_Arena()`"
+"，默认的释放阈值是总设备内存的大小，运行时参数为`amrex.the_pinned_arena_release_threshold`。如果是单独的arena，则可以通过`amrex.the_device_arena_release_"
+"threshold`或`amrex.the_managed_arena_release_threshold`更改`The_Device_Arena()`或`The_Managed_Arena()`"
+"的行为。请注意，上述所有参数的单位都是字节。所有这些arena还具有一个成员函数`freeUnused()`，可用于手动将未使用的内存释放回系统。"
 
 #: ../../source/GPU.rst:584 fe46246505214fdfb41e8cd54927d491
 msgid ""
-"If you want to print out the current memory usage of the Arenas, you can "
-"call :cpp:`amrex::Arena::PrintUsage()`. When AMReX is built with SUNDIALS"
-" turned on, :cpp:`amrex::sundials::The_SUNMemory_Helper()` can be "
-"provided to SUNDIALS data structures so that they use the appropriate "
-"Arena object when allocating memory. For example, it can be provided to "
-"the SUNDIALS CUDA vector:"
+"If you want to print out the current memory usage of the Arenas, you can call :cpp:`amrex::Arena::PrintUsage()`. When "
+"AMReX is built with SUNDIALS turned on, :cpp:`amrex::sundials::The_SUNMemory_Helper()` can be provided to SUNDIALS data "
+"structures so that they use the appropriate Arena object when allocating memory. For example, it can be provided to the "
+"SUNDIALS CUDA vector:"
 msgstr ""
+"如果您想打印出Arenas当前的内存使用情况，可以调用：cpp：`amrex::Arena::PrintUsage()`。当AMReX启用SUNDIALS时，可以将：cpp：`amrex::sundials::The_SUNMemory_"
+"Helper()`提供给SUNDIALS数据结构，以便在分配内存时使用适当的Arena对象。例如，可以将其提供给SUNDIALS CUDA向量："
 
 #: ../../source/GPU.rst:603 ba8187286fdc4d3aa54c7e0a74e5c8dc
 msgid "GPU Safe Classes and Functions"
-msgstr ""
+msgstr "GPU 安全的类和函数"
 
 #: ../../source/GPU.rst:605 2a946e1c824d44ee9dfe68db779a72ff
 msgid ""
-"AMReX GPU work takes place inside of MFIter and particle loops. "
-"Therefore, there are two ways classes and functions have been modified to"
-" interact with the GPU:"
-msgstr ""
+"AMReX GPU work takes place inside of MFIter and particle loops. Therefore, there are two ways classes and functions "
+"have been modified to interact with the GPU:"
+msgstr "AMReX GPU工作发生在MFIter和particle循环内部。因此，有两种方式对类和函数进行修改以与GPU进行交互："
 
 #: ../../source/GPU.rst:609 3f47f44296b44a3389050b2ae52193a1
 msgid ""
-"1. A number of functions used within these loops are labelled using "
-"``AMREX_GPU_HOST_DEVICE`` and can be called on the device. This includes "
-"member functions, such as :cpp:`IntVect::type()`, as well as non-member "
-"functions, such as :cpp:`amrex::min` and :cpp:`amrex::max`. In "
-"specialized cases, classes are labeled such that the object can be "
-"constructed, destructed and its functions can be implemented on the "
-"device, including ``IntVect``."
+"1. A number of functions used within these loops are labelled using ``AMREX_GPU_HOST_DEVICE`` and can be called on the "
+"device. This includes member functions, such as :cpp:`IntVect::type()`, as well as non-member functions, such as "
+":cpp:`amrex::min` and :cpp:`amrex::max`. In specialized cases, classes are labeled such that the object can be "
+"constructed, destructed and its functions can be implemented on the device, including ``IntVect``."
 msgstr ""
+"这些循环中使用的一些函数被标记为``AMREX_GPU_HOST_DEVICE``，可以在设备上调用。这包括成员函数，例如：cpp:`IntVect::type()`，以及非成员函数，例如：cpp:`amrex::min`和cpp:`"
+"amrex::max`。在特殊情况下，类被标记为可以在设备上构造、析构和实现其函数，包括``IntVect``。"
 
 #: ../../source/GPU.rst:616 a3502da917ae42d89da43a9a04cbb4c9
 msgid ""
-"2. Functions that contain MFIter or particle loops have been rewritten to"
-" contain device launches. For example, the :cpp:`FillBoundary` function "
-"cannot be called from device code, but calling it from CPU will launch "
-"GPU kernels if AMReX is compiled with GPU support."
-msgstr ""
+"2. Functions that contain MFIter or particle loops have been rewritten to contain device launches. For example, the "
+":cpp:`FillBoundary` function cannot be called from device code, but calling it from CPU will launch GPU kernels if "
+"AMReX is compiled with GPU support."
+msgstr "2. 包含 MFIter 或粒子循环的函数已被重写以包含设备启动。例如，:cpp:`FillBoundary` 函数不能从设备代码中调用，但如果 AMReX 编译时启用了 GPU 支持，则从 CPU 调用它将启动 GPU 内核。"
 
 #: ../../source/GPU.rst:621 8a796f2bf88c446ab42adb9924a43f96
-msgid ""
-"Necessary and convenient AMReX functions and objects have been given a "
-"device version and/or device access."
-msgstr ""
+msgid "Necessary and convenient AMReX functions and objects have been given a device version and/or device access."
+msgstr "已经为必要且方便的 AMReX 函数和对象提供了设备版本和/或设备访问。"
 
 #: ../../source/GPU.rst:624 c9bbb1ea772a47dfb3dd42ee51470087
-msgid ""
-"In this section, we discuss some examples of AMReX device classes and "
-"functions that are important for programming GPUs."
-msgstr ""
+msgid "In this section, we discuss some examples of AMReX device classes and functions that are important for programming GPUs."
+msgstr "在本节中，我们讨论一些AMReX设备类和函数的示例，这些示例对于在GPU上进行编程非常重要。"
 
 #: ../../source/GPU.rst:629 6193105638cb4896b309a9c126cabdf6
 msgid "GpuArray, Array1D, Array2D, and Array3D"
-msgstr ""
+msgstr "GpuArray，Array1D，Array2D和Array3D"
 
 #: ../../source/GPU.rst:631 cd8304f4930c4e74adfbf1aacd531790
 msgid ""
-":cpp:`GpuArray`, :cpp:`Array1D`, :cpp:`Array2D`, and :cpp:`Array3D` are "
-"trivial types that work on both host and device. They can be used "
-"whenever a fixed size array needs to be passed to the GPU or created on "
-"GPU.  A variety of functions in AMReX return :cpp:`GpuArray` and they can"
-" be lambda-captured to GPU code. For example, "
-":cpp:`GeometryData::CellSizeArray()`, "
-":cpp:`GeometryData::InvCellSizeArray()` and :cpp:`Box::length3d()` all "
-"return :cpp:`GpuArray`\\s."
+":cpp:`GpuArray`, :cpp:`Array1D`, :cpp:`Array2D`, and :cpp:`Array3D` are trivial types that work on both host and "
+"device. They can be used whenever a fixed size array needs to be passed to the GPU or created on GPU.  A variety of "
+"functions in AMReX return :cpp:`GpuArray` and they can be lambda-captured to GPU code. For example, "
+":cpp:`GeometryData::CellSizeArray()`, :cpp:`GeometryData::InvCellSizeArray()` and :cpp:`Box::length3d()` all return "
+":cpp:`GpuArray`\\s."
 msgstr ""
+"`GpuArray`、`Array1D`、`Array2D`和`Array3D`是可以在主机和设备上使用的简单类型。它们可以在需要将固定大小的数组传递到GPU或在GPU上创建数组时使用。AMReX中的许多函数返回`GpuArray`"
+"，并且它们可以被捕获到GPU代码中。例如，`GeometryData::CellSizeArray()`、`GeometryData::InvCellSizeArray()`和`Box::length3d()`都返回`GpuArray`。"
 
 #: ../../source/GPU.rst:643 0b9fd128c23748f7ac74a2117ed06e59
 msgid "AsyncArray"
-msgstr ""
+msgstr "异步数组"
 
 #: ../../source/GPU.rst:645 33c5b152439649f38f6dd2fa692b5767
 msgid ""
-"Where the :cpp:`GpuArray` is a statically-sized array designed to be "
-"passed by value onto the device, :cpp:`AsyncArray` is a dynamically-sized"
-" array container designed to work between the CPU and GPU. "
-":cpp:`AsyncArray` stores a CPU pointer and a GPU pointer and coordinates "
-"the movement of an array of objects between the two.  It can take initial"
-" values from the host and move them to the device.  It can copy the data "
-"from device back to host.  It can also be used as scratch space on "
-"device."
+"Where the :cpp:`GpuArray` is a statically-sized array designed to be passed by value onto the device, :cpp:`AsyncArray` "
+"is a dynamically-sized array container designed to work between the CPU and GPU. :cpp:`AsyncArray` stores a CPU pointer "
+"and a GPU pointer and coordinates the movement of an array of objects between the two.  It can take initial values from "
+"the host and move them to the device.  It can copy the data from device back to host.  It can also be used as scratch "
+"space on device."
 msgstr ""
+"在这里，`:cpp:`GpuArray`是一个静态大小的数组，设计为通过值传递到设备上，而`:cpp:`AsyncArray`是一个动态大小的数组容器，设计用于在CPU和GPU之间工作。`:cpp:`AsyncArray`"
+"存储了一个CPU指针和一个GPU指针，并协调着对象数组在两者之间的移动。它可以从主机获取初始值并将其移动到设备上。它可以将数据从设备复制回主机。它还可以用作设备上的临时空间。"
 
 #: ../../source/GPU.rst:654 37d07683a2c8467d808439d1b52ed3ca
 msgid ""
-"The call to delete the memory is added to the GPU stream as a callback "
-"function in the destructor of :cpp:`AsyncArray`. This guarantees the "
-"memory allocated in :cpp:`AsyncArray` continues to exist after the "
-":cpp:`AsyncArray` object is deleted when going out of scope until after "
-"all GPU kernels in the stream are completed without forcing the code to "
-"synchronize. The resulting :cpp:`AsyncArray` class is \"async-safe\", "
-"meaning it can be safely used in asynchronous code regions that contain "
-"both CPU work and GPU launches, including :cpp:`MFIter` loops."
+"The call to delete the memory is added to the GPU stream as a callback function in the destructor of :cpp:`AsyncArray`. "
+"This guarantees the memory allocated in :cpp:`AsyncArray` continues to exist after the :cpp:`AsyncArray` object is "
+"deleted when going out of scope until after all GPU kernels in the stream are completed without forcing the code to "
+"synchronize. The resulting :cpp:`AsyncArray` class is \"async-safe\", meaning it can be safely used in asynchronous "
+"code regions that contain both CPU work and GPU launches, including :cpp:`MFIter` loops."
 msgstr ""
+"在 `AsyncArray` 的析构函数中，将删除内存的调用作为回调函数添加到 GPU 流中。这确保了在 `AsyncArray` 对象超出作用域并被删除后，分配给它的内存会在所有 GPU "
+"流中的内核完成之前继续存在，而无需强制代码同步。由此产生的 `AsyncArray` 类是“异步安全”的，这意味着它可以安全地在包含 CPU 工作和 GPU 启动的异步代码区域中使用，包括 `MFIter` 循环。"
 
 #: ../../source/GPU.rst:664 19455a900ae24fc69f1d73fbe7958f4f
 msgid ""
-":cpp:`AsyncArray` is also portable. When AMReX is compiled without GPU "
-"support, the object only stores and handles the CPU version of the data."
-msgstr ""
+":cpp:`AsyncArray` is also portable. When AMReX is compiled without GPU support, the object only stores and handles the "
+"CPU version of the data."
+msgstr ":cpp:`AsyncArray` 也是可移植的。当 AMReX 在没有 GPU 支持的情况下编译时，该对象仅存储和处理数据的 CPU 版本。"
 
 #: ../../source/GPU.rst:668 f16209328df5468596b2a4658f89ad73
 msgid "An example using :cpp:`AsyncArray` is given below,"
-msgstr ""
+msgstr "下面是一个使用 `AsyncArray` 的示例："
 
 #: ../../source/GPU.rst:705 503caa4668a248a399f5fd06d1f59d61
 msgid "Gpu Vectors"
-msgstr ""
+msgstr "GPU 向量"
 
 #: ../../source/GPU.rst:707 bf880d6d44e54e41a70e18d1a5f70e5e
 msgid ""
-"AMReX also provides a number of dynamic vectors for use with GPU kernels."
-" These are configured to use the different AMReX memory Arenas, as "
-"summarized below. By using the memory Arenas, we can avoid expensive "
-"allocations and deallocations when (for example) resizing vectors."
-msgstr ""
+"AMReX also provides a number of dynamic vectors for use with GPU kernels. These are configured to use the different "
+"AMReX memory Arenas, as summarized below. By using the memory Arenas, we can avoid expensive allocations and "
+"deallocations when (for example) resizing vectors."
+msgstr "AMReX还提供了一些用于GPU内核的动态向量。这些向量被配置为使用不同的AMReX内存区域，如下所述。通过使用内存区域，我们可以避免在调整向量大小时进行昂贵的分配和释放操作。"
 
 #: ../../source/GPU.rst:718 46c3014defd646b0a354dd6bca7ee03c
 msgid "Memory Arenas Associated with each Gpu Vector"
-msgstr ""
+msgstr "每个 GPU 向量关联的内存区域"
 
 #: ../../source/GPU.rst:721 6fd44ec0df2b4b988c054827c8554ff3
 msgid "Vector"
-msgstr ""
+msgstr "矢量"
 
 #: ../../source/GPU.rst:723 202d51a5e81f48bdbc0bf4eafe1f808f
 msgid "DeviceVector"
-msgstr ""
+msgstr "设备向量"
 
 #: ../../source/GPU.rst:725 1bd16830995d4b6e936bf7416ade25bf
 msgid "HostVector"
-msgstr ""
+msgstr "主机向量"
 
 #: ../../source/GPU.rst:727 e0c9be67270e442796d17fb23effa0a7
 msgid "ManagedVector"
-msgstr ""
+msgstr "托管向量"
 
 #: ../../source/GPU.rst:734 c506dcc77d49416ea9f03bd60a6d2858
 msgid ""
-"These classes behave almost identically to an :cpp:`amrex::Vector`, (see "
-":ref:`sec:basics:vecandarr`), except that they can only hold \"plain-old-"
-"data\" objects (e.g. Reals, integers, amrex Particles, etc... ). If you "
-"want a resizable vector that doesn't use a memory Arena, simply use "
-":cpp:`amrex::Vector`."
+"These classes behave almost identically to an :cpp:`amrex::Vector`, (see :ref:`sec:basics:vecandarr`), except that they "
+"can only hold \"plain-old-data\" objects (e.g. Reals, integers, amrex Particles, etc... ). If you want a resizable "
+"vector that doesn't use a memory Arena, simply use :cpp:`amrex::Vector`."
 msgstr ""
+"这些类的行为几乎与 :cpp:`amrex::Vector` 相同（参见 :ref:`sec:basics:vecandarr`），只是它们只能容纳“plain-old-data”对象（例如 Reals、整数、amrex "
+"粒子等）。如果您想要一个可调整大小的向量而不使用内存 Arena，请直接使用 :cpp:`amrex::Vector`。"
 
 #: ../../source/GPU.rst:740 768c2a6ec1ed4e838c599ad548908aa5
 msgid ""
-"Note that, even if the data in the vector is managed and available on "
-"GPUs, the member functions of e.g. :cpp:`Gpu::ManagedVector` are not. To "
-"use the data on the GPU, it is necessary to pass the underlying data "
-"pointer in to the GPU kernels. The managed data pointer can be accessed "
-"using the :cpp:`data()` member function."
+"Note that, even if the data in the vector is managed and available on GPUs, the member functions of e.g. "
+":cpp:`Gpu::ManagedVector` are not. To use the data on the GPU, it is necessary to pass the underlying data pointer in "
+"to the GPU kernels. The managed data pointer can be accessed using the :cpp:`data()` member function."
 msgstr ""
+"请注意，即使向量中的数据是在GPU上进行管理和可用的，例如：cpp：`Gpu::ManagedVector`的成员函数并不是。要在GPU上使用数据，需要将底层数据指针传递给GPU内核。可以使用：cpp：`data()`"
+"成员函数访问托管数据指针。"
 
 #: ../../source/GPU.rst:746 6e0a6a9ff1c447b08ca1b4b636504028
 msgid ""
-"Be aware: resizing of dynamically allocated memory on the GPU is "
-"unsupported. All resizing of the vector should be done on the CPU, in a "
-"manner that avoids race conditions with concurrent GPU kernels."
-msgstr ""
+"Be aware: resizing of dynamically allocated memory on the GPU is unsupported. All resizing of the vector should be done "
+"on the CPU, in a manner that avoids race conditions with concurrent GPU kernels."
+msgstr "请注意：不支持在GPU上调整动态分配的内存大小。所有向量的调整大小操作应在CPU上进行，以避免与并发GPU内核产生竞争条件。"
 
 #: ../../source/GPU.rst:750 1aaa41b3717c461497a4c0bd2f027f20
 msgid ""
-"Also note: :cpp:`Gpu::ManagedVector` is not async-safe.  It cannot be "
-"safely constructed inside of an MFIter loop with GPU kernels and great "
-"care should be used when accessing :cpp:`Gpu::ManagedVector` data on GPUs"
-" to avoid race conditions."
-msgstr ""
+"Also note: :cpp:`Gpu::ManagedVector` is not async-safe.  It cannot be safely constructed inside of an MFIter loop with "
+"GPU kernels and great care should be used when accessing :cpp:`Gpu::ManagedVector` data on GPUs to avoid race "
+"conditions."
+msgstr "请注意：:cpp:`Gpu::ManagedVector` 不是异步安全的。在具有 GPU 内核的 MFIter 循环内部，不能安全地构造它，访问 :cpp:`Gpu::ManagedVector` 数据时应格外小心，以避免竞争条件。"
 
 #: ../../source/GPU.rst:756 d85b9e9d6c8144f4aeeb2f75c3d0ce1d
 msgid "MultiFab Reductions"
-msgstr ""
+msgstr "多功能减少"
 
 #: ../../source/GPU.rst:758 10ed02d510c144169deaa7d43e5ea2d6
 msgid ""
-"AMReX provides functions for performing standard reduction operations on "
-":cpp:`MultiFabs`, including :cpp:`MultiFab::sum` and "
-":cpp:`MultiFab::max`. When AMReX is built with GPU support, these "
-"functions automatically implement the corresponding reductions on GPUs in"
-" an efficient manner."
-msgstr ""
+"AMReX provides functions for performing standard reduction operations on :cpp:`MultiFabs`, including "
+":cpp:`MultiFab::sum` and :cpp:`MultiFab::max`. When AMReX is built with GPU support, these functions automatically "
+"implement the corresponding reductions on GPUs in an efficient manner."
+msgstr "AMReX提供了对MultiFabs执行标准约简操作的函数，包括MultiFab::sum和MultiFab::max。当AMReX构建时启用了GPU支持，这些函数会自动以高效的方式在GPU上实现相应的约简操作。"
 
 #: ../../source/GPU.rst:763 f115f0a904de4fadb993c17a56e057cf
 msgid ""
-"Function template :cpp:`ParReduce` can be used to implement user-defined "
-"reduction functions over :cpp:`MultiFab`\\ s.  For example, the following"
-" function computes the sum of total kinetic energy using the data in a "
-":cpp:`MultiFab` storing the mass and momentum density."
-msgstr ""
+"Function template :cpp:`ParReduce` can be used to implement user-defined reduction functions over :cpp:`MultiFab`\\ s.  "
+"For example, the following function computes the sum of total kinetic energy using the data in a :cpp:`MultiFab` "
+"storing the mass and momentum density."
+msgstr "函数模板 `ParReduce` 可用于在 `MultiFab` 上实现用户定义的约化函数。例如，下面的函数使用存储质量和动量密度的 `MultiFab` 数据计算总动能的和。"
 
 #: ../../source/GPU.rst:790 235b5a823292456ab8314c6b1cf20dc4
 msgid ""
-"As another example, the following function computes the max- and 1-norm "
-"of a :cpp:`MultiFab` in the masked region specified by an "
-":cpp:`iMultiFab`."
-msgstr ""
+"As another example, the following function computes the max- and 1-norm of a :cpp:`MultiFab` in the masked region "
+"specified by an :cpp:`iMultiFab`."
+msgstr "作为另一个示例，下面的函数计算了在由`iMultiFab`指定的掩码区域中，`MultiFab`的最大范数和1范数。"
 
 #: ../../source/GPU.rst:817 643097cab98045458726f716b33e7500
 msgid ""
-"It should be noted that the reduction result of :cpp:`ParReduce` is local"
-" and it is the user's responsibility if MPI communication is needed."
-msgstr ""
+"It should be noted that the reduction result of :cpp:`ParReduce` is local and it is the user's responsibility if MPI "
+"communication is needed."
+msgstr "需要注意的是，`:cpp:`ParReduce` 的减少结果是局部的，如果需要进行 MPI 通信，则由用户负责。"
 
 #: ../../source/GPU.rst:821 d7f1d151eee448188f4a1667d36b085f
 msgid "Box, IntVect and IndexType"
-msgstr ""
+msgstr "盒子，整数向量和索引类型"
 
 #: ../../source/GPU.rst:823 7b89a1240f8047e99404e87ae26f4c42
 msgid ""
-"In AMReX, :cpp:`Box`, :cpp:`IntVect` and :cpp:`IndexType` are classes for"
-" representing indices.  These classes and most of their member functions,"
-" including constructors and destructors, have both host and device "
-"versions.  They can be used freely in device code."
-msgstr ""
+"In AMReX, :cpp:`Box`, :cpp:`IntVect` and :cpp:`IndexType` are classes for representing indices.  These classes and most "
+"of their member functions, including constructors and destructors, have both host and device versions.  They can be "
+"used freely in device code."
+msgstr "在AMReX中，`Box`、`IntVect`和`IndexType`是用于表示索引的类。这些类及其大部分成员函数，包括构造函数和析构函数，都有主机和设备版本。它们可以在设备代码中自由使用。"
 
 #: ../../source/GPU.rst:831 1b0ec43cec2e4745a3f9029bd8a5e70f
 msgid "Geometry"
-msgstr ""
+msgstr "几何学"
 
 #: ../../source/GPU.rst:833 7c1061cd45f34b11bd7178479f9ddfa2
 msgid ""
-"AMReX's :cpp:`Geometry` class is not a GPU safe class.  However, we often"
-" need to use geometric information such as cell size and physical "
-"coordinates in GPU kernels.  We can use the following member functions "
-"and pass the returned values to GPU kernels:"
-msgstr ""
+"AMReX's :cpp:`Geometry` class is not a GPU safe class.  However, we often need to use geometric information such as "
+"cell size and physical coordinates in GPU kernels.  We can use the following member functions and pass the returned "
+"values to GPU kernels:"
+msgstr "AMReX的`Geometry`类不是一个GPU安全的类。然而，我们经常需要在GPU内核中使用几何信息，比如单元格大小和物理坐标。我们可以使用以下成员函数，并将返回的值传递给GPU内核："
 
 #: ../../source/GPU.rst:848 311f626ca49e435588dc4b5ed0ae82e8
 msgid ""
-"Alternatively, we can copy the data into a GPU safe class that can be "
-"passed by value to GPU kernels. This class is called :cpp:`GeometryData`,"
-" which is created by calling :cpp:`Geometry::data()`.  The accessor "
-"functions of :cpp:`GeometryData` are identical to :cpp:`Geometry`."
+"Alternatively, we can copy the data into a GPU safe class that can be passed by value to GPU kernels. This class is "
+"called :cpp:`GeometryData`, which is created by calling :cpp:`Geometry::data()`.  The accessor functions of "
+":cpp:`GeometryData` are identical to :cpp:`Geometry`."
 msgstr ""
+"或者，我们可以将数据复制到一个安全的 GPU 类中，该类可以通过值传递给 GPU 内核。这个类被称为 `GeometryData`，通过调用 `Geometry::data()` 来创建。`GeometryData` 的访问函数与 "
+"`Geometry` 完全相同。"
 
 #: ../../source/GPU.rst:857 ade238ee3b5949d19f7a9601851c835d
 msgid "BaseFab, FArrayBox, IArrayBox"
-msgstr ""
+msgstr "BaseFab, FArrayBox, IArrayBox"
 
 #: ../../source/GPU.rst:859 e5410f03c99e459bab0c1aab139eebe9
 msgid ""
-":cpp:`BaseFab<T>`, :cpp:`IArrayBox` and :cpp:`FArrayBox` have some GPU "
-"support.  They cannot be constructed in device code unless they are "
-"constructed as an alias to :cpp:`Array4`.  Many of their member functions"
-" can be used in device code as long as they have been constructed in "
-"device memory. Some of the device member functions include :cpp:`array`, "
+":cpp:`BaseFab<T>`, :cpp:`IArrayBox` and :cpp:`FArrayBox` have some GPU support.  They cannot be constructed in device "
+"code unless they are constructed as an alias to :cpp:`Array4`.  Many of their member functions can be used in device "
+"code as long as they have been constructed in device memory. Some of the device member functions include :cpp:`array`, "
 ":cpp:`dataPtr`, :cpp:`box`, :cpp:`nComp`, and :cpp:`setVal`."
 msgstr ""
+"`BaseFab<T>`, "
+"`IArrayBox`和`FArrayBox`具有一些GPU支持。除非将它们构造为`Array4`的别名，否则不能在设备代码中构造它们。只要它们在设备内存中构造，它们的许多成员函数可以在设备代码中使用。其中一些设备成员函数包括`array`"
+"、`dataPtr`、`box`、`nComp`和`setVal`。"
 
 #: ../../source/GPU.rst:867 9159c66d64bd49ce999e230d6143ebe9
 msgid ""
-"All :cpp:`BaseFab<T>` objects in :cpp:`FabArray<FAB>` are allocated in "
-"CPU memory, including :cpp:`IArrayBox` and :cpp:`FArrayBox`, which are "
-"derived from :cpp:`BaseFab`, and the array data contained are allocated "
-"in either device or managed memory.  We cannot pass a :cpp:`BaseFab` "
-"object by value because they do not have copy constructor.  However, we "
-"can make an :cpp:`Array4` using member function :cpp:`BaseFab::array()`, "
-"and pass it by value to GPU kernels. In GPU device code, we can use "
-":cpp:`Array4` or, if necessary, we can make an alias :cpp:`BaseFab` from "
-"an :cpp:`Array4`.  For example,"
+"All :cpp:`BaseFab<T>` objects in :cpp:`FabArray<FAB>` are allocated in CPU memory, including :cpp:`IArrayBox` and "
+":cpp:`FArrayBox`, which are derived from :cpp:`BaseFab`, and the array data contained are allocated in either device or "
+"managed memory.  We cannot pass a :cpp:`BaseFab` object by value because they do not have copy constructor.  However, "
+"we can make an :cpp:`Array4` using member function :cpp:`BaseFab::array()`, and pass it by value to GPU kernels. In GPU "
+"device code, we can use :cpp:`Array4` or, if necessary, we can make an alias :cpp:`BaseFab` from an :cpp:`Array4`.  For "
+"example,"
 msgstr ""
+"所有的 `BaseFab<T>` 对象在 `FabArray<FAB>` 中都是在 CPU 内存中分配的，包括从 `BaseFab` 派生的 `IArrayBox` 和 "
+"`FArrayBox`，它们所包含的数组数据则是在设备内存或者托管内存中分配的。由于 `BaseFab` 没有拷贝构造函数，我们无法通过值传递 `BaseFab` 对象。然而，我们可以使用成员函数 `BaseFab::array()` "
+"创建一个 `Array4`，并将其通过值传递给 GPU 内核。在 GPU 设备代码中，我们可以使用 `Array4`，或者在必要时，可以从 `Array4` 创建一个 `BaseFab` 的别名。例如，"
 
 #: ../../source/GPU.rst:892 cc304351ef0649f4aa60a89f3c8518d4
 msgid "Elixir"
-msgstr ""
+msgstr "伊利克斯"
 
 #: ../../source/GPU.rst:894 29354f4f861e4dd99314433fde87d8cc
 msgid ""
-"We often have temporary :cpp:`FArrayBox`\\ es in :cpp:`MFIter` loops. "
-"These objects go out of scope at the end of each iteration.  Because of "
-"the asynchronous nature of GPU kernel execution, their destructors might "
-"get called before their data are used on GPU.  :cpp:`Elixir` can be used "
-"to extend the life of the data.  For example,"
+"We often have temporary :cpp:`FArrayBox`\\ es in :cpp:`MFIter` loops. These objects go out of scope at the end of each "
+"iteration.  Because of the asynchronous nature of GPU kernel execution, their destructors might get called before their "
+"data are used on GPU.  :cpp:`Elixir` can be used to extend the life of the data.  For example,"
 msgstr ""
+"我们经常在`MFIter`循环中使用临时的`FArrayBox`对象。这些对象在每次迭代结束时会超出作用域。由于GPU内核执行的异步性质，它们的析构函数可能会在数据在GPU上使用之前被调用。可以使用`Elixir`"
+"来延长数据的生命周期。例如，"
 
 #: ../../source/GPU.rst:913 b8feef18bae84f7189d6da434c5f25ea
 msgid ""
-"Without :cpp:`Elixir`, the code above will likely cause memory errors "
-"because the temporary :cpp:`FArrayBox` is deleted on cpu before the gpu "
-"kernels use its memory.  With :cpp:`Elixir`, the ownership of the memory "
-"is transferred to :cpp:`Elixir` that is guaranteed to be async-safe."
-msgstr ""
+"Without :cpp:`Elixir`, the code above will likely cause memory errors because the temporary :cpp:`FArrayBox` is deleted "
+"on cpu before the gpu kernels use its memory.  With :cpp:`Elixir`, the ownership of the memory is transferred to "
+":cpp:`Elixir` that is guaranteed to be async-safe."
+msgstr "如果没有使用 Elixir，上述代码很可能会导致内存错误，因为临时的 FArrayBox 在 GPU 内核使用其内存之前就被 CPU 删除了。而使用 Elixir，内存的所有权被转移给了 Elixir，它保证是异步安全的。"
 
 #: ../../source/GPU.rst:920 b86f411768d04ca59ac31d33e24447b9
 msgid "Async Arena"
-msgstr ""
+msgstr "异步竞技场"
 
 #: ../../source/GPU.rst:922 0f614eec1d994cb8895e9843ca8de1f4
 msgid ""
-"CUDA 11.2 has introduced a new feature, stream-ordered CUDA memory "
-"allocator.  This feature enables AMReX to solve the temporary memory "
-"allocation and deallocation issue discussed above using a memory pool. "
-"Instead of using :cpp:`Elixir`, we can write code like below,"
-msgstr ""
+"CUDA 11.2 has introduced a new feature, stream-ordered CUDA memory allocator.  This feature enables AMReX to solve the "
+"temporary memory allocation and deallocation issue discussed above using a memory pool. Instead of using :cpp:`Elixir`, "
+"we can write code like below,"
+msgstr "CUDA 11.2引入了一个新功能，即流有序的CUDA内存分配器。这个功能使得AMReX能够通过内存池来解决上述讨论过的临时内存分配和释放问题。我们可以像下面这样编写代码，而不是使用Elixir："
 
 #: ../../source/GPU.rst:939 03e511ec8a014c4b94c087c9221a0c7e
 msgid ""
-"This is now the recommended way because it's usually more efficient than "
-":cpp:`Elixir`.  Note that the code above works for CUDA older than 11.2, "
-"HIP and SYCL as well, and it's equivalent to using :cpp:`Elixir` in these"
-" cases.  By default, the release threshold for the memory pool is "
-"unlimited. One can adjust it with :cpp:`ParmParse` parameter, "
+"This is now the recommended way because it's usually more efficient than :cpp:`Elixir`.  Note that the code above works "
+"for CUDA older than 11.2, HIP and SYCL as well, and it's equivalent to using :cpp:`Elixir` in these cases.  By default, "
+"the release threshold for the memory pool is unlimited. One can adjust it with :cpp:`ParmParse` parameter, "
 "``amrex.the_async_arena_release_threshold``."
 msgstr ""
+"现在这是推荐的方式，因为通常比 `Elixir` 更高效。请注意，上述代码适用于早于11.2版本的CUDA、HIP和SYCL，对于这些情况，它与使用 `Elixir` 是等效的。默认情况下，内存池的释放阈值是无限制的。可以使用 "
+"`ParmParse` 参数 `amrex.the_async_arena_release_threshold` 进行调整。"
 
 #: ../../source/GPU.rst:949 6c43fa25bc0442169bec614402922ce2
 msgid "Kernel Launch"
-msgstr ""
+msgstr "内核启动"
 
 #: ../../source/GPU.rst:951 657ba7c53ab042f990bfbe8cd233041e
 msgid ""
-"In this section, how to offload work to the GPU will be demonstrated. "
-"AMReX supports offloading work with CUDA, HIP, SYCL, OpenACC, or OpenMP."
-msgstr ""
+"In this section, how to offload work to the GPU will be demonstrated. AMReX supports offloading work with CUDA, HIP, "
+"SYCL, OpenACC, or OpenMP."
+msgstr "在这个部分中，将演示如何将工作转移到GPU上。AMReX支持使用CUDA、HIP、SYCL、OpenACC或OpenMP来进行工作的转移。"
 
 #: ../../source/GPU.rst:954 0fe267d6319c4d4191b1cc595eb53d38
 msgid ""
-"When using CUDA, HIP, or SYCL, AMReX provides users with portable C++ "
-"function calls or C++ macros that launch a user-defined lambda function."
-"  When compiled without CUDA/HIP/SYCL, the lambda function is ran on the "
-"CPU. When compiled with CUDA/HIP/SYCL, the launch function prepares and "
-"launches the lambda function on the GPU. The preparation includes "
-"calculating the appropriate number of blocks and threads, selecting the "
-"CUDA stream or HIP stream or SYCL queue, and defining the appropriate "
-"work chunk for each GPU thread."
+"When using CUDA, HIP, or SYCL, AMReX provides users with portable C++ function calls or C++ macros that launch a "
+"user-defined lambda function.  When compiled without CUDA/HIP/SYCL, the lambda function is ran on the CPU. When "
+"compiled with CUDA/HIP/SYCL, the launch function prepares and launches the lambda function on the GPU. The preparation "
+"includes calculating the appropriate number of blocks and threads, selecting the CUDA stream or HIP stream or SYCL "
+"queue, and defining the appropriate work chunk for each GPU thread."
 msgstr ""
+"当使用CUDA、HIP或SYCL时，AMReX为用户提供了可移植的C++函数调用或C++宏，用于启动用户定义的lambda函数。在没有CUDA/HIP/SYCL的编译情况下，lambda函数在CPU上运行。而在使用CUDA/HIP/"
+"SYCL编译时，启动函数会准备并在GPU上启动lambda函数。准备工作包括计算适当的块数和线程数，选择CUDA流或HIP流或SYCL队列，并为每个GPU线程定义适当的工作块。"
 
 #: ../../source/GPU.rst:961 d8060a83f403444f9acecb056ecbc56d
 msgid ""
-"When using OpenACC or OpenMP offloading pragmas, the users add the "
-"appropriate pragmas to their work loops and functions to offload to the "
-"GPU.  These work in conjunction with AMReX's internal CUDA-based memory "
-"management, described earlier, to ensure the required data is available "
-"on the GPU when the offloaded function is executed."
+"When using OpenACC or OpenMP offloading pragmas, the users add the appropriate pragmas to their work loops and "
+"functions to offload to the GPU.  These work in conjunction with AMReX's internal CUDA-based memory management, "
+"described earlier, to ensure the required data is available on the GPU when the offloaded function is executed."
 msgstr ""
+"当使用OpenACC或OpenMP的offloading "
+"pragmas时，用户会在他们的工作循环和函数中添加适当的pragmas以将工作转移到GPU上。这些pragmas与之前描述的AMReX的基于CUDA的内部内存管理相结合，确保在执行转移函数时所需的数据在GPU上可用。"
 
 #: ../../source/GPU.rst:967 91d1ea1a3d8646b2905ac8e27a8dd95b
 msgid ""
-"The available launch schema are presented here in three categories: "
-"launching nested loops over Boxes or 1D arrays, launching generic work "
-"and launching using OpenACC or  OpenMP pragmas. The latest versions of "
-"the examples used in this section of the documentation can be found in "
-"the AMReX source code in the `Launch`_ tutorials. Users should also refer"
-" to Chapter :ref:`Chap:Basics` as needed for information about basic "
-"AMReX classes."
+"The available launch schema are presented here in three categories: launching nested loops over Boxes or 1D arrays, "
+"launching generic work and launching using OpenACC or  OpenMP pragmas. The latest versions of the examples used in this "
+"section of the documentation can be found in the AMReX source code in the `Launch`_ tutorials. Users should also refer "
+"to Chapter :ref:`Chap:Basics` as needed for information about basic AMReX classes."
 msgstr ""
+"这里将可用的启动方案分为三类进行介绍：通过嵌套循环启动 Boxes 或 1D 数组，启动通用工作以及使用 OpenACC 或 OpenMP pragmas 进行启动。本文档部分中使用的示例的最新版本可以在 AMReX 源代码的 "
+"`Launch`_ 教程中找到。用户还应根据需要参考 :ref:`Chap:Basics` 章节，了解有关基本 AMReX 类的信息。"
 
 #: ../../source/GPU.rst:977 3f42978a3a5a46888e7eb5e8a5f0bd66
 msgid ""
-"AMReX also recommends writing primary floating point operation kernels in"
-" C++ using AMReX's :cpp:`Array4` object syntax.  It provides a multi-"
-"dimensional array syntax, similar in appearance to Fortran, while "
-"maintaining performance.  The details can be found in :ref:`Array4 "
-"<sec:basics:array4>` and :ref:`C++ Kernel <sec:basics:cppkernel>`."
+"AMReX also recommends writing primary floating point operation kernels in C++ using AMReX's :cpp:`Array4` object "
+"syntax.  It provides a multi-dimensional array syntax, similar in appearance to Fortran, while maintaining performance. "
+" The details can be found in :ref:`Array4 <sec:basics:array4>` and :ref:`C++ Kernel <sec:basics:cppkernel>`."
 msgstr ""
+"AMReX同样建议使用AMReX的:cpp:`Array4`对象语法，用C++编写主要的浮点运算内核。它提供了一个多维数组语法，外观类似于Fortran，同时保持了性能。有关详细信息，请参阅:ref:`Array4 "
+"<sec:basics:array4>`和:ref:`C++ Kernel <sec:basics:cppkernel>`。"
 
 #: ../../source/GPU.rst:989 df80ec3c09ae4fb9a854e030df8adbeb
 msgid "Launching C++ nested loops"
-msgstr ""
+msgstr "启动C++嵌套循环。"
 
 #: ../../source/GPU.rst:991 1acb973b91774fd2b186f8c86688b48a
 msgid ""
-"The most common AMReX work construct is a set of nested loops over the "
-"cells in a box. AMReX provides C++ functions and macro equivalents to "
-"port nested loops efficiently onto the GPU.  There are 3 different nested"
-" loop GPU launches: a 4D launch for work over a box and a number of "
-"components, a 3D launch for work over a box and a 1D launch for work over"
-" a number of arbitrary elements. Each of these launches provides a "
-"performance portable set of nested loops for both CPU and GPU "
-"applications."
+"The most common AMReX work construct is a set of nested loops over the cells in a box. AMReX provides C++ functions and "
+"macro equivalents to port nested loops efficiently onto the GPU.  There are 3 different nested loop GPU launches: a 4D "
+"launch for work over a box and a number of components, a 3D launch for work over a box and a 1D launch for work over a "
+"number of arbitrary elements. Each of these launches provides a performance portable set of nested loops for both CPU "
+"and GPU applications."
 msgstr ""
+"AMReX最常见的工作结构是在一个盒子中的单元上进行一系列嵌套循环。AMReX提供了C++"
+"函数和宏等效函数，以便将嵌套循环高效地移植到GPU上。有三种不同的嵌套循环GPU启动方式：一个四维启动用于在盒子和多个组件上进行工作，一个三维启动用于在盒子上进行工作，以及一个一维启动用于在任意元素上进行工作。每个启动方式都提供了性能可移植"
+"的一组嵌套循环，适用于CPU和GPU应用程序。"
 
 #: ../../source/GPU.rst:999 ff664500a9144307beb18f69a029c316
 msgid ""
-"These loop launches should only be used when each iteration of the nested"
-" loop is independent of other iterations.  Therefore, these launches have"
-" been marked with ``AMREX_PRAGMA_SIMD`` when using the CPU and they "
-"should only be used for ``simd``-capable nested loops. Calculations that "
-"cannot vectorize should be rewritten wherever possible to allow efficient"
-" utilization of GPU hardware."
-msgstr ""
+"These loop launches should only be used when each iteration of the nested loop is independent of other iterations.  "
+"Therefore, these launches have been marked with ``AMREX_PRAGMA_SIMD`` when using the CPU and they should only be used "
+"for ``simd``-capable nested loops. Calculations that cannot vectorize should be rewritten wherever possible to allow "
+"efficient utilization of GPU hardware."
+msgstr "这些循环启动只应在嵌套循环的每次迭代彼此独立时使用。因此，在使用 CPU 时，这些启动已标记为``AMREX_PRAGMA_SIMD``，并且只应用于支持``simd``的嵌套循环。无法向量化的计算应尽可能重写，以便有效利用 GPU 硬件。"
 
 #: ../../source/GPU.rst:1006 aa40426c7f9e49ae9360e4283f68524e
 msgid ""
-"However, it is important for applications to use these launches whenever "
-"appropriate because they contain optimizations for both CPU and GPU "
-"variations of nested loops.  For example, on the GPU the spatial "
-"coordinate loops are reduced to a single loop and the component loop is "
-"moved to these inner most loop.  AMReX's launch functions apply the "
-"appropriate optimizations for compiling both with and without GPU support"
-" in a compact and readable format."
+"However, it is important for applications to use these launches whenever appropriate because they contain optimizations "
+"for both CPU and GPU variations of nested loops.  For example, on the GPU the spatial coordinate loops are reduced to a "
+"single loop and the component loop is moved to these inner most loop.  AMReX's launch functions apply the appropriate "
+"optimizations for compiling both with and without GPU support in a compact and readable format."
 msgstr ""
+"然而，对于应用程序来说，在适当的时候使用这些启动函数非常重要，因为它们包含了针对CPU和GPU嵌套循环的优化。例如，在GPU上，空间坐标循环被简化为单个循环，并且组件循环被移动到这些最内层循环中。AMReX的启动函数以一种简洁易读的格式应用"
+"了适当的优化，可以在编译时同时支持有和无GPU的情况。"
 
 #: ../../source/GPU.rst:1013 32626bf10e7946babc9db00268028b7f
 msgid ""
-"AMReX also provides a variation of the launch function that is "
-"implemented as a C++ macro.  It behaves identically to the function, but "
-"hides the lambda function from the user.  There are some subtle "
-"differences between the two implementations, that will be discussed.  It "
-"is up to the user to select which version they would like to use.  For "
-"simplicity, the function variation will be discussed throughout the rest "
-"of this documentation, however all code snippets will also include the "
-"macro variation for reference."
+"AMReX also provides a variation of the launch function that is implemented as a C++ macro.  It behaves identically to "
+"the function, but hides the lambda function from the user.  There are some subtle differences between the two "
+"implementations, that will be discussed.  It is up to the user to select which version they would like to use.  For "
+"simplicity, the function variation will be discussed throughout the rest of this documentation, however all code "
+"snippets will also include the macro variation for reference."
 msgstr ""
+"AMReX还提供了一种以C++"
+"宏的形式实现的launch函数的变体。它的行为与函数完全相同，但将lambda函数隐藏起来，用户无法直接访问。这两种实现之间存在一些细微差别，将在后面进行讨论。用户可以根据需要选择使用哪个版本。为简单起见，本文档的其余部分将讨论函数变体，但"
+"所有的代码片段也将包括宏变体以供参考。"
 
 #: ../../source/GPU.rst:1021 fa5b54e173934a1ea0a6fab44770bbc9
-msgid ""
-"A 4D example of the launch function, :cpp:`amrex::ParallelFor`, is given "
-"here:"
-msgstr ""
+msgid "A 4D example of the launch function, :cpp:`amrex::ParallelFor`, is given here:"
+msgstr "这里给出了一个关于`amrex::ParallelFor`启动函数的4D示例："
 
 #: ../../source/GPU.rst:1048 28536baf15534a9ba7d255dd37050562
 msgid ""
-"This code works whether it is compiled for GPUs or CPUs. "
-":cpp:`TilingIfNotGPU()` returns ``false`` in the GPU case to turn off "
-"tiling and maximize the amount of work given to the GPU in each launch. "
-"When tiling is off, :cpp:`tilebox()` returns the :cpp:`validbox()`.  The "
-":cpp:`BaseFab::array()` function returns a lightweight :cpp:`Array4` "
-"object that defines access to the underlying :cpp:`FArrayBox` data.  The "
-":cpp:`Array4`\\s is then captured by the C++ lambda functions defined in "
-"the launch function."
+"This code works whether it is compiled for GPUs or CPUs. :cpp:`TilingIfNotGPU()` returns ``false`` in the GPU case to "
+"turn off tiling and maximize the amount of work given to the GPU in each launch. When tiling is off, :cpp:`tilebox()` "
+"returns the :cpp:`validbox()`.  The :cpp:`BaseFab::array()` function returns a lightweight :cpp:`Array4` object that "
+"defines access to the underlying :cpp:`FArrayBox` data.  The :cpp:`Array4`\\s is then captured by the C++ lambda "
+"functions defined in the launch function."
 msgstr ""
+"这段代码无论是编译为GPU还是CPU都可以工作。在GPU情况下，`TilingIfNotGPU()`返回`false`以关闭分块操作，并在每次启动时最大化给予GPU的工作量。当关闭分块操作时，`tilebox()`返回`validbox()"
+"`。`BaseFab::array()`函数返回一个轻量级的`Array4`对象，用于访问底层的`FArrayBox`数据。然后，这些`Array4`对象被C++ lambda函数捕获，并在启动函数中定义。"
 
 #: ../../source/GPU.rst:1056 0d27d39dbe904643a3d825a3f141d6fd
 msgid ""
-"``amrex::ParallelFor()`` expands into different variations of a "
-"quadruply-nested :cpp:`for` loop depending dimensionality and whether it "
-"is being implemented on CPU or GPU. The best way to understand this "
-"function is to take a look at the 4D :cpp:`amrex::ParallelFor` that is "
-"implemented when AMReX is compiled without GPU support, such as "
+"``amrex::ParallelFor()`` expands into different variations of a quadruply-nested :cpp:`for` loop depending "
+"dimensionality and whether it is being implemented on CPU or GPU. The best way to understand this function is to take a "
+"look at the 4D :cpp:`amrex::ParallelFor` that is implemented when AMReX is compiled without GPU support, such as "
 "``USE_CUDA=FALSE``. A simplified version is reproduced here:"
 msgstr ""
+"``amrex::ParallelFor()``会根据维度和在CPU还是GPU上实现的情况，展开成不同变体的四重嵌套的``for``循环。最好的理解这个函数的方法是查看在没有GPU支持的情况下，例如``USE_CUDA=FALSE``"
+"时，实现的4D :cpp:`amrex::ParallelFor`。这里复制了一个简化版本："
 
 #: ../../source/GPU.rst:1081 ec8c3e307426415590fe587d0a7897a6
 msgid ""
-":cpp:`amrex::ParallelFor` takes a :cpp:`Box` and a number of components, "
-"which define the bounds of the quadruply-nested :cpp:`for` loop, and a "
-"lambda function to run on each iteration of the nested loop.  The lambda "
-"function takes the loop iterators as parameters, allowing the current "
-"cell to be indexed in the lambda.  In addition to the loop indices, the "
-"lambda function captures any necessary objects defined in the local "
-"scope."
+":cpp:`amrex::ParallelFor` takes a :cpp:`Box` and a number of components, which define the bounds of the "
+"quadruply-nested :cpp:`for` loop, and a lambda function to run on each iteration of the nested loop.  The lambda "
+"function takes the loop iterators as parameters, allowing the current cell to be indexed in the lambda.  In addition to "
+"the loop indices, the lambda function captures any necessary objects defined in the local scope."
 msgstr ""
+"`amrex::ParallelFor`接受一个`Box`和一定数量的组件作为参数，这些参数定义了四重嵌套的`for`"
+"循环的边界，并且还接受一个lambda函数作为每次迭代的执行体。lambda函数以循环迭代器作为参数，使得可以在lambda函数中对当前单元进行索引。除了循环索引之外，lambda函数还捕获了局部作用域中定义的任何必要对象。"
 
 #: ../../source/GPU.rst:1087 1ed5f837aa9f45fcb1939075bc1aad69
 msgid ""
-"CUDA lambda functions can only capture by value, as the information must "
-"be able to be copied onto the device.  In this example, the lambda "
-"function captures a :cpp:`Array4` object, ``fab``, that defines how to "
-"access the :cpp:`FArrayBox`.  The macro uses ``fab`` to increment the "
-"value of each cell within the :cpp:`Box bx`.  If AMReX is compiled with "
-"GPU support, this incrementation is performed on the GPU, with GPU "
-"optimized loops."
+"CUDA lambda functions can only capture by value, as the information must be able to be copied onto the device.  In this "
+"example, the lambda function captures a :cpp:`Array4` object, ``fab``, that defines how to access the :cpp:`FArrayBox`. "
+" The macro uses ``fab`` to increment the value of each cell within the :cpp:`Box bx`.  If AMReX is compiled with GPU "
+"support, this incrementation is performed on the GPU, with GPU optimized loops."
 msgstr ""
+"CUDA "
+"lambda函数只能通过值进行捕获，因为信息必须能够被复制到设备上。在这个示例中，lambda函数捕获了一个名为``fab``的:cpp:`Array4`对象，它定义了如何访问:cpp:`FArrayBox`。该宏使用``fab``"
+"来增加:cpp:`Box bx`中每个单元格的值。如果AMReX编译时启用了GPU支持，这个增加操作将在GPU上执行，并使用GPU优化的循环。"
 
 #: ../../source/GPU.rst:1095 5aaa31c2e151452aba91691cb19e4576
 msgid ""
-"This 4D launch can also be used to work over any sequential set of "
-"components, by passing the number of consecutive components and adding "
-"the iterator to the starting component: :cpp:`fab(i,j,k,n_start+n)`."
-msgstr ""
+"This 4D launch can also be used to work over any sequential set of components, by passing the number of consecutive "
+"components and adding the iterator to the starting component: :cpp:`fab(i,j,k,n_start+n)`."
+msgstr "这个4D启动也可以用于处理任何连续的组件集合，只需传入连续组件的数量，并将迭代器添加到起始组件上：:cpp:`fab(i,j,k,n_start+n)`。"
 
 #: ../../source/GPU.rst:1099 ff596850018646379d9dec792ca861c9
-msgid ""
-"The 3D variation of the loop launch does not include a component loop and"
-" has the syntax shown here:"
-msgstr ""
+msgid "The 3D variation of the loop launch does not include a component loop and has the syntax shown here:"
+msgstr "3D变体的循环启动不包括组件循环，并且其语法如下所示："
 
 #: ../../source/GPU.rst:1125 a2a4d3eabb5545f299854c6fb3f462fc
 msgid ""
-"Finally, a 1D version is available for looping over a number of elements,"
-" such as particles. An example of a 1D function launch is given here:"
-msgstr ""
+"Finally, a 1D version is available for looping over a number of elements, such as particles. An example of a 1D "
+"function launch is given here:"
+msgstr "最终，现在有一个用于循环遍历多个元素（如粒子）的一维版本。下面是一个一维函数启动的示例："
 
 #: ../../source/GPU.rst:1153 1919f17d9fac4ac8866a73a71bef09c3
 msgid ""
-"Instead of passing an :cpp:`Array4`, :cpp:`FArrayBox::dataPtr()` is "
-"called to obtain a pointer to the :cpp:`FArrayBox` data.  This is an "
-"alternative way to access the :cpp:`FArrayBox` data on the GPU. Instead "
-"of passing a :cpp:`Box` to define the loop bounds, a :cpp:`long` or "
-":cpp:`int` number of elements is passed to bound the single :cpp:`for` "
-"loop.  This construct can be used to work on any contiguous set of memory"
-" by passing the number of elements to work on and indexing the pointer to"
-" the starting element: :cpp:`p[idx + 15]`."
+"Instead of passing an :cpp:`Array4`, :cpp:`FArrayBox::dataPtr()` is called to obtain a pointer to the :cpp:`FArrayBox` "
+"data.  This is an alternative way to access the :cpp:`FArrayBox` data on the GPU. Instead of passing a :cpp:`Box` to "
+"define the loop bounds, a :cpp:`long` or :cpp:`int` number of elements is passed to bound the single :cpp:`for` loop.  "
+"This construct can be used to work on any contiguous set of memory by passing the number of elements to work on and "
+"indexing the pointer to the starting element: :cpp:`p[idx + 15]`."
 msgstr ""
+"Instead of using an `Array4` as a parameter, the `FArrayBox::dataPtr()` function is utilized to obtain a pointer to the "
+"data within the `FArrayBox`. This provides an alternative method to access the `FArrayBox` data on the GPU. Instead of "
+"specifying a `Box` to define the loop boundaries, a `long` or `int` value representing the number of elements is passed "
+"to limit the single `for` loop. This approach allows for processing any contiguous memory set by providing the number "
+"of elements to work on and indexing the pointer to the starting element, for example: `p[idx + 15]`."
 
 #: ../../source/GPU.rst:1162 bbb8fae38f1d415eb812eb3e6a493e74
 msgid "GPU block size"
-msgstr ""
+msgstr "GPU块大小"
 
 #: ../../source/GPU.rst:1164 5c6a1221a96c46dcb59277a22d913dbe
 msgid ""
-"By default, :cpp:`ParallelFor` launches ``AMREX_GPU_MAX_THREADS`` threads"
-" per GPU block, where ``AMREX_GPU_MAX_THREADS`` is a compile-time "
-"constant with a default value of 256.  The users can also explicitly "
-"specify the number of threads per block by "
-":cpp:`ParallelFor<MY_BLOCK_SIZE>(...)`, where ``MY_BLOCK_SIZE`` is a "
-"multiple of the warp size (e.g., 128).  This allows the users to do "
-"performance tuning for individual kernels."
+"By default, :cpp:`ParallelFor` launches ``AMREX_GPU_MAX_THREADS`` threads per GPU block, where "
+"``AMREX_GPU_MAX_THREADS`` is a compile-time constant with a default value of 256.  The users can also explicitly "
+"specify the number of threads per block by :cpp:`ParallelFor<MY_BLOCK_SIZE>(...)`, where ``MY_BLOCK_SIZE`` is a "
+"multiple of the warp size (e.g., 128).  This allows the users to do performance tuning for individual kernels."
 msgstr ""
+"默认情况下，:cpp:`ParallelFor` 在每个 GPU 块中启动 ``AMREX_GPU_MAX_THREADS`` 个线程，其中 ``AMREX_GPU_MAX_THREADS`` 是一个编译时常量，默认值为 "
+"256。用户还可以通过 :cpp:`ParallelFor<MY_BLOCK_SIZE>(...)` 显式指定每个块的线程数，其中 ``MY_BLOCK_SIZE`` 是 warp "
+"大小的倍数（例如，128）。这使得用户可以针对各个内核进行性能调优。"
 
 #: ../../source/GPU.rst:1172 9d48999b48ac415e98710dcadf6ba916
 msgid "Launching general kernels"
-msgstr ""
+msgstr "启动通用内核"
 
 #: ../../source/GPU.rst:1174 b7bff5a0de2947bd9448f35c0e34fc6a
 msgid ""
-"To launch more general work on the GPU, AMReX provides a standard launch "
-"function: :cpp:`amrex::launch`.  Instead of creating nested loops, this "
-"function prepares the device launch based on a :cpp:`Box`, launches with "
-"an appropriate sized GPU kernel and constructs a thread :cpp:`Box` that "
-"defines the work for each thread. On the CPU, the thread :cpp:`Box` is "
-"set equal to the total launch :cpp:`Box`, so tiling works as expected.  "
-"On the GPU, the thread :cpp:`Box` usually contains a single cell to allow"
-" all GPU threads to be utilized effectively."
+"To launch more general work on the GPU, AMReX provides a standard launch function: :cpp:`amrex::launch`.  Instead of "
+"creating nested loops, this function prepares the device launch based on a :cpp:`Box`, launches with an appropriate "
+"sized GPU kernel and constructs a thread :cpp:`Box` that defines the work for each thread. On the CPU, the thread "
+":cpp:`Box` is set equal to the total launch :cpp:`Box`, so tiling works as expected.  On the GPU, the thread :cpp:`Box` "
+"usually contains a single cell to allow all GPU threads to be utilized effectively."
 msgstr ""
+"为了在GPU上执行更通用的工作，AMReX提供了一个标准的启动函数：`amrex::launch`。该函数不再创建嵌套循环，而是根据一个`Box`准备设备启动，使用适当大小的GPU内核进行启动，并构建一个线程`Box`"
+"来定义每个线程的工作。在CPU上，线程`Box`被设置为总启动`Box`，以便平铺按预期工作。在GPU上，线程`Box`通常只包含一个单元，以确保所有GPU线程能够有效利用。"
 
 #: ../../source/GPU.rst:1182 f715b16f7dc44239b2158f3138e78c6d
 msgid "An example of a generic function launch is shown here:"
-msgstr ""
+msgstr "这里展示了一个通用函数launch的示例："
 
 #: ../../source/GPU.rst:1211 2b4e496a621e4da6a3069380e75f3ef7
 msgid ""
-"It also shows how to make a :cpp:`FArrayBox` from :cpp:`Array4` when "
-"needed.  Note that :cpp:`FarrayBox`\\ es cannot be passed to GPU kernels "
-"directly.  :cpp:`TilingIfNotGPU()` returns ``false`` in the GPU case to "
-"turn off tiling and maximize the amount of work given to the GPU in each "
-"launch, which substantially improves performance. When tiling is off, "
-":cpp:`tilebox()` returns the :cpp:`validbox()` of the :cpp:`FArrayBox` "
-"for that iteration."
+"It also shows how to make a :cpp:`FArrayBox` from :cpp:`Array4` when needed.  Note that :cpp:`FarrayBox`\\ es cannot be "
+"passed to GPU kernels directly.  :cpp:`TilingIfNotGPU()` returns ``false`` in the GPU case to turn off tiling and "
+"maximize the amount of work given to the GPU in each launch, which substantially improves performance. When tiling is "
+"off, :cpp:`tilebox()` returns the :cpp:`validbox()` of the :cpp:`FArrayBox` for that iteration."
 msgstr ""
+"它还展示了在需要时如何从Array4创建FArrayBox。请注意，FArrayBox不能直接传递给GPU内核。在GPU情况下，TilingIfNotGPU()"
+"返回false以关闭平铺，并在每次启动时最大限度地提供给GPU的工作量，从而显著提高性能。当平铺关闭时，tilebox()返回该迭代的FArrayBox的validbox()。"
 
 #: ../../source/GPU.rst:1220 6d0959c5e1b2487ba6ebdfa9e8d162ea
 msgid "Offloading work using OpenACC or OpenMP pragmas"
-msgstr ""
+msgstr "使用OpenACC或OpenMP编译指示来分担工作"
 
 #: ../../source/GPU.rst:1222 48739e8ccea34d21b96ff945ba155f63
 msgid ""
-"When using OpenACC or OpenMP with AMReX, the GPU offloading work is done "
-"with pragmas placed on the nested loops. This leaves the :cpp:`MFIter` "
-"loop largely unchanged.  An example GPU pragma based :cpp:`MFIter` loop "
-"that calls a Fortran function is given here:"
+"When using OpenACC or OpenMP with AMReX, the GPU offloading work is done with pragmas placed on the nested loops. This "
+"leaves the :cpp:`MFIter` loop largely unchanged.  An example GPU pragma based :cpp:`MFIter` loop that calls a Fortran "
+"function is given here:"
 msgstr ""
+"在使用OpenACC或OpenMP与AMReX时，GPU的卸载工作是通过放置在嵌套循环上的编译指示来完成的。这样做可以使`:cpp:`MFIter`循环基本保持不变。下面是一个基于GPU编译指示的示例`:cpp:`MFIter`"
+"循环，其中调用了一个Fortran函数。"
 
 #: ../../source/GPU.rst:1239 7e48775ea6c741d8b46c333aa33b8bb2
 msgid ""
-"The function ``plusone_acc`` is a CPU host function.  The "
-":cpp:`FArrayBox` reference from :cpp:`operator[]` is a reference to a "
-":cpp:`FArrayBox` in host memory with data that has been placed in GPU "
-"memory. ``BL_TO_FORTRAN_BOX`` and ``BL_TO_FORTRAN_ANYD`` behave "
-"identically to implementations used on the CPU.  These macros return the "
-"individual components of the AMReX C++ objects to allow passing to the "
-"Fortran function."
+"The function ``plusone_acc`` is a CPU host function.  The :cpp:`FArrayBox` reference from :cpp:`operator[]` is a "
+"reference to a :cpp:`FArrayBox` in host memory with data that has been placed in GPU memory. ``BL_TO_FORTRAN_BOX`` and "
+"``BL_TO_FORTRAN_ANYD`` behave identically to implementations used on the CPU.  These macros return the individual "
+"components of the AMReX C++ objects to allow passing to the Fortran function."
 msgstr ""
+"函数`plusone_acc`是一个CPU主机函数。从`operator[]`中的`:cpp:`FArrayBox`引用是对在GPU内存中放置了数据的主机内存中的`:cpp:`FArrayBox`的引用。`BL_TO_FORTRAN_"
+"BOX`和`BL_TO_FORTRAN_ANYD`在CPU上的实现行为相同。这些宏返回AMReX C++对象的各个组件，以便传递给Fortran函数。"
 
 #: ../../source/GPU.rst:1248 e64fe4e247264e9f8af1eaf647186575
 msgid "The corresponding OpenACC labelled loop in ``plusone_acc`` is:"
-msgstr ""
+msgstr "在``plusone_acc``中，对应的OpenACC标记循环是："
 
 #: ../../source/GPU.rst:1266 4184573ccb0842b4bce8e78ac2c461e3
 msgid ""
-"Since the data pointer passed to ``plusone_acc`` points to device memory,"
-" OpenACC can be told the data is available on the device using the "
-"``deviceptr`` construct.  For further details about OpenACC programming, "
-"consult the OpenACC user's guide."
-msgstr ""
+"Since the data pointer passed to ``plusone_acc`` points to device memory, OpenACC can be told the data is available on "
+"the device using the ``deviceptr`` construct.  For further details about OpenACC programming, consult the OpenACC "
+"user's guide."
+msgstr "由于传递给``plusone_acc``的数据指针指向设备内存，可以使用``deviceptr``构造告知OpenACC该数据在设备上可用。有关OpenACC编程的更多详细信息，请参阅OpenACC用户指南。"
 
 #: ../../source/GPU.rst:1271 818395e61609482e9c63f6c45e4cfb9a
 msgid ""
-"The OpenMP implementation of this loop is similar, only requiring "
-"changing the pragmas utilized to obtain the proper offloading. The OpenMP"
-" labelled version of this loop is:"
-msgstr ""
+"The OpenMP implementation of this loop is similar, only requiring changing the pragmas utilized to obtain the proper "
+"offloading. The OpenMP labelled version of this loop is:"
+msgstr "这个循环的OpenMP实现类似，只需要改变所使用的编译指示来实现正确的卸载。这个循环的OpenMP标记版本是："
 
 #: ../../source/GPU.rst:1290 6075dd148bd8408ba2eb51bc24004a5f
 msgid ""
-"In this case, ``is_device_ptr`` is used to indicate that :cpp:`dat` is "
-"available in device memory. For further details about programming with "
-"OpenMP for GPU offloading, consult the OpenMP user's guide."
-msgstr ""
+"In this case, ``is_device_ptr`` is used to indicate that :cpp:`dat` is available in device memory. For further details "
+"about programming with OpenMP for GPU offloading, consult the OpenMP user's guide."
+msgstr "在这种情况下，``is_device_ptr`` 用于指示 :cpp:`dat` 存储在设备内存中。有关在 GPU 上使用 OpenMP 进行卸载编程的更多详细信息，请参阅 OpenMP 用户指南。"
 
 #: ../../source/GPU.rst:1296 8e79fab3a93648ebba3b0655e6bd89f8
 msgid "Kernel launch details"
-msgstr ""
+msgstr "内核启动细节"
 
 #: ../../source/GPU.rst:1298 992ed04a4c0d46fb82a5ba2bda65b971
 msgid ""
-"CUDA (and HIP) kernel calls are asynchronous and they return before the "
-"kernel is finished on the GPU. So the :cpp:`MFIter` loop finishes "
-"iterating on the CPU and is ready to move on to the next work before the "
-"actual work completes on the GPU.  To guarantee consistency, there is an "
-"implicit device synchronization (a GPU barrier) in the destructor of "
-":cpp:`MFIter`.  This ensures that all GPU work inside of an :cpp:`MFIter`"
-" loop will complete before code outside of the loop is executed. Any "
-"kernel launches made outside of an :cpp:`MFIter` loop must ensure "
-"appropriate device synchronization occurs. This can be done by calling "
-":cpp:`Gpu::streamSynchronize()`."
+"CUDA (and HIP) kernel calls are asynchronous and they return before the kernel is finished on the GPU. So the "
+":cpp:`MFIter` loop finishes iterating on the CPU and is ready to move on to the next work before the actual work "
+"completes on the GPU.  To guarantee consistency, there is an implicit device synchronization (a GPU barrier) in the "
+"destructor of :cpp:`MFIter`.  This ensures that all GPU work inside of an :cpp:`MFIter` loop will complete before code "
+"outside of the loop is executed. Any kernel launches made outside of an :cpp:`MFIter` loop must ensure appropriate "
+"device synchronization occurs. This can be done by calling :cpp:`Gpu::streamSynchronize()`."
 msgstr ""
+"CUDA（以及HIP）内核调用是异步的，在内核在GPU上完成之前就会返回。因此，:cpp:`MFIter`循环在CPU上完成迭代，并准备好继续下一项工作，而实际工作在GPU上完成。为了确保一致性，在:cpp:`MFIter`"
+"的析构函数中有一个隐式的设备同步（GPU屏障）。这确保了:cpp:`MFIter`循环内部的所有GPU工作在循环外部的代码执行之前完成。在:cpp:`MFIter`"
+"循环之外进行的任何内核启动都必须确保适当的设备同步发生。可以通过调用:cpp:`Gpu::streamSynchronize()`来实现这一点。"
 
 #: ../../source/GPU.rst:1309 f3e9b82040e5460fb78d1d0331af9131
 msgid ""
-"CUDA and HIP supports multiple streams and kernels. Kernels launched in "
-"the same stream are executed sequentially, but different streams of "
-"kernel launches may be run in parallel.  For each iteration of "
-":cpp:`MFIter`, AMReX uses a different GPU stream (up to 4 streams in "
-"total).  This allows each iteration of an :cpp:`MFIter` loop to run "
-"independently, but in the expected sequence, and maximize the use of GPU "
-"parallelism. However, AMReX uses the default GPU stream outside of "
-":cpp:`MFIter` loops."
+"CUDA and HIP supports multiple streams and kernels. Kernels launched in the same stream are executed sequentially, but "
+"different streams of kernel launches may be run in parallel.  For each iteration of :cpp:`MFIter`, AMReX uses a "
+"different GPU stream (up to 4 streams in total).  This allows each iteration of an :cpp:`MFIter` loop to run "
+"independently, but in the expected sequence, and maximize the use of GPU parallelism. However, AMReX uses the default "
+"GPU stream outside of :cpp:`MFIter` loops."
 msgstr ""
+"CUDA和HIP支持多个流和内核。在同一个流中启动的内核是按顺序执行的，但是不同流的内核启动可以并行运行。对于每个:cpp:`MFIter`的迭代，AMReX使用不同的GPU流（最多4个流）。这使得每个:cpp:`MFIter`"
+"循环的迭代可以独立运行，但按照预期的顺序，并最大化GPU并行性的使用。然而，在:cpp:`MFIter`循环之外，AMReX使用默认的GPU流。"
 
 #: ../../source/GPU.rst:1318 3a38bafac3134fb3a5dcbd8ef571c03e
 msgid ""
-"Launching kernels with AMReX's launch macros or functions implement a C++"
-" lambda function. Lambdas functions used for launches on the GPU have "
-"some restrictions the user must understand.  First, the function "
-"enclosing the extended lambda must not have private or protected access "
-"within its parent class,  otherwise the code will not compile.  This can "
-"be fixed by changing the access of the enclosing function to public."
+"Launching kernels with AMReX's launch macros or functions implement a C++ lambda function. Lambdas functions used for "
+"launches on the GPU have some restrictions the user must understand.  First, the function enclosing the extended lambda "
+"must not have private or protected access within its parent class,  otherwise the code will not compile.  This can be "
+"fixed by changing the access of the enclosing function to public."
 msgstr ""
+"使用AMReX的启动宏或函数来启动内核时，需要实现一个C++"
+"的lambda函数。用于在GPU上进行启动的lambda函数有一些限制，用户必须了解这些限制。首先，扩展lambda所包含的函数不能在其父类中具有私有或受保护的访问权限，否则代码将无法编译通过。可以通过将包含函数的访问权限更改为公共来解决这"
+"个问题。"
 
 #: ../../source/GPU.rst:1325 60ad6d897db64ddd9c44df53215b21c3
 msgid ""
-"Another pitfall that must be considered: if the lambda function accesses "
-"a member of the enclosing class, the lambda function actually captures "
-":cpp:`this` pointer by value and accesses variables and functions via "
-":cpp:`this->`.  If the object is not accessible on GPU, the code will not"
-" work as intended.  For example,"
+"Another pitfall that must be considered: if the lambda function accesses a member of the enclosing class, the lambda "
+"function actually captures :cpp:`this` pointer by value and accesses variables and functions via :cpp:`this->`.  If the "
+"object is not accessible on GPU, the code will not work as intended.  For example,"
 msgstr ""
+"还有一个必须考虑的陷阱：如果 lambda 函数访问封闭类的成员，那么 lambda 函数实际上会通过值捕获 :cpp:`this` 指针，并通过 :cpp:`this->` 访问变量和函数。如果对象在 GPU "
+"上不可访问，代码将无法按预期工作。例如，"
 
 #: ../../source/GPU.rst:1348 016de2b3d2f2472c98180cffc19c2c84
 msgid ""
-"The function ``f`` in the code above will not work unless the "
-":cpp:`MyClass` object is in unified memory.  If it is undesirable to put "
-"the object into unified memory, a local copy of the information can be "
-"created for the lambda to capture. For example:"
-msgstr ""
+"The function ``f`` in the code above will not work unless the :cpp:`MyClass` object is in unified memory.  If it is "
+"undesirable to put the object into unified memory, a local copy of the information can be created for the lambda to "
+"capture. For example:"
+msgstr "上述代码中的函数 `f` 将无法正常工作，除非 :cpp:`MyClass` 对象位于统一内存中。如果不希望将对象放入统一内存中，可以为 lambda 表达式创建一个局部副本以进行捕获。例如："
 
 #: ../../source/GPU.rst:1371 a86c47e61fa74a8b9ff076e7a4f11bbe
 msgid ""
-"C++ macros have some important limitations. For example, commas outside "
-"of a set of parentheses are interpreted by the macro, leading to errors "
-"such as:"
-msgstr ""
+"C++ macros have some important limitations. For example, commas outside of a set of parentheses are interpreted by the "
+"macro, leading to errors such as:"
+msgstr "C++宏有一些重要的限制。例如，括号外的逗号会被宏解释，导致错误，如下所示："
 
 #: ../../source/GPU.rst:1388 60f194039c0c49a6a823d709b0e11f09
 msgid ""
-"One should also avoid using :cpp:`continue` and :cpp:`return` inside the "
-"macros because it is not an actual :cpp:`for` loop. Users that choose to "
-"implement the macro launches should be aware of the limitations of C++ "
-"preprocessing macros to ensure GPU offloading is done properly."
-msgstr ""
+"One should also avoid using :cpp:`continue` and :cpp:`return` inside the macros because it is not an actual :cpp:`for` "
+"loop. Users that choose to implement the macro launches should be aware of the limitations of C++ preprocessing macros "
+"to ensure GPU offloading is done properly."
+msgstr "在宏中应避免使用 `continue` 和 `return`，因为它并不是真正的 `for` 循环。选择实现宏启动的用户应该意识到 C++ 预处理宏的限制，以确保正确进行 GPU 卸载。"
 
 #: ../../source/GPU.rst:1393 5ea9cfedaf524919bfa3578506dd4a3a
 msgid ""
-"Finally, AMReX's most common CPU threading strategy for GPU/CPU systems "
-"is to utilize OpenMP threads to maintain multi-threaded parallelism on "
-"work chosen to run on the host. This means OpenMP pragmas should be "
-"maintained where CPU work is performed and usually turned off where work "
-"is offloaded onto the GPU.  OpenMP pragmas can be turned off using the "
-"conditional pragma and :cpp:`Gpu::notInLaunchRegion()`, as shown below:"
+"Finally, AMReX's most common CPU threading strategy for GPU/CPU systems is to utilize OpenMP threads to maintain "
+"multi-threaded parallelism on work chosen to run on the host. This means OpenMP pragmas should be maintained where CPU "
+"work is performed and usually turned off where work is offloaded onto the GPU.  OpenMP pragmas can be turned off using "
+"the conditional pragma and :cpp:`Gpu::notInLaunchRegion()`, as shown below:"
 msgstr ""
+"最终，AMReX在GPU/"
+"CPU系统中最常用的CPU线程策略是利用OpenMP线程来维持在主机上运行的多线程并行性。这意味着在执行CPU工作的地方应该保留OpenMP编译指示，并且通常在将工作卸载到GPU上时关闭。可以使用条件编译指示和:cpp:`"
+"Gpu::notInLaunchRegion()`来关闭OpenMP编译指示，如下所示："
 
 #: ../../source/GPU.rst:1407 b557b5bcd6654e4fb017e0b6f3e14736
 msgid ""
-"It is generally expected that simply using OpenMP threads to launch GPU "
-"work quicker will show little improvement or even perform worse. So, this"
-" conditional statement should be added to MFIter loops that contain GPU "
-"work, unless users specifically test the performance or are designing "
-"more complex workflows that require OpenMP."
-msgstr ""
+"It is generally expected that simply using OpenMP threads to launch GPU work quicker will show little improvement or "
+"even perform worse. So, this conditional statement should be added to MFIter loops that contain GPU work, unless users "
+"specifically test the performance or are designing more complex workflows that require OpenMP."
+msgstr "通常情况下，仅仅使用OpenMP线程来加速GPU工作往往不会带来明显的改进，甚至可能导致性能下降。因此，在包含GPU工作的MFIter循环中，应添加此条件语句，除非用户明确测试了性能或正在设计需要OpenMP的更复杂的工作流程。"
 
 #: ../../source/GPU.rst:1415 b7d34ab34c8e4ef4b8e128be99176376
 msgid "Stream and Synchronization"
-msgstr ""
+msgstr "流和同步"
 
 #: ../../source/GPU.rst:1417 0205d5d2967543789af476a113f660ec
 msgid ""
-"As mentioned in Section :ref:`sec:gpu:overview`, AMReX uses a number of "
-"GPU streams that are either CUDA streams or HIP streams or SYCL queues.  "
-"Many GPU functions (e.g., :cpp:`ParallelFor` and :cpp:`Gpu::copyAsync`) "
-"are asynchronous with respect to the host.  To facilitate synchronization"
-" that is sometimes necessary, AMReX provides "
-":cpp:`Gpu::streamSynchronize()` and :cpp:`Gpu::streamSynchronizeAll()` to"
-" synchronize the current stream and all AMReX streams, respectively.  For"
-" performance reasons, one should try to minimize the number of "
-"synchronization calls.  For example,"
+"As mentioned in Section :ref:`sec:gpu:overview`, AMReX uses a number of GPU streams that are either CUDA streams or HIP "
+"streams or SYCL queues.  Many GPU functions (e.g., :cpp:`ParallelFor` and :cpp:`Gpu::copyAsync`) are asynchronous with "
+"respect to the host.  To facilitate synchronization that is sometimes necessary, AMReX provides "
+":cpp:`Gpu::streamSynchronize()` and :cpp:`Gpu::streamSynchronizeAll()` to synchronize the current stream and all AMReX "
+"streams, respectively.  For performance reasons, one should try to minimize the number of synchronization calls.  For "
+"example,"
 msgstr ""
+"如在第 :ref:`sec:gpu:overview` 节中提到的，AMReX 使用一些 GPU 流，它们可以是 CUDA 流、HIP 流或 SYCL 队列。许多 GPU 函数（例如 :cpp:`ParallelFor` 和 "
+":cpp:`Gpu::copyAsync`）在主机方面是异步的。为了方便有时必要的同步，AMReX 提供了 :cpp:`Gpu::streamSynchronize()` 和 "
+":cpp:`Gpu::streamSynchronizeAll()` 分别用于同步当前流和所有 AMReX 流。出于性能原因，应尽量减少同步调用的次数。例如，"
 
 #: ../../source/GPU.rst:1449 317d1868dcdf440facd0527ee589cfe2
 msgid ""
-"In addition to stream synchronization, there is also "
-":cpp:`Gpu::synchronize()` that will perform a device wide "
-"synchronization. However, a device wide synchronization is usually too "
-"excessive and it might interfere with other libraries (e.g., MPI)."
-msgstr ""
+"In addition to stream synchronization, there is also :cpp:`Gpu::synchronize()` that will perform a device wide "
+"synchronization. However, a device wide synchronization is usually too excessive and it might interfere with other "
+"libraries (e.g., MPI)."
+msgstr "除了流同步之外，还有 `Gpu::synchronize()` 函数可以执行设备范围的同步。然而，设备范围的同步通常过于过度，可能会干扰其他库（例如 MPI）。"
 
 #: ../../source/GPU.rst:1457 1be05f09bfa748db9d760ce842da7c70
 msgid "An Example of Migrating to GPU"
-msgstr ""
+msgstr "迁移到GPU的示例"
 
 #: ../../source/GPU.rst:1459 080c56807f34444cbf151ac8cf30936f
-msgid ""
-"The nature of GPU programming poses difficulties for a number of common "
-"AMReX patterns, such as the one below:"
-msgstr ""
+msgid "The nature of GPU programming poses difficulties for a number of common AMReX patterns, such as the one below:"
+msgstr "GPU编程的性质对许多常见的AMReX模式提出了困难，比如下面这个模式："
 
 #: ../../source/GPU.rst:1488 64d5d6c2edad491db1f781a885be634e
 msgid ""
-"There are several issues in migrating this code to GPUs that need to be "
-"addressed.  First, functions ``f1`` and ``f2`` have different work "
-"regions (``tbx`` and ``gbx``, respectively) and there are data "
-"dependencies between the two (``q``). This makes it difficult to put them"
-" into a single GPU kernel, so two separate kernels will be launched, one "
+"There are several issues in migrating this code to GPUs that need to be addressed.  First, functions ``f1`` and ``f2`` "
+"have different work regions (``tbx`` and ``gbx``, respectively) and there are data dependencies between the two "
+"(``q``). This makes it difficult to put them into a single GPU kernel, so two separate kernels will be launched, one "
 "for each function."
 msgstr ""
+"在将这段代码迁移到GPU上时，有几个问题需要解决。首先，函数``f1``和``f2``具有不同的工作区域（分别是``tbx``和``gbx``），并且两者之间存在数据依赖关系（``q``"
+"）。这使得将它们放入单个GPU内核变得困难，因此将会启动两个单独的内核，一个用于每个函数。"
 
 #: ../../source/GPU.rst:1495 31ac89e20ec547c3ae116a303dd3b467
 msgid ""
-"As we have discussed, AMReX uses multiple CUDA streams or HIP streams or "
-"SYCL queues for launching kernels.  Because ``q`` is used inside "
-":cpp:`MFIter` loops, multiple GPU kernels on different streams are "
-"accessing its data.  This creates a race condition.  One way to fix this "
-"is to move ``FArrayBox q`` inside the loop to make it local to each loop "
-"and use :cpp:`Elixir` to make it async-safe (see Section "
-":ref:`sec:gpu:classes:elixir`).  This strategy works well for GPU.  "
-"However it is not optimal for OpenMP CPU threads when the GPU is not "
-"used, because of the memory allocation inside OpenMP parallel region.  It"
-" turns out it is actually unnecessary to make ``FArrayBox q`` local to "
-"each iteration when :cpp:`Elixir` is used to extend the life of its "
-"floating point data.  The code below shows an example of how to rewrite "
-"the example in a performance portable way."
+"As we have discussed, AMReX uses multiple CUDA streams or HIP streams or SYCL queues for launching kernels.  Because "
+"``q`` is used inside :cpp:`MFIter` loops, multiple GPU kernels on different streams are accessing its data.  This "
+"creates a race condition.  One way to fix this is to move ``FArrayBox q`` inside the loop to make it local to each loop "
+"and use :cpp:`Elixir` to make it async-safe (see Section :ref:`sec:gpu:classes:elixir`).  This strategy works well for "
+"GPU.  However it is not optimal for OpenMP CPU threads when the GPU is not used, because of the memory allocation "
+"inside OpenMP parallel region.  It turns out it is actually unnecessary to make ``FArrayBox q`` local to each iteration "
+"when :cpp:`Elixir` is used to extend the life of its floating point data.  The code below shows an example of how to "
+"rewrite the example in a performance portable way."
 msgstr ""
+"正如我们讨论过的那样，AMReX在启动内核时使用多个CUDA流、HIP流或SYCL队列。因为``q``在:cpp:`MFIter`循环内部使用，不同流上的多个GPU内核正在访问它的数据，这会导致竞争条件。修复这个问题的一种方法是将``"
+"FArrayBox "
+"q``移动到循环内部，使其成为每个循环的局部变量，并使用:cpp:`Elixir`使其异步安全（参见第:ref:`sec:gpu:classes:elixir`节）。这种策略在GPU上效果很好。然而，当不使用GPU时，对于OpenMP "
+"CPU线程来说并不是最优的，因为在OpenMP并行区域内存在内存分配。事实证明，当使用:cpp:`Elixir`来延长浮点数据的生命周期时，将``FArrayBox "
+"q``设置为每次迭代的局部变量实际上是不必要的。下面的代码示例展示了如何以性能可移植的方式重写示例。"
 
 #: ../../source/GPU.rst:1551 c1234c8a181546feb2c28846c3ea4f4e
 msgid "Assertions and Error Checking"
-msgstr ""
+msgstr "断言和错误检查"
 
 #: ../../source/GPU.rst:1553 56217c89fbbc48dd8d36e74ce26fb119
 msgid ""
-"To help debugging, we often use :cpp:`amrex::Assert` and "
-":cpp:`amrex::Abort`.  These functions are GPU safe and can be used in GPU"
-" kernels.  However, implementing these functions requires additional GPU "
-"registers, which will reduce overall performance.  Therefore, by default "
-"these functions and the macro ``AMREX_ALWAYS_ASSERT`` are no-ops for "
-"optimized builds (e.g., ``DEBUG=FALSE`` using the GNU Make build system) "
-"when called from kernels run on GPU. Calls to these functions from GPU "
-"kernels are active for debug builds and can optionally be activated at "
-"compile time for optimized builds (e.g., ``DEBUG=FALSE`` and "
-"``USE_ASSERTION=TRUE`` using the GNU Make build system)."
+"To help debugging, we often use :cpp:`amrex::Assert` and :cpp:`amrex::Abort`.  These functions are GPU safe and can be "
+"used in GPU kernels.  However, implementing these functions requires additional GPU registers, which will reduce "
+"overall performance.  Therefore, by default these functions and the macro ``AMREX_ALWAYS_ASSERT`` are no-ops for "
+"optimized builds (e.g., ``DEBUG=FALSE`` using the GNU Make build system) when called from kernels run on GPU. Calls to "
+"these functions from GPU kernels are active for debug builds and can optionally be activated at compile time for "
+"optimized builds (e.g., ``DEBUG=FALSE`` and ``USE_ASSERTION=TRUE`` using the GNU Make build system)."
 msgstr ""
+"为了帮助调试，我们经常使用 `amrex::Assert` 和 `amrex::Abort`。这些函数在 GPU 内核中是安全的，可以在 GPU 内核中使用。然而，实现这些函数需要额外的 GPU "
+"寄存器，这会降低整体性能。因此，默认情况下，这些函数和宏 `AMREX_ALWAYS_ASSERT` 在优化构建中（例如，使用 GNU Make 构建系统时的 `DEBUG=FALSE`）在 GPU 内核中调用时是无操作的。从 GPU "
+"内核调用这些函数在调试构建中是活动的，并且可以在优化构建中在编译时选择性地激活（例如，使用 GNU Make 构建系统时的 `DEBUG=FALSE` 和 `USE_ASSERTION=TRUE`）。"
 
 #: ../../source/GPU.rst:1564 59772404e673483d97d9a7a23e3c8a6a
 msgid ""
-"In CPU code, :cpp:`AMREX_GPU_ERROR_CHECK()` can be called to check the "
-"health of previous GPU launches.  This call looks up the return message "
-"from the most recently completed GPU launch and aborts if it was not "
-"successful. Many kernel launch macros as well as the :cpp:`MFIter` "
-"destructor include a call to :cpp:`AMREX_GPU_ERROR_CHECK()`. This "
-"prevents additional launches from being called if a previous launch "
-"caused an error and ensures all GPU launches within an :cpp:`MFIter` loop"
-" completed successfully before continuing work."
+"In CPU code, :cpp:`AMREX_GPU_ERROR_CHECK()` can be called to check the health of previous GPU launches.  This call "
+"looks up the return message from the most recently completed GPU launch and aborts if it was not successful. Many "
+"kernel launch macros as well as the :cpp:`MFIter` destructor include a call to :cpp:`AMREX_GPU_ERROR_CHECK()`. This "
+"prevents additional launches from being called if a previous launch caused an error and ensures all GPU launches within "
+"an :cpp:`MFIter` loop completed successfully before continuing work."
 msgstr ""
+"在CPU代码中，可以调用:cpp:`AMREX_GPU_ERROR_CHECK()`来检查之前的GPU启动的状态。这个调用会查找最近完成的GPU启动的返回消息，并在启动不成功时中止程序。许多内核启动宏以及:cpp:`MFIter`"
+"析构函数都包含对:cpp:`AMREX_GPU_ERROR_CHECK()`的调用。这样，如果之前的启动发生错误，就会阻止调用其他启动，并确保在:cpp:`MFIter`循环中的所有GPU启动都成功完成后再继续工作。"
 
 #: ../../source/GPU.rst:1574 805ed32ec3af46d180c2e3bf21466d25
 msgid ""
-"However, due to asynchronicity, determining the source of the error can "
-"be difficult.  Even if GPU kernels launched earlier in the code result in"
-" a CUDA error or HIP error, the error may not be output at a nearby call "
-"to :cpp:`AMREX_GPU_ERROR_CHECK()` by the CPU. When tracking down a CUDA "
-"launch error, :cpp:`Gpu::synchronize()`, :cpp:`Gpu::streamSynchronize()`,"
-" or :cpp:`Gpu::streamSynchronizeAll()` can be used to synchronize the "
-"device, the current GPU stream, or all GPU streams, respectively, and "
-"track down the specific launch that causes the error. This error-checking"
-" macro will not return any information for SYCL."
+"However, due to asynchronicity, determining the source of the error can be difficult.  Even if GPU kernels launched "
+"earlier in the code result in a CUDA error or HIP error, the error may not be output at a nearby call to "
+":cpp:`AMREX_GPU_ERROR_CHECK()` by the CPU. When tracking down a CUDA launch error, :cpp:`Gpu::synchronize()`, "
+":cpp:`Gpu::streamSynchronize()`, or :cpp:`Gpu::streamSynchronizeAll()` can be used to synchronize the device, the "
+"current GPU stream, or all GPU streams, respectively, and track down the specific launch that causes the error. This "
+"error-checking macro will not return any information for SYCL."
 msgstr ""
+"However, due to the asynchronous nature of the process, it can be challenging to determine the source of the error. "
+"Even if GPU kernels launched earlier in the code result in a CUDA error or HIP error, the error may not be displayed at "
+"a nearby call to the `AMREX_GPU_ERROR_CHECK()` function by the CPU. To identify a CUDA launch error, you can use "
+"`Gpu::synchronize()`, `Gpu::streamSynchronize()`, or `Gpu::streamSynchronizeAll()` to synchronize the device, the "
+"current GPU stream, or all GPU streams, respectively. This will help pinpoint the specific launch that is causing the "
+"error. It is important to note that this error-checking macro does not provide any information for SYCL."
 
 #: ../../source/GPU.rst:1588 0baff909bf8b48ad85f43bbb611fef75
 msgid "Particle Support"
-msgstr ""
+msgstr "粒子支持"
 
 #: ../../source/GPU.rst:1592 36cba31b5ee24f9cb3d0dca0c7375243
 msgid ""
-"As with ``MultiFab``, particle data stored in AMReX ``ParticleContainer``"
-" classes are stored in GPU memory when AMReX is compiled with "
-"``USE_CUDA=TRUE``. This means that the :cpp:`dataPtr` associated with "
-"particles can be passed into GPU kernels. These kernels can be launched "
-"with a variety of approaches, including Cuda C / Fortran and OpenACC. An "
-"example Fortran particle subroutine offloaded via OpenACC might look like"
-" the following:"
+"As with ``MultiFab``, particle data stored in AMReX ``ParticleContainer`` classes are stored in GPU memory when AMReX "
+"is compiled with ``USE_CUDA=TRUE``. This means that the :cpp:`dataPtr` associated with particles can be passed into GPU "
+"kernels. These kernels can be launched with a variety of approaches, including Cuda C / Fortran and OpenACC. An example "
+"Fortran particle subroutine offloaded via OpenACC might look like the following:"
 msgstr ""
+"与``MultiFab``类一样，当使用``USE_CUDA=TRUE``编译AMReX时，存储在AMReX的``ParticleContainer``类中的粒子数据存储在GPU内存中。这意味着与粒子相关的:cpp:`dataPtr`"
+"可以传递到GPU内核中。这些内核可以使用多种方法启动，包括Cuda C / Fortran和OpenACC。通过OpenACC卸载的示例Fortran粒子子程序可能如下所示："
 
 #: ../../source/GPU.rst:1627 2adcc68b1e3b43a3af5089e5a998a748
 msgid ""
-"Note the use of the :fortran:`!$acc parallel deviceptr` clause to specify"
-" which data has been placed in device memory. This instructs OpenACC to "
-"treat those variables as if they already live on the device, bypassing "
-"the usual copies. For complete examples of a particle code that has been "
-"ported to GPUs using Cuda, OpenACC, and OpenMP, please see the tutorial "
-"`Electromagnetic PIC`_."
+"Note the use of the :fortran:`!$acc parallel deviceptr` clause to specify which data has been placed in device memory. "
+"This instructs OpenACC to treat those variables as if they already live on the device, bypassing the usual copies. For "
+"complete examples of a particle code that has been ported to GPUs using Cuda, OpenACC, and OpenMP, please see the "
+"tutorial `Electromagnetic PIC`_."
 msgstr ""
+"请注意使用 `:fortran:`!$acc parallel deviceptr` clause` 来指定已经放置在设备内存中的数据。这会告诉 OpenACC "
+"将这些变量视为已经存在于设备上，从而绕过通常的拷贝过程。关于将粒子代码移植到使用 Cuda、OpenACC 和 OpenMP 的 GPU 的完整示例，请参阅教程 `Electromagnetic PIC`_。"
 
 #: ../../source/GPU.rst:1634 150f0bb9bd634a8782291f4eccdb607f
 msgid ""
-"GPU-aware implementations of many common particle operations are provided"
-" with AMReX, including neighbor list construction and traversal, "
-"particle-mesh deposition and interpolation, parallel reductions of "
-"particle data, and a set of transformation and filtering operations that "
-"are useful when operating on sets of particles. For examples of these "
+"GPU-aware implementations of many common particle operations are provided with AMReX, including neighbor list "
+"construction and traversal, particle-mesh deposition and interpolation, parallel reductions of particle data, and a set "
+"of transformation and filtering operations that are useful when operating on sets of particles. For examples of these "
 "features in use, please see :cpp:`Tests/Particles/`."
-msgstr ""
+msgstr "AMReX提供了许多常见粒子操作的GPU感知实现，包括邻居列表的构建和遍历、粒子网格沉积和插值、粒子数据的并行归约，以及一组在处理粒子集合时有用的转换和过滤操作。有关这些功能的使用示例，请参阅：cpp：`Tests/Particles/`。"
 
 #: ../../source/GPU.rst:1639 fab2708c85794f47a674d9b390e6d7b5
 msgid ""
-"Finally, the parallel communication of particle data has been ported and "
-"optimized for performance on GPU platforms. This includes "
-":cpp:`Redistribute()`, which moves particles back to the proper grids "
-"after their positions have changed, as well as :cpp:`fillNeighbors()` and"
-" :cpp:`updateNeighbors()`, which are used to exchange halo particles. As "
-"with :cpp:`MultiFab` data, these have been designed to minimize host / "
-"device traffic as much as possible, and can take advantage of the Cuda-"
-"aware MPI implementations available on platforms such as ORNL's Summit."
+"Finally, the parallel communication of particle data has been ported and optimized for performance on GPU platforms. "
+"This includes :cpp:`Redistribute()`, which moves particles back to the proper grids after their positions have changed, "
+"as well as :cpp:`fillNeighbors()` and :cpp:`updateNeighbors()`, which are used to exchange halo particles. As with "
+":cpp:`MultiFab` data, these have been designed to minimize host / device traffic as much as possible, and can take "
+"advantage of the Cuda-aware MPI implementations available on platforms such as ORNL's Summit."
 msgstr ""
+"终于，粒子数据的并行通信已经在GPU平台上进行了移植和性能优化。这包括了 `Redistribute()` 函数，用于在粒子位置发生变化后将其移回正确的网格；还有 `fillNeighbors()` 和 "
+"`updateNeighbors()` 函数，用于交换边界粒子。与 `MultiFab` 数据一样，这些函数的设计旨在尽量减少主机和设备之间的数据传输，并且可以利用像ORNL的Summit这样的平台上提供的Cuda-aware MPI实现。"
 
 #: ../../source/GPU.rst:1647 c1ba0be470f346d7be298efdfd1927f6
 msgid "Profiling with GPUs"
-msgstr ""
+msgstr "使用GPU进行性能分析"
 
 #: ../../source/GPU.rst:1651 1e2259b48bfc4b43b843dc67f9ff1750
 msgid ""
-"When profiling for GPUs, AMReX recommends ``nvprof``, NVIDIA's visual "
-"profiler.  ``nvprof`` returns data on how long each kernel launch lasted "
-"on the GPU, the number of threads and registers used, the occupancy of "
-"the GPU and recommendations for improving the code.  For more information"
-" on how to use ``nvprof``, see NVIDIA's User's Guide as well as the help "
-"web pages of your favorite supercomputing facility that uses NVIDIA GPUs."
+"When profiling for GPUs, AMReX recommends ``nvprof``, NVIDIA's visual profiler.  ``nvprof`` returns data on how long "
+"each kernel launch lasted on the GPU, the number of threads and registers used, the occupancy of the GPU and "
+"recommendations for improving the code.  For more information on how to use ``nvprof``, see NVIDIA's User's Guide as "
+"well as the help web pages of your favorite supercomputing facility that uses NVIDIA GPUs."
 msgstr ""
+"在为GPU进行性能分析时，AMReX推荐使用NVIDIA的可视化分析工具``nvprof``。``nvprof``会返回有关每个GPU核函数启动的持续时间、使用的线程和寄存器数量、GPU的利用率以及改进代码的建议等数据。有关如何使用``"
+"nvprof``的更多信息，请参阅NVIDIA的用户指南以及您喜欢的使用NVIDIA GPU的超级计算设施的帮助网页。"
 
 #: ../../source/GPU.rst:1658 9f91c58506c84bbaa52352f7bc4c2473
 msgid ""
-"AMReX's internal profilers currently cannot hook into profiling "
-"information on the GPU and an efficient way to time and retrieve that "
-"information is being explored. In the meantime, AMReX's timers can be "
-"used to report some generic timers that are useful in categorizing an "
-"application."
-msgstr ""
+"AMReX's internal profilers currently cannot hook into profiling information on the GPU and an efficient way to time and "
+"retrieve that information is being explored. In the meantime, AMReX's timers can be used to report some generic timers "
+"that are useful in categorizing an application."
+msgstr "目前，AMReX的内部性能分析工具无法钩取GPU上的性能信息，并且正在探索一种高效的计时和获取该信息的方法。与此同时，可以使用AMReX的计时器来报告一些通用计时器，这些计时器对于对应用程序进行分类非常有用。"
 
 #: ../../source/GPU.rst:1663 ee20832e7e7f4a198013379f92ba0811
 msgid ""
-"Due to the asynchronous launching of GPU kernels, any AMReX timers inside"
-" of asynchronous regions or inside GPU kernels will not measure useful "
-"information.  However, since the :cpp:`MFIter` synchronizes when being "
-"destroyed, any timer wrapped around an :cpp:`MFIter` loop will yield a "
-"consistent timing of the entire set of GPU launches contained within. For"
-" example:"
+"Due to the asynchronous launching of GPU kernels, any AMReX timers inside of asynchronous regions or inside GPU kernels "
+"will not measure useful information.  However, since the :cpp:`MFIter` synchronizes when being destroyed, any timer "
+"wrapped around an :cpp:`MFIter` loop will yield a consistent timing of the entire set of GPU launches contained within. "
+"For example:"
 msgstr ""
+"由于GPU内核的异步启动，位于异步区域或GPU内核内部的任何AMReX计时器都无法测量有用的信息。然而，由于:cpp:`MFIter`在销毁时会进行同步，因此将计时器包装在:cpp:`MFIter`"
+"循环周围将产生一致的整体GPU启动时间。例如："
 
 #: ../../source/GPU.rst:1681 defe6302fa9c44ab894b8d8dd63832a7
 msgid ""
-"For now, this is the best way to profile GPU codes using "
-"``TinyProfiler``. If you require further profiling detail, use "
+"For now, this is the best way to profile GPU codes using ``TinyProfiler``. If you require further profiling detail, use "
 "``nvprof``."
-msgstr ""
+msgstr "目前来说，使用 \"TinyProfiler\" 是分析 GPU 代码的最佳方式。如果需要更详细的分析信息，请使用 \"nvprof\"。"
 
 #: ../../source/GPU.rst:1686 9b40d7d4427147368b18f9aef7beadab
 msgid "Performance Tips"
-msgstr ""
+msgstr "性能优化建议"
 
 #: ../../source/GPU.rst:1690 3750d278c5264485a35e26c687e9f936
-msgid ""
-"Here are some helpful performance tips to keep in mind when working with "
-"AMReX for GPUs:"
-msgstr ""
+msgid "Here are some helpful performance tips to keep in mind when working with AMReX for GPUs:"
+msgstr "以下是一些在使用 AMReX 进行 GPU 编程时需要牢记的性能优化技巧："
 
 #: ../../source/GPU.rst:1693 aa93974b9cca4420bc40a55e83a84ac9
 msgid ""
-"To obtain the best performance when using CUDA kernel launches, all "
-"device functions called within the launch region should be inlined. "
-"Inlined functions use substantially fewer registers, freeing up GPU "
-"resources to perform other tasks. This increases parallel performance and"
-" greatly reduces runtime.  Functions are written inline by putting their "
-"definitions in the ``.H`` file and using the ``AMREX_FORCE_INLINE`` AMReX"
-" macro.  Examples can be found in in the `Launch`_ tutorial. For example:"
+"To obtain the best performance when using CUDA kernel launches, all device functions called within the launch region "
+"should be inlined. Inlined functions use substantially fewer registers, freeing up GPU resources to perform other "
+"tasks. This increases parallel performance and greatly reduces runtime.  Functions are written inline by putting their "
+"definitions in the ``.H`` file and using the ``AMREX_FORCE_INLINE`` AMReX macro.  Examples can be found in in the "
+"`Launch`_ tutorial. For example:"
 msgstr ""
+"为了在使用CUDA内核启动时获得最佳性能，所有在启动区域内调用的设备函数都应该被内联。内联函数使用较少的寄存器，释放GPU资源以执行其他任务。这增加了并行性能并大大减少了运行时间。通过将函数定义放在``.H``文件中并使用``AMREX_"
+"FORCE_INLINE`` AMReX宏来编写内联函数。在`Launch`_教程中可以找到示例。例如："
 
 #: ../../source/GPU.rst:1713 6aa8d27c6e4f4f05bd0e4baa380446d3
 msgid ""
-"Pay attention to what GPUs your job scheduler is assigning to each MPI "
-"rank. In most cases you'll achieve the best performance when a single MPI"
-" rank is assigned to each GPU, and has boxes large enough to saturate "
-"that GPU's compute capacity. While there are some cases where multiple "
-"MPI ranks per GPU can make sense (typically this would be when you have "
-"some portion of your code that is not GPU accelerated and want to have "
-"many MPI ranks to make that part faster), this is probably the minority "
-"of cases. For example, on OLCF Summit you would want to ensure that your "
-"resource sets contain one MPI rank and GPU each, using `jsrun -n N -a 1 "
-"-c 7 -g 1`, where `N` is the total number of MPI ranks/GPUs you want to "
-"use. (See the OLCF [job step "
-"viewer](https://jobstepviewer.olcf.ornl.gov/) for more information.)"
+"Pay attention to what GPUs your job scheduler is assigning to each MPI rank. In most cases you'll achieve the best "
+"performance when a single MPI rank is assigned to each GPU, and has boxes large enough to saturate that GPU's compute "
+"capacity. While there are some cases where multiple MPI ranks per GPU can make sense (typically this would be when you "
+"have some portion of your code that is not GPU accelerated and want to have many MPI ranks to make that part faster), "
+"this is probably the minority of cases. For example, on OLCF Summit you would want to ensure that your resource sets "
+"contain one MPI rank and GPU each, using `jsrun -n N -a 1 -c 7 -g 1`, where `N` is the total number of MPI ranks/GPUs "
+"you want to use. (See the OLCF [job step viewer](https://jobstepviewer.olcf.ornl.gov/) for more information.)"
 msgstr ""
+"请注意作业调度器分配给每个MPI进程的GPU。在大多数情况下，当每个GPU分配给单个MPI进程，并且这些进程的计算任务足够大以充分利用GPU的计算能力时，您将获得最佳性能。虽然有一些情况下，每个GPU有多个MPI进程可能是合理的（通常是当您"
+"的代码的某些部分没有GPU加速，并且希望有多个MPI进程来加快该部分的速度时），但这可能是少数情况。例如，在OLCF Summit上，您需要确保您的资源集包含一个MPI进程和一个GPU，使用`jsrun -n N -a 1 -c 7 -g "
+"1`，其中`N`是您想要使用的MPI进程/ GPU的总数。（有关更多信息，请参见OLCF的[作业步骤查看器](https://jobstepviewer.olcf.ornl.gov/)。）"
 
 #: ../../source/GPU.rst:1725 2f07435e7ba44a32a16f2b0e9fa8b03a
 msgid ""
-"Conversely, if you choose to have multiple GPUs visible to each MPI rank,"
-" AMReX will attempt to do the best job it can assigning MPI ranks to GPUs"
-" by doing round robin assignment. This may be suboptimal because this "
-"assignment scheme would not be aware of locality benefits that come from "
-"having an MPI rank be on the same socket as the GPU it is managing."
+"Conversely, if you choose to have multiple GPUs visible to each MPI rank, AMReX will attempt to do the best job it can "
+"assigning MPI ranks to GPUs by doing round robin assignment. This may be suboptimal because this assignment scheme "
+"would not be aware of locality benefits that come from having an MPI rank be on the same socket as the GPU it is "
+"managing."
 msgstr ""
+"相反地，如果您选择让每个 MPI 进程可见多个 GPU，则 AMReX 将尝试通过循环分配的方式，尽可能地将 MPI 进程分配给 GPU。这种分配方案可能不是最优的，因为它无法意识到将 MPI 进程与其管理的 GPU "
+"放置在同一插槽上所带来的局部性优势。"
 
 #: ../../source/GPU.rst:1735 807d4edf1951429ca2204fad51a0842a
 msgid "Inputs Parameters"
-msgstr ""
+msgstr "输入参数"
 
 #: ../../source/GPU.rst:1739 b5639aeafe764b6686b2e4b0bc72ec42
 msgid ""
-"The following inputs parameters control the behavior of amrex when "
-"running on GPUs. They should be prefaced by \"amrex\" in your "
-":cpp:`inputs` file."
-msgstr ""
+"The following inputs parameters control the behavior of amrex when running on GPUs. They should be prefaced by "
+"\"amrex\" in your :cpp:`inputs` file."
+msgstr "以下输入参数控制着在GPU上运行时amrex的行为。在您的:cpp:`inputs`文件中，请在这些参数前加上\"amrex\"。"
 
 #: ../../source/GPU.rst:1743 b12e2931236a4a538d4a8661ed3ac228
 msgid "Type"
-msgstr ""
+msgstr "输入"
 
 #: ../../source/GPU.rst:1745 a08882c8127b4dc4ac73fef1f1308e3e
 msgid "use_gpu_aware_mpi"
-msgstr ""
+msgstr "使用 GPU 感知的 MPI。"
 
 #: ../../source/GPU.rst:1745 e79a1527a40c469c99e034cb3f9eb315
 msgid ""
-"Whether to use GPU memory for communication buffers during MPI calls. If "
-"true, the buffers will use device memory. If false (i.e., 0), they will "
-"use pinned memory. In practice, we find it is not always worth it to use "
-"GPU aware MPI."
-msgstr ""
+"Whether to use GPU memory for communication buffers during MPI calls. If true, the buffers will use device memory. If "
+"false (i.e., 0), they will use pinned memory. In practice, we find it is not always worth it to use GPU aware MPI."
+msgstr "在MPI调用期间是否使用GPU内存作为通信缓冲区。如果为真，则缓冲区将使用设备内存。如果为假（即0），则将使用固定内存。实际上，我们发现并不总是值得使用支持GPU的MPI。"
 
 #: ../../source/GPU.rst:1745 ../../source/GPU.rst:1750
 #: ../../source/GPU.rst:1754 6484d5a193e94949afce7b603b1527e4
 #: 6ec27cfc972740819defb4cee517b1ae 82caf698dc65463fb682856b344ff3a5
 msgid "Bool"
-msgstr ""
-
-#: ../../source/GPU.rst:1745 ../../source/GPU.rst:1750
-#: ../../source/GPU.rst:1754 4f2720fd3d814d7ebf5e20bb10da5d2e
-#: bfecb98f46e3445b8a0461c5b26bd7e3 eaa1117cbb214718b56773e1ee8667b7
-msgid "0"
-msgstr ""
+msgstr "布尔"
 
 #: ../../source/GPU.rst:1750 a0cf613554a643238d8a404dfcb6d425
 msgid "abort_on_out_of_gpu_memory"
-msgstr ""
+msgstr "当GPU内存不足时中止执行"
 
 #: ../../source/GPU.rst:1750 41973b3a9d32439bbe3a5f22b7cf5074
 msgid ""
-"If the size of free memory on the GPU is less than the size of a "
-"requested allocation, AMReX will call AMReX::Abort() with an error "
-"describing how much free memory there is and what was requested."
-msgstr ""
+"If the size of free memory on the GPU is less than the size of a requested allocation, AMReX will call AMReX::Abort() "
+"with an error describing how much free memory there is and what was requested."
+msgstr "如果GPU上的可用内存大小小于所请求分配的大小，AMReX将调用AMReX::Abort()函数，并提供一个错误描述，其中包括可用内存的大小和所请求的大小。"
 
 #: ../../source/GPU.rst:1754 8fcdb2c316fc4ad0a7de7a1ef27e8418
 msgid "the_arena_is_managed"
-msgstr ""
+msgstr "这个竞技场是由管理团队负责的。"
 
 #: ../../source/GPU.rst:1754 67dfb06316504b2e826a7809f6ac2d90
 msgid "Whether :cpp:`The_Arena()` allocates managed memory."
-msgstr ""
-
+msgstr ":cpp:`The_Arena()`是否分配托管内存。"

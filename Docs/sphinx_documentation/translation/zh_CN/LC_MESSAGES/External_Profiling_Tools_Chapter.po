@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -22,14 +22,12 @@ msgstr ""
 #: ../../source/External_Profiling_Tools_Chapter.rst:4
 #: db1201d4994f4f0d9bd80a7c2749d2ce
 msgid "External Profiling Tools"
-msgstr ""
+msgstr "外部配置工具"
 
 #: ../../source/External_Profiling_Tools_Chapter.rst:6
 #: 71c36ed7c8f145fbacc89ce8494bd18c
 msgid ""
-"AMReX is compatible with most commonly used profiling tools. This chapter"
-" provides some selected useful documentation on implementing a few of "
-"these tools on AMReX. For additional details on running these tools, "
-"please refer to the official documentation of the tools."
-msgstr ""
-
+"AMReX is compatible with most commonly used profiling tools. This chapter provides some selected useful documentation "
+"on implementing a few of these tools on AMReX. For additional details on running these tools, please refer to the "
+"official documentation of the tools."
+msgstr "AMReX与大多数常用的性能分析工具兼容。本章提供了一些关于在AMReX上实现这些工具的有用文档。有关运行这些工具的更多详细信息，请参阅官方文档。"

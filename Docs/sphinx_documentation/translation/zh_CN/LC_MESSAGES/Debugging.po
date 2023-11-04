@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,227 +21,209 @@ msgstr ""
 
 #: ../../source/Debugging.rst:5 ab610219f607486ea46126422781ebe2
 msgid "Debugging"
-msgstr ""
+msgstr "调试"
 
 #: ../../source/Debugging.rst:7 01987a600869493886860b6f1f16763f
-msgid ""
-"Debugging is an art.  Everyone has their own favorite method.  Here we "
-"offer a few tips we have found to be useful."
-msgstr ""
+msgid "Debugging is an art.  Everyone has their own favorite method.  Here we offer a few tips we have found to be useful."
+msgstr "调试是一门艺术。每个人都有自己喜欢的方法。在这里，我们提供了一些我们发现很有用的小贴士。"
 
 #: ../../source/Debugging.rst:10 e5886b09978d4c76bb455fc190eab823
 msgid ""
-"To help debugging, AMReX handles various signals in the C standard "
-"library raised in the runs.  This gives us a chance to print out more "
-"information using Linux/Unix backtrace capability.  The signals include "
-"segmentation fault (or \"segfault\"), interruption by the user "
-"(control-c), assertion errors, and floating point exceptions (NaNs, "
-"divided by zero and overflow).  The handling of segfault, assertion "
-"errors and interruption by control-C are enabled by default.  Note that "
-"``AMREX_ASSERT()`` is only on when compiled with ``DEBUG=TRUE`` or "
-"``USE_ASSERTION=TRUE`` in GNU make, or with ``-DCMAKE_BUILD_TYPE=Debug`` "
-"or ``-DAMReX_ASSERTIONS=YES`` in CMake.  The trapping of floating point "
-"exceptions is not enabled by default unless the code is compiled with "
-"``DEBUG=TRUE`` in GNU make, or with ``-DCMAKE_BUILD_TYPE=Debug`` or "
-"``-DAMReX_FPE=YES`` in CMake to turn on compiler flags if supported.  "
-"Alternatively, one can always use runtime parameters to control the "
-"handling of floating point exceptions: ``amrex.fpe_trap_invalid`` for "
-"NaNs, ``amrex.fpe_trap_zero`` for division by zero and "
-"``amrex.fpe_trap_overflow`` for overflow.  To more effectively trap the "
-"use of uninitialized values, AMReX also initializes ``FArrayBox``\\ s in "
-"``MulitFab``\\ s and arrays allocated by ``bl_allocate`` to signaling "
-"NaNs when it is compiled with ``TEST=TRUE`` or ``DEBUG=TRUE`` in GNU "
-"make, or with ``-DCMAKE_BUILD_TYPE=Debug`` in CMake. One can also control"
-" the setting for ``FArrayBox`` using the runtime parameter, "
-"``fab.init_snan``. Note for Macs, M1 and M2 chips using Arm64 "
-"architecture are not able to trap division by zero."
+"To help debugging, AMReX handles various signals in the C standard library raised in the runs.  This gives us a chance "
+"to print out more information using Linux/Unix backtrace capability.  The signals include segmentation fault (or "
+"\"segfault\"), interruption by the user (control-c), assertion errors, and floating point exceptions (NaNs, divided by "
+"zero and overflow).  The handling of segfault, assertion errors and interruption by control-C are enabled by default.  "
+"Note that ``AMREX_ASSERT()`` is only on when compiled with ``DEBUG=TRUE`` or ``USE_ASSERTION=TRUE`` in GNU make, or "
+"with ``-DCMAKE_BUILD_TYPE=Debug`` or ``-DAMReX_ASSERTIONS=YES`` in CMake.  The trapping of floating point exceptions is "
+"not enabled by default unless the code is compiled with ``DEBUG=TRUE`` in GNU make, or with "
+"``-DCMAKE_BUILD_TYPE=Debug`` or ``-DAMReX_FPE=YES`` in CMake to turn on compiler flags if supported.  Alternatively, "
+"one can always use runtime parameters to control the handling of floating point exceptions: ``amrex.fpe_trap_invalid`` "
+"for NaNs, ``amrex.fpe_trap_zero`` for division by zero and ``amrex.fpe_trap_overflow`` for overflow.  To more "
+"effectively trap the use of uninitialized values, AMReX also initializes ``FArrayBox``\\ s in ``MulitFab``\\ s and "
+"arrays allocated by ``bl_allocate`` to signaling NaNs when it is compiled with ``TEST=TRUE`` or ``DEBUG=TRUE`` in GNU "
+"make, or with ``-DCMAKE_BUILD_TYPE=Debug`` in CMake. One can also control the setting for ``FArrayBox`` using the "
+"runtime parameter, ``fab.init_snan``. Note for Macs, M1 and M2 chips using Arm64 architecture are not able to trap "
+"division by zero."
 msgstr ""
+"为了帮助调试，AMReX在运行过程中处理了C标准库中引发的各种信号。这使我们有机会利用Linux/Unix的回溯功能打印更多信息。这些信号包括分段错误（或\"segfault\"）、用户中断（control-"
+"c）、断言错误和浮点异常（NaN、除以零和溢出）。默认情况下，处理分段错误、断言错误和用户中断的功能是启用的。请注意，只有在GNU "
+"make中使用\"DEBUG=TRUE\"或\"USE_ASSERTION=TRUE\"编译，或在CMake中使用\"-DCMAKE_BUILD_TYPE=Debug\"或\"-DAMReX_ASSERTIONS=YES\"编译时，\""
+"AMREX_ASSERT()\"才会启用。除非代码是使用GNU "
+"make中的\"DEBUG=TRUE\"编译，或在CMake中使用\"-DCMAKE_BUILD_TYPE=Debug\"或\"-DAMReX_FPE=YES\""
+"编译以启用编译器标志，否则默认情况下不会启用浮点异常的捕获。另外，您还可以始终使用运行时参数来控制浮点异常的处理方式：\"amrex.fpe_trap_invalid\"用于NaN，\"amrex.fpe_trap_zero\""
+"用于除以零，\"amrex.fpe_trap_overflow\"用于溢出。为了更有效地捕获未初始化值的使用，当使用GNU "
+"make中的\"TEST=TRUE\"或\"DEBUG=TRUE\"编译，或在CMake中使用\"-DCMAKE_BUILD_TYPE=Debug\"编译时，AMReX还会将\"FArrayBox\"在\"MulitFab\"中和由\""
+"bl_allocate\"分配的数组初始化为信号NaN。您还可以使用运行时参数\"fab.init_snan\"来控制\"FArrayBox\"的设置。请注意，对于使用Arm64架构的Mac上的M1和M2芯片，无法捕获除以零的情况。"
 
 #: ../../source/Debugging.rst:32 bdb38ac44e1b47399ad2b907470cfbe5
 msgid ""
-"One can get more information than the backtrace of the call stack by "
-"instrumenting the code.  Here is an example. You know the line ``Real rho"
-" = state(cell,0);`` is causing a segfault.  You could add a print "
-"statement before that.  But it might print out thousands (or even "
-"millions) of line before it hits the segfault.  What you could do is the "
+"One can get more information than the backtrace of the call stack by instrumenting the code.  Here is an example. You "
+"know the line ``Real rho = state(cell,0);`` is causing a segfault.  You could add a print statement before that.  But "
+"it might print out thousands (or even millions) of line before it hits the segfault.  What you could do is the "
 "following,"
 msgstr ""
+"通过对代码进行仪器化，可以获得比调用堆栈的回溯更多的信息。以下是一个示例。你知道这一行代码“Real rho = "
+"state(cell,0);”导致了段错误。你可以在之前添加一个打印语句。但是它可能会在触发段错误之前打印出成千上万甚至数百万行的内容。你可以采取以下措施："
 
 #: ../../source/Debugging.rst:55 4f24d8cdc2894cc4bac3584aa057a2c7
 msgid "When it hits the segfault, you will only see the last print out."
-msgstr ""
+msgstr "当它发生段错误时，你只会看到最后一个打印输出。"
 
 #: ../../source/Debugging.rst:57 1bfff6e045de4ba9a0c120eb58d81eda
 msgid "Writing a ``MultiFab`` to disk with"
-msgstr ""
+msgstr "使用``MultiFab``将数据写入磁盘。"
 
 #: ../../source/Debugging.rst:65 881ca8d4de9b4f0d8f9f52a28d77a65e
 msgid ""
-"in ``AMReX_VisMF.H`` and examining it with ``Amrvis`` (section "
-":ref:`sec:amrvis`) can be helpful as well.  In ``AMReX_MultiFabUtil.H``, "
-"function"
-msgstr ""
+"in ``AMReX_VisMF.H`` and examining it with ``Amrvis`` (section :ref:`sec:amrvis`) can be helpful as well.  In "
+"``AMReX_MultiFabUtil.H``, function"
+msgstr "在 `AMReX_VisMF.H` 中，并使用 `Amrvis` 进行检查（参见 :ref:`sec:amrvis` 部分）也可能会有所帮助。在 `AMReX_MultiFabUtil.H` 中的函数中，"
 
 #: ../../source/Debugging.rst:76 c510064ca44c45edaf6172774357ee55
 msgid ""
-"can output the data for a single cell. ``n`` is the component, with the "
-"default being to print all components. ``ng`` is the number of ghost "
-"cells to include."
-msgstr ""
+"can output the data for a single cell. ``n`` is the component, with the default being to print all components. ``ng`` "
+"is the number of ghost cells to include."
+msgstr "可以输出单个单元格的数据。``n``是组件，如果不指定，默认打印所有组件。``ng``是要包括的幽灵单元格的数量。"
 
 #: ../../source/Debugging.rst:79 0046d6e576a54106be28e525c9c718a7
 msgid ""
-"Valgrind is one of our favorite debugging tools.  For MPI runs, one can "
-"tell Valgrind to output to different files for different processes. For "
-"example,"
-msgstr ""
+"Valgrind is one of our favorite debugging tools.  For MPI runs, one can tell Valgrind to output to different files for "
+"different processes. For example,"
+msgstr "Valgrind是我们最喜欢的调试工具之一。对于MPI运行，可以告诉Valgrind为不同的进程输出到不同的文件。例如，"
 
 #: ../../source/Debugging.rst:90 4c901e6548b447d786fe7cad898275a1
 msgid "Breaking into Debuggers"
-msgstr ""
+msgstr "闯入调试器"
 
 #: ../../source/Debugging.rst:92 16a03bfeef2b408594a1396c6efd8bc6
 msgid ""
-"In order to break into debuggers and use modern IDEs, the backtrace "
-"signal handling described above needs to be disabled."
-msgstr ""
+"In order to break into debuggers and use modern IDEs, the backtrace signal handling described above needs to be "
+"disabled."
+msgstr "为了进入调试器并使用现代集成开发环境（IDE），上述所描述的回溯信号处理需要被禁用。"
 
 #: ../../source/Debugging.rst:94 bceda662d9fa4d79b8033c139521dc39
 msgid ""
-"The following runtime options need to be set in order to prevent AMReX "
-"from catching the break signals before a debugger can attach to a "
-"crashing process:"
-msgstr ""
+"The following runtime options need to be set in order to prevent AMReX from catching the break signals before a "
+"debugger can attach to a crashing process:"
+msgstr "为了防止在调试器附加到崩溃进程之前，AMReX捕获中断信号，需要设置以下运行时选项："
 
 #: ../../source/Debugging.rst:101 00682e57d20646a9922d27514c40a448
 msgid ""
-"This default behavior can also be modified by applications, see for "
-"example `this custom application initializer <https://github.com/Exawind"
-"/amr-wind/blob/84f81a990152f4f748c1ab0fa17c8c663e51df86/amr-"
-"wind/main.cpp#L21>`__."
-msgstr ""
+"This default behavior can also be modified by applications, see for example `this custom application initializer "
+"<https://github.com/Exawind/amr-wind/blob/84f81a990152f4f748c1ab0fa17c8c663e51df86/amr-wind/main.cpp#L21>`__."
+msgstr "这种默认行为也可以被应用程序修改，例如查看这个自定义应用程序初始化器。"
 
 #: ../../source/Debugging.rst:107 dea5e2ff5be9458aae14a4b68a30c146
 msgid "Basic Gpu Debugging"
-msgstr ""
+msgstr "基本的GPU调试"
 
 #: ../../source/Debugging.rst:110 3accabc255634e90bc167ab4b1d86fef
 msgid ""
-"The asynchronous nature of GPU execution can make tracking down bugs "
-"complex. The relative timing of improperly coded functions can cause "
-"variations in output and the timing of error messages may not linearly "
-"relate to a place in the code. One strategy to isolate specific kernel "
-"failures is to add ``amrex::Gpu::synchronize()`` or "
-"``amrex::Gpu::streamSynchronize()`` after every ``ParallelFor`` or "
-"similar ``amrex::launch`` type call. These synchronization commands will "
-"halt execution of the code until the GPU or GPU stream, respectively, has"
-" finished processing all previously requested tasks, thereby making it "
-"easier to locate and identify sources of error."
+"The asynchronous nature of GPU execution can make tracking down bugs complex. The relative timing of improperly coded "
+"functions can cause variations in output and the timing of error messages may not linearly relate to a place in the "
+"code. One strategy to isolate specific kernel failures is to add ``amrex::Gpu::synchronize()`` or "
+"``amrex::Gpu::streamSynchronize()`` after every ``ParallelFor`` or similar ``amrex::launch`` type call. These "
+"synchronization commands will halt execution of the code until the GPU or GPU stream, respectively, has finished "
+"processing all previously requested tasks, thereby making it easier to locate and identify sources of error."
 msgstr ""
+"GPU执行的异步性质使得追踪错误变得复杂。不正确编码的函数的相对时序可能导致输出的变化，而错误消息的时序可能与代码中的位置不成线性关系。一种隔离特定内核失败的策略是在每个``ParallelFor``或类似的``amrex::launch`"
+"`类型调用之后添加``amrex::Gpu::synchronize()``或``amrex::Gpu::streamSynchronize()``"
+"。这些同步命令将暂停代码的执行，直到GPU或GPU流完成所有先前请求的任务，从而更容易定位和识别错误的来源。"
 
 #: ../../source/Debugging.rst:117 422c0765b8384907892db80fbfefac04
 msgid "Debuggers and Related Tools"
-msgstr ""
+msgstr "调试器和相关工具"
 
 #: ../../source/Debugging.rst:119 85a5ec15fab44a0786cfc373d8f5a0bf
 msgid ""
-"Users may also find debuggers useful. Architecture agnostic tools include"
-" ``gdb``, ``hpctoolkit``, and ``Valgrind``. Note that there are "
-"architecture specific implementations of ``gdb`` such as ``cuda-gdb``, "
-"``rocgdb``, ``gdb-amd``, and the Intel ``gdb``. Usage of several of these"
-" variations are described in the following sections."
+"Users may also find debuggers useful. Architecture agnostic tools include ``gdb``, ``hpctoolkit``, and ``Valgrind``. "
+"Note that there are architecture specific implementations of ``gdb`` such as ``cuda-gdb``, ``rocgdb``, ``gdb-amd``, and "
+"the Intel ``gdb``. Usage of several of these variations are described in the following sections."
 msgstr ""
+"用户可能还会发现调试器很有用。与架构无关的工具包括``gdb``、``hpctoolkit``和``Valgrind``。请注意，``gdb``还有特定于架构的实现，例如``cuda-gdb``、``rocgdb``、``gdb-amd``"
+"和Intel的``gdb``。这些变体的使用方法将在下面的章节中描述。"
 
 #: ../../source/Debugging.rst:122 08a9a685bb084454aebee8041462c765
 msgid ""
-"For advance debugging topics and tools, refer to system-specific "
-"documentation (e.g. "
+"For advance debugging topics and tools, refer to system-specific documentation (e.g. "
 "https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging)."
-msgstr ""
+msgstr "关于高级调试主题和工具，请参考系统特定的文档（例如，https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging）。"
 
 #: ../../source/Debugging.rst:126 8698f530dc7d4d8dbe8a0a8bfc4ad2a9
 msgid "CUDA-Specific Tests"
-msgstr ""
+msgstr "CUDA特定的测试"
 
 #: ../../source/Debugging.rst:128 ../../source/Debugging.rst:155
 #: ../../source/Debugging.rst:175 2a113df7af1a4aa395f0fd0ef7fc37d1
 #: 99156a9fac014b6bb4846d80956b2e9e d9e498c071de4739994b0dd60d4cc630
 msgid "To test if your kernels have launched, run:"
-msgstr ""
+msgstr "为了测试您的内核是否已启动，请运行以下命令："
 
 #: ../../source/Debugging.rst:134 cd7c0903987a40c1bd12c544dc816e35
-msgid ""
-"If using NVIDIA Nsight Compute instead, access ``nvprof`` functionality "
-"with:"
-msgstr ""
+msgid "If using NVIDIA Nsight Compute instead, access ``nvprof`` functionality with:"
+msgstr "如果使用NVIDIA Nsight Compute，可以通过以下方式访问“nvprof”功能："
 
 #: ../../source/Debugging.rst:140 209a9d95ae394140b2ff3ab1b2c78313
 msgid ""
-"Run ``nvprof -o profile%p.nvvp ./main3d.xxxx`` or ``nsys profile -o "
-"nsys_out.%q{SLURM_PROCID}.%q{SLURM_JOBID} ./main3d.xxx`` for a small "
-"problem and examine page faults using ``nvvp`` or ``nsight-sys "
+"Run ``nvprof -o profile%p.nvvp ./main3d.xxxx`` or ``nsys profile -o nsys_out.%q{SLURM_PROCID}.%q{SLURM_JOBID} "
+"./main3d.xxx`` for a small problem and examine page faults using ``nvvp`` or ``nsight-sys "
 "$(pwd)/nsys_out.#.######.qdrep``."
 msgstr ""
+"运行``nvprof -o profile%p.nvvp ./main3d.xxxx``或``nsys profile -o nsys_out.%q{SLURM_PROCID}.%q{SLURM_JOBID} "
+"./main3d.xxx``来对一个小问题进行分析，并使用``nvvp``或``nsight-sys $(pwd)/nsys_out.#.######.qdrep``来检查页面错误。"
 
 #: ../../source/Debugging.rst:144 613e23419bf446538f9f24be0c54bc6b
-msgid ""
-"Run under ``cuda-memcheck`` or the newer version ``compute-sanitizer`` to"
-" identify memory errors."
-msgstr ""
+msgid "Run under ``cuda-memcheck`` or the newer version ``compute-sanitizer`` to identify memory errors."
+msgstr "运行在 `cuda-memcheck` 或者更新版本的 `compute-sanitizer` 下，以识别内存错误。"
 
 #: ../../source/Debugging.rst:146 4a5e3384fb594319aec996f7eca35b00
 msgid "Run under ``cuda-gdb`` to identify kernel errors."
-msgstr ""
+msgstr "在``cuda-gdb``下运行以识别内核错误。"
 
 #: ../../source/Debugging.rst:148 39d0ae5771564d3fa7c3168ada74b48d
 msgid ""
-"To help identify race conditions, globally disable asynchronicity of "
-"kernel launches for all CUDA applications by setting "
-"``CUDA_LAUNCH_BLOCKING=1`` in your environment variables. This will "
-"ensure that only one CUDA kernel will run at a time."
-msgstr ""
+"To help identify race conditions, globally disable asynchronicity of kernel launches for all CUDA applications by "
+"setting ``CUDA_LAUNCH_BLOCKING=1`` in your environment variables. This will ensure that only one CUDA kernel will run "
+"at a time."
+msgstr "为了帮助识别竞态条件，在环境变量中设置``CUDA_LAUNCH_BLOCKING=1``，全局禁用所有CUDA应用程序的内核异步性。这将确保一次只运行一个CUDA内核。"
 
 #: ../../source/Debugging.rst:153 2c2bb6ff11074d1da0b3e20e8c43c883
 msgid "AMD ROCm-Specific Tests"
 msgstr ""
+"AMD ROCm-Specific Tests\n"
+"AMD ROCm特定测试"
 
 #: ../../source/Debugging.rst:161 c7587b9f559a40a9a5e574ce54a86af2
 msgid ""
-"Run ``rocprof  --hsa-trace --stats --timestamp on --roctx-trace "
-"./main3d.xxxx`` for a small problem and examine tracing using "
-"``chrome://tracing``."
-msgstr ""
+"Run ``rocprof  --hsa-trace --stats --timestamp on --roctx-trace ./main3d.xxxx`` for a small problem and examine tracing "
+"using ``chrome://tracing``."
+msgstr "运行``rocprof --hsa-trace --stats --timestamp on --roctx-trace ./main3d.xxxx``来对一个小问题进行追踪，并使用``chrome://tracing``来检查追踪结果。"
 
 #: ../../source/Debugging.rst:164 6d280415dea746f8b7eb1ba531163bb4
 msgid "Run under ``rocgdb`` for source-level debugging."
-msgstr ""
+msgstr "使用``rocgdb``在源代码级别进行调试。"
 
 #: ../../source/Debugging.rst:166 56dfaef0de3c40ddbc31d252429c9601
 msgid ""
-"To help identify if there are race conditions, globally disable "
-"asynchronicity of kernel launches by setting ``CUDA_LAUNCH_BLOCKING=1`` "
-"or ``HIP_LAUNCH_BLOCKING=1`` in your environment variables. This will "
-"ensure only one kernel will run at a time. See the `AMD ROCm docs' "
-"chicken bits section`_ for more debugging environment variables."
+"To help identify if there are race conditions, globally disable asynchronicity of kernel launches by setting "
+"``CUDA_LAUNCH_BLOCKING=1`` or ``HIP_LAUNCH_BLOCKING=1`` in your environment variables. This will ensure only one kernel "
+"will run at a time. See the `AMD ROCm docs' chicken bits section`_ for more debugging environment variables."
 msgstr ""
+"为了帮助识别是否存在竞态条件，请在环境变量中设置``CUDA_LAUNCH_BLOCKING=1``或``HIP_LAUNCH_BLOCKING=1``，全局禁用内核启动的异步性。这将确保一次只运行一个内核。有关更多调试环境变量，请参阅`"
+"AMD ROCm文档的chicken bits部分`_。"
 
 #: ../../source/Debugging.rst:173 2270e1d9d24c4a70aacb1b5ef48eb3d2
 msgid "Intel GPU Specific Tests"
-msgstr ""
+msgstr "Intel GPU 特定测试"
 
 #: ../../source/Debugging.rst:181 e6168f0db5d64ad180e0d29f052a4faf
-msgid ""
-"Run Intel Advisor, ``advisor --collect=survey ./main3d.xxx`` for a small "
-"problem with 1 MPI process and examine metrics."
-msgstr ""
+msgid "Run Intel Advisor, ``advisor --collect=survey ./main3d.xxx`` for a small problem with 1 MPI process and examine metrics."
+msgstr "运行 Intel Advisor，使用以下命令 ``advisor --collect=survey ./main3d.xxx``，针对一个使用1个 MPI 进程的小问题进行分析，并检查指标。"
 
 #: ../../source/Debugging.rst:185 3d7ec61b0317432b91be77d2aae0528d
 msgid "Run under ``gdb`` with the `Intel Distribution for GDB`_."
-msgstr ""
+msgstr "在 `gdb` 下使用 `Intel Distribution for GDB` 运行。"
 
 #: ../../source/Debugging.rst:187 c4ccd81572c94d639bf03badfbf33d09
-msgid ""
-"To report back-end information, set ``ZE_DEBUG=1`` in your environment "
-"variables."
-msgstr ""
-
+msgid "To report back-end information, set ``ZE_DEBUG=1`` in your environment variables."
+msgstr "要报告后端信息，请在您的环境变量中设置``ZE_DEBUG=1``。"

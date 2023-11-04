@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,52 +21,46 @@ msgstr ""
 
 #: ../../source/BuildingAMReX_Chapter.rst:4 4da6358a66b94584a30fb1282777bc38
 msgid "Building AMReX"
-msgstr ""
+msgstr "构建 AMReX"
 
 #: ../../source/BuildingAMReX_Chapter.rst:6 0b2a4db9f22149ac821bfec790bb2f62
 msgid ""
-"In this chapter, we discuss AMReX's build systems. Additionally, it is "
-"also possible to install AMReX using Spack (https://spack.io/). For more "
-"information see the :ref:`sec:build:spack` section."
-msgstr ""
+"In this chapter, we discuss AMReX's build systems. Additionally, it is also possible to install AMReX using Spack "
+"(https://spack.io/). For more information see the :ref:`sec:build:spack` section."
+msgstr "在本章中，我们讨论了AMReX的构建系统。此外，您还可以使用Spack（https://spack.io/）来安装AMReX。有关更多信息，请参阅:ref:`sec:build:spack`部分。"
 
 #: ../../source/BuildingAMReX_Chapter.rst:10 e159fe988c154508a5020357ba2b007f
 msgid ""
-"There are three ways to use AMReX's build systems. Most AMReX developers "
-"use GNU Make. With this approach, there is no installation step; "
-"application codes adopt AMReX's build system and compile AMReX while "
-"compiling their own codes. This will be discussed in more detail in the "
-"section on :ref:`sec:build:make`."
+"There are three ways to use AMReX's build systems. Most AMReX developers use GNU Make. With this approach, there is no "
+"installation step; application codes adopt AMReX's build system and compile AMReX while compiling their own codes. This "
+"will be discussed in more detail in the section on :ref:`sec:build:make`."
 msgstr ""
+"使用AMReX的构建系统有三种方法。大多数AMReX开发者使用GNU "
+"Make。采用这种方法时，无需安装步骤；应用程序代码在编译自己的代码时同时编译AMReX，并采用AMReX的构建系统。这将在:ref:`sec:build:make`部分详细讨论。"
 
 #: ../../source/BuildingAMReX_Chapter.rst:16 5707a653782d4f58aac2e6935d612b4b
 msgid ""
-"The second approach is to build and install AMReX as a library using GNU "
-"make (:ref:`sec:build:lib`); an application code then uses its own build "
-"system and links to AMReX as an external library."
-msgstr ""
+"The second approach is to build and install AMReX as a library using GNU make (:ref:`sec:build:lib`); an application "
+"code then uses its own build system and links to AMReX as an external library."
+msgstr "第二种方法是使用GNU make（:ref:`sec:build:lib`）构建和安装AMReX作为一个库；然后应用程序代码使用自己的构建系统，并将AMReX作为外部库进行链接。"
 
 #: ../../source/BuildingAMReX_Chapter.rst:19 eb03704a6ea54bbb8947684a545143c5
-msgid ""
-"Finally, AMReX can also be built with CMake, as detailed in the section "
-"on :ref:`sec:build:cmake`."
-msgstr ""
+msgid "Finally, AMReX can also be built with CMake, as detailed in the section on :ref:`sec:build:cmake`."
+msgstr "最后，AMReX也可以使用CMake构建，具体细节请参考:ref:`sec:build:cmake`部分。"
 
 #: ../../source/BuildingAMReX_Chapter.rst:21 a82d92e5652c434faef2db54a7fdcc61
 msgid ""
-"AMReX requires a C++ compiler that supports the C++17 standard, a Fortran"
-" compiler that supports the Fortran 2003 standard, and a C compiler that "
-"supports the C99 standard.  Prerequisites for building with GNU Make "
-"include Python (>= 2.7, including 3) and standard tools available in any "
-"Unix-like environments (e.g., Perl and sed).  For building with CMake, "
-"the minimal requirement is version 3.18."
+"AMReX requires a C++ compiler that supports the C++17 standard, a Fortran compiler that supports the Fortran 2003 "
+"standard, and a C compiler that supports the C99 standard.  Prerequisites for building with GNU Make include Python (>= "
+"2.7, including 3) and standard tools available in any Unix-like environments (e.g., Perl and sed).  For building with "
+"CMake, the minimal requirement is version 3.18."
 msgstr ""
+"AMReX需要支持C++17标准的C++编译器，支持Fortran 2003标准的Fortran编译器，以及支持C99标准的C编译器。使用GNU Make构建的先决条件包括Python（>= "
+"2.7，包括3）和在任何类Unix环境中都可用的标准工具（例如Perl和sed）。对于使用CMake构建，最低要求是版本3.18。"
 
 #: ../../source/BuildingAMReX_Chapter.rst:28 7b51a743046742c0a0bb676e448201d7
 msgid ""
-"Please note that we fully support AMReX for Linux systems in general and "
-"on the DOE supercomputers (e.g. Cori, Summit) in particular.  Many of our"
-" users do build and use AMReX on Macs but we do not have the resources to"
-" fully support Mac users."
-msgstr ""
-
+"Please note that we fully support AMReX for Linux systems in general and on the DOE supercomputers (e.g. Cori, Summit) "
+"in particular.  Many of our users do build and use AMReX on Macs but we do not have the resources to fully support Mac "
+"users."
+msgstr "请注意，我们完全支持在Linux系统上使用AMReX，并且特别支持在DOE超级计算机（例如Cori、Summit）上使用AMReX。许多用户在Mac上构建和使用AMReX，但我们没有足够的资源来全面支持Mac用户。"

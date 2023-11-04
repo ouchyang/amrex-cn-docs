@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,64 +21,52 @@ msgstr ""
 
 #: ../../source/AmrCore_Chapter.rst:4 2846111ad8704663b6a6b054436b54e2
 msgid "AmrCore Source Code"
-msgstr ""
+msgstr "AmrCore 源代码"
 
 #: ../../source/AmrCore_Chapter.rst:6 7d6a53f6d2554c34bf193cb0665a6965
 msgid ""
-"In this Chapter we give an overview of functionality contained in the "
-"``amrex/Src/AmrCore`` source code.  This directory contains source code "
-"for the following:"
-msgstr ""
+"In this Chapter we give an overview of functionality contained in the ``amrex/Src/AmrCore`` source code.  This "
+"directory contains source code for the following:"
+msgstr "在本章中，我们将概述``amrex/Src/AmrCore``源代码中包含的功能。该目录包含以下源代码："
 
 #: ../../source/AmrCore_Chapter.rst:10 9bdc5db53c514ce1af971cb942805e47
-msgid ""
-"Storing information about the grid layout and processor distribution "
-"mapping at each level of refinement."
-msgstr ""
+msgid "Storing information about the grid layout and processor distribution mapping at each level of refinement."
+msgstr "在每个细化级别上存储有关网格布局和处理器分布映射的信息。"
 
 #: ../../source/AmrCore_Chapter.rst:13 6271344af3cb4a19b63c0a8099812d64
-msgid ""
-"Functions to create grids at different levels of refinement, including "
-"tagging operations."
-msgstr ""
+msgid "Functions to create grids at different levels of refinement, including tagging operations."
+msgstr "创建不同细化级别的网格的函数，包括标记操作。"
 
 #: ../../source/AmrCore_Chapter.rst:16 e8cb66db39ac49d68add2151ce8b7391
-msgid ""
-"Operations on data at different levels of refinement, such as "
-"interpolation and restriction operators."
-msgstr ""
+msgid "Operations on data at different levels of refinement, such as interpolation and restriction operators."
+msgstr "对不同精细度级别的数据进行操作，例如插值和限制运算符。"
 
 #: ../../source/AmrCore_Chapter.rst:19 c452788fb7f54caaba0b9805b1215efd
-msgid ""
-"Flux registers used to store and manipulate fluxes at coarse-fine "
-"interfaces."
-msgstr ""
+msgid "Flux registers used to store and manipulate fluxes at coarse-fine interfaces."
+msgstr "用于存储和操作粗细界面处的通量的通量寄存器。"
 
 #: ../../source/AmrCore_Chapter.rst:22 9334a886147947ee8066b7a37dd87b14
 msgid "Particle support for AMR (see :ref:`Chap:Particles`)."
-msgstr ""
+msgstr "AMR的粒子支持（参见：第`Chap:Particles`章）。"
 
 #: ../../source/AmrCore_Chapter.rst:24 3916328a2701420093ea2a6ef4ac2666
 msgid ""
-"There is another source directory, ``amrex/Src/Amr/``, which contains "
-"additional classes used to manage the time-stepping for AMR simulations. "
-"However, it is possible to build a fully adaptive, subcycling-in-time "
-"simulation code without these additional classes."
-msgstr ""
+"There is another source directory, ``amrex/Src/Amr/``, which contains additional classes used to manage the "
+"time-stepping for AMR simulations. However, it is possible to build a fully adaptive, subcycling-in-time simulation "
+"code without these additional classes."
+msgstr "还有另一个源目录，``amrex/Src/Amr/``，其中包含用于管理AMR模拟的时间步进的额外类。然而，即使没有这些额外的类，也有可能构建一个完全自适应的、时间子循环的模拟代码。"
 
 #: ../../source/AmrCore_Chapter.rst:29 39e1697135644c75b9b989cd3bf2615c
 msgid ""
-"In this Chapter, we restrict our use to the ``amrex/Src/AmrCore`` source "
-"code and present a tutorial that performs an adaptive, subcycling-in-time"
-" simulation of the advection equation for a passively advected scalar.  "
-"The accompanying tutorial code is available in ``amrex-"
-"tutorials/ExampleCodes/Amr/Advection_AmrCore`` with build/run directory "
-"``Exec/SingleVortex``. In this example, the velocity field is a specified"
-" function of space and time, such that an initial Gaussian profile is "
-"displaced but returns to its original configuration at the final time.  "
-"The boundary conditions are periodic and we use a refinement ratio of "
-":math:`r=2` between each AMR level. The results of the simulation in two-"
-"dimensions are depicted in the Table showing the :ref:`SingleVortex "
-"Tutorial<fig:Adv>`."
+"In this Chapter, we restrict our use to the ``amrex/Src/AmrCore`` source code and present a tutorial that performs an "
+"adaptive, subcycling-in-time simulation of the advection equation for a passively advected scalar.  The accompanying "
+"tutorial code is available in ``amrex-tutorials/ExampleCodes/Amr/Advection_AmrCore`` with build/run directory "
+"``Exec/SingleVortex``. In this example, the velocity field is a specified function of space and time, such that an "
+"initial Gaussian profile is displaced but returns to its original configuration at the final time.  The boundary "
+"conditions are periodic and we use a refinement ratio of :math:`r=2` between each AMR level. The results of the "
+"simulation in two-dimensions are depicted in the Table showing the :ref:`SingleVortex Tutorial<fig:Adv>`."
 msgstr ""
-
+"在本章中，我们限制使用``amrex/Src/AmrCore``源代码，并提供一个教程，用于对被动对流标量进行自适应的时间子循环模拟。相应的教程代码可在``amrex-tutorials/ExampleCodes/Amr/"
+"Advection_AmrCore``中找到，构建/运行目录为``Exec/SingleVortex``"
+"。在这个示例中，速度场是空间和时间的指定函数，使得初始的高斯分布被位移，但在最终时间回到原始配置。边界条件是周期性的，并且我们在每个AMR层之间使用了一个放大比例:math:`r=2`。二维模拟的结果如表中所示，显示了:ref:`"
+"SingleVortex Tutorial<fig:Adv>`。"

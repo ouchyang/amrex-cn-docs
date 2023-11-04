@@ -2,7 +2,7 @@
 # Copyright (C) 2017-20123, AMReX Team
 # This file is distributed under the same license as the amrex package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-02 14:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: gpt-po v1.0.11\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -21,20 +21,19 @@ msgstr ""
 
 #: ../../source/Python_Chapter.rst:7 0834d65e5fcf4d1d9116f3f3d7082ab4
 msgid "Python Interface"
-msgstr ""
+msgstr "Python 接口"
 
 #: ../../source/Python_Chapter.rst:10 791a4fb75940481f9c4102ec11139d77
 msgid ""
-"The core of AMReX is written in C++. For users who want to write all of "
-"their programs in Python, or C++ application developers that like to add "
-"Python interfaces to their applications for scripting, rapid prototyping,"
-" code coupling and/or AI/ML workflows, many AMReX classes, functions and "
-"all data containers are now also available."
+"The core of AMReX is written in C++. For users who want to write all of their programs in Python, or C++ application "
+"developers that like to add Python interfaces to their applications for scripting, rapid prototyping, code coupling "
+"and/or AI/ML workflows, many AMReX classes, functions and all data containers are now also available."
 msgstr ""
+"AMReX的核心是用C++编写的。对于希望完全使用Python编写其程序的用户，或者喜欢为其C++应用程序添加Python接口以进行脚本编写、快速原型开发、代码耦合和/或AI/ML工作流程的C++"
+"应用程序开发人员，现在也可以使用许多AMReX的类、函数和所有数据容器。"
 
 #: ../../source/Python_Chapter.rst:13 afccc879dd6348c6907e95a70c317de3
 msgid ""
-"Please see `pyAMReX <https://github.com/AMReX-Codes/pyamrex/>`__ (`manual"
-" <https://pyamrex.readthedocs.io>`__) for further details."
-msgstr ""
-
+"Please see `pyAMReX <https://github.com/AMReX-Codes/pyamrex/>`__ (`manual <https://pyamrex.readthedocs.io>`__) for "
+"further details."
+msgstr "请参阅 `pyAMReX <https://github.com/AMReX-Codes/pyamrex/>`__ (`manual <https://pyamrex.readthedocs.io>`__) 以获取更多详细信息。"
