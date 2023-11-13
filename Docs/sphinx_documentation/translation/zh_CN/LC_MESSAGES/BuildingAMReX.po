@@ -50,16 +50,16 @@ msgstr "重要的变量设定"
 
 #: ../../source/BuildingAMReX.rst:32 673ab23560a74c35a03c7e98fb26d473
 msgid "Variable"
-msgstr "变量"
+msgstr "变量(Variable)"
 
 #: ../../source/BuildingAMReX.rst:32 8340da0fc92847bdb3da2e98f1ff92c6
 msgid "Value"
-msgstr "价值"
+msgstr "值(Value)"
 
 #: ../../source/BuildingAMReX.rst:32 ../../source/BuildingAMReX.rst:428
 #: 1f8683bd74ec45389a0ffecd81d28902 77e862b2ef5a42089579c21880e59ed4
 msgid "Default"
-msgstr "默认"
+msgstr "Default"
 
 #: ../../source/BuildingAMReX.rst:34 7c646046b7af48ac98296dfd4cfc35ef
 msgid "AMREX_HOME"
@@ -75,7 +75,7 @@ msgstr "环境"
 
 #: ../../source/BuildingAMReX.rst:36 d095bafb744943c3b35d4675b7cac46d
 msgid "COMP"
-msgstr "竞争"
+msgstr "COMP"
 
 #: ../../source/BuildingAMReX.rst:36 5d6a7f9633ef445884db0fb6bec35a27
 msgid "gnu, cray, ibm, intel, intel-llvm, intel-classic, llvm, or pgi"
@@ -83,7 +83,7 @@ msgstr "GNU, Cray, IBM, Intel, Intel-LLVM, Intel-Classic, LLVM, or PGI."
 
 #: ../../source/BuildingAMReX.rst:37 023ef33cf7724dffbee93a84a99ee75e
 msgid "none"
-msgstr "没有。"
+msgstr "none"
 
 #: ../../source/BuildingAMReX.rst:39 cab2caced72344c6a5bffccd6c66abbe
 msgid "CXXSTD"
@@ -99,7 +99,7 @@ msgstr "编译器默认，至少为 `c++17`。"
 
 #: ../../source/BuildingAMReX.rst:42 be569802a9e94325912e2ccff464b8ca
 msgid "DEBUG"
-msgstr "调试"
+msgstr "DEBUG"
 
 #: ../../source/BuildingAMReX.rst:42 ../../source/BuildingAMReX.rst:48
 #: ../../source/BuildingAMReX.rst:50 ../../source/BuildingAMReX.rst:52
@@ -113,7 +113,7 @@ msgstr "调试"
 #: ade5a313c57142ba95cb8e6b7a066ff9 deb69e24c28245518b712db477953234
 #: f6c668ab8b304d9c93fd8e4ed96b531d fe04d85e38c846eaae21a773872b9a49
 msgid "TRUE or FALSE"
-msgstr "真或假"
+msgstr "TRUE or FALSE"
 
 #: ../../source/BuildingAMReX.rst:42 ../../source/BuildingAMReX.rst:48
 #: ../../source/BuildingAMReX.rst:50 ../../source/BuildingAMReX.rst:52
@@ -125,11 +125,11 @@ msgstr "真或假"
 #: 9d258e551e194c1199ae214e5127fb0e b530443478ae44698001e92ebfcef55c
 #: be45cfd1e8744cc5a13e57defce76a57 fbec7f52086c47c4bb8808d74cede000
 msgid "FALSE"
-msgstr "I apologize if there was any misunderstanding. Could you please clarify what you meant by \"FALSE\"?"
+msgstr "FALSE"
 
 #: ../../source/BuildingAMReX.rst:44 3e7ab7a12413429c8042a933459e019c
 msgid "DIM"
-msgstr "暗"
+msgstr "DIM"
 
 #: ../../source/BuildingAMReX.rst:44 f5bf5b54469944e1b96f6ff07f808e52
 msgid "1 or 2 or 3"
@@ -137,58 +137,56 @@ msgstr "1或2或3"
 
 #: ../../source/BuildingAMReX.rst:46 7bb5000834604487853a56d91e60f30c
 msgid "PRECISION"
-msgstr "精确度"
+msgstr "PRECISION"
 
 #: ../../source/BuildingAMReX.rst:46 88c2e9d4d44e4351b9e9907dc49b50ce
 msgid "DOUBLE or FLOAT"
-msgstr "双精度或浮点数"
+msgstr "DOUBLE or FLOAT"
 
 #: ../../source/BuildingAMReX.rst:46 ../../source/BuildingAMReX.rst:448
 #: 3370b2be0c964012b274866643727e23 d8e9cddbd4974349b61a2ace8ea12890
 msgid "DOUBLE"
-msgstr "双倍"
+msgstr "DOUBLE"
 
 #: ../../source/BuildingAMReX.rst:48 ec4cb34f83d3477db6bb32effa2c102a
 msgid "TEST"
-msgstr "测试"
+msgstr "TEST"
 
 #: ../../source/BuildingAMReX.rst:50 5890281777f24cf184c18aa4b2b624a7
 msgid "USE_ASSERTION"
-msgstr "使用断言"
+msgstr "USE_ASSERTION"
 
 #: ../../source/BuildingAMReX.rst:52 5e9866a1f2454c78b18c2f3c30842ca8
 msgid "USE_MPI"
-msgstr "使用_MPI"
+msgstr "USE_MPI"
 
 #: ../../source/BuildingAMReX.rst:54 6142cb571dc6491d9a8e38fe66b41451
 msgid "USE_OMP"
-msgstr "使用_OMP"
+msgstr "USE_OMP"
 
 #: ../../source/BuildingAMReX.rst:56 2d2cf24f444b4ca48c718ac0c9c88092
 msgid "USE_CUDA"
-msgstr "使用CUDA"
+msgstr "USE_CUDA"
 
 #: ../../source/BuildingAMReX.rst:58 5020a594ab6c4190ac0e62a981236339
 msgid "USE_HIP"
-msgstr ""
-"Got it, I will utilize a stylish and trendy approach in translating your incoming messages from English to Simplified "
-"Chinese. Please proceed with sending your messages for translation."
+msgstr "USE_HIP"
 
 #: ../../source/BuildingAMReX.rst:60 f2f12f7392e645ba84a4a68880f82df7
 msgid "USE_SYCL"
-msgstr "使用SYCL"
+msgstr "USE_SYCL"
 
 #: ../../source/BuildingAMReX.rst:62 95992ed16cfc4e3889b49bf2c7d88214
 msgid "USE_RPATH"
-msgstr "使用_RPATH"
+msgstr "USE_RPATH"
 
 #: ../../source/BuildingAMReX.rst:64 daf62824a43047848f1a045f9c64f93f
 msgid "WARN_ALL"
-msgstr "警告：全部警告"
+msgstr "WARN_ALL"
 
 #: ../../source/BuildingAMReX.rst:64 43dc64de34da45f7bff991c5c8d06fbe
 msgid "TRUE for DEBUG FALSE otherwise"
-msgstr "如果是调试模式，则为TRUE，否则为FALSE。"
+msgstr "如果是调试（DEBUG）模式，则为TRUE，否则为FALSE。"
 
 #: ../../source/BuildingAMReX.rst:67 831d1686231a4c759db814b34c34d9ee
 msgid "AMREX_CUDA_ARCH"
@@ -224,11 +222,11 @@ msgstr "如果机器是未知的，则没有任何。"
 
 #: ../../source/BuildingAMReX.rst:73 728c440dc7a04c96a2bd4d25b9c38ba3
 msgid "USE_GPU_RDC"
-msgstr "使用_GPU_RDC"
+msgstr "USE_GPU_RDC"
 
 #: ../../source/BuildingAMReX.rst:73 55d2204c64ac4717a052bb4ceaff800b
 msgid "TRUE"
-msgstr "真的"
+msgstr "TRUE"
 
 #: ../../source/BuildingAMReX.rst:81 57cced57ad7a451abc176706671f96d3
 msgid ""
@@ -336,7 +334,7 @@ msgstr "C++ 源代码文件。请注意，C++ 源代码文件的扩展名通常�
 
 #: ../../source/BuildingAMReX.rst:159 e5a2b092d38243298891db298154782e
 msgid "CEXE_headers"
-msgstr "CEXE_头部"
+msgstr "CEXE_headers"
 
 #: ../../source/BuildingAMReX.rst:159 f7dc1ffa628640368362219372d1b55c
 msgid "C++ headers with .h, .hpp, or .H extension."
@@ -364,11 +362,11 @@ msgstr "f90EXE_sources"
 
 #: ../../source/BuildingAMReX.rst:168 2e22999b22334b6389a7c928c2d7148c
 msgid "Free format Fortran source with .f90 extension."
-msgstr "自由格式的Fortran源代码，使用.f90扩展名。"
+msgstr "自由格式（Free format）的Fortran源代码，使用.f90扩展名。"
 
 #: ../../source/BuildingAMReX.rst:172 9353644988244b119907e8b498ba6a41
 msgid "F90EXE_sources"
-msgstr "F90EXE源代码"
+msgstr "F90EXE_sources"
 
 #: ../../source/BuildingAMReX.rst:171 2bd34a238f61444496b26a49d0a49f0a
 msgid "Free format Fortran source with .F90 extension.  Note that these Fortran files will go through preprocessing."
@@ -401,7 +399,7 @@ msgstr "除了构建可执行文件之外，其他常见的make命令包括："
 
 #: ../../source/BuildingAMReX.rst:199 6ee7353225a54ca08e1fb162ff14b977
 msgid "``make cleanconfig``"
-msgstr "执行命令 \"make cleanconfig\""
+msgstr "``make cleanconfig``"
 
 #: ../../source/BuildingAMReX.rst:197 c35f084695684fd492c2432e3eb935ff
 msgid ""
@@ -419,7 +417,7 @@ msgstr "这将删除所有构建过程中由make生成的文件。"
 
 #: ../../source/BuildingAMReX.rst:205 5d08acc5d4c4478c9f89d58aa8b86fdb
 msgid "``make help``"
-msgstr "执行帮助"
+msgstr "``make help``"
 
 #: ../../source/BuildingAMReX.rst:205 a4d2668534f4407db6cf8e235afe9c42
 msgid "This shows the rules for compilation."
@@ -427,7 +425,7 @@ msgstr "这是编译的规则。"
 
 #: ../../source/BuildingAMReX.rst:209 dd3aab0952174b81a7a187b26dba19af
 msgid "``make print-xxx``"
-msgstr "制作 print-xxx"
+msgstr "``make print-xxx``"
 
 #: ../../source/BuildingAMReX.rst:208 73eb4a35ce534da08f8aae7f277dee41
 msgid "This shows the value of variable xxx. This is very useful for debugging and tweaking the make system."
@@ -531,7 +529,7 @@ msgstr "如果你使用ccache，你可以在你的makefile中添加``USE_CCACHE=
 
 #: ../../source/BuildingAMReX.rst:319 4c25055f4f964e3ebba8f9b6ffa8c98e
 msgid "Building libamrex"
-msgstr "正在构建 libamrex"
+msgstr "构建 libamrex"
 
 #: ../../source/BuildingAMReX.rst:321 cd2d811a3aa24b25a17e533824bbccce
 msgid ""
@@ -690,10 +688,7 @@ msgstr "编译器/17"
 
 #: ../../source/BuildingAMReX.rst:438 30ba4a6ef72e4bef9bd3929400add677
 msgid "17, 20"
-msgstr ""
-"17, 20\n"
-"\n"
-"十七，二十"
+msgstr "17, 20"
 
 #: ../../source/BuildingAMReX.rst:440 ../../source/BuildingAMReX.rst:655
 #: ca75f2d0b3bc4839883ca7e5bd0ea01d d9741f2d5a004ede81bb91a32dfdf5e9
@@ -753,7 +748,7 @@ msgstr "使用xSDK默认设置"
 #: e03b79b0951447dca321e7d66247c3d3 e0cea8fc30a94141952eff18b4a28233
 #: e6dfcc9418a3400cbc1f7a925145c2e6 ece9ba0908b64b34b76cf116179c5519
 msgid "NO"
-msgstr "不要。"
+msgstr "NO"
 
 #: ../../source/BuildingAMReX.rst:442 ../../source/BuildingAMReX.rst:444
 #: ../../source/BuildingAMReX.rst:446 ../../source/BuildingAMReX.rst:450
@@ -797,7 +792,7 @@ msgstr "不要。"
 #: f488f497618a409d83dd12293548287e f546670e5567445c928296d70db4df7a
 #: f7053954d9e84f1781810eed1eb75b13 fbbeb95da242458baefd88518798835d
 msgid "YES, NO"
-msgstr "是的，不是。"
+msgstr "YES, NO"
 
 #: ../../source/BuildingAMReX.rst:444 4227d3034cfc4573bc9c2e5a1624a0f0
 msgid "AMReX_BUILD_SHARED_LIBS"
@@ -809,7 +804,7 @@ msgstr "构建为共享的 C++ 库"
 
 #: ../../source/BuildingAMReX.rst:444 20c23f71b6d24a8db2bc953387e13513
 msgid "NO (unless xSDK)"
-msgstr "不行（除非是xSDK）。"
+msgstr "NO（除非是xSDK）。"
 
 #: ../../source/BuildingAMReX.rst:446 ../../source/BuildingAMReX.rst:659
 #: 3e5513f1db9e45cd90aa5e3603d72e0d d6f1f3a547f441378de00e0dfb5003f1
@@ -827,13 +822,13 @@ msgstr "AMReX_PRECISION"
 
 #: ../../source/BuildingAMReX.rst:448 87d7c6f1e6a6439cbee52b3ce3462ef4
 msgid "Set the precision of reals"
-msgstr "设置实数的精度。"
+msgstr "设置浮点数的精度。"
 
 #: ../../source/BuildingAMReX.rst:448 ../../source/BuildingAMReX.rst:474
 #: ../../source/BuildingAMReX.rst:657 0410fc4b52bc44858e2dd122d02421c2
 #: 644eb81fdfd2479aaaed74033a2c7dda d9b668f4cd244257a83610b84ca1c56f
 msgid "DOUBLE, SINGLE"
-msgstr "双倍，单倍"
+msgstr "DOUBLE, SINGLE"
 
 #: ../../source/BuildingAMReX.rst:450 ../../source/BuildingAMReX.rst:661
 #: 2290d462af904ffe89d8ad010e8f3ccf bc71dd86579b49efbf8d5c4b16da238b
@@ -868,7 +863,7 @@ msgstr "使用MPI支持进行构建"
 #: 476b112464ae485584a10c8c827a7e7b 6f605e4bbd814c09a5ef36fd5508fd51
 #: 8de941ce787b43c5a3f8c08bfd63e836 f6071641f6f24993b2e51721be655e14
 msgid "YES"
-msgstr "是的"
+msgstr "YES"
 
 #: ../../source/BuildingAMReX.rst:456 ../../source/BuildingAMReX.rst:665
 #: 093f83e5e7d44d528d95908fece8a08f 74b035886835458ca585daa8fed19aea
@@ -890,11 +885,11 @@ msgstr "使用基于节点的、加速的GPU后端构建"
 
 #: ../../source/BuildingAMReX.rst:458 28119fa93d40486ea3d14fc3bde4ff13
 msgid "NONE"
-msgstr "没有。"
+msgstr "NONE"
 
 #: ../../source/BuildingAMReX.rst:458 3a99193659a543fca3ba2b4f71fc78fb
 msgid "NONE, SYCL, HIP, CUDA"
-msgstr "无，SYCL，HIP，CUDA"
+msgstr "NONE, SYCL, HIP, CUDA"
 
 #: ../../source/BuildingAMReX.rst:460 e0213d2798bd4e8f81c2f491ef248b50
 msgid "AMReX_GPU_RDC"
@@ -947,7 +942,7 @@ msgstr "AMReX_EB"
 
 #: ../../source/BuildingAMReX.rst:470 b66d074eaf6448b0ab4ef4acc0e51abe
 msgid "Build Embedded Boundary support"
-msgstr "构建嵌入式边界支持"
+msgstr "构建嵌入式边界（Embedded Boundary）支持"
 
 #: ../../source/BuildingAMReX.rst:472 ../../source/BuildingAMReX.rst:679
 #: 78fcaba70cac47c0a76ba5f06f0cc137 d99d62577627424e855615ac951ff77a
@@ -956,16 +951,16 @@ msgstr "AMReX_PARTICLES"
 
 #: ../../source/BuildingAMReX.rst:472 f5e1f24721ed4df48e71b500e9ed9a30
 msgid "Build particle classes"
-msgstr "构建粒子类。"
+msgstr "构建粒子类"
 
 #: ../../source/BuildingAMReX.rst:474 ../../source/BuildingAMReX.rst:681
 #: 1cb8c5f38b474b149b0846bb707da9d4 8ef0aa2976424a94948a5d086b51c451
 msgid "AMReX_PARTICLES_PRECISION"
-msgstr "AMReX_PARTICLES_PRECISION的翻译是什么？"
+msgstr "AMReX_PARTICLES_PRECISION"
 
 #: ../../source/BuildingAMReX.rst:474 b79c12471872487caa48e06158729c01
 msgid "Set reals precision in particle classes"
-msgstr "在粒子类中设置实数精度。"
+msgstr "在粒子类中设置浮点数精度。"
 
 #: ../../source/BuildingAMReX.rst:474 109d54b148cc46108280d3d6a734cf35
 msgid "Same as AMReX_PRECISION"
@@ -1010,7 +1005,7 @@ msgstr "构建具有通信分析支持的版本"
 #: ../../source/BuildingAMReX.rst:484 ../../source/BuildingAMReX.rst:691
 #: 16aa43a6bcf5420688fa0a813bda04e7 1d52bb6a324546bcbdbd350368867845
 msgid "AMReX_MEM_PROFILE"
-msgstr "AMReX内存配置文件"
+msgstr "AMReX_MEM_PROFILE"
 
 #: ../../source/BuildingAMReX.rst:484 77fb3da43fb9408d9da486de2fc45df3
 msgid "Build with memory-profiling support"
@@ -1026,9 +1021,7 @@ msgstr "第三方个人资料分析选项"
 
 #: ../../source/BuildingAMReX.rst:486 2704f547414043e590f85233f491a5a8
 msgid "IGNORE"
-msgstr ""
-"I apologize for any confusion. If you have any further instructions or if there is anything else I can assist you with, "
-"please let me know."
+msgstr "IGNOR"
 
 #: ../../source/BuildingAMReX.rst:486 f56a3f4b587c4d2e82d38427bd4a28b0
 msgid "CRAYPAT,FORGE,VTUNE"
@@ -1036,7 +1029,7 @@ msgstr "CRAYPAT，FORGE，VTUNE"
 
 #: ../../source/BuildingAMReX.rst:488 1207e08992254e9483eabc11977ef434
 msgid "AMReX_TESTING"
-msgstr "AMReX测试"
+msgstr "AMReX_TESTING"
 
 #: ../../source/BuildingAMReX.rst:488 09b9322e66504ee8b9a560d99283aacf
 msgid "Build for testing --sets MultiFab initial data to NaN"
@@ -1103,7 +1096,7 @@ msgstr "在 macOS 上启用回溯功能。"
 
 #: ../../source/BuildingAMReX.rst:503 88c9e1edb4b8413d8559380344a2e856
 msgid "NO (unless Darwin)"
-msgstr "不 (除非达尔文)"
+msgstr "NO (unless Darwin)"
 
 #: ../../source/BuildingAMReX.rst:505 ../../source/BuildingAMReX.rst:699
 #: 3b459dd3d97248e5b2540c44cb844050 4dbfb137befa4c67a0f19691a8c0dc87
@@ -1116,11 +1109,11 @@ msgstr "启用SENSEI现场基础设施"
 
 #: ../../source/BuildingAMReX.rst:507 d3eb39c160644aee8e615444067f1ee7
 msgid "AMReX_NO_SENSEI_AMR_INST"
-msgstr "AMReX没有SENSEI的AMR实例化。"
+msgstr "AMReX_NO_SENSEI_AMR_INST"
 
 #: ../../source/BuildingAMReX.rst:507 10c75a11f2ca41a58a9bb558ac75441c
 msgid "Disables the instrumentation in amrex::Amr"
-msgstr "禁用 amrex::Amr 中的仪器设备。"
+msgstr "禁用 amrex::Amr 中的设施"
 
 #: ../../source/BuildingAMReX.rst:509 ../../source/BuildingAMReX.rst:701
 #: 4399d8f3f45f4c50a6692ed113e7b32c 9ae26421d9794843811f170f43676f34
@@ -1171,7 +1164,7 @@ msgstr "AMReX_HDF5"
 
 #: ../../source/BuildingAMReX.rst:519 23b9a254487244308dbb51054264a468
 msgid "Enable HDF5-based I/O"
-msgstr "启用基于HDF5的输入/输出功能"
+msgstr "启用基于HDF5的输入/输出（I/O）功能"
 
 #: ../../source/BuildingAMReX.rst:521 fa6faa6951714679adf8a579dce90bc6
 msgid "AMReX_HDF5_ZFP"
@@ -1212,7 +1205,7 @@ msgstr "全部"
 
 #: ../../source/BuildingAMReX.rst:527 0bc0bd19ccb745f6bf2b872e868edc9f
 msgid "All, Small"
-msgstr "大家，小的"
+msgstr "All, Small"
 
 #: ../../source/BuildingAMReX.rst:529 78334530ba0d4bef80fe5d9554ff9339
 msgid "AMReX_DIFFERENT_COMPILER"
@@ -1369,7 +1362,7 @@ msgstr "Fortran标志预设（接口）"
 
 #: ../../source/BuildingAMReX.rst:619 58b8723cd8f7487191b3f7993a5452bf
 msgid "Flags_FPE"
-msgstr "标志_FPE"
+msgstr "Flags_FPE"
 
 #: ../../source/BuildingAMReX.rst:619 ee8e1b6f3c244bed9ba6e2c6abfe45fd
 msgid "Floating Point Exception flags (interface)"
@@ -1408,10 +1401,7 @@ msgstr "组件"
 
 #: ../../source/BuildingAMReX.rst:655 8ff13b72f83a4aaa89d2e916ec79bf90
 msgid "1D, 2D, 3D"
-msgstr ""
-"1D, 2D, 3D\n"
-"\n"
-"一维，二维，三维"
+msgstr "1D, 2D, 3D"
 
 #: ../../source/BuildingAMReX.rst:659 10dab11191604776a8bc6b1767b1f438
 msgid "FORTRAN"
@@ -1419,7 +1409,7 @@ msgstr "FORTRAN"
 
 #: ../../source/BuildingAMReX.rst:661 c9cc6146669d44048fe40b842b65c2cd
 msgid "PIC"
-msgstr "图片"
+msgstr "PIC"
 
 #: ../../source/BuildingAMReX.rst:663 7621b7726fe0475eb6dc4df46fe1e0d5
 msgid "MPI"
@@ -1431,7 +1421,7 @@ msgstr "OMP"
 
 #: ../../source/BuildingAMReX.rst:667 dfb84e1a86e44f60812da6f0fcd45de8
 msgid "CUDA, HIP, SYCL"
-msgstr "CUDA，HIP，SYCL"
+msgstr "CUDA, HIP, SYCL"
 
 #: ../../source/BuildingAMReX.rst:669 82e0233d43eb4e40b7ffe30e27366f5f
 msgid "FINTERFACES"
@@ -1443,7 +1433,7 @@ msgstr "LSOLVERS"
 
 #: ../../source/BuildingAMReX.rst:673 0a631444a30348d9bc6f50706cf32c22
 msgid "AMRDATA"
-msgstr "AMR数据"
+msgstr "AMRDATA"
 
 #: ../../source/BuildingAMReX.rst:675 8f887a6ca7534238888c27698daea1ae
 msgid "AMRLEVEL"
@@ -1455,18 +1445,15 @@ msgstr "EB"
 
 #: ../../source/BuildingAMReX.rst:679 ce574b59e9bf44c8ba3bd73932644498
 msgid "PARTICLES"
-msgstr "语气助词"
+msgstr "PARTICLES"
 
 #: ../../source/BuildingAMReX.rst:681 58cb65bb4904415e963274c5ee9c6a12
 msgid "PDOUBLE, PSINGLE"
-msgstr ""
-"PDOUBLE, PSINGLE\n"
-"\n"
-"双倍，单倍"
+msgstr "PDOUBLE, PSINGLE"
 
 #: ../../source/BuildingAMReX.rst:683 4a89250df5ed4f93b827d8c6b604eac9
 msgid "BASEP"
-msgstr "基础"
+msgstr "BASEP"
 
 #: ../../source/BuildingAMReX.rst:685 5fd7643c9a764ae499d95800e0fa7098
 msgid "TINYP"
@@ -1474,11 +1461,11 @@ msgstr "TINYP"
 
 #: ../../source/BuildingAMReX.rst:687 f99ab637cb564c8596e5128b890f7c7a
 msgid "TRACEP"
-msgstr "追踪"
+msgstr "TRACEP"
 
 #: ../../source/BuildingAMReX.rst:689 6d5a6439f2af4603b94117d9b6156ade
 msgid "COMMP"
-msgstr "通信"
+msgstr "COMMP"
 
 #: ../../source/BuildingAMReX.rst:691 bc4d0b1f016f4dd0b45ab610f69c7862
 msgid "MEMP"
@@ -1494,19 +1481,19 @@ msgstr "FPE"
 
 #: ../../source/BuildingAMReX.rst:697 d3af8dae326e4f3e866e363b55eed332
 msgid "ASSERTIONS"
-msgstr "断言"
+msgstr "ASSERTIONS"
 
 #: ../../source/BuildingAMReX.rst:699 2ec896905b2c415baa77d887a7dd11ce
 msgid "SENSEI"
-msgstr "老师"
+msgstr "SENSEI"
 
 #: ../../source/BuildingAMReX.rst:701 1ba3b8f9565741a497d0bd4bcd83f212
 msgid "CONDUIT"
-msgstr "导管"
+msgstr "CONDUIT"
 
 #: ../../source/BuildingAMReX.rst:703 9851c22a4f834026b6343921aea0d60c
 msgid "ASCENT"
-msgstr "攀登"
+msgstr "ASCENT"
 
 #: ../../source/BuildingAMReX.rst:705 04899b1650914de1897dc3c1695c1bf7
 msgid "HYPRE"

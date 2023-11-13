@@ -59,7 +59,7 @@ msgid ""
 ":cpp:`cpu` numbers. [2]_"
 msgstr ""
 "这是一个模板化的数据类型，旨在允许粒子携带的组件数量和类型的灵活性。第一个模板参数是该粒子将具有的额外的 `Real` "
-"变量的数量（可以是单精度或双精度[1]_），而第二个参数是额外的整数变量的数量。需要注意的是，这是额外的实数和整数变量的数量；一个粒子始终至少具有存储粒子位置的 `BL_SPACEDIM` 个实数组件和存储粒子 `id` 和 `cpu` "
+"变量的数量（可以是单精度或双精度[1]_），而第二个参数是额外的整数变量的数量。需要注意的是，这是额外的浮点数和整数变量的数量；一个粒子始终至少具有存储粒子位置的 `BL_SPACEDIM` 个浮点数组件和存储粒子 `id` 和 `cpu` "
 "编号的 2 个整数组件[2]_。"
 
 #: ../../source/Particle.rst:31 983debd67fbe4c54b4ed5632e7eafd6a
@@ -71,7 +71,7 @@ msgid ""
 "struct would be set up like:"
 msgstr ""
 "粒子结构体被设计为以最小化填充的方式存储这些变量，实际上意味着:cpp:`Real` "
-"组件总是排在前面，整数组件排在其后。此外，所需的粒子变量在实数和整数组件中都排在可选变量之前。例如，假设我们想定义一个粒子类型，它存储一个质量、三个速度分量和两个额外的整数标志。我们的粒子结构体将被设置如下："
+"组件总是排在前面，整数组件排在其后。此外，所需的粒子变量在浮点数和整数组件中都排在可选变量之前。例如，假设我们想定义一个粒子类型，它存储一个质量、三个速度分量和两个额外的整数标志。我们的粒子结构体将被设置如下："
 
 #: ../../source/Particle.rst:43 182b1046e5d24cf0810d3903c05d06b3
 msgid ""
@@ -88,7 +88,7 @@ msgid ""
 "The :cpp:`Particle` struct provides a number of methods for getting and setting a particle's data. For the required "
 "particle components, there are special, named methods. For the \"extra\" real and integer data, you can use the "
 ":cpp:`rdata` and :cpp:`idata` methods, respectively."
-msgstr "`Particle` 结构体提供了许多方法来获取和设置粒子的数据。对于所需的粒子组件，有特殊的命名方法。对于“额外”的实数和整数数据，分别可以使用 `rdata` 和 `idata` 方法。"
+msgstr "`Particle` 结构体提供了许多方法来获取和设置粒子的数据。对于所需的粒子组件，有特殊的命名方法。对于“额外”的浮点数和整数数据，分别可以使用 `rdata` 和 `idata` 方法。"
 
 #: ../../source/Particle.rst:79 820a765de0f148c99422f2d226bc8019
 msgid "The ParticleContainer"
@@ -142,8 +142,8 @@ msgid ""
 "and ``n``, respectively. We have assumed that the particles are double precision."
 msgstr ""
 "这是一个关于单个瓦片中粒子数据在内存中的排列示例。该粒子容器的定义为``NStructReal = 1``，``NStructInt = 2``，``NArrayReal = 2``，以及``NArrayInt = "
-"2``。在这种情况下，粒子容器中的每个瓦片都有五个数组：一个用于存储粒子结构数据，另外两个是实数数组，还有两个整数数组。在所示的瓦片中，只有两个粒子。我们将粒子结构的额外实数数据成员标记为``mass``"
-"，而粒子结构的额外整数成员分别标记为``p``和``s``，表示\"phase\"和\"state\"。实数数组和整数数组中的变量分别标记为``foo``，``bar``，``l``和``n``。我们假设粒子是双精度的。"
+"2``。在这种情况下，粒子容器中的每个瓦片都有五个数组：一个用于存储粒子结构数据，另外两个是浮点数数组，还有两个整数数组。在所示的瓦片中，只有两个粒子。我们将粒子结构的额外浮点数数据成员标记为``mass``"
+"，而粒子结构的额外整数成员分别标记为``p``和``s``，表示\"phase\"和\"state\"。浮点数数组和整数数组中的变量分别标记为``foo``，``bar``，``l``和``n``。我们假设粒子是双精度的。"
 
 #: ../../source/Particle.rst:137 dc94e265b3b943858385f18d51324ad3
 msgid ""
@@ -698,7 +698,7 @@ msgstr "最后，`amrex.use_gpu_aware_mpi`开关也会影响在GPU平台（如Su
 msgid ""
 "Particles default to double precision for their real data. To use single precision, compile your code with "
 "``USE_SINGLE_PRECISION_PARTICLES=TRUE``."
-msgstr "粒子的实数数据默认为双精度。如果要使用单精度，请使用编译选项``USE_SINGLE_PRECISION_PARTICLES=TRUE``编译您的代码。"
+msgstr "粒子的浮点数数据默认为双精度。如果要使用单精度，请使用编译选项``USE_SINGLE_PRECISION_PARTICLES=TRUE``编译您的代码。"
 
 #: ../../source/Particle.rst:769 85e90c6353074b71a9304c0349ed445c
 msgid ""
@@ -717,5 +717,5 @@ msgid ""
 ":cpp:`enum` to keep these indices straight; please see "
 "``amrex-tutorials/ExampleCodes/Particles/ElectrostaticPIC/ElectrosticParticleContainer.H`` for an example of this."
 msgstr ""
-"请注意，对于额外的粒子组件，哪个组件对应哪个变量是应用程序特定的约定 - 这些粒子有4个额外的实数组件，但哪一个是“质量”取决于用户。我们建议使用一个 :cpp:`enum` 来明确这些索引；请参考 "
+"请注意，对于额外的粒子组件，哪个组件对应哪个变量是应用程序特定的约定 - 这些粒子有4个额外的浮点数组件，但哪一个是“质量”取决于用户。我们建议使用一个 :cpp:`enum` 来明确这些索引；请参考 "
 "``amrex-tutorials/ExampleCodes/Particles/ElectrostaticPIC/ElectrosticParticleContainer.H`` 中的示例。"

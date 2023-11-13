@@ -674,7 +674,7 @@ msgid ""
 msgstr ""
 "在这里，构造函数接受一个以单元为中心的 `Box`，用于指定索引空间域，一个 `RealBox`，用于指定物理域，一个整数，用于指定坐标系类型，以及一个整数指针或数组，用于指定周期性。如果在第一个构造函数中没有提供 "
 "`RealBox`，AMReX 将根据 `ParmParse` 参数构造一个 `RealBox`，这些参数是 `geometry.prob_lo` / `geometry.prob_hi` / "
-"`geometry.prob_extent`，其中每个参数都是一个包含 `AMREX_SPACEDIM` 个实数的数组。有关如何指定这些参数的详细信息，请参阅 :ref:`sec:inputs:pd` 章节。"
+"`geometry.prob_extent`，其中每个参数都是一个包含 `AMREX_SPACEDIM` 个浮点数的数组。有关如何指定这些参数的详细信息，请参阅 :ref:`sec:inputs:pd` 章节。"
 
 #: ../../source/Basics.rst:917 ef8908c9062a405094286e3b2e338ec2
 msgid ""
@@ -1590,7 +1590,7 @@ msgid ""
 "shown below,"
 msgstr ""
 "在这里，`BL_TO_FORTRAN_BOX`接受一个`Box`对象，并提供两个`int*`，指定了Box的下界和上界。`BL_TO_FORTRAN_ANYD`接受由`mf[mfi]`返回的`FArrayBox`"
-"对象，并通过预处理器将其转换为`Real*，int*，int*`，其中`Real*`是与Fortran中的实数数组参数匹配的数据指针，第一个`int*`（与Fortran中的整数参数匹配）指定了数组的下界，第二个`int*`"
+"对象，并通过预处理器将其转换为`Real*，int*，int*`，其中`Real*`是与Fortran中的浮点数数组参数匹配的数据指针，第一个`int*`（与Fortran中的整数参数匹配）指定了数组的下界，第二个`int*`"
 "指定了数组的空间维度的上界。下面是Fortran函数的一个示例："
 
 #: ../../source/Basics.rst:2180 18c3a418f1344212a31d0c6b4071f6df

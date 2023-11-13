@@ -29,7 +29,7 @@ msgstr "接口"
 
 #: ../../source/index.rst:4 6398eb5825634d3dbc964f81683de99c
 msgid "Welcome to AMReX's documentation"
-msgstr "欢迎阅读AMReX中文手册"
+msgstr "欢迎阅读AMReX中文手册 -- 由 ouchyang@foxmail.com 翻译"
 
 #: ../../source/index.rst:6 80a72d3f556a43a59c17657aa95e800a
 msgid ""

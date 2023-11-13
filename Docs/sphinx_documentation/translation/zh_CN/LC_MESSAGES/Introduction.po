@@ -27,7 +27,7 @@ msgstr "AMReX 简介"
 msgid ""
 "AMReX is a publicly available software framework designed for building massively parallel block-structured adaptive "
 "mesh refinement (AMR) applications."
-msgstr "AMReX 是一个公开可用的软件框架，旨在构建大规模并行的基于块结构的自适应网格细化（AMR）应用程序。"
+msgstr "AMReX 是一个公开可用的软件框架，旨在构建大规模并行的基于块结构的自适应网格（AMR）应用程序。"
 
 #: ../../source/Introduction.rst:8 535d957c25b549c1b45cdfce1590ce47
 msgid "Key features of AMReX include:"
@@ -47,11 +47,11 @@ msgstr "支持以单元为中心、面为中心、边为中心和节点数据。
 
 #: ../../source/Introduction.rst:13 117e50a7036b4b059ec2cdbcbd579182
 msgid "Support for hyperbolic, parabolic, and elliptic solves on hierarchical adaptive grid structure"
-msgstr "对分层自适应网格结构上的双曲线、抛物线和椭圆方程求解的支持。"
+msgstr "对层次化自适应网格结构上的双曲、抛物和椭圆方程求解的支持。"
 
 #: ../../source/Introduction.rst:15 5a4aa2651d714d92be78ac6234db97e5
 msgid "Optional subcycling in time for time-dependent PDEs"
-msgstr "时间相关的偏微分方程中的可选子循环"
+msgstr "时间相关的偏微分方程(PDEs)中的可选子循环(subcycling)"
 
 #: ../../source/Introduction.rst:16 f41602167b19460ea30026d0768e16cd
 msgid "Support for particles"
@@ -59,15 +59,15 @@ msgstr "对于粒子的支持"
 
 #: ../../source/Introduction.rst:17 e7093d8aa47542019493e7a83d23addf
 msgid "Support for embedded boundary (cut cell) representations of complex geometries"
-msgstr "支持复杂几何形状的嵌入边界（切割单元）表示。"
+msgstr "支持复杂几何形状的嵌入边界(embedded boundary)（cut cell, 切割单元）表示。"
 
 #: ../../source/Introduction.rst:18 7e32406294e14b89a07ceef3f1552e1b
 msgid "Parallelization via flat MPI, OpenMP, hybrid MPI/OpenMP, hybrid MPI/(CUDA or HIP or SYCL), or MPI/MPI"
-msgstr "通过平行化的方式，可以使用平坦的MPI、OpenMP、混合MPI/OpenMP、混合MPI/(CUDA或HIP或SYCL)，或者MPI/MPI。"
+msgstr "并行化方式，可以使用单层(falt)MPI、OpenMP、混合MPI/OpenMP、混合MPI/(CUDA或HIP或SYCL)，或者MPI/MPI。"
 
 #: ../../source/Introduction.rst:20 07a2fd4b2c5144b899b0dc0d2f458faf
 msgid "Parallel I/O"
-msgstr "并行输入/输出"
+msgstr "并行I/O"
 
 #: ../../source/Introduction.rst:21 6cea489664e240fba3fc8ea50c5c02dc
 msgid "Plotfile format supported by AmrVis, VisIt, ParaView, and yt."

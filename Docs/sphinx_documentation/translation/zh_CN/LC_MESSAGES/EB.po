@@ -691,7 +691,7 @@ msgstr "要设置齐次迪里切特边界条件，请调用"
 msgid ""
 "where coeff can be a real number (i.e. the value is the same at every cell) or is the MultiFab holding the coefficient "
 "of the gradient at each cell with an EB face."
-msgstr "其中coeff可以是一个实数（即在每个单元格中的值相同），或者是一个MultiFab，其中包含每个单元格的梯度系数和EB面。"
+msgstr "其中coeff可以是一个浮点数（即在每个单元格中的值相同），或者是一个MultiFab，其中包含每个单元格的梯度系数和EB面。"
 
 #: ../../source/EB.rst:599 ede12b19cb46457faa9cf9dda49471b5
 msgid "To set inhomogeneous Dirichlet boundary conditions, call"
@@ -701,7 +701,7 @@ msgstr "要设置不均匀的Dirichlet边界条件，请调用"
 msgid ""
 "where phi_on_eb is the MultiFab holding the Dirichlet values in every cut cell, and coeff again is a real number (i.e. "
 "the value is the same at every cell) or a MultiFab holding the coefficient of the gradient at each cell with an EB face."
-msgstr "phi_on_eb 是一个 MultiFab，其中包含每个切割单元的迪里切特值。coeff 是一个实数（即每个单元的值相同），或者是一个 MultiFab，其中包含每个单元的梯度系数和 EB 面。"
+msgstr "phi_on_eb 是一个 MultiFab，其中包含每个切割单元的迪里切特值。coeff 是一个浮点数（即每个单元的值相同），或者是一个 MultiFab，其中包含每个单元的梯度系数和 EB 面。"
 
 #: ../../source/EB.rst:611 5139ec7908794717abb85a62e5b21c01
 msgid ""
